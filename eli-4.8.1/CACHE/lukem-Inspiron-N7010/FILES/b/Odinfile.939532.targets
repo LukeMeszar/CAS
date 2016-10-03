@@ -1,0 +1,284 @@
+# $Id: Odinfile,v 1.7 2008/08/25 08:49:00 peter Exp $
+# (C) Copyright 1997 University of Paderborn.
+# 
+# This file is part of the Eli Module Library.
+# 
+# The Eli Module Library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Library General Public License as
+# published by the Free Software Foundation; either version 2 of the
+# License, or (at your option) any later version.
+# 
+# The Eli Module Library is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Library General Public License for more details.
+# 
+# You should have received a copy of the GNU Library General Public
+# License along with the Eli Module Library; see the file COPYING.LIB.
+# If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+# Suite 330, Boston, MA 02111-1307, USA.
+#
+
+%filter_errors == <<EOF
+s,/[^ ]*Examples,Examples,g
+EOF
+
+TypeTutorial.fw.exe == TypeTutorial.fw:exe
+Type.warn == TypeTutorial.fw:exe:warning
+%Type ! == <<EOF
+	TypeTutorial.fw.exe
+	Type.warn
+EOF
+
+%trenn == <<EOF
+==============
+EOF
+
+%TypeOk == <<EOF
+%Type.TEST == . +cmd=cat (%trenn) \
+	(Type.demo/TEST:label) \
+	(Type.demo/TEST) \
+	(Type.demo/TEST +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/TEST +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+EOF
+
+%TypeErr == <<EOF
+%Type.TEST == . +cmd=cat (%trenn) \
+	(Type.demo/TEST:label) \
+	(Type.demo/TEST) \
+	((Type.demo/TEST +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+EOF
+
+
+%Type.Array.err == . +cmd=cat (%trenn) \
+	(Type.demo/Array.err:label) \
+	(Type.demo/Array.err) \
+	((Type.demo/Array.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.ArrayType.err == . +cmd=cat (%trenn) \
+	(Type.demo/ArrayType.err:label) \
+	(Type.demo/ArrayType.err) \
+	((Type.demo/ArrayType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.AssigCoerce.err == . +cmd=cat (%trenn) \
+	(Type.demo/AssigCoerce.err:label) \
+	(Type.demo/AssigCoerce.err) \
+	((Type.demo/AssigCoerce.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.FctType.err == . +cmd=cat (%trenn) \
+	(Type.demo/FctType.err:label) \
+	(Type.demo/FctType.err) \
+	((Type.demo/FctType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Function.err == . +cmd=cat (%trenn) \
+	(Type.demo/Function.err:label) \
+	(Type.demo/Function.err) \
+	((Type.demo/Function.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Opr.err == . +cmd=cat (%trenn) \
+	(Type.demo/Opr.err:label) \
+	(Type.demo/Opr.err) \
+	((Type.demo/Opr.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Pointer.err == . +cmd=cat (%trenn) \
+	(Type.demo/Pointer.err:label) \
+	(Type.demo/Pointer.err) \
+	((Type.demo/Pointer.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.RecFct.err == . +cmd=cat (%trenn) \
+	(Type.demo/RecFct.err:label) \
+	(Type.demo/RecFct.err) \
+	((Type.demo/RecFct.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Record.err == . +cmd=cat (%trenn) \
+	(Type.demo/Record.err:label) \
+	(Type.demo/Record.err) \
+	((Type.demo/Record.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.RecPtr.err == . +cmd=cat (%trenn) \
+	(Type.demo/RecPtr.err:label) \
+	(Type.demo/RecPtr.err) \
+	((Type.demo/RecPtr.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.RecType.err == . +cmd=cat (%trenn) \
+	(Type.demo/RecType.err:label) \
+	(Type.demo/RecType.err) \
+	((Type.demo/RecType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.RecurType.err == . +cmd=cat (%trenn) \
+	(Type.demo/RecurType.err:label) \
+	(Type.demo/RecurType.err) \
+	((Type.demo/RecurType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Simple.err == . +cmd=cat (%trenn) \
+	(Type.demo/Simple.err:label) \
+	(Type.demo/Simple.err) \
+	((Type.demo/Simple.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Structequal.err == . +cmd=cat (%trenn) \
+	(Type.demo/Structequal.err:label) \
+	(Type.demo/Structequal.err) \
+	((Type.demo/Structequal.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.TypeDef.err == . +cmd=cat (%trenn) \
+	(Type.demo/TypeDef.err:label) \
+	(Type.demo/TypeDef.err) \
+	((Type.demo/TypeDef.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Union.err == . +cmd=cat (%trenn) \
+	(Type.demo/Union.err:label) \
+	(Type.demo/Union.err) \
+	((Type.demo/Union.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.UnionType.err == . +cmd=cat (%trenn) \
+	(Type.demo/UnionType.err:label) \
+	(Type.demo/UnionType.err) \
+	((Type.demo/UnionType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.VoidArr.err == . +cmd=cat (%trenn) \
+	(Type.demo/VoidArr.err:label) \
+	(Type.demo/VoidArr.err) \
+	((Type.demo/VoidArr.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout
+%Type.Apply.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Apply.ok:label) \
+	(Type.demo/Apply.ok) \
+	(Type.demo/Apply.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Apply.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Array.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Array.ok:label) \
+	(Type.demo/Array.ok) \
+	(Type.demo/Array.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Array.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.ArrayType.ok == . +cmd=cat (%trenn) \
+	(Type.demo/ArrayType.ok:label) \
+	(Type.demo/ArrayType.ok) \
+	(Type.demo/ArrayType.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/ArrayType.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.DiffCompNames.ok == . +cmd=cat (%trenn) \
+	(Type.demo/DiffCompNames.ok:label) \
+	(Type.demo/DiffCompNames.ok) \
+	(Type.demo/DiffCompNames.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/DiffCompNames.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.FctType.ok == . +cmd=cat (%trenn) \
+	(Type.demo/FctType.ok:label) \
+	(Type.demo/FctType.ok) \
+	(Type.demo/FctType.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/FctType.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Function.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Function.ok:label) \
+	(Type.demo/Function.ok) \
+	(Type.demo/Function.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Function.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Opr.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Opr.ok:label) \
+	(Type.demo/Opr.ok) \
+	(Type.demo/Opr.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Opr.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Pointer.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Pointer.ok:label) \
+	(Type.demo/Pointer.ok) \
+	(Type.demo/Pointer.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Pointer.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Record.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Record.ok:label) \
+	(Type.demo/Record.ok) \
+	(Type.demo/Record.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Record.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Simple.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Simple.ok:label) \
+	(Type.demo/Simple.ok) \
+	(Type.demo/Simple.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Simple.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.StrEqArr.ok == . +cmd=cat (%trenn) \
+	(Type.demo/StrEqArr.ok:label) \
+	(Type.demo/StrEqArr.ok) \
+	(Type.demo/StrEqArr.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/StrEqArr.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Structequal.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Structequal.ok:label) \
+	(Type.demo/Structequal.ok) \
+	(Type.demo/Structequal.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Structequal.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.TypeDef.ok == . +cmd=cat (%trenn) \
+	(Type.demo/TypeDef.ok:label) \
+	(Type.demo/TypeDef.ok) \
+	(Type.demo/TypeDef.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/TypeDef.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Union.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Union.ok:label) \
+	(Type.demo/Union.ok) \
+	(Type.demo/Union.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Union.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.UnionType.ok == . +cmd=cat (%trenn) \
+	(Type.demo/UnionType.ok:label) \
+	(Type.demo/UnionType.ok) \
+	(Type.demo/UnionType.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/UnionType.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+%Type.Voiden.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Voiden.ok:label) \
+	(Type.demo/Voiden.ok) \
+	(Type.demo/Voiden.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Voiden.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout
+
+
+Type.messages == . +cmd=cat \
+	(%Type.Array.err) \
+	(%Type.ArrayType.err) \
+	(%Type.AssigCoerce.err) \
+	(%Type.FctType.err) \
+	(%Type.Function.err) \
+	(%Type.Opr.err) \
+	(%Type.Pointer.err) \
+	(%Type.RecFct.err) \
+	(%Type.Record.err) \
+	(%Type.RecPtr.err) \
+	(%Type.RecType.err) \
+	(%Type.RecurType.err) \
+	(%Type.Simple.err) \
+	(%Type.Structequal.err) \
+	(%Type.TypeDef.err) \
+	(%Type.Union.err) \
+	(%Type.UnionType.err) \
+	(%Type.VoidArr.err) \
+	(%Type.Apply.ok) \
+	(%Type.Array.ok) \
+	(%Type.ArrayType.ok) \
+	(%Type.DiffCompNames.ok) \
+	(%Type.FctType.ok) \
+	(%Type.Function.ok) \
+	(%Type.Opr.ok) \
+	(%Type.Pointer.ok) \
+	(%Type.Record.ok) \
+	(%Type.Simple.ok) \
+	(%Type.StrEqArr.ok) \
+	(%Type.Structequal.ok) \
+	(%Type.TypeDef.ok) \
+	(%Type.Union.ok) \
+	(%Type.UnionType.ok) \
+	(%Type.Voiden.ok) \
+		:stdout
+
+%Type.test ! == <<EOF
+	Type.messages
+	! diff Type.messages Type.savedmessages > Type.diff || true
+	Type.diff >
+EOF
+
+%Type.testsok ! == <<EOF
+	Type.messages > Type.savedmessages
+EOF
+
+%all ! == <<EOF
+	%Type
+EOF
+
+%test ! == <<EOF
+	%Type.test
+	! if test -s Type.diff; then echo "*** Diffs encountered"; exit 1; else echo "All tests passed without diffs."; fi
+EOF
+
+%helpmsg == <<EOF
+Virtual targets, defined in the Odinfile manage processor generation and
+testing. The following targets can be used:
+
+TypeTutorial.fw.exe             Generates the Type-Examples
+
+%all                    Abbreviation of that.
+
+%Type.test              Tests the Processor 
+                        after bringing it up to date.
+
+%test                   Abbreviation of that.
+
+Additionally, the target %Type.testsok can be used to bring the
+compared test output, used in the ...test-targets for verification, up
+to date.  
+EOF
+
+%help ! == <<EOF
+        %helpmsg>
+EOF
+

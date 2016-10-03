@@ -1,0 +1,171 @@
+$CODE
+EOF=1.
+'-'=2.
+'+'=3.
+'&&'=4.
+'||'=5.
+'{'=6.
+'}'=7.
+'?'=8.
+':'=9.
+'=='=10.
+'='=11.
+Identifier=12.
+'/'=13.
+'*'=14.
+'%'=15.
+'!'=16.
+'float'=17.
+'int'=18.
+','=19.
+'('=20.
+')'=21.
+FloatDenotation=22.
+IntDenotation=23.
+'<'=24.
+'>'=25.
+';'=26.
+'break'=27.
+'continue'=28.
+'if'=29.
+'else'=30.
+'return'=31.
+'while'=32.
+$GRAMMAR
+<$START_SYMBOL>: Axiom .
+Addop: '-' &'_incrnodestack();_nst[_nsp]=MkMinusOp(&curpos);' .
+
+Addop: '+' &'_incrnodestack();_nst[_nsp]=MkPlusOp(&curpos);' .
+
+AmpAmp: '&&' &'_incrnodestack();_nst[_nsp]=MkAmpOp(&curpos);' .
+
+Axiom: Program &'_nst[_nsp]=Mkrule_1(&curpos, _nst[_nsp+0]);' .
+
+BarBar: '||' &'_incrnodestack();_nst[_nsp]=MkBarOp(&curpos);' .
+
+Comparison: Relation .
+
+Comparison: Relation EquEqu Relation &'_nsp -= 2;_nst[_nsp]=MkDyadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Compound: '{' StatementList '}' &'_nst[_nsp]=Mkrule_2(&curpos, _nst[_nsp+0]);' .
+
+Compound: '{' VariableDeclList StatementList '}' &'_nsp -= 1;_nst[_nsp]=Mkrule_3(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+Condition: Disjunction .
+
+Condition: Disjunction '?' Expression ':' Condition &'_nsp -= 2;_nst[_nsp]=MkCondExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Conjunction: Comparison .
+
+Conjunction: Conjunction AmpAmp Comparison &'_nsp -= 2;_nst[_nsp]=MkShortCircuitExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Disjunction: Conjunction .
+
+Disjunction: Disjunction BarBar Conjunction &'_nsp -= 2;_nst[_nsp]=MkShortCircuitExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+EquEqu: '==' &'_incrnodestack();_nst[_nsp]=MkEqualOp(&curpos);' .
+
+Expression: Condition .
+
+Expression: IdUse '=' Expression &'_nsp -= 1;_nst[_nsp]=MkAssignExp(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+Factor: Notop Factor &'_nsp -= 1;_nst[_nsp]=MkNotExp(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+Factor: Primary .
+
+Factor: Unop Factor &'_nsp -= 1;_nst[_nsp]=MkMonadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+IdDef: Identifier &'_incrnodestack();_nst[_nsp]=MkDefiningOccurrence(&curpos, MkIdentifier(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+IdUse: Identifier &'_incrnodestack();_nst[_nsp]=MkAppliedOccurrence(&curpos, MkIdentifier(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+Mulop: '/' &'_incrnodestack();_nst[_nsp]=MkSlashOp(&curpos);' .
+
+Mulop: '*' &'_incrnodestack();_nst[_nsp]=MkStarOp(&curpos);' .
+
+Mulop: '%' &'_incrnodestack();_nst[_nsp]=MkPercentOp(&curpos);' .
+
+Notop: '!' &'_incrnodestack();_nst[_nsp]=MkExclOp(&curpos);' .
+
+OptInitialize: &'_incrnodestack();_nst[_nsp]=Mkrule_4(&curpos);' .
+
+OptInitialize: '=' Expression &'_nst[_nsp]=MkInitialize(&curpos, _nst[_nsp+0]);' .
+
+ParameterDecl: 'float' IdDef &'_nst[_nsp]=MkFloatParDecl(&curpos, _nst[_nsp+0]);' .
+
+ParameterDecl: 'int' IdDef &'_nst[_nsp]=MkIntParDecl(&curpos, _nst[_nsp+0]);' .
+
+ParameterList: ParameterDecl &'_nst[_nsp]=Mkrule_5(&curpos, _nst[_nsp+0]);' .
+
+ParameterList: ParameterList ',' ParameterDecl &'_nsp -= 1;_nst[_nsp]=Mkrule_6(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+Primary: '(' Expression ')' .
+
+Primary: FloatDenotation &'_incrnodestack();_nst[_nsp]=MkFloatVal(&curpos, MkFloatDenotation(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+Primary: IdUse &'_nst[_nsp]=MkIdnVal(&curpos, _nst[_nsp+0]);' .
+
+Primary: IntDenotation &'_incrnodestack();_nst[_nsp]=MkIntVal(&curpos, MkIntDenotation(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+Program: ResultType Identifier '(' ParameterList ')' Compound &'_nsp -= 2;_nst[_nsp]=MkSource(&curpos, _nst[_nsp+0], MkIdentifier(&(T_POS(TokenStack(1))), T_ATTR(TokenStack(1))), _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Relation: Sum .
+
+Relation: Sum Relop Sum &'_nsp -= 2;_nst[_nsp]=MkDyadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Relop: '<' &'_incrnodestack();_nst[_nsp]=MkLessOp(&curpos);' .
+
+Relop: '>' &'_incrnodestack();_nst[_nsp]=MkGreaterOp(&curpos);' .
+
+ResultType: 'float' &'_incrnodestack();_nst[_nsp]=MkFloatResult(&curpos);' .
+
+ResultType: 'int' &'_incrnodestack();_nst[_nsp]=MkIntResult(&curpos);' .
+
+Statement: ';' &'_incrnodestack();_nst[_nsp]=Mkrule_7(&curpos);' .
+
+Statement: 'break' ';' &'_incrnodestack();_nst[_nsp]=MkBreakStmt(&curpos);' .
+
+Statement: Compound &'_nst[_nsp]=Mkrule_8(&curpos, _nst[_nsp+0]);' .
+
+Statement: 'continue' ';' &'_incrnodestack();_nst[_nsp]=MkContinueStmt(&curpos);' .
+
+Statement: Expression ';' &'_nst[_nsp]=MkExprStmt(&curpos, _nst[_nsp+0]);' .
+
+Statement: 'if' '(' Expression ')' Statement $'else' &'_nsp -= 1;_nst[_nsp]=MkOneSided(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+Statement: 'if' '(' Expression ')' Statement 'else' Statement &'_nsp -= 2;_nst[_nsp]=MkTwoSided(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+StatementList: Statement &'_nst[_nsp]=Mkrule_9(&curpos, _nst[_nsp+0]);' .
+
+StatementList: StatementList Statement &'_nsp -= 1;_nst[_nsp]=Mkrule_10(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+Statement: 'return' Expression ';' &'_nst[_nsp]=MkReturnStmt(&curpos, _nst[_nsp+0]);' .
+
+Statement: WhileStmt &'_nst[_nsp]=Mkrule_11(&curpos, _nst[_nsp+0]);' .
+
+Sum: Sum Addop Term &'_nsp -= 2;_nst[_nsp]=MkDyadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Sum: Term .
+
+Term: Factor .
+
+Term: Term Mulop Factor &'_nsp -= 2;_nst[_nsp]=MkDyadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);' .
+
+Unop: '-' &'_incrnodestack();_nst[_nsp]=MkUMinusOp(&curpos);' .
+
+VariableDecl: IdDef OptInitialize &'_nsp -= 1;_nst[_nsp]=MkVarDecl(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+VariableDeclList: VariableDeclList VariableDeclSeg &'_nsp -= 1;_nst[_nsp]=Mkrule_12(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+VariableDeclList: VariableDeclSeg &'_nst[_nsp]=Mkrule_13(&curpos, _nst[_nsp+0]);' .
+
+VariableDeclSeg: 'float' VarIdList ';' &'_nst[_nsp]=MkFloatVar(&curpos, _nst[_nsp+0]);' .
+
+VariableDeclSeg: 'int' VarIdList ';' &'_nst[_nsp]=MkIntVar(&curpos, _nst[_nsp+0]);' .
+
+VarIdList: VariableDecl &'_nst[_nsp]=Mkrule_14(&curpos, _nst[_nsp+0]);' .
+
+VarIdList: VarIdList ',' VariableDecl &'_nsp -= 1;_nst[_nsp]=Mkrule_15(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+WhileStmt: 'while' '(' Expression ')' Statement &'_nsp -= 1;_nst[_nsp]=MkLoop(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+

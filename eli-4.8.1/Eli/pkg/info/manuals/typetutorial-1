@@ -1,0 +1,1255 @@
+This is Info file typetutorial, produced by Makeinfo-1.43 from the
+input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/typetutorial.tnf.
+
+
+File: typetutorial,  Node: Top,  Up: (dir)
+
+Tutorial on Type Analysis
+*************************
+
+$Revision: 2.2 $
+
+This tutorial is an introduction to the solution of the type analysis
+task required for programming language implementation.  It
+demonstrates many aspects of that task which may occur in programming
+languages or in special purpose languages.  The tutorial demonstrates
+how the components of Eli's type analysis library are used to solve
+that task.  The tutorial proceeds from basic aspects, such as
+declarations, typed entities, and overloaded operators, up to more
+complex aspects, such as type definitions and function types.
+
+This tutorial may be used for a practical introduction to the
+specification techniques for type analysis, or as a source of examples
+that show how to solve certain problems, or it may give hints for
+language design.
+
+This file is an executable specification. An analyzer for an
+artificial language can be generated from it. The language is kept
+small by restricting it to those constructs necessary to demonstrate
+type analysis tasks, not regarding its usability for programming.  The
+generated analyzer produces output that reports the result of type
+analysis, i.e. the type property of program entities, and error
+reports where examples violate specified language properties.
+
+The explanations in this tutorial assume that the reader is familiar
+with the use of the Eli system, with the use of its module library,
+and knows the general description of the type analysis task in the
+documentation of the module library.  Furthermore, the reader should
+be familiar with basic concepts of the name analysis task. Its
+solution is a precondition for type analysis. It is described only
+briefly in this text.  There is a separate tutorial for name analysis,
+see *Note Overview: (nametutorial)Top.
+
+Chapter 1 specifies a small language kernel and solves the name
+analysis and the type analysis task for it.  The focus of the
+following chapters is on type analysis only. The topics are arranged
+in an order such that no forward references are needed. Readers may
+stop reading at any section after section 7. They then have a complete
+description of the type analysis task for a language that has the
+constructs and concepts introduced so far. (It should even be possible
+to drop the rest of the specification and generate an analyzer for the
+language specified so far. This feature has not yet been tried.) For
+that purpose the example language is presented such that from section
+5 on each section augments the language by some new constructs and
+concepts that demonstrate the aspect of concern. Readers are asked for
+some patience until they see what the whole language is.
+
+* Menu:
+
+* Kernel:: Kernel Language.
+* Type:: Type Checking in Expressions.
+* Operator:: Operator Overloading.
+* Type1:: Type Conversion.
+* Record:: Record Types.
+* Array:: Array Types.
+* Union:: Union Types.
+* Functions:: Functions.
+* Type3:: Type Definitions.
+* Pointer:: Pointer Types.
+* Function:: Function Types.
+* Appendix:: Appendix: Syntax.
+
+Kernel Language
+
+* Basic:: Basic Scope Rules.
+* Types:: Types in the Kernel Language.
+
+Record Types
+
+* Type2:: Type Equivalence.
+* Qualified:: Qualified Names.
+
+Appendix: Syntax
+
+* Concrete:: Concrete Kernel Syntax.
+* Concrete1:: Concrete Expression Syntax.
+* Concrete2:: Concrete Function Syntax.
+* Other:: Other concrete productions.
+
+
+File: typetutorial,  Node: Kernel,  Next: Type,  Up: Top
+
+Kernel Language
+***************
+
+We start with a very simple kernel language where a `Program' is a
+`Block' consisting of `Declarations' for variables, assignment
+`Statements', and trivial `Expressions'.  Other forms of `Declarations'
+and `Expressions' are added to the grammar when the type analysis task
+is further refined.
+
+Here is a simple example program:
+
+SimpleExamp[1]==
+     begin
+       var   int i, int j,
+             bool b, bool c,
+             int r, int s;
+       i = 1;
+       b = true;
+       r = 3;
+       j = i;
+       c = b;
+       s = r;
+     end
+
+     This macro is attached to a product file.
+
+Structure and notation of the kernel language is specified here by its
+abstract syntax.
+
+Abstract Kernel syntax[2]==
+     RULE: Program      ::=    Block END;
+     RULE: Block        ::=    'begin' Declarations Statements 'end' END;
+     RULE: Declarations LISTOF Declaration END;
+     RULE: Statements   LISTOF Statement END;
+     
+     RULE: Declaration  ::=    'var' ObjDecls ';' END;
+     RULE: ObjDecls     LISTOF ObjDecl  END;
+     RULE: ObjDecl      ::=    TypeDenoter DefIdent END;
+     RULE: TypeDenoter  ::=    'int' END;
+     RULE: TypeDenoter  ::=    'bool' END;
+     RULE: TypeDenoter  ::=    'void' END;
+     
+     RULE: Statement    ::=    Variable '=' Expression ';' END;
+     RULE: Statement    ::=    Expression ';' END;
+     
+     RULE: Expression   ::=    Variable END;
+     RULE: Expression   ::=    IntNumber END;
+     RULE: Expression   ::=    'true' END;
+     RULE: Expression   ::=    'false' END;
+     
+     RULE: Variable     ::=    UseIdent END;
+     
+     RULE: DefIdent     ::=    Ident END;
+     RULE: UseIdent     ::=    Ident END;
+
+     This macro is invoked in definition 16.
+
+Concrete syntax rules corresponding to the `LISTOF' constructs above,
+specifications of the notations of identifiers, literals, and comments
+are given in the appendix.
+
+* Menu:
+
+* Basic:: Basic Scope Rules.
+* Types:: Types in the Kernel Language.
+
+
+File: typetutorial,  Node: Basic,  Next: Types,  Up: Kernel
+
+Basic Scope Rules
+=================
+
+The basic task of name analysis is consistent renaming.  For each
+identifier occurrence a `Key' attribute is computed such that it
+identifies a program entity uniquely.  `Key's are used to associate
+properties to program entities and to retrieve those properties in
+different contexts. The symbols `DefIdent', `UseIdent' distinguish
+defining and used identifier occurrences.
+
+The scope rules of a language determine how identifier occurrences are
+bound to program entities. We specify Algol-like scope rules for our
+language. The basic Algol-like scope rule reads:
+
+     A definition of an identifier `a' is valid in the whole smallest
+     range that encloses that definition, except inner ranges that
+     contain another definition of `a'.
+
+Hence, a definition in an outer range is hidden by a definition of the
+same identifier in an inner range for the whole inner range. 
+Identifiers may be applied before they are defined.
+
+We instantiate a library module that provides computations according
+to this scope rule:
+
+Basic scope module[3]==
+     $/Name/AlgScope.gnrc:inst
+
+     This macro is invoked in definition 14.
+
+The use of that module requires that every identifier occurrence has
+the attribute `Sym' representing the identifier encoding. Hence we
+specify a computational role `IdentOcc' that provides that attribute,
+and will be inherited by any identifier occurrence.
+
+The computational roles `RangeScope', `IdDefScope', and `IdUseEnv' are
+associated to the corresponding symbols of our grammar:
+
+Kernel scope rules[4]==
+     TERM Ident: int;
+     ATTR Sym: int;
+     CLASS SYMBOL IdentOcc COMPUTE SYNT.Sym = TERM; END;
+     
+     SYMBOL Block    INHERITS RangeScope END;
+     SYMBOL DefIdent INHERITS IdDefScope, IdentOcc END;
+     SYMBOL UseIdent INHERITS IdUseEnv, IdentOcc END;
+
+     This macro is invoked in definition 16.
+
+Erroneous programs may violate the scope rules in two different
+situations:
+
+   * A particular applied identifier occurrence has no valid defining
+     identifier occurrence.
+
+   * There are more than one defining identifier occurrences for the
+     same identifier in a range.
+
+Such situations shall be indicated by error messages.  Furthermore, we
+want every defining occurrence of a multiply defined identifier be
+marked by a message.
+
+For that purpose we use the following two library modules:
+
+Message support[5]==
+     $/Tech/Strings.specs
+     $/Prop/OccCnt.gnrc:inst
+
+     This macro is invoked in definition 14.
+
+The `Strings' module provides a function that concatenates a string
+and an identifier, to be used for error messages related to
+identifiers.
+
+The `OccCnt' module provides computations that count how often an
+entity identified by a `Key' attribute occurs in certain contexts, in
+our case in a defining context.
+
+The check for existence of a definition is directly obtained from the
+module role `ChkIdUse'.  For the second check we specify a
+computational role `ChkUnique' in order to reuse it for several
+grammar symbols.  If an entity occurs more than once in the `ChkUnique'
+context it is multiply defined.
+
+Scope checks[6]==
+     SYMBOL UseIdent INHERITS ChkIdUse END;
+     SYMBOL DefIdent INHERITS ChkUnique END;
+     
+     SYMBOL ChkUnique INHERITS Count, TotalCnt COMPUTE
+       IF (GT (THIS.TotalCnt, 1),
+       message (ERROR,
+                CatStrInd ("identifier is multiply defined: ",
+                           THIS.Sym),
+                0, COORDREF));
+     END;
+
+     This macro is invoked in definition 16.
+
+
+File: typetutorial,  Node: Types,  Prev: Basic,  Up: Kernel
+
+Types in the Kernel Language
+============================
+
+We use the modules `Typing' to support type analysis.  As we are going
+to specify structural equivalence for some kinds of type, we also
+instantiate the module `StructEquiv'.  Type analysis module[7]==
+     $/Type/Typing.gnrc:inst
+     $/Type/StructEquiv.fw
+
+     This macro is invoked in definition 14.
+
+So, we have to adopt the modules' strategy for representing types:
+
+Types are represented by `DefTableKey's.  Such a key is created for
+each program construct which denotes a particular type. The unknown
+type is represented by `NoKey'.
+
+The kernel language has only language defined types: `int', `bool',
+and `void'.  Each of them is represented by a known key.  Here we
+introduce only the key for the type `void', as the other types occur
+in operator specification, and are introduced there: Language defined
+type keys[8]==
+     voidType -> IsType = {1};
+
+     This macro is invoked in definition 15.
+
+All type keys have a property `IsType', which distinguishes them from
+keys representing entities other than types.  Usually the property
+`IsType' is not set or accessed by user specifications. Module roles
+ensure that they are properly used.
+
+The following computations set the `Type' attributes of the constructs
+that denote languge defined types: Language defined types[9]==
+     RULE: TypeDenoter ::= 'int'  COMPUTE TypeDenoter.Type = intType;  END;
+     RULE: TypeDenoter ::= 'bool' COMPUTE TypeDenoter.Type = boolType; END;
+     RULE: TypeDenoter ::= 'void' COMPUTE TypeDenoter.Type = voidType; END;
+
+     This macro is invoked in definition 16.
+
+Further forms of `TypeDenoter's for user defined types are specified
+in subsequent sections.
+
+We now consider a variable declaration as an example for a language
+construct that defines a typed entity.  In our language a variable
+declaration may define several variables. An `ObjDecl' states the type
+and the name for each of them.
+
+The pair of module roles `TypedDefinition' and `TypedDefId' supports
+the pattern of declaring typed entities: `ObjDecl' has the role
+`TypedDefinition', i.e. a construct that specifies the types of all
+`TypedDefId's in its subtree.  The attribute `ObjDecl.Type' has to be
+set appropriately:
+
+Declarations[10]==
+     SYMBOL ObjDecl INHERITS TypedDefinition END;
+     SYMBOL DefIdent INHERITS TypedDefId END;
+     
+     ATTR Type: DefTableKey;
+     
+     RULE: ObjDecl ::= TypeDenoter DefIdent COMPUTE
+       ObjDecl.Type = TypeDenoter.Type;
+     END;
+
+     This macro is invoked in definition 16.
+
+The module roles `TypedUseId' classifies a used name of a typed
+entity, and causes the attribute  `TypedUseId.Type' to be set to the
+type defined for that entity.  The corresponding check role issues
+messages if that classification is violated:
+
+Typed identifiers[11]==
+     SYMBOL UseIdent INHERITS TypedUseId, ChkTypedUseId END;
+
+     This macro is invoked in definition 16.
+
+In order to report some results of the type analysis we associate two
+properties to every type key: a string value `TypeName' and the number
+of the line where the type is introduced. (The latter will become more
+significant when user defined types are defined for the language.)
+
+Output properties[12]==
+     TypeName: CharPtr; "Strings.h"
+     TypeLine: int;
+     
+     intType ->  TypeName = {"int"};
+     boolType -> TypeName = {"bool"};
+     voidType -> TypeName = {"void"};
+     
+     intType ->  TypeLine = {0};
+     boolType -> TypeLine = {0};
+     voidType -> TypeLine = {0};
+
+     This macro is invoked in definition 15.
+
+For every used identifier the name and the defining line of its type
+is printed: Kernel output[13]==
+     SYMBOL UseIdent INHERITS PrtType END;
+     
+     SYMBOL PrtType COMPUTE
+       printf ("line %d Type %s defined in line %d\n", LINE,
+               GetTypeName (THIS.Type, "no type name"),
+               GetTypeLine (THIS.Type, 0))
+       <- INCLUDING  Program.TypeIsSet;
+     END;
+
+     This macro is invoked in definition 16.
+
+Kernel.specs[14]==
+     Basic scope module[3]
+     Message support[5]
+     Type analysis module[7]
+
+     This macro is attached to a product file.
+
+Kernel.pdl[15]==
+     Language defined type keys[8]
+     Output properties[12]
+
+     This macro is attached to a product file.
+
+Kernel.lido[16]==
+     Abstract Kernel syntax[2]
+     Kernel scope rules[4]
+     Scope checks[6]
+     Language defined types[9]
+     Declarations[10]
+     Typed identifiers[11]
+     Kernel output[13]
+
+     This macro is attached to a product file.
+
+Kernel.gla[17]==
+     Token notation[137]
+
+     This macro is attached to a product file.
+
+Kernel.con[18]==
+     Concrete Kernel syntax[135]
+
+     This macro is attached to a product file.
+
+Oprand.sym[19]==
+     Expression mapping[136]
+
+     This macro is attached to a product file.
+
+
+File: typetutorial,  Node: Type,  Next: Operator,  Prev: Kernel,  Up: Top
+
+Type Checking in Expressions
+****************************
+
+Expressions consist of typed names and literals and of operators that
+are applied to operands of certain types and yield a result of a
+certain type. Determining the types of expressions and checking the
+related type rules of the language is a significant subtask of type
+analysis. The type rules of languages are usually formulated in terms
+of concepts like "type of program constructs and entities", "signature
+of operators", "operator overloading", "type conversion". They have
+common and well-understood meaning for type analysis in general. Of
+course, the type rules established for a particular language
+instantiate these concepts in a specific way, e.g. define a specific
+set of operators with their signature and state which conversions may
+be applied to resolve overloading.
+
+Eli's type analysis module `Expression' provides reusable roles and
+computations to formulate the language specific instantiation of the
+concepts mentioned above. The type analysis for expressions is
+generated from such a specification.
+
+Expression module[20]==
+     $/Type/Expression.gnrc:inst
+
+     This macro is invoked in definition 26.
+
+This module carries out type analysis on expression trees, which are
+subtrees made up of connected expression nodes.  An expression node is
+a node representing a program construct that yields a value of a
+certain type.  The module provides the role `ExpressionSymbol' to be
+inherited by symbols that are expression symbols in that sense:
+
+Expression symbols[21]==
+     SYMBOL Expression INHERITS ExpressionSymbol END;
+     SYMBOL Variable INHERITS ExpressionSymbol END;
+
+     This macro is invoked in definition 27.
+
+The type of each expression node is characterized by two attributes:
+`ExpressionSymbol.Type' describes the type of the values this
+expression may yield. `ExpressionSymbol.Required' may be used to
+specify that the upper context requires the expression to yield a
+value of a particular type. As `ExpressionSymbol.Required' is used to
+compute `ExpressionSymbol.Type', it may not depend on the `Type'
+attribute.
+
+Expression symbols may occur in different contexts with respect to the
+structure of the expression trees: root contexts, leaf contexts, and
+inner contexts. The module provides different computational roles for
+those contexts. In leaf contexts the type of the leaf expression must
+be stated using the computational role `PrimaryContext'.  Note that in
+the third role below the expression node is a leaf with respect to the
+expression tree, although the context has one subtree, that is not an
+expression node:
+
+Leaf nodes[22]==
+     RULE: Expression ::= IntNumber COMPUTE
+       PrimaryContext (Expression, intType);
+     END;
+     
+     RULE: Expression ::= 'true' COMPUTE
+       PrimaryContext (Expression, boolType);
+     END;
+     
+     RULE: Expression ::= 'false' COMPUTE
+       PrimaryContext (Expression, boolType);
+     END;
+     
+     RULE: Variable ::= UseIdent COMPUTE
+       PrimaryContext (Variable, UseIdent.Type);
+     END;
+
+     This macro is invoked in definition 27.
+
+The computational role `TransferContext' is used for contexts that
+have an expression node on the left-hand side and one on the
+right-hand side, and both have the same type properties:
+
+Transfer nodes[23]==
+     RULE: Expression ::= Variable COMPUTE
+       TransferContext (Expression, Variable);
+     END;
+
+     This macro is invoked in definition 27.
+
+The node representing an assignment statement has two children.  Both
+are considered as roots of expression trees.  For the `Variable' the
+assignment context does not impose any restriction on its type; hence,
+nothing is specified for that node:
+
+Assignment[24]==
+     RULE: Statement ::= Variable '=' Expression ';' COMPUTE
+       RootContext (Variable.Type, , Expression);
+       Indication (assignOpr);
+     END;
+
+     This macro is invoked in definition 27.
+
+`explain the purpose of assignOpr??'
+
+The `Expression' on the right-hand side of the assignment is required
+to yield a value of the type of the `Variable'.
+
+An expression in the role of a statement is another example for a root
+context. On execution the value of the expression   will just be
+discarded. Hence, there is no requirement on its type to be stated or
+checked: Expression statement[25]==
+     RULE: Statement ::=  Expression ';' END;
+
+     This macro is invoked in definition 27.
+
+Expression.specs[26]==
+     Expression module[20]
+
+     This macro is attached to a product file.
+
+Expression.lido[27]==
+     Expression symbols[21]
+     Leaf nodes[22]
+     Transfer nodes[23]
+     Assignment[24]
+     Expression statement[25]
+
+     This macro is attached to a product file.
+
+
+File: typetutorial,  Node: Operator,  Next: Type1,  Prev: Type,  Up: Top
+
+Operator Overloading
+********************
+
+We here extend our language by binary and unary operators in order to
+demonstrate type analysis for expressions with overloaded operators.
+
+Operators are overloaded in our language, i.e. an operator symbol like
+`+' may denote one of several operations, e.g. integer addition or
+logical disjunktion (or).  The distinction is made using the types of
+the operands.  Hence, we associate to an operator symbol like `+' an
+indication like `AddOp', which represents a set of operators, like
+`iAdd, bOr'.
+
+Each of the following rules associates an indication name to the
+attribute `BinOpr.Indic'. (The indication names are introduced below.)
+
+Operator Indications[28]==
+     RULE: BinOpr ::= '+' COMPUTE BinOpr.Indic = AddOp; END;
+     RULE: BinOpr ::= '-' COMPUTE BinOpr.Indic = SubOp; END;
+     RULE: BinOpr ::= '*' COMPUTE BinOpr.Indic = MulOp; END;
+     RULE: BinOpr ::= '/' COMPUTE BinOpr.Indic = DivOp; END;
+     
+     RULE: UnOpr ::= '+' COMPUTE UnOpr.Indic = PlusOp; END;
+     RULE: UnOpr ::= '-' COMPUTE UnOpr.Indic = NegOp; END;
+     RULE: UnOpr ::= '!' COMPUTE UnOpr.Indic = NotOp; END;
+
+     This macro is invoked in definition 34.
+
+For each of the operator indications at least one meaning is specified
+by one of the following operation descriptions.  The first component
+of an operation description relates it to an indication representing
+the operator symbol, the second component is a unique name for the
+operation.
+
+The third component describes the signature of the operation expressed
+in terms of keys for predefined types.
+
+All names are automatically introduced as names for definition table
+keys. They may be used explicitly in specifications to distinguish
+operations, or to associate properties to them.
+
+For each language defined operator its signature is specified;
+operators that have the same signature can be comprised in one
+definition: Oil Operation Signatures[29]==
+     OPER
+       iAdd, iSub, iMul, iDiv (intType,intType):intType;
+       iPlus, iNeg            (intType):intType;
+       bOr, bAnd              (boolType,boolType):boolType;
+       bNot                   (boolType):boolType;
+
+     This macro is invoked in definition 35.
+
+Next, we associate a set of operators to every indication.  Here, for
+example the `AddOp' is overloaded with three operations: `iAdd' and
+`bOr', and `MulOp' is overloaded with `iMul' and `bAnd'. All other
+indications have singleton sets: Oil indications[30]==
+     INDICATION
+       AddOp:  iAdd, bOr;
+       SubOp:  iSub;
+       MulOp:  iMul, bAnd;
+       DivOp:  iDiv;
+       PlusOp: iPlus;
+       NegOp:  iNeg;
+       NotOp:  bNot;
+
+     This macro is invoked in definition 35.
+
+The operation signatures as given above require operands to have
+exactly those types. E.g. `a + 1' is illegal if `a' was of type
+`boolType'.
+
+Type analysis for binary and unary expressions needs to compute the
+`Type' attribute of the whole expression (the result type of the
+operation) and the required types of operands (the corresponding type
+of the signature of the identified target operator).  The latter may
+differ from the type of the operand in case that coercion is applied. 
+We obtain these computations from the `Expression' module.
+
+Operator contexts[31]==
+     SYMBOL BinOpr INHERITS OperatorSymbol END;
+     
+     RULE: Expression ::= Expression BinOpr Expression COMPUTE
+       DyadicContext (Expression[1], BinOpr, Expression[2], Expression[3]);
+     END;
+     
+     SYMBOL UnOpr INHERITS OperatorSymbol END;
+     RULE: Expression ::= UnOpr Expression COMPUTE
+       MonadicContext (Expression[1], UnOpr, Expression[2]);
+     END;
+
+     This macro is invoked in definition 36.
+
+The key of the identified operation could be obtained by `BinOpr.Oper'
+or `UnOpr.Oper', if necessary e.g.  for translation.
+
+Operator.con[32]==
+     Expression syntax[138]
+
+     This macro is attached to a product file.
+
+Operator.sym[33]==
+     Operators[139]
+
+     This macro is attached to a product file.
+
+Indications.lido[34]==
+     Operator Indications[28]
+
+     This macro is attached to a product file.
+
+Operator.oil[35]==
+     Oil Operation Signatures[29]
+     Oil indications[30]
+
+     This macro is attached to a product file.
+
+Operator.lido[36]==
+     Operator contexts[31]
+
+     This macro is attached to a product file.
+
+
+File: typetutorial,  Node: Type1,  Next: Record,  Prev: Operator,  Up: Top
+
+Type Conversion
+***************
+
+This chapter introduces type conversion to our language. We say, a
+value of a certain type `t' is converted into a corresponding value of
+some other type `s'. For example, a conversion of integral values into
+floating point values is defined for many languages.  We consider such
+a conversion be executed by a conversion operator that has a signature
+`t->s'. We call a conversion `coercion' if the application of a
+conversion operator is determined implicitly, for example in the
+process of overloading resolution.
+
+In order to demonstrate type conversion, we extend our language by a
+second arithmetic type for floating point values an call the type
+`real'.
+
+The type representation is extended by:
+
+Real type representation[37]==
+     realType -> TypeName = {"real"};
+
+     This macro is invoked in definition 44.
+
+We add a new type denoter to the language
+
+Real type denoter[38]==
+     RULE: TypeDenoter ::= 'real' COMPUTE TypeDenoter.Type = realType; END;
+
+     This macro is invoked in definition 45.
+
+and introduce literals of type `real':
+
+Real literals[39]==
+     RULE: Expression ::= RealNumber COMPUTE
+       PrimaryContext (Expression, realType);
+     END;
+
+     This macro is invoked in definition 45.
+
+Now we extend the set of operator specifications by operators for the
+type `real':
+
+Real operators[40]==
+     OPER
+       rAdd  (realType,realType):realType;
+       rSub  (realType,realType):realType;
+       rMul  (realType,realType):realType;
+       rDiv  (realType,realType):realType;
+     
+       rPlus (realType):realType;
+       rNeg  (realType):realType;
+
+     This macro is invoked in definition 46.
+
+We specify that the `real' operators overload the corresponding ones
+for the type `int' by adding them to the corresponding indication:
+
+Real operators overload[41]==
+     INDICATION
+       AddOp: rAdd;
+       SubOp: rSub;
+       MulOp: rMul;
+       DivOp: rDiv;
+       PlusOp: rPlus;
+       NegOp:  rNeg;
+
+     This macro is invoked in definition 46.
+
+Now we want to allow that overloading resolution takes conversion from
+`int' to `real' into account. That means in an expression like `a + 1'
+the operand types need not match exactly to the signature of a `+'
+operator, if coercion could convert the operand types into those
+required by the signature. In particular `a' could have type `real'.
+In that case coercion from `int' to `real' would be applied to `1' in
+order to use the `real' addition operator.
+
+So, we define such a coercion operator `iTor' with the signature
+`int->real':
+
+Predefined Coercion Operator[42]==
+     COERCION
+       iTor (intType):realType;
+
+     This macro is invoked in definition 46.
+
+Finally we reconsider the type rules for assignments. We want to allow
+to have an `int' variable on the left-hand side and a `real'
+expression on the right, say `i = 3.4;' That means the result of the
+expression is to be converted to an `int' value, which is then
+assigned to the variable.
+
+For that purpose we specify a conversion operator `rToi' with the
+signature `real->int', and associate it to the operator indication
+`assignOpr' which has been introduced for the assignment context:
+
+Assignment Conversion Operator[43]==
+     OPER
+        rToi (realType):intType;
+     INDICATION
+       assignOpr: rToi;
+
+     This macro is invoked in definition 46.
+
+Note: The conversion operator `rToi' is only applicable in a context
+that is chacterized by the indication `assignOpr', it is NOT applied
+as a coercion when resolving overloaded operators.
+
+RealType.pdl[44]==
+     Real type representation[37]
+
+     This macro is attached to a product file.
+
+RealType.lido[45]==
+     Real type denoter[38]
+     Real literals[39]
+
+     This macro is attached to a product file.
+
+OperatorExtensions.oil[46]==
+     Real operators[40]
+     Real operators overload[41]
+     Assignment Conversion Operator[43]
+     Predefined Coercion Operator[42]
+
+     This macro is attached to a product file.
+
+
+File: typetutorial,  Node: Record,  Next: Array,  Prev: Type1,  Up: Top
+
+Record Types
+************
+
+We introduce record types to our language in order to demonstrate how
+composed user defined types are specified.  A record type is described
+by a sequence of field declarations which have the same semantics as
+`ObjDecls' used in variable declarations. A notation for variables is
+added that allows to select a component from a variable.
+
+Here is an example program that defines and uses a record variable
+named `rv':
+
+RecordExamp[47]==
+     begin
+       var   record int i, bool b, real r end rv;
+       var   int j, bool c, real s;
+       j = rv.i;
+       c = rv.b;
+       s = rv.r;
+     end
+
+     This macro is attached to a product file.
+
+The following productions describe record types and component
+selections:
+
+Abstract record syntax[48]==
+     RULE: TypeDenoter ::= RecordType END;
+     RULE: RecordType  ::='record' ObjDecls 'end' END;
+     
+     RULE: Variable    ::= Variable '.' SelectIdent END;
+     RULE: SelectIdent ::= Ident END;
+
+     This macro is invoked in definition 62.
+
+An abstraction of a record type is the sequence of component
+definitions, each consisting of a type and a name.  A `RecordType'
+describes such a type abstraction.  It inherits the module role
+`TypeDenotation':
+
+Type denoter[49]==
+     SYMBOL RecordType INHERITS TypeDenotation END;
+     
+     RULE: TypeDenoter ::= RecordType COMPUTE
+       TypeDenoter.Type = RecordType.Type;
+     END;
+     
+     RULE: RecordType ::= 'record' ObjDecls 'end' COMPUTE
+       .GotTypeProp =
+         ORDER (
+           ResetTypeName (RecordType.Type, "record..."),
+           ResetTypeLine (RecordType.Type, LINE));
+     
+     END;
+
+     This macro is invoked in definition 62.
+
+The last computation above sets the properties `TypeName' and
+`TypeLine' of the created type for the facility of printing type
+information we have introduced above.  The attribute `GotTypeProp'
+represents that state. It is used in another instance of this RULE
+context below, where further properties are associated to the type.
+
+The construct for component selection, e.g. `rv.i', demonstrate a
+typical situation where type ananlysis and name analysis depend on
+each other: The type of the variable `rv' has a property, which is a
+scope; it is used to lookup a binding for the selector `i'.  Hence we
+instantiate the name analysis module `ScopeProp', which supports
+scopes as properties. It is adapted to the needs of type analysis by
+the module `TypeDep': Scope property module[50]==
+     $/Name/ScopeProp.gnrc:inst
+     $/Type/TypeDep.gnrc:inst
+
+     This macro is invoked in definition 60.
+
+The role `ExportRange' of the `ScopeProp' module specifies the
+`RecordType' to be a range that may export its bindings to be lookedup
+outside of that range, e.g. in component selections.  Its scope of
+component definitions is associated to the `ScopeKey'. The `ScopeKey'
+is specified to be the type key created by the role `TypeDenotation':
+Range[51]==
+     SYMBOL RecordType INHERITS ExportRange COMPUTE
+       SYNT.ScopeKey = SYNT.Type;
+     END;
+
+     This macro is invoked in definition 62.
+
+* Menu:
+
+* Type2:: Type Equivalence.
+* Qualified:: Qualified Names.
+
+
+File: typetutorial,  Node: Type2,  Next: Qualified,  Up: Record
+
+Type Equivalence
+================
+
+As record types have non-trivial abstractions, the question arises
+under which circumstances two record types are the same. Consider the
+following examples: RecordEqual[52]==
+     begin
+       var   record int i, bool b, real r end va;
+       var   record int i, bool b, real r end vc;
+       var   record int j, bool k, real l end vd;
+       va = vc;
+       va = vd;
+     end
+
+     This macro is attached to a product file.
+
+Typing rules of the language have to state which of the variables
+`va', `vc', and `vd' have the same type, and which of the assignments
+are correct.  Languages usually apply one of two different typing
+rules:
+
+The first rule states that every occurrence of a description of a
+record type (or of any other compound type) introduces a type
+different from all other types, even from those that are equally
+notated. Under this rule all three variables have different types. 
+This rule is called name equivalence, because every type description
+gets a name - explicitly or implicitly, as in this example -and types
+are distingushed by their names.
+
+The second rule states that two types are equal if their abstractions
+are equal; i.e. the sequences of components coincide elementwise in
+the types and names of components.  In the above example `va' and `vc'
+have the same types. This rule is called structural equivalence.
+
+In case of structural equivalence the type rules of the language may
+define precisely, which type properties belong to the abstraction that
+is used to determine type equivalence.  For example, the rule could
+state that the types of the record components belong to the
+abstraction, and the names of the components do not belong to it. In
+that case all four variables of the above example would have the same
+type.
+
+The type analysis library provides a module `StructEquiv' that extends
+the `Typing' module, such that any of these these variants of
+equivalence rules can be supported: Struct equiv module[53]==
+     $/Type/StructEquiv.fw
+
+     This macro is invoked in definition 60.
+
+In this language stuctural equivalence is specified, such that for
+record types only the sequence of types, but not the names of
+components are relevant for structural type equivalence.
+
+The following computation in the RULE context of a record type
+denotation specifies which properties of a record type are considered
+for the check whether two types are equivalent.  Here we state two
+rules:
+
+First, a record type can only be equivalent to a type that is a record
+type, too. For that purpose we introduce a key `RecordClass' that
+identifies the category of record types: Type class[54]==
+     RecordClass;
+
+     This macro is invoked in definition 61.
+
+The rule computation `AddTypeToBlock' below associates every record
+type to that initial set `RecordClass'. The equivalence check will
+then partition it as far as necessary into subsets of record types
+which are equivalent.
+
+Second, two record types `s' and `t' are equivalent if the types of
+their fields are pairwise equivalent in the given order. For that
+purpose a list of component types is computed `ObjDecls.OpndTypeList'
+using roles of the `LidoList' module and given as the third argument
+of `AddTypeToBlock'.
+
+Beyond type equivalence, our language requires further checks on type
+structures. So, the list of component types is also associated as a
+property `ComponentTypes' to the type key by a function
+`VResetComponentTypes' that yields the property value as its result:
+Component type property[55]==
+     ComponentTypes: DefTableKeyList [VReset]; "DefTableKeyList.h"
+
+     This macro is invoked in definition 61.
+
+PropLib module[56]==
+     $/Prop/PropLib.fw
+
+     This macro is invoked in definition 60.
+
+The attribute `RecordType.GotType' states that all properties of the
+record type are associated to its key. Hence, a dependence on the
+attribute `GotTypeProp' computed above is added here.  Type equality
+computation[57]==
+     RULE: RecordType ::= 'record' ObjDecls 'end' COMPUTE
+       RecordType.GotType =
+           AddTypeToBlock
+              (RecordType.Type, RecordClass,
+               VResetComponentTypes (RecordType.Type, ObjDecls.OpndTypeList))
+           <- .GotTypeProp;
+     END;
+     
+     SYMBOL ObjDecls INHERITS OpndTypeListRoot END;
+     SYMBOL ObjDecl INHERITS OpndTypeListElem END;
+     
+     SYMBOL ObjDecl COMPUTE
+       SYNT.DefTableKeyElem = SYNT.Type;
+     END;
+
+     This macro is invoked in definition 62.
+
+
+File: typetutorial,  Node: Qualified,  Prev: Type2,  Up: Record
+
+Qualified Names
+===============
+
+A record component selection of the form `Variable.SelectIdent' is
+considered as a qualified name: The `SelectIdent' is an applied
+occurrence of an identifier that is qualified by the `Variable'
+preceeding the dot. Its type is expected to have a scope property that
+has a binding for that identifier.
+
+`Variable.SelectIdent' is a leaf of an expression tree. Its type is
+determined by the type of `SelectIdent', as specified using the
+`PrimaryContext' computation.  Selection expression[58]==
+     RULE: Variable ::= Variable '.' SelectIdent COMPUTE
+       PrimaryContext (Variable[1], SelectIdent.Type);
+     END;
+
+     This macro is invoked in definition 62.
+
+`SelectIdent' combines roles of name analysis and type analysis: It is
+a qualified identifier use (`QualIdUse'). The role requires that the
+attribute `SelectIdent.ScopeKey' is computed.  A module computation
+accesses the (`Scope' property from it, stores it in
+`SelectIdent.Scope' and searches a binding for the identifier; the
+role `ChkQualIdUse' gives a message if the scope exists, but no
+binding is found.  A user computation is required to check whether the
+type has a scope property.
+
+The roles `TypedUseId', `ChkTypedUseId', and `PrtType' determine,
+check, and output the type of the `SelectIdent'.
+
+Selection types[59]==
+     SYMBOL SelectIdent INHERITS
+             QualIdUse, ChkQualIdUse, IdentOcc,
+             TypedUseId, ChkTypedUseId, PrtType
+     END;
+     
+     RULE: Variable ::= Variable '.' SelectIdent COMPUTE
+       SelectIdent.ScopeKey = Variable[2].Type;
+     
+       IF (EQ (SelectIdent.Scope, NoEnv),
+       message (ERROR, "selection applied to non record type",
+                0, COORDREF));
+     END;
+
+     This macro is invoked in definition 62.
+
+Record.specs[60]==
+     Scope property module[50]
+     Struct equiv module[53]
+     PropLib module[56]
+
+     This macro is attached to a product file.
+
+Record.pdl[61]==
+     Type class[54]
+     Component type property[55]
+
+     This macro is attached to a product file.
+
+Record.lido[62]==
+     Abstract record syntax[48]
+     Type denoter[49]
+     Range[51]
+     Type equality computation[57]
+     Selection expression[58]
+     Selection types[59]
+
+     This macro is attached to a product file.
+
+
+File: typetutorial,  Node: Array,  Next: Union,  Prev: Record,  Up: Top
+
+Array Types
+***********
+
+We now add array types to our language. We specify that two array
+types are structural equivalent if their element types are equivalent,
+and if the types have the same number of elements.  Hence, type
+equivalence is not only determined by the component types.
+
+Here is an example program that uses arrays, records, and type
+definitions in combination:
+
+ArrayExamp[63]==
+     begin
+       var   int k;
+       var   int[5] pi, int[5] pj;
+       var   record int i, bool b, real[3] r end [2] rv;
+       type  bool[4] bt;
+       var   bt vbt, bt wbt;
+       var   real[6][7] m;
+       pi[1] = k;
+       vbt = wbt;
+       rv[2].b = true;
+       rv[1].r[k] = 3.2;
+       m[1][k] = 1.0;
+     end
+
+     This macro is attached to a product file.
+
+We extend the grammar by notations for array type denoters and by
+indexed variables:
+
+Abstract array syntax[64]==
+     RULE: TypeDenoter ::= ArrayType END;
+     RULE: ArrayType   ::= TypeDenoter '[' ArraySize ']' END;
+     RULE: ArraySize   ::= IntNumber END;
+     
+     RULE: Variable    ::= Variable '[' Expression ']' END;
+
+     This macro is invoked in definition 74.
+
+In this language an array type is described by two properties: the
+element type and the number of elements: Array type properties[65]==
+     ElemType:       DefTableKey;
+     ElemNo:         int;
+
+     This macro is invoked in definition 73.
+
+In the context of a type denotation for an `ArrayType' the two
+properties of the type are set together with the `TypeName' to
+indicate the array type in the output.  The attribute `GotTypeProp'
+specifies that these properties are set.
+
+Array type denoter[66]==
+     SYMBOL ArrayType INHERITS TypeDenotation END;
+     
+     RULE: ArrayType ::= TypeDenoter '[' ArraySize ']' COMPUTE
+       .GotTypeProp =
+          ORDER
+            (ResetElemType (ArrayType.Type, TypeDenoter.Type),
+             ResetElemNo   (ArrayType.Type, ArraySize.Size),
+             ResetTypeName (ArrayType.Type, "array..."),
+             ResetTypeLine (ArrayType.Type, LINE));
+     END;
+     
+     TERM IntNumber: int;
+     
+     SYMBOL ArraySize: Size: int;
+     
+     RULE: ArraySize ::= IntNumber COMPUTE
+       ArraySize.Size = IntNumber;
+     END;
+     
+     RULE: TypeDenoter ::= ArrayType COMPUTE
+       TypeDenoter.Type = ArrayType.Type;
+     END;
+
+     This macro is invoked in definition 74.
+
+Finally it is stated that array elements of type void are not allowed.
+We can not simply compare `voidType' and the type key, because
+`TypeDenoter.Type' not necessarily contains the final element type; it
+may be related to it.  The final type key is obtained by the function
+`FinalType' in a state that is characterized by `INCLUDING
+Program.TypeIsSet'.  Array check element type [67]==
+     RULE: ArrayType ::= TypeDenoter '[' ArraySize ']' COMPUTE
+       IF (EQ (FinalType (TypeDenoter.Type), voidType),
+           message (ERROR, "Wrong element type", 0, COORDREF))
+       <- INCLUDING Program.TypeIsSet;
+     END;
+
+     This macro is invoked in definition 74.
+
+Two array types are equivalent if and only if their element types are
+equivalent and if they have the same number of elements.
+
+In order to state the equivalence with respect to array sizes, we
+establish a bijective mapping between any array size that occurs in
+the program and a definition table key.  That number mapping is
+computed by turning an array size into an identifier and then binding
+that identifier in a scope that serves just this purpose.
+
+Size mapping[68]==
+     $/Tech/MakeName.gnrc:inst
+     $/Name/CScope.gnrc+instance=SizeMap :inst
+
+     This macro is invoked in definition 72.
+
+Array size mapping[69]==
+     SYMBOL ArraySize INHERITS SizeMapIdDefScope END;
+     
+     RULE: ArraySize ::= IntNumber COMPUTE
+       ArraySize.Sym = IdnNumb (0, IntNumber);
+     END;
+
+     This macro is invoked in definition 74.
+
+The `ArraySize.Key' serves as the initial set of potential equivalent
+array types; it is used as the second argument of the RULE computation
+`AddTypeToBlock'.  The type of the element may contribute to type
+equivalence of array types. Hence, the third argument of
+`AddTypeToBlock' is a singleton list, which is also set as the
+`ComponentTypes' property of the array type:
+
+Array type equivalence[70]==
+     RULE: ArrayType ::= TypeDenoter '[' ArraySize ']' COMPUTE
+       ArrayType.GotType =
+         AddTypeToBlock
+          (ArrayType.Type, ArraySize.Key,
+           VResetComponentTypes
+             (ArrayType.Type, SingleDefTableKeyList (TypeDenoter.Type)))
+         <- .GotTypeProp;
+     END;
+
+     This macro is invoked in definition 74.
+
+Type analysis in the context of an indexed variable is specified as a
+join of three expression subtrees: `Variable[1]', the left-hand side
+of the rule is a leaf of an expression tree.  `PrimaryContext' is used
+to state  that its type is the `ElemType' property of `Variable[2]'.
+
+`Variable[2]', which yields the array, is considered to be the root of
+an expression subtree. No requirements are specified. It has to be
+checked explicitly that its type is an array type.
+
+The subcript expression is a separate expression subtree.  It has to
+be of type int, as specified by its `Required' attribute.
+
+Indexing[71]==
+     RULE: Variable ::= Variable '[' Expression ']' COMPUTE
+       PrimaryContext
+         (Variable[1],
+          GetElemType (Variable[2].Type, NoKey));
+     
+       IF (EQ (GetElemType (Variable[2].Type, NoKey), NoKey),
+         message (ERROR, "Not an array", 0, COORDREF));
+     
+       Expression.Required = intType;
+     END;
+
+     This macro is invoked in definition 74.
+
+Array.specs[72]==
+     Size mapping[68]
+
+     This macro is attached to a product file.
+
+Array.pdl[73]==
+     Array type properties[65]
+
+     This macro is attached to a product file.
+
+Array.lido[74]==
+      Abstract array syntax[64]
+     Array type denoter[66]
+     Array check element type [67]
+     Array size mapping[69]
+     Array type equivalence[70]
+     Indexing[71]
+
+     This macro is attached to a product file.
+
+

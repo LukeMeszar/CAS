@@ -1,0 +1,4 @@
+%Type.Union.err == . +cmd=cat (%trenn) \
+	(Type.demo/Union.err:label) \
+	(Type.demo/Union.err) \
+	((Type.demo/Union.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

@@ -1,0 +1,3 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :phi*etaIncl) :maptool*mapFe
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :phi*etaIncl) :maptool*mapPgram
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :phi*etaIncl) :maptool*mapBe

@@ -1,0 +1,18 @@
+
+aspect tOilClassOpPtrList;
+
+"tOilClassOpList.h"
+
+operation get_tOilClassOpList_elems
+    "Return the tOilClassOp list elements"
+    (tOilClassOpList lst "The list") : str
+{
+    tOilClassOp elem;
+
+    for ( ; lst != NULLtOilClassOpList; lst = TailtOilClassOpList(lst)) {
+        elem = HeadtOilClassOpList(lst);
+        DAPTO_RESULT_PTR(elem);
+    }
+}
+
+end;

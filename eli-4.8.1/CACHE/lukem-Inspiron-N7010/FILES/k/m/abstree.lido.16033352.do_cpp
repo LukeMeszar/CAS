@@ -1,0 +1,217 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/k/m/abstree.lido.16028488.lidoEta"
+RULE rule_1:
+Axiom ::= Program
+END;
+
+RULE rule_2:
+Compound ::= '{' StatementList '}'
+END;
+
+RULE rule_3:
+Compound ::= '{' VariableDeclList StatementList '}'
+END;
+
+RULE rule_4:
+OptInitialize ::= 
+END;
+
+RULE rule_5:
+ParameterList ::= ParameterDecl
+END;
+
+RULE rule_6:
+ParameterList ::= ParameterList ',' ParameterDecl
+END;
+
+RULE rule_7:
+Statement ::= ';'
+END;
+
+RULE rule_8:
+Statement ::= Compound
+END;
+
+RULE rule_9:
+StatementList ::= Statement
+END;
+
+RULE rule_10:
+StatementList ::= StatementList Statement
+END;
+
+RULE rule_11:
+Statement ::= WhileStmt
+END;
+
+RULE rule_12:
+VariableDeclList ::= VariableDeclList VariableDeclSeg
+END;
+
+RULE rule_13:
+VariableDeclList ::= VariableDeclSeg
+END;
+
+RULE rule_14:
+VarIdList ::= VariableDecl
+END;
+
+RULE rule_15:
+VarIdList ::= VarIdList ',' VariableDecl
+END;
+
+RULE MonadicExp:
+Expression ::= Unop Expression
+END;
+
+RULE DyadicExp:
+Expression ::= Expression Binop Expression
+END;
+
+RULE IdnVal:
+Expression ::= IdUse
+END;
+
+RULE FloatVal:
+Expression ::= FloatDenotation
+END;
+
+RULE IntVal:
+Expression ::= IntDenotation
+END;
+
+RULE FloatParDecl:
+ParameterDecl ::= 'float' IdDef
+END;
+
+RULE IntParDecl:
+ParameterDecl ::= 'int' IdDef
+END;
+
+RULE Initialize:
+OptInitialize ::= '=' Expression
+END;
+
+RULE VarDecl:
+VariableDecl ::= IdDef OptInitialize
+END;
+
+RULE FloatVar:
+VariableDeclSeg ::= 'float' VarIdList ';'
+END;
+
+RULE IntVar:
+VariableDeclSeg ::= 'int' VarIdList ';'
+END;
+
+RULE UMinusOp:
+Unop ::= '-'
+END;
+
+RULE PercentOp:
+Binop ::= '%'
+END;
+
+RULE SlashOp:
+Binop ::= '/'
+END;
+
+RULE StarOp:
+Binop ::= '*'
+END;
+
+RULE MinusOp:
+Binop ::= '-'
+END;
+
+RULE PlusOp:
+Binop ::= '+'
+END;
+
+RULE GreaterOp:
+Binop ::= '>'
+END;
+
+RULE LessOp:
+Binop ::= '<'
+END;
+
+RULE EqualOp:
+Binop ::= '=='
+END;
+
+RULE ExclOp:
+Notop ::= '!'
+END;
+
+RULE NotExp:
+Expression ::= Notop Expression
+END;
+
+RULE AmpOp:
+ShortCircuitOp ::= '&&'
+END;
+
+RULE BarOp:
+ShortCircuitOp ::= '||'
+END;
+
+RULE ShortCircuitExp:
+Expression ::= Expression ShortCircuitOp Expression
+END;
+
+RULE CondExp:
+Expression ::= Expression '?' Expression ':' Expression
+END;
+
+RULE AssignExp:
+Expression ::= IdUse '=' Expression
+END;
+
+RULE ExprStmt:
+Statement ::= Expression ';'
+END;
+
+RULE FloatResult:
+ResultType ::= 'float'
+END;
+
+RULE IntResult:
+ResultType ::= 'int'
+END;
+
+RULE Source:
+Program ::= ResultType Identifier '(' ParameterList ')' Compound
+END;
+
+RULE ReturnStmt:
+Statement ::= 'return' Expression ';'
+END;
+
+RULE ContinueStmt:
+Statement ::= 'continue' ';'
+END;
+
+RULE BreakStmt:
+Statement ::= 'break' ';'
+END;
+
+RULE Loop:
+WhileStmt ::= 'while' '(' Expression ')' Statement
+END;
+
+RULE TwoSided:
+Statement ::= 'if' '(' Expression ')' Statement 'else' Statement
+END;
+
+RULE OneSided:
+Statement ::= 'if' '(' Expression ')' Statement
+END;
+
+RULE AppliedOccurrence:
+IdUse ::= Identifier
+END;
+
+RULE DefiningOccurrence:
+IdDef ::= Identifier
+END;
+

@@ -1,0 +1,377 @@
+
+
+SYMBOL OIL COMPUTE
+  SYNT.DataBaseBuilt=
+    CONSTITUENTS OpRef.bind
+      DEPENDS_ON (THIS.GotAllOperators, THIS.GotAllClasses);
+END;
+
+
+ATTR DoType: int;
+
+SYMBOL TypeName INHERITS FirstOcc, TypeFirstOcc COMPUTE
+  SYNT.GotIndex=ResetIndex(THIS.Key, THIS.Sym);
+  SYNT.DoType=
+    AND(
+      THIS.IsTypeFirstOcc,
+      EQ(GetTypeSet(THIS.Key,NULLDefTableKeyList),NULLDefTableKeyList));
+END;
+
+SYMBOL OperatorName INHERITS FirstOcc COMPUTE
+  SYNT.GotIndex=ResetIndex(THIS.Key, THIS.Sym);
+END;
+
+SYMBOL OIL COMPUTE
+  SYNT.GotAllNames=
+    CONSTITUENTS (TypeName.GotIndex,OperatorName.GotIndex);
+END;
+
+
+SYMBOL ClassParameter INHERITS FirstOcc END;
+
+
+CHAIN GotEarlierTypes: VOID;
+
+SYMBOL OIL COMPUTE
+  CHAINSTART HEAD.GotEarlierTypes="yes" DEPENDS_ON THIS.GotAllSets;
+  SYNT.GotAllTypes=TAIL.GotEarlierTypes;
+END;
+
+ATTR type: tOilType;
+
+SYMBOL TypeIdentifier INHERITS TypeName COMPUTE
+  SYNT.type=
+    ORDER(
+      IF(THIS.DoType, ResetType(THIS.Key, OilNewType(THIS.Key))),
+      GetType(THIS.Key,OilErrorType()))
+    DEPENDS_ON THIS.GotEarlierTypes;
+  THIS.GotEarlierTypes=SYNT.type;
+END;
+
+
+CHAIN GotEarlierSets: VOID;
+
+SYMBOL OIL COMPUTE
+  CHAINSTART HEAD.GotEarlierSets="yes";
+  SYNT.GotAllSets=TAIL.GotEarlierSets;
+END;
+
+ATTR set: DefTableKeyList;
+
+RULE: EquivalenceClass ::=  'SET' SetIdDef '=' xTypeExpr ';'
+COMPUTE
+  EquivalenceClass.GotEarlierSets=
+    ResetTypeSet(SetIdDef.Key, xTypeExpr.set)
+    DEPENDS_ON EquivalenceClass.GotEarlierSets;
+END;
+
+RULE: xTypeExpr ::=  SetIdUse
+COMPUTE
+  xTypeExpr.set=
+    GetTypeSet(SetIdUse.Key, NULLDefTableKeyList)
+    DEPENDS_ON xTypeExpr.GotEarlierSets;
+  xTypeExpr.GotEarlierSets=
+    IF(EQ(xTypeExpr.set, NULLDefTableKeyList),
+      message(ERROR, "Undefined set", 0, COORDREF));
+END;
+
+
+RULE: xTypeExpr ::=  xTypeExpr '+' xTypeExpr
+COMPUTE
+  xTypeExpr[1].set=Union(xTypeExpr[2].set, xTypeExpr[3].set);
+END;
+
+RULE: xTypeExpr ::=  xTypeExpr '-' xTypeExpr
+COMPUTE
+  xTypeExpr[1].set=Difference(xTypeExpr[2].set, xTypeExpr[3].set);
+END;
+
+RULE: xTypeExpr ::=  xTypeExpr '*' xTypeExpr
+COMPUTE
+  xTypeExpr[1].set=Intersection(xTypeExpr[2].set, xTypeExpr[3].set);
+END;
+
+
+CHAIN partialSet: DefTableKeyList;
+
+RULE: xTypeExpr ::= '[' xTypeList ']'
+COMPUTE
+  CHAINSTART xTypeList.partialSet=NULLDefTableKeyList;
+  xTypeExpr.set=xTypeList.partialSet;
+END;
+
+RULE: Singleton ::= TypeIdentifier
+COMPUTE
+  Singleton.partialSet=
+    AddToSetDefTableKeyList(
+      TypeIdentifier.Key,
+      Singleton.partialSet,
+      CmpKey);
+END;
+
+
+ATTR signature: tOilArgSig;
+
+RULE: Signature ::=
+COMPUTE
+  Signature.signature=OilNewArgSig();
+END;
+
+RULE: Signature ::=  SignatureElement
+COMPUTE
+  Signature.signature=OilAddArgSig(SignatureElement.type,OilNewArgSig());
+END;
+
+RULE: Signature ::=  SignatureElement ',' Signature
+COMPUTE
+  Signature[1].signature=
+    OilAddArgSig(SignatureElement.type,Signature[2].signature);
+END;
+
+RULE: Signature ::=  '(' Signature ')' ':' SignatureElement
+COMPUTE
+  Signature[1].signature=
+    OilAddArgSig(SignatureElement.type,Signature[2].signature);
+END;
+
+
+CHAIN SetNames: DefTableKeyList;
+
+ATTR SetBinding: SetBindingState;
+
+SYMBOL Binder COMPUTE
+  CHAINSTART HEAD.SetNames=
+    NULLDefTableKeyList DEPENDS_ON (
+      INCLUDING OIL.GotAllDefs,
+      INCLUDING OIL.GotAllTypes,
+      INCLUDING OIL.GotAllNames);
+  SYNT.SetBinding=
+    FirstSetBinding(TAIL.SetNames) DEPENDS_ON INCLUDING RangeUnique._GotUnique;
+  SYNT.Done=
+    UNTIL EQ(SYNT.SetBinding,NoSetBinding)
+    ITERATE SYNT.SetBinding=NextSetBinding(SYNT.SetBinding)
+    DEPENDS_ON THIS.defined;
+END;
+
+RULE: SignatureElement ::= TypeIdentifier
+COMPUTE
+  SignatureElement.Key=TypeIdentifier.Key;
+  SignatureElement.SetNames=
+    IF(
+      NE(
+        GetTypeSet(TypeIdentifier.Key,NULLDefTableKeyList),
+        NULLDefTableKeyList),
+      AddToSetDefTableKeyList(
+        TypeIdentifier.Key,
+        SignatureElement.SetNames,
+        CmpKey),
+      SignatureElement.SetNames);
+  SignatureElement.type=
+    GetType(
+      GetBoundType(TypeIdentifier.Key, TypeIdentifier.Key),
+      OilErrorType())
+    DEPENDS_ON INCLUDING Binder.SetBinding;
+END;
+
+SYMBOL Operator INHERITS Binder END;
+SYMBOL ClassOperator INHERITS Binder END;
+
+
+SYMBOL OpDef INHERITS OperatorName COMPUTE
+  SYNT.OpList=
+    ResetOperator(
+      THIS.Key,
+      ConstOilOpList(
+        OilNewOp(
+          THIS.Key,
+          INCLUDING Operator.signature,
+          INCLUDING Operator.cost),
+        GetOperator(THIS.Key,NULLtOilOpList)));
+END;
+
+
+SYMBOL OIL COMPUTE
+  SYNT.GotOperators=CONSTITUENTS Operator.Done;
+END;
+
+
+RULE: Oper ::= OpDefList Signature CostSpecification ';'
+COMPUTE
+  Oper.signature=Signature.signature;
+  Oper.cost=CostSpecification.cost;
+  Oper.defined=CONSTITUENTS OpDef.OpList;
+END;
+
+RULE: Coerce ::= OpDef Signature CostSpecification ';'
+COMPUTE
+  Coerce.signature=Signature.signature;
+  Coerce.cost=CostSpecification.cost;
+  Coerce.defined=OpDef.OpList;
+  AddCoercions(OpDef.Key) DEPENDS_ON Coerce.Done;
+END;
+
+SYMBOL Oper INHERITS Operator END;
+SYMBOL Coerce INHERITS Operator END;
+
+
+SYMBOL OIL COMPUTE
+  SYNT.GotAllOperators=THIS.GotOperators DEPENDS_ON THIS.GotClassOperators;
+END;
+
+ATTR indication: tOilOp;
+
+RULE: Indication ::= IndDef ':' OpRefList ';'
+COMPUTE
+  Indication.indication=
+    HeadtOilOpList(GetOperator(IndDef.Key, NULLtOilOpList))
+    DEPENDS_ON INCLUDING OIL.GotAllIndications;
+END;
+
+SYMBOL OpRef COMPUTE
+  SYNT.bind=
+    AddIdentifications(INCLUDING Indication.indication, THIS.Key)
+    DEPENDS_ON INCLUDING OIL.GotAllOperators;
+END;
+
+
+SYMBOL OIL COMPUTE
+  SYNT.GotAllIndications=CONSTITUENTS IndDef.OpList;
+END;
+
+SYMBOL IndDef INHERITS OperatorName COMPUTE
+  SYNT.OpList=
+    IF(EQ(GetOperator(THIS.Key,NULLtOilOpList),NULLtOilOpList),
+      ResetOperator(
+        THIS.Key,
+        ConstOilOpList(
+          OilNewOp(THIS.Key, OilNewArgSig(), 0),
+          NULLtOilOpList)))
+    DEPENDS_ON INCLUDING OIL.GotAllOperators;
+END;
+
+
+ATTR class: tOilClass;
+ATTR argNum: int;
+
+SYMBOL ClassName INHERITS OperatorName COMPUTE
+  SYNT.class=OilNewClass(THIS.Key, THIS.argNum);
+END;
+
+RULE: Class ::= 'CLASS' ClassName ClassBody
+COMPUTE
+  Class.class=ClassName.class;
+  ClassName.argNum=
+    CONSTITUENTS ClassParameter.Key WITH (int, ADD, ARGTOONE, ZERO);
+END;
+
+
+CHAIN GotEarlierBindings: VOID;
+
+SYMBOL Class COMPUTE
+  CHAINSTART HEAD.GotEarlierBindings=THIS.GotEarlierTypes;
+  THIS.GotEarlierTypes=TAIL.GotEarlierBindings;
+  SYNT.defined=TAIL.GotEarlierBindings;
+END;
+
+SYMBOL ClassName COMPUTE
+  THIS.GotEarlierBindings=
+    ResetBindingStatus(THIS.Key, eClassRef)
+      DEPENDS_ON THIS.GotEarlierBindings;
+END;
+
+SYMBOL OIL COMPUTE
+  SYNT.GotAllClasses=CONSTITUENTS Class.defined;
+END;
+
+
+CHAIN ParameterIndex: int;
+
+SYMBOL ClassParameters COMPUTE
+  CHAINSTART HEAD.ParameterIndex=1;
+  THIS.GotEarlierBindings=TAIL.ParameterIndex;
+END;
+
+SYMBOL ClassParameter COMPUTE
+  THIS.ParameterIndex=
+    ORDER(
+      ResetBindingStatus(THIS.Key, eElementRef),
+      ResetParameterIndex(THIS.Key, THIS.ParameterIndex),
+      ADD(THIS.ParameterIndex, 1));
+END;
+
+
+ATTR classSignature: tOilClassArgSig;
+
+RULE: ClassSignature ::=
+COMPUTE
+  ClassSignature.classSignature=OilNewClassSigArg();
+END;
+
+RULE: ClassSignature ::= SignatureElement
+COMPUTE
+  ClassSignature.classSignature=
+    OilAddClassSigArg(
+      GetBindingStatus(SignatureElement.Key,eSpecTypeRef),
+      SignatureElement.type,
+      GetParameterIndex(SignatureElement.Key,0),
+      OilNewClassSigArg());
+END;
+
+RULE: ClassSignature ::=  SignatureElement ',' ClassSignature
+COMPUTE
+  ClassSignature[1].classSignature=
+    OilAddClassSigArg(
+      GetBindingStatus(SignatureElement.Key,eSpecTypeRef),
+      SignatureElement.type,
+      GetParameterIndex(SignatureElement.Key,0),
+      ClassSignature[2].classSignature);
+END;
+
+RULE: ClassSignature ::=  '(' ClassSignature ')' ':' SignatureElement
+COMPUTE
+  ClassSignature[1].classSignature=
+    OilAddClassSigArg(
+      GetBindingStatus(SignatureElement.Key,eSpecTypeRef),
+      SignatureElement.type,
+      GetParameterIndex(SignatureElement.Key,0),
+      ClassSignature[2].classSignature);
+END;
+
+
+SYMBOL ClassOpDef INHERITS OperatorName COMPUTE
+  SYNT.classOpList=
+    ResetClassOperator(
+      THIS.Key,
+      ConstOilClassOpList(
+        OilAddClassOp(
+          THIS.Key,
+          INCLUDING ClassOperator.classSignature,
+          INCLUDING ClassOperator.cost,
+          INCLUDING Class.class),
+        GetClassOperator(THIS.Key,NULLtOilClassOpList)));
+END;
+
+
+SYMBOL OIL COMPUTE
+  SYNT.GotClassOperators=CONSTITUENTS ClassOperator.Done;
+END;
+
+
+RULE: ClassOper ::= ClassOpDefList ClassSignature CostSpecification ';'
+COMPUTE
+  ClassOper.classSignature=ClassSignature.classSignature;
+  ClassOper.cost=CostSpecification.cost;
+  ClassOper.defined=CONSTITUENTS ClassOpDef.classOpList;
+END;
+
+RULE: ClassCoerce ::= ClassOpDef ClassSignature CostSpecification ';'
+COMPUTE
+  ClassCoerce.classSignature=ClassSignature.classSignature;
+  ClassCoerce.cost=CostSpecification.cost;
+  ClassCoerce.defined=
+    AddClassCoercions(ClassOpDef.Key) DEPENDS_ON ClassOpDef.classOpList;
+END;
+
+SYMBOL ClassOper INHERITS ClassOperator END;
+SYMBOL ClassCoerce INHERITS ClassOperator END;
+

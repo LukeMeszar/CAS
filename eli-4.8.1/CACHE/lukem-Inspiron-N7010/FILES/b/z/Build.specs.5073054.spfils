@@ -1,0 +1,7 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oil.specs
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Output/LeafPtg.gnrc :inst
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc                :inst
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc +instance=Type :inst
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/PtrList.gnrc +instance=DefTableKey +referto=deftbl :inst
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/PtrList.gnrc +instance=tOilOp +referto=oiladt2 :inst
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/PtrList.gnrc +instance=tOilClassOp +referto=oiladt2 :inst

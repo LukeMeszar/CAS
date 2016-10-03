@@ -1,0 +1,69 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/k/k/c--lint.specs.15604001.mapBnf"
+Addop: '-'.
+Addop: '+'.
+AmpAmp: '&&'.
+Axiom: Program.
+BarBar: '||'.
+Comparison: Relation.
+Comparison: Relation EquEqu Relation.
+Compound: '{' StatementList '}'.
+Compound: '{' VariableDeclList StatementList '}'.
+Condition: Disjunction.
+Condition: Disjunction '?' Expression ':' Condition.
+Conjunction: Comparison.
+Conjunction: Conjunction AmpAmp Comparison.
+Disjunction: Conjunction.
+Disjunction: Disjunction BarBar Conjunction.
+EquEqu: '=='.
+Expression: Condition.
+Expression: IdUse '=' Expression.
+Factor: Notop Factor.
+Factor: Primary.
+Factor: Unop Factor.
+IdDef: Identifier.
+IdUse: Identifier.
+Mulop: '/'.
+Mulop: '*'.
+Mulop: '%'.
+Notop: '!'.
+OptInitialize: .
+OptInitialize: '=' Expression.
+ParameterDecl: 'float' IdDef.
+ParameterDecl: 'int' IdDef.
+ParameterList: ParameterDecl.
+ParameterList: ParameterList ',' ParameterDecl.
+Primary: '(' Expression ')'.
+Primary: FloatDenotation.
+Primary: IdUse.
+Primary: IntDenotation.
+Program: ResultType Identifier '(' ParameterList ')' Compound.
+Relation: Sum.
+Relation: Sum Relop Sum.
+Relop: '<'.
+Relop: '>'.
+ResultType: 'float'.
+ResultType: 'int'.
+Statement: ';'.
+Statement: 'break' ';'.
+Statement: Compound.
+Statement: 'continue' ';'.
+Statement: Expression ';'.
+Statement: 'if' '(' Expression ')' Statement $'else'.
+Statement: 'if' '(' Expression ')' Statement 'else' Statement.
+StatementList: Statement.
+StatementList: StatementList Statement.
+Statement: 'return' Expression ';'.
+Statement: WhileStmt.
+Sum: Sum Addop Term.
+Sum: Term.
+Term: Factor.
+Term: Term Mulop Factor.
+Unop: '-'.
+VariableDecl: IdDef OptInitialize.
+VariableDeclList: VariableDeclList VariableDeclSeg.
+VariableDeclList: VariableDeclSeg.
+VariableDeclSeg: 'float' VarIdList ';'.
+VariableDeclSeg: 'int' VarIdList ';'.
+VarIdList: VariableDecl.
+VarIdList: VarIdList ',' VariableDecl.
+WhileStmt: 'while' '(' Expression ')' Statement.

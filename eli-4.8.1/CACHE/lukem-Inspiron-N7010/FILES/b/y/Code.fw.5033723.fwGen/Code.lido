@@ -1,0 +1,123 @@
+
+
+SYMBOL OperatorId INHERITS OperFirstOcc, IdPtg END;
+SYMBOL OpDef INHERITS OperatorId END;
+SYMBOL IndDef INHERITS OperatorId END;
+
+
+SYMBOL TypeId INHERITS FirstOcc, IdPtg END;
+SYMBOL TypeIdentifier INHERITS TypeId END;
+SYMBOL ClassTypeIdentifier INHERITS TypeId END;
+
+
+SYMBOL OIL COMPUTE
+  SYNT.DumpInit=OilDumpInit("OilDecls.c") DEPENDS_ON THIS.DataBaseBuilt;
+END;
+
+
+SYMBOL TypeIdentifier COMPUTE
+  SYNT.dumped=
+    IF(THIS.DoType, OilDumpType(THIS.type)
+    DEPENDS_ON INCLUDING OIL.DumpInit);
+END;
+
+SYMBOL OperatorId COMPUTE
+  SYNT.dumped=
+    IF(THIS.IsFirstOcc, DumpOps(THIS.Key)
+    DEPENDS_ON INCLUDING OIL.DumpInit);
+END;
+
+SYMBOL ClassName COMPUTE
+  SYNT.dumped=
+    IF(THIS.IsFirstOcc, OilDumpClass(THIS.class)
+    DEPENDS_ON INCLUDING OIL.DumpInit);
+END;
+
+
+
+CHAIN KnownKeys: PTGNode;
+
+SYMBOL OIL COMPUTE
+  CHAINSTART HEAD.KnownKeys=PTGNULL DEPENDS_ON THIS.DataBaseBuilt;
+  PTGOutFile("OilDecls.pdl",PTGPDL(TAIL.KnownKeys));
+END;
+
+
+SYMBOL TypeId COMPUTE
+  THIS.KnownKeys=
+    IF(THIS.DoType,
+      PTGSeq(
+        THIS.KnownKeys,
+        PTGTypeProperty(PTGNumb(ID(THIS.type)),THIS.Ptg)),
+      THIS.KnownKeys);
+END;
+
+
+SYMBOL OperatorId COMPUTE
+  THIS.KnownKeys=
+    IF(THIS.IsOperFirstOcc,
+      PTGSeq(
+        THIS.KnownKeys,
+        IF(OneOperator(THIS.Key),
+          PTGOperatorProperty(PTGNumb(ID(Operator(THIS.Key))),THIS.Ptg),
+          PTGMultOperator(THIS.Ptg))),
+      THIS.KnownKeys);
+END;
+
+
+SYMBOL ClassName INHERITS IdPtg COMPUTE
+  THIS.KnownKeys=
+    IF(THIS.IsFirstOcc,
+      PTGSeq(
+        THIS.KnownKeys,
+        PTGClassProperty(PTGNumb(ID(THIS.class)),THIS.Ptg)),
+      THIS.KnownKeys);
+END;
+
+
+SYMBOL ClassOpDef INHERITS IdPtg COMPUTE
+  THIS.KnownKeys=
+    IF(THIS.IsFirstOcc,
+      PTGSeq(THIS.KnownKeys,PTGMultOperator(THIS.Ptg)),
+      THIS.KnownKeys);
+END;
+
+
+
+CHAIN OilExterns: PTGNode;
+
+SYMBOL OIL COMPUTE
+  CHAINSTART HEAD.OilExterns=PTGNULL DEPENDS_ON THIS.DataBaseBuilt;
+  PTGOutFile("OilDecls.h",PTGHeader(TAIL.OilExterns));
+END;
+
+
+SYMBOL TypeId COMPUTE
+  THIS.OilExterns=
+    IF(THIS.DoType,
+      PTGSeq(
+        THIS.OilExterns,
+        PTGTypeSymbol(PTGNumb(ID(THIS.type)),THIS.Ptg)),
+      THIS.OilExterns);
+END;
+
+
+SYMBOL OperatorId COMPUTE
+  THIS.OilExterns=
+    IF(AND(THIS.IsOperFirstOcc,OneOperator(THIS.Key)),
+      PTGSeq(
+        THIS.OilExterns,
+        PTGOperatorSymbol(PTGNumb(ID(Operator(THIS.Key))),THIS.Ptg)),
+      THIS.OilExterns);
+END;
+
+
+SYMBOL ClassName INHERITS IdPtg COMPUTE
+  THIS.OilExterns=
+    IF(THIS.IsFirstOcc,
+      PTGSeq(
+        THIS.OilExterns,
+        PTGClassSymbol(PTGNumb(ID(THIS.class)),THIS.Ptg)),
+      THIS.OilExterns);
+END;
+

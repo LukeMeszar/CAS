@@ -1,0 +1,2 @@
+
+if (TypeRootEnv == NoEnv) TypeRootEnv = NewEnv ();

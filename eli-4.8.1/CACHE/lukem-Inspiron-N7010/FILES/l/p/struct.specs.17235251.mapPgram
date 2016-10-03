@@ -1,0 +1,459 @@
+<$START_SYMBOL>: pascal .
+addop: '-' .
+
+addop: '+' .
+
+addop: 'or' .
+
+alternative:  .
+
+alternative: caseselectors ':' LbRange .
+
+alternatives: alternative .
+
+alternatives: alternatives ';' alternative .
+
+argument: Expression .
+
+argument: Expression ':' Expression .
+
+argument: Expression ':' Expression ':' Expression .
+
+argumentlist: argument .
+
+argumentlist: argumentlist ',' argument .
+
+Arguments:  .
+
+Arguments: '(' argumentlist ')' .
+
+arrayvariable: arrayvariable subscr1 .
+
+arrayvariable: Variable '[' .
+
+Body: InnerRange .
+
+Call: IdUse Arguments .
+
+caseselector: Constant .
+
+caseselectors: caseselector .
+
+caseselectors: caseselectors ',' caseselector .
+
+Compound: 'begin' StmtSeq 'end' .
+
+compoundstmt: 'begin' LbRangeSeq 'end' .
+
+Constant: '-' constantid .
+
+Constant: '+' constantid .
+
+ConstantDefinition: IdDef '=' Constant ';' .
+
+constantid: IdUse .
+
+Constant: IdUse .
+
+Constant: String .
+
+Constant: '-' unsignednumber .
+
+Constant: '+' unsignednumber .
+
+Constant: unsignednumber .
+
+ConstDefList: ConstantDefinition .
+
+ConstDefList: ConstDefList ConstantDefinition .
+
+ConstPart:  .
+
+ConstPart: 'const' ConstDefList .
+
+DeclPart0: LabelPart ConstPart .
+
+DeclPart1: DeclPart0 TypePart .
+
+DeclPart2: DeclPart1 VarPart .
+
+DeclPart: DeclPart2 RoutinePart .
+
+elementtype: nextindextype elementtype .
+
+elementtype: ']' 'of' Type .
+
+EnumConst: IdDef .
+
+Enumeration: EnumConst .
+
+Enumeration: Enumeration ',' EnumConst .
+
+EnumRange: Enumeration .
+
+Expression: simpleexpression .
+
+Expression: simpleexpression relop simpleexpression .
+
+factor: '(' Expression ')' .
+
+factor: fncall .
+
+factor: Integer .
+
+factor: 'nil' .
+
+factor: Real .
+
+factor: '[' SetElements ']' .
+
+factor: String .
+
+factor: unot factor .
+
+factor: Variable .
+
+FieldIdDef: IdDef .
+
+FieldIdList: FieldIdDef .
+
+FieldIdList: FieldIdList ',' FieldIdDef .
+
+FieldList:  .
+
+FieldList: FixedPart ';' .
+
+FieldList: FixedPart .
+
+FieldList: FixedPart ';' VariantPart .
+
+FieldList: VariantPart .
+
+FixedPart: FixedPart ';' recordsection .
+
+FixedPart: recordsection .
+
+fnargs: '(' argumentlist ')' .
+
+fncall: IdUse fnargs .
+
+FuncBody: FuncSignature ';' Body .
+
+FuncData: Identifier FuncBody .
+
+FuncData: Identifier ProcBody .
+
+FuncSignature: '(' ParameterSectionSeq ')' ':' ParmTypeId .
+
+FuncSignature: ':' ParmTypeId .
+
+FuncTypeSig: ':' ParmTypeId .
+
+FuncTypeSig: '(' ptypesectionSeq ')' ':' ParmTypeId .
+
+FwdFuncData: Identifier FuncSignature ';' Identifier .
+
+FwdProcData: Identifier ProcSignature ';' Identifier .
+
+IdDef: Identifier .
+
+IdUse: Identifier .
+
+indextype: 'array' '[' simpletype .
+
+InnerRange: DeclPart Compound .
+
+LabelPart:  .
+
+LabelPart: 'label' LblDeclList ';' .
+
+LbDef: Integer .
+
+LblDecl: Integer .
+
+LblDeclList: LblDecl .
+
+LblDeclList: LblDeclList LblTail .
+
+LblTail: ',' LblDecl .
+
+LbRangeSeq: StmtSeq .
+
+LbRange: Statement .
+
+LbRangeStmt: LbRange .
+
+LbRangeStmtSeq: LbRangeSeq .
+
+LbUse: Integer .
+
+mulop: '/' .
+
+mulop: '*' .
+
+mulop: 'and' .
+
+mulop: 'div' .
+
+mulop: 'mod' .
+
+nextindextype: ',' simpletype .
+
+outer: Identifier ProgramParameters ';' DeclPart Compound .
+
+OuterRange: 'program' outer '.' .
+
+OuterRoutine: OuterRange .
+
+ParameterSection: 'function' ParmIdDef FuncTypeSig .
+
+ParameterSection: ParmDefList ':' ParmTypeId .
+
+ParameterSection: 'procedure' ParmIdDef ProcTypeSig .
+
+ParameterSectionSeq: ParameterSection .
+
+ParameterSectionSeq: ParameterSectionSeq ';' ParameterSection .
+
+ParameterSection: 'var' ParmDefList ':' ParmTypeId .
+
+ParmDefList: ParmDef .
+
+ParmDefList: ParmDefList ',' ParmDef .
+
+ParmDef: ParmIdDef .
+
+ParmIdDef: Identifier .
+
+ParmTypeId: Identifier .
+
+pascal: OuterRoutine .
+
+PgmParList: PgmParList ',' PgmParm .
+
+PgmParList: PgmParm .
+
+PgmParm: Identifier .
+
+ProcBody: ProcSignature ';' Body .
+
+ProcData: Identifier ProcBody .
+
+ProcSignature:  .
+
+ProcSignature: '(' ParameterSectionSeq ')' .
+
+ProcTypeSig:  .
+
+ProcTypeSig: '(' ptypesectionSeq ')' .
+
+ProgramParameters:  .
+
+ProgramParameters: '(' PgmParList ')' .
+
+ptypesection: 'function' ParmIdDef FuncTypeSig .
+
+ptypesection: ParmDefList ':' ParmTypeId .
+
+ptypesection: 'procedure' ParmIdDef ProcTypeSig .
+
+ptypesectionSeq: ptypesection .
+
+ptypesectionSeq: ptypesectionSeq ';' ptypesection .
+
+ptypesection: 'var' ParmDefList ':' ParmTypeId .
+
+recordsection: FieldIdList ':' Type .
+
+recordtype: FieldList .
+
+relop: '<=' .
+
+relop: '<>' .
+
+relop: '<' .
+
+relop: '=' .
+
+relop: '>=' .
+
+relop: '>' .
+
+relop: 'in' .
+
+RoutineDeclaration: 'function' FuncData ';' .
+
+RoutineDeclaration: 'function' FwdFuncData ';' .
+
+RoutineDeclaration: 'procedure' FwdProcData ';' .
+
+RoutineDeclaration: 'procedure' ProcData ';' .
+
+RoutineList: RoutineDeclaration .
+
+RoutineList: RoutineList RoutineDeclaration .
+
+RoutinePart:  .
+
+RoutinePart: RoutineList .
+
+SetElements:  .
+
+SetElements: setexpressionList .
+
+setexpression: Expression .
+
+setexpression: Expression '..' Expression .
+
+setexpressionList: setexpression .
+
+setexpressionList: setexpressionList ',' setexpression .
+
+simpleexpression: unsignedexpression .
+
+simpleexpression: uplusminus simpleexpression .
+
+simpletype: Constant '..' Constant .
+
+simpletype: '(' EnumRange ')' .
+
+simpletype: IdUse .
+
+Statement: LbDef ':' unlabelledstatement .
+
+Statement: unlabelledstatement .
+
+StmtSeq: Statement .
+
+StmtSeq: StmtSeq ';' Statement .
+
+structuredtype: 'file' 'of' Type .
+
+structuredtype: indextype elementtype .
+
+structuredtype: 'record' recordtype 'end' .
+
+structuredtype: 'set' 'of' Type .
+
+subscr1: Expression ',' .
+
+subscript: Expression ']' .
+
+Tag: FieldIdDef ':' TypeId .
+
+Tag: TypeId .
+
+term: factor .
+
+term: term mulop factor .
+
+TypeDefinition: IdDef '=' Type ';' .
+
+TypeDefList: TypeDefinition .
+
+TypeDefList: TypeDefList TypeDefinition .
+
+TypeId: IdUse .
+
+Type: 'packed' structuredtype .
+
+TypePart:  .
+
+TypePart: 'Type' TypeDefList .
+
+Type: simpletype .
+
+Type: structuredtype .
+
+Type: '^' TypeId .
+
+unlabelledstatement:  .
+
+unlabelledstatement: Call .
+
+unlabelledstatement: 'case' Expression 'of' alternatives 'end' .
+
+unlabelledstatement: compoundstmt .
+
+unlabelledstatement: 'for' IdUse ':=' Expression 'downto' Expression 'do' LbRangeStmt .
+
+unlabelledstatement: 'for' IdUse ':=' Expression 'to' Expression 'do' LbRangeStmt .
+
+unlabelledstatement: 'goto' LbUse .
+
+unlabelledstatement: 'if' Expression 'then' LbRangeStmt $'else' .
+
+unlabelledstatement: 'if' Expression 'then' LbRangeStmt 'else' LbRangeStmt .
+
+unlabelledstatement: 'repeat' LbRangeStmtSeq 'until' Expression .
+
+unlabelledstatement: Variable ':=' Expression .
+
+unlabelledstatement: 'while' Expression 'do' LbRangeStmt .
+
+unlabelledstatement: withexpr withbody .
+
+unot: 'not' .
+
+unsignedexpression: term .
+
+unsignedexpression: unsignedexpression addop term .
+
+unsignednumber: Integer .
+
+unsignednumber: Real .
+
+uplusminus: '-' .
+
+uplusminus: '+' .
+
+VarDeclList: VarDeclList VariableDeclaration .
+
+VarDeclList: VariableDeclaration .
+
+VarDef: IdDef .
+
+VarDefList: VarDef .
+
+VarDefList: VarDefList ',' VarDef .
+
+Variable: arrayvariable subscript .
+
+VariableDeclaration: VarDefList ':' Type ';' .
+
+Variable: IdUse .
+
+Variable: Variable '^' .
+
+Variable: Variable '.' Identifier .
+
+VariantList: Variant .
+
+VariantList: VariantList ';' Variant .
+
+VariantPart: 'case' Tag 'of' VariantTail .
+
+VariantSelector: Constant .
+
+VariantSelectorList: VariantSelector .
+
+VariantSelectorList: VariantSelectorList ',' VariantSelector .
+
+VariantTail: VariantList ';' .
+
+VariantTail: VariantList .
+
+Variant: VariantSelectorList ':' '(' FieldList ')' .
+
+VarPart:  .
+
+VarPart: 'var' VarDeclList .
+
+withbody: 'do' LbRangeStmt .
+
+withbody: withexpnest withbody .
+
+withexpnest: ',' Variable .
+
+withexpr: 'with' Variable .
+

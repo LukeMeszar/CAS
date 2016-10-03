@@ -1,0 +1,3 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/parser/parser.reqmod
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/parser/mon_cprods.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :cola*colaBe +monitor +parser=cola

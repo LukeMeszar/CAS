@@ -1,0 +1,25 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/c/o/LeafPtg.lido.5592006.lidoEta"
+
+CLASS SYMBOL IdPtg, NumPtg, CStringPtg, PStringPtg:
+        Sym: int,       
+        Ptg: PTGNode;   
+
+CLASS SYMBOL IdPtg COMPUTE
+  INH.Ptg = PTGId (THIS.Sym);
+END;
+
+CLASS SYMBOL NumPtg COMPUTE
+  INH.Ptg = PTGNumb (THIS.Sym);
+END;
+
+CLASS SYMBOL CStringPtg COMPUTE
+  INH.Ptg = PTGCString (StringTable (THIS.Sym));
+END;
+
+CLASS SYMBOL CCharPtg COMPUTE
+  INH.Ptg = PTGCChar (THIS.Sym);
+END;
+
+CLASS SYMBOL PStringPtg COMPUTE
+  INH.Ptg = PTGPString (StringTable (THIS.Sym));
+END;

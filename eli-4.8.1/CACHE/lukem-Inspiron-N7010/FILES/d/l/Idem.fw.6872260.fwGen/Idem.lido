@@ -1,0 +1,73 @@
+
+
+SYMBOL xRoot COMPUTE
+  PTGOutFile(
+    "idem",
+    PTGFrame(
+      THIS.Prefix,
+      THIS.TreeGram,
+      TAIL.ClassComp,
+      TAIL.Inherit,
+      TAIL.PtgTemplates));
+END;
+
+
+SYMBOL xSymbol COMPUTE
+  THIS.PtgTemplates =
+    IF(AND(THIS.IsTerminal,AND(THIS.IsFirstOcc,GetNoPtgGiven(THIS.Key,1))),
+      PTGSeq(THIS.PtgTemplates,PTGTerm(INCLUDING xRoot.Prefix,THIS.Ptg)),
+      THIS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+ATTR Insert: PTGNode;
+
+RULE: Element ::= xLiteral
+COMPUTE
+  Element.Insert = PTGSeparator(PTGCStringId(FunnelWebEscape(xLiteral)));
+END;
+
+RULE: Element ::= xSymbol
+COMPUTE
+  Element.Insert =
+    IF(xSymbol.IsTerminal, PTGSeparator(Element.Mark), Element.Mark);
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE
+  Element.Insert = Element.Mark;
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  xProduction.PtgTemplates=
+    IF(GetNoPtgGiven(xRule.Key,1),
+      PTGSeq(
+        xRHS.PtgTemplates,
+        PTGPlainProd(
+          INCLUDING xRoot.Prefix,
+          StringTable(xRule.Sym),
+          xRHS CONSTITUENTS Element.Insert
+            WITH (PTGNode, PTGSepSeq, IDENTICAL, PTGNull))),
+      xRHS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.PtgTemplates=
+    PTGSeq(
+      Syms.PtgTemplates,
+      PTGTriple(
+        IF(GetNoPtgGiven(xRule.Key,1),
+          PTGListProd(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL),
+        IF(GetNoPtg2Given(xRule.Key,1),
+          PTGListProd2(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL),
+        IF(GetNoPtg1Given(xRule.Key,1),
+          PTGListProd1(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL)))
+    <- INCLUDING xRoot.GotProperties;
+END;
+

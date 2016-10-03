@@ -1,0 +1,13 @@
+%%
+
+
+
+([0-9]+|0[xX][0-9a-fA-F]*)	1; /* ext=2 sourceLine=5 */
+[a-zA-Z_][a-zA-Z_0-9]*	2; /* ext=3 sourceLine=6 */
+[a-zA-Z_][a-zA-Z_0-9]*	3; /* ext=4 sourceLine=7 */
+\"	4; /* ext=5 sourceLine=9 */
+'	5; /* ext=6 sourceLine=10 */
+(((([0-9]+\.[0-9]*)|(\.[0-9]+))((e|E)(\+|\-)?[0-9]+)?)|([0-9]+(e|E)(\+|\-)?[0-9]+))[fFlL]?	6; /* ext=7 sourceLine=11 */
+"/*"	7; /* ext=15001 sourceLine=12 */
+#\040[0-9]	8; /* ext=15001 sourceLine=14 */
+#[\040]*[a-zA-Z]	9; /* ext=15001 sourceLine=15 */

@@ -1,0 +1,1 @@
+gcc -c -I/home/lukem/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 if-ft.c

@@ -1,0 +1,53 @@
+RULE: Program LISTOF Assignment | Print END;
+
+ATTR val: int;
+
+RULE: Assignment ::= Defvar '=' Exp COMPUTE
+  Exp.Dep=Assignment.Dep;
+  Assignment.Dep=Resetval(Defvar.Key,Exp.val) <- Exp.Dep;
+END;
+
+RULE: Print ::= Exp COMPUTE
+  printf("%d\n", Exp.val);
+END;
+
+RULE: Exp ::= Exp '+' Exp COMPUTE
+  Exp[1].val = ADD(Exp[2].val,Exp[3].val);
+END;
+
+RULE: Exp ::= Exp '*' Exp COMPUTE
+  Exp[1].val = MUL(Exp[2].val,Exp[3].val);
+END;
+
+RULE: Exp ::= Exp '-' Exp COMPUTE
+  Exp[1].val = SUB(Exp[2].val,Exp[3].val);
+END;
+
+RULE: Exp ::= Exp '/' Exp COMPUTE
+  Exp[1].val = DIV(Exp[2].val,Exp[3].val);
+END;
+
+RULE: Exp ::= Usevar COMPUTE
+  Exp.val=Getval(Usevar.Key,0) <- Exp.Dep;
+  Exp.Dep=Exp.val;
+END;
+
+RULE: Exp ::= Num COMPUTE
+  Exp.val = Num;
+END;
+
+SYMBOL Defvar INHERITS IdDefScope END;
+RULE: Defvar ::= Var COMPUTE
+  Defvar.Sym=Var;
+END;
+
+SYMBOL Usevar INHERITS IdUseEnv END;
+RULE: Usevar ::= Var COMPUTE
+  Usevar.Sym=Var;
+END;
+
+CHAIN Dep: VOID;
+
+RULE: Program LISTOF Assignment | Print COMPUTE
+  CHAINSTART HEAD.Dep="yes";
+END;

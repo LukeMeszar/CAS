@@ -1,0 +1,1 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :eli*level_7_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Odinfile :odin*targets%Oil.specs :phi*etaIncl) :gla*gla_be/gla_be.specs :eli*level_0_specs_out :fw*fwProd

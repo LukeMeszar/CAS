@@ -1,0 +1,73 @@
+This is Info file syntax, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/parser/syntax.tnf.
+
+Indirect:
+syntax-1: 133
+syntax-2: 49254
+syntax-3: 97417
+
+Tag Table:
+(Indirect)
+Node: Top135
+Node: Phrases2961
+Node: Notation4476
+Node: Nonterminals5727
+Node: Terminals6386
+Node: EBNF7009
+Node: Slash8968
+Node: Square Brackets10023
+Node: Asterisk10896
+Node: Plus11870
+Node: Double Slash12487
+Node: Parentheses13132
+Node: Meaning14114
+Node: Precedence15374
+Node: Association16600
+Node: Scope18746
+Node: Mapping20516
+Node: Process22407
+Node: Chain Rules23622
+Node: LISTOF25161
+Node: Rule Matching28900
+Node: Completion30632
+Node: Map Files32785
+Node: Symbol Mapping33740
+Node: Rule Mapping35440
+Node: Mapping Chain Rules38346
+Node: BOTTOMUP39455
+Node: Hints41000
+Node: Patterns41536
+Node: Constraints42624
+Node: Abstraction44161
+Node: Expression45936
+Node: Con47474
+Node: Sym48704
+Node: Conflicts49256
+Node: Parsing50640
+Node: Shift-reduce53933
+Node: Reduce-reduce55618
+Node: Changes56873
+Node: Modifiers58211
+Node: Dollar59793
+Node: At60680
+Node: Actions61937
+Node: Error Recovery64523
+Node: Separators68355
+Node: Brackets69262
+Node: Skip Symbols70569
+Node: Foreign71903
+Node: Nodes73943
+Node: Evaluate76105
+Node: Overload80963
+Node: Chain nodes85989
+Node: Coordinates88030
+Node: Start89409
+Node: Span92340
+Node: Lists94497
+Node: Integration96586
+Node: Linked97419
+Node: Shared100787
+Node: Grammars101856
+Node: Index103600
+
+End Tag Table

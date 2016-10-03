@@ -1,0 +1,8 @@
+parser.c
+err.h
+gla.h
+gsdescr.h
+reparatur.h
+pgs_gen.h
+eliproto.h
+parsops.h

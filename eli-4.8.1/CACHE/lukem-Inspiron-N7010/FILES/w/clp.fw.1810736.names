@@ -1,0 +1,11 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/str.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :fw*fwGen/newaux.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :ptg*ptg_gen/ptg_gen.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :pdl*pdlGen/pdl_gen.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :maptool*mapBe/treestack.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :liga*ligaBe/nodecode.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :liga*ligaBe/treecon.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :liga*ligaBe/visitmap.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :liga*ligaBe/visitprocs.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :pgs*pgsGen/pgs_gen.c

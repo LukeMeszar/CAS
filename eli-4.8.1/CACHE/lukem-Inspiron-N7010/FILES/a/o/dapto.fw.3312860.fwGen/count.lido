@@ -1,0 +1,21 @@
+
+
+CHAIN argcount : int;
+
+RULE operation_sig1:
+        operation_sig ::= 'operation' iddef str operation_block body
+COMPUTE
+        CHAINSTART operation_block.argcount = 0;
+END;
+
+RULE operation_sig2:
+        operation_sig ::= 'operation' iddef str operation_block ':' typeid body
+COMPUTE
+        CHAINSTART operation_block.argcount = 0;
+END;
+
+SYMBOL param
+COMPUTE
+    THIS.argcount = ADD (THIS.argcount, 1);
+END;
+

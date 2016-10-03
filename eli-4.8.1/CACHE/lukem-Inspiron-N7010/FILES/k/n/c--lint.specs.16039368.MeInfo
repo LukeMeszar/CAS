@@ -1,0 +1,107 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+INCLUDING Expansion Summary
+============================
+   Number of different INCLUDINGs:   7
+   Number of new attributes:         47
+   Number of transport computations: 151
+
+CHAIN Expansion Summary
+========================
+   Number of expanded CHAINs:  1
+   Number of new attributes:   30
+   Number of new computations: 85
+
+CONSTITUENT(S) Expansion Summary
+=================================
+   Number of expanded CONSTITUENT(S)s:  2
+   Number of new attributes:            19
+   Number of new computations:          48
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           3
+
+MAX. NUMBER OF SYMBOLS IN RULE:        4
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:    41
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:  11
+
+NUMBER OF DEFINED SYMBOLS:            21
+
+NUMBER OF CONTEXT-FREE RULES:         54
+
+NUMBER OF ALL ATTRIBUTES:            127
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+
+
+
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :     5
+
+      -> 0 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :     4
+
+
+NUMBER OF TREE NODE COMPONENTS :    17
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->   9 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->   8 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :     0
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :     0
+    -> NEW NUMBER OF SEMANTIC RULES :     0
+
+

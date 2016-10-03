@@ -1,0 +1,15 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/a/t/PtgCommon.ptg.3490471.ptg"
+
+
+Id:             [PtgOutId $ int]
+AsIs:           $ string
+Numb:           $ int   
+CString:        [CPtgOutstr $ string]
+CChar:          [CPtgOutchar $ int]
+PString:        [PPtgOutstr $ string]
+
+
+Seq:            $ $
+CommaSeq:       $ { ", " } $
+Eol:            $ "\n"
+

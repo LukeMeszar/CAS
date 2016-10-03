@@ -1,0 +1,22 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/a/p/Type.pdl.3324164.pdl"
+"Strings.h"
+amp, send, type: CharPtr;
+
+standard: int;
+
+"ptg_gen.h"
+cast: PTGNode;
+
+intKey ->
+  send = {"_INT"},
+  standard = {1},
+  cast = {PTGNULL},
+  type = {"int"};
+
+strKey -> 
+  send = {"_STR"},
+  standard = {1},
+  cast = {PTGNULL},
+  type = {"const char *"},
+  amp = {""};
+

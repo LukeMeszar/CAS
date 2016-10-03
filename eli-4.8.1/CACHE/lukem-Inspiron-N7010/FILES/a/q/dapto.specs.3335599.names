@@ -1,0 +1,6 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/CScope.gnrc +instance=Type :lib*instGen/TypeCScope.fw +instance=Type
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/CScope.gnrc +instance=Export :lib*instGen/ExportCScope.fw +instance=Export
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/PreDefine.gnrc +instance=Type +referto=ident :lib*instGen/TypePreDef.fw +instance=Type +referto=ident
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/PreDefId.gnrc +instance=Type +referto=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/dapto/dapto.fw :fw*fwGen/Predef.d) :lib*instGen/TypePreDefId.fw +instance=Type +referto=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/dapto/dapto.fw :fw*fwGen/Predef.d)
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/Unique.gnrc +instance=Export :lib*instGen/ExportUnique.fw +instance=Export
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Output/PtgCommon.fw

@@ -1,0 +1,4 @@
+%Type.Structequal.err == . +cmd=cat (%trenn) \
+	(Type.demo/Structequal.err:label) \
+	(Type.demo/Structequal.err) \
+	((Type.demo/Structequal.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

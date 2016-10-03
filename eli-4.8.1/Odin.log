@@ -1,0 +1,201 @@
+Installing odin packages into /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin.
+Installing odin command into /home/user/Dropbox/CAS/eli-4.8.1/Odin/bin/odin.
+Installing odin man page into /home/user/Dropbox/CAS/eli-4.8.1/Odin/man/man1/odin.1.
+make[1]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin'
+(cd boot; make CC=gcc CFLAGS='-g -O2');
+make[2]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin/boot'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin/boot'
+(cd editline; make CC=gcc CFLAGS='-g -O2')
+make[2]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin/editline'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin/editline'
+make[1]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin'
+atac-1.12.6 package created.
+cc-1.12.6 package created.
+code-1.11.18 package created.
+config-1.17.11 package created.
+cpp-1.12.6 package created.
+cxx-1.12.6 package created.
+dbx-1.13.4 package created.
+ls: cannot access *.exe: No such file or directory
+dg-1.16.11 package created.
+f77-1.11.10 package created.
+idl-1.13.3 package created.
+lex-1.11.10 package created.
+lint-1.12.6 package created.
+misc-2.0.0 package created.
+odi-1.11.15 package created.
+odin-1.17.9 package created.
+prof-1.13.4 package created.
+roff-1.12.6 package created.
+run-1.13.4 package created.
+tex-3.0.0 package created.
+ls: cannot access *.exe: No such file or directory
+tregrm-1.15 package created.
+vc-1.11.19 package created.
+yacc-1.15 package created.
+New cache created at /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm.
+Clearing packages for /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/config/1.17.11.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/odin/1.17.9.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/vc/1.11.19.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/code/1.11.18.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/cc/1.12.6.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/cpp/1.12.6.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/cxx/1.12.6.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/odi/1.11.15.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/f77/1.11.10.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/lex/1.11.10.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/yacc/1.15.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/tregrm/1.15.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/dg/1.16.11.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/idl/1.13.3.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/prof/1.13.4.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/lint/1.12.6.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/misc/2.0.0.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/roff/1.12.6.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/tex/3.0.0.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/dbx/1.13.4.
+Installing package /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/run/1.13.4.
+Using bootstrap derivation graph.
+<> pkg/odin %odin-install !
+<>    %rbs-exe > $ODINPKG/rbs.exe
+sh
+scan_for_includes rbs.c
+scan_for_includes if-dir.c
+scan_for_includes if-err.c
+scan_for_includes if-file.c
+scan_for_includes if-symbol.c
+scan_for_includes if-io.c
+scan_for_includes if-system.c
+scan_for_includes if-sysdep.c
+scan_for_includes sys_param.h
+scan_for_includes GMC.h
+scan_for_includes FileName.h
+scan_for_includes Build.h
+scan_for_includes Str.h
+scan_for_includes SKind_.h
+scan_for_includes Sym.h
+scan_for_includes Macro.h
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-dir.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 rbs.c
+gcc -c -DNO_IPC -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-err.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-file.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-io.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-sysdep.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-symbol.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-system.c
+gcc -g -O2
+** Copied up-to-date value into: /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/odin/1.17.9/rbs.exe
+odin-1.17.9 package created (phase 2).
+Using bootstrap derivation graph.
+if [ "$ODINBOOT" = "" ] ; then echo " tregrm-yacc.c == tregrm.ygi :c +default=(tregrm-yacc.c.dflt) :boot "; fi
+<> pkg/tregrm %odin-install !
+<>    %exe > $ODINPKG/tregrm.exe
+scan_for_includes tg-anal.c
+scan_for_includes tg-main.c
+scan_for_includes tg-att.c
+scan_for_includes tg-dummy.c
+scan_for_includes tg-gen_grm.c
+scan_for_includes tg-gen_lex.c
+scan_for_includes tg-gen_nod.c
+scan_for_includes tg-nod_grm.c
+scan_for_includes tg-yylex.c
+scan_for_includes tregrm-yacc.c
+scan_for_includes if-nod.c
+scan_for_includes GMC.h
+scan_for_includes AttTyp_.h
+scan_for_includes Lex_.h
+scan_for_includes NodTyp_.h
+scan_for_includes MarkTyp_.h
+scan_for_includes Str.h
+tregrm.exe tregrm.ygi
+scan_for_includes TokTyp_.h
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/odin -g -O2 if-nod.c
+scan_for_includes Macro.h
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-main.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-anal.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-dummy.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-att.c
+** Verified up-to-date: /home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm/inc/NodTyp_.h
+** Verified up-to-date: /home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm/inc/TokTyp_.h
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-gen_nod.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tregrm-yacc.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-gen_lex.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-nod_grm.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-yylex.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/tregrm -g -O2 tg-gen_grm.c
+gcc -g -O2
+** Copied up-to-date value into: /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/tregrm/1.15/tregrm.exe
+tregrm.exe tregrm.ygi
+tregrm-1.15 package created (phase 2).
+Using bootstrap derivation graph.
+if [ "$ODINBOOT" = "" ] ; then echo " dg-yacc.c == drvgrf.ygi :c "; fi
+<> pkg/dg %odin-install !
+<>    %exe > $ODINPKG/dg.exe
+scan_for_includes dg-build.c
+scan_for_includes dg-analyze.c
+scan_for_includes dg-edg.c
+scan_for_includes dg-envvar.c
+scan_for_includes dg-filtyp.c
+scan_for_includes dg-main.c
+scan_for_includes dg-prmtyp.c
+scan_for_includes dg-tool.c
+scan_for_includes dg-valid.c
+scan_for_includes dg-yylex.c
+scan_for_includes dg-yacc.c
+scan_for_includes if-drvpth.c
+scan_for_includes if-ft.c
+scan_for_includes if-lvl.c
+scan_for_includes CastEdg.h
+scan_for_includes GMC.h
+scan_for_includes DPType_.h
+scan_for_includes DrvEdg.h
+scan_for_includes FilTyp.h
+scan_for_includes EqvEdg.h
+scan_for_includes FKind_.h
+scan_for_includes FTClass_.h
+scan_for_includes InpSpc.h
+scan_for_includes InpEdg.h
+scan_for_includes InpKind_.h
+scan_for_includes ISKind_.h
+scan_for_includes MemEdg.h
+scan_for_includes PrmTyp.h
+scan_for_includes Str.h
+scan_for_includes TClass_.h
+scan_for_includes Tool.h
+scan_for_includes DG_Version.h
+scan_for_includes Entry.h
+scan_for_includes NodTyp_.h
+scan_for_includes PrmTypLst.h
+scan_for_includes EnvVar.h
+scan_for_includes EnvVarLst.h
+scan_for_includes IOTyp.h
+scan_for_includes SrcTyp.h
+scan_for_includes DrvPth.h
+scan_for_includes TokTyp_.h
+scan_for_includes Lvl.h
+scan_for_includes Pos.h
+tregrm.exe drvgrf.ygi
+scan_for_includes PType_.h
+** Verified up-to-date: /home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg/inc/NodTyp_.h
+** Verified up-to-date: /home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg/inc/TokTyp_.h
+scan_for_includes Macro.h
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-analyze.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-build.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-edg.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-envvar.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-main.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-prmtyp.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-filtyp.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-tool.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-valid.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-yylex.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 dg-yacc.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 if-drvpth.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 if-ft.c
+gcc -c -I/home/user/Dropbox/CAS/eli-4.8.1/Odin/pkg/dg -g -O2 if-lvl.c
+gcc -g -O2
+** Copied up-to-date value into: /home/user/Dropbox/CAS/eli-4.8.1/Odin/lib/Odin/dg/1.16.11/dg.exe
+dg-1.16.11 package created (phase 2).

@@ -1,0 +1,9 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clplib.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/Unique.gnrc :lib*instGen/Unique.fw :fw*fwGen/Unique.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oil.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/PropLib.fw :fw*fwGen/CoordCmp.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/PropLib.fw :fw*fwGen/PropLib.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc :lib*instGen/FirstOcc.fw :fw*fwGen/FirstOcc.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc +instance=Type :lib*instGen/TypeFirstOcc.fw :fw*fwGen/TypeFirstOcc.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc +instance=Oper :lib*instGen/OperFirstOcc.fw :fw*fwGen/OperFirstOcc.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/oil/specs/Build.fw :fw*fwGen/Build.pdl

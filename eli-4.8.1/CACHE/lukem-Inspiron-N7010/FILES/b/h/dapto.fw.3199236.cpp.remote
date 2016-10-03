@@ -1,0 +1,28 @@
+INCLUDING Constructs:
+   
+   INCLUDING (spec.translationsset) propagate void
+      occurs in  (581, 5),  (579, 5)
+   INCLUDING (operation_block._GotExportUnique, spec._GotExportUnique, event_block._GotExportUnique) propagate void
+      occurs in  (311, 3)
+   INCLUDING (operation_block.ExportEnv, spec.ExportEnv, event_block.ExportEnv) propagate value 
+      occurs in  (271, 3),  (240, 3),  (240, 3),  (236, 3),  (219, 3),  (199, 3),  (185, 3),  (168, 3)
+   INCLUDING () propagate 
+      occurs in  (285, 3),  (141, 3)
+   INCLUDING (spec.TypeEnv) propagate value 
+      occurs in  (127, 3),  (96, 3),  (96, 3),  (92, 3),  (75, 3),  (55, 3),  (41, 3),  (24, 3)
+   
+
+CONSTITUENT Constructs:
+   
+   CONSTITUENT () SHIELD () propagate 
+      occurs in  (270, 3),  (126, 3)
+   
+
+CONSTITUENTS Constructs:
+   
+   CONSTITUENTS (translation_sig.translationsset) propagate void
+      occurs in  (573, 5)
+   CONSTITUENTS (iddef._GotExportUnique) SHIELD (operation_block, spec, event_block) propagate void
+      occurs in  (302, 3)
+   
+

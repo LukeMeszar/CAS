@@ -1,0 +1,100 @@
+@=~
+~p typesetter = texinfo
+~p maximum_input_line_length = infinity
+~! $Id: Kind.fw,v 3.7 1997/08/29 12:08:20 mjung Exp $
+~!
+~! (C) Copyright 1997 University of Paderborn.
+~! 
+~! This file is part of the Eli Module Library.
+~! 
+~! The Eli Module Library is free software; you can redistribute it and/or
+~! modify it under the terms of the GNU Library General Public License as
+~! published by the Free Software Foundation; either version 2 of the
+~! License, or (at your option) any later version.
+~! 
+~! The Eli Module Library is distributed in the hope that it will be
+~! useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+~! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+~! Library General Public License for more details.
+~! 
+~! You should have received a copy of the GNU Library General Public
+~! License along with the Eli Module Library; see the file COPYING.LIB.
+~! If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+~! Suite 330, Boston, MA 02111-1307, USA. 
+~!
+
+This module associates an int encoded property Kind to object keys.
+If different values are associated to a key the property is turned
+into IntMultiple (= 0). The value IntNone (= -1) indicates that
+the property is not set at all. Other int values may be chosen to 
+represent the property values.
+
+The module provides computations for the CLASS SYMBOLs
+
+RangeKind
+	a range that contains occurrences of SetKind or
+	GetKind CLASS SYMBOLs.
+	RangeKind is inherited to the grammar root by default.
+
+SetKind
+	a context that sets the property Kind given by
+	SetKind.Kind.
+
+GetKind
+	a context that acesses property value finally
+	associated to GetKind.Key. It may be obtained
+	by the attribute GetKind.HasKind, e.g. used
+	to issue messages.
+
+SetKind and GetKind may be INHERITed to the same grammar CLASS SYMBOLs.
+
+~O~<Kind.pdl~>~{
+Kind:	int [SetDiff];
+~}
+
+~O~<Kind.lido~>~{
+CLASS SYMBOL ROOTCLASS INHERITS RangeKind END;
+
+/* for compatibility with old versions: */
+CLASS SYMBOL RootKind INHERITS RangeKind END;
+
+CLASS SYMBOL RangeKind:
+		GotKind:	VOID	SYNT;
+
+CLASS SYMBOL SetKind:
+		Key:	DefTableKey,
+		Kind:	int,
+		GotKind:	VOID	SYNT;
+
+CLASS SYMBOL GetKind:
+		Key:	DefTableKey,
+		HasKind:	int;
+
+CLASS SYMBOL RangeKind COMPUTE
+  SYNT.GotKind = CONSTITUENTS SetKind.GotKind
+			SHIELD RangeKind;
+END;
+
+CLASS SYMBOL SetKind COMPUTE
+  SYNT.GotKind =
+	SetDiffKind (THIS.Key, THIS.Kind, IntMultiple);
+END;
+
+CLASS SYMBOL GetKind COMPUTE
+  SYNT.HasKind =
+	GetKind (THIS.Key, IntNone)
+	DEPENDS_ON INCLUDING RangeKind.GotKind;
+END;
+~}
+
+~O~<Kind.specs~>~{
+$/Prop/PropLib.fw
+~}
+
+~O~<Kind.reqmod~>~{
+$/Prop/KindBad.h
+~}
+
+~O~<Kind.head~>~{
+#include "KindBad.h"
+~}

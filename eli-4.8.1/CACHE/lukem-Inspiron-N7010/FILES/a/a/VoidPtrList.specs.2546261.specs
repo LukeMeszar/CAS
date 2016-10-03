@@ -1,0 +1,10 @@
+
+$/Adt/obstack.specs
+#define EMPTYVoidPtrHDR
+#ifdef EMPTYHDR
+$/Adt/FunctionTypes.gnrc +instance=VoidPtr :inst
+#else
+$/Adt/FunctionTypes.gnrc +instance=VoidPtr +referto=VoidPtr :inst
+#endif
+#undef EMPTYVoidPtrHDR
+$/Input/err.specs

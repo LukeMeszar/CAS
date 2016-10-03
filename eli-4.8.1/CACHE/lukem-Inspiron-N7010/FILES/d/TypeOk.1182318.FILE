@@ -1,0 +1,5 @@
+%Type.DiffCompNames.ok == . +cmd=cat (%trenn) \
+	(Type.demo/DiffCompNames.ok:label) \
+	(Type.demo/DiffCompNames.ok) \
+	(Type.demo/DiffCompNames.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/DiffCompNames.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

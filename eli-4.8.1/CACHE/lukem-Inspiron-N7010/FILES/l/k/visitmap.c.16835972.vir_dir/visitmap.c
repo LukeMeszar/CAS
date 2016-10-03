@@ -1,0 +1,37 @@
+
+/* mapping of RULEcodes to visit procedures */
+
+#include "visitprocs.h"
+
+#include "visitmap.h"
+
+_VPROCPTR VS3MAP[] = {
+(_VPROCPTR)_VS3AssignExp, (_VPROCPTR)_VS3CondExp, (_VPROCPTR)_VS3ShortCircuitExp, (_VPROCPTR)_VS3NotExp, 
+(_VPROCPTR)_VS3IntVal, (_VPROCPTR)_VS3FloatVal, (_VPROCPTR)_VS3IdnVal, (_VPROCPTR)_VS3DyadicExp, (_VPROCPTR)_VS3MonadicExp
+};
+_VPROCPTR VS2MAP[] = {
+(_VPROCPTR)_VS2AssignExp, (_VPROCPTR)_VS2CondExp, (_VPROCPTR)_VS2ShortCircuitExp, (_VPROCPTR)_VS2NotExp, 
+(_VPROCPTR)_VS2IntVal, (_VPROCPTR)_VS2FloatVal, (_VPROCPTR)_VS2IdnVal, (_VPROCPTR)_VS2DyadicExp, (_VPROCPTR)_VS2MonadicExp, 
+(_VPROCPTR)_VS2DefiningOccurrence, (_VPROCPTR)_VS2OneSided, (_VPROCPTR)_VS2TwoSided, (_VPROCPTR)_VS2Loop, (_VPROCPTR)_VS2BreakStmt, 
+(_VPROCPTR)_VS2ContinueStmt, (_VPROCPTR)_VS2ReturnStmt, (_VPROCPTR)_VS2Source, (_VPROCPTR)_VS2ExprStmt, (_VPROCPTR)_VS2BarOp, 
+(_VPROCPTR)_VS2AmpOp, (_VPROCPTR)_VS2ExclOp, (_VPROCPTR)_VS2EqualOp, (_VPROCPTR)_VS2LessOp, (_VPROCPTR)_VS2GreaterOp, 
+(_VPROCPTR)_VS2PlusOp, (_VPROCPTR)_VS2MinusOp, (_VPROCPTR)_VS2StarOp, (_VPROCPTR)_VS2SlashOp, (_VPROCPTR)_VS2PercentOp, 
+(_VPROCPTR)_VS2UMinusOp, (_VPROCPTR)_VS2IntVar, (_VPROCPTR)_VS2FloatVar, (_VPROCPTR)_VS2VarDecl, (_VPROCPTR)_VS2Initialize, 
+(_VPROCPTR)_VS2IntParDecl, (_VPROCPTR)_VS2FloatParDecl, (_VPROCPTR)_VS2rule_2, (_VPROCPTR)_VS2rule_3, (_VPROCPTR)_VS2rule_4, 
+(_VPROCPTR)_VS2rule_5, (_VPROCPTR)_VS2rule_6, (_VPROCPTR)_VS2rule_7, (_VPROCPTR)_VS2rule_8, (_VPROCPTR)_VS2rule_9, 
+(_VPROCPTR)_VS2rule_10, (_VPROCPTR)_VS2rule_11, (_VPROCPTR)_VS2rule_12, (_VPROCPTR)_VS2rule_13, (_VPROCPTR)_VS2rule_14, 
+(_VPROCPTR)_VS2rule_15
+};
+_VPROCPTR VS1MAP[] = {
+(_VPROCPTR)_VS1AssignExp, (_VPROCPTR)_VS1CondExp, (_VPROCPTR)_VS1ShortCircuitExp, (_VPROCPTR)_VS1NotExp, 
+(_VPROCPTR)_VS1IntVal, (_VPROCPTR)_VS1FloatVal, (_VPROCPTR)_VS1IdnVal, (_VPROCPTR)_VS1DyadicExp, (_VPROCPTR)_VS1MonadicExp, 
+(_VPROCPTR)_VS1DefiningOccurrence, (_VPROCPTR)_VS1OneSided, (_VPROCPTR)_VS1TwoSided, (_VPROCPTR)_VS1Loop, (_VPROCPTR)_VS1BreakStmt, 
+(_VPROCPTR)_VS1ContinueStmt, (_VPROCPTR)_VS1ReturnStmt, (_VPROCPTR)_VS1Source, (_VPROCPTR)_VS1ExprStmt, (_VPROCPTR)_VS1BarOp, 
+(_VPROCPTR)_VS1AmpOp, (_VPROCPTR)_VS1ExclOp, (_VPROCPTR)_VS1EqualOp, (_VPROCPTR)_VS1LessOp, (_VPROCPTR)_VS1GreaterOp, 
+(_VPROCPTR)_VS1PlusOp, (_VPROCPTR)_VS1MinusOp, (_VPROCPTR)_VS1StarOp, (_VPROCPTR)_VS1SlashOp, (_VPROCPTR)_VS1PercentOp, 
+(_VPROCPTR)_VS1UMinusOp, (_VPROCPTR)_VS1IntVar, (_VPROCPTR)_VS1FloatVar, (_VPROCPTR)_VS1VarDecl, (_VPROCPTR)_VS1Initialize, 
+(_VPROCPTR)_VS1IntParDecl, (_VPROCPTR)_VS1FloatParDecl, (_VPROCPTR)_VS1rule_2, (_VPROCPTR)_VS1rule_3, (_VPROCPTR)_VS1rule_4, 
+(_VPROCPTR)_VS1rule_5, (_VPROCPTR)_VS1rule_6, (_VPROCPTR)_VS1rule_7, (_VPROCPTR)_VS1rule_8, (_VPROCPTR)_VS1rule_9, 
+(_VPROCPTR)_VS1rule_10, (_VPROCPTR)_VS1rule_11, (_VPROCPTR)_VS1rule_12, (_VPROCPTR)_VS1rule_13, (_VPROCPTR)_VS1rule_14, 
+(_VPROCPTR)_VS1rule_15, (_VPROCPTR)_VS1AppliedOccurrence, (_VPROCPTR)_VS1IntResult, (_VPROCPTR)_VS1FloatResult, (_VPROCPTR)_VS1rule_1
+};

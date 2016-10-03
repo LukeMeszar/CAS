@@ -1,0 +1,6 @@
+%%
+
+
+
+[A-Za-z]+	1; /* ext=2 sourceLine=5 */
+[.:,;!?()/\"\'*-]	2; /* ext=15001 sourceLine=6 */

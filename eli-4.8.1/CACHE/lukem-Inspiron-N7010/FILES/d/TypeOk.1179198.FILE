@@ -1,0 +1,5 @@
+%Type.Array.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Array.ok:label) \
+	(Type.demo/Array.ok) \
+	(Type.demo/Array.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Array.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

@@ -1,0 +1,144 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/c/TypeCScope.lido.3833606.lidoEta"
+
+
+CLASS SYMBOL ROOTCLASS INHERITS TypeRootScope END;
+
+CHAIN _C_TypeGotKeys: VOID;
+
+CLASS SYMBOL TypeRootScope:
+        TypeEnv:        Environment     SYNT,   
+        TypeGotKeys:            VOID    SYNT;   
+
+CLASS SYMBOL TypeRootScope COMPUTE
+  SYNT.TypeEnv = TypeRootEnv;
+  CHAINSTART HEAD._C_TypeGotKeys = SYNT.TypeEnv;
+  SYNT.TypeGotKeys = TAIL._C_TypeGotKeys;
+END;
+
+
+CLASS SYMBOL TypeRangeScope:
+        TypeEnv:        Environment     INH,    
+        TypeGotKeys:            VOID    SYNT;   
+
+CLASS SYMBOL TypeRangeScope COMPUTE
+  INH.TypeEnv = 
+        NewScope (INCLUDING TypeAnyScope.TypeEnv);
+  SYNT.TypeGotKeys = TAIL._C_TypeGotKeys;
+END;
+
+
+CLASS SYMBOL TypeAnyScope END;
+CLASS SYMBOL TypeRootScope      INHERITS TypeAnyScope END;
+CLASS SYMBOL TypeRangeScope     INHERITS TypeAnyScope END;
+
+
+CLASS SYMBOL TypeIdDefScope:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL TypeIdDefScope COMPUTE
+  SYNT.Bind =
+        BindIdn (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym)
+        <- THIS._C_TypeGotKeys;
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_TypeGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL TypeIdUseEnv:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL TypeIdUseEnv INHERITS _TypeInhPrecondDefault COMPUTE
+  SYNT.Bind =
+        BindingInEnv (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym)
+        <- (THIS._C_TypeGotKeys, SYNT._TypeInhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_TypeGotKeys = SYNT.Key;
+END;
+
+CLASS SYMBOL _TypeInhPrecondDefault:
+        _TypeInhPrecond:        VOID    SYNT;   
+CLASS SYMBOL _TypeInhPrecondDefault COMPUTE
+  SYNT._TypeInhPrecond = "yes";
+END;
+
+
+CLASS SYMBOL TypeIdUseScope:
+        Sym:            int,                    
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT;   
+
+CLASS SYMBOL TypeIdUseScope INHERITS _TypeInhPrecondDefault COMPUTE
+  SYNT.Bind =
+        BindingInScope (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym)
+        <- (THIS._C_TypeGotKeys, SYNT._TypeInhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_TypeGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL TypeIdDefUse:
+        Sym:            int,                    
+        TypeDefCond:    int             INH,    
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        _TypeauxGotKeys: VOID           SYNT;   
+
+CLASS SYMBOL TypeIdDefUse INHERITS _TypeInhPrecondDefault COMPUTE
+  SYNT._TypeauxGotKeys = THIS._C_TypeGotKeys;
+  INH.TypeDefCond =
+        EQ (NoBinding, 
+            BindingInEnv (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym))
+        <- (THIS._TypeauxGotKeys, SYNT._TypeInhPrecond);
+  SYNT.Bind =
+        IF (THIS.TypeDefCond,
+        BindIdn (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym),
+        BindingInEnv (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym))
+        <- (THIS._C_TypeGotKeys, SYNT._TypeInhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_TypeGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL TypeChkIdUse:
+        Key:       DefTableKey     SYNT,   
+        Sym:            int,                    
+        SymErr:         int             SYNT,   
+        SymMsg:         VOID            SYNT;   
+
+CLASS SYMBOL TypeChkIdUse COMPUTE
+  SYNT.SymErr = EQ (THIS.Key, NoKey);
+  SYNT.SymMsg = IF (THIS.SymErr,
+    message (ERROR, CatStrInd ("Identifier is not defined: ", THIS.Sym),
+           0, COORDREF));
+END;
+
+
+CLASS SYMBOL TypeDeclaratorWithId:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int             SYNT;   
+
+CLASS SYMBOL TypeDeclaratorWithId COMPUTE
+  SYNT.Sym = CONSTITUENT TypeIdInDeclarator.Sym SHIELD TypeDeclaratorWithId;
+  SYNT.Bind =
+        BindIdn (INCLUDING TypeAnyScope.TypeEnv, THIS.Sym)
+        <- TAIL._C_TypeGotKeys;
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_TypeGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL TypeIdInDeclarator:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL TypeIdInDeclarator COMPUTE
+  SYNT.Bind = INCLUDING TypeDeclaratorWithId.Bind;
+  SYNT.Key = KeyOf (SYNT.Bind);
+END;
+

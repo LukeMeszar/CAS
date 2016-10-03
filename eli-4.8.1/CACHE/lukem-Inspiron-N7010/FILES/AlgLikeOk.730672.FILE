@@ -1,0 +1,5 @@
+%AlgLike.Module.ok == . +cmd=cat (%trenn) \
+	(AlgLike.demo/Module.ok:label) \
+	(AlgLike.demo/Module.ok) \
+	(AlgLike.demo/Module.ok +cmd=(AlgLike.fw.exe) :stdout :warn) \
+	(AlgLike.demo/Module.ok +cmd=(AlgLike.fw.exe) :stdout) :stdout

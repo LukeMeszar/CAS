@@ -1,0 +1,5 @@
+%BuCLike.Predef.ok == . +cmd=cat (%trenn) \
+	(BuCLike.demo/Predef.ok:label) \
+	(BuCLike.demo/Predef.ok) \
+	(BuCLike.demo/Predef.ok +cmd=(BuCLike.fw.exe) :stdout :warn) \
+	(BuCLike.demo/Predef.ok +cmd=(BuCLike.fw.exe) :stdout) :stdout

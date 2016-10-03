@@ -1,0 +1,4 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clplib.pdl +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.fw :fw*fwGen/cminus.pdl +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oil.pdl +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :oil*oil_gen/OilDecls.pdl +monitor

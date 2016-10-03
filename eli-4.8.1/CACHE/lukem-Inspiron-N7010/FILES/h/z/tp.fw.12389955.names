@@ -1,0 +1,7 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clplib.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/PropLib.fw :fw*fwGen/CoordCmp.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/PropLib.fw :fw*fwGen/PropLib.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/Kind.gnrc :lib*instGen/Kind.fw :fw*fwGen/Kind.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/Unique.gnrc :lib*instGen/Unique.fw :fw*fwGen/Unique.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc :lib*instGen/FirstOcc.fw :fw*fwGen/FirstOcc.pdl
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/tp/specs/tp.fw :fw*fwGen/tp.pdl

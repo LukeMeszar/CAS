@@ -1,0 +1,6 @@
+
+Identifier:     C_IDENTIFIER
+Integer:        $[0-9]+         [mkint]
+String:         $\"[^"]+\"      [mkidn]
+                C_COMMENT
+                AWK_COMMENT

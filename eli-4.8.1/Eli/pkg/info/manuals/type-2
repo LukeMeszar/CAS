@@ -1,0 +1,1202 @@
+This is Info file type, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/type.tnf.
+
+
+File: type,  Node: ConversionContext,  Prev: OpndExprListRoot,  Up: Expressions
+
+Type conversion
+===============
+
+   The `acceptableAs' relation models implicit type conversion in the
+context of operators applied to operands.  In other contexts,
+additional type conversions may be possible.  For example, both Java
+and C allow a floating-point value to be assigned to an integer
+variable.  That conversion cannot be modeled by the `acceptableAs'
+relation (*note Language-defined coercibility: Coercibility.).
+
+   Additional type conversions such as those taking place on
+assignment can be modeled by specific conversion operators.  An
+indication is associated with each context in which additional type
+conversions are possible, and the indication's set contains exactly
+the conversions allowable in that context.
+
+   Let `e1' and `e2' play the `ExpressionSymbol' role, and `rator'
+play the `OperatorSymbol' role.  A *conversion context* is one in
+which the rules of the language allow the type conversions in
+`rator'`.Indic''s set to be applied to the value yielded by `e2' (in
+addition to any coercions) in order to obtain the type that must be
+yielded by `e1'.  `ConversionContext(`e1',`rator',`e2')' provides rule
+computations to set `rator'`.Oper', `e1'`.Type', and `e2'`.Required'. 
+If no additional conversion operator is required, or if none can be
+selected from `rator'`.Indic''s set, then `rator'`.Oper' is set to the
+unknown operator and both `e1'`.Type' and `e2'`.Required' are set to
+`e1'`.Required'.
+
+   In C, an actual argument to a function call may be implicitly
+converted to the type of the corresponding formal parameter prior to
+the function call.  The same set of conversions can be used in
+assignment contexts, so assume that the indication is `assignCvt':
+
+     SYMBOL Actual INHERITS OpndExprListElem END;
+     
+     RULE: Actual ::= Expr COMPUTE
+       ConversionContext(Actual,,Expr);
+       Indication(assignCvt);
+     END;
+
+   Let `e1' and `e2' play the `ExpressionSymbol' role, `rator' play
+the `OperatorSymbol' role, and `type' yield a `DefTableKey' value
+representing a type.  A *cast context* is a conversion context in
+which the desired type is inherent in the context itself, rather than
+being determined by `e1'.  `CastContext(`e1',`rator',`e2',`type')'
+provides rule computations to set `rator'`.Oper', `e1'`.Type', and
+`e2'`.Required'.  If no additional conversion operator is required, or
+if none can be selected from `rator'`.Indic''s set, then
+`rator'`.Oper' is set to the unknown operator and both `e1'`.Type' and
+`e2'`.Required' are set to `type'.
+
+   The C cast expression is an example of a cast context.  Here we
+assume that `castInd' is an indication whose set consists of all of
+the possible C conversions:
+
+     RULE: Expr ::= '(' Type ')' Expr COMPUTE
+       CastContext(Expr[1],,Expr[2],Type.Type);
+       Indication(castInd);
+     END;
+
+   Let `e2' play the `ExpressionSymbol' role, `rator' play the
+`OperatorSymbol' role, and `type' yield a `DefTableKey' value
+representing a type.  A *root context* is a conversion context in
+which the desired type is inherent in the context itself, which is not
+an expression context.  `RootContext(`type',`rator',`e2')' provides
+rule computations to set `rator'`.Oper' and `e2'`.Required'.  If no
+additional conversion operator is required, or if none can be selected
+from `rator'`.Indic''s set, then `rator'`.Oper' is set to the unknown
+operator and `e2'`.Required' is set to `type'.
+
+   The C return statement is an example of a root context.  It is not
+itself an expression, but it has an expression operand.  That operand
+must yield the return type of the function, which is inherent in the
+context of the return statement, and can be obtained from the
+`Function' node.  Here we assume that `assignInd' is an indication
+whose set consists of all of the possible C assignment conversions:
+
+     RULE: Statement ::= 'return' Expr COMPUTE
+       RootContext(INCLUDING (Function.ResultType),,Expr[2]);
+       Indication(assignInd);
+     END;
+
+
+File: type,  Node: UserTypes,  Next: TypeEq,  Prev: Expressions,  Up: Top
+
+User-Defined Types
+******************
+
+   A language that permits user-defined types must provide constructs
+for the user to denote such types.  These constructs are called *type
+denotations*.  If a programmer writes two type denotations that look
+the same, it is natural to ask whether they represent the same type. 
+There are two general answers to this question:
+
+*Name equivalence*
+     Each type denotation that the programmer writes represents a
+     distinct type.
+
+*Structural equivalence*
+     Two type denotations represent the same type if they are
+     constructed in the same way and if corresponding components are
+     the same (*note Structural Type Equivalence: TypeEq.).
+
+All of the techniques discussed in this document apply independently
+of the selection of name equivalence or structural equivalence among
+user-defined types.
+
+   A *type identifier* is a name used in a source language program to
+refer to a type.  It is important to distinguish between the concept
+of a type and the concept of a type identifier, using different keys
+to implement them, because a particular type might have zero or more
+type identifiers referring to it.  For example, consider the following
+snippet of C code:
+
+     typedef float time;
+     typedef float distance;
+     typedef struct { time t; distance d; } leg;
+     leg trip[100];
+
+This snippet creates two user-defined types, a structure type and an
+array (or pointer) type.  Moreover, it defines three type identifiers,
+`time', `distance', and `leg'.  The first two refer to the
+language-defined float type, and the third refers to the structure
+type; the array type is *anonymous* -- no type identifier refers to it. 
+Seven definition table keys are therefore associated with the types and
+type identifiers of this snippet; three more are associated with the
+typed entities `t', `d', and `trip' (*note Typed Entities: BasicType.).
+
+   The `Typing' module exports computational roles to implement the
+definition and use of user-defined types:
+
+`TypeDenotation'
+     The computational role inherited by a grammar symbol that
+     represents a subtree denoting a type.
+
+`TypeDefDefId'
+     The computational role inherited by a grammar symbol that
+     represents a defining occurrence of a type identifier.
+
+`TypeDefUseId'
+     The computational role inherited by a grammar symbol that
+     represents an applied occurrence of a type identifier.
+
+* Menu:
+
+* TypeDenot::	Type denotations
+* TypeIdent::	Type identifiers
+* TypeUse::	Referring to a type
+* OpDef::	Operator, function, and method definitions
+* OilClass::	Reducing specification size
+
+
+File: type,  Node: TypeDenot,  Next: TypeIdent,  Up: UserTypes
+
+Type denotations
+================
+
+   Type denotations are language constructs that describe user-defined
+types.  The symbol on the left-hand side of a rule defining a type
+denotation characterizes the type denoted.  It inherits the
+`TypeDenotation' role, which provides three attributes:
+
+`Type'
+     A `DefTableKey'-valued attribute representing the type denoted by
+     this subtree.  This attribute is set by a module computation that
+     should never be overridden by the user.  It should be used in any
+     computation that does not require properties of the type.
+
+`TypeKey'
+     A `DefTableKey'-valued attribute representing the type denoted by
+     this subtree.  This attribute is set by a module computation that
+     should never be overridden by the user.  It should be used in any
+     computation that accesses properties of the type.
+
+`GotType'
+     A void attribute representing the fact that information
+     characterizing a user-defined type has been stored as properties
+     of the key `TypeDenotation.Type'.
+
+The information stored as properties of the definition table key
+`TypeDenotation.Type' cannot be dependent on the results of type
+analysis (*note Dependences for typed entities: TypedIdDepend.).
+
+   For example, some languages (e.g. Modula-3, Ada) allow a user to
+define a subrange type that is characterized by its bounds.  The bound
+information may be needed in various contexts where the type is used,
+and therefore it is reasonable to store that information as properties
+of the subrange type's key.  Suppose, therefore, that `Lower' and
+`Upper' are defined as integer-valued properties.  Bound information
+is independent of any aspect of type analysis:
+
+     SYMBOL SubrangeSpec INHERITS TypeDenotation END;
+     RULE:  SubrangeSpec ::= '[' Number 'TO' Number ']' COMPUTE
+       SubrangeSpec.GotType=
+         ORDER(
+           ResetLower(SubrangeSpec.Type,atoi(StringTable(Number[1]))),
+           ResetUpper(SubrangeSpec.Type,atoi(StringTable(Number[2]))));
+     END;
+
+Here `Number' is a non-literal terminal symbol whose value is the
+digit string appearing in the source text; `atoi' is the
+string-to-integer conversion routine from the C library.
+
+
+File: type,  Node: TypeIdent,  Next: TypeUse,  Prev: TypeDenot,  Up: UserTypes
+
+Type identifiers
+================
+
+   The computational role `TypeDefDefId' is inherited by a defining
+occurrence of a type identifier.  It provides two attributes:
+
+`Type'
+     A `DefTableKey' value representing the type named by the type
+     identifier.  This attribute must be set by a user computation. 
+     It should be used in any computation that does not require
+     properties of the type.
+
+`TypeKey'
+     A `DefTableKey'-valued attribute representing the type denoted by
+     this subtree.  This attribute is set by a module computation that
+     should never be overridden by the user.  It should be used in any
+     computation that accesses properties of the type.
+
+   The computational role `TypeDefUseId' is inherited by an applied
+occurrence of a type identifier.  It provides two attributes:
+
+`Type'
+     A `DefTableKey' value representing the type named by the type
+     identifier.  This attribute is set by a module computation that
+     should never be overridden by the user.  It should be used in any
+     computation that does not require properties of the type.
+
+`TypeKey'
+     A `DefTableKey'-valued attribute representing the type denoted by
+     this subtree.  This attribute is set by a module computation that
+     should never be overridden by the user.  It should be used in any
+     computation that accesses properties of the type.
+
+
+File: type,  Node: TypeUse,  Next: OpDef,  Prev: TypeIdent,  Up: UserTypes
+
+Referring to a type
+===================
+
+   A type might be referenced in program text in any of three
+different ways, each illustrated by a Java or C variable definition:
+
+  1. By writing a keyword, as in `int v;'
+
+  2. By writing a type identifier, as in `t v;'
+
+  3. By writing a type denotation, as in `struct {int i; float f;} v;'
+
+   Each of these representations of a type uses its own mechanism for
+encoding the type.  In order to standardize the encoding, a type
+reference is normally represented in the tree by a distinct symbol
+having a `DefTableKey'-valued `Type' attribute (*note Establishing the
+type of an entity: TypedDefId.).  For example, `Type' plays that role
+in this representation for a variable declaration:
+
+     RULE: VrblDecl ::= Type VarIdDefs ';' COMPUTE
+       VrblDecl.Type=Type.Type;
+     END;
+
+Here the value of `Type.Type' represents some type.  That attribute
+must be defined by providing a rule establishing the type represented
+by a type identifier, a rule establishing each language-defined type
+represented by a keyword, and a rule establishing each user-defined
+type represented by a type denotation:
+
+     SYMBOL TypIdUse INHERITS TypeDefUseId END;
+     
+     RULE: Type ::= TypIdUse COMPUTE
+       Type.Type=TypIdUse.Type;
+     END;
+     
+     RULE: Type ::= 'int' COMPUTE
+       Type.Type=intType;
+     END;
+     
+     RULE: Type ::= SubrangeSpec COMPUTE
+       Type.Type=SubrangeSpec.Type;
+     END;
+
+   The `Type' attributes discussed in this chapter generally do not
+give direct access to properties of the type they represent, because
+many of their values are intermediate in the type analysis computations
+(*note Dependences among types and type identifiers: TypeIdDepend.). 
+If it is necessary to access properties of a type at a symbol
+inheriting `TypeDenotation', `TypeDefDefId' or `TypeDefUseId', use the
+`TypeKey' attribute.  Values of the `Type' attribute of a symbol
+inheriting `ExpressionSymbol' or `TypedUseId' can be used directly to
+access type properties.
+
+
+File: type,  Node: OpDef,  Next: OilClass,  Prev: TypeUse,  Up: UserTypes
+
+Operator, function, and method definitions
+==========================================
+
+   A user-defined type is often associated with one or more operators. 
+For example, an array type requires an access operator (*note
+Operators with explicit operands: OperatorSymbol.).  The `Expression'
+module provides computational roles and rule computations to define
+these operators:
+
+`OperatorDefs'
+     The computational role inherited by a grammar symbol that
+     represents a context where operators are defined.
+
+`OpndTypeListRoot'
+`OpndTypeListElem'
+     Computational roles inherited by grammar symbols that represent
+     operand definition lists.
+
+`MonadicOperator'
+`DyadicOperator'
+`ListOperator'
+`Coercible'
+     Rule computations implementing definition contexts.
+
+   All operators associated with user-defined types must be added to
+the database of valid operators before type analysis of expressions
+can begin.  This dependence is made explicit by having the left-hand
+side symbol of any rule in which operators are defined inherit the
+`OperatorDefs' role.  One attribute is used to express the dependence:
+
+`GotOper'
+     A void attribute indicating that *all* of the operator
+     definitions in this rule have been carried out.  It is set by a
+     module computation that should be overridden by the user.
+
+   The `OpndTypeListRoot' role is inherited by a grammar symbol
+representing a list of operand types.  It has one attribute:
+
+`OpndTypeList'
+     A synthesized attribute whose `DefTableKeyList' value is a list
+     of the operand types in reverse order.  It is set by a module
+     computation that should not be overridden by the user.
+
+   The `OpndTypeListElem' role is inherited by a grammar symbol
+representing a single operand type in a list.  It must be a descendant
+of a node playing the `OpndTypeListRoot' role, and has one attribute:
+
+`Type'
+     A synthesized attribute whose `DefTableKey' value is set by user
+     computation to represent the operand type.
+
+   Operators are actually defined by rule computations.  Let `ind',
+`opr', `rand', `rand1', `rand2', and `rslt' be definition table keys
+and `rands' be a list of definition table keys.
+
+`MonadicOperator(`ind',`opr',`rand',`rslt')'
+     Adds operator ``opr'(`rand'):`rslt'' to the set named by
+     indication `ind'.
+
+`DyadicOperator(`ind',`opr',`rand1',`rand2',`rslt')'
+     Adds operator ``opr'(`rand1',`rand2'):`rslt'' to the set named by
+     indication `ind'.
+
+`ListOperator(`ind',`opr',`rands',`rslt')'
+     Adds operator ``opr'(t1,...,tn):`rslt'' to the set named by
+     indication `ind'.  Here `t1,...,tn' are the values obtained from
+     `rands'.
+
+`Coercible(`opr',`rand',`rslt')'
+     Adds coercion ``opr'(`rand'):`rslt'' to the coercions in the
+     database.
+
+The actual value of `opr' is often irrelevant in these computations,
+because the designer does not ask which operator was selected from the
+given indication.  The `Expression' module provides the known key
+`NoOprName' for use in these situations.
+
+   Consider a type denotation for one-dimensional arrays.  Assume that
+a subscript must be of the language-defined integer type, and that
+each new array type overloads the standard array indexing indication
+`indexInd' with the indexing operator for that array (*note Operators
+with explicit operands: OperatorSymbol.).  The operator name is
+uninteresting:
+
+     SYMBOL ArraySpec INHERITS TypeDenotation, OperatorDefs END;
+     
+     RULE: ArraySpec ::= Type '[' ']' COMPUTE
+       ArraySpec.GotOper=
+         DyadicOperator(
+           indexInd,
+           NoOprName,
+           ArraySpec.Type,
+           intType,Type.Type);
+     END;
+
+   Another approach defines the `Accessor' property of the array type
+to be an indication with a singleton operator set (*note Operators
+with explicit operands: OperatorSymbol.):
+
+     ATTR Indic: DefTableKey;
+     
+     SYMBOL IndexTypes INHERITS OpndTypeListRoot END;
+     
+     RULE: ArraySpec ::= Type '[' IndexTypes ']' COMPUTE
+       .Indic=NewKey();
+       ArraySpec.GotType=ResetAccessor(ArraySpec.Type,.Indic);
+       ArraySpec.GotOper=
+         ListOperator(
+           .Indic,
+           NoOprName,
+           IndexTypes.OpndTypeList,
+           Type[1].Type);
+     END;
+
+   Functions and methods are simply operators with operand lists. 
+These operators overload the indication that is the function or method
+name.  In many cases, of course, a singleton operator set will be
+associated with a function or method name.  The operator name may or
+may not be interesting, depending on how the designer chooses to
+interpret the results of type analysis.
+
+   Java method definitions overload the method identifier:
+
+     SYMBOL MethodHeader INHERITS OperatorDefs     END;
+     SYMBOL Formals      INHERITS OpndTypeListRoot END;
+     
+     RULE: MethodHeader ::= Type MethIdDef '(' Formals ')' COMPUTE
+       MethodHeader.GotOper=
+         ListOperator(
+           MethIdDef.Key,
+           NoOprName,
+           Formals.OpndTypeList,
+           Type.Type);
+     END;
+
+The corresponding method call uses the method identifier as the
+operator symbol in a list context.  Its indication is its `Key'
+attribute, as in the declaration:
+
+     SYMBOL MethIdUse INHERITS OperatorSymbol COMPUTE
+       SYNT.Indic=THIS.Key;
+     END;
+     SYMBOL Arguments INHERITS OpndExprListRoot END;
+     
+     RULE: Expr ::= Expr '.' MethIdUse '(' Arguments ')' COMPUTE
+       ListContext(Expr[1],MethIdUse,Arguments);
+     END;
+
+   Every value in a C enumeration is coercible to an integer:
+
+     SYMBOL enum_specifier INHERITS TypeDenotation, OperatorSymbol END;
+     
+     RULE: enum_specifier ::= 'enum' '{' enumerator_list '}'
+       enum_specifier.GotOper=
+         Coercible(NoOprName,enum_specifier.Type,intType);
+     END;
+
+
+File: type,  Node: OilClass,  Prev: OpDef,  Up: UserTypes
+
+Reducing specification size
+===========================
+
+   A user type definition often requires definition of a number of
+operators, based on the relationship between the new type and its
+components.  Although all of those operations can be defined using the
+techniques of the previous section, it may be simpler to define a
+"template" for the particular type constructor and then instantiate
+that template at each corresponding type denotation.
+
+   The necessary information can be captured in an OIL class (*note
+Class definition: (oil)CLASS.).  For example, a set type in Pascal
+implies operators for union, intersection, membership, and comparison:
+
+     CLASS setType(baseType) BEGIN
+       OPER
+         setop(setType,setType): setType;
+         setmember(baseType,setType): boolType;
+         setrel(setType,setType): boolType;
+       COERCION
+         (emptyType): setType;
+     END;
+
+     INDICATION
+       plus: setop;
+       minus: setop;
+       star: setop;
+       in: setmember;
+       equal: setrel;
+       lsgt: setrel;
+       lessequal: setrel;
+       greaterequal: setrel;
+
+Within the class definition, the class name (`setType' in this
+example) represents the type being defined.  The parameters of the
+class (e.g. `baseType') represent the related types.  Thus a set
+requires a set member operation that takes a value of the base type
+and a value of the set type, returning a Boolean.  Notice that the
+designer chose to use the same operator for union, intersection, and
+difference because all of these operators have the same signature and
+distinguishing them is irrelevant for type analysis.
+
+   Let `cl' be an OIL class name, and `typ', `arg1', `arg2', `arg3' be
+definition table keys representing types.  Each of the following rule
+computations instantiates an OIL class with a specific number of
+parameters:
+
+`InstClass0(c,typ)'
+`InstClass1(c,typ,arg1)'
+`InstClass2(c,typ,arg1,arg2)'
+`InstClass3(c,typ,arg1,arg2,arg3)'
+     Create the operators defined by OIL class `cl' for type `typ'. 
+     Types `arg1', `arg2', and `arg3' are the parameters of the
+     instantiation:
+
+   A class instantiation creates operators, so it should have the
+`GotOper' attribute as a postcondition:
+
+     SYMBOL TypeDenoter INHERITS TypeDenotation, OperatorDefs END;
+     
+     RULE: TypeDenoter ::= 'set' 'of' type COMPUTE
+       TypeDenoter.GotOper=InstClass1(setType,TypeDenoter.Type,type.Type);
+     END;
+
+
+File: type,  Node: TypeEq,  Next: Errors,  Prev: UserTypes,  Up: Top
+
+Structural Type Equivalence
+***************************
+
+   The specific rules governing structural equivalence of types vary
+greatly from one language to another.  Nevertheless, their effect on
+the type analysis task can be described in a manner that is
+independent of those rules.  That effect is embodied in the
+`StructEquiv' module, instantiated by
+
+        $/Type/StructEquiv.fw
+
+* Menu:
+
+* Partition::	Partitioning the set of types
+* EqClass::	Computing equivalence classes
+* FuncType::	Functions as typed entities
+
+
+File: type,  Node: Partition,  Next: EqClass,  Up: TypeEq
+
+Partitioning the set of types
+=============================
+
+   This module defines two types as structurally equivalent if they
+satisfy two conditions:
+
+  1. They *might* be equivalent according to the language definition.
+
+  2. Corresponding components have equivalent types.
+
+For example, consider the structure types in the following variable
+declarations:
+
+     struct a { int f; struct a *g; } x;
+     struct b { int h; struct b *i; } y;
+     struct c { struct c *i; int h; } z;
+
+The first two have the same components in the same order, but the field
+names are different.  The second and third have the same field names
+naming the same components, but the order of those components is
+different.  Depending on the rules of the language, either pair could
+be equivalent or all three could be distinct.
+
+   A designer specifies possibly-equivalent types by partitioning a
+subset of the set of types such that all of the types in a particular
+block of the partition *might* be equivalent according to the rules of
+the language.  Types assigned to different blocks can never be
+equivalent.  If a type is not assigned to any block, then it is
+assumed to be unique.  An ordered (possibly empty) set of components
+may be associated with each type when it is assigned to a block.
+
+   Let `type' and `set' be definition table keys, and `components' be
+a list of definition table keys. 
+`AddTypeToBlock(`type',`block',`components')' adds type `type' to the
+partition block defined by `block'.  It also sets the
+`DefTableKeyList'-valued property `ComponentTypes' of `type' to
+`components'.
+
+   Suppose that the designer chose to assign every structure type to
+the same set (represented by a known key), and to list the field types
+in order of appearance.  Then variables `x' and `y' above would have
+the same type, but `z' would have a different type.  Another
+possibility would be to generate a unique definition table key on the
+basis of the sorted list of field identifiers, and then to list the
+field types in the order of their sorted identifiers.  Variables `y'
+and `z' would then have the same type and `x' would have a different
+type.
+
+
+File: type,  Node: EqClass,  Next: FuncType,  Prev: Partition,  Up: TypeEq
+
+Computing equivalence classes
+=============================
+
+   Let `S1',...,`Sp' be the partition established by invocations of
+`AddTypeToBlock'.  For each type `t', let `f1(t)',...,`fn(t)' be the
+ordered list of the component types.
+
+   Computations supplied by the `StructEquiv' module then find the
+partition {`E1',...,`Eq'} having fewest blocks `Ei' such that:
+
+  1. Each `Ei' is a subset of some `Sj'.
+
+  2. `x' and `y' in `Ei' implies that `fj(x)' and `fj(y)' are in some
+     one `Ek', for all `fj'.
+
+The blocks `Ei' are the equivalence classes determined by refining the
+original partition introduced by `AddTypeToBlock' on the basis of the
+component types.
+
+   The algorithm then selects an arbitrary member of each `Ei' as the
+representative type for that equivalence class, and alters the
+properties of the other members of that class so that they act as type
+identifiers pointing to the key for the representative type (*note
+Dependences among types and type identifiers: TypeIdDepend.).  This
+means that the values of an arbitrary property of the key used to
+represent a type in subsequent computation may not be the value of that
+property set at a specific instance of a type denotation for that type
+(*note Referring to a type: TypeUse.).
+
+
+File: type,  Node: FuncType,  Prev: EqClass,  Up: TypeEq
+
+Functions as typed entities
+===========================
+
+   Many languages have the concept that a function is a typed entity. 
+Such a language provides a form of type denotation that can describe
+function types.  Function definitions also implicitly describe
+function types, since there is usually no way of using a type
+identifier to specify the type of a function.  Thus every function
+definition must also be considered a type denotation.
+
+   Function definitions are operator definitions, defining an operator
+that is used verify the type-correctness of the function invocation. 
+Because the structural equivalence algorithm will select an arbitrary
+element to represent the equivalence class, every function type
+denotation must also define an invoker.
+
+   Modula-3 has constructs representing type denotations for function
+types (`ProcTy') and function definitions (`Procedure') that could be
+specified as follows (a function invocation is also given):
+
+     SYMBOL Formals INHERITS OpndTypeListRoot             END;
+     SYMBOL ProcTy  INHERITS TypeDenotation, OperatorDefs END;
+     
+     RULE: ProcTy ::= 'PROCEDURE' '(' Formals ')' ':' Type COMPUTE
+       .Indic=NewKey();
+       ProcTy.GotType=
+         ORDER(
+           ResetInvoker(ProcTy.Type,.Indic),
+           AddTypeToBlock(
+             ProcTy.Type,
+             procClass,
+             ConsDefTableKeyList(Type.Type,Formals.ParameterTypeList)));
+       ProcTy.GotOper=
+         ListOperator(.Indic,NoOprName,Formals.ParameterTypeList,Type.Type);
+     END;
+
+     SYMBOL Procedure INHERITS TypeDenotation, OperatorDefs END;
+     
+     RULE: Procedure ::= '(' Formals ')' ':' Type '=' Block COMPUTE
+       Procedure.EqClass=procClass;
+       Procedure.ComponentTypes=
+         ConsDefTableKeyList(Type.Type,Formals.ParameterTypeList);
+       .Indic=NewKey();
+       Procedure.GotType=
+         ORDER(
+           ResetInvoker(Procedure.Type,.Indic),
+           AddTypeToBlock(
+             Procedure.Type,
+             procClass,
+             ConsDefTableKeyList(Type.Type,Formals.ParameterTypeList)));
+       Procedure.GotOper=
+         ListOperator(.Indic,NoOprName,Formals.ParameterTypeList,Type.Type);
+     END;
+
+     SYMBOL Expr    INHERITS ExpressionSymbol END;
+     SYMBOL Actuals INHERITS OpndExprListRoot END;
+     
+     RULE: Expr ::= Expr '(' Actuals ')' COMPUTE
+       ListContext(Expr[1],,Actuals);
+       Indication(GetInvoker(Expr[2].Type,NoKey));
+     END;
+
+
+File: type,  Node: Errors,  Next: RootType,  Prev: TypeEq,  Up: Top
+
+Error Reporting in Type Analysis
+********************************
+
+   Language-dependent error reporting involves checks based on the
+types associated with program constructs by the computations specified
+in earlier chapters.  For example, object-oriented languages differ in
+their requirements for overriding methods when extending a class
+definition.  One possibility is to require that the type of each
+parameter of the overriding method be a supertype of the corresponding
+parameter type of the overridden method, and that the result type of
+the overriding method be a subtype of the result type of the
+overridden method.  The type analysis modules will establish the
+complete signatures of both methods, and the subtype/supertype
+relation among all type pairs.  Thus only the actual check remains to
+be written.
+
+   Some errors make it impossible to associate any type with a program
+construct, and these are reported by the modules.  Operations are also
+made available to support detection of incorrect typing.
+
+* Menu:
+
+* ChkTyped::	Verifying typed identifier usage
+* ChkTypeId::	Verifying type identifier usage
+* ChkExpr::	Verifying type consistency within an expression
+* Support::	Support for context checking
+
+
+File: type,  Node: ChkTyped,  Next: ChkTypeId,  Up: Errors
+
+Verifying typed identifier usage
+================================
+
+   An applied occurrence of an identifier that purports to represent a
+typed entity inherits the `TypedIdUse' role.  The value of its `Type'
+attribute should not be `NoKey', and the identifier itself should not
+be a type identifier.  Both of these conditions can be checked by
+inheriting the `ChkTypedUseId' role:
+
+     SYMBOL ExpIdUse INHERITS ChkTypedUseId END;
+
+   If the identifier `id' at an `ExpIdUse' node is bound, but the type
+is unknown, the `ChkTypedUseId' computation will issue the following
+report at the source coordinates of `id'
+
+     Must denote a typed object: `id'
+
+   If the identifier `id' at an `ExpIdUse' node is a type identifier,
+the report would be:
+
+     Type identifier not allowed: `id'
+
+
+File: type,  Node: ChkTypeId,  Next: ChkExpr,  Prev: ChkTyped,  Up: Errors
+
+Verifying type identifier usage
+===============================
+
+   Both defining and applied occurrences of type identifiers can be
+checked for validity.  In each case, the value of the `Type' attribute
+must be a definition table key whose `IsType' property has the value 1. 
+Two roles are available for this purpose:
+
+`ChkTypeDefDefId'
+     reports an error if the `Type' attribute does not refer to a type,
+     or if the type refers to itself.
+
+`ChkTypeDefUseId'
+     reports an error if the `Type' attribute does not refer to a type.
+
+
+File: type,  Node: ChkExpr,  Next: Support,  Prev: ChkTypeId,  Up: Errors
+
+Verifying type consistency within an expression
+===============================================
+
+   The `Expression' module provides default error reporting associated
+with the following roles:
+
+`ExpressionSymbol'
+    Condition:
+          ``e'.Type' is not acceptable as ``e'.Required'.
+
+    Message:
+          `Incorrect type for this context'
+
+    Override symbols:
+          `ExpMsg', `ExpErr', `ExpError'
+
+`OperatorSymbol'
+    Condition:
+          The indication is valid but no operator could be identified.
+
+    Message:
+          `Incorrect operand type(s) for this operator'
+
+    Override symbols:
+          `OprMsg', `OprErr', `OprError'
+
+`OpndExprListRoot'
+    Condition:
+          The function requires more arguments than are present.
+
+    Message:
+          `Too few arguments'
+
+    Override symbols:
+          `LstMsg', `LstErr', `LstError'
+
+`OpndExprListElem'
+    Condition:
+          The function requires fewer arguments than are present.
+
+    Message:
+          `Too many arguments'
+
+    Override symbols:
+          `ArgMsg', `ArgErr', `ArgError'
+
+   This error reporting can be changed by overriding computations for
+the ``xxx'Msg' attribute.  The ``xxx'Err' attribute has the value 1 if
+the error condition is met, 0 otherwise.  Thus the overriding
+computation might be of the form:
+
+     `s'.`xxx'Msg=
+       IF(`s'.`xxx'Err,message(ERROR,"My report",0,COORDREF));
+
+Because ``s'.`xxx'Msg' is of type `VOID', you can remove a report
+completely by setting ``s'.`xxx'Msg' to `"no"'.
+
+   If you wish to override the message in every context, write the
+overriding computation as a symbol computation in the lower context of
+the override symbol specified above.  In this case, `xxx' would be
+`SYNT'.  Here is an example, changing the error report for invalid
+operators in all contexts:
+
+     SYMBOL OprError COMPUTE
+       SYNT.OprMsg=
+         IF(SYNT.OprErr,message(ERROR,"Invalid operator",0,COORDREF));
+     END;
+
+   If you wish to override the message in a few specific contexts,
+write the overriding computation as a rule computation in the lower
+context of a symbol inheriting the computational role.  In this case,
+`xxx' would be the symbol on the left-hand side of the rule.  Here is
+an example, changing the standard expression error report to be more
+specific for function arguments:
+
+     RULE: Actual ::= Expr COMPUTE
+       Actual.ExpMsg=
+         IF(Actual.ExpErr,message(ERROR,"Wrong argument type",0,COORDREF));
+     END;
+
+
+File: type,  Node: Support,  Prev: ChkExpr,  Up: Errors
+
+Support for context checking
+============================
+
+   As noted in the previous section, `OperatorSymbol' role computations
+normally report an error when an indication is valid but no operator
+can be identified.  The `Expression' module exports two
+context-dependent rule computations for use when an expression node
+has no children playing that role.  One computation tests the
+indication and the other tests the operator:
+
+`BadIndication'
+     Yields 1 if the operator indication supplied by `Indication' is
+     unknown, 0 otherwise.
+
+`BadOperator'
+     Yields 1 if the indication is valid but no operator can be
+     selected from that indication's set, 0 otherwise.
+
+   Consider an expression in which a function is applied to arguments
+(*note Functions as typed entities: FuncType.):
+
+     SYMBOL Expr    INHERITS ExpressionSymbol END;
+     SYMBOL Actuals INHERITS OpndExprListRoot END;
+     
+     RULE: Expr ::= Expr '(' Actuals ')' COMPUTE
+       ListContext(Expr[1],,Actuals);
+       Indication(GetInvoker(Expr[2].Type,NoKey));
+       IF(BadIndication,
+         message(ERROR,"Invalid function",0,COORDREF));
+     END;
+
+   Suppose that, because of a programming error, `Expr[2]' does not
+deliver a function type.  In that case, `Expr[2].Type' would not have
+the `Invoker' property, and `BadIndication' would yield 1. 
+Alternatively, `Expr[2]' might deliver a function whose signature does
+not match the context.  Because the indication has only a singleton
+operator set, that operator will be selected regardless of the context. 
+Errors will then be reported by the default mechanisms as an incorrect
+number of arguments, arguments of incorrect types, or result incorrect
+for the context.
+
+   Now consider the array access expression (*note Operators with
+explicit operands: OperatorSymbol.):
+
+     SYMBOL Subscript INHERITS ExpressionSymbol END;
+     
+     RULE: Expr ::= Expr '[' Subscript ']' COMPUTE
+       DyadicContext(Expr[1],,Expr[2],Subscript);
+       Indication(indexInd),
+       IF(BadOperator,
+         message(ERROR,"Invalid array reference",0,COORDREF));
+     END;
+
+   Suppose that, because of a programming error, `Expr[2]' does not
+deliver an array type.  In that case, there would be no operator in
+`indexInd''s operator set whose left operand was the type returned by
+`Expr[2]' and `BadOperator' would yield 1.
+
+   It is sometimes useful to be able to check whether one type is
+acceptable as another outside of the situations covered in the
+previous section.  Let `from' and `to' be definition table keys
+representing types.  `IsCoercible(`from',`to')' yields 1 if a value of
+type `from' is acceptable wherever an value of type `to' is required;
+it yields 0 otherwise.
+
+   For example, consider a cast involving a reference type in Java. 
+The cast is known to be correct at compile time if a value is being
+cast to its superclass.  If the value is being cast to one of its
+subclasses, however, a run-time check is required.  Thus the compiler
+must accept such a cast *both* when the value is acceptable as a value
+of the cast type *and* when a value of the cast type is acceptable as
+a value of the type being cast:
+
+     RULE: Expression ::= '(' Expression ')' Expression COMPUTE
+       IF(AND(
+           NOT(IsCoercible(Expression[2].Type,Expression[3].Type)),
+           NOT(IsCoercible(Expression[3].Type,Expression[2].Type))),
+         message(ERROR,"Invalid cast",0,COORDREF));
+     END;
+
+
+File: type,  Node: RootType,  Next: Index,  Prev: Errors,  Up: Top
+
+Dependence in Type Analysis
+***************************
+
+   Type analysis is a complex process, involving several different
+kinds of entity.  Each kind of entity has properties, which are stored
+in the definition table under the entity's key.  Those properties are
+set and used in a variety of contexts.  The result is a collection of
+implicit dependence relations among the type analysis computations,
+and these relations depend on the language being analyzed.
+
+   The modules described in this document make the implicit relations
+explicit, using void attributes and dependent expressions in LIDO
+(*note Dependent Expressions: (lidoref)Dependent Expressions.). 
+Although the explicit dependences work for a wide range of typical
+programming languages, one or more of them must sometimes be overridden
+because of the rules of a particular language.  This chapter explains
+the implicit dependences that must be made explicit, how the various
+modules make them explicit, and some typical circumstances in which
+the default treatment fails.
+
+   The void attributes that make these dependences explicit are
+summarized here; the remainder of this chapter explains them in more
+detail:
+
+`TypeDenotation.GotType'
+     The new type key has been created, and any properties that are not
+     dependent on final types have been stored in the definition table
+     as properties of that key.
+
+`TypeDefDefId.GotDefer'
+     Information that can be used to find the final type has been
+     stored in the definition table as properties of the key assigned
+     to the identifier by the name analyzer.
+
+`RootType.GotUserTypes'
+     Computations for all type denotations have reached the state
+     represented by `TypeDenotation.GotType' and computations for all
+     type identifier definitions have reached the state represented by
+     `TypeDefDefId.GotDefer'.
+
+`RootType.GotAllTypes'
+     All final types have been determined.
+
+`TypedDefId.TypeIsSet'
+     Information that can be used to find the final type has been
+     stored in the definition table as properties of the key assigned
+     to the identifier by the name analyzer.
+
+`RootType.TypeIsSet'
+     The state represented by `RootType.GotAllTypes' has been reached,
+     and computations for all typed identifier definitions have reached
+     the state represented by `TypedDefId.TypeIsSet'.
+
+`TypedUseId.TypeIsSet'
+     All information needed to find the final type of this typed
+     identifier is available.
+
+`OperatorDefs.GotOper'
+     All operator descriptions associated with this construct have been
+     entered into the operator data base.
+
+`RootType.GotAllOpers'
+     Computations for all symbols inheriting `OperatorDefs' have
+     reached the state represented by `OperatorDefs.GotOper'.
+
+* Menu:
+
+* TypeIdDepend::	Dependences among types and type identifiers
+* TypequDepend::	Dependence on structural equivalence
+* OprdbDepend::		Dependence on the operator database
+* TypedIdDepend::	Dependences for typed entities
+
+
+File: type,  Node: TypeIdDepend,  Next: TypequDepend,  Up: RootType
+
+Dependences among types and type identifiers
+============================================
+
+   Consider the following program, written in a C-like notation:
+
+     { Measurement Length;
+       typedef Inches Measurement;
+       typedef int Inches;
+     
+       Length = 3; printf("%d\n", Length + 7);
+     }
+
+Suppose that the language definition states that type identifiers are
+statically bound, with the scope of a declaration being the entire
+block.  Thus all of the type identifier occurrences have valid
+bindings.  (That would *not* be the case in C, because in C the scope
+of a declaration is from the end of the declaration to the end of the
+block.)
+
+   The type analysis of each of the two occurrences of `Length' in the
+last line of the program is described by the following specifications
+discussed earlier:
+
+     SYMBOL ExpIdUse INHERITS TypedUseId, ChkTypedUseId END;
+     
+     RULE: Expr ::= ExpIdUse COMPUTE
+       PrimaryContext(Expr,ExpIdUse.Type);
+     END;
+
+The value of `ExpIdUse.Type' should be `intType', the known definition
+table key created for the language-defined integer type.  Recall that
+`intType' was associated with the `int' keyword by the following
+specification:
+
+     RULE: Type ::= 'int' COMPUTE
+       Type.Type=intType;
+     END;
+
+The problem is to make the `intType' value of the `Type.Type'
+attribute in this context the value of the `ExpIdUse.Type' attribute
+in the context quoted above.
+
+   A human has no trouble seeing how this problem could be solved:
+
+  1. The type definition rule sets the `TypIdDef.Type' attribute of the
+     occurrence of `Inches' in the third line of the program to
+     `intType'.
+
+  2. The value of a property of the `Inches' entity could be set from
+     the value of the `TypIdDef.Type' attribute in that context.
+
+  3. That property could be used to set the `TypIdUse.Type' attribute
+     of the occurrence of `Inches' in the second line of the program.
+
+  4. The type identifier use rule sets the value of the `Type.Type'
+     attribute in that context the value of the `TypIdUse.Type'
+     attribute.
+
+  5. Similar reasoning results in the value of the `Type.Type'
+     attribute in the variable definition context of the first line of
+     the program becoming `intType'.
+
+  6. Finally, a property of the `Length' entity is set in the context
+     of the first line of the program and used to make `intType' the
+     value of the `ExpIdUse.Type' attributes in the two contexts of
+     the last line.
+
+Unfortunately, this solution is based on the human's ability to see the
+dependence among the type identifiers and process the lines of the
+program in an order determined by that dependence.  One cannot, for
+example, blindly process the lines in the order in which they were
+written.
+
+   The dependence among the lines in our example is a result of our
+use of the known key `intType' as the value of a property of the type
+identifier entities.  This strategy is actually an example of a
+premature evaluation: There is no need to know the key representing
+the type of `Length' until the `ExpIdUse.Type' attribute is evaluated. 
+We can avoid the constraint on the order of rule processing by a "lazy
+evaluation" strategy in which we use properties of the type identifier
+entities to establish a means for determining the value of the
+`ExpIdUse.Type' attribute rather than establishing the value itself.
+
+   Recall that there are three possible `Type' contexts: a keyword, a
+type denotation, and a type identifier (*note Referring to a type:
+TypeUse.).  In the first two, we can set the value of the `Type.Type'
+attribute to the definition table key for the type itself.  In the
+third, however, the only information that we are guaranteed to have is
+the definition table key for the type identifier.  However, this
+information is sufficient to find the definition table key for the
+type *once all of the type identifiers have been defined*.  Thus we
+can simply set the value of the `Type.Type' attribute to the
+definition table key for the type identifier itself in this context.
+
+   The computation provided by the `Typing' module for the
+`TypeDefDefId' context sets a property of the type identifier entity
+to the value of the `TypeDefDefId.Type' attribute (*note Type
+identifiers: TypeIdent.).  Effectively, this computation creates a
+linear list of type identifier entities ending in a type entity.  When
+all of the entities corresponding to type identifiers have this
+property set, the definition table key for a type should be the last
+element of each list.
+
+   In our example, the value of this property of the identifier
+`Length''s definition table key would be the definition table key of
+the identifier `Measurement'.  The value of its property would be the
+definition table key of the identifier `Inches', whose property would
+be `intType'.
+
+   There is no guarantee, of course, that the last element of the list
+is actually a type.  For example, consider the following incorrect
+program:
+
+     { Measurement Length;
+       typedef Inches Measurement;
+       int Inches;
+     
+       Length = 3; printf("%d\n", Length + 7);
+     }
+
+Here the last element of the list beginning at `Measurement' would be
+`Inches', a variable identifier.  The `ChkTypeDefUseId' role checks
+the `IsType' property of the key that is the last element of the list
+to report errors of this kind (*note Verifying type identifier usage:
+ChkTypeId.).
+
+   The void attribute `RootType.GotUserTypes' represents the state of
+the computation at which all of the type denotations and type
+identifiers have been formed into lists.
+
+
+File: type,  Node: TypequDepend,  Next: OprdbDepend,  Prev: TypeIdDepend,  Up: RootType
+
+Dependence on structural equivalence
+====================================
+
+   The structural equivalence computation must be carried out after all
+`Type.Type' attributes have been set and linked as described in the
+previous section, and all of the possibly-equivalent types have been
+added to the appropriate blocks of the initial partition (*note
+Computing equivalence classes: EqClass.).  The latter condition is
+represented by all of the void attributes `TypeDenotation.GotType'
+having been set.  A user can override the computation of the void
+attribute `RootType.GotType' to signal dependence of the structural
+equivalence computation on any additional information.
+
+   `RootType.GotAllTypes' is the post-condition for the structural
+equivalence algorithm.  After that computation is complete, however,
+some definition table keys that were thought to represent types have
+had their properties changed so that they represent type identifiers
+(*note Structural Type Equivalence: TypeEq.).  Thus scanning a list of
+definition table keys to find the last one is only meaningful after
+`RootType.GotAllTypes' has been established.  The `TypeKey' attributes
+of `TypeDenotation', `TypeDefDefId', and `TypeDefUseId' reflect this
+fact.
+
+   Sometimes a designer uses a C routine to access type properties. 
+If the keys defining the types have been obtained from `Type'
+attributes of `TypeDenotation', `TypeDefDefId', or `TypeDefUseId'
+(rather than from `TypeKey' attributes of those nodes), then
+`FinalType' can be used to obtain the key at the end of the list.  The
+C program must include the header file `Typing.h', and the code must
+enforce a dependence on `RootType.GotAllTypes'.  If that dependence is
+not enforced, the results of invoking `FinalType' are undefined.
+
+
+File: type,  Node: OprdbDepend,  Next: TypedIdDepend,  Prev: TypequDepend,  Up: RootType
+
+Dependence on the operator database
+===================================
+
+   The operator identification database used for type analysis within
+expressions is initialized from the specifications of language-defined
+types, operators, and operator indications.  Database representations
+for function operators and operators associated with user-defined
+types cannot be constructed until the pre-condition
+`RootType.GotAllTypes' has been established.  Moreover, type analysis
+of expressions cannot be carried out until that information has been
+entered into the database.
+
+   Computations that define operators must establish the `GotOper'
+post-condition at their associated `OperatorDefs' nodes.  The
+computation of `RootType.GotOper' can be overridden to provide
+dependence on computations not associated with an `OperatorDefs' node. 
+`RootType.GotAllOpers' represents the state in which the database has
+been completely populated.  All expression analysis computations have
+`RootType.GotAllOpers' as a pre-condition.
+
+

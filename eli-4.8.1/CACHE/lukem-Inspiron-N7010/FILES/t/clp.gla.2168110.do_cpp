@@ -1,0 +1,6 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/l/clp.gla.1863297.gla"
+
+lit:   $\" (auxCString) [mkstr_nodelims]
+ident: C_IDENTIFIER
+       C_COMMENT
+       $% (auxEOL)

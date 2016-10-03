@@ -1,0 +1,13 @@
+
+
+
+Identifier:             C_IDENTIFIER
+
+
+IntDenotation:          C_INTEGER
+FloatDenotation:        C_FLOAT
+
+
+        C_COMMENT
+
+

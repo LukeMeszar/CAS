@@ -1,0 +1,23 @@
+%%
+
+"\|"	1; /* ext=2 sourceLine=17 */
+"\$"	2; /* ext=3 sourceLine=18 */
+"\{"	3; /* ext=4 sourceLine=19 */
+"\}"	4; /* ext=5 sourceLine=20 */
+"\["	5; /* ext=8 sourceLine=23 */
+"\]"	6; /* ext=10 sourceLine=25 */
+":"	7; /* ext=11 sourceLine=26 */
+"RULE"	8; /* ext=12 sourceLine=27 */
+"::="	9; /* ext=13 sourceLine=28 */
+"END"	10; /* ext=14 sourceLine=29 */
+";"	11; /* ext=15 sourceLine=30 */
+"LISTOF"	12; /* ext=16 sourceLine=31 */
+
+
+\"	13; /* ext=18 sourceLine=4 */
+[0-9]+	14; /* ext=6 sourceLine=5 */
+int|string|pointer|long|short|char|float|double	15; /* ext=7 sourceLine=6 */
+[a-zA-Z_][a-zA-Z_0-9]*	16; /* ext=9 sourceLine=9 */
+'	17; /* ext=17 sourceLine=10 */
+#	18; /* ext=15001 sourceLine=12 */
+"/*"	19; /* ext=15001 sourceLine=13 */

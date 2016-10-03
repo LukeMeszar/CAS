@@ -1,0 +1,1107 @@
+This is Info file name, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/name.tnf.
+
+
+File: name,  Node: top,  Up: (modlib)
+
+Specification Module Library
+****************************
+
+Name analysis according to scope rules
+**************************************
+
+   Languages usually use names to identify objects. An object is
+created by an explicit or implicit definition and bound to a name. In
+a certain range of the text occurrences of that name refer to that
+object. The scope rules of the language determine where that binding
+holds.  For language implementation a unique name (key) is created for
+each distinct object and associated to identifiers within the scope of
+that binding. Name analysis is completed by certain checks of
+relationships between identifier occurrences as required by the
+language, e.g. existence of a definition for each identifier use,
+multiple definitions (*Note Common Aspects of Property Modules:
+(prop)OccCnt, *note Check for Unique Object Occurrences:
+(prop)Unique.), or identifier use before its definition (*note Set a
+Property at the First Object Occurrence: (prop)SetFirst.).
+
+   This library contains a set of modules which can be used to
+implement the name analysis task according to a large variety of
+language rules.  The results of these modules are used to check
+required relationships between identifier occurrences and to solve
+further subtasks of language implementation, such as type analysis or
+transformation.  Solutions of these tasks are supported by modules of
+other libraries: *Note Property Library: (prop)top, *Note Type
+Analysis: (type)top, *Note Generating Output: (output)top.
+
+   The module support for name analysis is decomposed into subtasks of
+increasing complexity. They are described in subsections each.  There
+you find three solution variants for Algol-like, C-like scope rules,
+and C-like scope rules computed bottom-up while the input is read:
+
+* Menu:
+
+* Preconditions::           Requirements for the user's tree grammar
+* Basic Scope Rules::       Modules for basic scope rules
+* Predefined Identifiers::  Modules that introduce predefined entities
+* Joined Ranges::           Several subtrees form one conceptual range
+* Scope Properties::        Scopes being propagated as object properties
+* Inheritance of Scopes::   Scopes inherited by other scopes
+* Name Analysis Test::      Test output for name analysis
+* Environment Module::      Implementation of the Contour-Model
+* Index::                   Index
+
+   The use of these modules is demonstrated and explained in Eli's
+tutorial on name analysis.  (*note Tutorial on Name Analysis:
+(nametutorial)top.).
+
+   It contains three complete executable specifications called
+
+        AlgLike.fw,
+        CLike.fw, and
+        BuCLike.fw
+
+   You can obtain a copy of these specifications by calling Eli and
+requesting
+
+        $elipkg/Name/Examples > .
+
+   This request creates a subdirectory `Examples' in your current
+working directory containing the example specifications, test input
+files, and an Odinfile for automatic regression testing.
+
+
+File: name,  Node: Preconditions,  Next: Basic Scope Rules,  Prev: top,  Up: top
+
+Tree Grammar Preconditions
+**************************
+
+   Names are usually represented by identifier terminals. Their
+notation is determined by a scanner specification. The grammar has one
+(or several) terminals representing identifiers, e.g. `Ident', as in
+the running example.  The encoding of a particular identifier as
+computed by a scanner processor is available in contexts where an
+identifier terminal occurs.
+
+   Identifiers occur in different contexts: Defining and applied
+occurrences, or different kinds of identifiers (variables, labels,
+etc.) may be distinguished. Usually the concrete syntax is designed
+first, and the different computational roles of identifiers are
+incrementally developed during the design of the `.lido'
+specification. Hence, it is recommended NOT to make the distinction in
+the concrete syntax. It should have the terminal `Ident' in any
+context.  It is rather recommended to distinguish them by LIDO `RULE's.
+
+   Our running example has the concrete productions
+
+        ObjDecl:        TypeDenoter Ident.
+        TypeDenoter:    Ident.
+        Variable:       Ident.
+
+We distinguish the different roles of identifiers by introducing new
+symbol names in the corresponding LIDO `RULE's:
+
+        RULE: ObjDecl     ::= TypeDenoter DefIdent END;
+        RULE: TypeDenoter ::= TypeUseIdent END;
+        RULE: Variable    ::= UseIdent END;
+
+Furthermore, we have to add the necessary chain `RULE's:
+        RULE: DefIdent     ::= Ident END;
+        RULE: UseIdent     ::= Ident END;
+        RULE: TypeUseIdent ::= Ident END;
+
+   The name analysis modules require that identifier occurrences are
+represented by nonterminals, like `DefIdent', `UseIdent',
+`TypeUseIdent' as in the example. Each of these symbols has to have an
+attribute named `Sym' of type `int' representing the identifier
+encoding. A specification using these modules has to contain suitable
+computations of the `Sym' attributes.  For our example they may be
+specified like:
+
+        ATTR Sym: int SYNT;
+        SYMBOL IdentOcc COMPUTE SYNT.Sym = TERM; END;
+     
+        SYMBOL DefIdent     INHERITS IdentOcc END;
+        SYMBOL UseIdent     INHERITS IdentOcc END;
+        SYMBOL TypeUseIdent INHERITS IdentOcc END;
+
+If your language does not syntactically distinguish between defining
+and applied identifier occurrences, i.e. objects are introduced by
+using their name, the above distinction is not necessary. You just
+introduce `DefIdent' symbols for all occurrences.
+
+   Your grammar should have a symbol representing a phrase that
+contains all (defining and applied) occurrences of a name space. It is
+usually the root of the whole grammar, e.g. in the running example the
+symbol `Program'.
+
+   If your language has hierarchically nested ranges defining
+boundaries for the scope of definitions, the abstract syntax should
+have one or several symbols, e.g. `Range', `Block', `Routine', each
+representing a range of a name space. If the language does not have
+nested ranges for definitions you don't need such symbols.
+
+
+File: name,  Node: Basic Scope Rules,  Next: Predefined Identifiers,  Prev: Preconditions,  Up: top
+
+Basic Scope Rules
+*****************
+
+   The consistent renaming task associates to each identifier
+occurrence a key that uniquely identifies the object named by the
+identifier.  The following modules solve the basic problems of that
+task.
+
+* Menu:
+
+* AlgScope::  Algol-like scope rules
+* CScope::    C-like scope rules
+* BuScope::   C-like scope rules analyzed while processing input
+
+   Each of the three modules implements consistent renaming of
+identifiers.  Identifier occurrences are bound to object keys of type
+`DefTableKey'.
+
+   The `AlgScope' module applies Algol-like scope rules.  They are
+characterized by the following description:
+
+   A binding is valid within the whole smallest range containing the
+definition, except in inner ranges where a binding for the same
+identifier holds.  That means a definition of an `a' in an inner range
+hides definitions of `a' in outer ranges.  An identifier may be used
+before its definition.
+
+   Usually, the scope rules of a real language are further elaborated. 
+We call them Algol-like, if the above description is their underlying
+principle. For example Pascal's scope rules are Algol-like. They
+additionally require that an identifier is not used before its
+definition. That restriction can be checked using an instance of the
+`SetFirst' module (*note Set a Property at the First Object
+Occurrence: (prop)SetFirst.).
+
+   The `CScope' module applies C-like scope rules.  They are
+characterized by the following description:
+
+   A binding is valid from the definition up to the end of the smallest
+range containing the definition, except in inner ranges from a
+definition of the same identifier to the end of that range.  That
+means definitions of `a' in outer range are hidden by a definition of
+an `a' in an inner range from the point of the definition up to the
+end of the range.  It implies that an identifier is not used before
+its definition.
+
+   Usually, the scope rules of a real language are further elaborated. 
+We call them C-like, if the above description is their underlying
+principle. For example the scope rules of the language C are defined
+for variable names C-like. But for labels names of jumps they are
+defined Algol-like.
+
+   The `BuScope' module applies C-like scope rules. Its computations
+can be executed while the input is read (i.e. while the tree is
+constructed bottom-up).  An application may need this technique if
+results of the name analysis task influence further reading of input,
+or results are to be presented to the user while typing the input.
+
+   Both Algol-like and C-like scope rules are described by six basic
+concepts. The modules provide `.lido' specifications with symbol
+computations for each concept:
+
+   `IdDefScope' is a symbol representing a defining identifier
+occurrence that is bound in the scope of the smallest enclosing range.
+
+   `IdUseEnv' is a symbol representing an applied identifier occurrence
+that is bound in the enclosing environment.
+
+   `IdUseScope' is a symbol representing an applied identifier
+occurrence that is bound in the scope of the smallest enclosing range.
+
+   `ChkIdUse' is a role that may be inherited by an applied identifier
+occurrence.  If no definition is bound to that identifier, then the
+attribute `ChkIdUse.SymErr' has the value 1 and a message is issued by
+the computation:
+
+     SYNT.SymMsg=
+       IF(THIS.SymErr,
+         message (ERROR, CatStrInd ("Identifier is not defined: ", THIS.Sym),
+         0, COORDREF));
+
+   `RootScope' is the root symbol containing all identifier occurrences
+and all `RangeScope'.  It is automatically inherited by the root of
+the grammar.
+
+   `RangeScope' is a symbol representing a range for the binding of
+defining identifier occurrences `IdDefScope'.  It may be nested in
+`RootScope' or other ranges.
+
+   These computational roles are associated to symbols of the user's
+grammar to solve the basic consistent renaming task.  Make sure that
+your tree grammar is constructed according to the advices given in
+*Note Preconditions::.  More details about symbol computations and
+attributes provided by the three modules are given in the description
+of each module.
+
+   Complete executable specifications of our running example for each
+of the three scope rule variants are available in
+        $/Name/Examples/AlgLike.fw
+        $/Name/Examples/CLike.fw
+        $/Name/Examples/BuCLike.fw
+
+   In our running example the roles are used as follows:
+
+        SYMBOL Program      INHERITS RootScope END;
+        SYMBOL Block        INHERITS RangeScope END;
+        SYMBOL DefIdent     INHERITS IdDefScope END;
+        SYMBOL UseIdent     INHERITS IdUseEnv END;
+        SYMBOL TypeUseIdent INHERITS IdUseEnv END;
+
+Depending on which of the three modules is instantiated Algol-like or
+C-like name analysis is performed for this example.
+
+   The main result of the task is the computation of the attributes
+`IdDefScope.Key', `IdUseEnv.Key', i.e. `DefIdent.Key', `UseIdent.Key',
+and `TypeUseIdent.Key' in our example.  They identify the object each
+identifier is bound to.  It may be used in further computations to
+associate properties to it.
+
+   If no binding is found for an applied identifier occurrence the
+`Key' attribute has the value `NoKey'.  If that is a violation of
+language rules an error message can be issued using the role
+`ChkIdUse':
+
+        SYMBOL UseIdent INHERITS ChkIdUse END;
+
+Along with each `Key' attribute there is an attribute `Bind' of type
+`Binding', e.g. `UseIdent.Bind'. Its value characterizes a binding of
+an identifier `idn' in the innermost scope of an environment `env' to
+a key `k'.  The three values `idn', `env', and `k' can be obtained
+from a `Binding' using functions defined in *Note Environment Module::. 
+If no binding is found for an applied identifier occurrence the `Bind'
+attribute has the value `NoBinding'.
+
+   Although both  Algol-like and C-like scope rules are defined for
+nested ranges, the modules may be used for languages that do not have
+nested ranges, i.e. there is only one single flat range in which
+definitions are valid. In such a case `RootScope' is used for that
+range, and `RangeScope' is not used.
+
+   Another variant of these scope rules arises if a language does not
+distinguish between defining and applied identifier occurrences:
+identifiers are defined implicitly by their occurrences.  In that case
+`IdDefScope' is used for that kind of occurrences, and `IdUseEnv' is
+not used.  Of course, this concept does not make sense in languages
+that have ranges: One could not refer to an outer identifier definition
+from within an inner range.
+
+   We extend our running example to show implicit definitions within a
+flat range. We add a new kind of variables, say control variables to
+the language. They are implicitly defined by their use in special
+statements or operands, given by the following concrete productions:
+
+        Statement:      'set' Ident 'to' Expression ';'.
+        Operand:        'use' Ident.
+
+These control variable identifiers are bound in a new name space
+separate from that of the other entities. Hence, we use a second
+instance of one of the modules. That instance is identified by the
+generic `instance' parameter `CtrlVar':
+        $/Name/AlgScope.gnrc +instance=CtrlVar :inst
+
+   There is only one kind of occurrences for these variables,
+`CtrlVarUse', which has the role `CtrlVarIdDefScope'.  The `Program'
+symbol has the role `CtrlVarRootScope':
+
+        RULE:  Statement  ::= 'set' CtrlVarUse 'to' Expression ';' END;
+        RULE:  Expression ::= 'use' CtrlVarUse END;
+        SYMBOL CtrlVarUse INHERITS CtrlVarIdDefScope, IdentOcc END;
+        SYMBOL Program    INHERITS CtrlVarRootScope END;
+
+
+File: name,  Node: AlgScope,  Next: CScope,  Prev: Basic Scope Rules,  Up: Basic Scope Rules
+
+Algol-like Basic Scope Rules
+============================
+
+This module implements consistent renaming of identifiers.  Identifier
+occurrences are bound to object keys of type `DefTableKey' according
+to Algol-like scope rules:
+
+   A binding is valid within the whole smallest range containing the
+definition, except in inner ranges where a binding for the same
+identifier holds.
+
+   Make sure that you have considered the advices given in *Note Basic
+Scope Rules::.
+
+   The module is instantiated by
+        $/Name/AlgScope.gnrc+instance=NAME +referto=KEY :inst
+
+Both generic parameters can be omitted in most of the usual
+applications.  The `instance' parameter is used to distinguish several
+instances of this module. The scope rules of a language may require
+that identifiers are bound in different name spaces that do not affect
+each other. Then for each name space an instance of this or of the
+other basic scope modules is used.  The `referto' parameter modifies
+the names of `Key' attributes and of `Bind' attributes.  It is only
+used if there is an identifier occurrence in the language that is
+bound in more than one name space. These bindings are then described
+by one pair of `Key' and `Bind' attribute each.
+
+   The module provides computational roles for the symbols
+`NAMERootScope', `NAMERangeScope', `NAMEAnyScope', `NAMEIdDefScope',
+`NAMEIdUseEnv', `NAMEIdUseScope', and `NAMEChkIdUse' to be used in
+`.lido' specifications.  The computations of the module use functions
+of the library's environment module.
+
+   `NAMEIdDefScope' is a symbol representing a defining identifier
+occurrence.
+
+   `NAMEIdUseEnv' is a symbol representing an applied identifier
+occurrence.
+
+   `NAMEIdUseScope' is a symbol representing an applied identifier
+occurrence that is bound in the scope of the smallest enclosing range. 
+The outer environment of this range is not considered.
+
+   `NAMEChkIdUse' is a role that may be inherited by an applied
+identifier occurrence. It issues an error message `identifier is not
+defined:' if no definition is bound to that identifier.
+
+   `NAMERootScope' is the root symbol containing all identifier
+occurrences and all `NAMERangeScope'.  It is automatically inherited
+by the root of the grammar.
+
+   `NAMERangeScope' is a symbol representing a range for the binding
+of defining identifier occurrences `NAMEIdDefScope'.  It may be nested
+in `NAMERootScope' or in other ranges.
+
+   `NAMEAnyScope' comprises the roles of `NAMERootScope' and
+`NAMERangeScope'. It may be used in constructs like
+        INCLUDING NAMEAnyScope.NAMEGotKeys
+
+The main results of using this module are the bindings of identifier
+occurrences represented by the attributes `NAMEIdDefScope.KEYKey' and
+`NAMEIdUseEnv.KEYKey'.  Along with each `Key' attribute there is an
+attribute `KEYBind' of type `Binding', e.g. `UseIdent.Bind'. Its value
+characterizes a binding of an identifier `idn' in the innermost scope
+of an environment `env' to a key `k'.  The three values `idn', `env',
+and `k' can be obtained from a `Binding' using functions defined in
+*Note Environment Module::.  If no binding is found for an applied
+identifier occurrence the `Bind' attribute has the value `NoBinding'.
+
+   Usually both `NAMEIdDefScope' and `NAMEIdUseEnv' are used.  In
+specific cases of language rules any combination of `NAMEIdDefScope',
+`NAMEIdUseEnv', `NAMEIdUseScope' may be used.
+
+   The attributes `NAMEIdDefScope.Sym', `NAMEIdUseEnv.Sym',
+`NAMEIdUseScope.Sym' must represent the identifier encoding.
+
+   `NAMERootScope.NAMEEnv' is a root environment where all environments
+of this name space are embedded in.  It has the value of a global
+variable `NAMERootEnv' that is assigned in the initialization phase of
+the processor.  It allows to introduce predefinitions by
+initialization code, which then must include the file `NAMEAlgScope.h'. 
+(*note Predefined Identifiers::.)
+
+   `NAMERangeScope.NAMEEnv' is an inherited attribute for the
+environment of bindings of this range.
+
+   `NAMEAnyScope.NAMEGotKeys' indicates that all keys defined in this
+and in all enclosing ranges are defined in `NAMEAnyScope.NAMEEnv'. 
+`NAMEAnyScope.NAMEGotKeys' is a precondition for finding a binding
+using `IdUseEnv'.
+
+   `NAMEAnyScope.NAMEGotLocKeys' indicates that all keys are defined
+in this range are in 
+ `NAMEAnyScope.NAMEEnv'.
+
+
+File: name,  Node: CScope,  Next: BuScope,  Prev: AlgScope,  Up: Basic Scope Rules
+
+C-like Basic Scope Rules
+========================
+
+   This module implements consistent renaming of identifiers. 
+Identifier occurrences are bound to object keys of type `DefTableKey'
+according to C-like scope rules:
+
+   A binding is valid from the definition up to the end of the smallest
+range containing the definition, except in inner ranges from a
+definition of the same identifier to the end of that range.
+
+   Note: The scope rules of the programming language C are defined
+C-like in most but not in all respects: For example the scopes of
+names of variables and functions are defined C-like, but those of jump
+labels are defined Algol-like.
+
+   Make sure that you have considered the advices given in *Note Basic
+Scope Rules::.
+
+   The module is instantiated by
+        $/Name/CScope.gnrc+instance=NAME +referto=KEY :inst
+
+Both generic parameters can be omitted in most of the usual
+applications.  The `instance' parameter is used to distinguish several
+instances of this module. The scope rules of a language may require
+that identifiers are bound in different name spaces that do not affect
+each other. Then for each name space an instance of this or of the
+other basic scope modules is used.  The `referto' parameter modifies
+the names of `Key' attributes.  It is only used if there is an
+identifier occurrence in the language that is bound in more than one
+name space. These bindings are then described by one `Key' attribute
+each.
+
+   The module provides computational roles for the symbols
+`NAMERootScope', `NAMERangeScope', `NAMEAnyScope', `NAMEIdDefScope',
+`NAMEIdUseEnv', `NAMEIdUseScope', `NAMEChkIdUse', `NAMEIdDefUse',
+`NAMEDeclaratorWithId', and `NAMEIdInDeclarator' to be used in `.lido'
+specifications.  The computations of the module use functions of the
+library's environment module.
+
+   `NAMEIdDefScope' is a symbol representing a defining identifier
+occurrence.
+
+   `NAMEIdUseEnv' is a symbol representing an applied identifier
+occurrence.
+
+   `NAMEChkIdUse' is a role that may be inherited by an applied
+identifier occurrence. It issues an error message `identifier is not
+defined:' if no definition is bound to that identifier.
+
+   `NAMEIdUseScope' is a symbol representing an applied identifier
+occurrence that is bound in the scope of the smallest enclosing range. 
+The outer environment of this range is not considered.
+
+   `NAMEIdDefUse' represents a defining identifier occurrence like
+`NAMEIdDefScope' if 
+ `INH.NAMEDefCond' is non-zero, otherwise an applied occurrence like
+`NAMEIdUseEnv'.  `NAMEDefCond' is to be computed by an upper
+computation.  There is a default computation provided that sets
+`INH.NAMEDefCond' to 1 iff the identifier is not yet bound in the
+current environment.
+
+   The pair of roles `NAMEDeclaratorWithId' and `NAMEIdInDeclarator'
+are used to model the scope concept of declarators as defined in the
+programming language C: A defining occurrence of an identifier may be
+part of *Declarator*, that is a larger construct which determines the
+type of the defined identifier, for example the definition of the array
+`a' in
+        int a[a+1];
+
+Here `a[a+1]' is the `Declarator' and the first `a' is its defining
+occurrence.  The scope rules of C state that the scope of the defined
+identifier begins immediately after the end of the declarator, rather
+than at the position of the defining occurrence. Hence, the `a' within
+the brackets is *not* bound to the defined array.  This rule is only
+relevant if declarators may contain applied identifier occurrences. 
+To achieve this effect, the role `NAMEDeclaratorWithId' is to be
+inherited by a symbol which is the root of the declarator construct,
+and the role `NAMEIdInDeclarator' is inherited by the symbol that
+characterizes defining identifier occurrences within declarators. Make
+sure that the grammar guarantees a 1:1 relation the nodes of these
+symbol roles in any declarator tree.  The attribute
+`NAMEIdInDeclarator.Sym' has to be provided as usual. The symbol roles
+compute the `Sym' attribute for `NAMEDeclaratorWithId' and the
+`KEYKey' attribute for both symbols.
+
+   `NAMERootScope' is the root symbol containing all identifier
+occurrences and all `NAMERangeScope'.  It is automatically inherited
+by the root of the grammar.
+
+   `NAMERangeScope' is a symbol representing a range for the binding
+of defining identifier occurrences `NAMEIdDefScope'.  It may be nested
+in `NAMERootScope' or other ranges.
+
+   `NAMEAnyScope' comprises the roles of `NAMERootScope' and
+`NAMERangeScope'. It may be used in constructs like
+        INCLUDING NAMEAnyScope.NAMEEnv
+
+The main results of using this module are the bindings of identifier
+occurrences represented by the attributes `NAMEIdDefScope.KEYKey' and
+`NAMEIdUseEnv.KEYKey'.
+
+   Along with each `Key' attribute there is an attribute `Bind' of
+type `Binding', e.g. `UseIdent.Bind'. Its value characterizes a
+binding of an identifier `idn' in the innermost scope of an
+environment `env' to a key `k'.  The three values `idn', `env', and
+`k' can be obtained from a `Binding' using macros defined in *Note
+Environment Module::.  If no binding is found for an applied
+identifier occurrence the `Bind' attribute has the value `NoBinding'.
+
+   Usually both `NAMEIdDefScope' and `NAMEIdUseEnv' are used.  In
+specific cases of language rules any combination of `NAMEIdDefScope',
+`NAMEIdUseEnv', `NAMEIdUseScope', `NAMEIdDefUse' may be used.
+
+   The attributes `NAMEIdDefScope.Sym', `NAMEIdUseEnv.Sym',
+`NAMEIdUseScope.Sym', 
+ `NAMEIdDefUse.Sym' must represent the identifier encoding.
+
+   `NAMERootScope.NAMEEnv' is a root environment where all environments
+of this name space are embedded in.
+
+   It has the value of a global variable `NAMERootEnv' that is assigned
+in the initialization phase of the processor.  It allows to introduce
+predefinitions by initialization code, which then must include the
+file `NAMECScope.h'.  (*note Predefined Identifiers::.)
+
+   `NAMERangeScope.NAMEEnv' is an inherited attribute for the
+environment of bindings of this range.
+
+   `NAMEAnyScope.NAMEGotKeys' indicates that all identifier
+occurrences from the begin of the `NAMERootScope' up to the end of
+this range are bound to keys in `NAMEAnyScope.NAMEEnv'.
+
+
+File: name,  Node: BuScope,  Prev: CScope,  Up: Basic Scope Rules
+
+C-like Basic Scope Rules Computed Bottom-Up
+===========================================
+
+   This module implements consistent renaming of identifiers.  The
+computations of this module are specified such that they are executed
+while the input program is read.  Identifier occurrences are bound to
+object keys of type `DefTableKey' according to C-like scope rules.
+
+   Make sure that you have considered the advices given in *Note Basic
+Scope Rules::.
+
+   The module is instantiated by
+        $/Name/BuScope.gnrc+instance=NAME +referto=KEY :inst
+
+The functionality provided by this modules is almost the same as that
+of the `CScope' module (*note CScope::.).  Only the differences are
+described here.
+
+   During the bottom-up computation phase values can not be propagated
+using inherited (`INH') attributes; and computations that affect a
+whole subtree, like creation of the scope for a range, have to be
+associated to a symbol node that precedes that subtree.  For that
+purpose this module  provides additional computational roles that
+cooperate with the usual basic name analysis roles.
+
+   Usually it is necessary to introduce additional symbols into the
+concrete grammar preceding range subtrees.  They derive to nothing,
+and are used to carry the specific bottom-up computations.
+
+   In our running example we would replace the productions
+        Source:         Block.
+        Statement:      Block.
+
+by the productions
+        Source:         BuBlock Block.
+        Statement:      BuBlock Block.
+
+and add
+        SYMBOL BuBlock INHERITS CreateNewScope, OpenNewScope END;
+
+to the LIDO specification.  All other module roles can be used as
+described for C-like scope rules.
+
+   Usually each symbol representing a `NAMERangeScope' has to be
+preceded by a symbol that inherits both roles `NAMECreateNewScope' and
+`NAMEOpenNewScope'.
+
+   If scopes are used as properties of objects it may be necessary to
+inherit the roles `NAMECreateNewScope', `NAMERecentNewScope', and
+`NAMEOpenNewScope' to different symbols which precede a symbol
+representing a `NAMERangeScope'.  (*note BuScopeProp::., *note
+BuInh::.)
+
+   `NAMECreateNewScope' creates a new scope that is embedded in the
+scope of the smallest enclosing range. That scope can be obtained from
+the attribute `SYNT.NAMENewScope', or be accessed by a subsequent role
+`NAMERecentNewScope' (see below).
+
+   `NAMEOpenNewScope' makes the scope obtained from
+`SYNT.NAMENewScope' become the current scope. The attribute
+`SYNT.NAMEOpenPrecond' can be used to specify a precondition for this
+operation.  If `NAMEOpenNewScope' is inherited by a symbol
+representing an identifier occurrence `SYNT.NAMEOpenPrecond =
+THIS.KEYKey' ensures that the identifier is bound before the new scope
+is opened.
+
+   `NAMERecentNewScope' accesses the most recently created new scope
+and provides it by the attribute `SYNT.NAMENewScope'.  This role is
+used together with `NAMEOpenNewScope' if 
+ `NAMECreateNewScope' is inherited by a preceding symbol.
+
+   We demonstrate the use of these roles for our running example.  The
+grammar introduced in *Note Running Example: (modlib)Example, has to
+be modified in order to allow bottom-up computation. A new symbol
+`BuBlock' is introduced. It derives to nothing and precedes the symbol
+`Block' on right-hand sides of productions:
+
+       Source:         BuBlock Block.
+       Statement:      BuBlock Block.
+
+The roles `CreateNewScope' and `OpenNewScope' introduce the scope for
+the subsequent `Block':
+
+       SYMBOL Program  INHERITS RootScope END;
+       SYMBOL Block    INHERITS RangeScope END;
+       SYMBOL BuBlock  INHERITS CreateNewScope, OpenNewScope END;
+
+   The other roles for basic scope rules are used as described in
+*Note CScope::.
+
+
+File: name,  Node: Predefined Identifiers,  Next: Joined Ranges,  Prev: Basic Scope Rules,  Up: top
+
+Predefined Identifiers
+**********************
+
+   In most languages some identifiers are predefined, e.g. names for
+basic types or for constants like `true' and `false'.  Their
+definitions are valid in any program as if they were bound in the
+outermost environment. The two modules `PreDefine' and `PreDefId'
+described here allow to easily introduce such predefinitions.  They
+require that one of the basic scope rule modules (*note Basic Scope
+Rules::.) is used.
+
+   Both modules `PreDefine' and `PreDefId' are to be instantiated to
+introduce a set of predefined entities in a name space.
+
+   The implementation of the modules use two functions which introduce
+a source identifier into the identifier table and establish a binding
+for it in some environment. These functions can be used directly for
+example in cases where predefinitions are to be established for other
+environments than the outermost one.  Those functions are described
+below.
+
+   The `PreDefine' module is instantiated by
+        $/Name/PreDefine.gnrc +instance=NAME +referto=IDENT :inst
+
+The optional `instance' parameter characterizes the name space in which
+identifiers are to be predefined. The `instance' parameter has to be
+the same as that of the basic scope rule module instance used for that
+name space. Several instances of this module may address different
+name spaces.
+
+   The `referto' parameter specifies the symbol name used for
+identifier terminals in the grammar.  The `referto' parameter must not
+be omitted.
+
+   If a grammar has several identifier terminal symbols predefinitions
+can be made using several instances of this module, if they belong to
+different name spaces.
+
+   The module provides two functions `NAMEPreDefine' and
+`NAMEPreDefineSym' which are called by the instance of the `PreDefId'
+module.  `NAMEPreDefineSym' inserts a string into the identifier module
+to be used as an `IDENT' symbol.  `NAMEPreDefine' additionally binds
+that symbol to a key in the root environment given by the global
+variable `NAMERootEnv'.
+
+   The predefined identifiers are to be described in a file as
+explained below.  The name of that file has to be given as `referto'
+parameter of the instantiation of the `PreDefId' module:
+
+        $/Name/PreDefId.gnrc +instance=NAME +referto=(FILENAME) :inst
+
+The `instance' parameter has to be the same as that of the `PreDefine'
+instance.  If this instantiation is contained in a `.specs' file and
+if the description file, say `Predef.d' is contained in the same
+directory, it may read
+        $/Name/PreDefId.gnrc +referto=(Predef.d) :inst
+
+This can also be used if the `.specs' file and `Predef.d' are
+contained in a `.fw' specification.
+
+   The description file contains a sequence of macro calls, one for
+each predefined identifier, e.g.
+       PreDefKey ("int", intKey)
+       PreDefKey ("real", realKey)
+       PreDefSym ("external", externSym)
+       PreDefSymKey ("fail", failSym, failKey)
+       PreDefSymKeyBind ("write", writeSym, writeKey, writeBind)
+
+The sequence should not contain anything else, because it is expanded
+in several contexts where different definitions of those macros are
+valid.
+
+   Each call of one of the macros establishes a predefinition for one
+identifier, and makes the result accessible via the supplied variable
+names. Usually not all of those variables are needed.  Hence, the
+available macros differ in the combinations of those variables. We
+first explain the most general macro.  The meanings of the other
+macros are deduced from it.
+
+   `PreDefSymKeyBind ("xxx", sym, key, bind)' encodes the character
+string `xxx' as an identifier, stores it in the identifier table, and
+stores the encoding in the `int' variable `sym'.
+
+   Note: The string need not obey the rules specified for the notation
+of `IDENT' symbols.  That facility can be used if artifacts are
+predefined, which can not be referred to by a name in a program.
+
+   `key' is introduced as a PDL known key.
+
+   `key' is bound to `sym' in the environment `NAMERootEnv'.  That
+binding is assigned to the `Binding' variable `bind'.  The key, the
+identifier code, and the environment can be accessed from the
+`Binding' value (`KeyOf', `IdnOf', `EnvOf').
+
+   The variables `sym' and `bind' and the known key `key' are defined,
+exported, and made accessible via a `.HEAD.phi' specification. The
+binding is established and the assignments are made in the
+initialization phase of the processor.  Hence, the results can be used
+only after that phase, i.e.  during all computations in the tree.
+
+   According to the above description the following macro call
+       PreDefSymKeyBind ("write", writeSym, writeKey, writeBind)
+
+creates the following variables to be defined and initialized as
+described:
+       int writeSym;
+       DefTableKey writeKey;
+       Binding writeBind;
+
+   The other macros that are provided cause a subset of the effects
+described for `PreDefSymKeyBind':
+
+   `PreDefSymKey ("xxx", sym, key)' As described above, except: The
+binding is established but not assigned to a variable.
+
+   `PreDefKeyBind ("xxx", key, bind)' As described above, except: The
+symbol is encoded and stored in the identifier table, but the encoding
+is not assigned to a variable.
+
+   `PreDefKey ("xxx", key)' As described above, except: Neither the
+symbol encoding nor the binding are stored in a variable.
+
+   `PreDefBind ("xxx", bind)' As described above, except: The symbol
+encoding is not stored in a variable. The key is created dynamically
+rather than as a known key.  Both, symbol encoding and the key can be
+accessed via the stored `Binding' value.
+
+   `PreDefSym ("xxx", sym)' encodes the character string `xxx' as an
+identifier, stores it in the identifier table, and stores the encoding
+in the `int' variable `sym'.  No binding is established.
+
+   The thus introduced variables and known keys may be used in `.lido'
+specifications; the known keys may be additionally used in any
+specification where PDL defined entities are available.
+
+   The described modules are based on a C module which provides the
+following two functions. They may be used directly to establish
+bindings in other environments than the outermost one, for example. 
+In that case it is sufficient to use the module `PreDefMod.specs'. 
+Then the modules `PreDefine' and `PreDefId' need not be instantiated,
+if the macros explained above are not used.
+
+   The two functions are:
+
+`void PreDefineSym (char *name, int code, int *sym)'
+     The string `name' is encoded with the given syntax `code'.  That
+     is usually the code of the symbol used for identifier terminals
+     in the grammar (cf. the `referto' parameter in the instantiation
+     of the module `PreDefine' explained above).  `*sym' is set to the
+     symbol index.
+
+`void PreDefine (char *name, int code, int *sym, Environment env, DefTableKey key,Binding *bind)'
+     The string `name' is encoded with the given syntax `code' which
+     is bound to `key' in the given environment `env'.  `*sym' is set
+     to the symbol index.  `*bind' is set to the created binding, if
+     successful, otherwise to `NoBinding'.
+
+   In our running example we introduce predefined names for some basic
+types and for Boolean constants by the module instantiations
+        $/Name/PreDefine.gnrc +referto=Ident :inst
+        $/Name/PreDefId.gnrc +referto=(Predef.d):inst
+
+The file `Predef.d' contains
+       PreDefKey ("int", intKey)
+       PreDefKey ("real", realKey)
+       PreDefKey ("bool", boolKey)
+       PreDefKey ("true", trueKey)
+       PreDefKey ("false", falseKey)
+
+Then key names like `intKey' can be used e.g. in computations for type
+checking (*note Type Analysis: (type)top.).  In that case it is
+necessary to state that `true' and `false' are of type bool in a
+`.pdl' specification:
+        trueKey -> TypeOf = {boolType};
+        falseKey -> TypeOf = {boolType};
+
+It associates the `TypeOf' property to the predefined objects.
+
+
+File: name,  Node: Joined Ranges,  Next: Scope Properties,  Prev: Predefined Identifiers,  Up: top
+
+Joined Ranges
+*************
+
+   In some situations it is not possible to specify the tree grammar
+such that each range in the sense of scope rules is rooted by one
+single grammar symbol as required for using the role `RangeScope' of
+the basic scope module.  The following three modules extend the basic
+scope rule modules (*note Basic Scope Rules::.) by facilities that
+support such cases:
+
+* Menu:
+
+* AlgRangeSeq::  Joined Ranges Algol-like
+* CRangeSeq::    Joined Ranges C-like
+* BuRangeSeq::   Joined Ranges C-like Bottom-up
+
+   Using one of these modules requires that the corresponding basic
+scope rule module is instantiated with the same generic parameters
+`+instance=NAME' and `+referto=KEY'.
+
+   This module implements the following concept: Several ranges in the
+program form one single range in the sense of scope rules, i.e. the
+definition in these ranges contribute to a single scope in which the
+applied identifier occurrences of these ranges are bound.  There is a
+symbol which is the subtree root for all these ranges.  But it is not
+a range in the sense of scope rules because it may also contain
+identifier occurrences that are bound in the enclosing range.
+
+   The modules provide `.lido' specifications for the following
+computational roles:
+
+   `NAMERangeSequence' is to be inherited by a symbol that is the root
+of a subtree which contains all to be joined ranges.  It provides all
+attributes provided by `NAMERangeScope', but it is not a range in the
+sense of scope rules.  Other range roles may not be inherited by
+`NAMERangeSequence'.
+
+   `NAMERangeElement' is the role to be inherited by symbols that
+represent ranges to be joined. It is a specialized `NAMERangeScope'. 
+Other range roles may not be inherited by such a symbol.  It is a
+specialized `NAMERangeScope' that must be contained in a
+`NAMERangeSequence' subtree without having a `NAMERangeScope' in
+between.
+
+   We demonstrate the use of these facilities by extending the language
+of our running example by introducing an artificial language
+construct: It consists of a defining identifier occurrence, that is to
+be bound in the enclosing range, and two compound statements which
+form one single range in the sense of scope rules:
+
+        Statement:      Join.
+        Join:           'join' DefIdent JoinedBlock JoinedBlock
+                        'joined' ';'.
+        JoinedBlock:    Compound.
+
+   Hence the `Join' symbol has the role `RangeSequence', and the
+`JoinedBlock' symbol has the role `RangeElement':
+
+        RULE: Join ::= 'join' DefIdent JoinedBlock JoinedBlock
+                       'joined' ';'
+        END;
+     
+        SYMBOL Join INHERITS RangeSequence END;
+        SYMBOL JoinedBlock INHERITS RangeElement END;
+
+   This example is applicable with either the `AlgRangeSeq' module or
+the `CRangeSeq'.  In case of Algol-like scope rules an applied
+identifier occurrence in either of the two ranges may be bound to a
+definition in either of the two ranges.  In case of C-like scope rules
+an applied identifier occurrence in the second of the two ranges may
+be bound to a definition in either of the two ranges.
+
+   In case of bottom-up computations using the `BuRangeSeq' module
+some modifications have to be applied as described for that module.
+
+
+File: name,  Node: AlgRangeSeq,  Next: CRangeSeq,  Up: Joined Ranges
+
+Joined Ranges Algol-like
+========================
+
+   This module implements joined ranges for Algol-like scope rules as
+described in (*note Joined Ranges::.).
+
+   The module is instantiated by
+        $/Name/AlgRangeSeq.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the module `AlgScope' is instantiated
+with the same values of the generic parameters.
+
+   The module provides the computational roles `NAMERangeSequence' and
+`NAMERangeElement' as described in *Note Joined Ranges::.
+
+
+File: name,  Node: CRangeSeq,  Next: BuRangeSeq,  Prev: AlgRangeSeq,  Up: Joined Ranges
+
+Joined Ranges C-like
+====================
+
+   This module implements joined ranges for C-like scope rules as
+described in (*note Joined Ranges::.).
+
+   The module is instantiated by
+        $/Name/CRangeSeq.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the module `CScope' is instantiated
+with the same values of the generic parameters.
+
+   The module provides the computational roles `NAMERangeSequence' and
+`NAMERangeElement' as described in *Note Joined Ranges::.
+
+
+File: name,  Node: BuRangeSeq,  Prev: CRangeSeq,  Up: Joined Ranges
+
+Joined Ranges C-like Bottom-up
+==============================
+
+   This module implements joined ranges for C-like scope rules as
+described in (*note Joined Ranges::.).  Its computations are executed
+`BOTTOMUP' while the input is read.
+
+   The module is instantiated by
+        $/Name/BuRangeSeq.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the module `BuScope' is instantiated
+with the same values of the generic parameters.
+
+   The module provides the computational roles `NAMERangeSequence',
+`NAMEOpenSeqScope' and `NAMEOpenElemScope'.
+
+   `NAMERangeSequence' is to be inherited by a symbol that is the root
+of a subtree which contains all to be joined ranges.  It provides all
+attributes provided by `NAMERangeScope', but it is not a range in the
+sense of scope rules.  Other range roles may not be inherited by
+`NAMERangeSequence'.
+
+   `NAMEOpenSeqScope' is to be inherited by a symbol that is in the
+subtree of `NAMERangeSequence' and precedes all to be joined ranges.
+
+   `NAMEOpenElemScope' is to be inherited by a symbol that precedes
+each to be joined range.
+
+   A nested `NAMERangeSequence' may not occur between
+`NAMEOpenSeqScope' and the first 
+ `NAMEOpenElemScope'.
+
+   The example given in *Note Joined Ranges:: is here modified for the
+bottom-up case.
+
+   We demonstrate the use of these facilities by extending the language
+of our running example by introducing an artificial language
+construct: It consists of a defining identifier occurrence, that is to
+be bound in the enclosing range, and two compound statements which
+form one single range in the sense of scope rules.
+
+   We introduce two new symbols `BuJoin' and `BuJoinEl' that derive to
+empty.
+
+        Statement:      Join.
+        Join:           'join' BuJoin DefIdent
+                               BuJoinEl Block BuJoinEl Block
+                        'joined' ';'.
+        BuJoin:         .
+        BuJoinEl:       .
+
+   The module roles are inherited as described above:
+
+        RULE: Join ::= 'join' BuJoin DefIdent
+                              BuJoinEl Block BuJoinEl Block
+                       'joined' ';'
+        END;
+     
+        SYMBOL Join INHERITS RangeSequence END;
+        SYMBOL BuJoin INHERITS OpenSeqScope END;
+        SYMBOL BuJoinEl INHERITS OpenElemScope END;
+        SYMBOL Block INHERITS RangeScope END;
+
+
+File: name,  Node: Scope Properties,  Next: Inheritance of Scopes,  Prev: Joined Ranges,  Up: top
+
+Scopes Being Properties of Objects
+**********************************
+
+   Language constructs like modules, classes, or record types have a
+body that is a range. The set of bindings for the components defined
+in that range constitutes its scope.  In an applied context of a
+module, class, or record identifier its components may be selected,
+e.g. in `m.k', where `m' is a module identifier and `k' is one of its
+components. These constructs are also called *qualified names* in some
+language descriptions.  In order to bind such applied occurrences of
+component identifiers in contexts outside their defining range, the
+scope of the range is associated as a property to the key of the
+module, class, or record identifier.
+
+   This specific task of consistent renaming for component identifiers
+is often closely related to type analysis. If `v' in `v.k' is a
+variable that has a record type, then that type key has the scope of
+the record range associated as a property (*note Type Analysis:
+(type)top.).
+
+   The following four modules extend the basic scope rule modules
+(*note Basic Scope Rules::.) by facilities that support scope
+properties.  How to select one of the modules is explained below.
+
+* Menu:
+
+* ScopeProp::     Scope Properties without left-to-right Restrictions (recommended)
+* CScopeProp::    Scope Properties C-like (recommended only with CInh)
+* BuScopeProp::   Scope Properties C-like analyzed while processing input
+
+   The design of scope rules and their description needs careful
+consideration if the concept of scopes being properties is involved. 
+We have to answer some questions on the described language before we
+can decide which of the library modules is to be used:
+
+   It is easily decided that we need the facility of scope properties:
+Assume the language has named program objects, say modules, which
+consist of a range with definitions of components or members.  Those
+members are accessible outside their defining range wherever the name
+of the module is accessible:
+       module m
+         { int i;
+           float f (); {...}
+         }
+       m:f();
+   In this example the module body is a range where the members `i' and
+`f' are defined. The scope of the range contains bindings for `i' and
+`f'. It is a property of the module `m' which is set in the module
+definition. The construct `m:f' is a qualified name: A binding for `f'
+is to be found in the scope property of the qualifying module name
+`m'. The definitions valid in the context of the qualified name are
+irrelevant for the binding of `f'.
+
+   The same application pattern occurs for example with types that have
+components, like record types, structure types, and union types. There
+a component selection is usually qualified with an expression having
+such a type rather than with the type identifier itself.
+
+   It is recommended to use the `ScopeProp' module for the
+specification of such scope patterns. It fits to any of the basic
+scope rule modules, Alg-like, C-like, or bottom-up. It does *not*
+impose any ordering restriction that would require the definition of a
+member to occur before its qualified use. For example in a language
+with C-like basic scope rules the following sequence would be
+acceptable:
+       module m;
+       m:f();
+       module m
+         { int i;
+           float f (); {...}
+         }
+   Even if it should be considered erroneous to use the qualified name
+`f' before its definition, it is recommended to specify the binding in
+the described way, and to enforce that restriction by a check of the
+related positions.  The same holds for bottom-up basic scope rules.
+One only has to be aware that the binding of qualified names is
+determined *after* the bottom-up computations.
+
+   There are a few specific reasons where the modules `CScopeProp' or
+`BuScopeProp', the C-like variants of `ScopeProp' are to be used
+instead:
+
+   If the basic scope rules are specified C-like using `BuScope' and
+the binding of qualified names has to be done by bottom-up
+computations, then `BuScopeProp' is to be used.
+
+   If the basic scope rules are specified C-like using `CScope' and
+the `CInh' module is used to implement the concept of inheritance,
+then `CScopeProp' is to be used. That is always necessary when
+bindings of scope properties are needed to solve the binding of
+non-qualified names in ranges where C-like scope rules apply.  As a
+consequence it is enforced that the definitions of such members
+precede their uses.
+
+   The general description of this set of module is given in the
+section *note ScopeProp::., the deviations of its variants are
+described in *note CScopeProp::., and *note BuScopeProp::..
+
+

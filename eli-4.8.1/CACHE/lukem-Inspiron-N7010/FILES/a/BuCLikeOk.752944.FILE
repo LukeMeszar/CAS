@@ -1,0 +1,5 @@
+%BuCLike.Core.ok == . +cmd=cat (%trenn) \
+	(BuCLike.demo/Core.ok:label) \
+	(BuCLike.demo/Core.ok) \
+	(BuCLike.demo/Core.ok +cmd=(BuCLike.fw.exe) :stdout :warn) \
+	(BuCLike.demo/Core.ok +cmd=(BuCLike.fw.exe) :stdout) :stdout

@@ -1,0 +1,4 @@
+%BuCLike.Module.err == . +cmd=cat (%trenn) \
+	(BuCLike.demo/Module.err:label) \
+	(BuCLike.demo/Module.err) \
+	((BuCLike.demo/Module.err +cmd=(BuCLike.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors) :stdout) :stdout

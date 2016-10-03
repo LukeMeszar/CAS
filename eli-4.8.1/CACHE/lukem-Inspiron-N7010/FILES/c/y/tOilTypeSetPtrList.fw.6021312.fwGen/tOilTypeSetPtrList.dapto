@@ -1,0 +1,18 @@
+
+aspect tOilTypeSetPtrList;
+
+"tOilTypeSetList.h"
+
+operation get_tOilTypeSetList_elems
+    "Return the tOilTypeSet list elements"
+    (tOilTypeSetList lst "The list") : str
+{
+    tOilTypeSet elem;
+
+    for ( ; lst != NULLtOilTypeSetList; lst = TailtOilTypeSetList(lst)) {
+        elem = HeadtOilTypeSetList(lst);
+        DAPTO_RESULT_PTR(elem);
+    }
+}
+
+end;

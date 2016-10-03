@@ -1,0 +1,27 @@
+
+"oiladt2.h"
+
+Index: int;
+
+
+Type: tOilType;
+
+
+"tOilOpList.h"
+Operator: tOilOpList;
+
+
+"tOilClassOpList.h"
+ClassOperator: tOilClassOpList;
+
+
+BindingStatus: int;
+ParameterIndex: int;
+
+
+"DefTableKeyList.h"
+TypeSet: DefTableKeyList;
+
+
+BoundType: DefTableKey;
+

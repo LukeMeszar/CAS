@@ -1,0 +1,25 @@
+
+CLASS SYMBOL ROOTCLASS INHERITS RangeUnique END;
+
+CLASS SYMBOL RangeUnique:
+                _GotUnique:     VOID;
+
+CLASS SYMBOL Unique:
+                _GotUnique:     VOID,
+                Key:            DefTableKey,
+                Unique:         int     SYNT;
+
+CLASS SYMBOL RangeUnique        COMPUTE
+  SYNT._GotUnique =
+        CONSTITUENTS Unique._GotUnique
+                SHIELD RangeUnique;
+END;
+
+CLASS SYMBOL Unique     COMPUTE
+  SYNT._GotUnique = 
+        SetUnique (THIS.Key, 1, 0);
+
+  SYNT.Unique =
+        GetUnique (THIS.Key, 0)
+        DEPENDS_ON INCLUDING RangeUnique._GotUnique;
+END;

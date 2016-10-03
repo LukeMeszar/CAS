@@ -1,0 +1,3 @@
+   if [ $ODINBOOT_CONFIG ] ; then echo $ODINBOOT_SOCKET_LIBS_PRM;
+      elif [ -f /usr/lib/libsocket.* ] ; then echo '+lib=socket +lib=nsl';
+      else true; fi

@@ -1,0 +1,173 @@
+@=~
+~p typesetter = texinfo
+~p maximum_input_line_length = infinity
+~! $Id: PtrList.fw,v 1.7 2009/01/02 10:30:14 peter Exp $
+~!
+~! (C) Copyright 1997 University of Paderborn.
+~! 
+~! This file is part of the Eli Module Library.
+~! 
+~! The Eli Module Library is free software; you can redistribute it and/or
+~! modify it under the terms of the GNU Library General Public License as
+~! published by the Free Software Foundation; either version 2 of the
+~! License, or (at your option) any later version.
+~! 
+~! The Eli Module Library is distributed in the hope that it will be
+~! useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+~! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+~! Library General Public License for more details.
+~! 
+~! You should have received a copy of the GNU Library General Public
+~! License along with the Eli Module Library; see the file COPYING.LIB.
+~! If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+~! Suite 330, Boston, MA 02111-1307, USA. 
+~!
+
+This module implements linear lists whose elements are of type DefTableKey
+which must be a pointer type.
+The list type is DefTableKeyList.
+
+The element type DefTableKey given by the instance parameter 
+must be defined in a header file deftbl
+where deftbl is the value of the referto parameter.
+
+Instantiation of this module creates a header file that defines
+the same entities as defined by the List module.
+They are mapped to those of an instance of the
+List module with VoidPtr (void*) being its element type.
+
+Hence, several instances of this module reuse only one implementation
+of list operations without loss of type safety.
+
+~O~<DefTableKeyPtrList.specs~>~{
+$/Adt/List.gnrc+instance=VoidPtr+referto=VoidPtr:inst
+~}
+
+~O~<DefTableKeyList.h~>~{
+#ifndef _DefTableKeyLIST_H
+#define _DefTableKeyLIST_H
+
+/* include header file defining DefTableKey if deftbl is set: */
+#define EMPTYdeftblHDR
+#ifndef EMPTYHDR
+#include "deftbl.h"
+#endif
+#undef EMPTYdeftblHDR
+
+#include "VoidPtrList.h"
+
+typedef VoidPtrList	DefTableKeyList;
+typedef VoidPtrList    *DefTableKeyListPtr;
+typedef VoidPtrCmpFctType     DefTableKeyCmpFctType;
+
+#define NULLDefTableKeyList		((DefTableKeyList)0)
+#define NullDefTableKeyList()	((DefTableKeyList)0)
+#define SingleDefTableKeyList(e)	(ConsDefTableKeyList((e),NULLDefTableKeyList))
+
+#define FinlDefTableKeyList		FinlVoidPtrList
+
+#define ConsDefTableKeyList(e,l)	ConsVoidPtrList ((VoidPtr)(e),(l))
+
+#define HeadDefTableKeyList(l)	((DefTableKey)(HeadVoidPtrList (l)))
+
+#define TailDefTableKeyList(l)	TailVoidPtrList (l)
+
+#define LengthDefTableKeyList(l)	LengthVoidPtrList (l)
+
+#define IthElemDefTableKeyList(l,i)	((DefTableKey)(IthElemVoidPtrList (l, i)))
+
+#define CopyDefTableKeyList(l,cp)	CopyVoidPtrList (l, cp)
+
+#define AppDefTableKeyList(l1,l2)	AppVoidPtrList (l1, l2)
+
+#define AppElDefTableKeyList(l,e)	AppElVoidPtrList (l, (VoidPtr)e)
+
+#define InsertAfterDefTableKeyList(l,e) \
+	InsertAfterVoidPtrList (l, (VoidPtr)e)
+
+#define OrderedInsertDefTableKeyList(l,e,fcmp) \
+	OrderedInsertVoidPtrList (l, (VoidPtr)e, (VoidPtrCmpFctType)fcmp)
+
+#define RefEndConsDefTableKeyList(addr,e) \
+	RefEndConsVoidPtrList (addr, (VoidPtr)e)
+
+#define RefEndAppDefTableKeyList(addr,l) \
+	RefEndAppVoidPtrList (addr, l)
+
+#define ElemInDefTableKeyList(e,l,cmpfct) \
+	ElemInVoidPtrList ((VoidPtr)e, l, (VoidPtrCmpFctType)cmpfct)
+
+#define AddToSetDefTableKeyList(e,l,cmpfct) \
+	AddToSetVoidPtrList ((VoidPtr)e, l, (VoidPtrCmpFctType)cmpfct)
+
+#define AddToOrderedSetDefTableKeyList(e,l,cmpfct) \
+	AddToOrderedSetVoidPtrList ((VoidPtr)e, l, (VoidPtrCmpFctType)cmpfct)
+
+#define MapDefTableKeyList(l,f) \
+	MapVoidPtrList (l,(VoidPtrMapFct)f)
+
+#define CompDefTableKeyList(l1,l2,f) \
+	CompVoidPtrList (l1, l2, (VoidPtrCmpFctType)f)
+
+#define SumDefTableKeyList(l,f,a) \
+	SumVoidPtrList (l, (VoidPtrSumFct)f, (VoidPtr)a)
+
+#ifdef MONITOR
+#define DAPTO_RESULTDefTableKeyList(l) DAPTO_RESULT_PTR(l)
+#define DAPTO_ARGDefTableKeyList(l)    DAPTO_ARG_PTR (l, DefTableKeyList)
+#endif
+
+#endif
+~}
+
+~O~<DefTableKeyPtrList.head~>~{
+#include "DefTableKeyList.h"
+~}
+
+~O~<DefTableKeyPtrList.dapto~>~{
+aspect DefTableKeyPtrList;
+
+"DefTableKeyList.h"
+
+operation get_DefTableKeyList_elems
+    "Return the DefTableKey list elements"
+    (DefTableKeyList lst "The list") : str
+{
+    DefTableKey elem;
+
+    for ( ; lst != NULLDefTableKeyList; lst = TailDefTableKeyList(lst)) {
+	elem = HeadDefTableKeyList(lst);
+	DAPTO_RESULT_PTR(elem);
+    }
+}
+
+end;
+~}
+
+~O~<DefTableKeyPtrList.tcl~>~{
+set n(DefTableKeyList,desc) "DefTableKey List"
+
+proc n_DefTableKeyList_open {text lst} {
+    n_say "$text\n"
+    if {$lst == 0} {
+        n_say "  NULLDefTableKeyList\n"
+    } else {
+        set lst [n_hextodec $lst]
+        set r [n_send get_DefTableKeyList_elems $lst]
+        set c 0
+        foreach i $r {
+            n_say "  "
+            n_say_val DefTableKey $i
+            n_say "\n"
+            incr c
+        }
+        if {$c == 0} {
+            n_say "  Empty\n"
+        }
+    }
+}
+
+proc n_DefTableKeyList_say {lst} {
+    n_say "DefTableKeyList:0x[n_dectohex $lst]"
+}
+~}

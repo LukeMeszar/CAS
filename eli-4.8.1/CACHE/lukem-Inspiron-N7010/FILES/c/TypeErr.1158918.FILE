@@ -1,0 +1,4 @@
+%Type.Pointer.err == . +cmd=cat (%trenn) \
+	(Type.demo/Pointer.err:label) \
+	(Type.demo/Pointer.err) \
+	((Type.demo/Pointer.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

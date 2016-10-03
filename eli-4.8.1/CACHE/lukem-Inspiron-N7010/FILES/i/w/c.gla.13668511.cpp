@@ -1,0 +1,15 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/scanner/c.gla"
+{ $Id: c.gla,v 1.1 1990/06/28 11:39:25 tony Exp $ }
+{ Lexical structure }
+
+ICONST:		C_INTEGER
+IDENTIFIER: 	C_IDENTIFIER			
+TYPENAME:	C_IDENTIFIER		
+
+SCONST:         C_STRING_LIT
+CCONST:         C_CHAR_CONSTANT
+RCONST:		C_FLOAT
+		C_COMMENT
+		{ ignore C preprocessor directives }
+		$#\040[0-9]	(auxEOL)
+                $#[\040]*[a-zA-Z]   (auxEOL)

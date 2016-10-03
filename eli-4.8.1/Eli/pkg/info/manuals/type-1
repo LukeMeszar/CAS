@@ -1,0 +1,1130 @@
+This is Info file type, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/type.tnf.
+
+
+File: type,  Node: Top,  Next: Overview,  Prev: (DIR),  Up: (DIR)
+
+Type Analysis Reference Manual
+******************************
+
+   The modules of the type analysis library define a comprehensive
+collection of computational roles that can be played by the symbols
+and rules of a LIDO grammar.  This document is a reference manual for
+these roles; for a tutorial, see *Note Tutorial on Type Analysis:
+(typetutorial)Top.
+
+* Menu:
+
+* Overview::	Overview
+* TypeProp::	Types, Operators, and Indications
+* BasicType::	Typed Entities
+* Expressions::	Expressions
+* UserTypes::	User-Defined Types
+* TypeEq::	Structural Type Equivalence
+* Errors::	Error Reporting in Type Analysis
+* RootType::	Dependence in Type Analysis
+* Index::	Index
+
+
+File: type,  Node: Overview,  Next: TypeProp,  Prev: Top,  Up: Top
+
+Overview
+********
+
+   Language designers define type systems in order to constrain the
+ways in which values may interact.  These constraints protect the
+underlying representation of values from use that is contrary to the
+language designer's model, allowing early detection of a number of
+programming errors.  The purpose of a compiler's *type analysis* task
+is to verify, insofar as possible, that the constraints of the type
+system have been obeyed.
+
+   Type analysis is complex, even for simple languages, but it is based
+upon a number of language-independent concepts.  The type analysis of
+source text in a particular language can be described in terms of
+those concepts, by identifying constructs playing specific roles in
+the type system of that language.  Once that identification has been
+made, most of the code required to carry out the analysis can be
+deduced automatically.
+
+   The modules of the type analysis library define a comprehensive
+collection of computational roles that can be played by symbols of an
+abstract syntax; they also define computational roles that
+characterize specific contexts within expressions.  They allow you to
+focus your attention on the important issues and make strategic
+decisions without delving into implementation details.
+
+   This document is a reference manual for the type analysis
+specification modules.  (For a tutorial on how to develop a type
+analyzer for a specific language, see *Note Tutorial on Type Analysis:
+(typetutorial)Top.) Examples are drawn from a variety of languages. 
+Our strategy is to provide only the specification fragments needed to
+illustrate the relevant principles.  In most cases, these fragments
+will be LIDO rules.  We expect that the meaning of the abstract syntax
+for these rules will be obvious, although we will sometimes show
+snippets of source code to make the application clearer.
+
+
+File: type,  Node: TypeProp,  Next: BasicType,  Prev: Overview,  Up: Top
+
+Types, Operators, and Indications
+*********************************
+
+   A *type* characterizes a subset of values in the universe
+manipulated by the program, an *operator* defines an operation applied
+to operands of specified types to produce a result of a specific type,
+and an *indication* defines a set of operators.  These three concepts
+form the basis for any type model.  The designer must specify
+language-defined types, operators, and indications; it may also be
+possible for the user to provide additional specifications as part of
+a program (*note User-Defined Types: UserTypes.).
+
+   Although language-defined types may be specified individually, they
+are usually introduced by language-defined operator specifications. 
+These, along with language-defined indication specifications, are
+described in a language called *OIL* (*note OIL's Specification
+Language: (oil)language.).  OIL text is written in a file whose name
+has the form `name'`.oil'.
+
+* Menu:
+
+* Types::		Language-defined types
+* Operators::		Language-defined operators
+* Indications::		Language-defined indications
+* Coercibility::	Language-defined coercibility
+* Scalability::		Reducing specification size
+
+
+File: type,  Node: Types,  Next: Operators,  Up: TypeProp
+
+Language-defined types
+======================
+
+   Each type is represented by a unique definition table key whose
+`IsType' property has the value 1.  Further properties of that key may
+be used to provide information about that particular type.  `NoKey'
+represents an unknown or non-existent type.
+
+   Language-defined types like "integer" are represented by known keys
+(*note How to specify the initial state: (deftbl)Initializations.). 
+The known key name can be used directly in an attribute computation. 
+For example, suppose that the designer chose `intType' as the name of
+the known key for the Java integer type.  The following rule would
+then interpret the keyword `int' as denoting that type:
+
+     RULE: Type ::= 'int' COMPUTE
+       Type.Type=intType;
+     END;
+
+   Language-defined types are sometimes denoted by pre-defined
+identifiers (as in Pascal) instead of keywords.  This approach
+increases the complexity of the specification by introducing type
+identifiers (*note Type identifiers: TypeIdent.).  It also allows a
+user to re-define the names of language-defined types as names of
+variables or parameters, making programs very hard to understand.  We
+recommend that designers use keywords to denote language-defined types.
+
+
+File: type,  Node: Operators,  Next: Indications,  Prev: Types,  Up: TypeProp
+
+Language-defined operators
+==========================
+
+   An operator has a fixed signature, and is represented by a unique
+definition table key.  Properties of that key may be used to provide
+information about that particular operator.  `NoKey' represents an
+unknown or non-existent operator.
+
+   The OIL statement `OPER `opr' `sig';' defines the key and signature
+of an operator:
+
+`opr'
+     The name of the known definition table key representing the
+     operator.  Multiple operator definitions with the same value of
+     `opr' are not allowed.
+
+`sig'
+     The signature of the operator represented by `opr'.  It consists
+     of a parenthesized (possibly empty), comma-separated list of
+     operand types followed by a colon and a return type.  All of the
+     types in the signature are automatically defined as known keys
+     representing types; no further specification is required.
+
+Only one occurrence of the keyword `OPER' is required for a sequence
+of contiguous operator definitions:
+
+     OPER
+       iAddOp (intType,intType):intType;
+       fAddOp (floatType,floatType):floatType;
+       iGtrOp (intType,intType):boolType;
+
+The known keys named `intType', `floatType', and `boolType' are
+defined by this specification, each with its `IsType' property set to
+1.  Known keys named `iAddOp', `fAddOp', and `iGtrOp' are also defined;
+no further specification of these names is necessary.
+
+   Often there are a number of language-defined operators sharing the
+same signature.  A shorthand notation for describing such a situation
+allows the designer to provide a comma-separated list of operator
+names and write the shared signature only once:
+
+     OPER
+       iAddOp,iSubOp,iMulOp,iDivOp (intType,intType):intType;
+       fAddOp,fSubOp,fMulOp,fDivOp (floatType,floatType):floatType;
+
+
+File: type,  Node: Indications,  Next: Coercibility,  Prev: Operators,  Up: TypeProp
+
+Language-defined indications
+============================
+
+   Each operator must belong to a set of operators associated with some
+indication, also represented by a unique definition table key. 
+Properties of that key may be used to provide additional information
+about that indication.  `NoKey' represents an unknown or non-existent
+indication.
+
+   The OIL statement `INDICATION `ind': `list';' defines a subset of
+the operators associated with an indication:
+
+`ind'
+     The known definition table key representing the indication. 
+     Multiple indication definitions with the same value of `ind' are
+     allowed.  In that case, the operator set associated with the
+     indication is the union of the sets specified by the individual
+     definitions.
+
+`list'
+     A comma-separated list of operators in the indication's set.
+
+Only one occurrence of the keyword `INDICATION' is required for a
+sequence of contiguous indication definitions:
+
+     INDICATION
+       PlusInd: iAddOp, fAddOp;
+       MinusInd: iSubOp, fSubOp;
+
+
+File: type,  Node: Coercibility,  Next: Scalability,  Prev: Indications,  Up: TypeProp
+
+Language-defined coercibility
+=============================
+
+   Language properties like the "usual arithmetic conversions" of C
+and the "widening conversions" of Java allow the compiler to accept an
+operand of one type as though it were a value of another type.  We use
+the relation `acceptableAs' on types to model these properties. 
+`acceptableAs' is a partial order:
+
+*Reflexive*
+     (`T' `acceptableAs' `T') for any type `T'
+
+*Transitive*
+     (`T' `acceptableAs' `T1') and (`T1' `acceptableAs' `T2') for some
+     types `T', `T1', and `T2' implies (`T' `acceptableAs' `T2')
+
+*Antisymmetric*
+     (`T' `acceptableAs' `T1') and (`T1' `acceptableAs' `T') implies
+     `T' is identical to `T1'
+
+To see why these properties are important, consider the following
+expression in C or Java (`s' is of type `short' and `f' is of type
+`float'):
+
+     s + f
+
+   Both C and Java allow implicit conversion of `short' to `int' and
+`int' to `float' in the context of an arithmetic operand.  Thus a
+designer would specify (`short' `acceptableAs' `int') and (`int'
+`acceptableAs' `float') for C or Java.  Transitivity guarantees that
+(`short' `acceptableAs' `float'), and reflexivity guarantees that
+(`float' `acceptableAs' `float'), so the operator `fAddOp' can be
+selected from the set associated with the indication `PlusInd' of the
+last section.
+
+   Suppose that (`float' `acceptableAs' `int').  In that case, the
+meaning of the expression is ambiguous.  There is no way to decide
+whether to select the operator `iAddOp' or the operator `fAddOp' from
+`PlusInd''s set.  But because `acceptableAs' is antisymmetric,
+(`float' `acceptableAs' `int') would imply that `int' and `float' were
+identical types.  Thus the designer cannot specify (`float'
+`acceptableAs' `int') for C or Java.
+
+   The `acceptableAs' relation is specified by defining *coercion*
+operators.  The OIL statement `COERCION `opr' `sig';' defines the key
+and signature of a coercion:
+
+`opr'
+     The name of the known definition table key representing the
+     coercion operator.  If `opr' is omitted, the OIL compiler will
+     generate a unique name internally.  Multiple coercion definitions
+     with the same value of `opr' are not allowed.  A coercion
+     definition cannot have the same value of `opr' as an operator
+     definition.
+
+`sig'
+     The signature of the coercion operator represented by `opr'.  It
+     consists of a parenthesized operand type followed by a colon and
+     a return type.  Both types in the signature are automatically
+     defined as known keys representing types; no further
+     specification is required.
+
+Only one occurrence of the keyword `COERCION' is required for a
+sequence of contiguous coercion operator definitions:
+
+     COERCION
+       sToi (shortType):intType;
+            (intType):floatType;
+
+This specification illustrates both named and anonymous coercions. 
+Generally speaking, coercions need be named only if they are to be
+discussed in associated documentation or extracted to support further
+processing (such as the evaluation of constant expressions).
+
+
+File: type,  Node: Scalability,  Prev: Coercibility,  Up: TypeProp
+
+Reducing specification size
+===========================
+
+   A full specification of language-defined operators often leads to a
+combinatorial explosion.  In many applications the effects of this
+explosion on the written specification can be mitigated by avoiding
+unnecessary operator names.  For example, the task of type analysis is
+to verify type correctness; the identity of the operator that models
+the type behavior at a specific node is normally irrelevant.
+
+   Language definitions avoid combinatorial explosions by giving names
+to sets of types and then defining properties of operations in terms
+of these sets rather than the individual elements.  For example, the C
+definition describes operations on "arithmetic types" rather than
+describing those operations on integers and then again on
+floating-point values.  OIL provides a notation for naming and
+manipulating sets of types that allows the designer to encode such
+language definitions directly.
+
+   The OIL statement `SET `name' = `expr' ;' defines a set of types:
+
+`name'
+     An identifier naming a set.  Multiple sets with the same name are
+     not allowed.
+
+`expr'
+     An expression defining the types that are members of the set. 
+     There are five possible expression formats:
+
+    `[ `elements' ]'
+          Each member of the comma-separated list `elements' is a
+          known key representing a type.  That type is an element of
+          the value of this expression.  There are no other elements.
+
+    `name'
+          The previously-defined set `name' is the value of this
+          expression.
+
+    ``s1' + `s2''
+          The value of this expression is the union of set `s1' and
+          set `s2'.
+
+    ``s1' * `s2''
+          The value of this expression is the intersection of set `s1'
+          and set `s2'.
+
+    ``s1' - `s2''
+          The value of this expression is the set of elements of `s1'
+          that are not elements of `s2'.
+
+   Here are some definitions that mirror the C language standard:
+
+     SET Signed_IntegerType =
+       [signed_charType, shortType, intType, longType];
+     
+     SET Unsigned_IntegerType =
+       [unsigned_charType, unsigned_shortType,
+        unsigned_intType,  unsigned_longType];
+     
+     SET FloatingType =
+       [floatType, doubleType, long_doubleType];
+     
+     SET IntegralType =
+       [charType] + Signed_IntegerType + Unsigned_IntegerType;
+     
+     SET ArithmeticType = IntegralType + FloatingType;
+     
+     SET ScalarType = ArithmeticType + [VoidPointerType];
+
+   A specific context in a program will often require a value that can
+be of any type in a particular set.  For example, the condition value
+in a C `if' statement or conditional expression can be of any scalar
+type.  We model this situation by defining a "type" (`scalarType',
+say) and making each scalar type acceptable as that type.  The context
+can then require a value of `scalarType', and any scalar type will be
+acceptable.
+
+   When a type set name is used in an `OPER' or `COERCION' signature,
+the result is a number of distinct operators.  Each operator's
+signature is constructed by consistently substituting one element of
+the named type set for each instance of the type name.  Thus every
+scalar type can be made acceptable as `scalarType' as follows:
+
+     COERCION (ScalarType):scalarType;
+
+   Similarly, signatures containing type set names can be used to
+reduce the number of specifications needed for operators.  For
+example, consider the following specification:
+
+     OPER ArithOp (ArithmeticType, ArithmeticType): ArithmeticType;
+
+It defines a set of 12 operators, each named by the known key
+`ArithOp'.  Each operator has a distinct signature, one of which is
+`(charType,charType):charType'.  That signature results from the
+consistent substitution of the `charType' element of `ArithmeticType'
+for the name of that set in the `OPER' statement's signature.
+
+   This set of 12 operators can be associated with an indication:
+
+     INDICATION ArithInd: ArithOp;
+
+   Because the same element of a type set is substituted for each
+instance of the name of that set in a signature, the only way to get
+all combinations of elements is to create another name for that set
+and use both names in the signature.  For example, a value of any
+scalar type in C can be cast to any other scalar type:
+
+     SET CastResult = ScalarType;
+     OPER ScalarCast (ScalarType):CastResult;
+
+One of the operators named by the known key `ScalarCast' has the
+signature `(charType):floatType'.  That signature results from
+substituting the `charType' element of `ScalarType' for the name of
+that set and the `floatType' element of `CastResult' for the name of
+that set.
+
+
+File: type,  Node: BasicType,  Next: Expressions,  Prev: TypeProp,  Up: Top
+
+Typed Entities
+**************
+
+   A *typed entity* is a named program component, one of whose
+properties is a type.  Variables, formal parameters, and fields are
+the most common typed entities; functions are also typed entities in
+some languages (*note Functions as typed entities: FuncType.).  When
+an identifier is used to represent a typed entity, the type specified
+by a defining occurrence of that identifier must be made available at
+each applied occurrence.  This is accomplished through the use of a
+`DefTableKey'-valued property of the definition table key
+characterizing the typed entity.
+
+   The `Typing' module exports computational roles to implement the
+definition and use of typed entities:
+
+`TypedDefinition'
+     The computational role inherited by a grammar symbol that
+     represents a definition of one or more typed entities having the
+     same type.
+
+`TypedDefId'
+     The computational role inherited by a grammar symbol that
+     represents a defining occurrence of an identifier for a typed
+     entity.
+
+`TypedUseId'
+     The computational role inherited by a grammar symbol that
+     represents an applied occurrence of an identifier for a typed
+     entity.
+
+   The `Typing' module is instantiated by
+
+        $/Type/Typing.gnrc +referto=`prefix' :inst
+
+``prefix'Key' (or simply `Key' if the `referto' parameter is missing)
+must be the name of an attribute of every grammar symbol inheriting
+the `TypedDefId' or `TypedUseId' role.  The value of that attribute
+must be the definition table key bound to the symbol during name
+analysis (*note Name analysis according to scope rules: (name)Top.).
+
+* Menu:
+
+* TypedDefId::		Establishing the type of an entity
+* TypedUseId::		Accessing the type of an entity
+* TypedEntityInfo::	Passing ancillary information
+
+
+File: type,  Node: TypedDefId,  Next: TypedUseId,  Up: BasicType
+
+Establishing the type of an entity
+==================================
+
+   A typical local variable declaration from Java or C specifies a
+type and a list of variable names:
+
+     int a, b, c;
+
+The entire declaration plays the role of a `TypedDefinition'; each of
+`a', `b', and `c' plays the role of a `TypedDefId'.
+
+   The value of the `TypedDefinition.Type' attribute must be set by a
+user computation to the definition table key of the type.  No other
+user computations are needed because default computations provided by
+the `Typing' module in descendant `TypedDefId' constructs will access
+the `TypedDefinition.Type' attribute, setting the appropriate property
+of the definition table key characterizing the typed entity.
+
+   A Java or C compiler might use the following specification to
+describe a variable declaration:
+
+     SYMBOL VrblDecl INHERITS TypedDefinition END;
+     SYMBOL VarIdDef INHERITS TypedDefId      END;
+     
+     RULE: VrblDecl ::= Type VarIdDefs ';' COMPUTE
+       VrblDecl.Type=Type.Type;
+     END;
+     
+     RULE: VarIdDefs LISTOF VarIdDef END;
+
+
+File: type,  Node: TypedUseId,  Next: TypedEntityInfo,  Prev: TypedDefId,  Up: BasicType
+
+Accessing the type of an entity
+===============================
+
+   `TypedUseId' is an applied occurrence of an identifier representing
+a typed entity.  A `Typing' module computation sets the value of the
+`TypedUseId.Type' attribute to the definition table key representing
+the entity's type.
+
+   If `ExpIdUse' represented an applied occurrence of a variable or
+parameter identifier in the abstract syntax tree, the `Typing' module
+will provide a value for `ExpIdUse.Type' if the following line appears
+in the specification:
+
+     SYMBOL ExpIdUse INHERITS TypedUseId END;
+
+
+File: type,  Node: TypedEntityInfo,  Prev: TypedUseId,  Up: BasicType
+
+Passing ancillary information
+=============================
+
+   The `Typing' module guarantees that every `TypedUseId.Type'
+attribute depends on all of the type analysis computations (*note
+Dependences for typed entities: TypedIdDepend.).  In other words, any
+computation accessing `TypedUseId.Type' is guaranteed to take place
+after all type analysis computations have been completed.  This
+dependence can be used to guarantee the availability of information
+characterizing the typed entity that is ancillary to type analysis.
+
+   The operation that sets the `Type' property of the definition table
+key characterizing the typed entity depends on the void attribute
+`TypedDefId.GotProp'.  `TypedDefId.GotProp' is set by a default symbol
+computation that can be overridden by an upper-context computation of
+the symbol inheriting `TypedDefId' or by a computation in a rule
+having the symbol inheriting `TypedDefId' on the right-hand side.  The
+`Typing' module will then guarantee that such a computation has been
+carried out before any access to `TypedUseId.Type' is allowed.  Any
+such computation must, however, be independent of all results of type
+analysis.
+
+   Pascal's distinction between variable and value parameters is a
+typical example of information ancillary to type analysis that must be
+conveyed from defining to applied occurrences of typed entities:
+
+     ATTR IsVarParam: int;
+     
+     SYMBOL FormalParamSect INHERITS TypedDefinition COMPUTE
+       SYNT.IsVarParam=0;
+     END;
+     
+     RULE: FormalParamSect ::= 'var' Formals ':' Type COMPUTE
+       FormalParamSect.IsVarParam=1;
+     END;
+     
+     SYMBOL FormalIdDef INHERITS TypedIdDef COMPUTE
+       INH.GotProp=
+         ResetIsVarParam(THIS.Key,INCLUDING FormalParamSect.IsVarParam);
+     END;
+     
+     SYMBOL ExpIdUse INHERITS TypedUseId COMPUTE
+       SYNT.IsVarParam=GetIsVarParam(THIS.Key,0) <- THIS.Type;
+     END;
+
+This computation assumes that an integer-valued property `IsVarParam'
+has been defined.  It is set by a computation in the upper context of
+`FormalIdDef' that overrides the default computation of the void
+attribute `TypedIdDef.GotProp', and queried by a symbol computation in
+the lower context of `ExpIdUse'.  The latter computation depends on
+`ExpIdUse.Type', so the `Typing' module guarantees that the property
+value has been set for every formal parameter before it is queried.
+
+   `FormalParamSect.IsVarParam' is an integer valued attribute,
+distinct from the `IsVarParam' property, set by a symbol computation
+in the lower context of `FormalParamSect'.  That symbol computation is
+overridden in the rule representing a declaration of a variable
+parameter.
+
+   Note that a particular instance of symbol `ExpIdUse' in the tree
+does not necessarily represent an applied occurrence of a formal
+parameter.  (It might represent an applied occurrence of a variable
+identifier, for example.) Thus the `IsVarParam' property might not be
+set; the query will return the default value 0 in that case.  The
+overall effect of these computations is therefore to set the value of
+`ExpIdUse.IsVarParam' to 1 if and only if that instance of `ExpIdUse'
+represents an applied occurrence of a variable parameter.
+
+
+File: type,  Node: Expressions,  Next: UserTypes,  Prev: BasicType,  Up: Top
+
+Expressions
+***********
+
+   An *expression node* represents a program construct that yields a
+value, and an *expression tree* is a subtree of the abstract syntax
+tree made up entirely of expression nodes.  Type analysis within an
+expression tree is uniform; additional specifications are needed only
+at the roots and leaves.  (Note that these need not be roots and
+leaves in the sense of the abstract syntax tree.) A designer often
+chooses to represent a programming language expression by more than
+one expression tree, in order to capture special relationships within
+that expression.  For example, each argument of a function call might
+be a separate expression tree because more type conversions are
+allowed in that context than in the context of an operator.
+
+   The `Expression' module provides computational roles and rule
+computations to implement the type analysis of expression trees:
+
+   The expression module is usually instantiated by:
+
+     $/Type/Expression.gnrc :inst
+
+For a discussion of alternatives, *note Selecting an operator at an
+expression node: IdentifyOperator..
+
+* Menu:
+
+* AnalyzeExpression::	Type analysis of expression trees
+* IdentifyOperator::	Selecting an operator at an expression node
+* ExpressionSymbol::	Expression contexts without operators
+* OperatorSymbol::	Operators with explicit operands
+* OpndExprListRoot::	Operators with operand lists
+* ConversionContext::	Type conversion
+
+
+File: type,  Node: AnalyzeExpression,  Next: IdentifyOperator,  Up: Expressions
+
+Type analysis of expression trees
+=================================
+
+   The symbol on the left-hand side of a rule defining an expression
+node characterizes the expression's result.  It inherits the
+`ExpressionSymbol' role.  Two attributes of `ExpressionSymbol'
+describe its type:
+
+`Required'
+     An inherited attribute whose `DefTableKey' value represents the
+     type required by the surrounding context.  (A value of `NoKey'
+     indicates that no specific type is required.) `Required' may be
+     set by a user computation at the root of an expression subtree;
+     computations are supplied by the `Expression' module for all
+     other expression nodes.
+
+`Type'
+     An attribute whose `DefTableKey' value is set by computations
+     supplied by the `Expression' module to represent the type of the
+     result delivered by the expression subtree rooted in this node. 
+     (A value of `NoKey' indicates that the type delivered by the node
+     is unknown.) `Type' may depend on `Required' as well as on the
+     possible types of the node's children; it must never be set by
+     user computation.
+
+   An expression node is type-correct if the type specified by its
+`Type' attribute is acceptable as the type specified by its `Required'
+attribute.  Any type is acceptable as an undefined required type, and
+an undefined type is acceptable as any required type.
+
+   In order to support incremental development, `ExpressionSymbol'
+defines default computations setting the values of both `Required' and
+`Type' to `NoKey'; those computations are overridden by the rule
+computations described in this chapter.  The default computations
+allow one to declare that a symbol inherits `ExpressionSymbol' without
+producing specification errors for every context containing that
+symbol.  This advantage is offset by the fact that if one forgets to
+provide rule computations for some contexts, the generated compiler
+will silently ignore certain errors in the input program.
+
+   Rules defining expression nodes in an abstract syntax tree for a
+typical programming language describe constants, variables, and
+computations:
+
+     SYMBOL Expr INHERITS ExpressionSymbol   END;
+     
+     RULE: Expr   ::= Number                 END;
+     RULE: Expr   ::= ExpIdUse               END;
+     RULE: Expr   ::= Expr Operator Expr     END;
+     RULE: Expr   ::= Expr '[' Subscript ']' END;
+
+The first two rules describe leaves of expression subtrees.  Any node
+described by the first rule is a leaf of the abstract syntax tree as
+well as a leaf of some expression subtree.  Nodes described by the
+second rule are not leaves of the abstract syntax tree because each
+has an `ExpIdUse' node as a child.
+
+   A leaf of an expression subtree delivers a value whose type must be
+determined from the context of that leaf according to the definition
+of the language.  For example, the `Expr' node in the first rule might
+deliver the language-defined integer type; in the second rule, the
+delivered type is the value of `ExpIdUse.Type'.
+
+   The type analyzer models most interior expression nodes by operators
+applied to operands:
+  1. An indication is derived from the context.
+
+  2. One operator is selected from the set associated with that
+     indication.
+
+  3. The `Type' attribute of the node is set to the result type of the
+     selected operator.
+
+  4. The `Required' attributes of one or more children are set to the
+     operand types of the selected operator.
+
+For example, in the following rule, the indication is provided by the
+`Operator' child:
+
+     RULE: Expr   ::= Expr Operator Expr     END;
+
+Usually, a set of several operators (such as {`iAddOp', `fAddOp'}) is
+associated with that indication.  An operator is then selected from
+that set as discussed in the next section.
+
+   In the fourth rule, we might assume that each array type definition
+adds a dyadic access operator to an indication fixed by the rule
+(*note Operator definitions: OpDef.):
+
+     RULE: Expr   ::= Expr '[' Subscript ']' END;
+
+The left operand of that operator is the array type, the right operand
+is the index type, and the result is the element type.
+
+   The operator/operand model provides support for expression node
+semantics that are ubiquitous in programming languages.  Several other
+models, useful in special circumstances, are supported and will be
+introduced in later sections of this chapter.  It is clear, however,
+that there will be situations in which the semantics of an expression
+context do not fit any of the supported models.  Our advice is to
+consider such a context as a place where several disjoint expression
+subtrees meet: The expression symbol on the left-hand side of the rule
+defining the context is a leaf of an expression tree above the
+context, and each expression symbol on the right-hand side is the root
+of an expression tree below the context.
+
+
+File: type,  Node: IdentifyOperator,  Next: ExpressionSymbol,  Prev: AnalyzeExpression,  Up: Expressions
+
+Selecting an operator at an expression node
+===========================================
+
+   If an indication is associated with a singleton operator set, that
+operator is selected regardless of operand or result types.
+
+   There are two standard algorithms for selecting an operator if the
+indication's set has more than one element.  The simplest ignores the
+type required by the context.  For each operator in the set, it checks
+whether each operand is acceptable as the type required by that
+operator.  If more than one operator in the set satisfies this
+condition, the algorithm chooses the one requiring the fewest
+coercions.  If no operator can be identified, then the unknown
+operator is chosen.
+
+   To select this algorithm, instantiate the `Expression' module
+without the `+referto' parameter:
+
+     $/Type/Expression.gnrc :inst
+
+   Ada is a language in which the selection of an operator depends on
+the type required by the context as well as the types delivered by the
+operands.  In that case, a two-pass algorithm is required.
+
+   Starting with the leaves of an expression tree and working towards
+the root of that tree, the algorithm determines a *possible type set*
+for each expression node.  Every type in the possible type set at a
+node is either a leaf type or is a type associated with an operator
+whose result is that type, and whose operands are elements of the
+possible type sets of the node's children.  The algorithm associates a
+*cost* with each type in a possible type set.
+
+   OIL allows one to specify an arbitrary integer cost for each
+operator and coercion independently.  If this specification is
+omitted, a cost of 1 is assigned to the operator or coercion.  For the
+remainder of this section, we assume that all cost specifications have
+been omitted and therefore all costs are 1.
+
+   Consider a very simple expression node, the integer constant 3. 
+One element of the possible type set for this node is the
+language-defined integer type, which has cost 0 because no operations
+are needed to create a value of that type.  If a coercion has been
+defined with the language-defined integer type as its operand and the
+language-defined floating-point type as its result, then another
+element of the possible type set of this node is the language-defined
+floating-point type.  It has cost 1, the total number of operators
+required to produce it.  Similarly, if there is a coercion from
+floating-point to double, double will be an element of the possible
+type set of the node and it will have cost 2.
+
+   When the algorithm computes the possible type set of an interior
+expression node, it considers the operators in that node's indication
+set.  For each operator, it checks whether the type required by that
+operator for a given argument is in the possible type set of the
+corresponding operand.  Each operator meeting that condition is a
+possible operator at the node.  The cost of using an operator is one
+more than the sum of the costs associated with its argument types in
+the possible type sets of its operands.  Finally, the possible type
+set of the node is the set of all types `T' such that the result type
+of a possible operator is acceptable as `T'.
+
+   Often a particular element of the possible type set of an interior
+node can be obtained in more than one way.  For example, consider a
+node representing the sum of two integers.  Assuming that the integer
+type is acceptable as the floating-point type, the possible type set
+of each child contains both integer and floating-point types.  Thus
+both integer addition and floating-point addition are possible
+selections at this node.  There are then two ways to obtain a
+floating-point result:
+
+  1. Use an integer addition and convert the result to floating-point.
+
+  2. Convert each operand to floating-point and use a floating-point
+     addition.
+
+The cost of using an integer addition in this context is 1 because the
+cost of the integer elements of the possible type sets are both 0. 
+Converting the result to floating-point costs one coercion, for a total
+cost of 2.  The cost of using a floating-point addition, on the other
+hand, is 3 because the cost of the floating-point elements of the
+possible type sets are both 1.
+
+   The cost of obtaining a value of type `T' using a particular
+operator is the sum of the cost of using that operator and the number
+of coercion operators required to convert a value of the result type to
+a value of type `T'.  When more than one possible operator selection
+leads to a value of a given type, the algorithm only retains the one
+with the lowest cost.
+
+   If the `Required' attribute of the expression tree root is the
+unknown type, then the algorithm chooses the lowest-cost element of the
+root's possible type set as the result type of the expression. 
+Otherwise, the `Required' attribute of the root is taken as the result
+type regardless of whether it appears in the root's possible type set.
+
+   The second pass starts with the root of the tree and works towards
+the leaves.  At each node, the value of the `Required' attribute
+specifies an element of the possible type set and hence an operator. 
+Given an operator, the values of the node's `Type' attribute and the
+`Required' attributes of any operands are fixed.
+
+   If the possible type set of an expression node does not contain an
+element equal to the value of that node's `Required' attribute, then
+the unknown operator is selected; the node's `Type' attribute and the
+`Required' attributes of any operands are set to the unknown type.
+
+   To select the two-pass algorithm, instantiate the `Expression'
+module with the `+referto=Result' parameter:
+
+     $/Type/Expression.gnrc +referto=Result :inst
+
+
+File: type,  Node: ExpressionSymbol,  Next: OperatorSymbol,  Prev: IdentifyOperator,  Up: Expressions
+
+Expression contexts without operators
+=====================================
+
+   Let `e1' be a grammar symbol  playing the `ExpressionSymbol' role,
+and `type' be an expression yielding the definition table key of a
+type.  A *primary context* is one in which the parent `e1' delivers a
+value of a known type.  `PrimaryContext(`e1',`type')' provides the rule
+computations to set `e1'`.Type' to the type `type'.  (Recall that the
+value of the `Type' attribute of an expression node must never be set
+directly by a user computation.)
+
+   The constant and variable expressions in C are examples of primary
+contexts:
+
+     SYMBOL Expr INHERITS ExpressionSymbol END;
+     
+     RULE: Expr ::= Number COMPUTE
+       PrimaryContext(Expr,intType);
+     END;
+     
+     SYMBOL ExpIdUse INHERITS TypedUseId END;
+     
+     RULE: Expr ::= ExpIdUse COMPUTE
+       PrimaryContext(Expr,ExpIdUse.Type);
+     END;
+
+The type of an integer constant is the language-defined integer type
+(*note Language-defined types: Types.), and the type of a variable is
+the type with which it was declared (*note Accessing the type of an
+entity: TypedUseId.).
+
+   Let `e1' and `e2' be grammar symbols playing the `ExpressionSymbol'
+role.  A *transfer context* is one in which the parent `e1' and one of
+its children `e2' are identical with respect to type. 
+`TransferContext(`e1',`e2')' provides the rule computations to set
+`e1'`.Type' and `e2'`.Required'.
+
+   The comma expression in C is an example of a transfer context:
+
+     RULE: Expr ::= Expr ',' Expr COMPUTE
+       TransferContext(Expr[1],Expr[3]);
+     END;
+
+Notice that the left operand of the comma, `Expr[2]', is the root of an
+expression subtree distinct from the one containing the
+`TransferContext'.  The value of this expression will be discarded, so
+its type is arbitrary.  Thus there is no need to override the default
+computation `Expr[2].Required=NoKey'.
+
+   Let `e1', `e2', and `e3' be grammar symbols playing the
+`ExpressionSymbol' role.  A *balance context* is one in which the
+parent `e1' must deliver either the result delivered by child `e2' or
+the result delivered by child `e3'.  This means that values delivered
+by both children must be acceptable as a common type, and the parent
+must deliver a value of that common type. 
+`BalanceContext(`e1',`e2',`e3')' provides the rule computations to set
+`e1'`.Type', `e2'`.Required', and `e3'`.Required' such that the
+following relations hold:
+
+   * `e2'`.Type' `acceptableAs' `e1'`.Type'
+
+   * `e3'`.Type' `acceptableAs' `e1'`.Type'
+
+   * There is no type `t' other than `e1'`.Type' such that
+        - `e2'`.Type' `acceptableAs' `t'
+
+        - `e3'`.Type' `acceptableAs' `t'
+
+        - `t' `acceptableAs' `e1'`.Type'
+
+   * `e2'`.Required' equals `e1'`.Type'
+
+   * `e3'`.Required' equals `e1'`.Type'
+
+   The conditional expression of C is an example of a balance context:
+
+     RULE: Expr ::= Expr '?' Expr ':' Expr COMPUTE
+       BalanceContext(Expr[1],Expr[3],Expr[4]);
+       Expr[2].Required=scalarType;
+     END;
+
+The condition, `Expr[2]', is the root of an expression subtree
+distinct from that containing the `BalanceContext'.  The definition of
+C requires that `Expr[2]' return a value of scalar type, independent
+of the types of the other expression nodes.  (Pointers and numbers are
+values of scalar type in C.) Thus the default computation
+`Expr[2].Required=NoKey' must be overridden in this context.
+
+   Some languages generalize the conditional expression to a case
+expression.  For example, consider an ALGOL 68 computation of the days
+in a month:
+
+     begin int days, month, year;
+     days := case month in
+       31,
+       (year mod 4 and year mod 100 <> 0 or year mod 400 = 0 | 28 | 29),
+       31,30,31,30,31,31,30,31,30,31 esac
+     end
+
+The number of cases is not fixed, and the balancing process therefore
+involves an arbitrary list.  This is the purpose of the
+`BalanceListRoot' and `BalanceListElem' roles.  Both inherit from
+`ExpressionSymbol', and neither requires computations beyond the ones
+used in any expression context.  The balancing computation described
+above is carried out pairwise on the list elements:
+
+     SYMBOL CaseExps INHERITS BalanceListRoot END;
+     SYMBOL CaseExp  INHERITS BalanceListElem END;
+     
+     RULE: Expr ::= 'case' Expr 'in' CaseExps 'esac' COMPUTE
+       TransferContext(Expr[1],CaseExps);
+     END;
+     
+     RULE: CaseExps LISTOF CaseExp END;
+     
+     RULE: CaseExp ::= Expr COMPUTE
+       TransferContext(CaseExp,Expr);
+     END;
+
+Notice that these rule computations simply interface with the
+`BalanceListRoot' and `BalanceListElem' roles; all significant
+computations are done by module code generated from those roles.
+
+
+File: type,  Node: OperatorSymbol,  Next: OpndExprListRoot,  Prev: ExpressionSymbol,  Up: Expressions
+
+Operators with explicit operands
+================================
+
+   Tree symbols in the abstract syntax that correspond to operator
+symbols in a source program usually inherit the `OperatorSymbol' role. 
+Two attributes of `OperatorSymbol' describe the operator selection in
+the current context:
+
+`Indic'
+     A synthesized attribute whose `DefTableKey' value represents the
+     indication derived from the context.  (A value of `NoKey'
+     indicates that no such indication can be derived.) `Indic' must
+     be set by a user computation.
+
+`Oper'
+     An attribute whose `DefTableKey' value is set by `Expression'
+     module computations to represent the operator selected from the
+     set identified by the associated indication.  (A value of `NoKey'
+     indicates that no operator could be selected.) `Oper' may depend
+     on `Required' as well as on the possible types of the node's
+     children and the operator indication; it must never be set by
+     user computation.
+
+   In order to support incremental development, `OperatorSymbol'
+defines a default computation setting the values of both `Indic' and
+`Oper' to `NoKey'.  The default computation of `Indic' is overridden
+by a user computation, and that of `Oper' by the rule computations
+described in this section.  The default computations allow one to
+declare that a symbol inherits `OperatorSymbol' without producing
+specification errors for every context containing that symbol.  This
+advantage is offset by the fact that if one forgets to provide
+appropriate overriding computations, the generated compiler will
+silently ignore certain errors in the input program.
+
+   Let `e1', `e2', and `e3' all play the `ExpressionSymbol' role, and
+`rator' play the `OperatorSymbol' role.  A *monadic (dyadic) context*
+is one in which the parent `e1' delivers the result of applying
+`rator' to the operand(s).  The following provide rule computations to
+set `rator'`.Oper', `e1'`.Type', and `e2'`.Required' (plus
+`e3'`.Required' if present):
+
+   * `MonadicContext(`e1',`rator',`e2')'
+
+   * `DyadicContext(`e1',`rator',`e2',`e3')'
+
+Contexts with arbitrary numbers of operands are discussed in the next
+section.
+
+     SYMBOL Operator INHERITS OperatorSymbol END;
+     
+     RULE: Expr ::= Expr Operator Expr COMPUTE
+       DyadicContext(Expr[1],Operator,Expr[2],Expr[3]);
+     END;
+     
+     RULE: Operator ::= '+' COMPUTE
+       Operator.Indic=PlusInd;
+     END;
+
+   The array access rule also fits the `DyadicContext' pattern, but
+has no symbol playing the `OperatorSymbol' role.  In such cases, the
+`rator' argument is omitted and the indication supplied by an
+additional context-dependent rule computation.
+
+   Let `ind' be a definition table key representing an indication. 
+`Indication(`ind')' provides the rule computations to set the node's
+indication to `ind'.
+
+   If the indication `indexInd''s operator set includes one access
+operator for every array type (*note Operator definitions: OpDef.),
+then the following computation implements the type relationship in an
+array access:
+
+     SYMBOL Subscript INHERITS ExpressionSymbol END;
+     
+     RULE: Expr ::= Expr '[' Subscript ']' COMPUTE
+       DyadicContext(Expr[1],,Expr[2],Subscript);
+       Indication(indexInd);
+     END;
+
+Note that `Expr[2]' can be *any* expression yielding an array value;
+it need not be a simple array name.
+
+   In some cases it is useful to know the name of the operator
+selected from the indication set.  The `OperatorSymbol.Oper' attribute
+normally supplies this information, but when there is no symbol
+playing that role the value can be accessed via a context-dependent
+rule computation:
+
+`OperName'
+     Yields the operator selected from the context's indication set. 
+     If no operator can be selected, the result is the unknown
+     operator.
+
+
+File: type,  Node: OpndExprListRoot,  Next: ConversionContext,  Prev: OperatorSymbol,  Up: Expressions
+
+Operators with operand lists
+============================
+
+   Function calls and multidimensional array references are common
+examples of expression contexts whose operators have operand lists
+rather than explicit operands.  One symbol on the right-hand side of
+the rule defining such a context characterizes the entire list of
+operands.  It inherits the `OpndExprListRoot' role.
+
+   The symbol defining an operand in the list inherits the
+`OpndExprListElem' role.  `OpndExprListElem' inherits the
+`ExpressionSymbol' role, and overrides `ExpressionSymbol''s default
+computation of the `Required' attribute in all upper contexts.
+
+   Let `e' be a grammar symbol playing the `ExpressionSymbol' role,
+`rator' be a grammar symbol playing the `OperatorSymbol' role, and
+`rands' be a grammar symbol playing the `OpndExprListRoot' role.  A
+*list* context is one in which the parent `e' delivers the result of
+applying `rator' to the operand list `rands'. 
+`ListContext(`e',`rator',`rands')' provides the rule computations to
+set `e'`.Type', `rator'`.Oper', and `OpndExprListElem.Required' for
+each `OpndExprListElem' descendant of `rands'.
+
+   If the language has multi-dimensional array references, they can be
+implemented using a strategy that differs from that of the previous
+section:
+
+     SYMBOL Subscripts INHERITS OpndExprListRoot END;
+     SYMBOL Subscript  INHERITS OpndExprListElem END;
+     
+     RULE: Expr ::= Expr '[' Subscripts ']' COMPUTE
+       ListContext(Expr[1],,Subscripts);
+       Indication(GetAccessor(Expr[2].Type,NoKey));
+     END;
+     
+     RULE: Subscripts LISTOF Subscript END;
+     
+     RULE: Subscript ::= Expr COMPUTE
+       TransferContext(Subscript,Expr);
+     END;
+
+This computation assumes that the indication is the value of the
+`Accessor' property of the array type (*note User-Defined Types:
+UserTypes.).
+
+   Some languages have *variadic* operators -- operators taking a
+variable number of operands.  The most common of these are `max' and
+`min', which can take two or more numeric operands.  All of the
+operands must ultimately be of the same type, so the situation is
+similar to that of a balanced context.
+
+   For type checking purposes, the variadic operator can be considered
+to have a single operand, whose type is determined by balancing the
+elements of the list (*note Expression contexts without operators:
+ExpressionSymbol.).  Of course this form of operand list must be
+distinguished syntactically from a normal list operand:
+
+     SYMBOL VarRands INHERITS BalanceListRoot END;
+     SYMBOL VarRand  INHERITS BalanceListElem END;
+     
+     RULE: Expr ::= VarOper '(' VarRands ')' COMPUTE
+       MonadicContext(Expr,VarOper,VarRands)
+     END;
+     
+     RULE: VarRands LISTOF VarRand END;
+     
+     RULE: VarRand ::= Expr COMPUTE
+       TransferContext(Actual,Expr);
+     END;
+
+

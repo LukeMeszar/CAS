@@ -1,0 +1,4 @@
+
+
+{ static Obstack Sigs; SigObstk = &Sigs; obstack_init(SigObstk); }
+

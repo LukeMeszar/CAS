@@ -1,0 +1,47 @@
+This is Info file novice, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/novice.tnf.
+
+Indirect:
+novice-1: 135
+novice-2: 48943
+
+Tag Table:
+(Indirect)
+Node: Top137
+Node: Overview1978
+Node: Subproblems3162
+Node: Syntactic analysis4181
+Node: Lexical analysis6164
+Node: Attribution7529
+Node: Property storage9731
+Node: Text generation11407
+Node: Specifications13173
+Node: Products20733
+Node: Interactive26774
+Node: Escape29583
+Node: Example31342
+Node: Problem32410
+Node: C33395
+Node: Data34508
+Node: Task35436
+Node: tskex36697
+Node: Structure38075
+Node: Grammar38909
+Node: parex40264
+Node: Atoms44306
+Node: GLA specification45270
+Node: procex46646
+Node: Entities47683
+Node: Instantiation48945
+Node: symbex53362
+Node: Generation54112
+Node: Output55409
+Node: debugex61075
+Node: Strategies62655
+Node: Cache63388
+Node: Session66070
+Node: Documentation71238
+Node: Help72692
+Node: Index74534
+
+End Tag Table

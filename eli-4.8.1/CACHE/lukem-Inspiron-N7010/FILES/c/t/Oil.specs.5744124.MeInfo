@@ -1,0 +1,279 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+INCLUDING Expansion Summary
+============================
+   Number of different INCLUDINGs:   19
+   Number of new attributes:         272
+   Number of transport computations: 539
+
+CHAIN Expansion Summary
+========================
+   Number of expanded CHAINs:  11
+   Number of new attributes:   378
+   Number of new computations: 716
+
+CONSTITUENT(S) Expansion Summary
+=================================
+   Number of expanded CONSTITUENT(S)s:  13
+   Number of new attributes:            139
+   Number of new computations:          256
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+
+Root symbol is OIL
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           7
+
+MAX. NUMBER OF SYMBOLS IN RULE:        4
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:   102
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:  34
+
+NUMBER OF DEFINED SYMBOLS:            45
+
+NUMBER OF CONTEXT-FREE RULES:         76
+
+NUMBER OF ALL ATTRIBUTES:            904
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+	--> The following Attributes should be in one Variable-Group
+		--> xTypeList.partialSet_pre
+		--> xTypeList.partialSet_post
+		--> Singleton.partialSet_pre
+		--> Singleton.partialSet_post
+		--> G12.partialSet_pre
+		--> G12.partialSet_post
+	--> The following Attributes should be in one Variable-Group
+		--> OpDefList.SetNames_pre
+		--> OpDefList.SetNames_post
+		--> OpDef.SetNames_pre
+		--> OpDef.SetNames_post
+		--> ClassOpDefList.SetNames_pre
+		--> ClassOpDefList.SetNames_post
+		--> ClassOpDef.SetNames_pre
+		--> ClassOpDef.SetNames_post
+		--> SignatureElement.SetNames_pre
+		--> SignatureElement.SetNames_post
+		--> ClassSignature.SetNames_pre
+		--> ClassSignature.SetNames_post
+		--> Signature.SetNames_pre
+		--> Signature.SetNames_post
+		--> CostSpecification.SetNames_pre
+		--> CostSpecification.SetNames_post
+		--> G4.SetNames_pre
+		--> G4.SetNames_post
+		--> G11.SetNames_pre
+		--> G11.SetNames_post
+	--> The following Attributes should be in one Variable-Group
+		--> G8.ParameterIndex_pre
+		--> G8.ParameterIndex_post
+		--> ClassParameter.ParameterIndex_pre
+		--> ClassParameter.ParameterIndex_post
+	--> The following Attributes should be in one Variable-Group
+		--> G1.KnownKeys_pre
+		--> G1.KnownKeys_post
+		--> OpDef.KnownKeys_pre
+		--> OpDef.KnownKeys_post
+		--> Coerce.KnownKeys_pre
+		--> Coerce.KnownKeys_post
+		--> G3.KnownKeys_pre
+		--> G3.KnownKeys_post
+		--> Operation.KnownKeys_pre
+		--> Operation.KnownKeys_post
+		--> SpecificationElement.KnownKeys_pre
+		--> SpecificationElement.KnownKeys_post
+		--> G4.KnownKeys_pre
+		--> G4.KnownKeys_post
+		--> OpDefList.KnownKeys_pre
+		--> OpDefList.KnownKeys_post
+		--> Oper.KnownKeys_pre
+		--> Oper.KnownKeys_post
+		--> G2.KnownKeys_pre
+		--> G2.KnownKeys_post
+		--> ClassOpDef.KnownKeys_pre
+		--> ClassOpDef.KnownKeys_post
+		--> ClassCoerce.KnownKeys_pre
+		--> ClassCoerce.KnownKeys_post
+		--> G10.KnownKeys_pre
+		--> G10.KnownKeys_post
+		--> ClassOperation.KnownKeys_pre
+		--> ClassOperation.KnownKeys_post
+		--> G7.KnownKeys_pre
+		--> G7.KnownKeys_post
+		--> ClassBody.KnownKeys_pre
+		--> ClassBody.KnownKeys_post
+		--> Class.KnownKeys_pre
+		--> Class.KnownKeys_post
+		--> G11.KnownKeys_pre
+		--> G11.KnownKeys_post
+		--> ClassOpDefList.KnownKeys_pre
+		--> ClassOpDefList.KnownKeys_post
+		--> ClassOper.KnownKeys_pre
+		--> ClassOper.KnownKeys_post
+		--> G9.KnownKeys_pre
+		--> G9.KnownKeys_post
+		--> TypeIdentifier.KnownKeys_pre
+		--> TypeIdentifier.KnownKeys_post
+		--> SignatureElement.KnownKeys_pre
+		--> SignatureElement.KnownKeys_post
+		--> ClassSignature.KnownKeys_pre
+		--> ClassSignature.KnownKeys_post
+		--> Signature.KnownKeys_pre
+		--> Signature.KnownKeys_post
+		--> Singleton.KnownKeys_pre
+		--> Singleton.KnownKeys_post
+		--> G12.KnownKeys_pre
+		--> G12.KnownKeys_post
+		--> xTypeList.KnownKeys_pre
+		--> xTypeList.KnownKeys_post
+		--> xTypeExpr.KnownKeys_pre
+		--> xTypeExpr.KnownKeys_post
+		--> EquivalenceClass.KnownKeys_pre
+		--> EquivalenceClass.KnownKeys_post
+		--> ClassName.KnownKeys_pre
+		--> ClassName.KnownKeys_post
+		--> IndDef.KnownKeys_pre
+		--> IndDef.KnownKeys_post
+		--> Indication.KnownKeys_pre
+		--> Indication.KnownKeys_post
+		--> G5.KnownKeys_pre
+		--> G5.KnownKeys_post
+		--> Identification.KnownKeys_pre
+		--> Identification.KnownKeys_post
+	--> The following Attributes should be in one Variable-Group
+		--> G1.OilExterns_pre
+		--> G1.OilExterns_post
+		--> OpDef.OilExterns_pre
+		--> OpDef.OilExterns_post
+		--> Coerce.OilExterns_pre
+		--> Coerce.OilExterns_post
+		--> G3.OilExterns_pre
+		--> G3.OilExterns_post
+		--> Operation.OilExterns_pre
+		--> Operation.OilExterns_post
+		--> SpecificationElement.OilExterns_pre
+		--> SpecificationElement.OilExterns_post
+		--> G4.OilExterns_pre
+		--> G4.OilExterns_post
+		--> OpDefList.OilExterns_pre
+		--> OpDefList.OilExterns_post
+		--> Oper.OilExterns_pre
+		--> Oper.OilExterns_post
+		--> G2.OilExterns_pre
+		--> G2.OilExterns_post
+		--> TypeIdentifier.OilExterns_pre
+		--> TypeIdentifier.OilExterns_post
+		--> SignatureElement.OilExterns_pre
+		--> SignatureElement.OilExterns_post
+		--> ClassSignature.OilExterns_pre
+		--> ClassSignature.OilExterns_post
+		--> ClassCoerce.OilExterns_pre
+		--> ClassCoerce.OilExterns_post
+		--> G10.OilExterns_pre
+		--> G10.OilExterns_post
+		--> ClassOperation.OilExterns_pre
+		--> ClassOperation.OilExterns_post
+		--> G7.OilExterns_pre
+		--> G7.OilExterns_post
+		--> ClassBody.OilExterns_pre
+		--> ClassBody.OilExterns_post
+		--> Class.OilExterns_pre
+		--> Class.OilExterns_post
+		--> ClassOper.OilExterns_pre
+		--> ClassOper.OilExterns_post
+		--> G9.OilExterns_pre
+		--> G9.OilExterns_post
+		--> Signature.OilExterns_pre
+		--> Signature.OilExterns_post
+		--> Singleton.OilExterns_pre
+		--> Singleton.OilExterns_post
+		--> G12.OilExterns_pre
+		--> G12.OilExterns_post
+		--> xTypeList.OilExterns_pre
+		--> xTypeList.OilExterns_post
+		--> xTypeExpr.OilExterns_pre
+		--> xTypeExpr.OilExterns_post
+		--> EquivalenceClass.OilExterns_pre
+		--> EquivalenceClass.OilExterns_post
+		--> ClassName.OilExterns_pre
+		--> ClassName.OilExterns_post
+		--> IndDef.OilExterns_pre
+		--> IndDef.OilExterns_post
+		--> Indication.OilExterns_pre
+		--> Indication.OilExterns_post
+		--> G5.OilExterns_pre
+		--> G5.OilExterns_post
+		--> Identification.OilExterns_pre
+		--> Identification.OilExterns_post
+
+
+
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :   197
+
+      -> 2 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :     3
+
+
+NUMBER OF TREE NODE COMPONENTS :    30
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->  18 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->  12 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :     5
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :   309
+    -> NEW NUMBER OF SEMANTIC RULES :   117
+
+

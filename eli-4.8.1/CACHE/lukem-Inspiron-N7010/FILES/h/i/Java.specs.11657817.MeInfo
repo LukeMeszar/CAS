@@ -1,0 +1,189 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+INCLUDING Expansion Summary
+============================
+   Number of different INCLUDINGs:   6
+   Number of new attributes:         50
+   Number of transport computations: 82
+
+CHAIN Expansion Summary
+========================
+   Number of expanded CHAINs:  7
+   Number of new attributes:   92
+   Number of new computations: 128
+
+CONSTITUENT(S) Expansion Summary
+=================================
+   Number of expanded CONSTITUENT(S)s:  15
+   Number of new attributes:            45
+   Number of new computations:          72
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+
+Root symbol is xRoot
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           3
+
+MAX. NUMBER OF SYMBOLS IN RULE:        4
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:    73
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:  25
+
+NUMBER OF DEFINED SYMBOLS:            18
+
+NUMBER OF CONTEXT-FREE RULES:         34
+
+NUMBER OF ALL ATTRIBUTES:            229
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+	--> The following Attributes should be in one Variable-Group
+		--> xRHS.NontermCnt_pre
+		--> xRHS.NontermCnt_post
+		--> Element.NontermCnt_pre
+		--> Element.NontermCnt_post
+		--> LST_xRHS.NontermCnt_pre
+		--> LST_xRHS.NontermCnt_post
+	--> The following Attributes should be in one Variable-Group
+		--> xRHS.TermCnt_pre
+		--> xRHS.TermCnt_post
+		--> Element.TermCnt_pre
+		--> Element.TermCnt_post
+		--> LST_xRHS.TermCnt_pre
+		--> LST_xRHS.TermCnt_post
+	--> The following Attributes should be in one Variable-Group
+		--> xGrammar.ClassComp_pre
+		--> xGrammar.ClassComp_post
+		--> PTGSpec.ClassComp_pre
+		--> PTGSpec.ClassComp_post
+		--> xProduction.ClassComp_pre
+		--> xProduction.ClassComp_post
+		--> LST_xGrammar.ClassComp_pre
+		--> LST_xGrammar.ClassComp_post
+	--> The following Attributes should be in one Variable-Group
+		--> xGrammar.Inherit_pre
+		--> xGrammar.Inherit_post
+		--> PTGSpec.Inherit_pre
+		--> PTGSpec.Inherit_post
+		--> xSymbol.Inherit_pre
+		--> xSymbol.Inherit_post
+		--> LST_Syms.Inherit_pre
+		--> LST_Syms.Inherit_post
+		--> Syms.Inherit_pre
+		--> Syms.Inherit_post
+		--> xProduction.Inherit_pre
+		--> xProduction.Inherit_post
+		--> LST_xGrammar.Inherit_pre
+		--> LST_xGrammar.Inherit_post
+		--> Element.Inherit_pre
+		--> Element.Inherit_post
+		--> LST_xRHS.Inherit_pre
+		--> LST_xRHS.Inherit_post
+		--> xRHS.Inherit_pre
+		--> xRHS.Inherit_post
+	--> The following Attributes should be in one Variable-Group
+		--> xGrammar.PtgTemplates_pre
+		--> xGrammar.PtgTemplates_post
+		--> PTGSpec.PtgTemplates_pre
+		--> PTGSpec.PtgTemplates_post
+		--> xSymbol.PtgTemplates_pre
+		--> xSymbol.PtgTemplates_post
+		--> LST_Syms.PtgTemplates_pre
+		--> LST_Syms.PtgTemplates_post
+		--> Syms.PtgTemplates_pre
+		--> Syms.PtgTemplates_post
+		--> xProduction.PtgTemplates_pre
+		--> xProduction.PtgTemplates_post
+		--> LST_xGrammar.PtgTemplates_pre
+		--> LST_xGrammar.PtgTemplates_post
+		--> Element.PtgTemplates_pre
+		--> Element.PtgTemplates_post
+		--> LST_xRHS.PtgTemplates_pre
+		--> LST_xRHS.PtgTemplates_post
+		--> xRHS.PtgTemplates_pre
+		--> xRHS.PtgTemplates_post
+		--> PatternName.PtgTemplates_pre
+		--> PatternName.PtgTemplates_post
+		--> PatternSpec.PtgTemplates_pre
+		--> PatternSpec.PtgTemplates_post
+		--> G2.PtgTemplates_pre
+		--> G2.PtgTemplates_post
+	--> The following Attributes should be in one Variable-Group
+		--> xRHS.cnt_pre
+		--> xRHS.cnt_post
+		--> Element.cnt_pre
+		--> Element.cnt_post
+		--> LST_xRHS.cnt_pre
+		--> LST_xRHS.cnt_post
+
+
+
+*** INFO: ATTRIBUTE Element.NontermCnt_pre  is not a global VARIABLE !
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :   107
+
+      -> 3 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :    12
+
+
+NUMBER OF TREE NODE COMPONENTS :    14
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->  10 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->   4 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :     8
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :    91
+    -> NEW NUMBER OF SEMANTIC RULES :   137
+
+

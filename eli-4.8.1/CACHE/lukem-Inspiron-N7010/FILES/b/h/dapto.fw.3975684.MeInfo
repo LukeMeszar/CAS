@@ -1,0 +1,279 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+INCLUDING Expansion Summary
+============================
+   Number of different INCLUDINGs:   4
+   Number of new attributes:         49
+   Number of transport computations: 92
+
+CHAIN Expansion Summary
+========================
+   Number of expanded CHAINs:  18
+   Number of new attributes:   208
+   Number of new computations: 318
+
+CONSTITUENT(S) Expansion Summary
+=================================
+   Number of expanded CONSTITUENT(S)s:  2
+   Number of new attributes:            17
+   Number of new computations:          34
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+
+Root symbol is spec
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           3
+
+MAX. NUMBER OF SYMBOLS IN RULE:        5
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:    72
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:  24
+
+NUMBER OF DEFINED SYMBOLS:            21
+
+NUMBER OF CONTEXT-FREE RULES:         33
+
+NUMBER OF ALL ATTRIBUTES:            312
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+	--> The following Attributes should be in one Variable-Group
+		--> operation_block.argcount_pre
+		--> operation_block.argcount_post
+		--> param.argcount_pre
+		--> param.argcount_post
+		--> params.argcount_pre
+		--> params.argcount_post
+		--> optparams.argcount_pre
+		--> optparams.argcount_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.aspectdbs_pre
+		--> aspects.aspectdbs_post
+		--> aspect_stmt.aspectdbs_pre
+		--> aspect_stmt.aspectdbs_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.eventdbs_pre
+		--> aspects.eventdbs_post
+		--> event_sig.eventdbs_pre
+		--> event_sig.eventdbs_post
+		--> sig.eventdbs_pre
+		--> sig.eventdbs_post
+		--> sigs.eventdbs_pre
+		--> sigs.eventdbs_post
+		--> aspect_stmt.eventdbs_pre
+		--> aspect_stmt.eventdbs_post
+	--> The following Attributes should be in one Variable-Group
+		--> event_block.attrdbs_pre
+		--> event_block.attrdbs_post
+		--> attr.attrdbs_pre
+		--> attr.attrdbs_post
+		--> attrs.attrdbs_pre
+		--> attrs.attrdbs_post
+		--> optattrs.attrdbs_pre
+		--> optattrs.attrdbs_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.incls_pre
+		--> aspects.incls_post
+		--> sig.incls_pre
+		--> sig.incls_post
+		--> sigs.incls_pre
+		--> sigs.incls_post
+		--> aspect_stmt.incls_pre
+		--> aspect_stmt.incls_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.entries_pre
+		--> aspects.entries_post
+		--> operation_sig.entries_pre
+		--> operation_sig.entries_post
+		--> sig.entries_pre
+		--> sig.entries_post
+		--> sigs.entries_pre
+		--> sigs.entries_post
+		--> aspect_stmt.entries_pre
+		--> aspect_stmt.entries_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.funcs_pre
+		--> aspects.funcs_post
+		--> operation_sig.funcs_pre
+		--> operation_sig.funcs_post
+		--> sig.funcs_pre
+		--> sig.funcs_post
+		--> sigs.funcs_pre
+		--> sigs.funcs_post
+		--> aspect_stmt.funcs_pre
+		--> aspect_stmt.funcs_post
+		--> event_sig.funcs_pre
+		--> event_sig.funcs_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.sigs_pre
+		--> aspects.sigs_post
+		--> event_sig.sigs_pre
+		--> event_sig.sigs_post
+		--> sig.sigs_pre
+		--> sig.sigs_post
+		--> sigs.sigs_pre
+		--> sigs.sigs_post
+		--> aspect_stmt.sigs_pre
+		--> aspect_stmt.sigs_post
+	--> The following Attributes should be in one Variable-Group
+		--> operation_block.names_pre
+		--> operation_block.names_post
+		--> param.names_pre
+		--> param.names_post
+		--> params.names_pre
+		--> params.names_post
+		--> optparams.names_pre
+		--> optparams.names_post
+	--> The following Attributes should be in one Variable-Group
+		--> operation_block.argvars_pre
+		--> operation_block.argvars_post
+		--> param.argvars_pre
+		--> param.argvars_post
+		--> params.argvars_pre
+		--> params.argvars_post
+		--> optparams.argvars_pre
+		--> optparams.argvars_post
+	--> The following Attributes should be in one Variable-Group
+		--> operation_block.args_pre
+		--> operation_block.args_post
+		--> event_block.args_pre
+		--> event_block.args_post
+		--> attr.args_pre
+		--> attr.args_post
+		--> attrs.args_pre
+		--> attrs.args_post
+		--> optattrs.args_pre
+		--> optattrs.args_post
+		--> param.args_pre
+		--> param.args_post
+		--> params.args_pre
+		--> params.args_post
+		--> optparams.args_pre
+		--> optparams.args_post
+	--> The following Attributes should be in one Variable-Group
+		--> event_block.ansiargs_pre
+		--> event_block.ansiargs_post
+		--> attr.ansiargs_pre
+		--> attr.ansiargs_post
+		--> attrs.ansiargs_pre
+		--> attrs.ansiargs_post
+		--> optattrs.ansiargs_pre
+		--> optattrs.ansiargs_post
+	--> The following Attributes should be in one Variable-Group
+		--> event_block.types_pre
+		--> event_block.types_post
+		--> attr.types_pre
+		--> attr.types_post
+		--> attrs.types_pre
+		--> attrs.types_post
+		--> optattrs.types_pre
+		--> optattrs.types_post
+	--> The following Attributes should be in one Variable-Group
+		--> event_block.ansitypes_pre
+		--> event_block.ansitypes_post
+		--> attr.ansitypes_pre
+		--> attr.ansitypes_post
+		--> attrs.ansitypes_pre
+		--> attrs.ansitypes_post
+		--> optattrs.ansitypes_pre
+		--> optattrs.ansitypes_post
+	--> The following Attributes should be in one Variable-Group
+		--> event_block.sends_pre
+		--> event_block.sends_post
+		--> attr.sends_pre
+		--> attr.sends_post
+		--> attrs.sends_pre
+		--> attrs.sends_post
+		--> optattrs.sends_pre
+		--> optattrs.sends_post
+	--> The following Attributes should be in one Variable-Group
+		--> aspects.reqsyms_pre
+		--> aspects.reqsyms_post
+		--> operation_sig.reqsyms_pre
+		--> operation_sig.reqsyms_post
+		--> sig.reqsyms_pre
+		--> sig.reqsyms_post
+		--> sigs.reqsyms_pre
+		--> sigs.reqsyms_post
+		--> aspect_stmt.reqsyms_pre
+		--> aspect_stmt.reqsyms_post
+
+
+
+*** INFO: ATTRIBUTE operation_block.argcount_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE event_block.attrdbs_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE operation_block.argvars_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE operation_block.args_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE event_block.args_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE event_block.ansiargs_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE event_block.types_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE event_block.ansitypes_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE event_block.sends_post  is not a global VARIABLE !
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :   151
+
+      -> 5 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :     0
+
+
+NUMBER OF TREE NODE COMPONENTS :    20
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->  16 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->   4 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :    17
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :   200
+    -> NEW NUMBER OF SEMANTIC RULES :    83
+
+

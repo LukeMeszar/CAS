@@ -1,0 +1,22 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/c/r/map.symbols.5682342.symbols"
+','
+'('
+')'
+'BEGIN'
+'END'
+';'
+'CLASS'
+':'
+'COERCION'
+'OPER'
+'SET'
+'='
+'INDICATION'
+Identifier
+'['
+']'
+'*'
+'-'
+'+'
+'COST'
+Integer

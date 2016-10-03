@@ -1,0 +1,30 @@
+INCLUDING Constructs:
+   
+   INCLUDING (VariableDeclSeg.type) propagate value 
+      occurs in  (264, 9),  (259, 3)
+   INCLUDING (Program.GotAllTypes) propagate void
+      occurs in  (290, 3),  (126, 3)
+   INCLUDING (Program.type) propagate value 
+      occurs in  (98, 3)
+   INCLUDING (Program.ContinueLbl, WhileStmt.ContinueLbl) propagate value 
+      occurs in  (92, 3)
+   INCLUDING (Program.BreakLbl, WhileStmt.BreakLbl) propagate value 
+      occurs in  (81, 3)
+   INCLUDING (Program.GotAllDefs) propagate void
+      occurs in  (50, 3)
+   INCLUDING (Program.Env, Compound.Env) propagate value 
+      occurs in  (38, 3),  (32, 3),  (28, 3)
+   
+
+CONSTITUENT Constructs:
+   
+   
+
+CONSTITUENTS Constructs:
+   
+   CONSTITUENTS (VariableDecl.GotType, ParameterDecl.GotType) propagate void
+      occurs in  (244, 3)
+   CONSTITUENTS (IdDef.Def) propagate void
+      occurs in  (45, 3)
+   
+

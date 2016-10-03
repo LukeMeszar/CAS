@@ -1,0 +1,139 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/c/o/language.lido.5594822.lidoEta"
+
+
+ATTR cost: int;
+
+RULE: CostSpecification ::=
+COMPUTE
+  CostSpecification.cost=1;
+END;
+
+RULE: CostSpecification ::= 'COST' Integer
+COMPUTE
+  CostSpecification.cost=Integer;
+END;
+
+
+RULE: OpDef ::=
+COMPUTE OpDef.Sym=GenerateName("_AnonOp");
+END;
+
+RULE: ClassOpDef ::=
+COMPUTE ClassOpDef.Sym=GenerateName("_AnonOp");
+END;
+
+
+
+RULE: OpDef ::= Identifier COMPUTE OpDef.Sym=Identifier; END;
+
+SYMBOL OpDef INHERITS Unique COMPUTE
+  IF(NOT(THIS.Unique),
+    message(ERROR,"Multiply-defined identifier",0,COORDREF));
+END;
+
+
+
+RULE: ClassOpDef ::= Identifier COMPUTE ClassOpDef.Sym=Identifier; END;
+
+SYMBOL ClassOpDef INHERITS Unique COMPUTE
+  IF(NOT(THIS.Unique),
+    message(ERROR,"Multiply-defined identifier",0,COORDREF));
+END;
+
+
+RULE: TypeIdentifier ::= Identifier COMPUTE TypeIdentifier.Sym=Identifier; END;
+
+
+
+
+
+RULE: ClassName ::= Identifier COMPUTE ClassName.Sym=Identifier; END;
+
+SYMBOL ClassName INHERITS Unique COMPUTE
+  IF(NOT(THIS.Unique),
+    message(ERROR,"Multiply-defined identifier",0,COORDREF));
+END;
+
+
+
+RULE: ClassParameter ::= Identifier COMPUTE ClassParameter.Sym=Identifier; END;
+
+SYMBOL ClassParameter INHERITS Unique COMPUTE
+  IF(NOT(THIS.Unique),
+    message(ERROR,"Multiply-defined identifier",0,COORDREF));
+END;
+
+
+
+
+RULE: IndDef ::= Identifier COMPUTE IndDef.Sym=Identifier; END;
+
+
+
+RULE: OpRef ::= Identifier COMPUTE OpRef.Sym=Identifier; END;
+
+SYMBOL OpRef COMPUTE
+  IF(EQ(THIS.Key,NoKey),
+    message(ERROR,"Undefined identifier",0,COORDREF));
+END;
+
+
+
+
+
+RULE: SetIdDef ::= Identifier COMPUTE SetIdDef.Sym=Identifier; END;
+
+SYMBOL SetIdDef INHERITS Unique COMPUTE
+  IF(NOT(THIS.Unique),
+    message(ERROR,"Multiply-defined identifier",0,COORDREF));
+END;
+
+
+
+RULE: SetIdUse ::= Identifier COMPUTE SetIdUse.Sym=Identifier; END;
+
+SYMBOL SetIdUse COMPUTE
+  IF(EQ(THIS.Key,NoKey),
+    message(ERROR,"Undefined identifier",0,COORDREF));
+END;
+
+
+
+ATTR Sym: int;
+ATTR Env: Environment;
+ATTR Key: DefTableKey;
+
+SYMBOL OIL INHERITS RangeUnique COMPUTE
+  SYNT.Env=NewEnv();
+  SYNT.BoundInOuter=CONSTITUENTS DefinedId.bound;
+  SYNT.GotAllDefs=CONSTITUENTS Unique.bound;
+END;
+
+SYMBOL ClassBody INHERITS RangeUnique COMPUTE
+  SYNT.Env=NewScope(INCLUDING OIL.Env) DEPENDS_ON INCLUDING OIL.BoundInOuter;
+  SYNT.BoundInInner=CONSTITUENTS ClassParameter.bound;
+END;
+
+SYMBOL AllIdentifiers COMPUTE
+  SYNT.Key=
+    KeyInEnv(INCLUDING (OIL.Env,ClassBody.Env), THIS.Sym)
+      DEPENDS_ON INCLUDING (OIL.BoundInOuter,ClassBody.BoundInInner);
+END;
+
+SYMBOL DefinedId INHERITS AllIdentifiers COMPUTE
+  SYNT.bound=DefineIdn(INCLUDING OIL.Env, THIS.Sym);
+END;
+
+SYMBOL ClassParameter INHERITS AllIdentifiers COMPUTE
+  SYNT.bound=DefineIdn(INCLUDING ClassBody.Env, THIS.Sym);
+END;
+
+SYMBOL OpDef INHERITS DefinedId END;
+SYMBOL ClassOpDef INHERITS DefinedId END;
+SYMBOL TypeIdentifier INHERITS DefinedId END;
+SYMBOL ClassName INHERITS DefinedId END;
+SYMBOL IndDef INHERITS DefinedId END;
+SYMBOL OpRef INHERITS AllIdentifiers END;
+SYMBOL SetIdDef INHERITS DefinedId END;
+SYMBOL SetIdUse INHERITS AllIdentifiers END;
+

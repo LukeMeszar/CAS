@@ -1,0 +1,6 @@
+
+
+$/Prop/Unique.gnrc :inst
+
+$/Name/envmod.specs
+$/Tech/MakeName.gnrc +instance=Identifier :inst

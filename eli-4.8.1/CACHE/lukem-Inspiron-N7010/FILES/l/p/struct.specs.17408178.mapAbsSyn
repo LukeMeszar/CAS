@@ -1,0 +1,912 @@
+RULE rule_1:
+addop ::= '-'
+END;
+
+RULE rule_2:
+addop ::= '+'
+END;
+
+RULE rule_3:
+addop ::= 'or'
+END;
+
+RULE rule_4:
+alternative ::= 
+END;
+
+RULE rule_5:
+alternative ::= caseselectors ':' LbRange
+END;
+
+RULE rule_6:
+alternatives ::= alternative
+END;
+
+RULE rule_7:
+alternatives ::= alternatives ';' alternative
+END;
+
+RULE rule_8:
+argument ::= Expression
+END;
+
+RULE rule_9:
+argument ::= Expression ':' Expression
+END;
+
+RULE rule_10:
+argument ::= Expression ':' Expression ':' Expression
+END;
+
+RULE rule_11:
+argumentlist ::= argument
+END;
+
+RULE rule_12:
+argumentlist ::= argumentlist ',' argument
+END;
+
+RULE rule_13:
+Arguments ::= 
+END;
+
+RULE rule_14:
+Arguments ::= '(' argumentlist ')'
+END;
+
+RULE rule_15:
+arrayvariable ::= arrayvariable subscr1
+END;
+
+RULE rule_16:
+arrayvariable ::= Variable '['
+END;
+
+RULE rule_17:
+Body ::= InnerRange
+END;
+
+RULE rule_18:
+Call ::= IdUse Arguments
+END;
+
+RULE rule_19:
+caseselector ::= Constant
+END;
+
+RULE rule_20:
+caseselectors ::= caseselector
+END;
+
+RULE rule_21:
+caseselectors ::= caseselectors ',' caseselector
+END;
+
+RULE rule_22:
+Compound ::= 'begin' StmtSeq 'end'
+END;
+
+RULE rule_23:
+compoundstmt ::= 'begin' LbRangeSeq 'end'
+END;
+
+RULE rule_24:
+Constant ::= '-' constantid
+END;
+
+RULE rule_25:
+Constant ::= '+' constantid
+END;
+
+RULE rule_26:
+ConstantDefinition ::= IdDef '=' Constant ';'
+END;
+
+RULE rule_27:
+constantid ::= IdUse
+END;
+
+RULE rule_28:
+Constant ::= IdUse
+END;
+
+RULE rule_29:
+Constant ::= String
+END;
+
+RULE rule_30:
+Constant ::= '-' unsignednumber
+END;
+
+RULE rule_31:
+Constant ::= '+' unsignednumber
+END;
+
+RULE rule_32:
+Constant ::= unsignednumber
+END;
+
+RULE rule_33:
+ConstDefList ::= ConstantDefinition
+END;
+
+RULE rule_34:
+ConstDefList ::= ConstDefList ConstantDefinition
+END;
+
+RULE rule_35:
+ConstPart ::= 
+END;
+
+RULE rule_36:
+ConstPart ::= 'const' ConstDefList
+END;
+
+RULE rule_37:
+DeclPart0 ::= LabelPart ConstPart
+END;
+
+RULE rule_38:
+DeclPart1 ::= DeclPart0 TypePart
+END;
+
+RULE rule_39:
+DeclPart2 ::= DeclPart1 VarPart
+END;
+
+RULE rule_40:
+DeclPart ::= DeclPart2 RoutinePart
+END;
+
+RULE rule_41:
+elementtype ::= nextindextype elementtype
+END;
+
+RULE rule_42:
+elementtype ::= ']' 'of' Type
+END;
+
+RULE rule_43:
+EnumConst ::= IdDef
+END;
+
+RULE rule_44:
+Enumeration ::= EnumConst
+END;
+
+RULE rule_45:
+Enumeration ::= Enumeration ',' EnumConst
+END;
+
+RULE rule_46:
+EnumRange ::= Enumeration
+END;
+
+RULE rule_47:
+Expression ::= simpleexpression
+END;
+
+RULE rule_48:
+Expression ::= simpleexpression relop simpleexpression
+END;
+
+RULE rule_49:
+factor ::= '(' Expression ')'
+END;
+
+RULE rule_50:
+factor ::= fncall
+END;
+
+RULE rule_51:
+factor ::= Integer
+END;
+
+RULE rule_52:
+factor ::= 'nil'
+END;
+
+RULE rule_53:
+factor ::= Real
+END;
+
+RULE rule_54:
+factor ::= '[' SetElements ']'
+END;
+
+RULE rule_55:
+factor ::= String
+END;
+
+RULE rule_56:
+factor ::= unot factor
+END;
+
+RULE rule_57:
+factor ::= Variable
+END;
+
+RULE rule_58:
+FieldIdDef ::= IdDef
+END;
+
+RULE rule_59:
+FieldIdList ::= FieldIdDef
+END;
+
+RULE rule_60:
+FieldIdList ::= FieldIdList ',' FieldIdDef
+END;
+
+RULE rule_61:
+FieldList ::= 
+END;
+
+RULE rule_62:
+FieldList ::= FixedPart ';'
+END;
+
+RULE rule_63:
+FieldList ::= FixedPart
+END;
+
+RULE rule_64:
+FieldList ::= FixedPart ';' VariantPart
+END;
+
+RULE rule_65:
+FieldList ::= VariantPart
+END;
+
+RULE rule_66:
+FixedPart ::= FixedPart ';' recordsection
+END;
+
+RULE rule_67:
+FixedPart ::= recordsection
+END;
+
+RULE rule_68:
+fnargs ::= '(' argumentlist ')'
+END;
+
+RULE rule_69:
+fncall ::= IdUse fnargs
+END;
+
+RULE rule_70:
+FuncBody ::= FuncSignature ';' Body
+END;
+
+RULE rule_71:
+FuncData ::= Identifier FuncBody
+END;
+
+RULE rule_72:
+FuncData ::= Identifier ProcBody
+END;
+
+RULE rule_73:
+FuncSignature ::= '(' ParameterSectionSeq ')' ':' ParmTypeId
+END;
+
+RULE rule_74:
+FuncSignature ::= ':' ParmTypeId
+END;
+
+RULE rule_75:
+FuncTypeSig ::= ':' ParmTypeId
+END;
+
+RULE rule_76:
+FuncTypeSig ::= '(' ptypesectionSeq ')' ':' ParmTypeId
+END;
+
+RULE rule_77:
+FwdFuncData ::= Identifier FuncSignature ';' Identifier
+END;
+
+RULE rule_78:
+FwdProcData ::= Identifier ProcSignature ';' Identifier
+END;
+
+RULE rule_79:
+IdDef ::= Identifier
+END;
+
+RULE rule_80:
+IdUse ::= Identifier
+END;
+
+RULE rule_81:
+indextype ::= 'array' '[' simpletype
+END;
+
+RULE rule_82:
+InnerRange ::= DeclPart Compound
+END;
+
+RULE rule_83:
+LabelPart ::= 
+END;
+
+RULE rule_84:
+LabelPart ::= 'label' LblDeclList ';'
+END;
+
+RULE rule_85:
+LbDef ::= Integer
+END;
+
+RULE rule_86:
+LblDecl ::= Integer
+END;
+
+RULE rule_87:
+LblDeclList ::= LblDecl
+END;
+
+RULE rule_88:
+LblDeclList ::= LblDeclList LblTail
+END;
+
+RULE rule_89:
+LblTail ::= ',' LblDecl
+END;
+
+RULE rule_90:
+LbRangeSeq ::= StmtSeq
+END;
+
+RULE rule_91:
+LbRange ::= Statement
+END;
+
+RULE rule_92:
+LbRangeStmt ::= LbRange
+END;
+
+RULE rule_93:
+LbRangeStmtSeq ::= LbRangeSeq
+END;
+
+RULE rule_94:
+LbUse ::= Integer
+END;
+
+RULE rule_95:
+mulop ::= '/'
+END;
+
+RULE rule_96:
+mulop ::= '*'
+END;
+
+RULE rule_97:
+mulop ::= 'and'
+END;
+
+RULE rule_98:
+mulop ::= 'div'
+END;
+
+RULE rule_99:
+mulop ::= 'mod'
+END;
+
+RULE rule_100:
+nextindextype ::= ',' simpletype
+END;
+
+RULE rule_101:
+outer ::= Identifier ProgramParameters ';' DeclPart Compound
+END;
+
+RULE rule_102:
+OuterRange ::= 'program' outer '.'
+END;
+
+RULE rule_103:
+OuterRoutine ::= OuterRange
+END;
+
+RULE rule_104:
+ParameterSection ::= 'function' ParmIdDef FuncTypeSig
+END;
+
+RULE rule_105:
+ParameterSection ::= ParmDefList ':' ParmTypeId
+END;
+
+RULE rule_106:
+ParameterSection ::= 'procedure' ParmIdDef ProcTypeSig
+END;
+
+RULE rule_107:
+ParameterSectionSeq ::= ParameterSection
+END;
+
+RULE rule_108:
+ParameterSectionSeq ::= ParameterSectionSeq ';' ParameterSection
+END;
+
+RULE rule_109:
+ParameterSection ::= 'var' ParmDefList ':' ParmTypeId
+END;
+
+RULE rule_110:
+ParmDefList ::= ParmDef
+END;
+
+RULE rule_111:
+ParmDefList ::= ParmDefList ',' ParmDef
+END;
+
+RULE rule_112:
+ParmDef ::= ParmIdDef
+END;
+
+RULE rule_113:
+ParmIdDef ::= Identifier
+END;
+
+RULE rule_114:
+ParmTypeId ::= Identifier
+END;
+
+RULE rule_115:
+pascal ::= OuterRoutine
+END;
+
+RULE rule_116:
+PgmParList ::= PgmParList ',' PgmParm
+END;
+
+RULE rule_117:
+PgmParList ::= PgmParm
+END;
+
+RULE rule_118:
+PgmParm ::= Identifier
+END;
+
+RULE rule_119:
+ProcBody ::= ProcSignature ';' Body
+END;
+
+RULE rule_120:
+ProcData ::= Identifier ProcBody
+END;
+
+RULE rule_121:
+ProcSignature ::= 
+END;
+
+RULE rule_122:
+ProcSignature ::= '(' ParameterSectionSeq ')'
+END;
+
+RULE rule_123:
+ProcTypeSig ::= 
+END;
+
+RULE rule_124:
+ProcTypeSig ::= '(' ptypesectionSeq ')'
+END;
+
+RULE rule_125:
+ProgramParameters ::= 
+END;
+
+RULE rule_126:
+ProgramParameters ::= '(' PgmParList ')'
+END;
+
+RULE rule_127:
+ptypesection ::= 'function' ParmIdDef FuncTypeSig
+END;
+
+RULE rule_128:
+ptypesection ::= ParmDefList ':' ParmTypeId
+END;
+
+RULE rule_129:
+ptypesection ::= 'procedure' ParmIdDef ProcTypeSig
+END;
+
+RULE rule_130:
+ptypesectionSeq ::= ptypesection
+END;
+
+RULE rule_131:
+ptypesectionSeq ::= ptypesectionSeq ';' ptypesection
+END;
+
+RULE rule_132:
+ptypesection ::= 'var' ParmDefList ':' ParmTypeId
+END;
+
+RULE rule_133:
+recordsection ::= FieldIdList ':' Type
+END;
+
+RULE rule_134:
+recordtype ::= FieldList
+END;
+
+RULE rule_135:
+relop ::= '<='
+END;
+
+RULE rule_136:
+relop ::= '<>'
+END;
+
+RULE rule_137:
+relop ::= '<'
+END;
+
+RULE rule_138:
+relop ::= '='
+END;
+
+RULE rule_139:
+relop ::= '>='
+END;
+
+RULE rule_140:
+relop ::= '>'
+END;
+
+RULE rule_141:
+relop ::= 'in'
+END;
+
+RULE rule_142:
+RoutineDeclaration ::= 'function' FuncData ';'
+END;
+
+RULE rule_143:
+RoutineDeclaration ::= 'function' FwdFuncData ';'
+END;
+
+RULE rule_144:
+RoutineDeclaration ::= 'procedure' FwdProcData ';'
+END;
+
+RULE rule_145:
+RoutineDeclaration ::= 'procedure' ProcData ';'
+END;
+
+RULE rule_146:
+RoutineList ::= RoutineDeclaration
+END;
+
+RULE rule_147:
+RoutineList ::= RoutineList RoutineDeclaration
+END;
+
+RULE rule_148:
+RoutinePart ::= 
+END;
+
+RULE rule_149:
+RoutinePart ::= RoutineList
+END;
+
+RULE rule_150:
+SetElements ::= 
+END;
+
+RULE rule_151:
+SetElements ::= setexpressionList
+END;
+
+RULE rule_152:
+setexpression ::= Expression
+END;
+
+RULE rule_153:
+setexpression ::= Expression '..' Expression
+END;
+
+RULE rule_154:
+setexpressionList ::= setexpression
+END;
+
+RULE rule_155:
+setexpressionList ::= setexpressionList ',' setexpression
+END;
+
+RULE rule_156:
+simpleexpression ::= unsignedexpression
+END;
+
+RULE rule_157:
+simpleexpression ::= uplusminus simpleexpression
+END;
+
+RULE rule_158:
+simpletype ::= Constant '..' Constant
+END;
+
+RULE rule_159:
+simpletype ::= '(' EnumRange ')'
+END;
+
+RULE rule_160:
+simpletype ::= IdUse
+END;
+
+RULE rule_161:
+Statement ::= LbDef ':' unlabelledstatement
+END;
+
+RULE rule_162:
+Statement ::= unlabelledstatement
+END;
+
+RULE rule_163:
+StmtSeq ::= Statement
+END;
+
+RULE rule_164:
+StmtSeq ::= StmtSeq ';' Statement
+END;
+
+RULE rule_165:
+structuredtype ::= 'file' 'of' Type
+END;
+
+RULE rule_166:
+structuredtype ::= indextype elementtype
+END;
+
+RULE rule_167:
+structuredtype ::= 'record' recordtype 'end'
+END;
+
+RULE rule_168:
+structuredtype ::= 'set' 'of' Type
+END;
+
+RULE rule_169:
+subscr1 ::= Expression ','
+END;
+
+RULE rule_170:
+subscript ::= Expression ']'
+END;
+
+RULE rule_171:
+Tag ::= FieldIdDef ':' TypeId
+END;
+
+RULE rule_172:
+Tag ::= TypeId
+END;
+
+RULE rule_173:
+term ::= factor
+END;
+
+RULE rule_174:
+term ::= term mulop factor
+END;
+
+RULE rule_175:
+TypeDefinition ::= IdDef '=' Type ';'
+END;
+
+RULE rule_176:
+TypeDefList ::= TypeDefinition
+END;
+
+RULE rule_177:
+TypeDefList ::= TypeDefList TypeDefinition
+END;
+
+RULE rule_178:
+TypeId ::= IdUse
+END;
+
+RULE rule_179:
+Type ::= 'packed' structuredtype
+END;
+
+RULE rule_180:
+TypePart ::= 
+END;
+
+RULE rule_181:
+TypePart ::= 'Type' TypeDefList
+END;
+
+RULE rule_182:
+Type ::= simpletype
+END;
+
+RULE rule_183:
+Type ::= structuredtype
+END;
+
+RULE rule_184:
+Type ::= '^' TypeId
+END;
+
+RULE rule_185:
+unlabelledstatement ::= 
+END;
+
+RULE rule_186:
+unlabelledstatement ::= Call
+END;
+
+RULE rule_187:
+unlabelledstatement ::= 'case' Expression 'of' alternatives 'end'
+END;
+
+RULE rule_188:
+unlabelledstatement ::= compoundstmt
+END;
+
+RULE rule_189:
+unlabelledstatement ::= 'for' IdUse ':=' Expression 'downto' Expression 'do' LbRangeStmt
+END;
+
+RULE rule_190:
+unlabelledstatement ::= 'for' IdUse ':=' Expression 'to' Expression 'do' LbRangeStmt
+END;
+
+RULE rule_191:
+unlabelledstatement ::= 'goto' LbUse
+END;
+
+RULE rule_192:
+unlabelledstatement ::= 'if' Expression 'then' LbRangeStmt
+END;
+
+RULE rule_193:
+unlabelledstatement ::= 'if' Expression 'then' LbRangeStmt 'else' LbRangeStmt
+END;
+
+RULE rule_194:
+unlabelledstatement ::= 'repeat' LbRangeStmtSeq 'until' Expression
+END;
+
+RULE rule_195:
+unlabelledstatement ::= Variable ':=' Expression
+END;
+
+RULE rule_196:
+unlabelledstatement ::= 'while' Expression 'do' LbRangeStmt
+END;
+
+RULE rule_197:
+unlabelledstatement ::= withexpr withbody
+END;
+
+RULE rule_198:
+unot ::= 'not'
+END;
+
+RULE rule_199:
+unsignedexpression ::= term
+END;
+
+RULE rule_200:
+unsignedexpression ::= unsignedexpression addop term
+END;
+
+RULE rule_201:
+unsignednumber ::= Integer
+END;
+
+RULE rule_202:
+unsignednumber ::= Real
+END;
+
+RULE rule_203:
+uplusminus ::= '-'
+END;
+
+RULE rule_204:
+uplusminus ::= '+'
+END;
+
+RULE rule_205:
+VarDeclList ::= VarDeclList VariableDeclaration
+END;
+
+RULE rule_206:
+VarDeclList ::= VariableDeclaration
+END;
+
+RULE rule_207:
+VarDef ::= IdDef
+END;
+
+RULE rule_208:
+VarDefList ::= VarDef
+END;
+
+RULE rule_209:
+VarDefList ::= VarDefList ',' VarDef
+END;
+
+RULE rule_210:
+Variable ::= arrayvariable subscript
+END;
+
+RULE rule_211:
+VariableDeclaration ::= VarDefList ':' Type ';'
+END;
+
+RULE rule_212:
+Variable ::= IdUse
+END;
+
+RULE rule_213:
+Variable ::= Variable '.' Identifier
+END;
+
+RULE rule_214:
+VariantList ::= Variant
+END;
+
+RULE rule_215:
+VariantList ::= VariantList ';' Variant
+END;
+
+RULE rule_216:
+VariantPart ::= 'case' Tag 'of' VariantTail
+END;
+
+RULE rule_217:
+VariantSelector ::= Constant
+END;
+
+RULE rule_218:
+VariantSelectorList ::= VariantSelector
+END;
+
+RULE rule_219:
+VariantSelectorList ::= VariantSelectorList ',' VariantSelector
+END;
+
+RULE rule_220:
+VariantTail ::= VariantList ';'
+END;
+
+RULE rule_221:
+VariantTail ::= VariantList
+END;
+
+RULE rule_222:
+Variant ::= VariantSelectorList ':' '(' FieldList ')'
+END;
+
+RULE rule_223:
+VarPart ::= 
+END;
+
+RULE rule_224:
+VarPart ::= 'var' VarDeclList
+END;
+
+RULE rule_225:
+withbody ::= 'do' LbRangeStmt
+END;
+
+RULE rule_226:
+withbody ::= withexpnest withbody
+END;
+
+RULE rule_227:
+withexpnest ::= ',' Variable
+END;
+
+RULE rule_228:
+withexpr ::= 'with' Variable
+END;
+

@@ -1,0 +1,5 @@
+%CLike.Flat.ok == . +cmd=cat (%trenn) \
+	(CLike.demo/Flat.ok:label) \
+	(CLike.demo/Flat.ok) \
+	(CLike.demo/Flat.ok +cmd=(CLike.fw.exe) :stdout :warn) \
+	(CLike.demo/Flat.ok +cmd=(CLike.fw.exe) :stdout) :stdout

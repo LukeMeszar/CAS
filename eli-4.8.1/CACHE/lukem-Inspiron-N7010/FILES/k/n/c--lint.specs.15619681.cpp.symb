@@ -1,0 +1,350 @@
+USED TREE SYMBOLS:
+   IdDef (4, 26)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      plain$1 (50, 3): SYNT, VOID
+      Def (49, 8): SYNT, VOID (by default)
+      Key (274, 39): SYNT, DefTableKey
+      Sym (33, 41): SYNT, int
+   
+   Identifier (4, 36)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   IdUse (8, 25)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      plain$2 (57, 3): SYNT, VOID
+      Key (291, 32): SYNT, DefTableKey
+      Sym (39, 40): SYNT, int
+   
+   Program (13, 8)
+      direct INHERITS Root
+         all INHERITS Range, Root
+      ATTRIBUTES
+      GotAllDefs (13, 8): INH, VOID (by default)
+      Env (13, 8): INH, Environment
+      GotAllTypes (292, 34): SYNT, VOID (by default)
+      type (107, 17): SYNT, tOilType
+      ContinueLbl (92, 51): SYNT, DefTableKey
+      BreakLbl (81, 48): SYNT, DefTableKey
+   
+   Compound (14, 8)
+      direct INHERITS Range
+         all INHERITS Range
+      ATTRIBUTES
+      Env (14, 8): INH, Environment
+   
+   Statement (62, 16)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Expression (62, 39)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      possible (329, 29): SYNT, tOilTypeSet
+      yields (330, 25): INH, tOilType
+   
+   WhileStmt (70, 12)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      ContinueLbl (92, 30): SYNT, DefTableKey
+      BreakLbl (81, 30): SYNT, DefTableKey
+   
+   ResultType (106, 26)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      type (115, 20): SYNT, tOilType
+   
+   ParameterList (106, 52)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   ShortCircuitOp (154, 8)
+      direct INHERITS Operator
+         all INHERITS Operator
+      ATTRIBUTES
+      plain$6 (154, 8): SYNT, VOID
+      operator (170, 61): INH, tOilOp
+      indication (179, 24): SYNT, tOilOp
+   
+   Notop (182, 8)
+      direct INHERITS Operator
+         all INHERITS Operator
+      ATTRIBUTES
+      plain$6 (182, 8): SYNT, VOID
+      operator (195, 52): INH, tOilOp
+      indication (200, 15): SYNT, tOilOp
+   
+   Binop (204, 15)
+      direct INHERITS Operator
+         all INHERITS Operator
+      ATTRIBUTES
+      plain$6 (204, 15): SYNT, VOID
+      operator (313, 52): INH, tOilOp
+      indication (309, 21): SYNT, tOilOp
+   
+   Unop (237, 16)
+      direct INHERITS Operator
+         all INHERITS Operator
+      ATTRIBUTES
+      plain$6 (237, 16): SYNT, VOID
+      operator (330, 51): INH, tOilOp
+      indication (328, 20): SYNT, tOilOp
+   
+   VariableDecl (244, 34)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotType (259, 16): SYNT, VOID (by default)
+   
+   ParameterDecl (244, 56)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotType (274, 17): SYNT, VOID (by default)
+   
+   VariableDeclSeg (249, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      type (264, 53): SYNT, tOilType
+   
+   VarIdList (249, 40)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   OptInitialize (257, 38)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   IntDenotation (280, 29)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   FloatDenotation (284, 31)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Axiom (341, 1)
+      direct INHERITS ROOTCLASS
+         all INHERITS ROOTCLASS
+      ATTRIBUTES
+   
+   StatementList (345, 18)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   VariableDeclList (349, 18)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Root (13, 25)
+      direct INHERITS Range
+         all INHERITS Range
+      ATTRIBUTES
+      GotAllDefs (52, 31): INH, No Type
+      Env (23, 7): INH, Environment
+   
+   Range (14, 26)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Env (39, 30): INH, Environment
+   
+   Operator (154, 32)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      plain$6 (335, 3): SYNT, VOID
+      operator (335, 28): No Class, tOilOp
+   
+RULES:
+   rule_15 (396, 6)
+      ATTRIBUTES
+   
+   rule_14 (392, 6)
+      ATTRIBUTES
+   
+   rule_13 (388, 6)
+      ATTRIBUTES
+   
+   rule_12 (384, 6)
+      ATTRIBUTES
+   
+   rule_11 (380, 6)
+      ATTRIBUTES
+   
+   rule_10 (376, 6)
+      ATTRIBUTES
+   
+   rule_9 (372, 6)
+      ATTRIBUTES
+   
+   rule_8 (368, 6)
+      ATTRIBUTES
+   
+   rule_7 (364, 6)
+      ATTRIBUTES
+   
+   rule_6 (360, 6)
+      ATTRIBUTES
+   
+   rule_5 (356, 6)
+      ATTRIBUTES
+   
+   rule_4 (352, 6)
+      ATTRIBUTES
+   
+   rule_3 (348, 6)
+      ATTRIBUTES
+   
+   rule_2 (344, 6)
+      ATTRIBUTES
+   
+   rule_1 (340, 6)
+      ATTRIBUTES
+   
+   MonadicExp (319, 6)
+      ATTRIBUTES
+   
+   DyadicExp (299, 6)
+      ATTRIBUTES
+   
+   IdnVal (288, 6)
+      ATTRIBUTES
+   
+   FloatVal (284, 6)
+      ATTRIBUTES
+   
+   IntVal (280, 6)
+      ATTRIBUTES
+   
+   FloatParDecl (272, 6)
+      ATTRIBUTES
+   
+   IntParDecl (267, 6)
+      ATTRIBUTES
+   
+   Initialize (263, 6)
+      ATTRIBUTES
+   
+   VarDecl (257, 6)
+      ATTRIBUTES
+   
+   FloatVar (253, 6)
+      ATTRIBUTES
+   
+   IntVar (249, 6)
+      ATTRIBUTES
+   
+   UMinusOp (237, 6)
+      ATTRIBUTES
+   
+   PercentOp (233, 6)
+      ATTRIBUTES
+   
+   SlashOp (229, 6)
+      ATTRIBUTES
+   
+   StarOp (225, 6)
+      ATTRIBUTES
+   
+   MinusOp (221, 6)
+      ATTRIBUTES
+   
+   PlusOp (217, 6)
+      ATTRIBUTES
+   
+   GreaterOp (212, 6)
+      ATTRIBUTES
+   
+   LessOp (208, 6)
+      ATTRIBUTES
+   
+   EqualOp (204, 6)
+      ATTRIBUTES
+   
+   ExclOp (199, 6)
+      ATTRIBUTES
+   
+   NotExp (184, 6)
+      ATTRIBUTES
+   
+   AmpOp (178, 6)
+      ATTRIBUTES
+   
+   BarOp (174, 6)
+      ATTRIBUTES
+   
+   ShortCircuitExp (156, 6)
+      ATTRIBUTES
+   
+   CondExp (144, 6)
+      ATTRIBUTES
+   
+   AssignExp (124, 6)
+      ATTRIBUTES
+      operator (140, 39): SYNT, tOilOp
+      possible (138, 8): SYNT, tOilTypeSet
+   
+   ExprStmt (118, 6)
+      ATTRIBUTES
+   
+   FloatResult (114, 6)
+      ATTRIBUTES
+   
+   IntResult (110, 6)
+      ATTRIBUTES
+   
+   Source (106, 6)
+      ATTRIBUTES
+   
+   ReturnStmt (96, 6)
+      ATTRIBUTES
+      plain$5 (100, 3): SYNT, VOID
+      operator (103, 36): SYNT, tOilOp
+   
+   ContinueStmt (90, 6)
+      ATTRIBUTES
+      plain$4 (92, 3): SYNT, VOID
+   
+   BreakStmt (79, 6)
+      ATTRIBUTES
+      plain$3 (81, 3): SYNT, VOID
+   
+   Loop (70, 6)
+      ATTRIBUTES
+   
+   TwoSided (66, 6)
+      ATTRIBUTES
+   
+   OneSided (62, 6)
+      ATTRIBUTES
+   
+   AppliedOccurrence (8, 6)
+      ATTRIBUTES
+   
+   DefiningOccurrence (4, 6)
+      ATTRIBUTES
+   

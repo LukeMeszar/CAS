@@ -1,0 +1,154 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/f/m/Xml.lido.9333107.lidoEta"
+
+
+SYMBOL xRoot COMPUTE
+  PTGOutFile(
+    "tree",
+    PTGFrame(
+      THIS.Prefix,
+      THIS.TreeGram,
+      TAIL.ClassComp,
+      TAIL.Inherit,
+      TAIL.PtgTemplates));
+END;
+
+
+SYMBOL xSymbol COMPUTE
+  THIS.PtgTemplates =
+    IF(AND(THIS.IsTerminal,AND(THIS.IsFirstOcc,GetNoPtgGiven(THIS.Key,1))),
+      PTGSeq(THIS.PtgTemplates,PTGTerm(INCLUDING xRoot.Prefix,THIS.Ptg)),
+      THIS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+ATTR Insert: PTGNode;
+
+RULE: Element ::= xLiteral
+COMPUTE
+  Element.Insert = PTGNULL;
+END;
+
+RULE: Element ::= xSymbol
+COMPUTE
+  Element.Insert = Element.Mark;
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE
+  Element.Insert = Element.Mark;
+END;
+
+ATTR Body: PTGNode;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  .Body=
+    xRHS CONSTITUENTS Element.Insert
+      WITH (PTGNode, PTGSepSeq, IDENTICAL, PTGNull);
+  xProduction.PtgTemplates=
+    IF(GetNoPtgGiven(xRule.Key,1),
+      PTGSeq(
+        xRHS.PtgTemplates,
+        IF(EQ(.Body,PTGNULL),
+          PTGEmpty(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGPlainProd(INCLUDING xRoot.Prefix,StringTable(xRule.Sym),.Body))),
+      xRHS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.PtgTemplates=
+    PTGSeq(
+      Syms.PtgTemplates,
+      PTGTriple(
+        IF(GetNoPtgGiven(xRule.Key,1),
+          PTGListProd(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL),
+        IF(GetNoPtg2Given(xRule.Key,1),
+          PTGListProd2(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL),
+        IF(GetNoPtg1Given(xRule.Key,1),
+          PTGListProd1(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL)))
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+
+SYMBOL xRoot COMPUTE
+  PTGOutFile(
+    CatStrStr("treeDef/", CatStrStr(THIS.Prefix, ".dtd")),
+    PTGdtd(
+      CONSTITUENTS xSymbol.Entity WITH(PTGNode,PTGSeq,IDENTICAL,PTGNull),
+      CONSTITUENTS xProduction.Element WITH(PTGNode,PTGSeq,IDENTICAL,PTGNull)));
+END;
+
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  xProduction.GotElement=
+    ResetEntity(
+      xSymbol.Key,
+      PTGAltSeq(
+        GetEntity(xSymbol.Key,PTGNULL),
+        PTGAsIs(StringTable(xRule.Sym))));
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.GotElement=
+    ResetEntity(
+      xSymbol.Key,
+      PTGAltSeq(
+        GetEntity(xSymbol.Key,PTGNULL),
+        PTGAsIs(StringTable(xRule.Sym))));
+END;
+
+
+ATTR Entity: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  SYNT.GotAllEntities=CONSTITUENTS xProduction.GotElement;
+END;
+
+SYMBOL xSymbol COMPUTE
+  SYNT.Entity=
+    IF(AND(THIS.IsFirstOcc,NOT(THIS.IsTerminal)),
+      PTGEntityDef(StringTable(TERM),GetEntity(THIS.Key,PTGNULL)),
+      PTGNULL)
+    <- INCLUDING xRoot.GotAllEntities;
+END;
+
+
+ATTR Element, Content: PTGNode;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  .Content=
+    xRHS CONSTITUENTS xSymbol.Content
+      WITH(PTGNode, PTGCommaSeq, IDENTICAL, PTGNull);
+  xProduction.Element=
+    PTGElement(
+      StringTable(xRule.Sym),
+      IF(EQ(.Content,PTGNULL),
+        PTGAsIs("EMPTY"),
+        PTGContent(.Content)));
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.Element=
+    PTGElement(
+      StringTable(xRule.Sym),
+      PTGListContent(
+        Syms CONSTITUENTS xSymbol.Content SHIELD ()
+          WITH(PTGNode, PTGAltSeq, IDENTICAL, PTGNull)));
+END;
+
+SYMBOL xSymbol COMPUTE
+  SYNT.Content=
+    IF(THIS.IsTerminal,
+      PTGAsIs("#PCDATA"),
+      PTGEntityUse(StringTable(TERM)));
+END;
+

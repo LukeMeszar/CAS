@@ -1,0 +1,17 @@
+$ODIN_VERSION_STR 'odin-build release number' = '1.17.11';
+
+$ODIN_CC 'name of the C compiler' = 'gcc';
+
+$ODIN_CC_FLAGS 'C compiler flags' = '-g -O2';
+
+$ODIN_CPP 'name of the C preprocessor' = 'gcc -E';
+
+$ODIN_CPP_FLAGS 'C preprocessor flags' = '';
+
+$ODIN_CXX 'name of the C++ compiler' = 'g++';
+
+$ODIN_CXX_FLAGS 'CC flags' = '-g -O2';
+
+$ODIN_YACC 'name of the yacc compiler' = 'yacc';
+
+$ODIN_RANLIB 'archive symbol table program' = 'ranlib';

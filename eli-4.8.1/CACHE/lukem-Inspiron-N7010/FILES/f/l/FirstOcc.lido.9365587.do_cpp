@@ -1,0 +1,24 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/f/l/FirstOcc.lido.9330995.lidoEta"
+
+CLASS SYMBOL ROOTCLASS INHERITS RangeFirstOcc END;
+
+CLASS SYMBOL RangeFirstOcc:
+                GotFirstOcc:    VOID;
+
+CLASS SYMBOL FirstOcc:
+                Key:                    DefTableKey,
+                IsFirstOcc:     int;
+
+CHAIN _FirstOcc:        VOID;
+
+CLASS SYMBOL RangeFirstOcc COMPUTE
+  CHAINSTART HEAD._FirstOcc = "yes";
+  SYNT.GotFirstOcc = TAIL._FirstOcc;
+END;
+
+CLASS SYMBOL FirstOcc   COMPUTE
+  SYNT.IsFirstOcc =
+        SetGetFirstOcc (THIS.Key, 1, 0)
+        DEPENDS_ON THIS._FirstOcc;
+  THIS._FirstOcc = SYNT.IsFirstOcc;
+END;

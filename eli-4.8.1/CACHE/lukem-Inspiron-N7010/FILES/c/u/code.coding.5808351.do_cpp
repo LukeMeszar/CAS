@@ -1,0 +1,23 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/c/s/code.coding.5720165.coding"
+EOF=1.
+','=2.
+'('=3.
+')'=4.
+'BEGIN'=5.
+'END'=6.
+';'=7.
+'CLASS'=8.
+':'=9.
+'COERCION'=10.
+'OPER'=11.
+'SET'=12.
+'='=13.
+'INDICATION'=14.
+Identifier=15.
+'['=16.
+']'=17.
+'*'=18.
+'-'=19.
+'+'=20.
+'COST'=21.
+Integer=22.

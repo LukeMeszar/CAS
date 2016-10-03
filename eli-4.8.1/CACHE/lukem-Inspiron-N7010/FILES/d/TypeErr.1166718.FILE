@@ -1,0 +1,4 @@
+%Type.RecurType.err == . +cmd=cat (%trenn) \
+	(Type.demo/RecurType.err:label) \
+	(Type.demo/RecurType.err) \
+	((Type.demo/RecurType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

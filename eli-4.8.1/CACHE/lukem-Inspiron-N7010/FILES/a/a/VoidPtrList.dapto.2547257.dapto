@@ -1,0 +1,18 @@
+
+aspect VoidPtrList;
+
+"VoidPtrList.h"
+
+operation get_VoidPtrList_elems
+    "Return the VoidPtr list elements"
+    (VoidPtrList lst "The list") : str
+{
+    VoidPtr elem;
+
+    for ( ; lst != NULLVoidPtrList; lst = TailVoidPtrList(lst)) {
+        elem = HeadVoidPtrList(lst);
+        DAPTO_RESULT_PTR(elem);
+    }
+}
+
+end;

@@ -1,0 +1,132 @@
+This is Info file cola, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/Info/cola.tnf.
+
+
+File: cola,  Node: Top,  Up: (dir)
+
+Cola Option Tool
+****************
+
+   $Revision: 1.13 $
+
+* Menu:
+
+* Introduction::   Selection of parser and option file specification.
+* Options::        Describes usable options for Cola.
+* Index::
+
+
+File: cola,  Node: Introduction,  Next: Options,  Prev: Top,  Up: Top
+
+Introduction
+************
+
+   In ELI you can use different parser generators, namely COLA or PGS. 
+By default ELI uses the PGS parser generator. In order to specify the
+COLA parser, add an option after the `.specs'-filename in the ELI
+derivation command. For example, you can write
+
+        myfile.specs +parser='cola' :source > src
+
+if you want to use the COLA-Parser-Generator. If you use COLA as your
+parser generator, you can modify the behavior of COLA by specifing
+options in a `.cola'-file.  Seperate the options with white space.
+(e.g. put every option in one line by itself.)  You can add comments
+using C-style-comments or AWK-Comments. Add this filename to your
+`.specs'-file. That's all.
+
+   In the next section all the options that can be used in that file
+will be described.
+
+
+File: cola,  Node: Options,  Next: Index,  Prev: Introduction,  Up: Top
+
+Options
+*******
+
+INFO ON/OFF
+
+   A derivation of `:parsable' will produce the complete state tables.
+Default is, that COLA generates only information whether the grammar
+is LALR(1) or not. If it is not, COLA will print the conflict states. 
+Switching this option on will get you information on all the states
+with all productions and symbols of the grammar.
+
+FREE POS ON/OFF
+
+   Switching on this option gives you additional information about free
+positions in the grammar. This information can be used for parse time
+evaluation. Free positions in a grammer can be filled with connections
+without destroying the LALR(1)-property.
+
+   For the current installation of Cola this option has no effect.
+
+ERROR AUTOMATIC ON/OFF
+
+   With this option you can specify if the parser should continue or
+stop after a syntax error. This option is turned on by default.
+(meaning that the parser should continue after a syntax error)
+
+OPT INFO ON/OFF
+
+   If you enable this option, a derivation of `:colaOptInfo' in ELI
+will contain the optimisation results from the COLA backend. By
+default, this option is switched off.
+
+TTAB <mode>
+
+   This option has effect on the optimisation of the parser tables.
+Please refer to  "Optimization of Parser Tables for Portable
+Compilers", P.Denker, K.Duerre and J.Heuft, TOPLAS 6(4), Page 564-572,
+1984. `mode' can be one of the following:
+
+`GCSA'
+`GCSB'
+     Graph Coloring Scheme
+
+`LESA'
+`LESB'
+     Line Elemination Scheme
+
+`RCSA'
+`RCSB'
+     Row Column Scheme
+
+`SDS'
+     Significant Distance Scheme
+
+`RDS'
+     Row Displacement Scheme
+
+NTAB <mode>
+
+   Analoguous to the terminal table this option effects the
+nonterminal table.  `mode' can have the same values as above.
+
+
+File: cola,  Node: Index,  Prev: Options,  Up: Top
+
+Index
+*****
+
+* Menu:
+
+* +parser:                              Introduction.
+* .cola:                                Introduction.
+* ERROR AUTOMATIC:                      Options.
+* INFO:                                 Options.
+* OPT INFO:                             Options.
+* colaOptInfo:                          Options.
+* parsable:                             Options.
+* Syntax Errors:                        Options.
+* connections:                          Options.
+
+
+
+Tag Table:
+Node: Top134
+Node: Introduction373
+Node: Options1236
+Node: Index3011
+
+End Tag Table

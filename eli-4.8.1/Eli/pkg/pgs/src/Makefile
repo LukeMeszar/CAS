@@ -1,0 +1,201 @@
+# $Id: Makefile.in,v 1.4 2005/05/13 20:21:06 profw Exp $
+# Copyright (c) 1989, The Regents of the University of Colorado
+
+CC	= gcc
+
+ACC	= $(CC)
+
+DIR	= Tool/pgs/src
+SRC	=
+AUX	= eingabe.c analyse.c pgs_optim.c buildtab.c parameter.h \
+	  analyse.h options.c options.h showEx.c showEx.h \
+	  p2c.h p2clib.c Makefile.in Makefile
+CMD	=
+EXE	= eingabe.exe analyse.exe pgs_optim.exe buildtab.exe
+GEN	= p2c.a
+SRCDIR	=
+AUXDIR	=
+
+CFLAGS	= 
+
+# $Id: toolmk.h,v 1.27 2010/07/26 08:55:25 profw Exp $
+# Skeleton for Tool Makefile
+
+# The following make macros should be defined in order to use this skeleton:
+#
+# DIR=pathname of this directory relative to the Eli directory
+# SRC=distributed files or directories needed during execution of Eli
+# AUX=distributed files or directories not needed during execution of Eli
+# CMD=command files needed during execution of Eli
+# EXE=executable files needed during execution of Eli
+# GEN=files or directories generated but not installed
+# GENINS=files or directories generated and installed
+# SRCDIR=subdirectories needed during execution of Eli
+# AUXDIR=subdirectories not needed during execution of Eli
+# PREDIR=subdirectories that need to do pre-distribution steps
+#
+# NOTE:  make is run on each SRCDIR, AUXDIR, and PREDIR subdirectory,
+#        but not on any SRC, AUX or GEN directories
+
+SHELL	= /bin/sh
+
+ELILIB	= $(ELISYS)/pkg/eli
+
+TIDY	= core a.out *.o *~ ERRS *.a $(GEN)
+CLEAN	= $(EXE) $(GENINS)
+
+all:	alldir $(SRC) $(CMD) $(EXE) $(GEN) $(GENINS)
+
+install:
+	@if test "$(DESTDIR)" = ''; \
+	then \
+		echo "A destination directory is required for install:"; \
+		echo "   $(MAKE) install DESTDIR=destination directory"; \
+		exit 1; \
+	else :; fi
+	@L='$(SRC) $(GENINS)'; \
+        if test "$$L" != ' '; then for f in $$L; do \
+		echo install -m 644 $$f $(DESTDIR); \
+		if test -d $$f; then \
+			for i in `find $$f -type d -print`; do \
+				if test ! -d $(DESTDIR)/$$i; then \
+					umask 002; mkdir $(DESTDIR)/$$i; \
+				else :; \
+				fi; \
+			done; \
+			for i in `find $$f -type f -print`; do \
+			  cmp -s $$i $(DESTDIR)/$$i || cp $$i $(DESTDIR)/$$i; \
+			done; \
+		else \
+			cmp -s $$f $(DESTDIR)/$$f || cp $$f $(DESTDIR)/$$f; \
+		fi; \
+		chmod -R u+rw,go-w,go+r $(DESTDIR)/$$f || true; \
+		done; else :; fi
+	@L='$(EXE) $(CMD)'; \
+	if test "$$L" != ' '; then for f in $$L; do \
+		echo install -m 755 $$f $(DESTDIR); \
+		cmp -s $$f $(DESTDIR)/$$f || cp $$f $(DESTDIR)/$$f; \
+		chmod 755 $(DESTDIR)/$$f || true; \
+		done; else :; fi
+	@L='$(SRCDIR)'; \
+	if test "$$L" != ''; then for d in $$L; do \
+		if test ! -d $(DESTDIR)/$$d; \
+			then umask 002; mkdir $(DESTDIR)/$$d; \
+			else :; \
+			fi; \
+		done; else :; fi
+	@L='$(SRCDIR)'; \
+	if test "$$L" != ''; then for d in $$L; do \
+		if test -r $$d/Makefile; \
+		then \
+			echo; echo Installing $(DIR)/$$d; \
+			DESTDIR="$(DESTDIR)/$$d" export DESTDIR; \
+			(cd ./$$d; $(MAKE) DESTDIR=$$DESTDIR install); \
+		else \
+			echo; echo Copying $(DIR)/$$d; \
+			for i in `find $$d -type d -print`; do \
+				if test ! -d $(DESTDIR)/$$i; then \
+					umask 002; mkdir $(DESTDIR)/$$i; \
+				else :; \
+				fi; \
+			done; \
+			for i in `find $$d -type f -print`; do \
+			  cmp -s $$i $(DESTDIR)/$$i || cp $$i $(DESTDIR)/$$i; \
+			done; \
+		fi; done; \
+	else :; fi
+
+executable:
+	@L='$(SRCDIR)'; \
+	if test "$$L" != ''; then for d in $$L; do \
+		if test -r $$d/Makefile; \
+		then \
+			echo " "; echo Making $(DIR)/$$d executable; \
+			(cd ./$$d; $(MAKE) executable); \
+		else :; fi; done; \
+	else :; fi
+	rm -rf $(TIDY) $(AUX) $(AUXDIR)
+
+tidy:
+	@L='$(SRCDIR) $(AUXDIR)'; \
+	if test "$$L" != ' '; then for d in $$L; do \
+		if test -r $$d/Makefile; \
+		then \
+			echo; echo Tidying $(DIR)/$$d; \
+			(cd ./$$d; $(MAKE) tidy) || exit 1; \
+		else :; fi; done; \
+	else :; fi
+	rm -rf $(TIDY)
+
+clean:
+	@L='$(SRCDIR) $(AUXDIR)'; \
+	if test "$$L" != ' '; then for d in $$L; do \
+		if test -r $$d/Makefile; \
+		then \
+			echo; echo Cleaning $(DIR)/$$d; \
+			(cd ./$$d; $(MAKE) clean); \
+		else :; fi; done; \
+	else :; fi
+	rm -rf $(TIDY) $(CLEAN)
+
+alldir:
+	@L='$(SRCDIR) $(AUXDIR)'; \
+	if test "$$L" != ' '; then for d in $$L; do \
+		if test -r $$d/Makefile; \
+		then \
+			echo; echo Making $(DIR)/$$d; \
+			(cd ./$$d; \
+			$(MAKE) DESTDIR=$(DESTDIR) ELISYS=$(ELISYS) \
+				CC="$(CC)" ) || exit 1; \
+		else :; fi; done; \
+	else :; fi
+
+predist:
+	@L='$(PREDIR)'; \
+	if test "$$L" != ' '; then for d in $$L; do \
+		if test -r $$d/Makefile; \
+		then \
+			echo; echo Pre-disting $(DIR)/$$d; \
+			(cd ./$$d; \
+			$(MAKE) DESTDIR=$(DESTDIR) ELISYS=$(ELISYS) \
+				ELIDOC="$(ELIDOC)" predist) || exit 1; \
+		else :; fi; done; \
+	else :; fi
+# $Id: Adtmk.h,v 1.6 2001/05/09 20:43:04 waite Exp $
+# Abstract data type library
+
+ADTLIB	= $(ELISYS)/pkg/Adt
+ADTINCL	= -I$(ADTLIB) -I$(ELILIB)
+
+csm.o:	$(ADTLIB)/csm.c $(ADTLIB)/csm.h $(ELILIB)/eliproto.h
+	$(CC) $(CFLAGS) $(ADTINCL) -c $(ADTLIB)/csm.c
+
+obstack.o:	$(ADTLIB)/obstack.c $(ADTLIB)/obstack.h
+	$(CC) $(CFLAGS) $(ADTINCL) -c $(ADTLIB)/obstack.c
+
+.c.o:
+	$(ACC) -c $(CFLAGS) $(ADTINCL) $<
+
+options.o:	options.c options.h p2c.h
+showEx.o:	showEx.c analyse.h parameter.h p2c.h
+eingabe.o:	eingabe.c parameter.h options.h $(ADTLIB)/obstack.h p2c.h
+analyse.o:	analyse.c analyse.h parameter.h options.h showEx.h \
+		$(ADTLIB)/obstack.h p2c.h
+pgs_optim.o:	pgs_optim.c parameter.h options.h $(ADTLIB)/obstack.h p2c.h
+
+eingabe.exe:	eingabe.o obstack.o options.o p2c.a
+	$(ACC) $(CFLAGS) -o $@ eingabe.o options.o obstack.o p2c.a
+
+analyse.exe:	analyse.o obstack.o options.o showEx.o p2c.a
+	$(ACC) $(CFLAGS) -o $@ analyse.o options.o showEx.o \
+	obstack.o p2c.a
+
+pgs_optim.exe:	pgs_optim.o obstack.o options.o p2c.a
+	$(ACC) $(CFLAGS) -o $@ pgs_optim.o options.o obstack.o p2c.a
+
+buildtab.exe:	buildtab.c p2c.a
+	$(ACC) $(CFLAGS) -o $@ buildtab.c p2c.a
+
+p2c.a:	p2clib.o
+	ar rcu $@ p2clib.o
+	ranlib $@

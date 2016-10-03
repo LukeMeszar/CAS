@@ -1,0 +1,26 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/h/g/Java.specs.11296108.mapBnf"
+G1: G1 '|' xSymbol.
+G1: xSymbol.
+G2: .
+G2: G2 PatternSpec.
+G3: .
+G3: G3 Item.
+G4: G4 Item.
+G4: Item.
+Insert: G4.
+Item: '$'.
+Item: '{' Insert '}'.
+Item: '$' Number.
+Item: '$' Number PtgType.
+Item: '$' PtgType.
+Items: G3.
+Item: '[' xIdentifier Items ']'.
+PatternSpec: PatternName ':' Items.
+PTGSpec: G2.
+Syms: .
+Syms: G1.
+xRoot: xGrammar PTGSpec.
+xRule: PtgType.
+xRule: xIdentifier.
+xSymbol: PtgType.
+xSymbol: xIdentifier.

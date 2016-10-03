@@ -1,0 +1,58 @@
+INCLUDING Constructs:
+   
+   INCLUDING (Signature.struct) propagate value 
+      occurs in  (745, 3),  (735, 3)
+   INCLUDING (Source.GotAllCases) propagate void
+      occurs in  (700, 3)
+   INCLUDING (Pattern.IsCommutative) propagate value 
+      occurs in  (464, 3),  (445, 3),  (435, 3),  (427, 3),  (403, 3),  (335, 3),  (317, 3)
+   INCLUDING (Source.GotAllTypes) propagate void
+      occurs in  (767, 3),  (761, 3),  (734, 3),  (309, 3)
+   INCLUDING (Declaration.type) propagate value 
+      occurs in  (235, 3)
+   INCLUDING (Source.GotAllArities) propagate void
+      occurs in  (210, 3)
+   INCLUDING (Source.GotLocKeys) propagate 
+      occurs in  (163, 3)
+   INCLUDING (Source.GotKeys) propagate void
+      occurs in  (143, 3),  (114, 3)
+   INCLUDING (Source.Env) propagate value 
+      occurs in  (503, 3),  (357, 3),  (163, 3),  (143, 3),  (131, 3),  (110, 3)
+   INCLUDING (Source._GotUnique) propagate void
+      occurs in  (57, 3)
+   INCLUDING (Source.GotKind) propagate void
+      occurs in  (31, 3)
+   
+
+CONSTITUENT Constructs:
+   
+   
+
+CONSTITUENTS Constructs:
+   
+   CONSTITUENTS (Pattern.GotCase) propagate void
+      occurs in  (688, 3)
+   CONSTITUENTS (Pattern.Ptg) WITH (PTGNode, PTGSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (522, 3)
+   CONSTITUENTS (Child.IsNt) WITH (int, OR, IDENTICAL, ZERO) propagate value 
+      occurs in  (415, 3)
+   CONSTITUENTS (Child.IsNt) WITH (int, ADD, IDENTICAL, ZERO) propagate value 
+      occurs in  (296, 3)
+   CONSTITUENTS (Child.IsNt) propagate void
+      occurs in  (290, 14)
+   CONSTITUENTS (Type.GotSymbol) propagate void
+      occurs in  (249, 3)
+   CONSTITUENTS (Child.GotUse) propagate void
+      occurs in  (224, 3)
+   CONSTITUENTS (SymbolDef.GotType) propagate void
+      occurs in  (223, 3)
+   CONSTITUENTS (Terminal.GotArity) propagate void
+      occurs in  (216, 3)
+   CONSTITUENTS (Include.Key, Type.Key, SymbolDef.Key, Terminal.Key) SHIELD (Source) propagate void
+      occurs in  (112, 3),  (97, 3)
+   CONSTITUENTS (Signature._GotUnique) SHIELD (Source) propagate void
+      occurs in  (48, 3)
+   CONSTITUENTS (SymbolDef.GotKind, Terminal.GotKind) SHIELD (Source) propagate void
+      occurs in  (21, 3)
+   
+

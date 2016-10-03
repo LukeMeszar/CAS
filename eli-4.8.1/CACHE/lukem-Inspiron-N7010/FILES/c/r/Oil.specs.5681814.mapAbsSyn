@@ -1,0 +1,304 @@
+RULE rule_36:
+ClassBody ::= '(' ')' 'BEGIN' G7 'END' ';'
+END;
+
+RULE rule_37:
+ClassBody ::= '(' ClassParameters ')' 'BEGIN' G7 'END' ';'
+END;
+
+RULE rule_38:
+ClassOpDefList ::= G11
+END;
+
+RULE rule_39:
+ClassOperation ::= 'COERCION' G10
+END;
+
+RULE rule_40:
+ClassOperation ::= 'OPER' G9
+END;
+
+RULE rule_41:
+ClassParameters ::= G8
+END;
+
+RULE rule_42:
+G1 ::= 
+END;
+
+RULE rule_43:
+G10 ::= ClassCoerce
+END;
+
+RULE rule_44:
+G10 ::= G10 ClassCoerce
+END;
+
+RULE rule_45:
+G11 ::= ClassOpDef
+END;
+
+RULE rule_46:
+G11 ::= G11 ',' ClassOpDef
+END;
+
+RULE rule_47:
+G12 ::= G12 ',' Singleton
+END;
+
+RULE rule_48:
+G12 ::= Singleton
+END;
+
+RULE rule_49:
+G1 ::= G1 SpecificationElement
+END;
+
+RULE rule_50:
+G2 ::= G2 Oper
+END;
+
+RULE rule_51:
+G2 ::= Oper
+END;
+
+RULE rule_52:
+G3 ::= Coerce
+END;
+
+RULE rule_53:
+G3 ::= G3 Coerce
+END;
+
+RULE rule_54:
+G4 ::= G4 ',' OpDef
+END;
+
+RULE rule_55:
+G4 ::= OpDef
+END;
+
+RULE rule_56:
+G5 ::= G5 Indication
+END;
+
+RULE rule_57:
+G5 ::= Indication
+END;
+
+RULE rule_58:
+G6 ::= G6 ',' OpRef
+END;
+
+RULE rule_59:
+G6 ::= OpRef
+END;
+
+RULE rule_60:
+G7 ::= ClassOperation
+END;
+
+RULE rule_61:
+G7 ::= G7 ClassOperation
+END;
+
+RULE rule_62:
+G8 ::= ClassParameter
+END;
+
+RULE rule_63:
+G8 ::= G8 ',' ClassParameter
+END;
+
+RULE rule_64:
+G9 ::= ClassOper
+END;
+
+RULE rule_65:
+G9 ::= G9 ClassOper
+END;
+
+RULE rule_66:
+Identification ::= 'INDICATION' G5
+END;
+
+RULE rule_67:
+OIL ::= G1
+END;
+
+RULE rule_68:
+OpDefList ::= G4
+END;
+
+RULE rule_69:
+Operation ::= 'COERCION' G3
+END;
+
+RULE rule_70:
+Operation ::= 'OPER' G2
+END;
+
+RULE rule_71:
+OpRefList ::= G6
+END;
+
+RULE rule_72:
+SpecificationElement ::= Class
+END;
+
+RULE rule_73:
+SpecificationElement ::= EquivalenceClass
+END;
+
+RULE rule_74:
+SpecificationElement ::= Identification
+END;
+
+RULE rule_75:
+SpecificationElement ::= Operation
+END;
+
+RULE rule_76:
+xTypeList ::= G12
+END;
+
+RULE rule_35:
+CostSpecification ::= 
+END;
+
+RULE rule_34:
+CostSpecification ::= 'COST' Integer
+END;
+
+RULE rule_33:
+OpDef ::= 
+END;
+
+RULE rule_32:
+ClassOpDef ::= 
+END;
+
+RULE rule_31:
+OpDef ::= Identifier
+END;
+
+RULE rule_30:
+ClassOpDef ::= Identifier
+END;
+
+RULE rule_29:
+TypeIdentifier ::= Identifier
+END;
+
+RULE rule_28:
+ClassName ::= Identifier
+END;
+
+RULE rule_27:
+ClassParameter ::= Identifier
+END;
+
+RULE rule_26:
+IndDef ::= Identifier
+END;
+
+RULE rule_25:
+OpRef ::= Identifier
+END;
+
+RULE rule_24:
+SetIdDef ::= Identifier
+END;
+
+RULE rule_23:
+SetIdUse ::= Identifier
+END;
+
+RULE rule_22:
+EquivalenceClass ::= 'SET' SetIdDef '=' xTypeExpr ';'
+END;
+
+RULE rule_21:
+xTypeExpr ::= SetIdUse
+END;
+
+RULE rule_20:
+xTypeExpr ::= xTypeExpr '+' xTypeExpr
+END;
+
+RULE rule_19:
+xTypeExpr ::= xTypeExpr '-' xTypeExpr
+END;
+
+RULE rule_18:
+xTypeExpr ::= xTypeExpr '*' xTypeExpr
+END;
+
+RULE rule_17:
+xTypeExpr ::= '[' xTypeList ']'
+END;
+
+RULE rule_16:
+Singleton ::= TypeIdentifier
+END;
+
+RULE rule_15:
+Signature ::= 
+END;
+
+RULE rule_14:
+Signature ::= SignatureElement
+END;
+
+RULE rule_13:
+Signature ::= SignatureElement ',' Signature
+END;
+
+RULE rule_12:
+Signature ::= '(' Signature ')' ':' SignatureElement
+END;
+
+RULE rule_11:
+SignatureElement ::= TypeIdentifier
+END;
+
+RULE rule_10:
+Oper ::= OpDefList Signature CostSpecification ';'
+END;
+
+RULE rule_9:
+Coerce ::= OpDef Signature CostSpecification ';'
+END;
+
+RULE rule_8:
+Indication ::= IndDef ':' OpRefList ';'
+END;
+
+RULE rule_7:
+Class ::= 'CLASS' ClassName ClassBody
+END;
+
+RULE rule_6:
+ClassSignature ::= 
+END;
+
+RULE rule_5:
+ClassSignature ::= SignatureElement
+END;
+
+RULE rule_4:
+ClassSignature ::= SignatureElement ',' ClassSignature
+END;
+
+RULE rule_3:
+ClassSignature ::= '(' ClassSignature ')' ':' SignatureElement
+END;
+
+RULE rule_2:
+ClassOper ::= ClassOpDefList ClassSignature CostSpecification ';'
+END;
+
+RULE rule_1:
+ClassCoerce ::= ClassOpDef ClassSignature CostSpecification ';'
+END;
+

@@ -1,0 +1,302 @@
+This is Info file name, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/name.tnf.
+
+
+File: name,  Node: Index,  Up: top
+
+Index
+*****
+
+* Menu:
+
+* AddIdn:                               Bindings.
+* AlgRangeSeq:                          Joined Ranges.
+* AlgScope:                             Basic Scope Rules.
+* Algol-like:                           Basic Scope Rules.
+* Algol-like basic scope rules:         AlgScope.
+* AnyScope:                             CScope.
+* AnyScope:                             AlgScope.
+* BOTTOMUP:                             BuRangeSeq.
+* BOTTOMUP:                             BuScope.
+* Bind:                                 CScope.
+* Bind:                                 AlgScope.
+* Bind:                                 Basic Scope Rules.
+* BindIdn:                              Bindings.
+* BindInScope:                          Bindings.
+* BindKey:                              Bindings.
+* BindKeyInScope:                       Bindings.
+* Binding:                              Types.
+* Binding:                              CScope.
+* Binding:                              AlgScope.
+* Binding:                              Basic Scope Rules.
+* BindingInEnv:                         Lookup.
+* BindingInScope:                       Lookup.
+* BuRangeSeq:                           BuRangeSeq.
+* BuRangeSeq:                           Joined Ranges.
+* BuScope:                              Basic Scope Rules.
+* BuScopeProp:                          Scope Properties.
+* C-like:                               Basic Scope Rules.
+* C-like basic scope Rules:             CScope.
+* C-like basic scope rules:             BuScope.
+* C-like inheritance bottom-up:         BuInh.
+* CRangeSeq:                            Joined Ranges.
+* CScope:                               Basic Scope Rules.
+* CScopeProp:                           Scope Properties.
+* ChkIdUse:                             CScope.
+* ChkIdUse:                             AlgScope.
+* ChkIdUse:                             Basic Scope Rules.
+* ChkInhIdUse:                          BuInh.
+* ChkInhIdUse:                          CInh.
+* ChkInhIdUse:                          AlgInh.
+* ChkInhIdUse:                          Inheritance of Scopes.
+* ChkInhIdUseScopeProp:                 BuInh.
+* ChkInhIdUseScopeProp:                 CInh.
+* ChkInhIdUseScopeProp:                 AlgInh.
+* ChkInhQualIdUse:                      Inheritance of Scopes.
+* ChkInherit:                           BuInh.
+* ChkInherit:                           CInh.
+* ChkInherit:                           AlgInh.
+* ChkInherit:                           Inheritance of Scopes.
+* ChkQualIdUse:                         ScopeProp.
+* CreateNewScope:                       BuInh.
+* CreateNewScope:                       BuScopeProp.
+* CreateNewScope:                       BuScope.
+* DeclaratorWithId:                     CScope.
+* DefineIdn:                            Bindings.
+* DefinitionsOf:                        Queries.
+* DirectInherits:                       Queries.
+* EnvOf:                                Queries.
+* EnvOfInherit:                         Queries.
+* Environment:                          Types.
+* Environment Module:                   Environment Module.
+* Examples:                             Basic Scope Rules.
+* Examples:                             top.
+* ExportInhRange:                       CInh.
+* ExportInhRange:                       AlgInh.
+* ExportRange:                          AlgInh.
+* ExportRange:                          CScopeProp.
+* ExportRange:                          ScopeProp.
+* GetScope:                             CScopeProp.
+* GetScope:                             ScopeProp.
+* GetScopeProp:                         BuScopeProp.
+* GotInhScopes:                         CInh.
+* GotVisibleKeys:                       AlgInh.
+* GotVisibleKeysNest:                   AlgInh.
+* IdDefScope:                           CScope.
+* IdDefScope:                           AlgScope.
+* IdDefScope:                           Basic Scope Rules.
+* IdDefUse:                             CScope.
+* IdInDeclarator:                       CScope.
+* IdSetScopeProp:                       BuScopeProp.
+* IdUseEnv:                             Inheritance of Scopes.
+* IdUseEnv:                             CScope.
+* IdUseEnv:                             AlgScope.
+* IdUseEnv:                             Basic Scope Rules.
+* IdUseScope:                           Inheritance of Scopes.
+* IdUseScope:                           CScope.
+* IdUseScope:                           AlgScope.
+* IdUseScope:                           Basic Scope Rules.
+* IdnOf:                                Queries.
+* InhPrecond:                           BuInh.
+* InhRange:                             CInh.
+* InhRange:                             AlgInh.
+* InhRange:                             Inheritance of Scopes.
+* InheritClass:                         Inheritance.
+* InheritClass:                         Inheritance of Scopes.
+* InheritOk:                            Inheritance of Scopes.
+* InheritOk:                            Inheritance of Scopes.
+* InheritPtr:                           Types.
+* InheritScope:                         BuInh.
+* InheritScope:                         BuInh.
+* InheritScope:                         CInh.
+* InheritScope:                         AlgInh.
+* InheritScope:                         Inheritance of Scopes.
+* Inheritsfrom:                         Inheritance.
+* InnerScope:                           Inheritance of Scopes.
+* IsClass:                              Queries.
+* Joined Ranges:                        Joined Ranges.
+* KeyInEnv:                             Lookup.
+* KeyInScope:                           Lookup.
+* KeyOf:                                Queries.
+* KeyOfEnv:                             Queries.
+* Library Name:                         top.
+* Line:                                 Name Analysis Test.
+* Module AlgInh:                        AlgInh.
+* Module AlgRangeSeq:                   AlgRangeSeq.
+* Module AlgScope:                      AlgScope.
+* Module BuInh:                         BuInh.
+* Module BuRangeSeq:                    BuRangeSeq.
+* Module BuScopeProp:                   BuScopeProp.
+* Module BuScope:                       BuScope.
+* Module CInh:                          CInh.
+* Module CRangeSeq:                     CRangeSeq.
+* Module CScopeProp:                    CScopeProp.
+* Module CScope:                        CScope.
+* Module PreDefId:                      Predefined Identifiers.
+* Module PreDefine:                     Predefined Identifiers.
+* Module ScopeProp:                     ScopeProp.
+* Module ShowBinding:                   Name Analysis Test.
+* Module PreDefMod:                     Predefined Identifiers.
+* Module envmod:                        Environment Module.
+* NewEnv:                               Constructors.
+* NewScope:                             Constructors.
+* NewScope:                             BuInh.
+* NextDefinition:                       Queries.
+* NextInhBinding:                       Hidden.
+* NextInhKey:                           Hidden.
+* NextInherit:                          Queries.
+* NoBinding:                            Types.
+* NoEnv:                                Types.
+* NoInherit:                            Types.
+* OpenElemScope:                        BuRangeSeq.
+* OpenNewScope:                         BuScopeProp.
+* OpenNewScope:                         BuScope.
+* OpenPrecond:                          BuScopeProp.
+* OpenSeqScope:                         BuRangeSeq.
+* OuterScope:                           Inheritance of Scopes.
+* OverridesBinding:                     Hidden.
+* ParentOf:                             Queries.
+* PreDefBind:                           Predefined Identifiers.
+* PreDefKey:                            Predefined Identifiers.
+* PreDefKeyBind:                        Predefined Identifiers.
+* PreDefMod:                            Predefined Identifiers.
+* PreDefSym:                            Predefined Identifiers.
+* PreDefSymKey:                         Predefined Identifiers.
+* PreDefSymKeyBind:                     Predefined Identifiers.
+* PreDefine:                            Predefined Identifiers.
+* PreDefine:                            Predefined Identifiers.
+* PreDefineSym:                         Predefined Identifiers.
+* PreDefineSym:                         Predefined Identifiers.
+* QualIdUse:                            CInh.
+* QualIdUse:                            AlgInh.
+* QualIdUse:                            Inheritance of Scopes.
+* QualIdUse:                            BuScopeProp.
+* QualIdUse:                            CScopeProp.
+* QualIdUse:                            ScopeProp.
+* RangeElement:                         Joined Ranges.
+* RangeScope:                           BuInh.
+* RangeScope:                           CScope.
+* RangeScope:                           AlgScope.
+* RangeScope:                           Basic Scope Rules.
+* RangeSequence:                        BuRangeSeq.
+* RangeSequence:                        Joined Ranges.
+* RecentNewScope:                       BuInh.
+* RecentNewScope:                       BuScope.
+* RootEnv:                              Predefined Identifiers.
+* RootEnv:                              CScope.
+* RootEnv:                              AlgScope.
+* RootScope:                            CScope.
+* RootScope:                            AlgScope.
+* RootScope:                            Basic Scope Rules.
+* Scope:                                Inheritance of Scopes.
+* ScopeKey:                             Inheritance of Scopes.
+* ScopeKey:                             BuScopeProp.
+* ScopeProp:                            Scope Properties.
+* SetKeyOfEnv:                          Queries.
+* applied occurrences:                  Preconditions.
+* attribute DefCond:                    CScope.
+* attribute Env:                        CScope.
+* attribute Env:                        AlgScope.
+* attribute GotKeys:                    CScope.
+* attribute GotKeys:                    AlgScope.
+* attribute GotLocKeys:                 AlgScope.
+* attribute Key:                        CScope.
+* attribute Key:                        AlgScope.
+* attribute Key:                        Basic Scope Rules.
+* attribute ScopeKey:                   ScopeProp.
+* attribute ScopeKey:                   ScopeProp.
+* attribute Scope:                      ScopeProp.
+* attribute Scope:                      CScope.
+* attribute Scope:                      AlgScope.
+* attribute Sym:                        CScope.
+* attribute Sym:                        AlgScope.
+* attribute Sym:                        Preconditions.
+* attribute Sym:                        Preconditions.
+* attribute Bind:                       CScope.
+* attribute Bind:                       AlgScope.
+* attribute Bind:                       Basic Scope Rules.
+* attribute GotInhScopes:               CInh.
+* attribute GotScopeProp:               CScopeProp.
+* attribute GotScopeProp:               ScopeProp.
+* attribute GotVisibleKeys:             AlgInh.
+* attribute GotVisibleKeysNest:         AlgInh.
+* attribute InhPrecond:                 BuInh.
+* attribute InheritOk:                  Inheritance of Scopes.
+* attribute InheritOk:                  Inheritance of Scopes.
+* attribute InnerScope:                 Inheritance of Scopes.
+* attribute NewScope:                   BuInh.
+* attribute OpenPrecond:                BuScopeProp.
+* attribute OuterScope:                 Inheritance of Scopes.
+* attribute ScopeKey:                   Inheritance of Scopes.
+* attribute ScopeKey:                   BuScopeProp.
+* basic scope rules:                    Basic Scope Rules.
+* binding:                              Environment Module.
+* bottom-up:                            BuInh.
+* bottom-up:                            BuScopeProp.
+* bottom-up:                            BuScope.
+* bottom-up:                            Basic Scope Rules.
+* consistent renaming:                  top.
+* defining occurrences:                 Preconditions.
+* envmod:                               Environment Module.
+* examples:                             Basic Scope Rules.
+* examples:                             top.
+* flat range:                           Basic Scope Rules.
+* function AddIdn:                      Bindings.
+* function BindIdn:                     Bindings.
+* function BindInScope:                 Bindings.
+* function BindKey:                     Bindings.
+* function BindKeyInScope:              Bindings.
+* function BindingInEnv:                Lookup.
+* function BindingInScope:              Lookup.
+* function DefineIdn:                   Bindings.
+* function InheritClass:                Inheritance.
+* function Inheritsfrom:                Inheritance.
+* function KeyInEnv:                    Lookup.
+* function KeyInScope:                  Lookup.
+* function NextInhBinding:              Hidden.
+* function NextInhKey:                  Hidden.
+* function OverridesBinding:            Hidden.
+* function PreDefine:                   Predefined Identifiers.
+* function PreDefine:                   Predefined Identifiers.
+* function PreDefineSym:                Predefined Identifiers.
+* function PreDefineSym:                Predefined Identifiers.
+* identifier roles:                     Preconditions.
+* implicit definitions:                 Basic Scope Rules.
+* inheritance:                          Environment Module.
+* inheritance:                          CInh.
+* inheritance:                          AlgInh.
+* inheritance of scopes:                Inheritance of Scopes.
+* key:                                  top.
+* missing definition:                   Basic Scope Rules.
+* name analysis:                        top.
+* name spaces:                          Environment Module.
+* names:                                Preconditions.
+* nested ranges:                        Preconditions.
+* predefined identifiers:               Predefined Identifiers.
+* property Scope:                       ScopeProp.
+* property Line:                        Name Analysis Test.
+* property Scope:                       Inheritance of Scopes.
+* root environment:                     Predefined Identifiers.
+* root environment:                     CScope.
+* root environment:                     AlgScope.
+* root symbol:                          Preconditions.
+* running example:                      Basic Scope Rules.
+* running example:                      top.
+* scope:                                Environment Module.
+* scope properties:                     Scope Properties.
+* scope rules:                          Basic Scope Rules.
+* scope rules:                          top.
+* separate name space:                  CScope.
+* separate name space:                  AlgScope.
+* separate name space:                  Basic Scope Rules.
+* terminals:                            Preconditions.
+* test output:                          Name Analysis Test.
+* tree grammar:                         Preconditions.
+* type Binding:                         Types.
+* type Binding:                         CScope.
+* type Binding:                         AlgScope.
+* type Binding:                         Basic Scope Rules.
+* type Environment:                     Types.
+* type InheritPtr:                      Types.
+
+

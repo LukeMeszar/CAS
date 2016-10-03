@@ -1,0 +1,266 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+INCLUDING Expansion Summary
+============================
+   Number of different INCLUDINGs:   10
+   Number of new attributes:         55
+   Number of transport computations: 112
+
+CHAIN Expansion Summary
+========================
+   Number of expanded CHAINs:  21
+   Number of new attributes:   180
+   Number of new computations: 309
+
+CONSTITUENT(S) Expansion Summary
+=================================
+   Number of expanded CONSTITUENT(S)s:  12
+   Number of new attributes:            43
+   Number of new computations:          99
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+
+Root symbol is Source
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           7
+
+MAX. NUMBER OF SYMBOLS IN RULE:        4
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:   135
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:  47
+
+NUMBER OF DEFINED SYMBOLS:            16
+
+NUMBER OF CONTEXT-FREE RULES:         25
+
+NUMBER OF ALL ATTRIBUTES:            346
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.index_pre
+		--> LST_Source.index_post
+		--> Pattern.index_pre
+		--> Pattern.index_post
+	--> The following Attributes should be in one Variable-Group
+		--> Child.ntindex_pre
+		--> Child.ntindex_post
+		--> Children.ntindex_pre
+		--> Children.ntindex_post
+	--> The following Attributes should be in one Variable-Group
+		--> Child.tindex_pre
+		--> Child.tindex_post
+		--> Children.tindex_pre
+		--> Children.tindex_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Includes_pre
+		--> LST_Source.Includes_post
+		--> Include.Includes_pre
+		--> Include.Includes_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Termcodes_pre
+		--> LST_Source.Termcodes_post
+		--> Terminal.Termcodes_pre
+		--> Terminal.Termcodes_post
+		--> Child.Termcodes_pre
+		--> Child.Termcodes_post
+		--> Children.Termcodes_pre
+		--> Children.Termcodes_post
+		--> Signature.Termcodes_pre
+		--> Signature.Termcodes_post
+		--> Pattern.Termcodes_pre
+		--> Pattern.Termcodes_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Macros_pre
+		--> LST_Source.Macros_post
+		--> Terminal.Macros_pre
+		--> Terminal.Macros_post
+		--> Child.Macros_pre
+		--> Child.Macros_post
+		--> Children.Macros_pre
+		--> Children.Macros_post
+		--> Signature.Macros_pre
+		--> Signature.Macros_post
+		--> Pattern.Macros_pre
+		--> Pattern.Macros_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Builders_pre
+		--> LST_Source.Builders_post
+		--> Function.Builders_pre
+		--> Function.Builders_post
+		--> Signature.Builders_pre
+		--> Signature.Builders_post
+		--> Pattern.Builders_pre
+		--> Pattern.Builders_post
+	--> The following Attributes should be in one Variable-Group
+		--> SymbolUse.FieldDecls_pre
+		--> SymbolUse.FieldDecls_post
+		--> Child.FieldDecls_pre
+		--> Child.FieldDecls_post
+		--> Children.FieldDecls_pre
+		--> Children.FieldDecls_post
+		--> Function.FieldDecls_pre
+		--> Function.FieldDecls_post
+	--> The following Attributes should be in one Variable-Group
+		--> SymbolUse.ArgDecls_pre
+		--> SymbolUse.ArgDecls_post
+		--> Child.ArgDecls_pre
+		--> Child.ArgDecls_post
+		--> Children.ArgDecls_pre
+		--> Children.ArgDecls_post
+		--> Function.ArgDecls_pre
+		--> Function.ArgDecls_post
+	--> The following Attributes should be in one Variable-Group
+		--> SymbolUse.ArgNames_pre
+		--> SymbolUse.ArgNames_post
+		--> Child.ArgNames_pre
+		--> Child.ArgNames_post
+		--> Children.ArgNames_pre
+		--> Children.ArgNames_post
+		--> Function.ArgNames_pre
+		--> Function.ArgNames_post
+	--> The following Attributes should be in one Variable-Group
+		--> SymbolUse.FieldSets_pre
+		--> SymbolUse.FieldSets_post
+		--> Child.FieldSets_pre
+		--> Child.FieldSets_post
+		--> Children.FieldSets_pre
+		--> Children.FieldSets_post
+		--> Function.FieldSets_pre
+		--> Function.FieldSets_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Externs_pre
+		--> LST_Source.Externs_post
+		--> Function.Externs_pre
+		--> Function.Externs_post
+		--> Signature.Externs_pre
+		--> Signature.Externs_post
+		--> Pattern.Externs_pre
+		--> Pattern.Externs_post
+		--> SymbolDef.Externs_pre
+		--> SymbolDef.Externs_post
+		--> LST_Nonterms.Externs_pre
+		--> LST_Nonterms.Externs_post
+		--> Nonterms.Externs_pre
+		--> Nonterms.Externs_post
+		--> Declaration.Externs_pre
+		--> Declaration.Externs_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Forwards_pre
+		--> LST_Source.Forwards_post
+		--> Type.Forwards_pre
+		--> Type.Forwards_post
+		--> Declaration.Forwards_pre
+		--> Declaration.Forwards_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Reducers_pre
+		--> LST_Source.Reducers_post
+		--> Type.Reducers_pre
+		--> Type.Reducers_post
+		--> Declaration.Reducers_pre
+		--> Declaration.Reducers_post
+	--> The following Attributes should be in one Variable-Group
+		--> Signature.leaves_pre
+		--> Signature.leaves_post
+		--> Child.leaves_pre
+		--> Child.leaves_post
+		--> Children.leaves_pre
+		--> Children.leaves_post
+	--> The following Attributes should be in one Variable-Group
+		--> Signature.revers_pre
+		--> Signature.revers_post
+		--> Child.revers_pre
+		--> Child.revers_post
+		--> Children.revers_pre
+		--> Children.revers_post
+	--> The following Attributes should be in one Variable-Group
+		--> LST_Source.Transforms_pre
+		--> LST_Source.Transforms_post
+		--> SymbolDef.Transforms_pre
+		--> SymbolDef.Transforms_post
+		--> LST_Nonterms.Transforms_pre
+		--> LST_Nonterms.Transforms_post
+		--> Nonterms.Transforms_pre
+		--> Nonterms.Transforms_post
+		--> Declaration.Transforms_pre
+		--> Declaration.Transforms_post
+
+
+
+*** INFO: ATTRIBUTE LST_Source.index_pre  is not a global VARIABLE !
+*** INFO: ATTRIBUTE Pattern.index_pre  is not a global VARIABLE !
+*** INFO: ATTRIBUTE Child.ntindex_pre  is not a global VARIABLE !
+*** INFO: ATTRIBUTE Children.ntindex_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE Child.tindex_pre  is not a global VARIABLE !
+*** INFO: ATTRIBUTE SymbolUse.FieldDecls_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE SymbolUse.ArgDecls_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE SymbolUse.ArgNames_post  is not a global VARIABLE !
+*** INFO: ATTRIBUTE SymbolUse.FieldSets_post  is not a global VARIABLE !
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :   142
+
+      -> 5 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :     5
+
+
+NUMBER OF TREE NODE COMPONENTS :    35
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->  31 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->   4 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :    21
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :   191
+    -> NEW NUMBER OF SEMANTIC RULES :   150
+
+

@@ -1,0 +1,323 @@
+USED TREE SYMBOLS:
+   xGrammar (127, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   xProduction (127, 23)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      TreeGram (378, 15): SYNT, PTGNode
+   
+   xRule (129, 30)
+      direct INHERITS LidoIdent, IdDefScope
+         all INHERITS LidoIdent, IdDefScope
+      ATTRIBUTES
+      Bind (129, 30): SYNT, Binding
+      Key (468, 33): SYNT, DefTableKey
+      Sym (469, 65): SYNT, int
+   
+   xSymbol (129, 40)
+      direct INHERITS FirstOcc, LidoIdent, IdDefScope
+         all INHERITS LidoIdent, FirstOcc, IdDefScope
+      ATTRIBUTES
+      Bind (129, 40): SYNT, Binding
+      Sym (393, 56): SYNT, int
+      IsFirstOcc (417, 37): SYNT, int
+      Key (417, 67): SYNT, DefTableKey
+      GotProperties (195, 11): INH, VOID (by default)
+      AttrPtg (260, 35): SYNT, PTGNode
+      Ptg (418, 68): SYNT, PTGNode
+      IsTerminal (433, 16): SYNT, int
+   
+   xRHS (129, 57)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Syms (130, 57)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Element (132, 19)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Insert (450, 37): SYNT, PTGNode
+      TreeGram (398, 11): SYNT, PTGNode
+      Mark (438, 28): SYNT, PTGNode
+   
+   xLiteral (137, 19)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   PatternSpec (139, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IdemPtg (306, 15): SYNT, PTGNode
+   
+   PatternName (139, 27)
+      direct INHERITS PtgRuleName, IdUseEnv
+         all INHERITS PtgRuleName, _InhPrecondDefault, IdUseEnv
+      ATTRIBUTES
+      GotProperties (139, 27): SYNT, VOID (by default)
+      _InhPrecond (139, 27): SYNT, VOID
+      Sym (139, 27): SYNT, int
+      Bind (139, 27): SYNT, Binding
+      IdemPtg (311, 15): SYNT, PTGNode
+      Key (298, 16): SYNT, DefTableKey
+   
+   Items (139, 43)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IdemPtg (351, 9): SYNT, PTGNode
+   
+   xIdentifier (140, 27)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Item (141, 27)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IdemPtg (352, 23): SYNT, PTGNode
+   
+   CString (142, 27)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Number (144, 31)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   PtgType (145, 38)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   xRoot (151, 8)
+      direct INHERITS ROOTCLASS
+         all INHERITS RangeFirstOcc, AnyScope, RootScope, ROOTCLASS
+      ATTRIBUTES
+      GotFirstOcc (151, 8): SYNT, VOID
+      GotKeys (151, 8): SYNT, VOID
+      GotLocKeys (151, 8): SYNT, VOID
+      Env (151, 8): SYNT, Environment
+      plain$1 (404, 3): SYNT, VOID
+      TreeGram (408, 12): SYNT, PTGNode
+      GotProperties (471, 24): SYNT, VOID (by default)
+      Prefix (469, 40): SYNT, CharPtr
+   
+   G2 (476, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   PTGSpec (484, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   LST_Items (141, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   LST_Syms (133, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   LST_xRHS (132, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   LST_xGrammar (127, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS RangeFirstOcc, RootScope
+         all INHERITS RangeFirstOcc, AnyScope, RootScope
+      ATTRIBUTES
+   
+   RootScope (4, 33)
+      direct INHERITS AnyScope
+         all INHERITS AnyScope
+      ATTRIBUTES
+      GotKeys (16, 8): SYNT, VOID
+      GotLocKeys (16, 23): SYNT, VOID
+      Env (12, 8): SYNT, Environment
+   
+   IdDefScope (14, 22)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (48, 47): No Class, int
+      Bind (49, 26): SYNT, Binding
+      Key (49, 8): SYNT, DefTableKey
+   
+   AnyScope (27, 29)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotLocKeys (81, 32): No Class, No Type
+      GotKeys (61, 32): No Class, No Type
+      Env (80, 44): No Class, No Type
+   
+   IdUseEnv (53, 14)
+      direct INHERITS _InhPrecondDefault
+         all INHERITS _InhPrecondDefault
+      ATTRIBUTES
+      _InhPrecond (62, 18): SYNT, VOID
+      Sym (60, 52): No Class, int
+      Key (63, 8): SYNT, DefTableKey
+      Bind (63, 26): SYNT, Binding
+   
+   _InhPrecondDefault (58, 32)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      _InhPrecond (69, 8): SYNT, VOID
+   
+   RangeFirstOcc (102, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotFirstOcc (115, 8): SYNT, VOID
+   
+   FirstOcc (107, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IsFirstOcc (122, 25): SYNT, int
+      Key (120, 30): No Class, DefTableKey
+   
+   LidoIdent (163, 41)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (167, 33): SYNT, No Type
+   
+   PtgRuleName (165, 41)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Key (200, 46): No Class, No Type
+      GotProperties (200, 8): SYNT, No Type
+      Sym (168, 33): SYNT, No Type
+   
+RULES:
+   LST_xProductionrule_18 (127, 1)
+      ATTRIBUTES
+   
+   LST_0rule_18 (127, 1)
+      ATTRIBUTES
+   
+   LST_Elementrule_15 (132, 1)
+      ATTRIBUTES
+   
+   LST_0rule_15 (132, 1)
+      ATTRIBUTES
+   
+   LST_xSymbolrule_14 (133, 1)
+      ATTRIBUTES
+   
+   LST_0rule_14 (133, 1)
+      ATTRIBUTES
+   
+   LST_Itemrule_8 (141, 1)
+      ATTRIBUTES
+   
+   LST_0rule_8 (141, 1)
+      ATTRIBUTES
+   
+   rule_1 (148, 1)
+      ATTRIBUTES
+   
+   rule_2 (147, 1)
+      ATTRIBUTES
+   
+   rule_3 (146, 1)
+      ATTRIBUTES
+   
+   rule_4 (145, 1)
+      ATTRIBUTES
+   
+   rule_5 (144, 1)
+      ATTRIBUTES
+   
+   rule_6 (143, 1)
+      ATTRIBUTES
+   
+   rule_7 (142, 1)
+      ATTRIBUTES
+   
+   rule_8 (141, 1)
+      ATTRIBUTES
+   
+   rule_9 (140, 1)
+      ATTRIBUTES
+   
+   rule_10 (139, 1)
+      ATTRIBUTES
+   
+   rule_11 (137, 1)
+      ATTRIBUTES
+   
+   rule_12 (136, 1)
+      ATTRIBUTES
+   
+   rule_13 (135, 1)
+      ATTRIBUTES
+   
+   rule_14 (133, 1)
+      ATTRIBUTES
+   
+   rule_15 (132, 1)
+      ATTRIBUTES
+   
+   rule_16 (130, 1)
+      ATTRIBUTES
+   
+   rule_17 (129, 1)
+      ATTRIBUTES
+   
+   rule_18 (127, 1)
+      ATTRIBUTES
+   
+   rule_26 (503, 6)
+      ATTRIBUTES
+   
+   rule_25 (499, 6)
+      ATTRIBUTES
+   
+   rule_24 (495, 6)
+      ATTRIBUTES
+   
+   rule_23 (491, 6)
+      ATTRIBUTES
+   
+   rule_22 (487, 6)
+      ATTRIBUTES
+   
+   rule_21 (483, 6)
+      ATTRIBUTES
+   
+   rule_20 (479, 6)
+      ATTRIBUTES
+   
+   rule_19 (475, 6)
+      ATTRIBUTES
+   

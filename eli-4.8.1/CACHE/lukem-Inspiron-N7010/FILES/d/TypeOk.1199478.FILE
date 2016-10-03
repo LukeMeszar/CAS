@@ -1,0 +1,5 @@
+%Type.UnionType.ok == . +cmd=cat (%trenn) \
+	(Type.demo/UnionType.ok:label) \
+	(Type.demo/UnionType.ok) \
+	(Type.demo/UnionType.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/UnionType.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

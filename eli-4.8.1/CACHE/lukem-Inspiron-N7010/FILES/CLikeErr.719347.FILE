@@ -1,0 +1,4 @@
+%CLike.TEST == . +cmd=cat (%trenn) \
+	(CLike.demo/TEST:label) \
+	(CLike.demo/TEST) \
+	((CLike.demo/TEST +cmd=(CLike.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors) :stdout) :stdout

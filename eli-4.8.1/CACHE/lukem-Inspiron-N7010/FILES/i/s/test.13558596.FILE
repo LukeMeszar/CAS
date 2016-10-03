@@ -1,0 +1,6 @@
+  scanner%test		# Derive from .gla, scanner only
+  wordcount%test	# Derive from .specs, user-defined aux scanner
+  digitcalc%test	# Parser only, no .gla
+  cminus%test		# COLA parser generator, .fw, .lido, .oil, +monitor
+  ignorecase%test	# Keyword processor
+  clp%test		# Command line processor

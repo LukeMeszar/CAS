@@ -1,0 +1,15 @@
+'aspect'
+';'
+'end'
+','
+str
+'('
+')'
+'event'
+'*'
+ident
+'operation'
+text
+':'
+bstr
+'translation'

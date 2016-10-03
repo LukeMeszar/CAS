@@ -1,0 +1,109 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/r/abstree.lido.2084299.lidoEta"
+RULE rule_22:
+literal ::= lit
+END;
+
+RULE rule_23:
+literals ::= literal
+END;
+
+RULE rule_24:
+literals ::= literals literal
+END;
+
+RULE rule_25:
+params ::= 
+END;
+
+RULE rule_26:
+params ::= params param ';'
+END;
+
+RULE rule_27:
+param ::= tparam
+END;
+
+RULE rule_21:
+spec ::= params
+END;
+
+RULE rule_20:
+param ::= 'terminator' lit
+END;
+
+RULE rule_19:
+tparam ::= name literals join type doc
+END;
+
+RULE rule_18:
+type ::= 'boolean'
+END;
+
+RULE rule_17:
+type ::= 'booleans'
+END;
+
+RULE rule_16:
+type ::= 'int'
+END;
+
+RULE rule_15:
+type ::= 'ints'
+END;
+
+RULE rule_14:
+type ::= 'string'
+END;
+
+RULE rule_13:
+type ::= 'strings'
+END;
+
+RULE rule_12:
+join ::= 
+END;
+
+RULE rule_11:
+join ::= 'joinedto'
+END;
+
+RULE rule_10:
+join ::= 'with'
+END;
+
+RULE rule_9:
+param ::= name 'positional' doc
+END;
+
+RULE rule_8:
+param ::= name 'positionals' doc
+END;
+
+RULE rule_7:
+param ::= name 'input' doc
+END;
+
+RULE rule_6:
+param ::= 'usage' lit
+END;
+
+RULE rule_5:
+param ::= 'open' 'error' 'format' lit
+END;
+
+RULE rule_4:
+param ::= 'open' 'error' 'usage'
+END;
+
+RULE rule_3:
+name ::= ident
+END;
+
+RULE rule_2:
+doc ::= 
+END;
+
+RULE rule_1:
+doc ::= lit
+END;
+

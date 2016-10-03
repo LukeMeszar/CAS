@@ -1,0 +1,4 @@
+%CLike.Core.err == . +cmd=cat (%trenn) \
+	(CLike.demo/Core.err:label) \
+	(CLike.demo/Core.err) \
+	((CLike.demo/Core.err +cmd=(CLike.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors) :stdout) :stdout

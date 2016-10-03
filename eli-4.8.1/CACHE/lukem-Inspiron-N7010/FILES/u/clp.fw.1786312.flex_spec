@@ -1,0 +1,25 @@
+%%
+
+"joinedto"	1; /* ext=3 sourceLine=11 */
+"with"	2; /* ext=4 sourceLine=12 */
+"input"	3; /* ext=6 sourceLine=14 */
+"positional"	4; /* ext=7 sourceLine=15 */
+"positionals"	5; /* ext=8 sourceLine=16 */
+"open"	6; /* ext=9 sourceLine=17 */
+"error"	7; /* ext=10 sourceLine=18 */
+"format"	8; /* ext=11 sourceLine=19 */
+"usage"	9; /* ext=12 sourceLine=20 */
+";"	10; /* ext=13 sourceLine=21 */
+"terminator"	11; /* ext=14 sourceLine=22 */
+"boolean"	12; /* ext=15 sourceLine=23 */
+"booleans"	13; /* ext=16 sourceLine=24 */
+"int"	14; /* ext=17 sourceLine=25 */
+"ints"	15; /* ext=18 sourceLine=26 */
+"string"	16; /* ext=19 sourceLine=27 */
+"strings"	17; /* ext=20 sourceLine=28 */
+
+
+\"	18; /* ext=2 sourceLine=3 */
+[a-zA-Z_][a-zA-Z_0-9]*	19; /* ext=5 sourceLine=4 */
+"/*"	20; /* ext=15001 sourceLine=5 */
+%	21; /* ext=15001 sourceLine=6 */

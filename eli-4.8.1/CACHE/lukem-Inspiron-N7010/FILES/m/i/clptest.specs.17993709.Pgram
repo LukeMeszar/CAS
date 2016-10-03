@@ -1,0 +1,7 @@
+$CODE
+EOF=1.
+'dummy'=2.
+$GRAMMAR
+<$START_SYMBOL>: prog .
+prog: 'dummy' &'_incrnodestack();_nst[_nsp]=Mkaxiom(&curpos);' .
+

@@ -1,0 +1,731 @@
+USED TREE SYMBOLS:
+   CostSpecification (129, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      cost (633, 38): SYNT, int
+   
+   Integer (134, 36)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   OpDef (140, 7)
+      direct INHERITS OperatorId, OperatorName, DefinedId, Unique
+         all INHERITS OperatorId, OperatorName, AllIdentifiers, DefinedId, OperFirstOcc, FirstOcc, IdPtg, Unique
+      ATTRIBUTES
+      dumped (140, 7): SYNT, VOID (by default)
+      GotIndex (140, 7): SYNT, VOID (by default)
+      bound (140, 7): SYNT, VOID (by default)
+      IsOperFirstOcc (140, 7): SYNT, int
+      IsFirstOcc (140, 7): SYNT, int
+      Ptg (140, 7): INH, PTGNode
+      _GotUnique (140, 7): SYNT, VOID
+      Key (473, 22): SYNT, DefTableKey
+      OpList (472, 24): SYNT, VOID (by default)
+      plain$1 (153, 3): SYNT, VOID
+      Unique (153, 15): SYNT, int
+      Sym (150, 42): SYNT, int
+   
+   ClassOpDef (144, 7)
+      direct INHERITS IdPtg, OperatorName, DefinedId, Unique
+         all INHERITS OperatorName, AllIdentifiers, DefinedId, FirstOcc, IdPtg, Unique
+      ATTRIBUTES
+      GotIndex (144, 7): SYNT, VOID (by default)
+      bound (144, 7): SYNT, VOID (by default)
+      _GotUnique (144, 7): SYNT, VOID
+      Ptg (722, 50): INH, PTGNode
+      IsFirstOcc (721, 13): SYNT, int
+      Key (635, 34): SYNT, DefTableKey
+      classOpList (635, 61): SYNT, VOID (by default)
+      plain$2 (162, 3): SYNT, VOID
+      Unique (162, 15): SYNT, int
+      Sym (159, 52): SYNT, int
+   
+   Identifier (150, 17)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   TypeIdentifier (167, 7)
+      direct INHERITS TypeId, TypeName, DefinedId
+         all INHERITS TypeId, TypeName, AllIdentifiers, DefinedId, TypeFirstOcc, FirstOcc, IdPtg
+      ATTRIBUTES
+      GotIndex (167, 7): SYNT, VOID (by default)
+      bound (167, 7): SYNT, VOID (by default)
+      IsTypeFirstOcc (167, 7): SYNT, int
+      IsFirstOcc (167, 7): SYNT, int
+      Ptg (167, 7): INH, PTGNode
+      dumped (660, 8): SYNT, VOID (by default)
+      Key (434, 55): SYNT, DefTableKey
+      DoType (661, 13): SYNT, int
+      type (661, 38): SYNT, tOilType
+      Sym (167, 60): SYNT, int
+   
+   ClassName (173, 7)
+      direct INHERITS IdPtg, IdPtg, OperatorName, DefinedId, Unique
+         all INHERITS OperatorName, AllIdentifiers, DefinedId, FirstOcc, IdPtg, Unique
+      ATTRIBUTES
+      GotIndex (173, 7): SYNT, VOID (by default)
+      bound (173, 7): SYNT, VOID (by default)
+      _GotUnique (173, 7): SYNT, VOID
+      Ptg (761, 53): INH, PTGNode
+      IsFirstOcc (758, 13): SYNT, int
+      dumped (672, 8): SYNT, VOID (by default)
+      argNum (526, 13): INH, int
+      Key (541, 29): SYNT, DefTableKey
+      class (761, 40): SYNT, tOilClass
+      plain$3 (176, 3): SYNT, VOID
+      Unique (176, 15): SYNT, int
+      Sym (173, 50): SYNT, int
+   
+   ClassParameter (182, 7)
+      direct INHERITS FirstOcc, AllIdentifiers, Unique
+         all INHERITS AllIdentifiers, FirstOcc, Unique
+      ATTRIBUTES
+      IsFirstOcc (182, 7): SYNT, int
+      _GotUnique (182, 7): SYNT, VOID
+      Key (561, 32): SYNT, DefTableKey
+      bound (251, 8): SYNT, VOID (by default)
+      plain$4 (185, 3): SYNT, VOID
+      Unique (185, 15): SYNT, int
+      Sym (251, 54): SYNT, int
+   
+   IndDef (192, 7)
+      direct INHERITS OperatorId, OperatorName, DefinedId
+         all INHERITS OperatorId, OperatorName, AllIdentifiers, DefinedId, OperFirstOcc, FirstOcc, IdPtg
+      ATTRIBUTES
+      dumped (192, 7): SYNT, VOID (by default)
+      GotIndex (192, 7): SYNT, VOID (by default)
+      bound (192, 7): SYNT, VOID (by default)
+      IsOperFirstOcc (192, 7): SYNT, int
+      IsFirstOcc (192, 7): SYNT, int
+      Ptg (192, 7): INH, PTGNode
+      OpList (505, 8): SYNT, VOID (by default)
+      Key (510, 25): SYNT, DefTableKey
+      Sym (192, 44): SYNT, int
+   
+   OpRef (196, 7)
+      direct INHERITS AllIdentifiers
+         all INHERITS AllIdentifiers
+      ATTRIBUTES
+      bind (494, 8): SYNT, VOID (by default)
+      plain$5 (199, 3): SYNT, VOID
+      Key (495, 62): SYNT, DefTableKey
+      Sym (196, 42): SYNT, int
+   
+   SetIdDef (207, 7)
+      direct INHERITS DefinedId, Unique
+         all INHERITS AllIdentifiers, DefinedId, Unique
+      ATTRIBUTES
+      bound (207, 7): SYNT, VOID (by default)
+      _GotUnique (207, 7): SYNT, VOID
+      Key (327, 27): SYNT, DefTableKey
+      plain$6 (210, 3): SYNT, VOID
+      Unique (210, 15): SYNT, int
+      Sym (207, 48): SYNT, int
+   
+   SetIdUse (216, 7)
+      direct INHERITS AllIdentifiers
+         all INHERITS AllIdentifiers
+      ATTRIBUTES
+      plain$7 (219, 3): SYNT, VOID
+      Key (334, 25): SYNT, DefTableKey
+      Sym (216, 48): SYNT, int
+   
+   OIL (229, 8)
+      direct INHERITS RangeUnique, ROOTCLASS
+         all INHERITS OperRangeFirstOcc, TypeRangeFirstOcc, RangeFirstOcc, RangeUnique, ROOTCLASS
+      ATTRIBUTES
+      GotOperFirstOcc (229, 8): SYNT, VOID
+      GotTypeFirstOcc (229, 8): SYNT, VOID
+      GotFirstOcc (229, 8): SYNT, VOID
+      _GotUnique (229, 8): SYNT, VOID
+      plain$10 (732, 3): SYNT, VOID
+      plain$9 (683, 3): SYNT, VOID
+      DumpInit (674, 30): SYNT, VOID (by default)
+      GotAllIndications (501, 8): SYNT, VOID (by default)
+      GotClassOperators (619, 8): SYNT, VOID (by default)
+      GotOperators (481, 29): SYNT, VOID (by default)
+      GotAllTypes (409, 21): SYNT, VOID (by default)
+      GotAllSets (319, 8): SYNT, VOID (by default)
+      GotAllNames (410, 21): SYNT, VOID (by default)
+      GotAllClasses (546, 8): SYNT, VOID (by default)
+      GotAllOperators (512, 30): SYNT, VOID (by default)
+      DataBaseBuilt (731, 54): SYNT, VOID (by default)
+      GotAllDefs (408, 21): SYNT, VOID (by default)
+      BoundInOuter (243, 33): SYNT, VOID (by default)
+      Env (247, 38): SYNT, Environment
+   
+   ClassBody (235, 8)
+      direct INHERITS RangeUnique
+         all INHERITS RangeUnique
+      ATTRIBUTES
+      _GotUnique (235, 8): SYNT, VOID
+      BoundInInner (243, 56): SYNT, VOID (by default)
+      Env (251, 44): SYNT, Environment
+   
+   EquivalenceClass (324, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   xTypeExpr (324, 48)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      set (363, 13): SYNT, DefTableKeyList
+   
+   xTypeList (360, 25)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Singleton (366, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Signature (378, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      signature (470, 30): SYNT, tOilArgSig
+   
+   SignatureElement (383, 22)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Key (599, 42): SYNT, DefTableKey
+      type (598, 24): SYNT, tOilType
+   
+   Oper (461, 7)
+      direct INHERITS Operator
+         all INHERITS Operator, Binder
+      ATTRIBUTES
+      Done (461, 7): SYNT, VOID (by default)
+      SetBinding (461, 7): SYNT, SetBindingState
+      defined (465, 8): SYNT, VOID (by default)
+      cost (464, 8): SYNT, int
+      signature (463, 8): SYNT, tOilArgSig
+   
+   OpDefList (461, 16)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Coerce (468, 7)
+      direct INHERITS Operator
+         all INHERITS Operator, Binder
+      ATTRIBUTES
+      SetBinding (468, 7): SYNT, SetBindingState
+      Done (473, 45): SYNT, VOID (by default)
+      defined (472, 10): SYNT, VOID (by default)
+      cost (471, 10): SYNT, int
+      signature (470, 10): SYNT, tOilArgSig
+   
+   Indication (486, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      indication (495, 45): SYNT, tOilOp
+   
+   OpRefList (486, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Class (523, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      defined (546, 41): SYNT, VOID (by default)
+      class (613, 27): SYNT, tOilClass
+   
+   ClassParameters (552, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   ClassSignature (568, 7)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      classSignature (632, 45): SYNT, tOilClassArgSig
+   
+   ClassOper (623, 7)
+      direct INHERITS ClassOperator
+         all INHERITS ClassOperator, Binder
+      ATTRIBUTES
+      Done (623, 7): SYNT, VOID (by default)
+      SetBinding (623, 7): SYNT, SetBindingState
+      defined (627, 13): SYNT, VOID (by default)
+      cost (626, 13): SYNT, int
+      classSignature (625, 13): SYNT, tOilClassArgSig
+   
+   ClassOpDefList (623, 21)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   ClassCoerce (630, 7)
+      direct INHERITS ClassOperator
+         all INHERITS ClassOperator, Binder
+      ATTRIBUTES
+      Done (630, 7): SYNT, VOID (by default)
+      SetBinding (630, 7): SYNT, SetBindingState
+      defined (634, 15): SYNT, VOID (by default)
+      cost (633, 15): SYNT, int
+      classSignature (632, 15): SYNT, tOilClassArgSig
+   
+   G7 (767, 31)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G11 (775, 20)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   ClassOperation (779, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G10 (779, 31)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G9 (783, 27)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G8 (787, 21)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G1 (791, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G12 (811, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   SpecificationElement (819, 11)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G2 (823, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G3 (831, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G4 (839, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G5 (847, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   G6 (855, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Identification (887, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Operation (899, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS OperRangeFirstOcc, TypeRangeFirstOcc, RangeFirstOcc, RangeUnique
+         all INHERITS OperRangeFirstOcc, TypeRangeFirstOcc, RangeFirstOcc, RangeUnique
+      ATTRIBUTES
+   
+   RangeUnique (3, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      _GotUnique (412, 69): SYNT, VOID
+   
+   Unique (8, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      bound (232, 39): No Class, No Type
+      Unique (23, 8): SYNT, int
+      Key (24, 25): No Class, DefTableKey
+      _GotUnique (20, 8): SYNT, VOID
+   
+   IdPtg (29, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Ptg (34, 7): INH, PTGNode
+      Sym (34, 25): No Class, int
+   
+   RangeFirstOcc (54, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotFirstOcc (67, 8): SYNT, VOID
+   
+   FirstOcc (59, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IsFirstOcc (74, 25): SYNT, int
+      Key (72, 30): No Class, DefTableKey
+   
+   TypeRangeFirstOcc (78, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotTypeFirstOcc (91, 8): SYNT, VOID
+   
+   TypeFirstOcc (83, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IsTypeFirstOcc (98, 29): SYNT, int
+      Key (96, 34): No Class, DefTableKey
+   
+   OperRangeFirstOcc (102, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotOperFirstOcc (115, 8): SYNT, VOID
+   
+   OperFirstOcc (107, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IsOperFirstOcc (122, 29): SYNT, int
+      Key (120, 34): No Class, DefTableKey
+   
+   DefinedId (231, 34)
+      direct INHERITS AllIdentifiers
+         all INHERITS AllIdentifiers
+      ATTRIBUTES
+      Sym (247, 48): No Class, int
+      bound (247, 8): SYNT, No Type
+   
+   AllIdentifiers (240, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (242, 54): No Class, int
+      Key (241, 8): SYNT, DefTableKey
+   
+   TypeName (275, 8)
+      direct INHERITS TypeFirstOcc, FirstOcc
+         all INHERITS TypeFirstOcc, FirstOcc
+      ATTRIBUTES
+      IsTypeFirstOcc (279, 12): SYNT, int
+      DoType (277, 8): SYNT, int
+      Sym (276, 43): No Class, int
+      Key (280, 26): No Class, DefTableKey
+      GotIndex (289, 28): SYNT, No Type
+   
+   OperatorName (283, 8)
+      direct INHERITS FirstOcc
+         all INHERITS FirstOcc
+      ATTRIBUTES
+      Sym (284, 43): No Class, int
+      Key (284, 33): No Class, DefTableKey
+      GotIndex (289, 50): SYNT, No Type
+   
+   Binder (405, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      defined (416, 21): No Class, No Type
+      Done (413, 8): SYNT, No Type
+      SetBinding (436, 33): SYNT, SetBindingState
+   
+   Operator (439, 8)
+      direct INHERITS Binder
+         all INHERITS Binder
+      ATTRIBUTES
+      Done (457, 43): SYNT, No Type
+      cost (451, 30): No Class, int
+      signature (450, 30): No Class, tOilArgSig
+   
+   ClassOperator (440, 8)
+      direct INHERITS Binder
+         all INHERITS Binder
+      ATTRIBUTES
+      Done (619, 53): SYNT, No Type
+      cost (612, 35): No Class, int
+      classSignature (611, 35): No Class, tOilClassArgSig
+   
+   OperatorId (644, 8)
+      direct INHERITS IdPtg, OperFirstOcc
+         all INHERITS OperFirstOcc, IdPtg
+      ATTRIBUTES
+      Ptg (751, 64): INH, PTGNode
+      IsOperFirstOcc (748, 17): SYNT, int
+      Key (751, 52): No Class, DefTableKey
+      IsFirstOcc (667, 13): No Class, No Type
+      dumped (666, 8): SYNT, No Type
+   
+   TypeId (649, 8)
+      direct INHERITS IdPtg, FirstOcc
+         all INHERITS FirstOcc, IdPtg
+      ATTRIBUTES
+      Ptg (741, 51): INH, PTGNode
+      type (741, 39): No Class, tOilType
+      DoType (738, 13): No Class, int
+   
+RULES:
+   rule_1 (630, 1)
+      ATTRIBUTES
+   
+   rule_2 (623, 1)
+      ATTRIBUTES
+   
+   rule_3 (593, 1)
+      ATTRIBUTES
+   
+   rule_4 (583, 1)
+      ATTRIBUTES
+   
+   rule_5 (573, 1)
+      ATTRIBUTES
+   
+   rule_6 (568, 1)
+      ATTRIBUTES
+   
+   rule_7 (523, 1)
+      ATTRIBUTES
+   
+   rule_8 (486, 1)
+      ATTRIBUTES
+   
+   rule_9 (468, 1)
+      ATTRIBUTES
+      plain$8 (473, 3): SYNT, VOID
+   
+   rule_10 (461, 1)
+      ATTRIBUTES
+   
+   rule_11 (419, 1)
+      ATTRIBUTES
+   
+   rule_12 (394, 1)
+      ATTRIBUTES
+   
+   rule_13 (388, 1)
+      ATTRIBUTES
+   
+   rule_14 (383, 1)
+      ATTRIBUTES
+   
+   rule_15 (378, 1)
+      ATTRIBUTES
+   
+   rule_16 (366, 1)
+      ATTRIBUTES
+   
+   rule_17 (360, 1)
+      ATTRIBUTES
+   
+   rule_18 (352, 1)
+      ATTRIBUTES
+   
+   rule_19 (347, 1)
+      ATTRIBUTES
+   
+   rule_20 (342, 1)
+      ATTRIBUTES
+   
+   rule_21 (331, 1)
+      ATTRIBUTES
+   
+   rule_22 (324, 1)
+      ATTRIBUTES
+   
+   rule_23 (216, 1)
+      ATTRIBUTES
+   
+   rule_24 (207, 1)
+      ATTRIBUTES
+   
+   rule_25 (196, 1)
+      ATTRIBUTES
+   
+   rule_26 (192, 1)
+      ATTRIBUTES
+   
+   rule_27 (182, 1)
+      ATTRIBUTES
+   
+   rule_28 (173, 1)
+      ATTRIBUTES
+   
+   rule_29 (167, 1)
+      ATTRIBUTES
+   
+   rule_30 (159, 1)
+      ATTRIBUTES
+   
+   rule_31 (150, 1)
+      ATTRIBUTES
+   
+   rule_32 (144, 1)
+      ATTRIBUTES
+   
+   rule_33 (140, 1)
+      ATTRIBUTES
+   
+   rule_34 (134, 1)
+      ATTRIBUTES
+   
+   rule_35 (129, 1)
+      ATTRIBUTES
+   
+   rule_76 (926, 6)
+      ATTRIBUTES
+   
+   rule_75 (922, 6)
+      ATTRIBUTES
+   
+   rule_74 (918, 6)
+      ATTRIBUTES
+   
+   rule_73 (914, 6)
+      ATTRIBUTES
+   
+   rule_72 (910, 6)
+      ATTRIBUTES
+   
+   rule_71 (906, 6)
+      ATTRIBUTES
+   
+   rule_70 (902, 6)
+      ATTRIBUTES
+   
+   rule_69 (898, 6)
+      ATTRIBUTES
+   
+   rule_68 (894, 6)
+      ATTRIBUTES
+   
+   rule_67 (890, 6)
+      ATTRIBUTES
+   
+   rule_66 (886, 6)
+      ATTRIBUTES
+   
+   rule_65 (882, 6)
+      ATTRIBUTES
+   
+   rule_64 (878, 6)
+      ATTRIBUTES
+   
+   rule_63 (874, 6)
+      ATTRIBUTES
+   
+   rule_62 (870, 6)
+      ATTRIBUTES
+   
+   rule_61 (866, 6)
+      ATTRIBUTES
+   
+   rule_60 (862, 6)
+      ATTRIBUTES
+   
+   rule_59 (858, 6)
+      ATTRIBUTES
+   
+   rule_58 (854, 6)
+      ATTRIBUTES
+   
+   rule_57 (850, 6)
+      ATTRIBUTES
+   
+   rule_56 (846, 6)
+      ATTRIBUTES
+   
+   rule_55 (842, 6)
+      ATTRIBUTES
+   
+   rule_54 (838, 6)
+      ATTRIBUTES
+   
+   rule_53 (834, 6)
+      ATTRIBUTES
+   
+   rule_52 (830, 6)
+      ATTRIBUTES
+   
+   rule_51 (826, 6)
+      ATTRIBUTES
+   
+   rule_50 (822, 6)
+      ATTRIBUTES
+   
+   rule_49 (818, 6)
+      ATTRIBUTES
+   
+   rule_48 (814, 6)
+      ATTRIBUTES
+   
+   rule_47 (810, 6)
+      ATTRIBUTES
+   
+   rule_46 (806, 6)
+      ATTRIBUTES
+   
+   rule_45 (802, 6)
+      ATTRIBUTES
+   
+   rule_44 (798, 6)
+      ATTRIBUTES
+   
+   rule_43 (794, 6)
+      ATTRIBUTES
+   
+   rule_42 (790, 6)
+      ATTRIBUTES
+   
+   rule_41 (786, 6)
+      ATTRIBUTES
+   
+   rule_40 (782, 6)
+      ATTRIBUTES
+   
+   rule_39 (778, 6)
+      ATTRIBUTES
+   
+   rule_38 (774, 6)
+      ATTRIBUTES
+   
+   rule_37 (770, 6)
+      ATTRIBUTES
+   
+   rule_36 (766, 6)
+      ATTRIBUTES
+   

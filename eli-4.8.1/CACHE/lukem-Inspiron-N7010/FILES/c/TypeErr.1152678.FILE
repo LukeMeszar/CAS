@@ -1,0 +1,4 @@
+%Type.AssigCoerce.err == . +cmd=cat (%trenn) \
+	(Type.demo/AssigCoerce.err:label) \
+	(Type.demo/AssigCoerce.err) \
+	((Type.demo/AssigCoerce.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

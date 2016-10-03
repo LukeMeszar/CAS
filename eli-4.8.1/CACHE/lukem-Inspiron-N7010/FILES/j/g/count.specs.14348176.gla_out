@@ -1,0 +1,2 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs +monitor :eli*level_7_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) +monitor :gla*gla_be
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/gla.specs

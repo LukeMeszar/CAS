@@ -1,0 +1,56 @@
+This is Info file type, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/type.tnf.
+
+Indirect:
+type-1: 131
+type-2: 47074
+type-3: 94985
+
+Tag Table:
+(Indirect)
+Node: Top133
+Node: Overview865
+Node: TypeProp2806
+Node: Types4065
+Node: Operators5368
+Node: Indications7249
+Node: Coercibility8365
+Node: Scalability11527
+Node: BasicType16274
+Node: TypedDefId18137
+Node: TypedUseId19281
+Node: TypedEntityInfo19946
+Node: Expressions23217
+Node: AnalyzeExpression24717
+Node: IdentifyOperator29651
+Node: ExpressionSymbol35453
+Node: OperatorSymbol40239
+Node: OpndExprListRoot44144
+Node: ConversionContext47076
+Node: UserTypes51110
+Node: TypeDenot53792
+Node: TypeIdent56049
+Node: TypeUse57501
+Node: OpDef59595
+Node: OilClass65434
+Node: TypeEq67911
+Node: Partition68505
+Node: EqClass70706
+Node: FuncType72040
+Node: Errors74542
+Node: ChkTyped75834
+Node: ChkTypeId76681
+Node: ChkExpr77299
+Node: Support79831
+Node: RootType83320
+Node: TypeIdDepend86368
+Node: TypequDepend92020
+Node: OprdbDepend93878
+Node: TypedIdDepend94987
+Node: Index98811
+Node: tp98976
+Node: fn102858
+Node: vr105734
+Node: cp108288
+
+End Tag Table

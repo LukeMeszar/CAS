@@ -1,0 +1,15 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :clp*clp_gen/clp.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/BitSet.fw :fw*fwGen/BitSet.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Tech/Strings.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/PropLib.fw :fw*fwGen/CoordCmp.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/AlgScope.gnrc :lib*instGen/AlgScope.fw :fw*fwGen/AlgScope.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Output/PtgCommon.fw :fw*fwGen/PtgCommon.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Analysis.fw :fw*fwGen/Analysis.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :ptg*ptg_gen/ptg_gen.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :pdl*pdlGen/pdl_gen.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :maptool*mapBe/treestack.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :liga*ligaBe/nodecode.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :liga*ligaBe/treecon.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :liga*ligaBe/visitmap.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :phi*etaIncl) :liga*ligaBe/visitprocs.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Cpp.specs :pgs*pgsGen/pgs_gen.c

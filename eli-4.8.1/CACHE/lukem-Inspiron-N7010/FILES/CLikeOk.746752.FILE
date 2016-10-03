@@ -1,0 +1,5 @@
+%CLike.Predef.ok == . +cmd=cat (%trenn) \
+	(CLike.demo/Predef.ok:label) \
+	(CLike.demo/Predef.ok) \
+	(CLike.demo/Predef.ok +cmd=(CLike.fw.exe) :stdout :warn) \
+	(CLike.demo/Predef.ok +cmd=(CLike.fw.exe) :stdout) :stdout

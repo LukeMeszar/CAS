@@ -1,0 +1,13 @@
+%TypeTutorial.fw==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/TypeTutorial.fw :expandtabs
+%Kernel.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Kernel.fwi :expandtabs
+%Expression.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Expression.fwi :expandtabs
+%Operator.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Operator.fwi :expandtabs
+%Conversion.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Conversion.fwi :expandtabs
+%Record.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Record.fwi :expandtabs
+%Array.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Array.fwi :expandtabs
+%Union.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Union.fwi :expandtabs
+%Function.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Function.fwi :expandtabs
+%TypeDef.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/TypeDef.fwi :expandtabs
+%Pointer.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Pointer.fwi :expandtabs
+%FctType.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/FctType.fwi :expandtabs
+%Syntax.fwi==/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples/Syntax.fwi :expandtabs

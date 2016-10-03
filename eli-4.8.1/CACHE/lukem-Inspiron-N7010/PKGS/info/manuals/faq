@@ -1,0 +1,596 @@
+This is Info file faq, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/faq.tnf.
+
+
+File: faq,  Node: top,  Next: Accessing Eli,  Prev: (dir),  Up: (dir)
+
+   This document answers frequently asked questions about Eli.  The
+first chapter refers to the Eli Installation available locally; the
+others are cover more general concerns.
+
+   The document will be updated periodically as questions arise and
+are answered.
+
+* Menu:
+
+* Accessing Eli::	How to Interact with Eli
+* Configuring::		Problems Reported by Implementors
+* Spec upgrade::	Using Specifications Developed with Earlier Versions
+* Support::		How to solve common problems in Eli
+* Index::
+
+ -- The Detailed Node Listing --
+
+How to Interact with Eli
+
+* CacheSize::		Why is my cache so big?
+* Upgrading::		How do I get new or improved components?
+* Odinrc::		Is the file `.odinrc' still read?
+* ChangingFiles::	Eli didn't notice that I changed my input file!
+
+Problems Reported by Implementors
+
+* IPC::			Eli reports `Remote IPC not available on this host'
+* Connect::		Eli reports `Cannot connect to Odin server'
+* Requirements::	Requirements of Eli
+* License::		What restrictions are placed on the Usage of Eli?
+* Configure for X::	Configuration does not find the X-Window-System.
+
+Using Specifications Developed with Earlier Versions
+
+* IncludeFiles::	Eli doesn't find module include files any more
+* IdPtg::		Migrating the usage of Module `IdPtg'
+* C_STRING_LIT::	Why does `C_STRING_LIT' not use `c_mkstr'?
+
+How to solve common problems in Eli
+
+* Intermediate Code::	Is there Support for Intermediate Code in Eli?
+* CPlusPlus::		Is there an available processor for C++?
+* delimiters::		How does recognition of delimiters work in Eli?
+* External Libraries::	How can I use external libraries with Eli?
+
+
+File: faq,  Node: Accessing Eli,  Next: Configuring,  Prev: top,  Up: top
+
+How to Interact with Eli
+************************
+
+* Menu:
+
+* CacheSize::                   Why is my cache so big?
+* Upgrading::                   How do I get new or improved components?
+* Odinrc::                      Is the file `.odinrc' still read?
+* ChangingFiles::               Eli didn't notice that I changed my input file!
+
+
+File: faq,  Node: CacheSize,  Next: Upgrading,  Prev: Accessing Eli,  Up: Accessing Eli
+
+Why is my cache so big?
+=======================
+
+   An Eli cache contains all of the intermediate information needed to
+build the products you have requested since that cache was created or
+reset.  If you continually request the same product, based on the same
+set of specifications, perhaps changing some of the specification
+content between requests, the cache size will first grow and then
+stabilize.
+
+   When you switch to another set of specifications, the old set and
+the intermediate information based upon them remains in the cache. 
+Thus as you do a sequence of different projects, the cache grows
+because it retains all of the information for earlier projects in
+addition to the information needed for the current project.
+
+   All of the information held in the cache was derived by Eli from
+something that you provided.  Thus deleting that information will not
+affect the correctness of future derivations; it will only increase
+the time required because the information must be re-derived.
+
+   The command `eli -r' clears the cache of information before
+invoking Eli. If you use this command on the first invocation of Eli
+for a new project, information belonging to old projects will be
+deleted and the cache will subsequently contain only information
+derived in connection with this project.
+
+   In the case of a shared machine where disk space is limited, we
+recommend that you clear the cache when you terminate your session and
+do not expect to start another session soon.  This can be done via the
+command `eli -r ''', which clears the cache and then invokes Eli to do
+nothing.  Eli will terminate immediately.
+
+
+File: faq,  Node: Upgrading,  Next: Odinrc,  Prev: CacheSize,  Up: Accessing Eli
+
+How do I get new or improved components?
+========================================
+
+   From time to time there will be upgrades to Eli components.  These
+upgrades do not affect existing caches, which continue to use the
+version of the component that was in effect at the time they were
+created or last upgraded.
+
+   The command `eli -R' clears the cache of information and upgrades to
+the latest set of components before invoking Eli.
+
+
+File: faq,  Node: Odinrc,  Next: ChangingFiles,  Prev: Upgrading,  Up: Accessing Eli
+
+Is the file `.odinrc' still read?
+=================================
+
+     > I can't find any description of this file in the help system.
+     > How can I now tell Eli which editor I want to use?
+
+   Eli doesn't read the file `.odinrc' any more.  The information that
+was previously obtained from `.odinrc' is now provided by environment
+variables.  The `EDITOR' environment variable specifies the editor Eli
+should use in response to the `<' command.
+
+   Each of the other Odin variables listed by the Eli `?=' request is
+associated with an environment variable whose name is `ODIN' followed
+by the upper-case name of the Odin variable.  For example, the default
+value of the Odin variable `LogLevel' will be the value of the
+environment variable `ODINLOGLEVEL' (if that environment variable is
+defined).
+
+   For additional information about Odin variables, see *Note
+Variables: (ui)Variables.
+
+
+File: faq,  Node: ChangingFiles,  Prev: Odinrc,  Up: Accessing Eli
+
+Eli didn't notice that I changed my input file!
+===============================================
+
+   If you alter a file in an editor session started by the `<' command,
+Eli will check whether the file on which the request was made was
+changed during that session.  Other checks are controlled by the Odin
+variable `VerifyLevel':
+
+     -> VerifyLevel=?
+     0: No source file change verification.
+     1: Check for changes to source files at the beginning of each session.
+     2: Check for changes to source files before each interactive command.
+
+   The default value of `VerifyLevel' is 2, but if the environment
+variable `ODINVERIFYLEVEL' is defined then that value will be used as
+the default.  You can check the current value of `VerifyLevel' by
+querying it explicitly, and you can also set it interactively.  For
+more details, see *Note Variables: (ui)Variables.
+
+   If `VerifyLevel' is not 2, you can inform Eli that a specific file
+`foo.fw' has changed by requesting the `:test' utility:
+
+     -> foo.fw !:test
+
+   If you omit the file name, Eli will check all files for changes. 
+(This is equivalent to having `VerifyLevel' set to 2.)
+
+
+File: faq,  Node: Configuring,  Next: Spec upgrade,  Prev: Accessing Eli,  Up: top
+
+Problems Reported by Implementors
+*********************************
+
+* Menu:
+
+* IPC::                         Eli reports `Remote IPC not available on this host'
+* Connect::			Eli reports `Cannot connect to Odin server'
+* Requirements::                Requirements of Eli
+* License::                     What restrictions are placed on the Usage of Eli?
+* Configure for X::             Configuration does not find the X-Window-System.
+
+
+File: faq,  Node: IPC,  Next: Connect,  Prev: Configuring,  Up: Configuring
+
+Eli reports `Remote IPC not available on this host'
+===================================================
+
+   This error report indicates that Eli was unable to use the
+inter-process communication mechanism effectively.  It is usually seen
+on Linux systems that are not connected to a network.
+
+   Eli's default inter-process communication mechanism is TCP/IP.  If
+TCP/IP is not available, the environment variable `ODIN_LOCALIPC' can
+be set and Unix domain sockets will be used instead.  Setting
+`ODIN_LOCALIPC' to 1 usually avoids the error report.
+
+
+File: faq,  Node: Connect,  Next: Requirements,  Prev: IPC,  Up: Configuring
+
+Eli reports `Cannot connect to Odin server'
+===========================================
+
+   This means that there is a problem with TCP/IP socket communication. 
+It can occur in two situations: on initial installation of Eli and
+after some kind of abnormal termination.  If it occurs on initial
+installation, you need to set the environment variable ODIN_LOCALIPC
+to 1 before invoking Eli.  If it occurs after an abnormal termination,
+simply resetting the cache by means of the command "eli -r" should
+clear things up.
+
+
+File: faq,  Node: Requirements,  Next: License,  Prev: Connect,  Up: Configuring
+
+Requirements of Eli
+===================
+
+     > Does Eli require an installed gcc?
+     > Does Eli require an installed Tcl/Tk?
+     > Does Eli require an installed TeX?
+     > Does Eli require an installed Funnelweb?
+     > Does Eli require an installed Odin?
+     > Eli is only available on Unix machines!
+
+   Eli doesn't really require support tools beyond standard utilities
+you'll find on any Unix machine.  Tcl/Tk isn't strictly required, but
+you miss out on a few features if you don't have it (the simplest info
+browser is implemented using Tcl/Tk as well as Eli's execution
+monitoring/debugging facilities).  Most everything else is included in
+the distribution (including FunnelWeb and Odin).  TeX is only required
+if you want to be able to format FunnelWeb documents using TeX.  Eli
+doesn't rely on gcc at all.  It uses whatever C compiler you have on
+your system.
+
+   While Eli itself has not been ported to systems other than Unix,
+the code that Eli generates is highly portable C code that can be
+compiled anywhere.  (The generated C code can be compiled by a number
+of C++ compilers as well.)  We have reports of people successfully
+compiling Eli generated code on Windows platforms.
+
+
+File: faq,  Node: License,  Next: Configure for X,  Prev: Requirements,  Up: Configuring
+
+What restrictions are placed on the Usage of Eli?
+=================================================
+
+     > Is professional support available and what is the licence agreement?
+
+   Eli is distributed under the terms of the GNU Public License.  Code
+generated from Eli can for the most part be used without restriction.
+
+   We do not sell support, although we try to answer questions from
+users rapidly.
+
+
+File: faq,  Node: Configure for X,  Prev: License,  Up: Configuring
+
+Configuration does not find the X-Window-System.
+================================================
+
+     > Running ./configure on Slackware Linux 2.0.30 in XTerm (with DISPLAY=0:0)
+     > results in "checking for X... no", although X works ok for other
+     > applications.
+
+   The problem is not in running X applications, but in being able to
+compile X applications.  You need the appropriate development include
+files and libraries.
+
+   If your X includes and libraries don't reside in the normal places,
+you may have to give configure some help.  For example, you could
+invoke configure like this:
+
+     % ./configure --x-includes=/`somedir'/include --x-libraries=/`somedir'/lib
+
+where `somedir' was the directory of your X installation.
+
+   If you believe your X installation is in a normal place, you could
+test out the following.  To test the autoconf detection mechanism in
+isolation, you can do the following if you have autoconf installed:
+
+  1. Go to some temporary directory and create a file called
+     configure.in with the following contents:
+             AC_INIT(configure.in)
+             AC_PATH_X
+             AC_OUTPUT()
+
+  2. Run the command "autoconf".  This will create a configure script
+     in the directory.
+
+  3. Run configure and see if it finds the X includes and libraries.
+
+
+File: faq,  Node: Spec upgrade,  Next: Support,  Prev: Configuring,  Up: top
+
+Using Specifications Developed with Earlier Versions
+****************************************************
+
+* Menu:
+
+* IncludeFiles::                Eli doesn't find module include files any more
+* IdPtg::                       Migrating the usage of Module `IdPtg'
+* C_STRING_LIT::                Why does `C_STRING_LIT' not use `c_mkstr'?
+
+   Further hints for updates of specifications can be found in *Note
+top: (news)top, and in *Note top: (news4.0)top.
+
+
+File: faq,  Node: IncludeFiles,  Next: IdPtg,  Prev: Spec upgrade,  Up: Spec upgrade
+
+Eli doesn't find module include files any more
+==============================================
+
+         4 |#include "envmod.h"
+     (test.c) cannot find include file: "envmod.h"
+
+   Eli no longer automatically extracts all modules that are mentioned
+somewhere in `#include' files.  For example, in order to add the
+`envmod' module to a specification, some `.specs' file must contain
+the line `$/Name/envmod.specs'.  (`$' in this context is a shorthand
+for the package directory in the cache currently being used.)
+
+
+File: faq,  Node: IdPtg,  Next: C_STRING_LIT,  Prev: IncludeFiles,  Up: Spec upgrade
+
+Migrating the usage of Module `IdPtg'
+=====================================
+
+     > Am I correct in noting that the link between the key table and the
+     > string table containing non-literal strings was possible via the
+     > following (in Eli3)
+
+     > ATTR Key:  DefTableKey;
+     > SYMBOL xName INHERITS IdDefNest END;
+     > SYMBOL xIdent INHERITS IdPtg END;
+     >
+     > RULE Name: xName ::=  xIdent
+     > COMPUTE
+     >         xName.Ptg = xIdent.Ptg;
+     >         xName.Sym = xIdent.Sym;
+     > END;
+
+   There are two different tasks:
+
+   * Consistent renaming for name analysis (that's what Key's are for)
+
+   * Output text generation with Ptg (based on the string
+     representation)
+
+   There is Module Library support for both tasks.  In your example
+you use
+
+   * `IdDefNest' for name analysis
+
+   * `IdPtg' for output text generation for identifiers
+
+   `IdPtg' computes an inherited attribute `Ptg' containing the PTG
+representation of the identifier to which `IdPtg' is inherited. 
+`IdPtg' could be inherited to terminals (as you do above) in earlier
+Eli versions.  The precondition for the application of `IdPtg' is that
+the symbol to which `IdPtg' is inherited provides an attribute named
+`Sym' containing the string table index of the associated identifier.
+
+   Since Eli Version 4.x, inheritance to terminals is no longer
+possible.  That is the only difference for your application.  So you
+simply have to move your PTG computation one level up to the symbol
+`xName'.  This should give you:
+
+        SYMBOL xName INHERITS IdPtg END;
+     
+        RULE Name: xName ::=  xIdent
+        COMPUTE
+             xName.Sym = xIdent.Sym;
+        END;
+
+   which even looks a bit simpler than the 3.8 solution.
+
+
+File: faq,  Node: C_STRING_LIT,  Prev: IdPtg,  Up: Spec upgrade
+
+Why does `C_STRING_LIT' not use `c_mkstr'?
+==========================================
+
+     > I'm surprised that C_STRING_LIT now uses mkstr instead of c_mkstr.
+     > What's the reason?
+
+   `c_mkstr' had the problem that if the string in the source text
+contained a null character, that string was silently truncated:
+
+             "abc\0def" became "abc"
+
+   This is a consequence of the string storage module implementation,
+and could only be avoided by placing a high cost on *all* string
+operations.  To avoid the problem, `c_mkstr' was changed to report an
+error if it found `"\0"' in a string.  The changed `c_mkstr' no longer
+implements C strings, so it could not be used as the processor for
+`C_STRING_LIT'.
+
+
+File: faq,  Node: Support,  Next: Index,  Prev: Spec upgrade,  Up: top
+
+How to solve common problems in Eli
+***********************************
+
+* Menu:
+
+* Intermediate Code::	Is there Support for Intermediate Code in Eli?
+* CPlusPlus::		Is there an available processor for C++?
+* delimiters::		How does recognition of delimiters work in Eli?
+* External Libraries::	How can I use external libraries with Eli?
+
+
+File: faq,  Node: Intermediate Code,  Next: CPlusPlus,  Prev: Support,  Up: Support
+
+Is there Support for Intermediate Code in Eli?
+==============================================
+
+     > Does Eli support the generation of intermediate code and if so, what
+     > type of code and in which way?
+
+   In general, Eli supports generation of intermediate code in the same
+way that it supports the generation of any kind of code:  You write a
+PTG specification of the language to be output and invoke the routines
+to build up your output.
+
+   If you want to specify the intermediate language as a tree and
+perform some attribute computation over it without writing it out and
+reading it back in, then you can specify the tree in LIDO.  Eli
+produces Mk functions from a LIDO specification much the same way as
+it produces PTG functions from a specification.  You invoke the Mk
+functions to build your tree and then paste it into the original tree
+built by the parser. *Note Computed Subtrees: (lidoref)Computed
+Subtrees, for details.  You can see an example using an intermediate
+language appropriate to the Spim simulator for the MIPS at
+`http://ece-www.colorado.edu/~ecen4553/HW/ctgt.html'.
+
+   If you want to target an existing intermediate representation that
+is implemented as a class library (like  Suif,
+`http://suif.stanford.edu/suif/suif.html', for example), then you make
+the class library available as a part of your specification (usually
+via a .a file) and invoke its methods directly from your translation
+specification just like you would invoke PTG or Mk functions.
+
+
+File: faq,  Node: CPlusPlus,  Next: delimiters,  Prev: Intermediate Code,  Up: Support
+
+C++
+===
+
+     >   Is there an ELI-generated compiler available for C++?
+
+   There is none that I know of.  One reason is that C++ seems to be
+defined not by a standard but by a collection of front ends. 
+Particular users are partial to particular front ends, and are not
+interested in a compiler that actually conforms to either the ARM or
+the draft ANSI standard.  This situation might change, but in the
+interim there seems to be little point in building an Eli
+specification.
+
+   Compounding the problem is the fact that C++ has a number of
+essential ambiguities that make it very difficult to specify formally.
+ For example, if something looks like both a declaration and an
+expression then it's a declaration.  How do you express that formally?
+
+
+File: faq,  Node: delimiters,  Next: External Libraries,  Prev: CPlusPlus,  Up: Support
+
+How does recognition of delimiters work in Eli?
+===============================================
+
+     > I want to use ':=' in the grammar to represent three notations
+     > ':=', '=', and ':-'.
+
+   This could be done as follows (for an explanation of all of the
+relevant constructs, *note Literal Symbols: (lex)Literal Symbols.):
+
+     @O@<foo.con@>==@{
+     S: 'A' ':=' 'B' .
+     @}
+     
+     @O@<foo.delit@>==@{
+     $:=     ColonEqual
+     @}
+     
+     @O@<foo.gla@>==@{
+             $:=     [mkassign]
+             $=      [mkassign]
+             $:-     [mkassign]
+     @}
+     
+     @O@<foo.c@>==@{
+     #include "litcode.h"
+     #include "eliproto.h"
+     
+     void
+     #if PROTO_OK
+     mkassign(char *c, int l, int *t, int *s)
+     #else
+     mkassign(c, l, t, s) char *c; int l, *t; int *s;
+     #endif
+     { *t = ColonEqual; }
+     @}
+
+     > For Pascal, `:kwd' has to be applied to the file that contains
+     > nothing else than the specification of `Name: PASCAL_IDENTIFIER'
+     > Is that the only possible application of `:kwd'?
+
+   The `:kwd' derivation is used to specify sets of literal terminals
+appearing in a grammar that should be recognized by looking them up in
+the identifier table rather than by incorporating them into the
+scanner's finite state machine.  Mixed-case keywords are the most
+common use of `:kwd', but it can also be used simply to cut down the
+size of the scanner tables at some cost in execution time.
+
+
+File: faq,  Node: External Libraries,  Prev: delimiters,  Up: Support
+
+How can I use external libraries with Eli?
+==========================================
+
+   Use `+lib='mylib'' to add the `-lmylib'' option to the link.
+`+lib_sp' can be used to supply a directory for the library (the `-L'
+option in the link).
+
+   You can also use the mechanism used by Eli internally, although it
+isn't really pretty.  You can add a `.libs' file to your specification
+that has something of the form:
+
+        / +lib_sp=(libdir) +lib='libname' :library_flags
+
+   > Is there also a way to tell Eli an include path for > header
+files?
+
+   There is a parameter called +cc_flags with which you can provide
+the `-I' option to the compilation.
+
+
+File: faq,  Node: Index,  Prev: Support,  Up: top
+
+Index
+*****
+
+* Menu:
+
+* -R:                                   Upgrading.
+* -r:                                   CacheSize.
+* .odinrc:                              Odinrc.
+* C_STRING_LIT:                         C_STRING_LIT.
+* EDITOR:                               Odinrc.
+* ODINVERIFYLEVEL:                      ChangingFiles.
+* ODIN_LOCALIPC:                        IPC.
+* VerifyLevel:                          ChangingFiles.
+* c_mkstr:                              C_STRING_LIT.
+* mkstr:                                C_STRING_LIT.
+* test-utility:                         ChangingFiles.
+* Cannot connect to Odin server:        Connect.
+* FAQ:                                  top.
+* IPC not available:                    IPC.
+* Library:                              IncludeFiles.
+* Module:                               IncludeFiles.
+* Odin variables:                       Odinrc.
+* R parameter of the eli command:       Upgrading.
+* alterations:                          ChangingFiles.
+* cache size:                           CacheSize.
+* parameters of the eli command 'R':    Upgrading.
+* parameters of the eli command 'r':    CacheSize.
+* r parameter of the eli command:       CacheSize.
+* upgrading:                            Upgrading.
+* variables:                            Odinrc.
+
+
+
+Tag Table:
+Node: top131
+Node: Accessing Eli1810
+Node: CacheSize2223
+Node: Upgrading3944
+Node: Odinrc4463
+Node: ChangingFiles5447
+Node: Configuring6662
+Node: IPC7184
+Node: Connect7813
+Node: Requirements8413
+Node: License9697
+Node: Configure for X10193
+Node: Spec upgrade11570
+Node: IncludeFiles12109
+Node: IdPtg12712
+Node: C_STRING_LIT14529
+Node: Support15314
+Node: Intermediate Code15726
+Node: CPlusPlus17304
+Node: delimiters18145
+Node: External Libraries19689
+Node: Index20416
+
+End Tag Table

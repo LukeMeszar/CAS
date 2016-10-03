@@ -1,0 +1,74 @@
+This is Info file dir, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/dir.tnf.
+
+
+File: dir,  Node: top,  Next: (EliRefCard),  Prev: (DIR),  Up: (DIR)
+
+Eli Documentation
+*****************
+
+   This is the root of the Eli system documentation.  Please follow
+the links below to obtain detailed information on all aspects of the
+system.
+
+* Menu:
+
+* Reference Card: (EliRefCard).       Eli Quick Reference Card.
+* Frequently Asked Questions: (faq).  Answers to Common Questions.
+
+Tutorials:
+
+* Introduction: (novice).             Guide For New Eli Users.
+* Release Notes: (news).              New Features of Eli.
+* Name Analysis: (nametutorial).      Tutorial on Name Analysis.
+* Type Analysis: (typetutorial).      Tutorial on Type Analysis.
+
+Reference Manuals:
+
+* User Interface: (ui).               Interacting with Eli.
+* Info: (info).                       Documentation browsing system.
+* Products: (pp).                     Eli products and parameters.
+
+Libraries:
+
+* Library: (lib).                     Eli library routines.
+* MODLIB: (modlib).                   Specification Module Library.
+
+Translation Tasks:
+
+* Lexical: (lex).                     Lexical analysis specification.
+* Syntax: (syntax).                   Syntactic Analysis Manual.
+* Semantic: (comptrees).              LIDO -- Computation in Trees.
+
+Tools:
+
+* LIDO: (lidoref).                    LIDO -- Reference Manual.
+* LCL: (lcl).                         LIGA Control Language.
+* SHOW: (show).                       Debugging Information for LIDO.
+* GORTO: (gorto).                     Graphical ORder TOol.
+
+* FunnelWeb: (fw).                    FunnelWeb User's Manual.
+
+* PTG: (ptg).                         Pattern-based Text Generator.
+* PDL: (deftbl).                      Property definition language.
+* OIL: (oil).                         Operator Identification Language.
+* TP: (tp).                           Tree grammar specification language.
+* CLP: (clp).                         Command line processing.
+* COLA: (cola).                       COLA Options Reference Manual.
+
+* Unparsing: (idem).                  Generating unparsing code.
+
+* Monitoring: (mon).                  Monitoring a processor's execution.
+
+Administration:
+
+* System Admin: (sysadmin).           System Administration Guide.
+
+* Index: (gindex).                    Global index for all manuals.
+
+
+
+Tag Table:
+Node: top131
+
+End Tag Table

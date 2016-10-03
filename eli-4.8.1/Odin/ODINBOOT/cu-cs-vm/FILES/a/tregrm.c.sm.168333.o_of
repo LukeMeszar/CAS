@@ -1,0 +1,15 @@
+%tg-main.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-main.c.176084.o
+%tg-anal.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-anal.c.177252.o
+%tg-att.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-att.c.178420.o
+%tg-dummy.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-dummy.c.179588.o
+%tg-gen_grm.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-gen_grm.c.180756.o
+%tg-gen_lex.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-gen_lex.c.181924.o
+%tg-gen_nod.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-gen_nod.c.183092.o
+%tg-nod_grm.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-nod_grm.c.184260.o
+%tg-yylex.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tg-yylex.c.185428.o
+%tregrm-yacc.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/tregrm-yacc.c.186596.o
+%if-err.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/if-err.c.66147.o
+%if-file.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/if-file.c.67907.o
+%if-io.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/if-io.c.69075.o
+%if-nod.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/a/if-nod.c.187908.o
+%if-symbol.o == /home/user/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/cu-cs-vm/FILES/if-symbol.c.70243.o

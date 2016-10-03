@@ -1,0 +1,64 @@
+@=~
+~p typesetter = texinfo
+~p maximum_input_line_length = infinity
+~! $Id: FirstOcc.fw,v 3.6 1997/08/29 12:08:20 mjung Exp $
+~!
+~! (C) Copyright 1997 University of Paderborn.
+~! 
+~! This file is part of the Eli Module Library.
+~! 
+~! The Eli Module Library is free software; you can redistribute it and/or
+~! modify it under the terms of the GNU Library General Public License as
+~! published by the Free Software Foundation; either version 2 of the
+~! License, or (at your option) any later version.
+~! 
+~! The Eli Module Library is distributed in the hope that it will be
+~! useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+~! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+~! Library General Public License for more details.
+~! 
+~! You should have received a copy of the GNU Library General Public
+~! License along with the Eli Module Library; see the file COPYING.LIB.
+~! If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+~! Suite 330, Boston, MA 02111-1307, USA. 
+~!
+
+
+This module determines whether a TypeFirstOcc of an object identified
+by its TypeFirstOcc.Key is the first occurrence in left-to-right
+order. Then TypeFirstOcc.IsTypeFirstOcc is 1, otherwise 0.
+
+All TypeFirstOcc CLASS SYMBOLs must be in a subtree of TypeRangeFirstOcc.
+
+~O~<TypeFirstOcc.pdl~>~{
+TypeFirstOcc:   int [SetGet];
+~}
+
+~O~<TypeFirstOcc.lido~>~{
+CLASS SYMBOL ROOTCLASS INHERITS TypeRangeFirstOcc END;
+
+CLASS SYMBOL TypeRangeFirstOcc:
+                GotTypeFirstOcc:        VOID;
+
+CLASS SYMBOL TypeFirstOcc:
+                Key:                    DefTableKey,
+                IsTypeFirstOcc: int;
+
+CHAIN _TypeFirstOcc:    VOID;
+
+CLASS SYMBOL TypeRangeFirstOcc COMPUTE
+  CHAINSTART HEAD._TypeFirstOcc = "yes";
+  SYNT.GotTypeFirstOcc = TAIL._TypeFirstOcc;
+END;
+
+CLASS SYMBOL TypeFirstOcc       COMPUTE
+  SYNT.IsTypeFirstOcc =
+        SetGetTypeFirstOcc (THIS.Key, 1, 0)
+        DEPENDS_ON THIS._TypeFirstOcc;
+  THIS._TypeFirstOcc = SYNT.IsTypeFirstOcc;
+END;
+~}
+
+~O~<TypeFirstOcc.specs~>~{
+$/Prop/PropLib.fw
+~}

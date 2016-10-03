@@ -1,0 +1,1130 @@
+This is Info file name, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/name.tnf.
+
+
+File: name,  Node: ScopeProp,  Next: CScopeProp,  Up: Scope Properties
+
+Scope Properties without left-to-right Restrictions
+===================================================
+
+   This module `ScopeProp' implements consistent renaming of
+identifiers using scopes which are properties associated to object
+keys.  The module computations ensure that scope properties are
+associated and bindings are made before they are accessed.  This
+strategy fits to Algol-like scope rules, and to C-like scope rules if
+qualified names may be used before their definition.
+
+   The module is instantiated by
+        $/Name/ScopeProp.gnrc+instance=NAME +referto=KEY :inst
+
+It is required that a basic scope rule module is instantiated with the
+same generic parameters `+instance=NAME' and `+referto=KEY'.
+
+   Each of the modules introduces a `PDL' property named `NAMEScope'
+where `NAME' is the value of the `instance' parameter.
+
+   The module provide `.lido' specifications for the computational
+roles `NAMEExportRange', `NAMEQualIdUse', and `NAMEChkQualIdUse':
+
+   `NAMEExportRange' is a `NAMERangeScope' the scope of which is
+associated as a value of the `NAMEScope' property to the value of the
+attribute `KEYScopeKey'. All local definitions are bound in this scope. 
+The scope may be used to bind qualified names (`NAMEQualIdUse'), or to
+provide the source for inheritance. Such uses may occur outside as
+well as inside of that `NAMEExportRange'.  A user computation is
+required to set the attribute `THIS.KEYScopeKey'. The scope will be
+set as a value of its property `NAMEScope'.  This role is typically
+inherited by a grammar symbol that represents the body of a module, of
+a class, or of a record type.  The `KEYScopeKey' attribute is then set
+to the key representing the module, class, or record type.
+
+   `NAMEQualIdUse' is inherited by an applied occurrence of a
+qualified identifier. Its binding is looked up in a scope that is
+obtained as a `NAMEScope' property from the attribute
+`THIS.NAMEScopeKey'.  A computation of `INH.NAMEScopeKey' has to be
+provided.  The obtained scope is available in the attribute
+`THIS.NAMEScope', e.g. to support a check whether the qualification is
+correct. Alternatively, a user computation may compute `THIS.NAMEScope'
+instead of `THIS.NAMEScopeKey'.  This role is typically inherited by a
+grammar symbol that represents a qualified identifier occurrence like
+`sleep' in `Thread.sleep' or `push' in `st.push'.  The binding may be
+looked up in a scope associated to `Thread' or to the type of `st',
+for example.
+
+   `NAMEChkQualIdUse' can be inherited together with `NAMEQualIdUse'. 
+It causes a message to be given, if no binding is found for the
+identifier.
+
+   Computations of these modules also establish attributes
+`NAMEGotVisibleScopePropNest', `NAMEGotVisibleKeys', and
+`NAMEGotVisibleKeysNest' of including `NAMERangeScope's and
+`NAMERootScope'.  They are used in modules computations which access
+the `NAMEScope' property or which look up bindings in those scopes. In
+general these attributes need not be considered in in user
+computations.
+
+   We demonstrate the use of these facilities by extending the language
+of our running example by module declarations and access of module
+components. (For a complete example see the Tutorial on Name Analysis.)
+The notation is specified by the following two concrete productions:
+
+        Declaration:    'module' DefIdent ModBlock ';'.
+        ModBlock:       Compound.
+        Operand:        ModUseIdent '::' QualIdent.
+        ModUseIdent:    Ident.
+        QualIdent:      Ident.
+
+   The symbols inherit the roles provided by the scope property module
+as described above:
+
+        SYMBOL ModBlock INHERITS ExportRange END;
+     
+        RULE: Declaration ::= 'module' DefIdent ModBlock ';' COMPUTE
+              ModBlock.ScopeKey = DefIdent.Key;
+        END;
+
+   In the context of the module declaration it is specified that the
+scope of the module body is to be associated to the key of the module
+identifier.
+
+   In the context of a selection the scope is specified in which the
+selected component is to be bound.  It is accessed from the key of the
+module identifier.  Module computations establish dependences such that
+all scope properties are associated before they are accessed here:
+
+        SYMBOL ModUseIdent INHERITS
+               IdUseEnv, ChkIdUse, IdentOcc
+        END;
+     
+        SYMBOL QualIdent   INHERITS
+               QualIdUse, ChkQualIdUse, IdentOcc
+        END;
+        RULE: Expression  ::= ModUseIdent '::' QualIdent COMPUTE
+              QualIdent.ScopeKey = ModUseIdent.Key;
+        END;
+
+   In order to make sure that the it is really a module identifier to
+which the selection is applied we specify the following check
+
+        RULE: Expression  ::= ModUseIdent '::' QualIdent COMPUTE
+          IF (AND (NE (QualIdent.ScopeKey, NoKey),
+                   EQ (QualIdent.Scope, NoEnv)),
+          message (FATAL, CatStrInd ("module identifier required: ",
+                                     ModUseIdent.Sym),
+                   0, COORDREF));
+        END;
+
+   The message is only issued if the identifier is defined but does
+not have a scope property.
+
+   (The `Strings' module is used to compose the message text (*note
+String Concatenation: (problems)Strings.).)
+
+
+File: name,  Node: CScopeProp,  Next: BuScopeProp,  Prev: ScopeProp,  Up: Scope Properties
+
+Scope Properties C-like
+=======================
+
+   This module implements consistent renaming of identifiers using
+scopes which are properties associated to object keys.  The module
+computations establish bindings, lookup names, associate scope
+properties, and lookup qualified names in left-to-right depth-first
+order.  It imposes the strong requirement that a qualified name, for
+example the `f' in `m.f', may not precede its definition.
+
+   It is recommended to use this module only if it is needed as a
+companion of the module `CInh'. Otherwise `ScopeProp' should be used
+(*note Scope Properties::.).
+
+   The module is instantiated by
+        $/Name/CScopeProp.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the module `CScope' is instantiated
+with the same values of the generic parameters.
+
+   The module provides a `PDL' property named `NAMEScope' and the
+computational roles `NAMEExportRange', `NAMEQualIdUse', and
+`NAMEChkQualIdUse' as described in *note ScopeProp::..
+
+   All computations of this module follow strictly C-like scope rules,
+i.e. binding of identifier occurrences, association of scope
+properties, and access of scope properties are done in left-to-right
+depth-first order.
+
+   Calls of `GetNAMEScope' in a user computation do not need a
+specific precondition if they depend on a key attribute of a context
+which is to the right of the context where the property is set. That
+is usually true for situations where the module role `NAMEQualIdUse'
+is used.  Only if a particular computation is to depend on the fact
+that all scope properties of the program are associated, it may depend
+on `INCLUDING NAMERootScope.NAMEGotScopeProp'.
+
+
+File: name,  Node: BuScopeProp,  Prev: CScopeProp,  Up: Scope Properties
+
+Scope Properties C-like Bottom-Up
+=================================
+
+   This module implements consistent renaming of identifiers using
+scopes which are properties associated to object keys.  The module
+computations ensure that scope properties are associated and accessed
+in left-to-right depth-first order.  It imposes the strong requirement
+that a qualified name, for example the `f' in `m.f', may not precede
+its definition.
+
+   It is recommended to use this module only if qualified identifiers
+have to be bound in the bottom-up phase, or if the module is needed as
+a companion of the module `BuInh'. Otherwise `ScopeProp' should be
+used (*note Scope Properties::.).
+
+   The computations provided by this module are executed while reading
+the input.
+
+   The module is instantiated by
+        $/Name/BuScopeProp.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the module `BuScope' is instantiated
+with the same values of the generic parameters.
+
+   The module provides a `PDL' property named `NAMEScope' and the
+computational roles 
+ `NAMEIdSetScopeProp', `NAMEIdGetScopeProp', and `NAMEQualIdUse'.  A
+role 
+ `NAMERangeScopeProp' is NOT provided; `NAMERangeScope' has to be used
+instead.
+
+   Note: The role names of the module `ScopeProp' as
+`NAMEExportRange', `QualIdUse' and `ChkQualIdUse' do not apply here.
+
+   All computations of this module follow strictly C-like scope rules,
+i.e. binding of identifier occurrences, association of scope
+properties, and access of scope properties are done in left-to-right
+depth-first order.
+
+   As a consequence of bottom-up computation the value of a key can
+not be propagated by an upper computation to the range symbol.  Hence,
+if the defining identifier occurrence precedes the range, the scope
+has to be created by the role `NAMECreateNewScope' (*note BuScope::.)
+and associated to the key in the identifier context using the role
+`NAMEIdSetScopeProp'.
+
+   The role that opens the range scope (`NAMEOpenNewScope', *note
+BuScope::.) may also be associated to that identifier context,
+avoiding an additional symbol that derives to empty.
+
+   The range symbol has the role `NAMERangeScope'.
+
+   The module declaration of our example then reads:
+        RULE: Declaration ::= 'module' ModDefIdent Block ';' END;
+     
+        SYMBOL ModDefIdent INHERITS
+               CreateNewScope, OpenNewScope, IdSetScopeProp,
+               IdDefScope, IdentOcc
+        COMPUTE
+          SYNT.OpenPrecond = SYNT.Key;
+        END;
+
+   `NAMEOpenPrecond' is specified to depend on the key attribute to
+ensure that the identifier is bound in the enclosing environment
+before the environment of the module range is opened.
+
+   In component selections the scope property needs to be propagated
+from the context that provides it to the selector context.  The module
+role `NAMEGetScopeProp' accesses the scope from the key specified by
+`KEYScopeKey' and assigns it to a variable. It is used at the selector
+context right of it by the role `NAMEQualIdUse'.
+
+   Hence, in our running example the selection is specified as follows:
+
+        RULE: Expression  ::= ModUseIdent '::' QualIdent END;
+     
+        SYMBOL ModUseIdent INHERITS
+               GetScopeProp, IdUseEnv, ChkIdUse, IdentOcc
+        COMPUTE
+          SYNT.ScopeKey = THIS.Key;
+        END;
+     
+        SYMBOL QualIdent   INHERITS
+               QualIdUse, ChkIdUse, IdentOcc
+        END;
+
+If we had a typed record expression instead of the module identifier
+to select from, `ScopeKey' would be set to the type key instead of the
+module key.
+
+
+File: name,  Node: Inheritance of Scopes,  Next: Name Analysis Test,  Prev: Scope Properties,  Up: top
+
+Inheritance of Scopes
+*********************
+
+   The basic scope rule concepts are described by hierarchically nested
+environments which reflect the structure of nested ranges in a program. 
+Using scopes as properties of objects, as described in *Note Scope
+Properties::, allows to export a scope with bindings from a range,
+propagate them by a property, and bind single identifiers that occur
+outside of the range where the binding is established, e.g. a
+component identifier that is qualified by a module name.
+
+   In this section we further extend that concept such that scope rules
+for language constructs like `with' statements of Pascal, `use'
+qualifications of Ada, or inheritance of classes as in object-oriented
+languages can be specified.  All these constructs allow that
+non-qualified identifier occurrences may be bound to definitions
+contained in surrounding ranges or to definitions of scopes that are
+inherited by a surrounding range, for example
+       module m { int i; float f() {...} }
+       { float g;
+         with m
+           { int i; g = f();}
+       }
+
+   The new concept is described by an inheritance relation between
+scopes that is used when applied identifier occurrences in a range are
+bound to definitions. In the above example the range of the
+`with'-statement inherits the scope of the module `m' and is embedded
+in the surrounding range.
+
+   Name analysis computations for such constructs rely on several
+different operations: scopes being created, bindings in a scope being
+established, scope properties being set, inheritance relations between
+scopes being established. The propagation of scope properties is not
+limited to strictly nested structures. Hence, the dependencies between
+the computations are rather sophisticated.  That is why the
+combination of modules is restricted.
+
+   There are three modules that provide computations for the
+consistent renaming task based on inheritance. They rely on the use of
+the corresponding modules for basic scope rules and for scope
+properties:
+
+* Menu:
+
+* AlgInh::    Inheritance with Algol-like Scope Rules (recommended to be used in general)
+* CInh::      Inheritance with C-like Scope Rules
+* BuInh::     Inheritance computed while processing input
+
+   Using one of these modules requires that the corresponding basic
+scope rule module and a suitable scope property module is instantiated
+with the same generic parameters `+instance=NAME' and `+referto=KEY'.
+
+   Each of the three modules implements consistent renaming of
+identifiers.  Identifier occurrences are bound to object keys of type
+`DefTableKey' according to the following inheritance rule:
+
+   An inheritance relation between scopes is introduced: A scope `c1'
+may inherit the bindings of a scope `c2', i.e.  a definition of `c2'
+is inherited by `c1' unless it is hidden by another definition of the
+same identifier in `c1'.  A scope may inherit from several scopes
+(multiple inheritance).  The inheritance relation is transitive and
+must be acyclic.
+
+   Together with the nesting of ranges the following general scope rule
+is applied:
+
+   An applied occurrence of an identifier `a' is bound to a definition
+of `a' which is contained in or inherited by the smallest enclosing
+range.
+
+   Definitions contained in a range hide definitions inherited
+(directly or indirectly) by that range.
+
+   Definitions inherited by a range hide definitions of enclosing
+ranges.
+
+   Using multiple inheritance a scope `c1' may inherit from a scope
+`c2' and from `c3', where `c2' also inherits from `c3'. If both `c2'
+and `c3' define an identifier `a', then the definition of `a' in `c3'
+is hidden by that of `c2'. This holds for `c1', too, although there is
+an inheritance path from `c3' to `c1' that does not pass `c2'.
+
+   If several definitions of an identifier `a' are inherited via
+different unrelated inheritance paths, the applied occurrence is bound
+to an arbitrary one of them.  This module provides a means to detect
+that situation, in order to issue an error message or to access all
+those definitions, depending on the requirements of the particular
+language.
+
+   If the computations of this module are used to establish inheritance
+relations, then the computations of identifier roles, like
+`NAMEIdUseEnv', `NAMEIdUseScope', and `NAMEQualIdUse' are modified
+such that inheritance relations are considered when bindings are
+looked up.
+
+   The modules provide `.lido' specifications for the following
+computational roles:
+
+   `NAMEInhRange' is a range that may inherit scopes exported form
+other ranges, but does not export its own scope. This role is, for
+example, applied to `with'-statements.  The role `NAMEInheritScope'
+(see below) is used to establish the inheritance relations. No
+distinction is made whether one or more scopes can be inherited.  A
+user computation for the `VOID' attribute `NAMEInhRange.NAMEGotInh'
+has to be provided in upper or lower computation, such that it states
+the condition that all those inheritances are done. Usually the
+attributes `NAMEInheritScope.NAMEInheritOk' are used for that purpose.
+
+   `NAMEExportInhRange' is both an `NAMEExportRange' and a
+`NAMEInhRange', i.e. it inherits scopes and exports its own scope.
+This role is, for example, applied to bodies of class declarations. 
+It is essential to use this role, instead of inheriting both roles,
+`NAMEExportRange' and `NAMEInhRange', to one grammar symbol; otherwise
+the dependences provided by the two roles could cause conflicts.
+
+   `NAMEInheritScope' is used to establish one inheritance relation
+between two scopes: `THIS.NAMEInnerScope' is stated to inherit from
+`THIS.NAMEOuterScope', both of type `Environment'. 
+`THIS.NAMEInnerScope' has to be set by a user computation, either in
+upper or lower context. Another user computation is required to set
+`THIS.NAMEScopeKey' in in upper or lower context.  A provided
+computation obtains the `NAMEScope property' from it and sets
+`SYNT.NAMEOuterScope'. The inheritance relation is established by a
+call of the function `NAMEInheritClass' provided by the environment
+module.  The attribute `SYNT.NAMEInheritOk' is set to 1 iff the
+inheritance relation is legal, i.e. both scopes exist and belong to the
+same environment hierarchy, in the outer scope bindings have not been
+looked up before, and this inheritance does not establish a cyclic
+inheritance relation.
+
+   `NAMEChkInhinherit' can be used to issue error messages at a
+`NAMEInheritScope' node.  If the outer scope does not exist, then the
+attribute `NAMEInheritScope.SrcErr' has the value 1 and a message is
+issued by the computation:
+
+     SYNT.SrcMsg=
+       IF(THIS.SrcErr,
+         message (ERROR, "Source of inheritance is missing", 0, COORDREF));
+
+   If the stated inheritance is invalid, then the attribute
+`NAMEInheritScope.ScpErr' has the value 1 and a message is issued by
+the computation:
+
+     SYNT.InhMsg=
+       IF(THIS.InhErr,
+         message (ERROR, "Wrong scope inherited", 0, COORDREF));
+
+   `NAMEChkInhIdUse' and `NAMEChkInhQuaIdUse' are roles to be
+associated to an applied identifier occurrence.  If several
+definitions of the identifier are inherited on different unrelated
+inheritance paths, then the attribute `NAMEChkInhIdUse.MulErr' (or
+`NAMEChkInhQuaIdUse.MulErr') has the value 1 and a message is issued
+by the computation:
+
+     SYNT.MulMsg=
+       IF(THIS.MulErr,
+         message (ERROR,
+           CatStrInd(
+             "Several definitions are inherited for: ",
+     	IdnOf(THIS.|KEY|Bind)),
+           0, COORDREF));
+
+   `NAMEChkInhIdUse' may be used together with `NAMEIdUseEnv' or
+`NAMEIdUseScope'; `NAMEChkInhQualIdUse' may be used together with
+`NAMEQualIdUse'.
+
+   We demonstrate the use of inheritance by extending our running
+example by a `with' statement for modules (*note Scope Properties::.).
+
+        Statement:    'with' WithClause 'do' WithBody.
+        WithClause:   ModUseIdent.
+        WithBody:     Statement.
+
+   The identifier should be bound to a module. The `WithBody' inherits
+the module's scope. I.e. the definitions of the module body are valid
+in the `WithBody'. They may be hidden by definitions in ranges
+contained in the `WithBody'. They may hide definitions in ranges
+enclosing the `with' statement.  Hence, the `WithBody' plays the role
+of a `InhRange' and its scope is the target of the inheritance
+relation.  (The `WithBody' does not export its bindings.) The module's
+scope property is its source:
+
+        SYMBOL WithBody INHERITS InhRange END;
+        SYMBOL WithClause INHERITS InheritScope, ChkInherit END;
+     
+        RULE: Statement ::= 'with' WithClause 'do' WithBody COMPUTE
+          WithClause.InnerScope = WithBody.Env;
+          WithBody.GotInh = WithClause.InheritOk;
+        END;
+     
+        RULE: WithClause ::= ModUseIdent COMPUTE
+          WithClause.ScopeKey = ModUseIdent.Key;
+        END;
+
+   Note: In this example the `WithClause' can only be a simple
+identifier, `ModUseIdent'. If a typed expression would be allowed
+there instead, as in Pascal, the scope property would be associated to
+and obtained from type keys.
+
+   Similarly we can extend the language of our running example by
+classes with multiple inheritance:
+
+        Declaration:   'class' DefIdent Inheritances ClassBlock ';'.
+        ClassBlock:    Compound.
+        Inheritances:  Inheritance*.
+        Inheritance:   ':' InheritIdent.
+        InheritIdent:  Ident.
+
+   A declaration of a class exports the bindings of the class body,
+like the declaration of a module (*note Scope Properties::.). 
+Additionally other classes may be inherited by a class, i.e.  their
+definitions are valid within the class body, if not hidden by inner
+definitions. The inherited definitions may hide definitions in ranges
+the class declaration is contained in.  Hence, the scope of the class
+body is the target of all `Inheritances', their sources are given by
+the scope property associated to the classes identified in the
+`Inheritances'.
+
+        SYMBOL ClassBlock INHERITS ExportRange, InhRange END;
+     
+        RULE: Declaration ::= 'class' DefIdent Inheritances ClassBlock ';'
+        COMPUTE
+          ClassBlock.ScopeKey = DefIdent.Key;
+          ClassBlock.GotInh =
+             Inheritances CONSTITUENTS InheritIdent.InheritOk;
+          Inheritances.InnerScope = ClassBlock.Env;
+        END;
+     
+        SYMBOL Inheritances:  InnerScope: Environment;
+     
+        SYMBOL InheritIdent INHERITS
+               InheritScope, ChkInherit, IdUseEnv, ChkIdUse, IdentOcc
+        COMPUTE
+          SYNT.InnerScope = INCLUDING Inheritances.InnerScope;
+          SYNT.Scopekey = THIS.KeyK;
+        END;
+
+   Note: In this example the inherited classes are determined by an
+unqualified identifier each, `InheritIdent'.  In case of Algol-like
+scope rules that can not be extended to qualified identifiers, because
+of the dependence pattern used by the  `AlgInh' module.  It would
+cause cyclic attribute dependences, in general.
+
+   Languages (like C++) allow that different definitions of an
+identifier may be inherited on different inheritance paths to a range.
+But in that case such an identifier may not be applied in that range. 
+This restriction is checked by the roles `ChkInhIdUse' and
+`ChkInhIdUseScopeProp'. They have to be associated to applied
+identifier symbols which are bound in the enclosing environment or in
+the scope obtained from a property, respectively:
+        SYMBOL UseIdent INHERITS ChkInhIdUse END;
+        SYMBOL QualIdent INHERITS ChkInhIdUseScopeProp END;
+
+   The error messages can be changed globally by symbol computations
+overriding the computations of the `...Msg' attributes:
+        SYMBOL UseIdent COMPUTE
+          SYNT.MulMsg=IF(THIS.MulErr,message (ERROR,
+           CatStrInd("Ambiguous symbol: ", IdnOf(THIS.|KEY|Bind)),
+           0, COORDREF));
+        END;
+
+   The above specification also fits to the specification for
+identifiers that are qualified by a module name given in (*note Scope
+Properties::.).  If in a construct `c::x' `c' is a class, then `x' is
+bound to a component defined in `c' or in a class inherited by `c'.
+This is the concept of the scope operator in C++.
+
+   These examples are applied in the same way for Algol-like and for
+C-like scope rules. The differences for bottom-up computation are
+explained in the description of the `BuInh' module.
+
+
+File: name,  Node: AlgInh,  Next: CInh,  Up: Inheritance of Scopes
+
+Inheritance with Algol-like Scope Rules
+=======================================
+
+   This module implements consistent renaming of identifiers according
+to inheritance relations. It assumes that the scope rules do not
+restrict defining and applied occurrences of identifiers by a certain
+order in the program text, as the C-like scope rules do.  The module
+computation in particular fit to Algol-like scope rules as described
+in *Note Inheritance of Scopes::.
+
+   The module is instantiated by
+        $/Name/AlgInh.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the modules `AlgScope' and `ScopeProp'
+are instantiated with the same values of the generic parameters.
+
+   The module provides `.lido' specifications for the computational
+roles `NAMEInhRange', `NAMEExportInhRange', `NAMEInheritScope',
+`NAMEChkInherit', `NAMEChkInhIdUse' and `NAMEChkInhIdUseScopeProp' as
+described in *Note Inheritance of Scopes::.
+
+   The dependence pattern used in the computations of this module, as
+described below, imposes a restriction on the use of the role
+`NAMEInheritScope', that determines an inheritance: In case that the
+inheritance is established for a `NAMEExportInhRange', the
+corresponding `NAMEInheritScope' may not depend on a qualified name
+that is bound using the role `NAMEQualIdUse', because the computations
+then may cause cyclic dependences.
+
+   Computations of the module provide attributes
+`NAMEAnyScope.NAMEGotVisibleKeys'.  They describe that for all
+`NAMEExportRange's visible from this range its keys have been bound,
+the scope property has been set, and its inheritance relation has been
+established (if any).  Module computations use these attributes as
+precondition for the lookup of unqualified names.  Computations of the
+module also provide attributes `NAMEAnyScope.NAMEGotVisibleKeysNest'.
+They specify that the state described above additionally holds for the
+visible and their recursively, directly nested `NAMEExportRange's. 
+Module computations use these attributes as precondition for the lookup
+of qualified names.  Usually these attributes and their dependence
+patterns need not be considered by user specifications. Only is cases
+where unconventional language rules for the export or the inheritance
+of bindings cause conflicts with these dependence patterns the
+computations of these attributes may be considered for being
+overridden.
+
+
+File: name,  Node: CInh,  Next: BuInh,  Prev: AlgInh,  Up: Inheritance of Scopes
+
+Inheritance with C-like Scope Rules
+===================================
+
+   This module implements consistent renaming of identifiers according
+to inheritance relations as described in *Note Inheritance of Scopes::. 
+However, the module computations establish bindings, lookup names,
+associate scope properties, establish inheritance relations, and
+lookup qualified names in left-to-right depth-first order.  It imposes
+the strong requirement that a qualified name, for example the `f' in
+`m.f', may not precede its definition.
+
+   The module is instantiated by
+        $/Name/CInh.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the modules `CScope' and `CScopeProp'
+are instantiated with the same values of the generic parameters.
+
+   The use of this module enforces the requirement that for any kind
+of identifier occurrence strictly hold that the definition precedes
+its uses.
+
+   The module provides `.lido' specifications for the computational
+roles `NAMEInhRange', `NAMEExportInhRange', `NAMEInheritScope',
+`NAMEChkInherit', `NAMEChkInhIdUse' and `NAMEChkInhIdUseScopeProp' as
+described in *Note Inheritance of Scopes::.
+
+   This module uses a strict left-to-right depth-first dependence
+pattern for all its attribute computations.  The attribute
+`NAMERootScope.NAMEGotInhScopes' states that all inheritance relations
+are established for the whole tree.
+
+
+File: name,  Node: BuInh,  Prev: CInh,  Up: Inheritance of Scopes
+
+C-like Inheritance Bottom-Up
+============================
+
+   This module implements consistent renaming of identifiers according
+to inheritance relations based on C-like scope rules.  The
+computations can be executed while input is read.
+
+   The module is instantiated by
+        $/Name/BuInh.gnrc+instance=NAME +referto=KEY :inst
+
+Using this module requires that the modules `BuScope' and
+`BuScopeProp' are instantiated with the same values of the generic
+parameters.
+
+   The use of this module enforces the requirement that for any kind
+of identifier occurrence strictly hold that the definition precedes
+its uses.
+
+   The module provides `.lido' specifications for the computational
+roles `NAMEInheritScope', `NAMEChkInherit' `NAMEChkInhIdUse' and
+`NAMEChkInhIdUseScopeProp' as described in *Note Inheritance of
+Scopes::.  No additional range role (as `NAMEInhRange' or
+`NAMEExportInhRange') is provided by this module.  The role
+`NAMERangeScope' of the basic scope rule module is to be used for
+ranges that are affected by inheritance, too.
+
+   The role `NAMEInheritScope' differs from the description in *Note
+Inheritance of Scopes:::
+
+   The target scope for the inheritance relation is assumed to be
+computed by the role 
+ `NAMECreateNewScope' in this context or in a preceding context. It is
+passed via a variable.  If `NAMECreateNewScope' and `NAMEInheritScope'
+are used in the same context, a computation `SYNT.NAMEInhPrecond =
+THIS.NAMENewScope;' has to be added, in order to guarantee proper use
+of the variable.
+
+   A lower computation of `SYNT.NAMEOuterScope' is required for this
+context.
+
+   The examples given in *Note Inheritance of Scopes:: are modified
+here to allow for bottom-up computation using this module.
+
+   We demonstrate the use of single inheritance by extending our
+running example by a `with' statement for modules (*note Scope
+Properties::.).
+
+        Statement:    'with' WithUseIdent 'do' WithBody.
+        WithBody:     Statement.
+
+   The identifier should be bound to a module. The `WithBody' inherits
+the module's scope. I.e. the definitions of the module body are valid
+in the `WithBody'. They may be hidden by definitions in ranges
+contained in the `WithBody'. They may hide definitions in ranges
+enclosing the `with' statement.  `WithBody' plays the role of a
+`RangeScope'.  In the preceding `WithUseIdent' context the scope is
+created and determined to be target of an inheritance relation.  The
+scope property of the module key is stated to be the outer scope of
+the inheritance relation.
+
+        RULE: Statement ::= 'with' WithUseIdent 'do' WithBody END;
+     
+        SYMBOL WithBody INHERITS RangeScope END;
+     
+        SYMBOL WithUseIdent INHERITS
+               GetScopeProp, CreateNewScope, InheritScope,
+               OpenNewScope, IdUseEnv, ChkIdUse, IdentOcc
+        COMPUTE
+          SYNT.ScopeKey = SYNT.Key;
+          SYNT.OuterScope = SYNT.ScopeProp;
+          SYNT.OpenPrecond = SYNT.Key;
+        END;
+
+   Similarly we can extend the language of our running example by
+classes with multiple inheritance:
+
+   The scope of the class body is created in the context
+`ClassDefIdent', associated a property of the class identifier, and
+used as a target for the inheritance relations established in all
+`Inheritances'.  The roles `RecentNewScope' and `OpenNewScope' in the
+newly introduced context `BuClass' access and open that scope.
+
+        RULE: Declaration ::= 'class' ClassDefIdent Inheritances
+                                      BuClass ClassBlock ';'
+        END;
+     
+        SYMBOL ClassDefIdent INHERITS
+               CreateNewScope, IdSetScopeProp, IdDefScope, IdentOcc
+        END;
+     
+        SYMBOL BuClass INHERITS RecentNewScope, OpenNewScope END;
+
+   In the `InheritIdent' contexts the scope property of the identifier
+is accessed and determined to be the outer scope to be inherited to
+the previously created scope.
+
+        SYMBOL InheritIdent INHERITS
+               GetScopeProp, InheritScope,
+               IdUseEnv, ChkIdUse, IdentOcc
+        COMPUTE
+          SYNT.ScopeKey = SYNT.Key;
+          SYNT.OuterScope = SYNT.ScopeProp;
+     
+          IF (AND (NOT (THIS.InheritOk), NE (THIS.Key, NoKey)),
+          message (FATAL, CatStrInd ("cyclic inheritance: ", THIS.Sym),
+                   0, COORDREF))
+          BOTTOMUP;
+        END;
+
+   The above specification also fits to the specification for
+identifiers that are qualified by a module name given in (*note Scope
+Properties::.).  If in a construct `c::x' `c' is a class, then `x' is
+bound to a component defined in `c' or in a class inherited by `c'.
+This is the concept of the scope operator in C++.
+
+
+File: name,  Node: Name Analysis Test,  Next: Environment Module,  Prev: Inheritance of Scopes,  Up: top
+
+Name Analysis Test
+******************
+
+   This module augments the specified processor such that it produces
+output that makes the results of name analysis visible.  For each
+identifier occurrence that has one of the identifier roles of the name
+analysis modules a line of the form
+        m in line 23 bound in line 4 of scope in line 3
+
+is written to the standard output file.  The first line number is that
+of the identifier occurrence, the second states where its binding was
+established by a defining occurrence, and the third where the scope of
+the binding has been created, i.e. usually the begin of the range. 
+For unbound identifier occurrences a line of the form
+        m unbound in line 35
+
+is written.  The output is produced in left to right order of the
+identifier occurrence, independent of the order in which the bindings
+are found. The computations for producing that output are scheduled
+after the bindings are computed at all identifier occurrences, in
+order to avoid problems of evaluation order scheduling.
+
+   The output of the processors specified in `$/Name/Examples' is
+produced by using this module.
+
+   To achieve the effect of this module it is simply instantiated.  No
+inheritance of any roles is necessary.
+
+   The module is instantiated by
+        $/Name/ShowBinding.gnrc+instance=NAME :inst
+
+The instance parameter must have the same value as that of the
+instantiation of the basic name analysis module, i.e. `AlgScope',
+`CScope', or `BuScope'.  Several instances may be used for testing the
+bindings in different name spaces.  Unfortunately, this module is NOT
+usable if the name analysis module is instantiated with a referto
+parameter that modifies the key attribute name.
+
+   The module makes use of the facility to associate a `DefTableKey'
+to scopes: for each 
+ `NAMERangeScope' a new key, and for each `NAMERangeScopeProp' its
+`ScopeKey'.  
+ `NAMERootScope.NAMEGotEnvKey' indicates that all those keys are
+associated.  If that facility is also used independent of the
+`ShowBinding' module, the computations of
+`NAMERangeScope.NAMEGotEnvKey' and 
+ `NAMERangeScopeProp.NAMEGotPropEnvKey' have to be overridden to avoid
+interference with the intended computations.
+
+   The module associates a property named `NAMELine' to each
+identifier key, and to each key of a scope.  Its value is the line
+number where the binding is established. An instance of the
+`NAMESetFirst' module is used for that purpose.  Line number 0 is
+shown for definitions of identifiers and for scopes if they are not
+established by roles of name analysis modules. That holds in
+particular for predefined identifiers and for the root environment.
+
+
+File: name,  Node: Environment Module,  Prev: Name Analysis Test,  Up: top
+
+Environment Module
+******************
+
+   This module implements a standard contour model for name analysis. 
+The data structure is a tree of "scopes", each of which can contain an
+arbitrary number of definitions.  A definition is a binding of an
+identifier to an object in the definition table (*note PDL Reference
+Manual: (deftbl)top.).  For an identifier `idn' and a scope `sc' there
+is at most one binding in `sc'.
+
+   The environment module provides operations for building scope
+trees, adding definitions to specific scopes, and searching individual
+scopes or sequences of scopes for the binding of a particular
+identifier. Inheritance relations can be established between scopes to
+support object-oriented name analysis.
+
+   The module is capable of building multiple trees of scopes in order
+to model distinct name spaces, such that bindings in one tree do not
+effect the lookup in another tree.
+
+   The module places no constraints on the sequence of construction,
+definition and lookup operations; there is one exception: an
+inheritance relation may not be established for a scope that has
+already been involved in a lookup operation.
+
+   The module implements certain lookup operations such that linear
+search through several scopes is avoided in order to reduce the
+amortized asymptotic cost of name analysis.  This effect on efficiency
+can be lost if the sequence of those lookup operations arbitrarily
+often switches the scopes they are applied to.
+
+   The modules described in the Name Analysis Library (*note Name
+Analysis: (name)top.) provide solutions for common name analysis tasks
+based on this environment module.  If they are used the interface of
+this module is available for use in `.lido' specifications; otherwise
+the interface is made available by adding `$/Name/envmod.specs' to the
+processor specification.  In C modules the interface of the
+environment module is introduced by `#include "envmod.h"'.
+
+* Menu:
+
+* Types::		Exported types and values
+* Constructors::	Operations to build the scope tree
+* Inheritance::		Operations to establish inheritance
+* Bindings::		Operations to establish bindings
+* Lookup::		Operations to find bindings
+* Hidden::		Operations to find additional bindings
+* Queries::		Operations to examine environments
+
+
+File: name,  Node: Types,  Next: Constructors,  Up: Environment Module
+
+Exported types and values
+=========================
+
+   The following types and constant values are provided to represent
+name analysis data:
+
+`Environment'
+     A pointer to a node in the tree of scopes.  It is used either to
+     refer to a single scope, or to refer to a scope and all the
+     scopes that are visible from it (i.e. its ancestors in the tree
+     and the scopes that are inherited by each).
+
+`NoEnv'
+     A constant of type `Environment' that represents no environment.
+
+`Binding'
+     A pointer to a triple `(int idn, Environment sc, DefTableKey key)'
+     that represents the binding of the identifier `idn' in the scope
+     pointed to by `sc' to the entity `key'.
+
+`NoBinding'
+     A constant of type `Binding' that represents no binding.
+
+`InheritPtr'
+     An opaque type used to traverse inheritance relations.
+
+`NoInherit'
+     A constant of type `InheritPtr' that indicates the end of an
+     inheritance traversal.
+
+
+File: name,  Node: Constructors,  Next: Inheritance,  Prev: Types,  Up: Environment Module
+
+Operations to build the scope tree
+==================================
+
+   The following operations are provided for constructing the tree of
+scopes:
+
+`Environment NewEnv ()'
+     A function that creates a new tree consisting of a single, empty
+     scope and returns a reference to that empty scope.
+
+`Environment NewScope (Environment env)'
+     A function that creates a new empty scope as a child of the scope
+     pointed to by `env' and returns a reference to that empty scope.
+
+
+File: name,  Node: Inheritance,  Next: Bindings,  Prev: Constructors,  Up: Environment Module
+
+Operations to establish inheritance
+===================================
+
+   An inheritance relation from scope `fromcl' to scope `tocl' means
+that the scope `tocl' inherits the bindings of the scope `fromcl'. 
+The following operations are provided to establish and to check
+inheritance relations:
+
+`int InheritClass (Environment tocl, Environment fromcl)'
+     A function that establishes an inheritance relation from the
+     scope `fromcl' to the scope `tocl' if and only if
+
+        * `tocl' and `fromcl' are different scopes in the same tree of
+          scopes
+
+        * the graph of inheritance relations remains acyclic when
+          adding the relation
+
+        * the scope `tocl' has not yet been involved in a lookup for a
+          binding.
+
+     `InheritClass' returns 1 if the inheritance relation could be
+     established; otherwise it returns 0.
+
+`int Inheritsfrom (Environment tocl, Environment fromcl)'
+     A function that returns 1 if `tocl' and `fromcl' are the same
+     scopes, or if there is a direct or indirect inheritance relation
+     from the scope `fromcl' to the scope `tocl'.  Otherwise
+     `Inheritsfrom' returns 0.  After a call of `Inheritsfrom', no
+     further inheritance relation can be established for `tocl' or
+     `fromcl'.
+
+
+File: name,  Node: Bindings,  Next: Lookup,  Prev: Inheritance,  Up: Environment Module
+
+Operations to establish bindings
+================================
+
+   The following operations are provided to establish a binding within
+a scope:
+
+`Binding BindKey (Environment env, int idn, DefTableKey key)'
+     A function that checks the scope referenced by its `env' argument
+     for a binding of the identifier specified by its `idn' argument. 
+     If no such binding is found, a binding of the identifier `idn' to
+     the definition table object specified by `key' is added to scope
+     `env'. `BindKey' returns the value `NoBinding' if a binding
+     already exists, and returns the new binding otherwise.
+
+`int AddIdn (Environment env, int idn, DefTableKey key)'
+     A macro that calls `BindKey'.  `AddIdn' returns the value `0' if
+     `BindKey' returns `NoBinding', and returns `1' otherwise.
+
+`Binding BindKeyInScope (Environment env, int idn, DefTableKey key)'
+     A function that has the same effect as `BindKey'. 
+     `BindKeyInScope' should be used for efficiency reasons if
+     bindings are established in several different scopes before
+     lookups are performed in them.
+
+`Binding BindIdn (Environment env, int idn)'
+     A function that checks the scope referenced by its `env' argument
+     for a binding of the identifier specified by its `idn' argument. 
+     If no such binding is found, `BindIdn' obtains a value from
+     `NewKey()' and binds `idn' to that value in scope `env'. 
+     `BindIdn' returns the the binding associated with `idn'.
+
+`DefTableKey DefineIdn (Environment env, int idn)'
+     A macro that calls `BindIdn' and returns the key of the binding
+     returned by `BindIdn'.
+
+`Binding BindInScope (Environment env, int idn)'
+     A function that has the same effect as `BindIdn'.  `BindInScope'
+     should be used for efficiency reasons if bindings are established
+     in several different scopes before lookups are performed in them.
+
+   These operations are very similar, but they differ in two aspects:
+
+   * The key for the new binding is given as an argument (`BindKey',
+     `AddIdn', `BindKeyInScope'), or a new key is created for the new
+     binding (`BindIdn', `DefineIdn', `BindInScope').
+
+   * Functions that should be preferred for efficiency reasons if
+     several operations on one scope occur in sequence (`BindKey',
+     `AddIdn', `BindIdn', `DefineIdn'), or if scopes are arbitrarily
+     switched between operations (`BindKeyInScope', `BindInScope').
+
+   `DefineIdn' and `AddIdn' are provided for compatibility with
+previous versions of the environment module.
+
+
+File: name,  Node: Lookup,  Next: Hidden,  Prev: Bindings,  Up: Environment Module
+
+Operations to find bindings
+===========================
+
+   The following operations are provided to lookup bindings for given
+identifiers.  For ease of understanding they are described here as if
+the bindings of scopes were traversed in a linear search. In fact the
+implementation avoids such linear search where possible:
+
+`Binding BindingInScope (Environment env, int idn)'
+     A function that checks the scope referenced by its `env' argument
+     for a binding of the identifier specified by its `idn' argument. 
+     If no binding for `idn' is found, the scopes that are directly or
+     indirectly inherited by `env' are searched.  During that search,
+     a scope `tocl' is considered before a scope `fromcl' if `tocl'
+     inherits from `fromcl'.  The first binding found is returned; if
+     no binding is found then `NoBinding' is returned.
+
+`DefTableKey KeyInScope (Environment env, int idn)'
+     A macro that calls `BindingInScope' and returns the key of the
+     binding found.  `NoKey' is returned if no binding is found by
+     `BindingInScope'.
+
+`Binding BindingInEnv (Environment env, int idn)'
+     A function that has the same effect as `BindingInScope' except
+     that if no binding for `idn' is found for scope `env' then the
+     search continues as if `BindingInScope' was applied successively
+     to ancestors of `env' in the tree of scopes.
+
+`DefTableKey KeyInEnv (Environment env, int idn)'
+     A macro that calls `BindingInEnv' and returns the key of the
+     binding found.  `NoKey' is returned if no binding is found by
+     `BindingInEnv'.
+
+   These operations are very similar, but they differ in one aspect:
+
+   * Only the scope given as argument and those scopes it inherits
+     from are considered for the lookup (`BindingInScope',
+     `KeyInScope'), or the scope given as argument, its ancestors in
+     the tree of scopes, and those scopes they inherit from are
+     considered for the lookup (`BindingInEnv', `KeyInEnv').
+
+   `KeyInScope' and `KeyInEnv' are are provided for compatibility with
+previous versions of the environment module.
+
+
+File: name,  Node: Hidden,  Next: Queries,  Prev: Lookup,  Up: Environment Module
+
+Operations to find additional bindings
+======================================
+
+   The following operations find further bindings that are related in
+some way to a given one:
+
+`Binding OverridesBinding (Binding bind)'
+     A function that yields a hidden binding.  Let `bind' be a binding
+     of identifier `idn' in a scope `e'.  Then `OverridesBinding'
+     returns the value that `BindingInEnv(e,idn)' would have returned
+     if the binding `bind' had not existed.
+
+`Binding NextInhBinding (Environment env, Binding bind)'
+     A function that yields a binding that is also visible due to
+     multiple inheritance relations.  Let `bind' be a binding of
+     identifier `idn' in a scope `e' that has been obtained by a call
+     `BindingInScope(env, idn)', `BindingInEnv(env, idn)', or
+     `NextInhBinding(env, idn)', and let `tocl' be `env' or its next
+     ancestor that inherits from `e'.  Then `NextInhBinding' returns a
+     binding of identifier `idn', if any, in a scope `ep' that is
+     inherited by `tocl' but not by `e'; otherwise `NoBinding' is
+     returned.
+
+`DefTableKey NextInhKey (Environment env, int idn, DefTableKey key)'
+     A function that has the same effect as `NextInhBinding', except
+     that the keys of bindings (instead of the bindings themselves)
+     are supplied and returned.
+
+
+File: name,  Node: Queries,  Prev: Hidden,  Up: Environment Module
+
+Operations to examine environments
+==================================
+
+   The following operations are provided to obtain information from
+environments:
+
+`Binding DefinitionsOf(Environment env)'
+     A function that returns the first binding of the scope `env'.  It
+     returns `NoBinding' if `env' is `NoEnv' or if no identifiers are
+     bound in `env'.
+
+`Binding NextDefinition(Binding b)'
+     A function that returns the next binding of the scope `EnvOf(b)'. 
+     It returns `NoBinding' if `b' is `NoBinding' or if `b' is the
+     last binding of `EnvOf(b)'.
+
+`int IdnOf(Binding b)'
+     A function that returns the identifier bound by `b'.  It returns
+     `NoIdn' if `b' is `NoBinding'.
+
+`DefTableKey KeyOf(Binding b)'
+     A function that returns the key bound by `b'.  It returns `NoKey'
+     if `b' is `NoBinding'.
+
+`Environment EnvOf(Binding b)'
+     A function that returns the environment containing `b'.  It
+     returns `NoEnv' if `b' is `NoBinding'.
+
+`Environment ParentOf(Environment env)'
+     A function that returns the parent of `env' in a tree of scopes. 
+     It returns `NoEnv' if `env' is `NoEnv' or if `env' is the root of
+     the tree.
+
+`DefTableKey SetKeyOfEnv(Environment env, DefTableKey k)'
+     A function that associates the key `k' with the scope `env'.  It
+     returns `k' unless `env' is `NoEnv'; in that case it returns
+     `NoKey'.
+
+`DefTableKey KeyOfEnv(Environment env)'
+     A function that returns the key `k' associated with the scope
+     `env' by the most recent operation `SetKeyOfEnv(env,k)'.  It
+     returns `NoKey' if `env' is `NoEnv' or if `SetKeyOfEnv(env,k)'
+     has never been executed.
+
+`int IsClass(Environment env)'
+     A function that returns 1 if the scope `env' has been argument of
+     a call of `InheritClass'; otherwise 0 is returned.
+
+`InheritPtr DirectInherits(Environment env)'
+     A function that returns the first direct inheritance relation to
+     `env' established by a call of `InheritClass(env,fromcl)'.  It
+     returns `NoInherit' if `env' is `NoEnv' or if
+     `InheritClass(env,fromcl)' has never been invoked.
+
+`InheritPtr NextInherit(InheritPtr inh)'
+     A function that returns the next direct inheritance relation.  It
+     returns `NoInherit' if `inh' is `NoInherit' or if there are no
+     more direct inheritances for the given scope.
+
+`Environment EnvOfInherit(InheritPtr inh)'
+     A function that returns the scope `fromcl' of the inheritance
+     relation `inh'.
+
+

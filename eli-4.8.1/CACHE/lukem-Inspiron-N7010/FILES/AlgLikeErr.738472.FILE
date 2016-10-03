@@ -1,0 +1,4 @@
+%AlgLike.Class.err == . +cmd=cat (%trenn) \
+	(AlgLike.demo/Class.err:label) \
+	(AlgLike.demo/Class.err) \
+	((AlgLike.demo/Class.err +cmd=(AlgLike.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors) :stdout) :stdout

@@ -1,0 +1,110 @@
+This is Info file help, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Info/help.tnf.
+
+
+File: help,  Node: top,  Up: (dir)
+
+   With this menu, you can decend to all the hints given in this
+documentation.
+
+* Menu:
+
+  Node                    Contents
+  ---------------------------------------------------------------------------
+* 1: open CHAIN.          Message: 'open CHAIN: unreachable chain symbol'.
+* 2: no CONSTITUENTS.     Message: 'no CONSTITUENTS symbol in subtree'.
+* 3: open INCLUDING.      Message: 'open INCLUDING: no source found'.
+* 4: limits.              What to do if a limit is reached.
+* 5: system.              Errors that indicate ELI System failure.
+
+
+File: help,  Node: open CHAIN,  Next: no CONSTITUENTS,  Up: top
+
+   The message
+
+        ERROR: open CHAIN: unreachable chain symbol
+
+   indicates that a CHAIN c mentioned in a computation (pointed to by
+the message) is associated to a context p which may be derived such
+that a node for p does NOT lie in a subtree having CHAINSTART at the
+subtree root.
+
+*Note Syntax of CHAIN-Construct: (lidoshort)CHAIN.
+
+*Note More Information: (lido)Chaining.
+
+
+File: help,  Node: no CONSTITUENTS,  Next: open INCLUDING,  Prev: open CHAIN,  Up: top
+
+   Assuming an attribution like:
+
+     RULE p: X ::= ... COMPUTE
+        ... CONSTITUENTS StructType.Code ...
+     END;
+
+   The WARNING 'no CONSTITUENTS symbol in subtree' at the CONSTITUENTS
+means that there is no StructType node below. Such situations often
+occur when you INHERIT the computation with the constituents to several
+context where some of them have the StructType below and other don't.
+
+   But writing such a CONSTITUENTS directly in a RULE computation is
+not reasonable, but well defined.
+
+*Note Syntax of CONSTITUENTS-Construct: (lidoshort)CONSTITUENTS.
+
+*Note More Information: (lido)Remote Access to Subtree Components.
+
+
+File: help,  Node: open INCLUDING,  Next: limits,  Prev: no CONSTITUENTS,  Up: top
+
+   Assume that you have a rule
+
+     RULE p: X ::= ... COMPUTE
+      ... INCLUDING StructTagDef.Tag ...
+     END;
+
+   Then 'open INCLUDING' means: It is possible to have a tree
+according to the tree grammar specified by the LIDO rules, such that
+an X node doesn't have a StructTagDef above. Hence 'INCLUDING
+StructTagDef.Tag' would be undefined in such a case. That is an ERROR.
+
+   In such cases you can use two arguments with the
+INCLUDING-Statement. The second one will be used if the first doesn't
+exist.
+
+*Note Syntax of INCLUDING-Construct: (lidoshort)INCLUDING.
+
+*Note More Information: (lido)Remote Access to an Including Symbol.
+
+
+File: help,  Node: limits,  Next: system,  Prev: open INCLUDING,  Up: top
+
+   This message indicates that a limit has been reached. It's possible
+that the behaviour can be changed by increasing a constant in one of
+the ELI Modules.
+
+   Please describe your problem and send the description to
+
+        elibugs@cs.colorado.edu
+
+
+File: help,  Node: system,  Prev: limits,  Up: top
+
+   This message is an indication for a serious failure in ELI.
+
+   To get a fix for your problem, please describe what you have done
+and send that description to
+
+        elibugs@cs.colorado.edu
+
+
+
+Tag Table:
+Node: top134
+Node: open CHAIN720
+Node: no CONSTITUENTS1171
+Node: open INCLUDING1902
+Node: limits2627
+Node: system2956
+
+End Tag Table

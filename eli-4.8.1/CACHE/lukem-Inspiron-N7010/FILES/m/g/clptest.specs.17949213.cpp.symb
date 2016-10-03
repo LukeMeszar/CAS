@@ -1,0 +1,17 @@
+USED TREE SYMBOLS:
+   prog (4, 8)
+      direct INHERITS ROOTCLASS
+         all INHERITS ROOTCLASS
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+RULES:
+   axiom (7, 6)
+      ATTRIBUTES
+      plain$1 (10, 9): SYNT, VOID
+   

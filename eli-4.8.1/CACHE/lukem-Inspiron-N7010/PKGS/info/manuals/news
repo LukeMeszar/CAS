@@ -1,0 +1,37 @@
+This is Info file news, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/news.tnf.
+
+
+File: news,  Node: top,  Prev: (dir),  Up: (dir)
+
+New Features of Eli
+*******************
+
+   $Date$
+
+   This document lists information-documents that contain new
+facilities available in Eli and those modifications made since the
+previous distributed Version that might be of general interest. Advice
+is given to upgrade Eli-Specifications written for older Eli-Versions.
+Numerous corrections, improvements, and additions have been made
+without being described here. They'll just help users to solve their
+problem without taking notice of Eli's mechanism.
+
+* Menu:
+
+* (news4.8).::      New Features of Eli Version 4.8
+* (news4.7).::      New Features of Eli Version 4.7
+* (news4.6).::      New Features of Eli Version 4.6
+* (news4.5).::      New Features of Eli Version 4.5
+* (news4.4).::      New Features of Eli Version 4.4
+* (news4.3).::      New Features of Eli Version 4.3
+* (news4.2).::      New Features of Eli Version 4.2
+* (news4.1).::      New Features of Eli Version 4.1
+* (news4.0).::      New Features of Eli Version 4.0
+
+
+
+Tag Table:
+Node: top133
+
+End Tag Table

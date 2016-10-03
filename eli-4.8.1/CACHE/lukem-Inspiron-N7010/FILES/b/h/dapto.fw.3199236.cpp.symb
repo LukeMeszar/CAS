@@ -1,0 +1,366 @@
+USED TREE SYMBOLS:
+   operation_sig (321, 9)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   iddef (321, 39)
+      direct INHERITS ExportUnique, ExportIdDefScope, IdentOcc, ptg_ident
+         all INHERITS IdentOcc, ptg_ident, ExportUnique, ExportIdDefScope
+      ATTRIBUTES
+      ExportUnique (321, 39): SYNT, int
+      _GotExportUnique (321, 39): SYNT, VOID
+      Sym (321, 39): SYNT, int
+      Bind (321, 39): SYNT, Binding
+      Key (581, 59): SYNT, DefTableKey
+      idcode (646, 54): SYNT, CharPtr
+   
+   str (321, 45)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   operation_block (321, 49)
+      direct INHERITS ExportRangeUnique, ExportRangeScope
+         all INHERITS ExportRangeUnique, ExportAnyScope, ExportRangeScope
+      ATTRIBUTES
+      _GotExportUnique (321, 49): SYNT, VOID
+      ExportGotKeys (321, 49): SYNT, VOID
+      ExportEnv (321, 49): INH, Environment
+   
+   body (321, 65)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      bodycode (592, 50): SYNT, PTGNode
+      line (590, 50): SYNT, int
+   
+   typeid (327, 69)
+      direct INHERITS TypeIdDefScope, IdentOcc, ptg_ident
+         all INHERITS IdentOcc, ptg_ident, TypeIdDefScope
+      ATTRIBUTES
+      Bind (327, 69): SYNT, Binding
+      idcode (553, 50): SYNT, CharPtr
+      Sym (562, 64): SYNT, int
+      Key (619, 20): SYNT, DefTableKey
+   
+   param (332, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   spec (343, 5)
+      direct INHERITS ROOTCLASS
+         all INHERITS ExportRangeUnique, ExportAnyScope, ExportRootScope, TypeAnyScope, TypeRootScope, ROOTCLASS
+      ATTRIBUTES
+      _GotExportUnique (343, 5): SYNT, VOID
+      ExportGotKeys (343, 5): SYNT, VOID
+      ExportEnv (343, 5): SYNT, Environment
+      TypeGotKeys (343, 5): SYNT, VOID
+      TypeEnv (343, 5): SYNT, Environment
+      translationsset (582, 59): SYNT, VOID
+   
+   aspects (343, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   aspect_stmt (353, 5)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   sigs (353, 40)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   event_sig (362, 5)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      translations (579, 15): SYNT, PTGNode
+      translationvars (581, 15): SYNT, PTGNode
+   
+   export (362, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      exported (384, 12): SYNT, int
+   
+   event_block (362, 44)
+      direct INHERITS ExportRangeUnique, ExportRangeScope
+         all INHERITS ExportRangeUnique, ExportAnyScope, ExportRangeScope
+      ATTRIBUTES
+      _GotExportUnique (362, 44): SYNT, VOID
+      ExportGotKeys (362, 44): SYNT, VOID
+      ExportEnv (362, 44): INH, Environment
+   
+   attr (390, 5)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   sig (416, 5)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   bstr (416, 13)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   iduse (437, 8)
+      direct INHERITS ExportIdUseEnv, IdentOcc, ptg_ident
+         all INHERITS IdentOcc, ptg_ident, _ExportInhPrecondDefault, ExportIdUseEnv
+      ATTRIBUTES
+      idcode (437, 8): SYNT, CharPtr
+      _ExportInhPrecond (437, 8): SYNT, VOID
+      Sym (437, 8): SYNT, int
+      Bind (437, 8): SYNT, Binding
+      Key (597, 42): SYNT, DefTableKey
+   
+   text (460, 16)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   translation_sig (573, 41)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      translationsset (595, 21): SYNT, VOID
+   
+   attrs (659, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   optattrs (667, 21)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   ident (671, 11)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   optparams (679, 25)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   params (695, 15)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS ExportRangeUnique, ExportRootScope, TypeRootScope
+         all INHERITS ExportRangeUnique, ExportAnyScope, ExportRootScope, TypeAnyScope, TypeRootScope
+      ATTRIBUTES
+   
+   TypeRootScope (4, 33)
+      direct INHERITS TypeAnyScope
+         all INHERITS TypeAnyScope
+      ATTRIBUTES
+      TypeGotKeys (15, 8): SYNT, VOID
+      TypeEnv (14, 41): SYNT, Environment
+   
+   TypeAnyScope (25, 29)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      TypeEnv (128, 41): No Class, No Type
+   
+   TypeIdDefScope (35, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (42, 55): SYNT, int
+      Key (45, 30): SYNT, DefTableKey
+      Bind (44, 26): SYNT, Binding
+   
+   ExportRootScope (148, 33)
+      direct INHERITS ExportAnyScope
+         all INHERITS ExportAnyScope
+      ATTRIBUTES
+      ExportGotKeys (159, 8): SYNT, VOID
+      ExportEnv (158, 43): SYNT, Environment
+   
+   ExportRangeScope (163, 14)
+      direct INHERITS ExportAnyScope
+         all INHERITS ExportAnyScope
+      ATTRIBUTES
+      ExportGotKeys (170, 8): SYNT, VOID
+      ExportEnv (168, 7): INH, Environment
+   
+   ExportAnyScope (169, 29)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      ExportEnv (272, 43): No Class, No Type
+   
+   ExportIdDefScope (179, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (186, 59): SYNT, int
+      Key (189, 32): SYNT, DefTableKey
+      Bind (188, 26): SYNT, Binding
+   
+   ExportIdUseEnv (193, 14)
+      direct INHERITS _ExportInhPrecondDefault
+         all INHERITS _ExportInhPrecondDefault
+      ATTRIBUTES
+      _ExportInhPrecond (201, 41): SYNT, VOID
+      Sym (200, 64): SYNT, int
+      Key (203, 32): SYNT, DefTableKey
+      Bind (202, 26): SYNT, Binding
+   
+   _ExportInhPrecondDefault (198, 38)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      _ExportInhPrecond (209, 8): SYNT, VOID
+   
+   ExportRangeUnique (291, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      _GotExportUnique (313, 48): SYNT, VOID
+   
+   ExportUnique (296, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      ExportUnique (311, 8): SYNT, int
+      Key (312, 31): No Class, DefTableKey
+      _GotExportUnique (308, 8): SYNT, VOID
+   
+   ptg_ident (431, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (433, 37): SYNT, int
+      idcode (433, 10): SYNT, CharPtr
+   
+   IdentOcc (605, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (605, 30): SYNT, int
+   
+RULES:
+   rule_1 (585, 1)
+      ATTRIBUTES
+      translationvars (598, 37): SYNT, PTGNode
+      translations (596, 60): SYNT, PTGNode
+   
+   rule_2 (505, 1)
+      ATTRIBUTES
+   
+   rule_3 (460, 1)
+      ATTRIBUTES
+   
+   rule_4 (421, 1)
+      ATTRIBUTES
+   
+   rule_5 (415, 1)
+      ATTRIBUTES
+   
+   rule_6 (389, 1)
+      ATTRIBUTES
+      arg (557, 43): SYNT, PTGNode
+      type (559, 56): SYNT, PTGNode
+      cast (549, 6): SYNT, PTGNode
+   
+   rule_7 (381, 1)
+      ATTRIBUTES
+   
+   rule_8 (375, 1)
+      ATTRIBUTES
+   
+   rule_9 (361, 1)
+      ATTRIBUTES
+   
+   rule_10 (352, 1)
+      ATTRIBUTES
+   
+   rule_11 (342, 1)
+      ATTRIBUTES
+      plain$5 (632, 5): SYNT, VOID
+      plain$3 (409, 5): SYNT, VOID
+      plain$2 (406, 5): SYNT, VOID
+      plain$1 (347, 5): SYNT, VOID
+   
+   rule_31 (726, 6)
+      ATTRIBUTES
+   
+   rule_30 (722, 6)
+      ATTRIBUTES
+   
+   rule_29 (718, 6)
+      ATTRIBUTES
+   
+   rule_28 (714, 6)
+      ATTRIBUTES
+   
+   rule_27 (710, 6)
+      ATTRIBUTES
+   
+   rule_26 (706, 6)
+      ATTRIBUTES
+   
+   rule_25 (702, 6)
+      ATTRIBUTES
+   
+   rule_24 (698, 6)
+      ATTRIBUTES
+   
+   rule_23 (694, 6)
+      ATTRIBUTES
+   
+   rule_22 (690, 6)
+      ATTRIBUTES
+   
+   rule_21 (686, 6)
+      ATTRIBUTES
+   
+   rule_20 (682, 6)
+      ATTRIBUTES
+   
+   rule_19 (678, 6)
+      ATTRIBUTES
+   
+   rule_18 (674, 6)
+      ATTRIBUTES
+   
+   rule_17 (670, 6)
+      ATTRIBUTES
+   
+   rule_16 (666, 6)
+      ATTRIBUTES
+   
+   rule_15 (662, 6)
+      ATTRIBUTES
+   
+   rule_14 (658, 6)
+      ATTRIBUTES
+   
+   rule_13 (654, 6)
+      ATTRIBUTES
+   
+   rule_12 (650, 6)
+      ATTRIBUTES
+   
+   operation_sig2 (447, 1)
+      ATTRIBUTES
+      plain$4 (619, 5): SYNT, VOID
+   
+   operation_sig1 (440, 1)
+      ATTRIBUTES
+   

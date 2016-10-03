@@ -1,0 +1,2430 @@
+
+Computations for Rule rule_1 <
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      doc[0].id
+   ]
+   right: 
+   RuleTermAcc: lit[1]
+   coord: line 243, col 30
+]
+>
+Computations for Rule rule_2 <
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      doc[0].id
+   ]
+   right: 
+   Name: NoStrIndex
+   coord: line 242, col 30
+]
+>
+Computations for Rule rule_3 <
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      name[0].id
+   ]
+   right: 
+   RuleTermAcc: ident[1]
+   coord: line 241, col 30
+]
+>
+Computations for Rule rule_4 <
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].usageerrmsg
+   ]
+   right: 
+   Depend [
+      expr: 
+      IntValue: 1
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            param[0].usageerrmsg
+         ]
+      >
+      coord: line 219, col 25
+   ]
+   coord: line 219, col 5
+]
+>
+Computations for Rule rule_5 <
+Computation in RULE rule_5 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_5 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].errmsg
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: PTGstr
+         params: <
+            RuleTermAcc: lit[1]
+         >
+         coord: line 213, col 20
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            param[0].errmsg
+         ]
+      >
+      coord: line 213, col 20
+   ]
+   coord: line 213, col 5
+]
+>
+Computations for Rule rule_6 <
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].ousages
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].ousages
+         ]
+         Call [
+            name: PTGuuse
+            params: <
+               Call [
+                  name: PTGpstr
+                  params: <
+                     RuleTermAcc: lit[1]
+                     AttrAccRule [ 
+                        IsAttr
+                        param[0].maxstrlen
+                     ]
+                  >
+                  coord: line 207, col 38
+               ]
+            >
+            coord: line 207, col 29
+         ]
+      >
+      coord: line 206, col 21
+   ]
+   coord: line 206, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].opts
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].opts
+         ]
+         Call [
+            name: PTGseq
+            params: <
+               Call [
+                  name: PTGlit
+                  params: <
+                     RuleTermAcc: lit[1]
+                  >
+                  coord: line 203, col 34
+               ]
+               Call [
+                  name: PTGopt
+                  params: <
+                     StrValue: USAGE
+                     StrValue: 
+                     Call [
+                        name: PTGnone
+                        params: <
+                        >
+                        coord: line 204, col 55
+                     ]
+                     Call [
+                        name: PTGnone
+                        params: <
+                        >
+                        coord: line 204, col 67
+                     ]
+                     Call [
+                        name: PTGnone
+                        params: <
+                        >
+                        coord: line 205, col 42
+                     ]
+                  >
+                  coord: line 204, col 34
+               ]
+            >
+            coord: line 203, col 26
+         ]
+      >
+      coord: line 202, col 18
+   ]
+   coord: line 202, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].numopts
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].numopts
+         ]
+         IntValue: 1
+      >
+      coord: line 201, col 21
+   ]
+   coord: line 201, col 5
+]
+>
+Computations for Rule rule_7 <
+Computation in RULE rule_7 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NE
+         params: <
+            AttrAccRule [ 
+               IsChain
+               param[0].inputs
+            ]
+            IntValue: 0
+         >
+         coord: line 193, col 9
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: can't have more than one input parameter
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 194, col 9
+      ]
+   >
+   coord: line 193, col 5
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].inputs
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].inputs
+         ]
+         IntValue: 1
+      >
+      coord: line 192, col 20
+   ]
+   coord: line 192, col 5
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].pusages
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].pusages
+         ]
+         Call [
+            name: PTGuse
+            params: <
+               Call [
+                  name: PTGpstr
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        name[1].id
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        param[0].maxstrlen
+                     ]
+                  >
+                  coord: line 190, col 37
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  doc[2].id
+               ]
+            >
+            coord: line 190, col 29
+         ]
+      >
+      coord: line 189, col 21
+   ]
+   coord: line 189, col 5
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].externs
+         ]
+         Call [
+            name: PTGkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 188, col 44
+         ]
+      >
+      coord: line 188, col 21
+   ]
+   coord: line 188, col 5
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].params
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].params
+         ]
+         Call [
+            name: PTGinput
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 187, col 42
+         ]
+      >
+      coord: line 187, col 20
+   ]
+   coord: line 187, col 5
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].decls
+         ]
+         Call [
+            name: PTGkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 186, col 40
+         ]
+      >
+      coord: line 186, col 19
+   ]
+   coord: line 186, col 5
+]
+>
+Computations for Rule rule_8 <
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].pusages
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].pusages
+         ]
+         Call [
+            name: PTGuses
+            params: <
+               Call [
+                  name: PTGpstr
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        name[1].id
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        param[0].maxstrlen
+                     ]
+                  >
+                  coord: line 179, col 38
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  doc[2].id
+               ]
+            >
+            coord: line 179, col 29
+         ]
+      >
+      coord: line 178, col 21
+   ]
+   coord: line 178, col 5
+]
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].externs
+         ]
+         Call [
+            name: PTGkkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 177, col 44
+         ]
+      >
+      coord: line 177, col 21
+   ]
+   coord: line 177, col 5
+]
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].params
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].params
+         ]
+         Call [
+            name: PTGmparam
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 176, col 42
+         ]
+      >
+      coord: line 176, col 20
+   ]
+   coord: line 176, col 5
+]
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].decls
+         ]
+         Call [
+            name: PTGkkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 175, col 40
+         ]
+      >
+      coord: line 175, col 19
+   ]
+   coord: line 175, col 5
+]
+>
+Computations for Rule rule_9 <
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].pusages
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].pusages
+         ]
+         Call [
+            name: PTGuse
+            params: <
+               Call [
+                  name: PTGpstr
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        name[1].id
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        param[0].maxstrlen
+                     ]
+                  >
+                  coord: line 168, col 37
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  doc[2].id
+               ]
+            >
+            coord: line 168, col 29
+         ]
+      >
+      coord: line 167, col 21
+   ]
+   coord: line 167, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].externs
+         ]
+         Call [
+            name: PTGkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 166, col 44
+         ]
+      >
+      coord: line 166, col 21
+   ]
+   coord: line 166, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].params
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].params
+         ]
+         Call [
+            name: PTGparam
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 165, col 42
+         ]
+      >
+      coord: line 165, col 20
+   ]
+   coord: line 165, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].decls
+         ]
+         Call [
+            name: PTGkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  name[1].id
+               ]
+            >
+            coord: line 164, col 40
+         ]
+      >
+      coord: line 164, col 19
+   ]
+   coord: line 164, col 5
+]
+>
+Computations for Rule rule_10 <
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].joinedstr
+   ]
+   right: 
+   StrValue: | SPACED | JOINED
+   coord: line 158, col 5
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].spaced
+   ]
+   right: 
+   IntValue: 1
+   coord: line 157, col 5
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].joined
+   ]
+   right: 
+   IntValue: 1
+   coord: line 156, col 5
+]
+>
+Computations for Rule rule_11 <
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].joinedstr
+   ]
+   right: 
+   StrValue: | JOINED
+   coord: line 150, col 5
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].spaced
+   ]
+   right: 
+   IntValue: 0
+   coord: line 149, col 5
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].joined
+   ]
+   right: 
+   IntValue: 1
+   coord: line 148, col 5
+]
+>
+Computations for Rule rule_12 <
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].joinedstr
+   ]
+   right: 
+   StrValue: | SPACED
+   coord: line 142, col 5
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].spaced
+   ]
+   right: 
+   IntValue: 1
+   coord: line 141, col 5
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      join[0].joined
+   ]
+   right: 
+   IntValue: 0
+   coord: line 140, col 5
+]
+>
+Computations for Rule rule_13 <
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].nameid
+   ]
+   right: 
+   INCLUDING (tparam.nameid) propagate value 
+   coord: line 66, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].docid
+   ]
+   right: 
+   INCLUDING (tparam.docid) propagate value 
+   coord: line 67, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].joinedstr
+   ]
+   right: 
+   INCLUDING (tparam.joinedstr) propagate value 
+   coord: line 68, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].rep
+   ]
+   right: 
+   IntValue: 1
+   coord: line 134, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].opt
+   ]
+   right: 
+   Call [
+      name: PTGopt
+      params: <
+         StrValue: STRVAL | PLURAL
+         AttrAccRule [ 
+            IsAttr
+            type[0].joinedstr
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 132, col 59
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 133, col 24
+         ]
+         Call [
+            name: PTGvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 133, col 36
+         ]
+      >
+      coord: line 132, col 16
+   ]
+   coord: line 132, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].externs
+         ]
+         Call [
+            name: PTGkkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 131, col 42
+         ]
+      >
+      coord: line 131, col 20
+   ]
+   coord: line 131, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].decls
+         ]
+         Call [
+            name: PTGkkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 130, col 38
+         ]
+      >
+      coord: line 130, col 18
+   ]
+   coord: line 130, col 5
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].desc
+   ]
+   right: 
+   StrValue: string
+   coord: line 129, col 5
+]
+>
+Computations for Rule rule_14 <
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].rep
+   ]
+   right: 
+   IntValue: 0
+   coord: line 69, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].nameid
+   ]
+   right: 
+   INCLUDING (tparam.nameid) propagate value 
+   coord: line 66, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].docid
+   ]
+   right: 
+   INCLUDING (tparam.docid) propagate value 
+   coord: line 67, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].joinedstr
+   ]
+   right: 
+   INCLUDING (tparam.joinedstr) propagate value 
+   coord: line 68, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].opt
+   ]
+   right: 
+   Call [
+      name: PTGopt
+      params: <
+         StrValue: STRVAL
+         AttrAccRule [ 
+            IsAttr
+            type[0].joinedstr
+         ]
+         Call [
+            name: PTGcount
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 122, col 50
+         ]
+         Call [
+            name: PTGvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 123, col 24
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 123, col 46
+         ]
+      >
+      coord: line 122, col 16
+   ]
+   coord: line 122, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].externs
+         ]
+         Call [
+            name: PTGkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 121, col 42
+         ]
+      >
+      coord: line 121, col 20
+   ]
+   coord: line 121, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq3
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].decls
+         ]
+         Call [
+            name: PTGkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 119, col 39
+         ]
+         Call [
+            name: PTGidecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 120, col 27
+         ]
+      >
+      coord: line 119, col 18
+   ]
+   coord: line 119, col 5
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].desc
+   ]
+   right: 
+   StrValue: string
+   coord: line 118, col 5
+]
+>
+Computations for Rule rule_15 <
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].nameid
+   ]
+   right: 
+   INCLUDING (tparam.nameid) propagate value 
+   coord: line 66, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].docid
+   ]
+   right: 
+   INCLUDING (tparam.docid) propagate value 
+   coord: line 67, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].joinedstr
+   ]
+   right: 
+   INCLUDING (tparam.joinedstr) propagate value 
+   coord: line 68, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].rep
+   ]
+   right: 
+   IntValue: 1
+   coord: line 112, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].opt
+   ]
+   right: 
+   Call [
+      name: PTGopt
+      params: <
+         StrValue: INTVAL | PLURAL
+         AttrAccRule [ 
+            IsAttr
+            type[0].joinedstr
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 110, col 59
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 111, col 25
+         ]
+         Call [
+            name: PTGvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 111, col 37
+         ]
+      >
+      coord: line 110, col 16
+   ]
+   coord: line 110, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].externs
+         ]
+         Call [
+            name: PTGkkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 109, col 42
+         ]
+      >
+      coord: line 109, col 20
+   ]
+   coord: line 109, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].decls
+         ]
+         Call [
+            name: PTGkkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 108, col 38
+         ]
+      >
+      coord: line 108, col 18
+   ]
+   coord: line 108, col 5
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].desc
+   ]
+   right: 
+   StrValue: int
+   coord: line 107, col 5
+]
+>
+Computations for Rule rule_16 <
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].rep
+   ]
+   right: 
+   IntValue: 0
+   coord: line 69, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].nameid
+   ]
+   right: 
+   INCLUDING (tparam.nameid) propagate value 
+   coord: line 66, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].docid
+   ]
+   right: 
+   INCLUDING (tparam.docid) propagate value 
+   coord: line 67, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].joinedstr
+   ]
+   right: 
+   INCLUDING (tparam.joinedstr) propagate value 
+   coord: line 68, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].opt
+   ]
+   right: 
+   Call [
+      name: PTGopt
+      params: <
+         StrValue: INTVAL
+         AttrAccRule [ 
+            IsAttr
+            type[0].joinedstr
+         ]
+         Call [
+            name: PTGcount
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 100, col 50
+         ]
+         Call [
+            name: PTGvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 101, col 25
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 101, col 47
+         ]
+      >
+      coord: line 100, col 16
+   ]
+   coord: line 100, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].externs
+         ]
+         Call [
+            name: PTGkextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 99, col 42
+         ]
+      >
+      coord: line 99, col 20
+   ]
+   coord: line 99, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq3
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].decls
+         ]
+         Call [
+            name: PTGkdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 97, col 39
+         ]
+         Call [
+            name: PTGidecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 98, col 27
+         ]
+      >
+      coord: line 97, col 18
+   ]
+   coord: line 97, col 5
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].desc
+   ]
+   right: 
+   StrValue: int
+   coord: line 96, col 5
+]
+>
+Computations for Rule rule_17 <
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].nameid
+   ]
+   right: 
+   INCLUDING (tparam.nameid) propagate value 
+   coord: line 66, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].docid
+   ]
+   right: 
+   INCLUDING (tparam.docid) propagate value 
+   coord: line 67, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].joinedstr
+   ]
+   right: 
+   INCLUDING (tparam.joinedstr) propagate value 
+   coord: line 68, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].rep
+   ]
+   right: 
+   IntValue: 1
+   coord: line 90, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].opt
+   ]
+   right: 
+   Call [
+      name: PTGopt
+      params: <
+         StrValue: BOOL | PLURAL
+         StrValue: 
+         Call [
+            name: PTGvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 88, col 45
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 88, col 67
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 89, col 25
+         ]
+      >
+      coord: line 88, col 16
+   ]
+   coord: line 88, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].externs
+         ]
+         Call [
+            name: PTGiextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 87, col 42
+         ]
+      >
+      coord: line 87, col 20
+   ]
+   coord: line 87, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].decls
+         ]
+         Call [
+            name: PTGbdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 86, col 38
+         ]
+      >
+      coord: line 86, col 18
+   ]
+   coord: line 86, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].desc
+   ]
+   right: 
+   StrValue: 
+   coord: line 85, col 5
+]
+>
+Computations for Rule rule_18 <
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].rep
+   ]
+   right: 
+   IntValue: 0
+   coord: line 69, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].nameid
+   ]
+   right: 
+   INCLUDING (tparam.nameid) propagate value 
+   coord: line 66, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].docid
+   ]
+   right: 
+   INCLUDING (tparam.docid) propagate value 
+   coord: line 67, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].joinedstr
+   ]
+   right: 
+   INCLUDING (tparam.joinedstr) propagate value 
+   coord: line 68, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].opt
+   ]
+   right: 
+   Call [
+      name: PTGopt
+      params: <
+         StrValue: BOOL
+         StrValue: 
+         Call [
+            name: PTGvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 78, col 36
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 78, col 58
+         ]
+         Call [
+            name: PTGnone
+            params: <
+            >
+            coord: line 79, col 24
+         ]
+      >
+      coord: line 78, col 16
+   ]
+   coord: line 78, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].externs
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].externs
+         ]
+         Call [
+            name: PTGiextern
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 77, col 42
+         ]
+      >
+      coord: line 77, col 20
+   ]
+   coord: line 77, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      type[0].decls
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            type[0].decls
+         ]
+         Call [
+            name: PTGbdecl
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[0].nameid
+               ]
+            >
+            coord: line 76, col 38
+         ]
+      >
+      coord: line 76, col 18
+   ]
+   coord: line 76, col 5
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      type[0].desc
+   ]
+   right: 
+   StrValue: 
+   coord: line 75, col 5
+]
+>
+Computations for Rule rule_19 <
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].usage
+   ]
+   right: 
+   Call [
+      name: PTGmsg
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            doc[5].id
+         ]
+         Call [
+            name: IF
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  type[4].rep
+               ]
+               StrValue: *
+               StrValue: 
+            >
+            coord: line 61, col 36
+         ]
+      >
+      coord: line 61, col 20
+   ]
+   coord: line 61, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].desc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      type[4].desc
+   ]
+   coord: line 60, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].spaced
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      join[3].spaced
+   ]
+   coord: line 59, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].joinedstr
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      join[3].joinedstr
+   ]
+   coord: line 58, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].joined
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      join[3].joined
+   ]
+   coord: line 57, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].opt
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      type[4].opt
+   ]
+   coord: line 56, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].nameid
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      name[1].id
+   ]
+   coord: line 55, col 5
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      tparam[0].docid
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      doc[5].id
+   ]
+   coord: line 54, col 5
+]
+>
+Computations for Rule rule_20 <
+Computation in RULE rule_20 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+Computation in RULE rule_20 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].ousages
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].ousages
+         ]
+         Call [
+            name: PTGtuse
+            params: <
+               Call [
+                  name: PTGpstr
+                  params: <
+                     RuleTermAcc: lit[1]
+                     AttrAccRule [ 
+                        IsAttr
+                        param[0].maxstrlen
+                     ]
+                  >
+                  coord: line 48, col 38
+               ]
+            >
+            coord: line 48, col 29
+         ]
+      >
+      coord: line 47, col 21
+   ]
+   coord: line 47, col 5
+]
+Computation in RULE rule_20 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].opts
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].opts
+         ]
+         Call [
+            name: PTGtopt
+            params: <
+               RuleTermAcc: lit[1]
+            >
+            coord: line 46, col 38
+         ]
+      >
+      coord: line 46, col 18
+   ]
+   coord: line 46, col 5
+]
+Computation in RULE rule_20 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].numopts
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].numopts
+         ]
+         IntValue: 1
+      >
+      coord: line 45, col 21
+   ]
+   coord: line 45, col 5
+]
+>
+Computations for Rule rule_21 <
+Computation in RULE rule_21 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: clp.h
+      Call [
+         name: PTGheader
+         params: <
+            AttrAccRule [ 
+               IsChain
+               params[1].externs
+            ]
+         >
+         coord: line 34, col 26
+      ]
+   >
+   coord: line 34, col 5
+]
+Computation in RULE rule_21 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: clp.c
+      Call [
+         name: PTGfile
+         params: <
+            AttrAccRule [ 
+               IsChain
+               params[1].decls
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].numopts
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].opts
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].ousages
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].pusages
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].errmsg
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].usageerrmsg
+            ]
+            AttrAccRule [ 
+               IsChain
+               params[1].params
+            ]
+         >
+         coord: line 30, col 26
+      ]
+   >
+   coord: line 30, col 5
+]
+Computation in RULE rule_21 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].maxstrlen
+   ]
+   right: 
+   CONSTITUENTS (literal.len) SHIELD (doc) WITH (int, MAX, IDENTICAL, ZERO) propagate value 
+   coord: line 18, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].externs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 28, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].pusages
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 27, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].ousages
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 26, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].params
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 25, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].opts
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 23, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].numopts
+   ]
+   right: 
+   IntValue: 0
+   coord: line 22, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].decls
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 21, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].inputs
+   ]
+   right: 
+   IntValue: 0
+   coord: line 16, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].usageerrmsg
+   ]
+   right: 
+   IntValue: 0
+   coord: line 15, col 5
+]
+Computation in RULE rule_21 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      params[1].errmsg
+   ]
+   right: 
+   Call [
+      name: PTGcstr
+      params: <
+         StrValue: %p cannot open %f: %t
+      >
+      coord: line 14, col 32
+   ]
+   coord: line 14, col 5
+]
+>
+Computations for Rule rule_27 <
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      param[0].maxstrlen
+   ]
+   right: 
+   INCLUDING (spec.maxstrlen) propagate value 
+   coord: line 39, col 5
+]
+>
+Computations for Rule rule_26 <
+>
+Computations for Rule rule_25 <
+>
+Computations for Rule rule_24 <
+>
+Computations for Rule rule_23 <
+>
+Computations for Rule rule_22 <
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      literal[0].opts
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            literal[0].opts
+         ]
+         Call [
+            name: PTGseq
+            params: <
+               Call [
+                  name: PTGlit
+                  params: <
+                     RuleTermAcc: lit[1]
+                  >
+                  coord: line 226, col 33
+               ]
+               INCLUDING (tparam.opt) propagate value 
+            >
+            coord: line 226, col 25
+         ]
+      >
+      coord: line 225, col 17
+   ]
+   coord: line 225, col 5
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      literal[0].ousages
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            literal[0].ousages
+         ]
+         AttrAccRule [ 
+            IsAttr
+            literal[0].usage
+         ]
+      >
+      coord: line 237, col 20
+   ]
+   coord: line 237, col 5
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      literal[0].numopts
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            literal[0].numopts
+         ]
+         IntValue: 1
+      >
+      coord: line 224, col 20
+   ]
+   coord: line 224, col 5
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      literal[0].len
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         Call [
+            name: string_length
+            params: <
+               RuleTermAcc: lit[1]
+            >
+            coord: line 238, col 21
+         ]
+         Call [
+            name: strlen
+            params: <
+               INCLUDING (tparam.desc) propagate value 
+            >
+            coord: line 238, col 43
+         ]
+      >
+      coord: line 238, col 16
+   ]
+   coord: line 238, col 5
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      literal[0].usage
+   ]
+   right: 
+   Call [
+      name: PTGseq
+      params: <
+         Call [
+            name: IF
+            params: <
+               INCLUDING (tparam.spaced) propagate value 
+               Call [
+                  name: PTGvuse
+                  params: <
+                     RuleTermAcc: lit[1]
+                     StrValue:  
+                     INCLUDING (tparam.desc) propagate value 
+                     INCLUDING (spec.maxstrlen) propagate value 
+                     INCLUDING (tparam.usage) propagate value 
+                  >
+                  coord: line 228, col 30
+               ]
+               Name: PTGNULL
+            >
+            coord: line 227, col 26
+         ]
+         Call [
+            name: IF
+            params: <
+               INCLUDING (tparam.joined) propagate value 
+               Call [
+                  name: PTGvuse
+                  params: <
+                     RuleTermAcc: lit[1]
+                     StrValue: 
+                     INCLUDING (tparam.desc) propagate value 
+                     INCLUDING (spec.maxstrlen) propagate value 
+                     INCLUDING (tparam.usage) propagate value 
+                  >
+                  coord: line 233, col 30
+               ]
+               Name: PTGNULL
+            >
+            coord: line 232, col 26
+         ]
+      >
+      coord: line 227, col 18
+   ]
+   coord: line 227, col 5
+]
+>

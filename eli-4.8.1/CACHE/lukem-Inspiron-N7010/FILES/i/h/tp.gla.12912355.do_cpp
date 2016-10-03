@@ -1,0 +1,7 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/h/w/tp.gla.12535928.gla"
+
+Identifier:     C_IDENTIFIER
+Integer:        $[0-9]+         [mkint]
+String:         $\"[^"]+\"      [mkidn]
+                C_COMMENT
+                AWK_COMMENT

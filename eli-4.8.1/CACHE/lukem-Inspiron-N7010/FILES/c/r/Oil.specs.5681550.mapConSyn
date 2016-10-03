@@ -1,0 +1,164 @@
+ArgSig:  .
+
+ArgSig: TypeIdentifier .
+
+ArgSig: TypeIdentifier ',' ArgSig .
+
+ClassArgSig:  .
+
+ClassArgSig: TypeIdentifier .
+
+ClassArgSig: TypeIdentifier ',' ClassArgSig .
+
+ClassBody: '(' ')' 'BEGIN' G7 'END' ';' .
+
+ClassBody: '(' ClassParameters ')' 'BEGIN' G7 'END' ';' .
+
+Class: 'CLASS' ClassName ClassBody .
+
+ClassCoerce: ClassOpDef ClassCoercionSig CostSpecification ';' .
+
+ClassCoercionSig: '(' ClassOneArg ')' ':' TypeIdentifier .
+
+ClassOneArg: TypeIdentifier .
+
+ClassOpDefList: G11 .
+
+ClassOperation: 'COERCION' G10 .
+
+ClassOperation: 'OPER' G9 .
+
+ClassOperationSig: '(' ClassArgSig ')' ':' TypeIdentifier .
+
+ClassOper: ClassOpDefList ClassOperationSig CostSpecification ';' .
+
+ClassParameters: G8 .
+
+Coerce: OpDef CoercionSig CostSpecification ';' .
+
+CoercionSig: '(' OneArg ')' ':' TypeIdentifier .
+
+EquivalenceClass: 'SET' SetIdDef '=' xTypeExpr ';' .
+
+G1:  .
+
+G10: ClassCoerce .
+
+G10: G10 ClassCoerce .
+
+G11: ClassOpDef .
+
+G11: G11 ',' ClassOpDef .
+
+G12: G12 ',' Singleton .
+
+G12: Singleton .
+
+G1: G1 SpecificationElement .
+
+G2: G2 Oper .
+
+G2: Oper .
+
+G3: Coerce .
+
+G3: G3 Coerce .
+
+G4: G4 ',' OpDef .
+
+G4: OpDef .
+
+G5: G5 Indication .
+
+G5: Indication .
+
+G6: G6 ',' OpRef .
+
+G6: OpRef .
+
+G7: ClassOperation .
+
+G7: G7 ClassOperation .
+
+G8: ClassParameter .
+
+G8: G8 ',' ClassParameter .
+
+G9: ClassOper .
+
+G9: G9 ClassOper .
+
+Identification: 'INDICATION' G5 .
+
+Indication: IndDef ':' OpRefList ';' .
+
+OIL: G1 .
+
+OneArg: TypeIdentifier .
+
+OpDefList: G4 .
+
+Operation: 'COERCION' G3 .
+
+Operation: 'OPER' G2 .
+
+OperationSig: '(' ArgSig ')' ':' TypeIdentifier .
+
+Oper: OpDefList OperationSig CostSpecification ';' .
+
+OpRefList: G6 .
+
+SetIdDef: Identifier .
+
+SetIdUse: Identifier .
+
+Singleton: TypeIdentifier .
+
+SpecificationElement: Class .
+
+SpecificationElement: EquivalenceClass .
+
+SpecificationElement: Identification .
+
+SpecificationElement: Operation .
+
+xTEprimary: SetIdUse .
+
+xTEprimary: '(' xTypeExpr ')' .
+
+xTEprimary: '[' xTypeList ']' .
+
+xTEterm: xTEprimary .
+
+xTEterm: xTEterm '*' xTEprimary .
+
+xTypeExpr: xTEterm .
+
+xTypeExpr: xTypeExpr '-' xTEterm .
+
+xTypeExpr: xTypeExpr '+' xTEterm .
+
+xTypeList: G12 .
+
+CostSpecification:  .
+
+CostSpecification: 'COST' Integer .
+
+OpDef:  .
+
+ClassOpDef:  .
+
+OpDef: Identifier .
+
+ClassOpDef: Identifier .
+
+TypeIdentifier: Identifier .
+
+ClassName: Identifier .
+
+ClassParameter: Identifier .
+
+IndDef: Identifier .
+
+OpRef: Identifier .
+

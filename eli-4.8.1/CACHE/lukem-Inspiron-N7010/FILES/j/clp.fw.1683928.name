@@ -1,0 +1,1 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :clp*clp_gen

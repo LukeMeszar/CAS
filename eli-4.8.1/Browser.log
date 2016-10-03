@@ -1,0 +1,27 @@
+make[1]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/texinfo'
+rm -rf core a.out *.o *~ ERRS *.a  infoReader.exe   makeinfo.exe texindex.exe 
+make[1]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/texinfo'
+make[1]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/texinfo'
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o example.o example.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o file.o file.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o info.o info.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o list.o list.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o node.o node.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o option.o option.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o system.o system.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli -c strbuild.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o util.o util.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli -c /home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt/obstack.c
+ar rcu info.a example.o file.o info.o list.o node.o option.o system.o strbuild.o util.o obstack.o
+ranlib info.a
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli -c infoReader.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o help.o help.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o page.o page.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o signals.o signals.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o menunote.o menunote.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli   -c -o typeout.o typeout.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt -I/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli -c complete.c
+gcc  -o infoReader.exe infoReader.o help.o page.o signals.o menunote.o typeout.o complete.o info.a -lncurses -ltermcap
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli  -o makeinfo.exe makeinfo.c getopt.c getopt1.c
+gcc -DMAINTAINER=\"eli-project-users@lists.sourceforge.net\" -I/usr/include -I../../eli -o texindex.exe texindex.c
+make[1]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/texinfo'

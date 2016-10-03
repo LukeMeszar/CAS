@@ -1,0 +1,24 @@
+
+CLASS SYMBOL IdPtg, NumPtg, CStringPtg, PStringPtg:
+        Sym: int,       /* required */
+        Ptg: PTGNode;   /* provided */
+
+CLASS SYMBOL IdPtg COMPUTE
+  INH.Ptg = PTGId (THIS.Sym);
+END;
+
+CLASS SYMBOL NumPtg COMPUTE
+  INH.Ptg = PTGNumb (THIS.Sym);
+END;
+
+CLASS SYMBOL CStringPtg COMPUTE
+  INH.Ptg = PTGCString (StringTable (THIS.Sym));
+END;
+
+CLASS SYMBOL CCharPtg COMPUTE
+  INH.Ptg = PTGCChar (THIS.Sym);
+END;
+
+CLASS SYMBOL PStringPtg COMPUTE
+  INH.Ptg = PTGPString (StringTable (THIS.Sym));
+END;

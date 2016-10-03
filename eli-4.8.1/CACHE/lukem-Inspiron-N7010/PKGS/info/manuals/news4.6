@@ -1,0 +1,113 @@
+This is Info file news4.6, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/news4.6.tnf.
+
+
+File: news4.6,  Node: Top,  Next: Package,  Prev: (DIR),  Up: (DIR)
+
+New Features of Eli Version 4.6
+*******************************
+
+   This document gives information about new facilities available in
+Eli version 4.6 and those modifications made since the previous
+distributed Eli version 4.5 that might be of general interest.
+Numerous corrections, improvements, and additions have been made
+without being described here.
+
+* Menu:
+
+* Package::		Additional Packages
+* EliCmd::		New `eli' Parameter
+* installpkg::		The `installpkg' Product
+
+* Index::
+
+
+File: news4.6,  Node: Package,  Next: EliCmd,  Prev: Top,  Up: Top
+
+Additional Packages
+*******************
+
+   Eli is a collection of "packages" that define sets of tools and
+workflow patterns.  The actual generation process is handled by "Odin",
+a program designed to manage a collection of artifacts and tools to
+provide products that are up-to-date with respect to all of the raw
+material on which they are based.
+
+   Many of the packages included in the Eli distribution define tools
+and workflow patterns that, although they support text-processor
+generation, are useful for other applications.  Version 4.6 simplifies
+the processes of modifying existing packages and of adding new
+packages to take advantage of these facilities.
+
+   We are also making additional packages available individually in
+conjunction with the standard Eli distribution.  These additional
+packages are distributed as tar files whose names begin with `pkg-'.
+
+   For those interested in constructing their own packages, the best
+reference is the book `Generating Software from Specifications' (see
+`http://www.jbpub.com/catalog/0763741248/').
+
+
+File: news4.6,  Node: EliCmd,  Next: installpkg,  Prev: Package,  Up: Top
+
+New `eli' Parameter
+*******************
+
+   We have added a parameter `-p `dir'' to the `eli' command (*note
+Packages in the cache: (sysadmin)Capability.).  Here `dir' is the
+absolute path name of a directory containing either a package or a
+package collection (*note Package Management: (sysadmin)Packages.).
+
+   An `eli' command may have any number of `-p' parameters, which are
+considered in order from left to right.  They are effective only when
+the cache specified by the `eli' command does not exist, or when it is
+being rebuilt because the `-R' parameter is also given.  In either
+case, the package(s) specified are added to the set of packages to be
+used in building the cache (*note Cache Management: (sysadmin)Caches.).
+
+
+File: news4.6,  Node: installpkg,  Next: Index,  Prev: EliCmd,  Up: Top
+
+The `installpkg' Product
+************************
+
+   The standard Eli packages can be installed in a library that can be
+updated without affecting any caches currently being used (*note
+Installation: (sysadmin)Install.).  Updates only take effect if a new
+cache is created or an existing cache is reset by executing and `eli'
+command on that cache with the `-R' parameter.
+
+   We have added the `installpkg' product to allow users to install
+additional packages in the standard library or to create their own
+libraries (*note Installing additional packages:
+(sysadmin)PkgInstall.).  To take advantage of this facility, the
+packages must be "versioned" (*note Versioned packages:
+(sysadmin)Versioning.).
+
+
+File: news4.6,  Node: Index,  Prev: installpkg,  Up: Top
+
+Index
+*****
+
+* Menu:
+
+* -p parameter:                         EliCmd.
+* eli command:                          EliCmd.
+* installpkg product:                   installpkg.
+* Odin:                                 Package.
+* commands, eli:                        EliCmd.
+* package:                              Package.
+* package library:                      installpkg.
+* parameters, -p:                       EliCmd.
+
+
+
+Tag Table:
+Node: Top139
+Node: Package694
+Node: EliCmd1821
+Node: installpkg2630
+Node: Index3410
+
+End Tag Table

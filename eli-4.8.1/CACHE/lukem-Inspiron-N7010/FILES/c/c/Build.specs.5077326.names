@@ -1,0 +1,6 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Output/LeafPtg.gnrc :lib*instGen/LeafPtg.fw
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc :lib*instGen/FirstOcc.fw
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc +instance=Type :lib*instGen/TypeFirstOcc.fw +instance=Type
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/PtrList.gnrc +instance=DefTableKey +referto=deftbl :lib*instGen/DefTableKeyPtrList.fw +instance=DefTableKey +referto=deftbl
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/PtrList.gnrc +instance=tOilOp +referto=oiladt2 :lib*instGen/tOilOpPtrList.fw +instance=tOilOp +referto=oiladt2
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/PtrList.gnrc +instance=tOilClassOp +referto=oiladt2 :lib*instGen/tOilClassOpPtrList.fw +instance=tOilClassOp +referto=oiladt2

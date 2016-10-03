@@ -1,0 +1,4 @@
+RULE axiom:
+prog ::= 'dummy'
+END;
+

@@ -1,0 +1,3 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +parser=cola :maptool*mapFe
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +parser=cola :maptool*mapPgram
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +parser=cola :maptool*mapBe

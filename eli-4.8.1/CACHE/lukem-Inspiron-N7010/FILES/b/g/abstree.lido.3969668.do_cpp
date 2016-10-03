@@ -1,0 +1,133 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/g/abstree.lido.3961924.lidoEta"
+RULE rule_12:
+aspects ::= aspects aspect_stmt
+END;
+
+RULE rule_13:
+aspects ::= aspect_stmt
+END;
+
+RULE rule_14:
+attrs ::= attr
+END;
+
+RULE rule_15:
+attrs ::= attrs ',' attr
+END;
+
+RULE rule_16:
+event_block ::= '(' optattrs ')'
+END;
+
+RULE rule_17:
+iddef ::= ident
+END;
+
+RULE rule_18:
+iduse ::= ident
+END;
+
+RULE rule_19:
+operation_block ::= '(' optparams ')'
+END;
+
+RULE rule_20:
+optattrs ::= 
+END;
+
+RULE rule_21:
+optattrs ::= attrs
+END;
+
+RULE rule_22:
+optparams ::= 
+END;
+
+RULE rule_23:
+optparams ::= params
+END;
+
+RULE rule_24:
+params ::= param
+END;
+
+RULE rule_25:
+params ::= params ',' param
+END;
+
+RULE rule_26:
+sig ::= event_sig
+END;
+
+RULE rule_27:
+sig ::= operation_sig
+END;
+
+RULE rule_28:
+sigs ::= sig
+END;
+
+RULE rule_29:
+sigs ::= sigs sig
+END;
+
+RULE rule_30:
+sig ::= translation_sig
+END;
+
+RULE rule_31:
+typeid ::= ident
+END;
+
+RULE rule_11:
+spec ::= aspects
+END;
+
+RULE rule_10:
+aspect_stmt ::= 'aspect' iddef ';' sigs 'end' ';'
+END;
+
+RULE rule_9:
+event_sig ::= 'event' iddef export str event_block ';'
+END;
+
+RULE rule_8:
+export ::= '*'
+END;
+
+RULE rule_7:
+export ::= 
+END;
+
+RULE rule_6:
+attr ::= typeid iddef str
+END;
+
+RULE rule_5:
+sig ::= bstr
+END;
+
+RULE rule_4:
+sig ::= str
+END;
+
+RULE rule_3:
+body ::= text
+END;
+
+RULE rule_2:
+param ::= typeid iddef str
+END;
+
+RULE rule_1:
+translation_sig ::= 'translation' iddef iduse str body
+END;
+
+RULE operation_sig2:
+operation_sig ::= 'operation' iddef str operation_block ':' typeid body
+END;
+
+RULE operation_sig1:
+operation_sig ::= 'operation' iddef str operation_block body
+END;
+

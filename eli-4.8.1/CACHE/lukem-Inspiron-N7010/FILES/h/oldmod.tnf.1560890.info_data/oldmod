@@ -1,0 +1,371 @@
+This is Info file oldmod, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/oldmod.tnf.
+
+
+File: oldmod,  Node: top,  Up: (modlib)
+
+Specification Module Library
+****************************
+
+Migration of Old Library Module Usage
+*************************************
+
+   This section helps to migrate applications of previous module
+library version to the current one.
+
+   Users who want to continue to use library modules of a previous Eli
+version, please contact your Eli system manager.
+
+* Menu:
+
+* ModLib3_8::   Migration of Eli Version 3.8 modules
+* ModLib3_6::	Migration of Eli Version 3.6 modules
+* Index::       Index
+
+
+File: oldmod,  Node: ModLib3_8,  Next: ModLib3_6,  Up: top
+
+Migration of Eli Version 3.8 modules
+************************************
+
+   This section gives a quick reference to modifications that have
+been made in library modules of Eli version 3.8.  Users who are still
+using modules of Eli version 3.6 first see *Note ModLib3_6::.
+
+   In all library modules that provide LIDO specifications the symbol
+roles are now specified to be `CLASS SYMBOL's.  This classification
+avoids accidental name coincidences between grammar symbols and roles
+provided by modules.
+
+   As a consequence such a symbol may not occur as a name of a tree
+grammar symbol. It rather has to be inherited by a tree grammar symbol:
+       RULE: Program ::= Source END;
+       SYMBOL Program INHERITS RootScope END;
+   Constructs like
+       RULE: RootScope ::= Source END;
+   will cause error messages. Hence, the grammar symbols have to be
+renamed consistently in such cases.
+
+   We assume that some names like `IdDef' or `IdUse' have been used in
+this now illegal way. In order to simplify migration those module
+roles are now renamed `IdDefScope' and `IdUseEnv'.  Hence,
+specifications which use `IdDef' or `IdUse' as grammar symbols may
+continue to do so. Only
+       SYMBOL IdDef INHERITS IdDefScope END;
+       SYMBOL IdUse INHERITS IdUseEnv END;
+
+is to be added.
+
+   The following table contains a list symbol roles that are provided
+by modules of Eli version 3.8 and have been changed in the current
+version.  All these adaptions refer to modules of the `Name' library.
+
+   The following library modules have been modified:
+
+``BitSet''
+     Use `$/Adt/BitSet.fw' instead of instantiation.  (*note Bit Sets
+     of Arbitrary Length: (adt)BitSet.)
+
+``DynSpace''
+     Use `$/Adt/DynSpace.fw' instead of instantiation.  (*note Dynamic
+     Storage Allocation: (adt)DynSpace.)
+
+``LeafPtg''
+     Use `$/Output/LeafPtg.fw' instead of instantiation.  (*note PTG
+     Output for Leaf Nodes: (output)LeafPtg.)
+
+``Indent''
+     Use `$/Output/Indent.fw' instead of instantiation.  (*note
+     Indentation: (output)Indent.)
+
+``List''
+     The module uses `obstack' directly instead of using module
+     `DynSpace'.
+
+``OutStr''
+     Use `$/Output/OutStr.fw' instead of instantiation.  (*note Output
+     String Conversion: (output)OutStr.)
+
+`Name Analysis'
+     There are minor modifications in all name analysis modules.  See
+     table of entity modifications below, and (*note Basic Scope
+     Rules: (name)Basic Scope Rules.) (*note Scopes Being Properties
+     of Objects: (name)Scope Properties.) (*note Inheritance of
+     Scopes: (name)Inheritance of Scopes.)
+
+``PreDefId''
+     Instead of instantiating the module `PreDefId' once for each
+     predefined identifier, all predefined identifiers are be
+     described in one file.  Its name is supplied as `referto'
+     parameter.  (*note Predefined Identifiers: (name)Predefined
+     Identifiers.)
+
+``PropLib''
+     Use `$/Prop/PropLib.fw' instead of instantiation.  (*note Some
+     Useful PDL Specifications: (prop)PropLib.)
+
+``Type' `CType' `BuType''
+     These modules are still usable. But they are not maintained
+     anymore.  It is recommended to use the module `Typing' (*Note
+     Typed Entities: (type)BasicType,) instead.  The functionality of
+     `CType' and `BuType', where the C-like name analysis scheme is
+     also imposed upon type analysis is not supported by `Typing'.
+     Modules having corresponding facilities are not yet available.
+
+   The following entities of library modules have been modified:
+
+``AnyScope.GotScopes''
+     Replaced: use `RootScope.GotScopeProp' (*note Scopes Being
+     Properties of Objects: (name)Scope Properties.)
+
+``AnyScope.GotScopesDefs''
+     Replaced: use `RootScope.GotScopeProp' (*note Scopes Being
+     Properties of Objects: (name)Scope Properties.)
+
+`IdDef'
+     Renamed to `IdDefScope'. (*note Basic Scope Rules: (name)Basic
+     Scope Rules.)
+
+``IdDefScopeProp''
+     Deleted: The scope property is now associated to a key in the
+     context of the role `RangeScopeProp'.  (*note Scopes Being
+     Properties of Objects: (name)Scope Properties.)
+
+``IdGetScopeProp''
+     Deleted: Use the `GetScope' function explicitly if necessary. 
+     (*note Scopes Being Properties of Objects: (name)Scope
+     Properties.)
+
+`IdUse'
+     Renamed to `IdUseEnv'. (*note Basic Scope Rules: (name)Basic
+     Scope Rules.)
+
+`IdUseScope'
+     modified: The default scope to be used can not be changed (*note
+     Basic Scope Rules: (name)Basic Scope Rules.); use
+     `IdUseScopeProp' if necessary (*note Scopes Being Properties of
+     Objects: (name)Scope Properties.).
+
+``InheritScopeProp''
+     Renamed and modified: use `InheritScope'.  (*note Inheritance of
+     Scopes: (name)Inheritance of Scopes.)
+
+``RangeScopeProp''
+     Modified: A computation of `THIS.ScopeKey' for the key to which
+     the scope is to be associated has to be provided, instead of
+     `THIS.Scope'.  (*note Scopes Being Properties of Objects:
+     (name)Scope Properties.)
+
+
+File: oldmod,  Node: ModLib3_6,  Prev: ModLib3_8,  Up: top
+
+Migration of Eli Version 3.6 modules
+************************************
+
+   The following table is a quick reference for migration of module
+usage from module library upto Eli version 3.6 to modules of this
+library. For each module name of the old library a reference to the
+documentation of the corresponding module of this library is given. In
+many cases it is sufficient to modify the instantiation command.
+Others require modifications of identifiers in `.lido' specifications,
+or in the way they are used.
+
+   Note: The modules of the library of Eli version 3.6 which are
+mentioned below are no longer contained in the Eli distribution. 
+Users who want to continue to use them, please contact your Eli system
+manager.
+
+`AdaptOil'
+     use *Note Operator Identification: (type)Operator,
+
+`Bool'
+     removed
+
+`Chain'
+     use *Note C-like Basic Scope Rules: (name)CScope,
+
+`ChainPtg'
+     removed, see PTG documentation
+
+`CmdLineIncl'
+     now in *Note Input Processing: (input)top, library, *Note Command
+     Line Arguments for Included File: (input)CmdLineIncl.
+
+`CoordMap'
+     now in *Note Input Processing: (input)top, library, *Note Command
+     Line Arguments for Included File: (input)CmdLineIncl.
+
+`CurrTok'
+     now in *Note Input Processing: (input)top, library, *Note
+     Accessing the Current Token: (input)CurrTok.
+
+`DefPt'
+     use *Note Set a Property at the First Object Occurrence:
+     (prop)SetFirst, in *Note Property Library: (prop)top, library
+
+`DynSpace'
+     now in *Note Abstract Data Types: (adt)top, library, *Note
+     Dynamic Storage Allocation: (adt)DynSpace.
+
+`Field'
+     use *Note Scope Properties Algol-like: (name)AlgScopeProp, or
+     *Note Scope Properties C-like: (name)CScopeProp.
+
+`Fwd'
+     use *Note Associate Kinds to Objects: (prop)Kind, or *Note
+     Associate Sets of Kinds to Objects: (prop)KindSet, in *Note
+     Property Library: (prop)top, library
+
+`GenName'
+     use *Note Generating Optional Identifiers: (problems)MakeName.
+
+`GChain'
+     use *Note C-like Basic Scope Rules Computed Bottom-Up:
+     (name)BuScope.
+
+`InclLido'
+     use *Note Insert a File into the Input Stream: (input)Include, in
+     *Note Input Processing: (input)top, library
+
+`Include'
+     use *Note Insert a File into the Input Stream: (input)Include, in
+     *Note Input Processing: (input)top, library
+
+`Indent'
+     now in *Note Generating Output: (output)top, library, *Note
+     Indentation: (output)Indent.
+
+`IntSet'
+`IntToKey'
+     use *Note Mapping Integral Values To Other Types: (adt)Map, in
+     *Note Abstract Data Types: (adt)top, library
+
+`IntToPtr'
+     use *Note Mapping Integral Values To Other Types: (adt)Map, in
+     *Note Abstract Data Types: (adt)top, library now in *Note
+     Abstract Data Types: (adt)top, library, *Note Bit Sets of Integer
+     Size: (adt)IntSet.
+
+`KindSet'
+     unchanged, *Note Associate Sets of Kinds to Objects:
+     (prop)KindSet.
+
+`LeafPtg'
+     now in *Note Generating Output: (output)top, library, *Note PTG
+     Output for Leaf Nodes: (output)LeafPtg.
+
+`List'
+     use *Note Lists in LIDO Specifications: (adt)LidoList, in *Note
+     Abstract Data Types: (adt)top, library
+
+`Message'
+     use *Note String Concatenation: (problems)Strings, to compose
+     message texts and call the `message'.  function directly, as
+     described in *Note Error Reports: (problems)Message.
+
+`Nest'
+     use *Note Algol-like Basic Scope Rules: (name)AlgScope.
+
+`NoKeyMsg'
+     removed, *Note Basic Scope Rules: (name)Basic Scope Rules.
+
+`OccCnt'
+     unchanged, *Note Count Occurrences of Objects: (prop)OccCnt.
+
+`Once'
+     use *Note Determine First Object Occurrence: (prop)FirstOcc.
+
+`OutStr'
+     now in *Note Generating Output: (output)top, library, *Note
+     Output String Conversion: (output)OutStr.
+
+`PreDef'
+     use `PreDefine' and `PreDefId', *Note Predefined Identifiers:
+     (name)Predefined Identifiers.
+
+`PtrList'
+     use *Note Linear Lists of Any Type: (adt)List, in *Note Abstract
+     Data Types: (adt)top, library
+
+`Stack'
+     now in *Note Abstract Data Types: (adt)top, library, *Note Stacks
+     of Any Type: (adt)Stack.
+
+`Unique'
+     now in *Note Property Library: (prop)top, library, *Note Check
+     for Unique Object Occurrences: (prop)Unique.
+
+
+File: oldmod,  Node: Index,  Up: top
+
+Index
+*****
+
+* Menu:
+
+* AdaptOil:                             ModLib3_6.
+* Bool:                                 ModLib3_6.
+* BuType:                               ModLib3_8.
+* CLASS SYMBOL:                         ModLib3_8.
+* CType:                                ModLib3_8.
+* Chain:                                ModLib3_6.
+* ChainPtg:                             ModLib3_6.
+* CmdLineIncl:                          ModLib3_6.
+* CoordMap:                             ModLib3_6.
+* CurrTok:                              ModLib3_6.
+* DefPt:                                ModLib3_6.
+* DynSpace:                             ModLib3_6.
+* Field:                                ModLib3_6.
+* Fwd:                                  ModLib3_6.
+* GChain:                               ModLib3_6.
+* GenName:                              ModLib3_6.
+* GotScopes:                            ModLib3_8.
+* GotScopesDefs:                        ModLib3_8.
+* IdDef:                                ModLib3_8.
+* IdDefScopeProp:                       ModLib3_8.
+* IdDefScopeProp:                       ModLib3_8.
+* IdGetScopeProp:                       ModLib3_8.
+* IdUse:                                ModLib3_8.
+* IdUseScope:                           ModLib3_8.
+* InclLido:                             ModLib3_6.
+* Include:                              ModLib3_6.
+* Indent:                               ModLib3_6.
+* InheritScopeProp:                     ModLib3_8.
+* IntSet:                               ModLib3_6.
+* IntToKey:                             ModLib3_6.
+* IntToPtr:                             ModLib3_6.
+* KindSet:                              ModLib3_6.
+* LeafPtg:                              ModLib3_6.
+* List:                                 ModLib3_6.
+* Message:                              ModLib3_6.
+* Module BuType:                        ModLib3_8.
+* Module CType:                         ModLib3_8.
+* Module Type:                          ModLib3_8.
+* Module BitSet:                        ModLib3_8.
+* Module DynSpace:                      ModLib3_8.
+* Module LeafPtg:                       ModLib3_8.
+* Module List:                          ModLib3_8.
+* Module PropLib:                       ModLib3_8.
+* Modules for Name Analysis:            ModLib3_8.
+* Nest:                                 ModLib3_6.
+* NoKeyMsg:                             ModLib3_6.
+* OccCnt:                               ModLib3_6.
+* Once:                                 ModLib3_6.
+* OutStr:                               ModLib3_6.
+* PreDef:                               ModLib3_6.
+* PtrList:                              ModLib3_6.
+* RangeScopeProp:                       ModLib3_8.
+* RangeScopeProp:                       ModLib3_8.
+* Stack:                                ModLib3_6.
+* Type:                                 ModLib3_8.
+* Unique:                               ModLib3_6.
+
+
+
+Tag Table:
+Node: top137
+Node: ModLib3_8675
+Node: ModLib3_65706
+Node: Index10014
+
+End Tag Table

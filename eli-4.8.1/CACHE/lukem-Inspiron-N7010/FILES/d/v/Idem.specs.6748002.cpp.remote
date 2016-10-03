@@ -1,0 +1,42 @@
+INCLUDING Constructs:
+   
+   INCLUDING (PatternSpec.IdemPtg) propagate value 
+      occurs in  (297, 3)
+   INCLUDING (xRoot.Prefix) propagate value 
+      occurs in  (458, 3),  (458, 3),  (458, 3),  (443, 3),  (416, 3),  (274, 3),  (274, 3),  (274, 3),  (253, 3),  (213, 3)
+   INCLUDING (xRoot.GotProperties) propagate void
+      occurs in  (458, 3),  (443, 3),  (416, 3),  (297, 3),  (209, 3)
+   INCLUDING (xRoot.GotLocKeys) propagate 
+      occurs in  (79, 3)
+   INCLUDING (xRoot.GotKeys) propagate void
+      occurs in  (59, 3),  (30, 3)
+   INCLUDING (xRoot.Env) propagate value 
+      occurs in  (79, 3),  (59, 3),  (47, 3),  (26, 3)
+   
+
+CONSTITUENT Constructs:
+   
+   
+
+CONSTITUENTS Constructs:
+   
+   CONSTITUENTS (Element.Insert) WITH (PTGNode, PTGSepSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (443, 3)
+   CONSTITUENTS (xSymbol.Ptg) WITH (PTGNode, PTGAltSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (378, 3)
+   CONSTITUENTS (Element.TreeGram) WITH (PTGNode, PTGSpaceSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (368, 3)
+   CONSTITUENTS (xProduction.TreeGram) WITH (PTGNode, PTGSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (361, 3)
+   CONSTITUENTS (Item.IdemPtg) SHIELD (Item) WITH (PTGNode, PTGSpSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (351, 3)
+   CONSTITUENTS (xSymbol.Ptg) WITH (PTGNode, PTGCommaSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (253, 3)
+   CONSTITUENTS (xSymbol.AttrPtg) WITH (PTGNode, PTGCommaSeq, IDENTICAL, PTGNull) propagate value 
+      occurs in  (253, 3)
+   CONSTITUENTS (xSymbol.GotProperties, PatternName.GotProperties) propagate void
+      occurs in  (172, 3)
+   CONSTITUENTS (xRule.Key, xSymbol.Key) SHIELD (xRoot) propagate void
+      occurs in  (28, 3),  (13, 3)
+   
+

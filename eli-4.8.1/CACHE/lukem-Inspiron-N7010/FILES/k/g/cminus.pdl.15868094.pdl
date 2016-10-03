@@ -1,0 +1,9 @@
+
+
+Def: int;       /* 1 if one defining occurrence is associated with this key */
+                /* 2 if more than one */
+
+
+"oiladt2.h"
+Type: tOilType;
+

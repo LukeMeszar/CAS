@@ -1,0 +1,23 @@
+
+CLASS SYMBOL ROOTCLASS INHERITS TypeRangeFirstOcc END;
+
+CLASS SYMBOL TypeRangeFirstOcc:
+                GotTypeFirstOcc:        VOID;
+
+CLASS SYMBOL TypeFirstOcc:
+                Key:                    DefTableKey,
+                IsTypeFirstOcc: int;
+
+CHAIN _TypeFirstOcc:    VOID;
+
+CLASS SYMBOL TypeRangeFirstOcc COMPUTE
+  CHAINSTART HEAD._TypeFirstOcc = "yes";
+  SYNT.GotTypeFirstOcc = TAIL._TypeFirstOcc;
+END;
+
+CLASS SYMBOL TypeFirstOcc       COMPUTE
+  SYNT.IsTypeFirstOcc =
+        SetGetTypeFirstOcc (THIS.Key, 1, 0)
+        DEPENDS_ON THIS._TypeFirstOcc;
+  THIS._TypeFirstOcc = SYNT.IsTypeFirstOcc;
+END;

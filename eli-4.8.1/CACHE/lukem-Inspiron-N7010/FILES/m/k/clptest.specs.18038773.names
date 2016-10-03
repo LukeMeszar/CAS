@@ -1,0 +1,9 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :clp*clp_gen/clp.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :pdl*pdlGen/pdl_gen.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :maptool*mapBe/treestack.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :liga*ligaBe/nodecode.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :liga*ligaBe/treecon.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :liga*ligaBe/visitmap.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :phi*etaIncl) :liga*ligaBe/visitprocs.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/clp/clptest.specs :pgs*pgsGen/pgs_gen.c

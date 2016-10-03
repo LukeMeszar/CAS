@@ -1,0 +1,19 @@
+
+xRoot: xGrammar PTGSpec .
+
+
+xRule:    xIdentifier / PtgType .
+xSymbol:  xIdentifier / PtgType .
+
+Syms:     [ xSymbol // '|' ] .
+
+
+PTGSpec: PatternSpec* .
+PatternSpec: PatternName ':' Items .
+Items: Item* .
+Item:
+  '$' [ Number ] [ PtgType ] /
+  '[' xIdentifier Items ']' /
+  '{' Insert '}' .
+Insert: Item+ .
+

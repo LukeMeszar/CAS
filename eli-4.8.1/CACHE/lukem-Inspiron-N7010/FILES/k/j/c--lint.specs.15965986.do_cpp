@@ -1,0 +1,16 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/k/k/c--lint.specs.15608065.SymToMap"
+MAPSYM
+# 0 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/k/h/cminus.sym.15868746.sym"
+
+
+
+Expression ::=
+  Condition Disjunction Conjunction Comparison Relation Sum
+  Term Factor Primary .
+
+ShortCircuitOp ::=
+  BarBar AmpAmp .
+
+Binop ::=
+  EquEqu Relop Addop Mulop .
+

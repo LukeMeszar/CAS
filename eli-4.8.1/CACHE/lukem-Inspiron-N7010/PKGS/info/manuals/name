@@ -1,0 +1,41 @@
+This is Info file name, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/name.tnf.
+
+Indirect:
+name-1: 131
+name-2: 48120
+name-3: 96677
+
+Tag Table:
+(Indirect)
+Node: top133
+Node: Preconditions3120
+Node: Basic Scope Rules6225
+Node: AlgScope13986
+Node: CScope18393
+Node: BuScope24676
+Node: Predefined Identifiers28465
+Node: Joined Ranges36453
+Node: AlgRangeSeq39809
+Node: CRangeSeq40390
+Node: BuRangeSeq40974
+Node: Scope Properties43382
+Node: ScopeProp48122
+Node: CScopeProp53408
+Node: BuScopeProp55184
+Node: Inheritance of Scopes58821
+Node: AlgInh71229
+Node: CInh73687
+Node: BuInh75156
+Node: Name Analysis Test79875
+Node: Environment Module82638
+Node: Types84985
+Node: Constructors86003
+Node: Inheritance86581
+Node: Bindings87949
+Node: Lookup90575
+Node: Hidden92746
+Node: Queries94147
+Node: Index96679
+
+End Tag Table

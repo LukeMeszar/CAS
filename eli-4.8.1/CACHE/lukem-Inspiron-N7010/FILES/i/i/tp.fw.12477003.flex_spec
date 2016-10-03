@@ -1,0 +1,17 @@
+%%
+
+","	1; /* ext=2 sourceLine=11 */
+":"	2; /* ext=4 sourceLine=13 */
+";"	3; /* ext=5 sourceLine=14 */
+"::"	4; /* ext=7 sourceLine=16 */
+"::="	5; /* ext=8 sourceLine=17 */
+"\("	6; /* ext=9 sourceLine=18 */
+"\)"	7; /* ext=10 sourceLine=19 */
+"COST"	8; /* ext=11 sourceLine=20 */
+
+
+[a-zA-Z_][a-zA-Z_0-9]*	9; /* ext=6 sourceLine=3 */
+[0-9]+	10; /* ext=12 sourceLine=4 */
+\"[^"]+\"	11; /* ext=3 sourceLine=5 */
+"/*"	12; /* ext=15001 sourceLine=6 */
+#	13; /* ext=15001 sourceLine=7 */

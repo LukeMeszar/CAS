@@ -1,0 +1,7 @@
+AlgScope.c
+AlgScope.h
+envmod.h
+deftbl.h
+obstack.h
+BitSet.h
+eliproto.h

@@ -1,0 +1,1095 @@
+This is Info file lidoref, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Info/lidoref.tnf.
+
+
+File: lidoref,  Node: CHAIN,  Prev: CONSTITUENT(S),  Up: Remote Attribute Access
+
+CHAIN
+=====
+
+Chains relate computations in left-to-right depth-first order within
+certain subtrees. A chain may propagate values or just specify
+dependencies in that order. Only effective computations, that compute
+a new chain value or a new post-condition need to be specified. They
+are automatically linked in the described order.
+
+The basic idea is captured by the following diagram representing the
+way of a chain through the tree context of a rule graphically:
+             RULE: LhsSym ::= RhsSym1 RhsSym2 END;
+     
+                      |                ^
+                      v                |
+                      u     LhsSym     d
+                     /                  ^
+                    /                    \
+                   /        _____         \
+                  /         |   |          \
+                 v          |   v           \
+                 d  RhsSym1 u   d  RhsSym2   u
+                 |          ^   |            ^
+                 |          |   |            |
+                 ------------   --------------
+The arcs represent the path of the chain through this context, coming
+in from the upper context of `LhsSym', going through the two subtrees,
+and leaving to the upper context.  That chain propagation is
+established automatically if the chain is not used in this context. 
+Usually, some of the three arcs inside the the context may be specified
+by explicit computations that use and define the chain at a certain
+symbol occurrence.  The `u' and `d' in the graphic stand for usable
+and definable chain accesses respectively.
+
+Chain accesses are denoted like attribute accesses with a `ChainName'
+instead of an attribute name.
+
+Syntax
+......
+
+         ChainSpec     ::= 'CHAIN' ChainNames ':' TypeName
+     
+         Computation   ::= 'CHAINSTART' Attribute '=' Expression Terminator
+     
+         Attribute     ::= SymbolRef '.' ChainName
+
+Examples
+........
+
+         CHAIN cnt : int
+         RULE: Block ::= '{' Decls Stmts '}' COMPUTE
+           CHAINSTART Stmts.cnt = 0;
+           printf ("Block has %d statements\n", Stmts.cnt);
+         END;
+         RULE: Stmt ::= Var '=' Expr ';' COMPUTE
+           Stmt.cnt = ADD (Stmt.cnt, 1);
+         END;
+     
+         CHAIN codeseq: PTGNode;
+         SYMBOL Block COMPUTE
+           CHAINSTART HEAD.codeseq = PTGNULL;
+           SYNT.transl = TAIL.codeseq;
+         END;
+         SYMBOL Stmt COMPUTE
+           THIS.codeseq = PTGSeq (THIS.codeseq, THIS.transl);
+         END;
+
+A `CHAIN' specification introduces the name and the type of a chain.
+Any attribute notation using a `ChainName' denotes a chain access.
+
+A chain states a precondition and a postcondition for each symbol node
+on the chain. The precondition is set by the upper context of the
+symbol, the postcondition by its lower context.  They can be
+understood as an implicitly introduced pair of attributes, an
+inherited one for the precondition and a synthesized one for the
+postcondition.
+
+A computation is allocated on the chain if it depends on the chain and
+its result contributes to the chain.  Such computations are
+automatically linked in left-to-right depth-first order.  A
+computation is only linked in chain order if it defines the chain and
+depends directly or indirectly on it. A computation that only accesses
+the chain without defining it is not necessarily executed in chain
+order.
+
+A computation that defines a chain without directly or indirectly
+accessing it breaks the chain, i. e. the execution order of subsequent
+chain computations is independent of those prior to this computation.
+
+There may be several instances of a chain that have the same name and
+type. Each instance is identified by a context that contains a
+`CHAINSTART' computation for that chain.  Chain references in subtrees
+of such a `CHAINSTART' context belong to that instance, unless they
+belong to a nested instance of `CHAINSTART' context deeper in the tree. 
+Different instances of a chain are not related to each other,
+regardless of whether they are nested or separate.  However, they may
+be explicitly connected by computations.  The structure of the tree
+grammar must ensure that there is a `CHAINSTART' context above any
+computation that refers to the chain.
+
+A `CHAINSTART' computation defines the initial value of a chain.  The
+chain is started at the symbol specified as the destination of the
+`CHAINSTART' computation. It must be the leftmost of the right-hand
+side symbols which the chain is to be passed through.  `HEAD.c' may be
+used for a chain `c' to denote the leftmost symbol of the right-hand
+side, in symbol computations as well as in rule computations.
+
+A computation may refer to a chain `c' by one of the following
+notations: `X.c' in rule computations, `THIS.c', `SYNT.c', `INH.c' in
+symbol computations, `HEAD.c', and `TAIL.c' in both rule and symbol
+computations.
+
+The notations `X.c' and `THIS.c' have different meanings depending on
+their occurrence in a defining position of an attribute computation or
+in an applied position within an expression:
+
+In rule computations the following holds: If `X' is the left-hand side
+symbol of the production, then an applied occurrence `X.c' denotes the
+chain's precondition at `X'; a defining occurrence `X.c' denotes the
+chain's postcondition at `X'.  If `X' is a right-hand side symbol of
+the production, then a defining occurrence `X.c' denotes the chain's
+precondition at `X'; an applied occurrence `X.c' denotes the chain's
+postcondition at `X'.
+
+In symbol contexts only lower computations may access or define a
+chain.  An applied occurrence of `THIS.c' denotes the chain's
+precondition of that symbol; `INH.c' may be used instead.  A defining
+occurrence of `THIS.c' denotes the chain's postcondition of that
+symbol; `SYNT.c' may be used instead.
+
+The notation `HEAD.c' can be used to define the chain's precondition
+of the leftmost subtree.  The notation `TAIL.c' can be used to access
+the chain's postcondition of the rightmost subtree.  These notations
+can be used in symbol computations and in rule computations. If used
+in a rule computation that rule must have at least one subtree.
+
+If `HEAD.c', `TAIL.c', or `CHAINSTART' is used in a symbol computation
+that is inherited by a rule which has no subtree, they have the same
+effect as if there was a subtree which passes the chain dependency and
+the chain value, if any, unchanged.
+
+In the following example a chain `c' is used in symbol computations. 
+They state that the functions `Prefix' and `Suffix' are called on the
+chain for every `Expression' context.  The `Prefix' call is applied to
+the incoming chain and specifies the chain precondition for the
+leftmost subtree of `Expression'.  The `Suffix' call is applied to the
+result of the rightmost subtree and specifies the chain postcondition
+of this `Expression':
+         SYMBOL Expression COMPUTE
+             HEAD.c = Prefix (THIS.c);
+             THIS.c = Suffix (TAIL.c);
+         END;
+
+Restrictions
+............
+
+Every `ChainName' must be different from any attribute name and any
+`AttrName'.
+
+The tree grammar must guarantee that each access of a chain is in a
+subtree of a `CHAINSTART' context for that chain.  Furthermore that
+subtree may not be to the left of the symbol where the `CHAINSTART'
+initiates the chain.
+
+None of `THIS.c', `SYNT.c', `INH.c', `TAIL.c' may be used in upper
+symbol computations.
+
+`HEAD.c' must not be used in applied positions.
+
+`TAIL.c' must not be used in defining positions.
+
+Chains can not be accessed in `INCLUDING' or `CONSTITUENT(S)'
+constructs.
+
+
+File: lidoref,  Node: Computed Subtrees,  Next: Iterations,  Prev: Remote Attribute Access,  Up: top
+
+Computed Subtrees
+*****************
+
+In general the tree represents the abstract structure of the input
+text and is built by scanning and parsing the input. That initial tree
+may be augmented by subtrees which result from certain computations.
+This feature can be used for translation into target trees which also
+contain computations that are executed in the usual way.
+
+The tree construction functions generated by LIGA are used to build
+such subtrees. They are inserted into the initial tree at certain
+positions specified in productions.
+
+The tree construction functions are described in
+
+* Menu:
+
+* Tree Construction Functions::
+
+Syntax
+......
+
+         Symbols ::= '$' SymbName
+
+Examples
+........
+
+         RULE: Block ::= '{' Decl Stmts '}' $ Target COMPUTE
+           Target.GENTREE =
+                MkTBlock (COORDREF, Dels.tcode, Stmt.tcode);
+         END;
+         RULE TBlock: Target ::= TSeq TSeq COMPUTE ... END;
+
+Trees may be the result of computations using LIGA's tree construction
+functions as described below (*note Tree Construction Functions::.).
+
+Tree values may be propagated between computations using attributes of
+the predefined type `NODEPTR' (*note Predefined Entities::.).
+
+Tree values are inserted into the tree in contexts where the right-hand
+side of the production specifies "insertion points" of the form `$ X'
+where `X' is a nonterminal name.
+
+The insertion is specified by a computation of the attribute
+`X.GENTREE' where `X' is the insertion point symbol and `GENTREE' is a
+predefined attribute name for inherited attributes of insertion
+symbols (*note Predefined Entities::.). The computation must yield a
+value of type `NODEPTR' that is a legal tree with respect to the tree
+grammar for `X': LIGA guarantees that the computations in the inserted
+tree are not executed before the tree is inserted.
+
+The tree grammar productions for computed trees may be disjoint from
+or may overlap with the productions for the initial tree.
+
+Computed trees may again have insertion points in their productions.
+
+Restrictions
+............
+
+There must be exactly one insertion computation for each insertion
+point of a rule context.
+
+There may not be an insertion computation for a symbol that is not an
+insertion point.
+
+Inserted trees must be legal with respect to the tree grammar. This
+property is checked at runtime of the evaluator.
+
+No computation that establishes a precondition for a tree insertion may
+depended on a computation within the inserted tree.
+
+Contexts that may belong to subtrees which are built by computations
+may not have computations that are marked `BOTTOMUP' or contribute to
+`BOTTOMUP' computations (*note Computations::.).
+
+
+File: lidoref,  Node: Tree Construction Functions,  Up: Computed Subtrees
+
+Tree Construction Functions
+===========================
+
+LIGA generates a set of tree construction functions, one for each rule
+context. They may be used in computations to build trees which are then
+inserted at insertion points. Their names and signatures reflect the
+rule name and the right-hand side of the production.
+
+For a rule
+         RULE pBlock: Block::= '{' Decls Stmts '}' END
+
+there is a function
+         NODEPTR MkpBlock (POSITION *c, NODEPTR d1, NODEPTR d2)
+
+The function name is the rule name prefixed by `Mk'. Hence, it is
+recommended not to omit the rule name when its construction function
+is to be used.
+
+LIGA's tree construction functions are ready to be used in attribute
+computations. If they are to be applied in user-supplied C-code an
+include directive
+
+        #include "treecon.h"
+
+has to be used to make the function definitions available.
+
+The first parameter of every function is a pointer to a source
+coordinate.  That argument may be obtained from the coordinate of the
+context where the function is called. It is used for error reporting,
+see *Note `COORDREF': Predefined Entities.
+
+The following parameters correspond to the sequence of non-literal
+symbols of the right-hand side of the production.  For each
+nonterminal in the production there is a parameter of type `NODEPTR'.
+Its argument must be a pointer to the root node of a suitable subtree,
+built by node construction functions.  For each insertion point in the
+production there is a parameter of type `NODEPTR'. Its argument should
+be `NULLNODEPTR', since that subtree is inserted later by a
+computation.  For each named terminal in the production there is a
+parameter of the type of the terminal. Its argument is the value that
+is to be passed to terminal uses in computations.
+
+Functions for chain productions, the right-hand side of which consists
+of exactly one nonterminal, need not be called explicitly. The nodes
+for those contexts are inserted implicitly when the upper context is
+built.
+
+`LISTOF' productions have a specific set of tree construction
+functions: For a rule like
+
+         RULE pDecls: Decls LISTOF Var | Proc | END;
+the functions
+         NODEPTR MkpDecls (POSITION *c, NODEPTR l)
+         NODEPTR Mk2pDecls (POSITION *c, NODEPTR ll, NODEPTR lr)
+
+are provided, where `Mk2pDecls' constructs internal list context nodes
+and `MkpDecls' builds the root context of the list.
+
+The arguments for each of the parameters `l', `ll', and `lr' can be
+`NULLNODEPTR' representing an empty list, a pointer to a list element
+node, a node that can be made a list element subtree by implicit
+insertion of chain contexts, or the result of a `Mk2'-function call
+representing a sublist.
+
+The `Mk2'-functions concatenate two intermediate list representations
+into one retaining the order of their elements.
+
+`Mk0'-macros are generated. They take only the `POSITION' but no tree
+as argument, and return  `NULLNODEPTR' representing an empty list.
+These macros usually need not be used.
+
+The `LISTOF' subtree must be finally built by a call of the root
+context function.
+
+
+File: lidoref,  Node: Iterations,  Next: Predefined Entities,  Prev: Computed Subtrees,  Up: top
+
+Iterations
+**********
+
+The general principle of computations in trees guarantees that the
+computations specified for each tree node context are executed exactly
+once.  The iteration construct allows to specify cyclic dependencies
+that may cause certain computations to be iterated until a specified
+condition holds.
+
+Syntax
+......
+
+         Computation ::= Iteration Terminator
+                       | Attribute '=' Iteration Terminator
+         Iteration   ::= 'UNTIL' Expression
+                         'ITERATE' Attribute '=' Expression
+
+Example:
+         ATTR cnt, incr: int;
+         RULE: R ::= X COMPUTE
+           X.cnt = 1;
+           R.done = UNTIL GT (X.cnt, 10) ITERATE X.cnt = X.incr;
+         END;
+         RULE: X ::= SomeThing COMPUTE
+           X.incr = ORDER (printf ("%d\n", X.cnt), ADD (X.cnt, 1));
+         END;
+
+The execution of an iteration establishes the postcondition specified
+by the `UNTIL' expression.
+
+The attribute defined in the `ITERATE'-clause is the iteration
+attribute.  The expression of that definition usually depends
+cyclically on the iteration attribute itself. There has to be another
+non cyclically dependent computation for the iteration attribute, which
+is executed initially before the iteration.  The iteration attribute
+may be a `VOID' attribute. All computations that depend on the
+iteration attribute are executed at least once.
+
+The `ITERATE' computation and all computations that depend on it are
+reexecuted if the `UNTIL' condition does not hold.
+
+Restrictions
+............
+
+The `UNTIL' condition must yield an `int' value being used as a
+conditional value.
+
+There must be an initializing non-cyclic definition for the iteration
+attribute.
+
+The cyclic dependencies involved in the iteration may not include
+computations of upper contexts of the iteration context.
+
+Some computations that do not lie on the iteration cycle may also be
+reexecuted on iteration if not specified otherwise. This effect can be
+avoided by specifying the initial iteration attribute computation to
+depend on them, or by specifying them to depend on the postcondition of
+the iteration.
+
+There may be several iterations for the same iteration attribute. The
+so specified iterations may be arbitrary merged if not otherwise
+specified.  In any case the `UNTIL' conditions hold after completion
+of the iterations.
+
+Termination of iterations has to be ensured by suitable `UNTIL'
+conditions and computations.
+
+The iteration attribute may not be a chain attribute.
+
+
+File: lidoref,  Node: Predefined Entities,  Next: Outdated Constructs,  Prev: Iterations,  Up: top
+
+Predefined Entities
+*******************
+
+The names described in this chapter have a predefined meaning in LIDO
+specifications.
+
+The following types are predefined in LIDO:
+
+`VOID'
+     Attributes of this type describe a computational state without
+     propagating values between computations. Those attributes do not
+     occur as data objects in the generated evaluator.
+
+`int'
+     The terminal type.
+
+`NODEPTR'
+     Attributes of this type represent computed subtrees.
+
+The predefined value `NULLNODEPTR' of type `NODEPTR' denotes no tree.
+
+The `CLASS' symbol `ROOTCLASS' is predefined.  It is implicitly
+inherited by the root of the tree grammar (*note Symbol
+Specifications::.).
+
+The following attribute is predefined in LIDO:
+
+`GENTREE'
+     Every insertion point symbol has an attribute `GENTREE' of type
+     `NODEPTR'.
+
+The following functional notations have a specific meaning in LIDO. 
+They are translated into suitable C constructs rather than into
+function calls:
+
+`IF (a, b, c)'
+     denotes a conditional expression.  At runtime either `b' or `c'
+     is evaluated, if `a' yields a non-zero or a zero value.  For
+     determination of the static evaluation order each of `a, b, c'
+     contribute to the precondition of the computation that contains
+     the `IF' construct.  If it occurs in value context `b' and `c'
+     are in value context, too.  Then `b' and `c' have to yield values
+     of the same type (not checked by LIGA). Otherwise `b' and `c' are
+     in `VOID' context and may or may not yield a value of some type.
+
+`IF (a, b)'
+     is a conditional computation of `b', which is executed only if
+     `a' yields a non-zero value.  For determination of the static
+     evaluation order both `a' and `b' contribute to the precondition
+     of the computation that contains the `IF' construct.  This `IF'
+     construct must occur in `VOID' context.  `b' is in VOID context,
+     too.
+
+`ORDER (a, b, ..., x)'
+     The arguments are evaluated in the specified order.  If it occurs
+     in `VOID' context all arguments are in `VOID' context.  If it
+     occurs in value context it yields the result of the last argument
+     `x'.  The others are in `VOID' context and may or may not yield a
+     value.  For determination of the static evaluation order all
+     arguments of the `ORDER' construct contribute to the precondition
+     of the computation containing it.  Any nesting of `ORDER', `IF',
+     function calls, and other expressions is allowed, as long as the
+     stated conditions for `VOID' and value contexts hold.
+
+`RuleFct (C_String, arguments ...)'
+     A call of this function is substituted by a call of a function
+     whose name is composed of the `C_String' and the name of the rule
+     that has (or inherits) this call.  The remaining arguments are
+     taken as arguments of the substituted call. E.g. in a rule named
+     `rBlock' a call `RuleFct ("PTG", a, b)' is substituted by
+     `PTGrBlock (a, b)'.
+
+`RhsFct (C_String, arguments ...)'
+     A call of this function is substituted by a call of a function
+     whose name is composed of the `C_String' and and two numbers that
+     indicate how many nonterminals and terminals are on the
+     right-hand side of the rule that has (or inherits) this call. 
+     The remaining arguments are taken as arguments of the substituted
+     call. E.g. in a rule `RULE: X ::= Id Y Id Z Id END;', where `Y,
+     Z' are nonterminals, and `Id' is a terminal, a call `RhsFct
+     ("PTGChoice", a, b)' is substituted by `PTGChoice_2_3 (a, b)'. 
+     Usually, `RhsFct' will be used in symbol computations, having
+     arguments that are obtained by the `RHS' construct and by a
+     `TermFct' call.
+
+`TermFct (C_String, arguments ...)'
+     A call of this function is substituted by a comma separated
+     sequence of calls of functions whose names are composed of the
+     `C_String' and the name of the non-literal terminals in the rule
+     that has (or inherits) this call.  The remaining arguments are
+     taken as arguments of the substituted calls. E.g. the following
+     symbol computation
+            SYMBOL X COMPUTE
+              SYNT.Ptg = f (TermFct ("ToPtg", TERM));
+            END;
+            RULE: X ::= Y Number Z Ident ';' END;
+     yields the following rule computation
+            RULE: X ::= Y Number Z Ident ';' COMPUTE
+              X.Ptg = f (ToPtgNumber (Number), ToPtgIdent (Ident));
+            END;
+     The order of the calls corresponds to the order of the terminals
+     in the rule. The `TermFct' call must occur on argument position
+     if there is more than one terminal in the rule.
+
+The following names can be used in computations to obtain values that
+are specific for the context in the abstract tree in which the
+computation occurs:
+
+`LINE'
+     the source line number of the tree context.
+
+`COL'
+     the source column number of the tree context.
+
+`COORDREF'
+     the address of the source coordinates of the tree context, to be
+     used for example in calls of the message routine of the error
+     module or in calls of tree construction functions.
+
+`RULENAME'
+     a string literal for the rule name of the tree context, to be
+     used for example in symbol computations.
+
+Note: These names are translated by LIGA into specific constructs of
+the evaluator. Hence, they can not be used with this meaning in macros
+that are expanded when the evaluator is translated.  (That was allowed
+in previous versions of LIGA.)
+
+The following C macros are defined as described for the generated
+evaluator, and can be used in the LIDO text:
+
+        APPLY (f, a, ... )  (*f) (a, ... )   a call of the function `f'
+                                             with the remaining arguments
+     
+        CAST(tp,ex)         ( (tp) (ex) )
+        SELECT(str,fld)     ( (str).fld )
+        PTRSELECT(str,fld)  ( (str)->fld )
+        INDEX(arr,indx)     ( (arr)[indx] )
+     
+        ADD(lop,rop)        ( lop + rop )
+        SUB(lop,rop)        ( lop - rop )
+        MUL(lop,rop)        ( lop * rop )
+        DIV(lop,rop)        ( lop / rop )
+        MOD(lop,rop)        ( lop % rop )
+        NEG(op)             ( -op )
+     
+        NOT(op)             ( !op )
+        AND(lop,rop)        ( lop && rop )
+        OR(lop,rop)         ( lop || rop )
+     
+        BITAND(lop,rop)     ( lop & rop )
+        BITOR(lop,rop)      ( lop | rop )
+        BITXOR(lop,rop)     ( lop ^ rop )
+     
+        GT(lop,rop)         ( lop > rop )
+        LT(lop,rop)         ( lop < rop )
+        EQ(lop,rop)         ( lop == rop )
+        NE(lop,rop)         ( lop != rop )
+        GE(lop,rop)         ( lop >= rop )
+        LE(lop,rop)         ( lop <= rop )
+     
+        VOIDEN(a)           ((void)a)
+     
+        IDENTICAL(a)        (a)
+        ZERO()              0
+        ONE()               1
+        ARGTOONE(x)         1
+The last four macros are especially useful in `WITH' clauses of
+`CONSTITUENTS' constructs.
+
+
+File: lidoref,  Node: Outdated Constructs,  Next: Syntax,  Prev: Predefined Entities,  Up: top
+
+Outdated Constructs
+*******************
+
+The following constructs are still supported to achieve compatibility
+with previous LIDO versions. Their use is strongly discouraged.
+
+* Menu:
+
+* Terminals::
+* Keywords::
+* Pragmas::
+
+
+File: lidoref,  Node: Terminals,  Next: Keywords,  Up: Outdated Constructs
+
+Terminals
+=========
+
+In previous versions of LIDO terminal symbols could have attributes,
+at most one synthesized and several inherited. They were associated
+explicitly by specifications of the form
+        TERM Identifier: Sym: int;
+
+Attributes of terminals could be used in attribute notations or
+`CONSTITUENT(S)' constructs:
+        Identifier.Sym
+        CONSTITUENT Identifier.Sym
+If the above constructs occur in a specification a new nonterminal
+symbol that has the specified attributes is introduced by LIGA, as
+well as a production that derives to the terminal.
+
+Terminal symbols could be element of a `LISTOF' production:
+        Idents LISTOF Identifier
+This facility is NOT allowed anymore. It is indicated by an error
+message, and has to be transformed explicitly.
+
+
+File: lidoref,  Node: Keywords,  Next: Pragmas,  Prev: Terminals,  Up: Outdated Constructs
+
+Keywords
+========
+
+The key word `DEPENDS_ON' introducing a `DependsClause' is now
+abbreviated by the token `<-'.
+
+The key word `NONTERM' should be replaced by `SYMBOL'.
+        NONTERM Stmt: code: PTGNode;
+        NONTERM Stmt COMPUTE ... END;
+
+
+File: lidoref,  Node: Pragmas,  Prev: Keywords,  Up: Outdated Constructs
+
+Pragmas
+=======
+
+The pragma notations are substituted by simpler notations:
+
+Calling a function the name of which is composed from a string and the
+rule name, e.g.
+        LIGAPragma (RuleFct, "PTG", ...)
+is now achieved by
+        RuleFct ("PTG", ...)
+See *note Predefined Entities::..
+
+A pattern for the sequence of right-hand side attributes, e.g
+        LIGAPragma (RhsAttrs, Ptg)
+is now written
+        RHS.Ptg
+Hence a combination of both features above, like
+       SYMBOL Reproduce COMPUTE
+          SYNT.Ptg = LIGAPragma (RuleFct, "PTG", LIGAPragma (RhsAttrs, Ptg));
+       END;
+is now written
+       SYMBOL Reproduce COMPUTE
+          SYNT.Ptg = RuleFct ("PTG", RHS.Ptg);
+       END:
+See *note Attributes::..
+
+Computations were specified to be executed while the input is being
+read and the tree is being built using a pragma
+        LIGAPragma (BottomUp, printf("early output\n"));
+Now the keyword `BOTTOMUP' is added to the computation:
+        printf("early output\n") BOTTOMUP;
+See *note Computations::..
+
+
+File: lidoref,  Node: Syntax,  Next: Index,  Prev: Outdated Constructs,  Up: top
+
+Syntax
+******
+
+This section contains an overview over the LIDO Syntax.  Outdated LIDO
+constructs described in the previous chapter are left out in this
+grammar.  For further explanations refer to previous chapters.
+
+         LIDOSpec       ::=  Specification
+         Specification  ::=  Specification Specification |
+                          |  RuleSpec ';' | SymComp ';'
+                          |  SymSpec ';'  | TermSpec ';'
+                          |  AttrSpec ';' | ChainSpec ';'
+     
+         RuleSpec       ::= 'RULE' [RuleName] ':' Production Computations 'END'
+         SymComp        ::= SymbKind SymbName [ Inheritance ] Computations 'END'
+         TermSpec       ::= 'TERM' SymbNames ':' TypeName
+         SymSpec        ::= SymbKind SymbNames ':' [ AttrSpecs ]
+         AttrSpec       ::= 'ATTR' AttrNames ':' TypeName [ AttrClass ]
+         ChainSpec      ::= 'CHAIN' ChainNames ':' TypeName
+     
+         AttrSpecs      ::= AttrSpecs ',' AttrSpecs
+                          | AttrNames ':' TypeName [ AttrClass ]
+     
+         SymbKind       ::= 'SYMBOL' | 'CLASS' 'SYMBOL' | 'TREE' 'SYMBOL'
+         AttrClass      ::= 'SYNT' | 'INH'
+     
+         Production     ::= SymbName '::=' Symbols
+                          | SymbName 'LISTOF' Elements
+     
+         Symbols        ::= Symbols Symbols |
+                          | SymbName | Literal | '$' SymbName
+     
+         Elements       ::= Elements '|' Elements |
+                          |   SymbName
+     
+         Computations   ::= [ 'COMPUTE' Computation ]
+     
+         Computation    ::= Computation Computation |
+                          | Expression Terminator
+                          | Attribute '=' Expression Terminator
+                          | 'CHAINSTART' Attribute '=' Expression Terminator
+                          | Iteration Terminator
+                          | Attribute '=' Iteration Terminator
+         Terminator     ::= ';'
+                          | 'BOTTOMUP' ';'
+     
+         Iteration      ::= 'UNTIL' Expression
+                            'ITERATE' Attribute '=' Expression
+     
+         Attribute      ::= SymbolRef '.' AttrName
+                          | SymbolRef '.' ChainName
+                          | RuleAttr
+         RuleAttr       ::= '.' AttrName
+         SymbolRef      ::= SymbName
+                          | SymbName '[' Number ']'
+     
+         Expression     ::= SimpExpr [ DependsClause ]
+     
+         DependsClause  ::= '<-' DepAttrList
+         DepAttrList    ::= DepAttr
+                          | '(' DepAttrs ')'
+         DepAttrs       ::= DepAttrs ',' DepAttrs
+                          | DepAttr
+         DepAttr        ::= Attribute | RemoteAccess | RhsAttrs
+     
+         SimpExpr       ::= C_Name | C_Integer | C_Float | C_Char | C_String
+                          | Attribute | RemoteAccess
+                          | RhsAttrs
+                          | FunctionName '(' [ Arguments ] ')'
+                          | SymbolRef
+                          | 'TERM' [ '[' Number ']' ]
+     
+         RhsAttrs       ::= 'RHS' '.' AttrName
+     
+         Arguments      ::= Arguments ',' Arguments
+                          |  Expression
+     
+         Inheritance    ::= 'INHERITS' SymbNames
+     
+         RemoteAccess   ::= 'INCLUDING' RemAttrList
+                          | [ SymbolRef ] 'CONSTITUENT'
+                            RemAttrList [ ShieldClause ]
+                          | [ SymbolRef ] 'CONSTITUENTS'
+                            RemAttrList [ ShieldClause ] [ WithClause ]
+     
+         RemAttrList    ::=  RemAttr | '(' RemAttrs ')'
+         RemAttrs       ::=  RemAttr ',' RemAttrs
+         RemAttrs       ::=  RemAttr
+         RemAttr        ::=  SymbName '.' AttrName
+     
+         ShieldClause   ::= 'SHIELD' SymbNameList
+         SymbNameList   ::= SymbName | '(' SymbNames ')' | '(' ')'
+     
+         WithClause     ::= 'WITH' '(' TypeName ',' CombFctName ','
+                                     SingleFctName ',' NullFctName ')'
+
+Literals in expressions (`C_Name', `C_Integer', `C_Float', `C_Char',
+`C_String') are written as in C.
+
+Literals in productions (`Literal') are written as strings in Pascal.
+
+This syntax distinguishes names for objects of different kinds, e. g.
+`RuleName', `SymbName', `TypeName'.  The syntax rules for names are
+omitted. The following rules are assumed for `XYZNames':
+
+         XYZName  ::= Identifier
+         XYZNames ::= XYZName | XYZNames ',' XYZNames
+
+Identifiers are written as in C.
+
+LIDO text may contain bracketed non nested comments in the style of C
+or Pascal
+        /* This is a comment */
+        (* This is a comment *)
+or line comments like
+        % The rest of this line is a comment
+
+
+File: lidoref,  Node: Index,  Prev: Syntax,  Up: top
+
+Index
+*****
+
+* Menu:
+
+* ADD:                                  Predefined Entities.
+* AND:                                  Predefined Entities.
+* APPLY:                                Predefined Entities.
+* ARGTOONE:                             Predefined Entities.
+* ATTR:                                 Types and Classes of Attributes.
+* BITAND:                               Predefined Entities.
+* BITOR:                                Predefined Entities.
+* BITXOR:                               Predefined Entities.
+* CHAINSTART:                           CHAIN.
+* CHAINSTART:                           CHAIN.
+* CHAIN:                                CHAIN.
+* CHAIN:                                Remote Attribute Access.
+* CLASS:                                Symbol Specifications.
+* CLASS symbols:                        CONSTITUENT(S).
+* CLASS symbols:                        Remote Attribute Access.
+* CLASS symbols:                        Inheritance of Computations.
+* CLASS symbols:                        Symbol Specifications.
+* COL:                                  Predefined Entities.
+* CONSTITUENT(S):                       CONSTITUENT(S).
+* CONSTITUENT(S):                       Remote Attribute Access.
+* CONSTITUENTS:                         Terminals.
+* CONSTITUENTS:                         CONSTITUENT(S).
+* CONSTITUENT:                          Terminals.
+* CONSTITUENT:                          CONSTITUENT(S).
+* COORDREF:                             Predefined Entities.
+* DIV:                                  Predefined Entities.
+* EQ:                                   Predefined Entities.
+* GENTREE:                              Predefined Entities.
+* GENTREE:                              Computed Subtrees.
+* GE:                                   Predefined Entities.
+* GT:                                   Predefined Entities.
+* HEAD:                                 CHAIN.
+* IDENTICAL:                            Predefined Entities.
+* IF:                                   Predefined Entities.
+* INCLUDING:                            INCLUDING.
+* INCLUDING:                            Remote Attribute Access.
+* INHERITS:                             Inheritance of Computations.
+* INH:                                  CHAIN.
+* INH:                                  Types and Classes of Attributes.
+* INH:                                  Attributes.
+* INH:                                  Attributes.
+* INH:                                  Symbol Specifications.
+* ITERATE:                              Iterations.
+* LE:                                   Predefined Entities.
+* LIGAPragma:                           Pragmas.
+* LINE:                                 Predefined Entities.
+* LISTOF:                               Terminals.
+* LISTOF:                               Productions.
+* LISTOF productions:                   Tree Construction Functions.
+* LT:                                   Predefined Entities.
+* MOD:                                  Predefined Entities.
+* MUL:                                  Predefined Entities.
+* NEG:                                  Predefined Entities.
+* NE:                                   Predefined Entities.
+* NODEPTR:                              Predefined Entities.
+* NODEPTR:                              Tree Construction Functions.
+* NODEPTR:                              Computed Subtrees.
+* NOT:                                  Predefined Entities.
+* NULLNODEPTR:                          Predefined Entities.
+* NULLNODEPTR:                          Tree Construction Functions.
+* ONE:                                  Predefined Entities.
+* ORDER:                                Predefined Entities.
+* OR:                                   Predefined Entities.
+* Pragma:                               Pragmas.
+* ROOTCLASS:                            Predefined Entities.
+* ROOTCLASS:                            Symbol Specifications.
+* RULENAME:                             Predefined Entities.
+* RULE:                                 Rule Specifications.
+* RhsAttrs:                             Attributes.
+* RuleName:                             Rule Specifications.
+* SHIELD:                               CONSTITUENT(S).
+* SUB:                                  Predefined Entities.
+* SYMBOL:                               Symbol Specifications.
+* SYNT:                                 CHAIN.
+* SYNT:                                 Types and Classes of Attributes.
+* SYNT:                                 Attributes.
+* SYNT:                                 Attributes.
+* SYNT:                                 Symbol Specifications.
+* TAIL:                                 CHAIN.
+* TAIL:                                 CHAIN.
+* TERM:                                 Terminals.
+* TERM:                                 Terminal Access.
+* TERM:                                 Productions.
+* THIS:                                 CHAIN.
+* THIS:                                 Attributes.
+* THIS:                                 Symbol Specifications.
+* TREE:                                 Symbol Specifications.
+* TREE symbols:                         CONSTITUENT(S).
+* TREE symbols:                         Symbol Specifications.
+* UNTIL:                                Iterations.
+* VOIDEN:                               Predefined Entities.
+* VOID:                                 Predefined Entities.
+* VOID:                                 Iterations.
+* VOID:                                 Types and Classes of Attributes.
+* VOID:                                 Attribute Computations and Plain Computations.
+* VOID context:                         CONSTITUENT(S).
+* VOID context:                         INCLUDING.
+* VOID context:                         Simple Expressions.
+* VOID context:                         Dependent Expressions.
+* VOID context:                         Types and Classes of Attributes.
+* VOID context:                         Attribute Computations and Plain Computations.
+* WITH:                                 CONSTITUENT(S).
+* ZERO:                                 Predefined Entities.
+* int:                                  Predefined Entities.
+* Arguments:                            Simple Expressions.
+* AttrClass:                            Types and Classes of Attributes.
+* AttrName:                             Attributes.
+* AttrNames:                            Types and Classes of Attributes.
+* AttrSpecs:                            Types and Classes of Attributes.
+* Attribute:                            Attributes.
+* Attributes:                           Attributes.
+* BOTTOMUP:                             Computed Subtrees.
+* BOTTOMUP:                             Computations.
+* BottomUp:                             Pragmas.
+* C literals:                           Simple Expressions.
+* COMPUTE:                              Computations.
+* C_Char:                               Simple Expressions.
+* C_Float:                              Simple Expressions.
+* C_Integer:                            Simple Expressions.
+* C_Name:                               Simple Expressions.
+* C_String:                             Simple Expressions.
+* ChainName:                            CHAIN.
+* CombFctName:                          CONSTITUENT(S).
+* Computations:                         Computations.
+* Computations:                         Computations.
+* Computed Subtrees:                    Computed Subtrees.
+* DepAttr:                              Dependent Expressions.
+* DepAttrList:                          Dependent Expressions.
+* DepAttrs:                             Dependent Expressions.
+* Dependent Expressions:                Dependent Expressions.
+* DependsClause:                        Dependent Expressions.
+* Elements:                             Productions.
+* Expression:                           Dependent Expressions.
+* Expressions:                          Expressions.
+* FunctionName:                         Simple Expressions.
+* Inheritance:                          Inheritance of Computations.
+* Inheritance:                          Symbol Specifications.
+* Inheritance of Computations:          Inheritance of Computations.
+* Introduction:                         Introduction.
+* Iteration:                            Iterations.
+* Iterations:                           Iterations.
+* LIDO:                                 Introduction.
+* LIGA:                                 Introduction.
+* Mk-Functions:                         Tree Construction Functions.
+* Names:                                Overall Structure.
+* NullFctName:                          CONSTITUENT(S).
+* Number:                               Attributes.
+* Outdated Constructs:                  Outdated Constructs.
+* Overall Structure:                    Overall Structure.
+* Predefined Entities:                  Predefined Entities.
+* Production:                           Productions.
+* Production:                           Rule Specifications.
+* Productions:                          Productions.
+* RHS:                                  Attributes.
+* RemAttrList:                          INCLUDING.
+* RemAttrs:                             INCLUDING.
+* Remote Attribute Access:              Remote Attribute Access.
+* RemoteAccess:                         CONSTITUENT(S).
+* RemoteAccess:                         INCLUDING.
+* RhsAttrs:                             Pragmas.
+* RhsAttrs:                             Attributes.
+* RhsFct:                               Predefined Entities.
+* Rule Specifications:                  Rule Specifications.
+* RuleAttr:                             Attributes.
+* RuleFct:                              Pragmas.
+* RuleFct:                              Predefined Entities.
+* RuleFct:                              Attributes.
+* ShieldClause:                         CONSTITUENT(S).
+* SimpExpr:                             Simple Expressions.
+* SimpExpr:                             Terminal Access.
+* Simple Expressions:                   Simple Expressions.
+* SingleFctName:                        CONSTITUENT(S).
+* Specification:                        Overall Structure.
+* SymbKind:                             Symbol Specifications.
+* SymbName:                             Symbol Specifications.
+* SymbName:                             Productions.
+* SymbNameList:                         CONSTITUENT(S).
+* Symbol Specifications:                Symbol Specifications.
+* SymbolRef:                            Attributes.
+* Symbols:                              Computed Subtrees.
+* Symbols:                              Productions.
+* Syntax:                               Syntax.
+* TermFct:                              Predefined Entities.
+* Terminal Access:                      Terminal Access.
+* Terminator:                           Computations.
+* Tree Construction Functions:          Tree Construction Functions.
+* TypeName:                             CONSTITUENT(S).
+* TypeName:                             Types and Classes of Attributes.
+* Types and Classes of Attributes:      Types and Classes of Attributes.
+* WithClause:                           CONSTITUENT(S).
+* accumulating attribute:               Accumulating Computations.
+* accumulating computations:            Accumulating Computations.
+* accumulating computations:            Computations.
+* attribute GENTREE:                    Computed Subtrees.
+* attribute class:                      Types and Classes of Attributes.
+* attribute class:                      Types and Classes of Attributes.
+* attribute class:                      Attributes.
+* attribute class:                      Attributes.
+* attribute class:                      Symbol Specifications.
+* attribute computations:               Attribute Computations and Plain Computations.
+* attribute computations:               Computations.
+* attribute type:                       CONSTITUENT(S).
+* attribute type:                       INCLUDING.
+* attribute type:                       Types and Classes of Attributes.
+* attribute type:                       Attribute Computations and Plain Computations.
+* attributes:                           Attributes.
+* bottom-up computations:               Computed Subtrees.
+* bottom-up computations:               Attribute Computations and Plain Computations.
+* chain:                                CHAIN.
+* chain productions:                    Tree Construction Functions.
+* class of attributes:                  Types and Classes of Attributes.
+* class of attributes:                  Types and Classes of Attributes.
+* class of attributes:                  Attributes.
+* class of attributes:                  Attributes.
+* class of attributes:                  Symbol Specifications.
+* comments:                             Syntax.
+* concrete grammar:                     Rule Specifications.
+* cyclic dependencies:                  Iterations.
+* cyclic dependencies:                  Attribute Computations and Plain Computations.
+* dependencies:                         Attribute Computations and Plain Computations.
+* expressions:                          Expressions.
+* function calls:                       Simple Expressions.
+* identifiers:                          Syntax.
+* identifiers:                          Overall Structure.
+* index:                                Terminal Access.
+* index:                                Attributes.
+* index:                                Productions.
+* inheritance:                          Inheritance of Computations.
+* inheritance relation:                 Inheritance of Computations.
+* inherited:                            Types and Classes of Attributes.
+* inherited:                            Attributes.
+* inherited:                            Attributes.
+* inherited attribute:                  Symbol Specifications.
+* insertion points:                     Predefined Entities.
+* insertion points:                     Computed Subtrees.
+* iteration:                            Iterations.
+* line comments:                        Syntax.
+* literal terminals:                    Productions.
+* literals:                             Simple Expressions.
+* lower computation:                    Terminal Access.
+* lower computations:                   Symbol Specifications.
+* lower context:                        Attributes.
+* multiple inheritance:                 Inheritance of Computations.
+* named terminal:                       Tree Construction Functions.
+* named terminals:                      Outdated Constructs.
+* named terminals:                      Terminal Access.
+* named terminals:                      Productions.
+* nonterminal:                          Productions.
+* overriding:                           Inheritance of Computations.
+* plain computation:                    Symbol Specifications.
+* plain computations:                   Inheritance of Computations.
+* plain computations:                   Attribute Computations and Plain Computations.
+* plain computations:                   Computations.
+* postcondition:                        Iterations.
+* postcondition:                        CHAIN.
+* postcondition:                        Attribute Computations and Plain Computations.
+* precondition:                         CHAIN.
+* precondition:                         Dependent Expressions.
+* precondition:                         Attribute Computations and Plain Computations.
+* production:                           Rule Specifications.
+* productions:                          Computed Subtrees.
+* referred set:                         CONSTITUENT(S).
+* referred set:                         INCLUDING.
+* referred set:                         INCLUDING.
+* root symbol:                          Productions.
+* root symbol:                          Rule Specifications.
+* rule attribute type:                  Types and Classes of Attributes.
+* rule attributes:                      Attributes.
+* rule specification:                   Rule Specifications.
+* shielding:                            CONSTITUENT(S).
+* side-effects:                         Computations.
+* symbol specification:                 Symbol Specifications.
+* synthesized:                          Types and Classes of Attributes.
+* synthesized:                          Attributes.
+* synthesized:                          Attributes.
+* synthesized attribute:                Symbol Specifications.
+* terminal:                             Tree Construction Functions.
+* terminal:                             Productions.
+* terminals:                            Outdated Constructs.
+* tree grammar:                         Computed Subtrees.
+* tree grammar:                         CHAIN.
+* tree grammar:                         CONSTITUENT(S).
+* tree grammar:                         INCLUDING.
+* tree grammar:                         Symbol Specifications.
+* tree grammar:                         Productions.
+* tree grammar:                         Rule Specifications.
+* type:                                 CONSTITUENT(S).
+* type:                                 INCLUDING.
+* type:                                 Types and Classes of Attributes.
+* type:                                 Attribute Computations and Plain Computations.
+* type NODEPTR:                         Computed Subtrees.
+* type VOID:                            Attribute Computations and Plain Computations.
+* upper computations:                   Symbol Specifications.
+* upper context:                        Attributes.
+* value context:                        CONSTITUENT(S).
+* value context:                        Simple Expressions.
+* value context:                        Attribute Computations and Plain Computations.
+
+

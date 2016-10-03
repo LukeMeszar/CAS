@@ -1,0 +1,8 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/a/p/out.ptg.3325784.ptg"
+
+SSeq:           $ " " $
+SSeq3:          $ " " $ string " " $
+DeclSeq:        $1 "    " $2 ";\n"   
+Protect:        "_" $
+NSeq:           $1 ", " $2 string $3 string
+Decl:           "   " $1 string " " $2 string ";\n"

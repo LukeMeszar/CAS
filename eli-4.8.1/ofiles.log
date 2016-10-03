@@ -1,0 +1,11 @@
+make[1]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli/ofiles'
+make[1]: `try.exe' is up to date.
+make[1]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli/ofiles'
+q: entry
+p: external
+x: external
+q234567890: entry
+p234567890: external
+x234567890: external
+n234567890: entry
+n: entry

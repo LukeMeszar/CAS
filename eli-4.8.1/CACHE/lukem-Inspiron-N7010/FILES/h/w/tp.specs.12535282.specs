@@ -1,0 +1,8 @@
+
+$/Tech/MakeName.gnrc +instance=Identifier :inst
+$/Prop/Kind.gnrc     :inst
+$/Prop/Unique.gnrc   :inst
+$/Prop/FirstOcc.gnrc :inst
+$/Name/AlgScope.gnrc :inst
+$/Output/PtgCommon.fw
+$/Tech/Strings.specs

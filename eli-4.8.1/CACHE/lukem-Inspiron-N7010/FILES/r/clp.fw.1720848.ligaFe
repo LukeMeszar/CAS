@@ -1,0 +1,3311 @@
+-- structure LIGA
+AttrEval[attrrules	<Attribution[attrrules	<Call[col	30;
+row	243;
+params	<Attracc[col	30;
+row	243;
+attrid	78;
+symbno	0]
+Call[col	39;
+row	243;
+params	<Val[col	39;
+row	243;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	32]
+Attribution[attrrules	<Call[col	30;
+row	242;
+params	<Attracc[col	30;
+row	242;
+attrid	78;
+symbno	0]
+Name[col	39;
+row	242;
+n	"NoStrIndex"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	33]
+Attribution[attrrules	<Call[col	30;
+row	241;
+params	<Attracc[col	30;
+row	241;
+attrid	68;
+symbno	0]
+Call[col	40;
+row	241;
+params	<Val[col	40;
+row	241;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	34]
+Attribution[attrrules	<Call[col	5;
+row	219;
+params	<Chainacc[col	5;
+row	219;
+chainid	11;
+symbno	0]
+Call[col	30;
+row	219;
+params	<Val[col	25;
+row	219;
+v	1]
+Chainacc[col	30;
+row	219;
+chainid	11;
+symbno	0]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	35]
+Attribution[attrrules	<Call[col	5;
+row	213;
+params	<Chainacc[col	5;
+row	213;
+chainid	13;
+symbno	0]
+Call[col	36;
+row	213;
+params	<Call[col	28;
+row	213;
+params	<Call[col	28;
+row	213;
+params	<Val[col	28;
+row	213;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"PTGstr"]
+Chainacc[col	36;
+row	213;
+chainid	13;
+symbno	0]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	36]
+Attribution[attrrules	<Call[col	5;
+row	201;
+params	<Chainacc[col	5;
+row	201;
+chainid	12;
+symbno	0]
+Call[col	41;
+row	201;
+params	<Chainacc[col	26;
+row	201;
+chainid	12;
+symbno	0]
+Val[col	41;
+row	201;
+v	1]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	202;
+params	<Chainacc[col	5;
+row	202;
+chainid	18;
+symbno	0]
+Call[col	42;
+row	205;
+params	<Chainacc[col	26;
+row	202;
+chainid	18;
+symbno	0]
+Call[col	42;
+row	205;
+params	<Call[col	42;
+row	203;
+params	<Call[col	42;
+row	203;
+params	<Val[col	42;
+row	203;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"PTGlit"]
+Call[col	42;
+row	205;
+params	<Call[col	42;
+row	204;
+params	<Literal[row	0;
+col	0;
+str	"USAGE"]
+>;
+name	"$STRING"]
+Call[col	51;
+row	204;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+Call[col	55;
+row	204;
+params	<>;
+name	"PTGnone"]
+Call[col	67;
+row	204;
+params	<>;
+name	"PTGnone"]
+Call[col	42;
+row	205;
+params	<>;
+name	"PTGnone"]
+>;
+name	"PTGopt"]
+>;
+name	"PTGseq"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	206;
+params	<Chainacc[col	5;
+row	206;
+chainid	15;
+symbno	0]
+Call[col	52;
+row	207;
+params	<Chainacc[col	29;
+row	206;
+chainid	15;
+symbno	0]
+Call[col	52;
+row	207;
+params	<Call[col	52;
+row	207;
+params	<Call[col	47;
+row	207;
+params	<Val[col	47;
+row	207;
+v	1]
+>;
+name	"$TERM"]
+Attracc[col	52;
+row	207;
+attrid	77;
+symbno	0]
+>;
+name	"PTGpstr"]
+>;
+name	"PTGuuse"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	37]
+Attribution[attrrules	<Call[col	5;
+row	186;
+params	<Chainacc[col	5;
+row	186;
+chainid	19;
+symbno	0]
+Call[col	50;
+row	186;
+params	<Chainacc[col	27;
+row	186;
+chainid	19;
+symbno	0]
+Call[col	50;
+row	186;
+params	<Attracc[col	50;
+row	186;
+attrid	68;
+symbno	1]
+>;
+name	"PTGkdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	187;
+params	<Chainacc[col	5;
+row	187;
+chainid	17;
+symbno	0]
+Call[col	52;
+row	187;
+params	<Chainacc[col	28;
+row	187;
+chainid	17;
+symbno	0]
+Call[col	52;
+row	187;
+params	<Attracc[col	52;
+row	187;
+attrid	68;
+symbno	1]
+>;
+name	"PTGinput"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	188;
+params	<Chainacc[col	5;
+row	188;
+chainid	16;
+symbno	0]
+Call[col	56;
+row	188;
+params	<Chainacc[col	29;
+row	188;
+chainid	16;
+symbno	0]
+Call[col	56;
+row	188;
+params	<Attracc[col	56;
+row	188;
+attrid	68;
+symbno	1]
+>;
+name	"PTGkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	189;
+params	<Chainacc[col	5;
+row	189;
+chainid	14;
+symbno	0]
+Call[col	37;
+row	191;
+params	<Chainacc[col	29;
+row	189;
+chainid	14;
+symbno	0]
+Call[col	37;
+row	191;
+params	<Call[col	55;
+row	190;
+params	<Attracc[col	46;
+row	190;
+attrid	68;
+symbno	1]
+Attracc[col	55;
+row	190;
+attrid	77;
+symbno	0]
+>;
+name	"PTGpstr"]
+Attracc[col	37;
+row	191;
+attrid	78;
+symbno	2]
+>;
+name	"PTGuse"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	192;
+params	<Chainacc[col	5;
+row	192;
+chainid	10;
+symbno	0]
+Call[col	39;
+row	192;
+params	<Chainacc[col	25;
+row	192;
+chainid	10;
+symbno	0]
+Val[col	39;
+row	192;
+v	1]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	18;
+row	195;
+params	<Call[col	27;
+row	193;
+params	<Chainacc[col	13;
+row	193;
+chainid	10;
+symbno	0]
+Val[col	27;
+row	193;
+v	0]
+>;
+name	"NE"]
+Call[col	18;
+row	195;
+params	<Name[col	18;
+row	194;
+n	"ERROR"]
+Call[col	25;
+row	194;
+params	<Literal[row	0;
+col	0;
+str	"can't have more than one input parameter"]
+>;
+name	"$STRING"]
+Val[col	69;
+row	194;
+v	0]
+Name[col	18;
+row	195;
+n	"COORDREF"]
+>;
+name	"message"]
+>;
+name	"IF"]
+>;
+prodid	38]
+Attribution[attrrules	<Call[col	5;
+row	175;
+params	<Chainacc[col	5;
+row	175;
+chainid	19;
+symbno	0]
+Call[col	51;
+row	175;
+params	<Chainacc[col	27;
+row	175;
+chainid	19;
+symbno	0]
+Call[col	51;
+row	175;
+params	<Attracc[col	51;
+row	175;
+attrid	68;
+symbno	1]
+>;
+name	"PTGkkdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	176;
+params	<Chainacc[col	5;
+row	176;
+chainid	17;
+symbno	0]
+Call[col	53;
+row	176;
+params	<Chainacc[col	28;
+row	176;
+chainid	17;
+symbno	0]
+Call[col	53;
+row	176;
+params	<Attracc[col	53;
+row	176;
+attrid	68;
+symbno	1]
+>;
+name	"PTGmparam"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	177;
+params	<Chainacc[col	5;
+row	177;
+chainid	16;
+symbno	0]
+Call[col	57;
+row	177;
+params	<Chainacc[col	29;
+row	177;
+chainid	16;
+symbno	0]
+Call[col	57;
+row	177;
+params	<Attracc[col	57;
+row	177;
+attrid	68;
+symbno	1]
+>;
+name	"PTGkkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	178;
+params	<Chainacc[col	5;
+row	178;
+chainid	14;
+symbno	0]
+Call[col	38;
+row	180;
+params	<Chainacc[col	29;
+row	178;
+chainid	14;
+symbno	0]
+Call[col	38;
+row	180;
+params	<Call[col	56;
+row	179;
+params	<Attracc[col	47;
+row	179;
+attrid	68;
+symbno	1]
+Attracc[col	56;
+row	179;
+attrid	77;
+symbno	0]
+>;
+name	"PTGpstr"]
+Attracc[col	38;
+row	180;
+attrid	78;
+symbno	2]
+>;
+name	"PTGuses"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	39]
+Attribution[attrrules	<Call[col	5;
+row	164;
+params	<Chainacc[col	5;
+row	164;
+chainid	19;
+symbno	0]
+Call[col	50;
+row	164;
+params	<Chainacc[col	27;
+row	164;
+chainid	19;
+symbno	0]
+Call[col	50;
+row	164;
+params	<Attracc[col	50;
+row	164;
+attrid	68;
+symbno	1]
+>;
+name	"PTGkdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	165;
+params	<Chainacc[col	5;
+row	165;
+chainid	17;
+symbno	0]
+Call[col	52;
+row	165;
+params	<Chainacc[col	28;
+row	165;
+chainid	17;
+symbno	0]
+Call[col	52;
+row	165;
+params	<Attracc[col	52;
+row	165;
+attrid	68;
+symbno	1]
+>;
+name	"PTGparam"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	166;
+params	<Chainacc[col	5;
+row	166;
+chainid	16;
+symbno	0]
+Call[col	56;
+row	166;
+params	<Chainacc[col	29;
+row	166;
+chainid	16;
+symbno	0]
+Call[col	56;
+row	166;
+params	<Attracc[col	56;
+row	166;
+attrid	68;
+symbno	1]
+>;
+name	"PTGkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	167;
+params	<Chainacc[col	5;
+row	167;
+chainid	14;
+symbno	0]
+Call[col	37;
+row	169;
+params	<Chainacc[col	29;
+row	167;
+chainid	14;
+symbno	0]
+Call[col	37;
+row	169;
+params	<Call[col	55;
+row	168;
+params	<Attracc[col	46;
+row	168;
+attrid	68;
+symbno	1]
+Attracc[col	55;
+row	168;
+attrid	77;
+symbno	0]
+>;
+name	"PTGpstr"]
+Attracc[col	37;
+row	169;
+attrid	78;
+symbno	2]
+>;
+name	"PTGuse"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	40]
+Attribution[attrrules	<Call[col	5;
+row	156;
+params	<Attracc[col	5;
+row	156;
+attrid	67;
+symbno	0]
+Val[col	19;
+row	156;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	157;
+params	<Attracc[col	5;
+row	157;
+attrid	65;
+symbno	0]
+Val[col	19;
+row	157;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	158;
+params	<Attracc[col	5;
+row	158;
+attrid	66;
+symbno	0]
+Call[col	22;
+row	158;
+params	<Literal[row	0;
+col	0;
+str	"| SPACED | JOINED"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	41]
+Attribution[attrrules	<Call[col	5;
+row	148;
+params	<Attracc[col	5;
+row	148;
+attrid	67;
+symbno	0]
+Val[col	19;
+row	148;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	149;
+params	<Attracc[col	5;
+row	149;
+attrid	65;
+symbno	0]
+Val[col	19;
+row	149;
+v	0]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	150;
+params	<Attracc[col	5;
+row	150;
+attrid	66;
+symbno	0]
+Call[col	22;
+row	150;
+params	<Literal[row	0;
+col	0;
+str	"| JOINED"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	42]
+Attribution[attrrules	<Call[col	5;
+row	140;
+params	<Attracc[col	5;
+row	140;
+attrid	67;
+symbno	0]
+Val[col	19;
+row	140;
+v	0]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	141;
+params	<Attracc[col	5;
+row	141;
+attrid	65;
+symbno	0]
+Val[col	19;
+row	141;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	142;
+params	<Attracc[col	5;
+row	142;
+attrid	66;
+symbno	0]
+Call[col	22;
+row	142;
+params	<Literal[row	0;
+col	0;
+str	"| SPACED"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	43]
+Attribution[attrrules	<Call[col	5;
+row	129;
+params	<Attracc[col	5;
+row	129;
+attrid	63;
+symbno	0]
+Call[col	17;
+row	129;
+params	<Literal[row	0;
+col	0;
+str	"string"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	130;
+params	<Chainacc[col	5;
+row	130;
+chainid	19;
+symbno	0]
+Call[col	49;
+row	130;
+params	<Chainacc[col	26;
+row	130;
+chainid	19;
+symbno	0]
+Call[col	49;
+row	130;
+params	<Attracc[col	49;
+row	130;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkkdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	131;
+params	<Chainacc[col	5;
+row	131;
+chainid	16;
+symbno	0]
+Call[col	55;
+row	131;
+params	<Chainacc[col	28;
+row	131;
+chainid	16;
+symbno	0]
+Call[col	55;
+row	131;
+params	<Attracc[col	55;
+row	131;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	132;
+params	<Attracc[col	5;
+row	132;
+attrid	64;
+symbno	0]
+Call[col	44;
+row	133;
+params	<Call[col	24;
+row	132;
+params	<Literal[row	0;
+col	0;
+str	"STRVAL | PLURAL"]
+>;
+name	"$STRING"]
+Attracc[col	43;
+row	132;
+attrid	59;
+symbno	0]
+Call[col	59;
+row	132;
+params	<>;
+name	"PTGnone"]
+Call[col	24;
+row	133;
+params	<>;
+name	"PTGnone"]
+Call[col	44;
+row	133;
+params	<Attracc[col	44;
+row	133;
+attrid	61;
+symbno	0]
+>;
+name	"PTGvar"]
+>;
+name	"PTGopt"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	134;
+params	<Attracc[col	5;
+row	134;
+attrid	62;
+symbno	0]
+Val[col	16;
+row	134;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	68;
+params	<Attracc[col	5;
+row	68;
+attrid	59;
+symbno	0]
+Including[col	22;
+row	68;
+inclattrs	<Symbattr[attrdef	72;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	67;
+params	<Attracc[col	5;
+row	67;
+attrid	60;
+symbno	0]
+Including[col	18;
+row	67;
+inclattrs	<Symbattr[attrdef	76;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	66;
+params	<Attracc[col	5;
+row	66;
+attrid	61;
+symbno	0]
+Including[col	19;
+row	66;
+inclattrs	<Symbattr[attrdef	75;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	44]
+Attribution[attrrules	<Call[col	5;
+row	118;
+params	<Attracc[col	5;
+row	118;
+attrid	63;
+symbno	0]
+Call[col	17;
+row	118;
+params	<Literal[row	0;
+col	0;
+str	"string"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	119;
+params	<Chainacc[col	5;
+row	119;
+chainid	19;
+symbno	0]
+Call[col	37;
+row	120;
+params	<Chainacc[col	27;
+row	119;
+chainid	19;
+symbno	0]
+Call[col	49;
+row	119;
+params	<Attracc[col	49;
+row	119;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkdecl"]
+Call[col	37;
+row	120;
+params	<Attracc[col	37;
+row	120;
+attrid	61;
+symbno	0]
+>;
+name	"PTGidecl"]
+>;
+name	"PTGseq3"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	121;
+params	<Chainacc[col	5;
+row	121;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	121;
+params	<Chainacc[col	28;
+row	121;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	121;
+params	<Attracc[col	54;
+row	121;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	122;
+params	<Attracc[col	5;
+row	122;
+attrid	64;
+symbno	0]
+Call[col	46;
+row	123;
+params	<Call[col	24;
+row	122;
+params	<Literal[row	0;
+col	0;
+str	"STRVAL"]
+>;
+name	"$STRING"]
+Attracc[col	34;
+row	122;
+attrid	59;
+symbno	0]
+Call[col	60;
+row	122;
+params	<Attracc[col	60;
+row	122;
+attrid	61;
+symbno	0]
+>;
+name	"PTGcount"]
+Call[col	32;
+row	123;
+params	<Attracc[col	32;
+row	123;
+attrid	61;
+symbno	0]
+>;
+name	"PTGvar"]
+Call[col	46;
+row	123;
+params	<>;
+name	"PTGnone"]
+>;
+name	"PTGopt"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	68;
+params	<Attracc[col	5;
+row	68;
+attrid	59;
+symbno	0]
+Including[col	22;
+row	68;
+inclattrs	<Symbattr[attrdef	72;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	67;
+params	<Attracc[col	5;
+row	67;
+attrid	60;
+symbno	0]
+Including[col	18;
+row	67;
+inclattrs	<Symbattr[attrdef	76;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	66;
+params	<Attracc[col	5;
+row	66;
+attrid	61;
+symbno	0]
+Including[col	19;
+row	66;
+inclattrs	<Symbattr[attrdef	75;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	69;
+params	<Attracc[col	5;
+row	69;
+attrid	62;
+symbno	0]
+Val[col	16;
+row	69;
+v	0]
+>;
+name	"$ASSIGN"]
+>;
+prodid	45]
+Attribution[attrrules	<Call[col	5;
+row	107;
+params	<Attracc[col	5;
+row	107;
+attrid	63;
+symbno	0]
+Call[col	17;
+row	107;
+params	<Literal[row	0;
+col	0;
+str	"int"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	108;
+params	<Chainacc[col	5;
+row	108;
+chainid	19;
+symbno	0]
+Call[col	49;
+row	108;
+params	<Chainacc[col	26;
+row	108;
+chainid	19;
+symbno	0]
+Call[col	49;
+row	108;
+params	<Attracc[col	49;
+row	108;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkkdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	109;
+params	<Chainacc[col	5;
+row	109;
+chainid	16;
+symbno	0]
+Call[col	55;
+row	109;
+params	<Chainacc[col	28;
+row	109;
+chainid	16;
+symbno	0]
+Call[col	55;
+row	109;
+params	<Attracc[col	55;
+row	109;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	110;
+params	<Attracc[col	5;
+row	110;
+attrid	64;
+symbno	0]
+Call[col	45;
+row	111;
+params	<Call[col	24;
+row	110;
+params	<Literal[row	0;
+col	0;
+str	"INTVAL | PLURAL"]
+>;
+name	"$STRING"]
+Attracc[col	43;
+row	110;
+attrid	59;
+symbno	0]
+Call[col	59;
+row	110;
+params	<>;
+name	"PTGnone"]
+Call[col	25;
+row	111;
+params	<>;
+name	"PTGnone"]
+Call[col	45;
+row	111;
+params	<Attracc[col	45;
+row	111;
+attrid	61;
+symbno	0]
+>;
+name	"PTGvar"]
+>;
+name	"PTGopt"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	112;
+params	<Attracc[col	5;
+row	112;
+attrid	62;
+symbno	0]
+Val[col	16;
+row	112;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	68;
+params	<Attracc[col	5;
+row	68;
+attrid	59;
+symbno	0]
+Including[col	22;
+row	68;
+inclattrs	<Symbattr[attrdef	72;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	67;
+params	<Attracc[col	5;
+row	67;
+attrid	60;
+symbno	0]
+Including[col	18;
+row	67;
+inclattrs	<Symbattr[attrdef	76;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	66;
+params	<Attracc[col	5;
+row	66;
+attrid	61;
+symbno	0]
+Including[col	19;
+row	66;
+inclattrs	<Symbattr[attrdef	75;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	46]
+Attribution[attrrules	<Call[col	5;
+row	96;
+params	<Attracc[col	5;
+row	96;
+attrid	63;
+symbno	0]
+Call[col	17;
+row	96;
+params	<Literal[row	0;
+col	0;
+str	"int"]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	97;
+params	<Chainacc[col	5;
+row	97;
+chainid	19;
+symbno	0]
+Call[col	37;
+row	98;
+params	<Chainacc[col	27;
+row	97;
+chainid	19;
+symbno	0]
+Call[col	49;
+row	97;
+params	<Attracc[col	49;
+row	97;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkdecl"]
+Call[col	37;
+row	98;
+params	<Attracc[col	37;
+row	98;
+attrid	61;
+symbno	0]
+>;
+name	"PTGidecl"]
+>;
+name	"PTGseq3"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	99;
+params	<Chainacc[col	5;
+row	99;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	99;
+params	<Chainacc[col	28;
+row	99;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	99;
+params	<Attracc[col	54;
+row	99;
+attrid	61;
+symbno	0]
+>;
+name	"PTGkextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	100;
+params	<Attracc[col	5;
+row	100;
+attrid	64;
+symbno	0]
+Call[col	47;
+row	101;
+params	<Call[col	24;
+row	100;
+params	<Literal[row	0;
+col	0;
+str	"INTVAL"]
+>;
+name	"$STRING"]
+Attracc[col	34;
+row	100;
+attrid	59;
+symbno	0]
+Call[col	60;
+row	100;
+params	<Attracc[col	60;
+row	100;
+attrid	61;
+symbno	0]
+>;
+name	"PTGcount"]
+Call[col	33;
+row	101;
+params	<Attracc[col	33;
+row	101;
+attrid	61;
+symbno	0]
+>;
+name	"PTGvar"]
+Call[col	47;
+row	101;
+params	<>;
+name	"PTGnone"]
+>;
+name	"PTGopt"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	68;
+params	<Attracc[col	5;
+row	68;
+attrid	59;
+symbno	0]
+Including[col	22;
+row	68;
+inclattrs	<Symbattr[attrdef	72;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	67;
+params	<Attracc[col	5;
+row	67;
+attrid	60;
+symbno	0]
+Including[col	18;
+row	67;
+inclattrs	<Symbattr[attrdef	76;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	66;
+params	<Attracc[col	5;
+row	66;
+attrid	61;
+symbno	0]
+Including[col	19;
+row	66;
+inclattrs	<Symbattr[attrdef	75;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	69;
+params	<Attracc[col	5;
+row	69;
+attrid	62;
+symbno	0]
+Val[col	16;
+row	69;
+v	0]
+>;
+name	"$ASSIGN"]
+>;
+prodid	47]
+Attribution[attrrules	<Call[col	5;
+row	85;
+params	<Attracc[col	5;
+row	85;
+attrid	63;
+symbno	0]
+Call[col	17;
+row	85;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	86;
+params	<Chainacc[col	5;
+row	86;
+chainid	19;
+symbno	0]
+Call[col	48;
+row	86;
+params	<Chainacc[col	26;
+row	86;
+chainid	19;
+symbno	0]
+Call[col	48;
+row	86;
+params	<Attracc[col	48;
+row	86;
+attrid	61;
+symbno	0]
+>;
+name	"PTGbdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	87;
+params	<Chainacc[col	5;
+row	87;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	87;
+params	<Chainacc[col	28;
+row	87;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	87;
+params	<Attracc[col	54;
+row	87;
+attrid	61;
+symbno	0]
+>;
+name	"PTGiextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	88;
+params	<Attracc[col	5;
+row	88;
+attrid	64;
+symbno	0]
+Call[col	25;
+row	89;
+params	<Call[col	24;
+row	88;
+params	<Literal[row	0;
+col	0;
+str	"BOOL | PLURAL"]
+>;
+name	"$STRING"]
+Call[col	41;
+row	88;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+Call[col	53;
+row	88;
+params	<Attracc[col	53;
+row	88;
+attrid	61;
+symbno	0]
+>;
+name	"PTGvar"]
+Call[col	67;
+row	88;
+params	<>;
+name	"PTGnone"]
+Call[col	25;
+row	89;
+params	<>;
+name	"PTGnone"]
+>;
+name	"PTGopt"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	90;
+params	<Attracc[col	5;
+row	90;
+attrid	62;
+symbno	0]
+Val[col	16;
+row	90;
+v	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	68;
+params	<Attracc[col	5;
+row	68;
+attrid	59;
+symbno	0]
+Including[col	22;
+row	68;
+inclattrs	<Symbattr[attrdef	72;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	67;
+params	<Attracc[col	5;
+row	67;
+attrid	60;
+symbno	0]
+Including[col	18;
+row	67;
+inclattrs	<Symbattr[attrdef	76;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	66;
+params	<Attracc[col	5;
+row	66;
+attrid	61;
+symbno	0]
+Including[col	19;
+row	66;
+inclattrs	<Symbattr[attrdef	75;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	48]
+Attribution[attrrules	<Call[col	5;
+row	75;
+params	<Attracc[col	5;
+row	75;
+attrid	63;
+symbno	0]
+Call[col	17;
+row	75;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	76;
+params	<Chainacc[col	5;
+row	76;
+chainid	19;
+symbno	0]
+Call[col	48;
+row	76;
+params	<Chainacc[col	26;
+row	76;
+chainid	19;
+symbno	0]
+Call[col	48;
+row	76;
+params	<Attracc[col	48;
+row	76;
+attrid	61;
+symbno	0]
+>;
+name	"PTGbdecl"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	77;
+params	<Chainacc[col	5;
+row	77;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	77;
+params	<Chainacc[col	28;
+row	77;
+chainid	16;
+symbno	0]
+Call[col	54;
+row	77;
+params	<Attracc[col	54;
+row	77;
+attrid	61;
+symbno	0]
+>;
+name	"PTGiextern"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	78;
+params	<Attracc[col	5;
+row	78;
+attrid	64;
+symbno	0]
+Call[col	24;
+row	79;
+params	<Call[col	24;
+row	78;
+params	<Literal[row	0;
+col	0;
+str	"BOOL"]
+>;
+name	"$STRING"]
+Call[col	32;
+row	78;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+Call[col	44;
+row	78;
+params	<Attracc[col	44;
+row	78;
+attrid	61;
+symbno	0]
+>;
+name	"PTGvar"]
+Call[col	58;
+row	78;
+params	<>;
+name	"PTGnone"]
+Call[col	24;
+row	79;
+params	<>;
+name	"PTGnone"]
+>;
+name	"PTGopt"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	68;
+params	<Attracc[col	5;
+row	68;
+attrid	59;
+symbno	0]
+Including[col	22;
+row	68;
+inclattrs	<Symbattr[attrdef	72;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	67;
+params	<Attracc[col	5;
+row	67;
+attrid	60;
+symbno	0]
+Including[col	18;
+row	67;
+inclattrs	<Symbattr[attrdef	76;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	66;
+params	<Attracc[col	5;
+row	66;
+attrid	61;
+symbno	0]
+Including[col	19;
+row	66;
+inclattrs	<Symbattr[attrdef	75;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	69;
+params	<Attracc[col	5;
+row	69;
+attrid	62;
+symbno	0]
+Val[col	16;
+row	69;
+v	0]
+>;
+name	"$ASSIGN"]
+>;
+prodid	49]
+Attribution[attrrules	<Call[col	5;
+row	54;
+params	<Attracc[col	5;
+row	54;
+attrid	76;
+symbno	0]
+Attracc[col	20;
+row	54;
+attrid	78;
+symbno	5]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	55;
+params	<Attracc[col	5;
+row	55;
+attrid	75;
+symbno	0]
+Attracc[col	21;
+row	55;
+attrid	68;
+symbno	1]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	56;
+params	<Attracc[col	5;
+row	56;
+attrid	74;
+symbno	0]
+Attracc[col	18;
+row	56;
+attrid	64;
+symbno	4]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	57;
+params	<Attracc[col	5;
+row	57;
+attrid	73;
+symbno	0]
+Attracc[col	21;
+row	57;
+attrid	67;
+symbno	3]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	58;
+params	<Attracc[col	5;
+row	58;
+attrid	72;
+symbno	0]
+Attracc[col	24;
+row	58;
+attrid	66;
+symbno	3]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	59;
+params	<Attracc[col	5;
+row	59;
+attrid	71;
+symbno	0]
+Attracc[col	21;
+row	59;
+attrid	65;
+symbno	3]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	60;
+params	<Attracc[col	5;
+row	60;
+attrid	70;
+symbno	0]
+Attracc[col	19;
+row	60;
+attrid	63;
+symbno	4]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	61;
+params	<Attracc[col	5;
+row	61;
+attrid	69;
+symbno	0]
+Call[col	55;
+row	61;
+params	<Attracc[col	28;
+row	61;
+attrid	78;
+symbno	5]
+Call[col	55;
+row	61;
+params	<Attracc[col	40;
+row	61;
+attrid	62;
+symbno	4]
+Call[col	50;
+row	61;
+params	<Literal[row	0;
+col	0;
+str	"*"]
+>;
+name	"$STRING"]
+Call[col	55;
+row	61;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+>;
+name	"IF"]
+>;
+name	"PTGmsg"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	50]
+Attribution[attrrules	<Call[col	5;
+row	45;
+params	<Chainacc[col	5;
+row	45;
+chainid	12;
+symbno	0]
+Call[col	41;
+row	45;
+params	<Chainacc[col	26;
+row	45;
+chainid	12;
+symbno	0]
+Val[col	41;
+row	45;
+v	1]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	46;
+params	<Chainacc[col	5;
+row	46;
+chainid	18;
+symbno	0]
+Call[col	47;
+row	46;
+params	<Chainacc[col	26;
+row	46;
+chainid	18;
+symbno	0]
+Call[col	47;
+row	46;
+params	<Call[col	47;
+row	46;
+params	<Val[col	47;
+row	46;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"PTGtopt"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	47;
+params	<Chainacc[col	5;
+row	47;
+chainid	15;
+symbno	0]
+Call[col	52;
+row	48;
+params	<Chainacc[col	29;
+row	47;
+chainid	15;
+symbno	0]
+Call[col	52;
+row	48;
+params	<Call[col	52;
+row	48;
+params	<Call[col	47;
+row	48;
+params	<Val[col	47;
+row	48;
+v	1]
+>;
+name	"$TERM"]
+Attracc[col	52;
+row	48;
+attrid	77;
+symbno	0]
+>;
+name	"PTGpstr"]
+>;
+name	"PTGtuse"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	51]
+Attribution[attrrules	<ChainStart[col	16;
+row	14;
+postgenattr	"";
+postgenattr	"";
+chainid	13]
+Call[col	16;
+row	14;
+params	<Chainacc[col	16;
+row	14;
+chainid	13;
+symbno	1]
+Call[col	41;
+row	14;
+params	<Call[col	41;
+row	14;
+params	<Literal[row	0;
+col	0;
+str	"%p cannot open %f: %t"]
+>;
+name	"$STRING"]
+>;
+name	"PTGcstr"]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	15;
+postgenattr	"";
+postgenattr	"";
+chainid	11]
+Call[col	16;
+row	15;
+params	<Chainacc[col	16;
+row	15;
+chainid	11;
+symbno	1]
+Val[col	37;
+row	15;
+v	0]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	16;
+postgenattr	"";
+postgenattr	"";
+chainid	10]
+Call[col	16;
+row	16;
+params	<Chainacc[col	16;
+row	16;
+chainid	10;
+symbno	1]
+Val[col	32;
+row	16;
+v	0]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	21;
+postgenattr	"";
+postgenattr	"";
+chainid	19]
+Call[col	16;
+row	21;
+params	<Chainacc[col	16;
+row	21;
+chainid	19;
+symbno	1]
+Name[col	31;
+row	21;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	22;
+postgenattr	"";
+postgenattr	"";
+chainid	12]
+Call[col	16;
+row	22;
+params	<Chainacc[col	16;
+row	22;
+chainid	12;
+symbno	1]
+Val[col	33;
+row	22;
+v	0]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	23;
+postgenattr	"";
+postgenattr	"";
+chainid	18]
+Call[col	16;
+row	23;
+params	<Chainacc[col	16;
+row	23;
+chainid	18;
+symbno	1]
+Name[col	30;
+row	23;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	25;
+postgenattr	"";
+postgenattr	"";
+chainid	17]
+Call[col	16;
+row	25;
+params	<Chainacc[col	16;
+row	25;
+chainid	17;
+symbno	1]
+Name[col	32;
+row	25;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	26;
+postgenattr	"";
+postgenattr	"";
+chainid	15]
+Call[col	16;
+row	26;
+params	<Chainacc[col	16;
+row	26;
+chainid	15;
+symbno	1]
+Name[col	33;
+row	26;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	27;
+postgenattr	"";
+postgenattr	"";
+chainid	14]
+Call[col	16;
+row	27;
+params	<Chainacc[col	16;
+row	27;
+chainid	14;
+symbno	1]
+Name[col	33;
+row	27;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ChainStart[col	16;
+row	28;
+postgenattr	"";
+postgenattr	"";
+chainid	16]
+Call[col	16;
+row	28;
+params	<Chainacc[col	16;
+row	28;
+chainid	16;
+symbno	1]
+Name[col	33;
+row	28;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	18;
+params	<Attracc[col	5;
+row	18;
+attrid	81;
+symbno	0]
+Call[col	22;
+row	18;
+params	<Call[col	22;
+row	18;
+params	<Constit[col	22;
+row	18;
+constattrs	<Symbattr[attrdef	80;
+symbdef	27]
+>;
+subtree	0;
+single	0;
+genattr	""]Val[col	22;
+row	18;
+v	26]
+>;
+name	"$SHIELD"]
+
+Name[col	22;
+row	18;
+n	"int"]
+Name[col	22;
+row	18;
+n	"MAX"]
+Name[col	22;
+row	18;
+n	"IDENTICAL"]
+Name[col	22;
+row	18;
+n	"ZERO"]
+>;
+name	"$WITH"]
+>;
+name	"$ASSIGN"]
+Call[col	35;
+row	33;
+params	<Call[col	17;
+row	30;
+params	<Literal[row	0;
+col	0;
+str	"clp.c"]
+>;
+name	"$STRING"]
+Call[col	35;
+row	33;
+params	<Chainacc[col	35;
+row	30;
+chainid	19;
+symbno	1]
+Chainacc[col	49;
+row	30;
+chainid	12;
+symbno	1]
+Chainacc[col	65;
+row	30;
+chainid	18;
+symbno	1]
+Chainacc[col	35;
+row	31;
+chainid	15;
+symbno	1]
+Chainacc[col	51;
+row	31;
+chainid	14;
+symbno	1]
+Chainacc[col	35;
+row	32;
+chainid	13;
+symbno	1]
+Chainacc[col	50;
+row	32;
+chainid	11;
+symbno	1]
+Chainacc[col	35;
+row	33;
+chainid	17;
+symbno	1]
+>;
+name	"PTGfile"]
+>;
+name	"PTGOutFile"]
+Call[col	37;
+row	34;
+params	<Call[col	17;
+row	34;
+params	<Literal[row	0;
+col	0;
+str	"clp.h"]
+>;
+name	"$STRING"]
+Call[col	37;
+row	34;
+params	<Chainacc[col	37;
+row	34;
+chainid	16;
+symbno	1]
+>;
+name	"PTGheader"]
+>;
+name	"PTGOutFile"]
+>;
+prodid	52]
+Attribution[attrrules	<Call[col	5;
+row	39;
+params	<Attracc[col	5;
+row	39;
+attrid	77;
+symbno	0]
+Including[col	22;
+row	39;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"$ASSIGN"]
+>;
+prodid	53]
+Attribution[attrrules	<>;
+prodid	54]
+Attribution[attrrules	<>;
+prodid	55]
+Attribution[attrrules	<>;
+prodid	56]
+Attribution[attrrules	<>;
+prodid	57]
+Attribution[attrrules	<Call[col	5;
+row	227;
+params	<Attracc[col	5;
+row	227;
+attrid	79;
+symbno	0]
+Call[col	30;
+row	236;
+params	<Call[col	30;
+row	231;
+params	<Including[col	30;
+row	227;
+inclattrs	<Symbattr[attrdef	71;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+Call[col	39;
+row	230;
+params	<Call[col	39;
+row	228;
+params	<Val[col	39;
+row	228;
+v	1]
+>;
+name	"$TERM"]
+Call[col	45;
+row	228;
+params	<Literal[row	0;
+col	0;
+str	" "]
+>;
+name	"$STRING"]
+Including[col	50;
+row	228;
+inclattrs	<Symbattr[attrdef	70;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+Including[col	39;
+row	229;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+Including[col	39;
+row	230;
+inclattrs	<Symbattr[attrdef	69;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"PTGvuse"]
+Name[col	30;
+row	231;
+n	"PTGNULL"]
+>;
+name	"IF"]
+Call[col	30;
+row	236;
+params	<Including[col	30;
+row	232;
+inclattrs	<Symbattr[attrdef	73;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+Call[col	39;
+row	235;
+params	<Call[col	39;
+row	233;
+params	<Val[col	39;
+row	233;
+v	1]
+>;
+name	"$TERM"]
+Call[col	45;
+row	233;
+params	<Literal[row	0;
+col	0;
+str	""]
+>;
+name	"$STRING"]
+Including[col	49;
+row	233;
+inclattrs	<Symbattr[attrdef	70;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+Including[col	39;
+row	234;
+inclattrs	<Symbattr[attrdef	81;
+symbdef	29]
+>;
+genattrid	0;
+genattr	""]
+Including[col	39;
+row	235;
+inclattrs	<Symbattr[attrdef	69;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"PTGvuse"]
+Name[col	30;
+row	236;
+n	"PTGNULL"]
+>;
+name	"IF"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	238;
+params	<Attracc[col	5;
+row	238;
+attrid	80;
+symbno	0]
+Call[col	51;
+row	238;
+params	<Call[col	36;
+row	238;
+params	<Call[col	36;
+row	238;
+params	<Val[col	36;
+row	238;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"string_length"]
+Call[col	51;
+row	238;
+params	<Including[col	51;
+row	238;
+inclattrs	<Symbattr[attrdef	70;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"strlen"]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	224;
+params	<Chainacc[col	5;
+row	224;
+chainid	12;
+symbno	0]
+Call[col	39;
+row	224;
+params	<Chainacc[col	25;
+row	224;
+chainid	12;
+symbno	0]
+Val[col	39;
+row	224;
+v	1]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	237;
+params	<Chainacc[col	5;
+row	237;
+chainid	15;
+symbno	0]
+Call[col	42;
+row	237;
+params	<Chainacc[col	28;
+row	237;
+chainid	15;
+symbno	0]
+Attracc[col	42;
+row	237;
+attrid	79;
+symbno	0]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+Call[col	5;
+row	225;
+params	<Chainacc[col	5;
+row	225;
+chainid	18;
+symbno	0]
+Call[col	48;
+row	226;
+params	<Chainacc[col	25;
+row	225;
+chainid	18;
+symbno	0]
+Call[col	48;
+row	226;
+params	<Call[col	41;
+row	226;
+params	<Call[col	41;
+row	226;
+params	<Val[col	41;
+row	226;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"PTGlit"]
+Including[col	48;
+row	226;
+inclattrs	<Symbattr[attrdef	74;
+symbdef	24]
+>;
+genattrid	0;
+genattr	""]
+>;
+name	"PTGseq"]
+>;
+name	"PTGseq"]
+>;
+name	"$ASSIGN"]
+>;
+prodid	58]
+>;
+defseq	<Typedef[did	1;
+dname	"VOID";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	2;
+dname	"$VOID_LIST";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	3;
+dname	"int";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	4;
+dname	"$BOOL";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	5;
+dname	"$SYMB";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	6;
+dname	"POSITION";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	7;
+dname	"NODEPTR";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	8;
+dname	"PTGNode";
+row	5;
+col	19;
+listedto	0;
+extname	""]
+ Typedef[did	9;
+dname	"cstr";
+row	4;
+col	24;
+listedto	0;
+extname	""]
+ Typedef[did	30;
+dname	"ident";
+row	241;
+col	16;
+listedto	0;
+extname	"$TERM"]
+ Typedef[did	31;
+dname	"lit";
+row	43;
+col	28;
+listedto	0;
+extname	"$TERM"]
+ Symb[did	20;
+dname	"type";
+row	52;
+col	35;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	9;
+col	132;
+row	48;
+name	"joinedstr";
+did	59]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	67;
+row	10;
+name	"docid";
+did	60]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	133;
+row	49;
+name	"nameid";
+did	61]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	134;
+row	10;
+name	"rep";
+did	62]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	9;
+col	129;
+row	10;
+name	"desc";
+did	63]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	8;
+col	132;
+row	10;
+name	"opt";
+did	64]
+>;
+tornt	0]
+ Symb[did	21;
+dname	"join";
+row	52;
+col	30;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	157;
+row	10;
+name	"spaced";
+did	65]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	9;
+col	158;
+row	10;
+name	"joinedstr";
+did	66]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	156;
+row	10;
+name	"joined";
+did	67]
+>;
+tornt	0]
+ Symb[did	22;
+dname	"literals";
+row	52;
+col	21;
+attrs	<>;
+tornt	0]
+ Symb[did	23;
+dname	"name";
+row	52;
+col	16;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	241;
+row	35;
+name	"id";
+did	68]
+>;
+tornt	0]
+ Symb[did	24;
+dname	"tparam";
+row	52;
+col	5;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	8;
+col	235;
+row	56;
+name	"usage";
+did	69]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	9;
+col	238;
+row	68;
+name	"desc";
+did	70]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	227;
+row	47;
+name	"spaced";
+did	71]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	9;
+col	68;
+row	39;
+name	"joinedstr";
+did	72]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	232;
+row	47;
+name	"joined";
+did	73]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	8;
+col	226;
+row	65;
+name	"opt";
+did	74]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	66;
+row	36;
+name	"nameid";
+did	75]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	67;
+row	35;
+name	"docid";
+did	76]
+>;
+tornt	0]
+ Symb[did	25;
+dname	"param";
+row	37;
+col	8;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	207;
+row	58;
+name	"maxstrlen";
+did	77]
+>;
+tornt	0]
+ Symb[did	26;
+dname	"doc";
+row	19;
+col	30;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	243;
+row	34;
+name	"id";
+did	78]
+>;
+tornt	0]
+ Symb[did	27;
+dname	"literal";
+row	18;
+col	35;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	8;
+col	237;
+row	47;
+name	"usage";
+did	79]
+Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	238;
+row	10;
+name	"len";
+did	80]
+>;
+tornt	0]
+ Symb[did	28;
+dname	"params";
+row	12;
+col	14;
+attrs	<>;
+tornt	0]
+ Symb[did	29;
+dname	"spec";
+row	12;
+col	5;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	0;
+store	3;
+prodid	0;
+class	0;
+typeid	3;
+col	234;
+row	54;
+name	"maxstrlen";
+did	81]
+>;
+tornt	0]
+ Prod[did	32;
+dname	"rule_1";
+row	243;
+col	1;
+rhs	<Literal[row	350;
+col	9;
+str	""]
+ Literal[row	350;
+col	9;
+str	"lit"]
+ Literal[row	350;
+col	9;
+str	"int"]
+ >;
+lhs	26]
+ Prod[did	33;
+dname	"rule_2";
+row	242;
+col	1;
+rhs	<>;
+lhs	26]
+ Prod[did	34;
+dname	"rule_3";
+row	241;
+col	1;
+rhs	<Literal[row	342;
+col	10;
+str	""]
+ Literal[row	342;
+col	10;
+str	"ident"]
+ Literal[row	342;
+col	10;
+str	"int"]
+ >;
+lhs	23]
+ Prod[did	35;
+dname	"rule_4";
+row	216;
+col	1;
+rhs	<Literal[row	216;
+col	1;
+str	"open"]
+ Literal[row	216;
+col	1;
+str	"error"]
+ Literal[row	216;
+col	1;
+str	"usage"]
+ >;
+lhs	25]
+ Prod[did	36;
+dname	"rule_5";
+row	210;
+col	1;
+rhs	<Literal[row	210;
+col	1;
+str	"open"]
+ Literal[row	210;
+col	1;
+str	"error"]
+ Literal[row	210;
+col	1;
+str	"format"]
+ Literal[row	334;
+col	35;
+str	""]
+ Literal[row	334;
+col	35;
+str	"lit"]
+ Literal[row	334;
+col	35;
+str	"int"]
+ >;
+lhs	25]
+ Prod[did	37;
+dname	"rule_6";
+row	198;
+col	1;
+rhs	<Literal[row	198;
+col	1;
+str	"usage"]
+ Literal[row	330;
+col	19;
+str	""]
+ Literal[row	330;
+col	19;
+str	"lit"]
+ Literal[row	330;
+col	19;
+str	"int"]
+ >;
+lhs	25]
+ Prod[did	38;
+dname	"rule_7";
+row	183;
+col	1;
+rhs	<Symbol[row	326;
+col	11;
+did	23]
+ Literal[row	183;
+col	1;
+str	"input"]
+ Symbol[row	326;
+col	24;
+did	26]
+ >;
+lhs	25]
+ Prod[did	39;
+dname	"rule_8";
+row	172;
+col	1;
+rhs	<Symbol[row	322;
+col	11;
+did	23]
+ Literal[row	172;
+col	1;
+str	"positionals"]
+ Symbol[row	322;
+col	30;
+did	26]
+ >;
+lhs	25]
+ Prod[did	40;
+dname	"rule_9";
+row	161;
+col	1;
+rhs	<Symbol[row	318;
+col	11;
+did	23]
+ Literal[row	161;
+col	1;
+str	"positional"]
+ Symbol[row	318;
+col	29;
+did	26]
+ >;
+lhs	25]
+ Prod[did	41;
+dname	"rule_10";
+row	153;
+col	1;
+rhs	<Literal[row	153;
+col	1;
+str	"with"]
+ >;
+lhs	21]
+ Prod[did	42;
+dname	"rule_11";
+row	145;
+col	1;
+rhs	<Literal[row	145;
+col	1;
+str	"joinedto"]
+ >;
+lhs	21]
+ Prod[did	43;
+dname	"rule_12";
+row	137;
+col	1;
+rhs	<>;
+lhs	21]
+ Prod[did	44;
+dname	"rule_13";
+row	126;
+col	1;
+rhs	<Literal[row	126;
+col	1;
+str	"strings"]
+ >;
+lhs	20]
+ Prod[did	45;
+dname	"rule_14";
+row	115;
+col	1;
+rhs	<Literal[row	115;
+col	1;
+str	"string"]
+ >;
+lhs	20]
+ Prod[did	46;
+dname	"rule_15";
+row	104;
+col	1;
+rhs	<Literal[row	104;
+col	1;
+str	"ints"]
+ >;
+lhs	20]
+ Prod[did	47;
+dname	"rule_16";
+row	93;
+col	1;
+rhs	<Literal[row	93;
+col	1;
+str	"int"]
+ >;
+lhs	20]
+ Prod[did	48;
+dname	"rule_17";
+row	82;
+col	1;
+rhs	<Literal[row	82;
+col	1;
+str	"booleans"]
+ >;
+lhs	20]
+ Prod[did	49;
+dname	"rule_18";
+row	72;
+col	1;
+rhs	<Literal[row	72;
+col	1;
+str	"boolean"]
+ >;
+lhs	20]
+ Prod[did	50;
+dname	"rule_19";
+row	51;
+col	1;
+rhs	<Symbol[row	278;
+col	12;
+did	23]
+ Symbol[row	278;
+col	17;
+did	22]
+ Symbol[row	278;
+col	26;
+did	21]
+ Symbol[row	278;
+col	31;
+did	20]
+ Symbol[row	278;
+col	36;
+did	26]
+ >;
+lhs	24]
+ Prod[did	51;
+dname	"rule_20";
+row	42;
+col	1;
+rhs	<Literal[row	42;
+col	1;
+str	"terminator"]
+ Literal[row	274;
+col	24;
+str	""]
+ Literal[row	274;
+col	24;
+str	"lit"]
+ Literal[row	274;
+col	24;
+str	"int"]
+ >;
+lhs	25]
+ Prod[did	52;
+dname	"rule_21";
+row	11;
+col	1;
+rhs	<Symbol[row	270;
+col	10;
+did	28]
+ >;
+lhs	29]
+ Prod[did	53;
+dname	"rule_27";
+row	265;
+col	6;
+rhs	<Symbol[row	266;
+col	11;
+did	24]
+ >;
+lhs	25]
+ Prod[did	54;
+dname	"rule_26";
+row	261;
+col	6;
+rhs	<Symbol[row	262;
+col	12;
+did	28]
+ Symbol[row	262;
+col	19;
+did	25]
+ Literal[row	261;
+col	6;
+str	";"]
+ >;
+lhs	28]
+ Prod[did	55;
+dname	"rule_25";
+row	257;
+col	6;
+rhs	<>;
+lhs	28]
+ Prod[did	56;
+dname	"rule_24";
+row	253;
+col	6;
+rhs	<Symbol[row	254;
+col	14;
+did	22]
+ Symbol[row	254;
+col	23;
+did	27]
+ >;
+lhs	22]
+ Prod[did	57;
+dname	"rule_23";
+row	249;
+col	6;
+rhs	<Symbol[row	250;
+col	14;
+did	27]
+ >;
+lhs	22]
+ Prod[did	58;
+dname	"rule_22";
+row	245;
+col	6;
+rhs	<Literal[row	246;
+col	13;
+str	""]
+ Literal[row	246;
+col	13;
+str	"lit"]
+ Literal[row	246;
+col	13;
+str	"int"]
+ >;
+lhs	27]
+ Chain[did	10;
+dname	"inputs";
+row	9;
+col	29;
+typeid	3]
+ Chain[did	11;
+dname	"usageerrmsg";
+row	9;
+col	16;
+typeid	3]
+ Chain[did	12;
+dname	"numopts";
+row	9;
+col	7;
+typeid	3]
+ Chain[did	13;
+dname	"errmsg";
+row	8;
+col	7;
+typeid	8]
+ Chain[did	14;
+dname	"pusages";
+row	7;
+col	46;
+typeid	8]
+ Chain[did	15;
+dname	"ousages";
+row	7;
+col	37;
+typeid	8]
+ Chain[did	16;
+dname	"externs";
+row	7;
+col	28;
+typeid	8]
+ Chain[did	17;
+dname	"params";
+row	7;
+col	20;
+typeid	8]
+ Chain[did	18;
+dname	"opts";
+row	7;
+col	14;
+typeid	8]
+ Chain[did	19;
+dname	"decls";
+row	7;
+col	7;
+typeid	8]
+ >]
+#

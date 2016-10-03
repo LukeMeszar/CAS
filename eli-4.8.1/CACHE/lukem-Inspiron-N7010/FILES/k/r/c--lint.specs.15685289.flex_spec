@@ -1,0 +1,36 @@
+%%
+
+"-"	1; /* ext=2 sourceLine=18 */
+"\+"	2; /* ext=3 sourceLine=19 */
+"&&"	3; /* ext=4 sourceLine=20 */
+"\|\|"	4; /* ext=5 sourceLine=21 */
+"\{"	5; /* ext=6 sourceLine=22 */
+"\}"	6; /* ext=7 sourceLine=23 */
+"\?"	7; /* ext=8 sourceLine=24 */
+":"	8; /* ext=9 sourceLine=25 */
+"=="	9; /* ext=10 sourceLine=26 */
+"="	10; /* ext=11 sourceLine=27 */
+"\/"	11; /* ext=13 sourceLine=29 */
+"\*"	12; /* ext=14 sourceLine=30 */
+"%"	13; /* ext=15 sourceLine=31 */
+"!"	14; /* ext=16 sourceLine=32 */
+"float"	15; /* ext=17 sourceLine=33 */
+"int"	16; /* ext=18 sourceLine=34 */
+","	17; /* ext=19 sourceLine=35 */
+"\("	18; /* ext=20 sourceLine=36 */
+"\)"	19; /* ext=21 sourceLine=37 */
+"<"	20; /* ext=24 sourceLine=40 */
+">"	21; /* ext=25 sourceLine=41 */
+";"	22; /* ext=26 sourceLine=42 */
+"break"	23; /* ext=27 sourceLine=43 */
+"continue"	24; /* ext=28 sourceLine=44 */
+"if"	25; /* ext=29 sourceLine=45 */
+"else"	26; /* ext=30 sourceLine=46 */
+"return"	27; /* ext=31 sourceLine=47 */
+"while"	28; /* ext=32 sourceLine=48 */
+
+
+[a-zA-Z_][a-zA-Z_0-9]*	29; /* ext=12 sourceLine=5 */
+([0-9]+|0[xX][0-9a-fA-F]*)	30; /* ext=23 sourceLine=8 */
+(((([0-9]+\.[0-9]*)|(\.[0-9]+))((e|E)(\+|\-)?[0-9]+)?)|([0-9]+(e|E)(\+|\-)?[0-9]+))[fFlL]?	31; /* ext=22 sourceLine=9 */
+"/*"	32; /* ext=15001 sourceLine=12 */

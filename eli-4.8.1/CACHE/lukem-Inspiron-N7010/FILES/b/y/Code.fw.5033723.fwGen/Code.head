@@ -1,0 +1,13 @@
+
+#include "Code.h"
+
+
+#define ID(of) ((of)->sID)
+
+
+#define Operator(k) \
+  (HeadtOilOpList(GetOperator((k),NULLtOilOpList)))
+#define OneOperator(k) \
+  (TailtOilOpList( \
+    GetOperator((k),NULLtOilOpList))==NULLtOilOpList)
+

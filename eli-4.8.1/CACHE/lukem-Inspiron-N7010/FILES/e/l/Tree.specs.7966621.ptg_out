@@ -1,0 +1,4 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/ptg/ptgadt.ptg.phi
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/ptg/ptgadt.head
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/ptg/ptgadt.reqmod
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Tree.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser/Odinfile :odin*targets%Tree.specs :phi*etaIncl) :ptg*ptg_gen

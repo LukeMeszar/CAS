@@ -1,0 +1,5 @@
+%Type.Record.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Record.ok:label) \
+	(Type.demo/Record.ok) \
+	(Type.demo/Record.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Record.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

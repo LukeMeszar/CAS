@@ -1,0 +1,27 @@
+%%
+
+","	1; /* ext=2 sourceLine=18 */
+"\("	2; /* ext=3 sourceLine=19 */
+"\)"	3; /* ext=4 sourceLine=20 */
+"BEGIN"	4; /* ext=5 sourceLine=21 */
+"END"	5; /* ext=6 sourceLine=22 */
+";"	6; /* ext=7 sourceLine=23 */
+"CLASS"	7; /* ext=8 sourceLine=24 */
+":"	8; /* ext=9 sourceLine=25 */
+"COERCION"	9; /* ext=10 sourceLine=26 */
+"OPER"	10; /* ext=11 sourceLine=27 */
+"SET"	11; /* ext=12 sourceLine=28 */
+"="	12; /* ext=13 sourceLine=29 */
+"INDICATION"	13; /* ext=14 sourceLine=30 */
+"\["	14; /* ext=16 sourceLine=32 */
+"\]"	15; /* ext=17 sourceLine=33 */
+"\*"	16; /* ext=18 sourceLine=34 */
+"-"	17; /* ext=19 sourceLine=35 */
+"\+"	18; /* ext=20 sourceLine=36 */
+"COST"	19; /* ext=21 sourceLine=37 */
+
+
+[a-zA-Z_\0300-\0326\0330-\0366\0370-\0377][a-zA-Z_\0300-\0326\0330-\0366\0370-\03770-9]*	20; /* ext=15 sourceLine=5 */
+([0-9]+|0[xX][0-9a-fA-F]*)	21; /* ext=22 sourceLine=8 */
+"/*"	22; /* ext=15001 sourceLine=11 */
+[%#]	23; /* ext=15001 sourceLine=12 */

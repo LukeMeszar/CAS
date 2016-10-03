@@ -1,0 +1,14 @@
+
+
+Id:             [PtgOutId $ int]
+AsIs:           $ string
+Numb:           $ int   
+CString:        [CPtgOutstr $ string]
+CChar:          [CPtgOutchar $ int]
+PString:        [PPtgOutstr $ string]
+
+
+Seq:            $ $
+CommaSeq:       $ { ", " } $
+Eol:            $ "\n"
+

@@ -1,0 +1,22 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/d/name.lido.3837830.lidoEta"
+
+ATTR Sym: int SYNT;
+
+SYMBOL IdentOcc COMPUTE SYNT.Sym = TERM; END;
+
+SYMBOL typeid INHERITS IdentOcc, TypeIdDefScope END;
+
+
+SYMBOL event_block     INHERITS ExportRangeScope, ExportRangeUnique      END;
+SYMBOL operation_block INHERITS ExportRangeScope, ExportRangeUnique      END;
+SYMBOL iddef           INHERITS IdentOcc, ExportIdDefScope, ExportUnique END;
+SYMBOL iduse           INHERITS IdentOcc, ExportIdUseEnv                 END;
+
+
+RULE:
+    operation_sig ::= 'operation' iddef str operation_block ':' typeid body
+COMPUTE
+    IF (NE (typeid.Key, strKey),
+        message (FATAL, "Non-string return type", 0, COORDREF));
+END;
+

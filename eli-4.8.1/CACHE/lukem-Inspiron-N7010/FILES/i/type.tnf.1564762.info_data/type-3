@@ -1,0 +1,356 @@
+This is Info file type, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/type.tnf.
+
+
+File: type,  Node: TypedIdDepend,  Prev: OprdbDepend,  Up: RootType
+
+Dependences for typed entities
+==============================
+
+   The computation provided for the `TypedDefId' context sets the
+`TypeOf' property of that identifier's key to the value of
+`TypedDefId.Type'.  `TypedDefId.TypeIsSet' is the post-condition for
+that computation.  `RootType.AllTypesAreSet' is the conjunction of all
+of the `TypedDefId.TypeIsSet' post-conditions plus
+`RootType.GotAllTypes'.
+
+   If other property values of the identifier's key are set by user
+computations in the lower context of `TypedDefId' that establish the
+postcondition `SYNT.GotProp', then the setting of these properties is
+also guaranteed by the post-condition `TypedDefId.TypeIsSet'. 
+(`SYNT.GotProp' defaults to the empty postcondition.) Note that if any
+of these user computations depend on any results from type analysis, a
+cycle will be created.
+
+   A computation supplied by the module sets the `TypedUseId.Type'
+attribute to the value of the `TypeOf' property of that identifier's
+definition table key.  `TypedUseId.TypeIsSet' is a precondition for
+that computation.  It must guarantee that the `TypeOf' property of the
+identifier has  actually been set.  The module provides a default
+computation for `TypedUseId.TypeIsSet' in the lower context of the
+`TypedUseId' node, requiring the pre-condition `RootType.TypeIsSet'.
+
+   Some languages provide initialized variable declarations, and allow
+the user to omit either the type specification or the initializing
+expression but not both.  If the type specification is omitted, the
+variable's type is the type returned by the initializing expression. 
+Here are some examples of such declarations in Modula-3:
+
+     VAR Both: INTEGER := 3;
+     VAR NoType := Both + 7;
+     VAR NoInit: INTEGER;
+
+The default computations for the `TypeIsSet' attributes in this
+example lead to a cycle:
+
+  1. The `TypedDefId.Type' attribute of `NoType' depends on
+     `TypedUseId.Type' for `Both'.
+
+  2. The computation of `TypedUseId.Type' for `Both' has the
+     pre-condition `TypedUseId.TypeIsSet'.
+
+  3. `TypedUseId.TypeIsSet' depends on `RootType.TypeIsSet' in the
+     default computation.
+
+  4. `RootType.TypeIsSet' is the conjunction of *all*
+     `TypedDefId.TypeIsSet' attributes.
+
+  5. `TypedDefId.TypeIsSet' for `NoType' is the post-condition for a
+     computation involving the `TypedDefId.Type' attribute of `NoType'.
+
+   If the language requires that the initialized declaration of a
+variable precede any uses of that variable, then we can override the
+default dependence as follows:
+
+     CHAIN TypeDepend: VOID;
+     
+     CLASS SYMBOL ROOTCLASS COMPUTE
+       CHAINSTART HEAD.TypeDepend=THIS.GotType;
+     END;
+
+     RULE: VrblDecl ::= 'VAR' VarIdDef ':' Type ':=' Expr COMPUTE
+       VrblDecl.Type=Type.Type;
+       VrblDecl.TypeDepend=VarIdDef.TypeIsSet <- Expr.TypeDepend;
+     END;
+
+     RULE: VrblDecl ::= 'VAR' VarIdDef ':' Type COMPUTE
+       VrblDecl.Type=Type.Type;
+       VrblDecl.TypeDepend=VarIdDef.TypeIsSet <- Expr.TypeDepend;
+     END;
+
+     RULE: VrblDecl ::= 'VAR' VarIdDef ':=' Expr COMPUTE
+       VrblDecl.Type=Expr.Type;
+       VrblDecl.TypeDepend=VarIdDef.TypeIsSet <- Expr.TypeDepend;
+     END;
+
+     SYMBOL VarIdUse COMPUTE
+       SYNT.TypeIsSet=THIS.TypeDepend;
+       THIS.TypeDepend=SYNT.TypeIsSet;
+     END;
+
+   If there is no ordering requirement, then a fixed-point computation
+is required to determine the variable types.  In addition, code
+generated from the initializing expressions must be arranged to ensure
+that a variable's value is computed before it is used.  Finally, such
+out-of-order dependence makes the program hard to understand.  We
+strongly recommend that declaration before use be required if variables
+are allowed to obtain their type from their initializers.
+
+
+File: type,  Node: Index,  Prev: RootType,  Up: Top
+
+Index
+*****
+
+* Menu:
+
+* tp::	Symbol roles
+* fn::	Rule computations
+* vr::	Attributes
+* cp::	General concepts
+
+
+File: type,  Node: tp,  Next: fn,  Up: Index
+
+Symbol roles
+============
+
+* Menu:
+
+* ArgError:                             ChkExpr.
+* ArgErr:                               ChkExpr.
+* ArgMsg:                               ChkExpr.
+* ExpError:                             ChkExpr.
+* ExpErr:                               ChkExpr.
+* ExpMsg:                               ChkExpr.
+* LstError:                             ChkExpr.
+* LstErr:                               ChkExpr.
+* LstMsg:                               ChkExpr.
+* OprError:                             ChkExpr.
+* OprErr:                               ChkExpr.
+* OprMsg:                               ChkExpr.
+* BalanceListElem:                      OpndExprListRoot.
+* BalanceListElem:                      ExpressionSymbol.
+* BalanceListRoot:                      OpndExprListRoot.
+* BalanceListRoot:                      ExpressionSymbol.
+* ChkTypeDefDefId:                      ChkTypeId.
+* ChkTypeDefUseId:                      ChkTypeId.
+* ChkTypedUseId:                        TypeIdDepend.
+* ChkTypedUseId:                        ChkTyped.
+* ChkTypedUseId:                        ChkTyped.
+* ExpressionSymbol:                     Support.
+* ExpressionSymbol:                     Support.
+* ExpressionSymbol:                     ChkExpr.
+* ExpressionSymbol:                     FuncType.
+* ExpressionSymbol:                     OperatorSymbol.
+* ExpressionSymbol:                     ExpressionSymbol.
+* ExpressionSymbol:                     AnalyzeExpression.
+* ExpressionSymbol:                     AnalyzeExpression.
+* OperatorDefs:                         FuncType.
+* OperatorDefs:                         FuncType.
+* OperatorDefs:                         OilClass.
+* OperatorDefs:                         OpDef.
+* OperatorDefs:                         OpDef.
+* OperatorDefs:                         OpDef.
+* OperatorSymbol:                       ChkExpr.
+* OperatorSymbol:                       OpDef.
+* OperatorSymbol:                       OpDef.
+* OperatorSymbol:                       OperatorSymbol.
+* OperatorSymbol:                       OperatorSymbol.
+* OpndExprListElem:                     ChkExpr.
+* OpndExprListElem:                     ConversionContext.
+* OpndExprListElem:                     OpndExprListRoot.
+* OpndExprListRoot:                     Support.
+* OpndExprListRoot:                     ChkExpr.
+* OpndExprListRoot:                     FuncType.
+* OpndExprListRoot:                     OpDef.
+* OpndExprListRoot:                     OpndExprListRoot.
+* OpndTypeListElem:                     OpDef.
+* OpndTypeListRoot:                     FuncType.
+* OpndTypeListRoot:                     OpDef.
+* OpndTypeListRoot:                     OpDef.
+* OpndTypeListRoot:                     OpDef.
+* TypeDefDefId:                         UserTypes.
+* TypeDefUseId:                         TypeUse.
+* TypeDefUseId:                         UserTypes.
+* TypeDenotation:                       FuncType.
+* TypeDenotation:                       FuncType.
+* TypeDenotation:                       OilClass.
+* TypeDenotation:                       OpDef.
+* TypeDenotation:                       OpDef.
+* TypeDenotation:                       TypeDenot.
+* TypeDenotation:                       UserTypes.
+* TypedDefId:                           TypedDefId.
+* TypedDefId:                           BasicType.
+* TypedDefinition:                      TypedEntityInfo.
+* TypedDefinition:                      TypedDefId.
+* TypedDefinition:                      BasicType.
+* TypedIdDef:                           TypedEntityInfo.
+* TypedUseId:                           TypeIdDepend.
+* TypedUseId:                           ExpressionSymbol.
+* TypedUseId:                           TypedEntityInfo.
+* TypedUseId:                           TypedUseId.
+* TypedUseId:                           BasicType.
+
+
+File: type,  Node: fn,  Next: vr,  Prev: tp,  Up: Index
+
+Rule computations
+=================
+
+* Menu:
+
+* AddTypeToBlock:                       FuncType.
+* AddTypeToBlock:                       FuncType.
+* AddTypeToBlock:                       Partition.
+* BadIndication:                        Support.
+* BadIndication:                        Support.
+* BadOperator:                          Support.
+* BadOperator:                          Support.
+* BalanceContext:                       ExpressionSymbol.
+* CastContext:                          ConversionContext.
+* CastContext:                          ConversionContext.
+* Coercible:                            OpDef.
+* Coercible:                            OpDef.
+* Coercible:                            OpDef.
+* ConversionContext:                    ConversionContext.
+* ConversionContext:                    ConversionContext.
+* DyadicContext:                        Support.
+* DyadicContext:                        OperatorSymbol.
+* DyadicContext:                        OperatorSymbol.
+* DyadicContext:                        OperatorSymbol.
+* DyadicOperator:                       OpDef.
+* DyadicOperator:                       OpDef.
+* DyadicOperator:                       OpDef.
+* FinalType:                            TypequDepend.
+* Indication:                           Support.
+* Indication:                           Support.
+* Indication:                           FuncType.
+* Indication:                           ConversionContext.
+* InstClass:                            OilClass.
+* InstClass1:                           OilClass.
+* IsCoercible:                          Support.
+* ListContext:                          Support.
+* ListContext:                          FuncType.
+* ListContext:                          OpDef.
+* ListContext:                          OpndExprListRoot.
+* ListContext:                          OpndExprListRoot.
+* ListOperator:                         FuncType.
+* ListOperator:                         FuncType.
+* ListOperator:                         OpDef.
+* ListOperator:                         OpDef.
+* ListOperator:                         OpDef.
+* ListOperator:                         OpDef.
+* MonadicContext:                       OpndExprListRoot.
+* MonadicContext:                       OperatorSymbol.
+* MonadicOperator:                      OpDef.
+* MonadicOperator:                      OpDef.
+* PrimaryContext:                       TypeIdDepend.
+* PrimaryContext:                       ExpressionSymbol.
+* RootContext:                          ConversionContext.
+* RootContext:                          ConversionContext.
+* TransferContext:                      OpndExprListRoot.
+* TransferContext:                      OpndExprListRoot.
+* TransferContext:                      ExpressionSymbol.
+* TransferContext:                      ExpressionSymbol.
+
+
+File: type,  Node: vr,  Next: cp,  Prev: fn,  Up: Index
+
+Attributes
+==========
+
+* Menu:
+
+* GotOper:                              FuncType.
+* GotOper:                              FuncType.
+* GotOper:                              OilClass.
+* GotOper:                              OpDef.
+* GotOper:                              OpDef.
+* GotOper:                              OpDef.
+* GotOper:                              OpDef.
+* GotOper:                              OpDef.
+* GotType:                              FuncType.
+* GotType:                              FuncType.
+* GotType:                              OpDef.
+* GotType:                              TypeDenot.
+* GotType:                              TypeDenot.
+* Indic:                                OperatorSymbol.
+* IsType:                               Types.
+* Oper:                                 OperatorSymbol.
+* OperName:                             OperatorSymbol.
+* OperatorDefs.GotOper:                 RootType.
+* OpndTypeList:                         OpDef.
+* OpndTypeList:                         OpDef.
+* OpndTypeList:                         OpDef.
+* ParameterTypeList:                    FuncType.
+* ParameterTypeList:                    FuncType.
+* Required:                             AnalyzeExpression.
+* RootType.GotAllOpers:                 RootType.
+* RootType.GotAllTypes:                 RootType.
+* RootType.GotUserTypes:                RootType.
+* RootType.TypeIsSet:                   RootType.
+* Type:                                 TypeIdDepend.
+* Type:                                 Support.
+* Type:                                 FuncType.
+* Type:                                 FuncType.
+* Type:                                 FuncType.
+* Type:                                 OpDef.
+* Type:                                 OpDef.
+* Type:                                 OpDef.
+* Type:                                 TypeUse.
+* Type:                                 TypeIdent.
+* Type:                                 TypeIdent.
+* Type:                                 TypeDenot.
+* Type:                                 AnalyzeExpression.
+* TypeDefDefId.GotDefer:                RootType.
+* TypeDenotation.GotType:               RootType.
+* TypeIsSet:                            TypedIdDepend.
+* TypeKey:                              TypeIdent.
+* TypeKey:                              TypeIdent.
+* TypeKey:                              TypeDenot.
+* TypedDefId.TypeIsSet:                 RootType.
+* TypedUseId.TypeIsSet:                 RootType.
+
+
+File: type,  Node: cp,  Prev: vr,  Up: Index
+
+General concepts
+================
+
+* Menu:
+
+* CLASS, OIL:                           OilClass.
+* COERCION, OIL:                        OilClass.
+* COERCION, OIL:                        Coercibility.
+* Expression module:                    IdentifyOperator.
+* Expression module:                    IdentifyOperator.
+* Expression module:                    Expressions.
+* INDICATION, OIL:                      OilClass.
+* INDICATION, OIL:                      Indications.
+* NoKey:                                Types.
+* OPER, OIL:                            OilClass.
+* OPER, OIL:                            Operators.
+* StructEquiv module:                   TypeEq.
+* Typing module:                        BasicType.
+* Name equivalence:                     UserTypes.
+* OIL CLASS, definition:                OilClass.
+* OIL CLASS, instantiation:             OilClass.
+* OIL COERCION:                         OilClass.
+* OIL COERCION:                         Coercibility.
+* OIL INDICATION:                       OilClass.
+* OIL INDICATION:                       Indications.
+* OIL OPER:                             OilClass.
+* OIL OPER:                             Operators.
+* Specification modules -- Expression:  IdentifyOperator.
+* Specification modules -- Expression:  IdentifyOperator.
+* Specification modules -- Expression:  Expressions.
+* Specification modules -- StructEquiv: TypeEq.
+* Specification modules -- Typing:      BasicType.
+* Structural equivalence:               UserTypes.
+* Type equivalence, name:               UserTypes.
+* Type equivalence, structural:         UserTypes.
+* Typed Entities:                       BasicType.
+* property IsType:                      Types.
+
+

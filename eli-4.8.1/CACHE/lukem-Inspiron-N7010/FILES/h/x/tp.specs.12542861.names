@@ -1,0 +1,6 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Tech/MakeName.gnrc +instance=Identifier :lib*instGen/IdentifierMakeName.fw +instance=Identifier
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/Kind.gnrc :lib*instGen/Kind.fw
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/Unique.gnrc :lib*instGen/Unique.fw
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Prop/FirstOcc.gnrc :lib*instGen/FirstOcc.fw
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/AlgScope.gnrc :lib*instGen/AlgScope.fw
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Output/PtgCommon.fw

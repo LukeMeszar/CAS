@@ -1,0 +1,4500 @@
+
+Computations for Rule LST_Patternrule_19 <
+>
+Computations for Rule LST_Declarationrule_19 <
+>
+Computations for Rule LST_Includerule_19 <
+>
+Computations for Rule LST_0rule_19 <
+>
+Computations for Rule LST_SymbolDefrule_16 <
+>
+Computations for Rule LST_0rule_16 <
+>
+Computations for Rule rule_1 <
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolUse[0].Bind
+         ]
+      >
+      coord: line 147, col 14
+   ]
+   coord: line 147, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 500, col 22
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[0].HasKind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetKind
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SymbolUse[0].Key
+            ]
+            Name: IntNone
+         >
+         coord: line 32, col 9
+      ]
+      deps: < 
+         INCLUDING (Source.GotKind) propagate void
+      >
+      coord: line 32, col 9
+   ]
+   coord: line 31, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[0].typeSym
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolUse[0].Sym
+         ]
+      >
+      coord: line 653, col 16
+   ]
+   coord: line 653, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[0].Bind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: BindingInEnv
+         params: <
+            INCLUDING (Source.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               SymbolUse[0].Sym
+            ]
+         >
+         coord: line 144, col 9
+      ]
+      deps: < 
+         INCLUDING (Source.GotKeys) propagate void
+         AttrAccRule [ 
+            IsAttr
+            SymbolUse[0]._InhPrecond
+         ]
+      >
+      coord: line 144, col 9
+   ]
+   coord: line 143, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[0]._InhPrecond
+   ]
+   right: 
+   StrValue: yes
+   coord: line 153, col 3
+]
+>
+Computations for Rule rule_2 <
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SymbolDef[0].Externs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            SymbolDef[0].Externs
+         ]
+         Call [
+            name: PTGTransformDecl
+            params: <
+               Call [
+                  name: PTGId
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        SymbolDef[0].Sym
+                     ]
+                  >
+                  coord: line 771, col 9
+               ]
+               Call [
+                  name: PTGId
+                  params: <
+                     Depend [
+                        expr: 
+                        Call [
+                           name: GetSym
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 SymbolDef[0].type
+                              ]
+                              IntValue: 0
+                           >
+                           coord: line 772, col 15
+                        ]
+                        deps: < 
+                           INCLUDING (Source.GotAllTypes) propagate void
+                        >
+                        coord: line 772, col 15
+                     ]
+                  >
+                  coord: line 772, col 9
+               ]
+            >
+            coord: line 770, col 7
+         ]
+      >
+      coord: line 768, col 5
+   ]
+   coord: line 767, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SymbolDef[0].Transforms
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            SymbolDef[0].Transforms
+         ]
+         Call [
+            name: PTGTransform
+            params: <
+               Call [
+                  name: PTGId
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        SymbolDef[0].Sym
+                     ]
+                  >
+                  coord: line 765, col 9
+               ]
+               Call [
+                  name: PTGId
+                  params: <
+                     Depend [
+                        expr: 
+                        Call [
+                           name: GetSym
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 SymbolDef[0].type
+                              ]
+                              IntValue: 0
+                           >
+                           coord: line 766, col 15
+                        ]
+                        deps: < 
+                           INCLUDING (Source.GotAllTypes) propagate void
+                        >
+                        coord: line 766, col 15
+                     ]
+                  >
+                  coord: line 766, col 9
+               ]
+            >
+            coord: line 764, col 7
+         ]
+      >
+      coord: line 762, col 5
+   ]
+   coord: line 761, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].GotType
+   ]
+   right: 
+   Call [
+      name: ResetType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            SymbolDef[0].type
+         ]
+      >
+      coord: line 234, col 16
+   ]
+   coord: line 234, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].Kind
+   ]
+   right: 
+   IntValue: 2
+   coord: line 233, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolDef[0].Bind
+         ]
+      >
+      coord: line 133, col 14
+   ]
+   coord: line 133, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].type
+   ]
+   right: 
+   INCLUDING (Declaration.type) propagate value 
+   coord: line 235, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 500, col 22
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].GotKind
+   ]
+   right: 
+   Call [
+      name: SetDiffKind
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            SymbolDef[0].Kind
+         ]
+         Name: IntMultiple
+      >
+      coord: line 27, col 9
+   ]
+   coord: line 26, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolDef[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (Source.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            SymbolDef[0].Sym
+         ]
+      >
+      coord: line 132, col 9
+   ]
+   coord: line 131, col 3
+]
+>
+Computations for Rule rule_3 <
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Terminal[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].IsFirstOcc
+   ]
+   coord: line 83, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Terminal[0].Termcodes
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Terminal[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Terminal[0].Termcodes
+               ]
+               Call [
+                  name: PTGTerm
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Terminal[0].Sym
+                           ]
+                        >
+                        coord: line 555, col 17
+                     ]
+                     Call [
+                        name: TerminalIndex
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Terminal[0].Key
+                           ]
+                        >
+                        coord: line 555, col 33
+                     ]
+                  >
+                  coord: line 555, col 9
+               ]
+            >
+            coord: line 553, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Terminal[0].Termcodes
+         ]
+      >
+      coord: line 552, col 5
+   ]
+   coord: line 551, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Terminal[0].Macros
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Terminal[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Terminal[0].Macros
+               ]
+               Call [
+                  name: PTGMacro
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Terminal[0].Sym
+                           ]
+                        >
+                        coord: line 561, col 18
+                     ]
+                     Call [
+                        name: TerminalIndex
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Terminal[0].Key
+                           ]
+                        >
+                        coord: line 561, col 34
+                     ]
+                  >
+                  coord: line 561, col 9
+               ]
+            >
+            coord: line 559, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Terminal[0].Macros
+         ]
+      >
+      coord: line 558, col 5
+   ]
+   coord: line 557, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].Kind
+   ]
+   right: 
+   IntValue: 1
+   coord: line 209, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Terminal[0].Bind
+         ]
+      >
+      coord: line 133, col 14
+   ]
+   coord: line 133, col 3
+]
+Computation in RULE rule_3 ATTR 
+Depend [
+   expr: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               Call [
+                  name: GetArity
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        Terminal[0].Key
+                     ]
+                     IntValue: 100
+                  >
+                  coord: line 210, col 9
+               ]
+               IntValue: 100
+            >
+            coord: line 210, col 6
+         ]
+         Call [
+            name: message
+            params: <
+               Name: ERROR
+               StrValue: Inconsistent arity
+               IntValue: 0
+               Name: COORDREF
+            >
+            coord: line 211, col 5
+         ]
+      >
+      coord: line 210, col 3
+   ]
+   deps: < 
+      INCLUDING (Source.GotAllArities) propagate void
+   >
+   coord: line 210, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 500, col 22
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Terminal[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 81, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Terminal[0]._FirstOcc
+         ]
+      >
+      coord: line 81, col 9
+   ]
+   coord: line 80, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].GotKind
+   ]
+   right: 
+   Call [
+      name: SetDiffKind
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Terminal[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Terminal[0].Kind
+         ]
+         Name: IntMultiple
+      >
+      coord: line 27, col 9
+   ]
+   coord: line 26, col 3
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (Source.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            Terminal[0].Sym
+         ]
+      >
+      coord: line 132, col 9
+   ]
+   coord: line 131, col 3
+]
+>
+Computations for Rule rule_4 <
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Type[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Type[0].IsFirstOcc
+   ]
+   coord: line 83, col 3
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Type[0].Forwards
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Type[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Type[0].Forwards
+               ]
+               Call [
+                  name: PTGForward
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Type[0].Sym
+                           ]
+                        >
+                        coord: line 697, col 11
+                     ]
+                     Call [
+                        name: PTGId
+                        params: <
+                           Call [
+                              name: ObtainSymbol
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Type[0].Key
+                                 ]
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Type[0].Sym
+                                 ]
+                              >
+                              coord: line 698, col 17
+                           ]
+                        >
+                        coord: line 698, col 11
+                     ]
+                  >
+                  coord: line 696, col 9
+               ]
+            >
+            coord: line 694, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Type[0].Forwards
+         ]
+      >
+      coord: line 693, col 5
+   ]
+   coord: line 692, col 3
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Type[0].Reducers
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Type[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Type[0].Reducers
+               ]
+               Call [
+                  name: PTGReducer
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Type[0].Sym
+                           ]
+                        >
+                        coord: line 705, col 11
+                     ]
+                     Call [
+                        name: PTGId
+                        params: <
+                           Call [
+                              name: ObtainSymbol
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Type[0].Key
+                                 ]
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Type[0].Sym
+                                 ]
+                              >
+                              coord: line 706, col 17
+                           ]
+                        >
+                        coord: line 706, col 11
+                     ]
+                     Depend [
+                        expr: 
+                        Call [
+                           name: GetCases
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 Type[0].Key
+                              ]
+                              Name: PTGNULL
+                           >
+                           coord: line 707, col 11
+                        ]
+                        deps: < 
+                           INCLUDING (Source.GotAllCases) propagate void
+                        >
+                        coord: line 707, col 11
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        Type[0].Sym
+                     ]
+                  >
+                  coord: line 704, col 9
+               ]
+            >
+            coord: line 702, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Type[0].Reducers
+         ]
+      >
+      coord: line 701, col 5
+   ]
+   coord: line 700, col 3
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Type[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Type[0].Bind
+         ]
+      >
+      coord: line 133, col 14
+   ]
+   coord: line 133, col 3
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Type[0].GotSymbol
+   ]
+   right: 
+   Call [
+      name: ResetSym
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Type[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Type[0].Sym
+         ]
+      >
+      coord: line 253, col 18
+   ]
+   coord: line 253, col 3
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Type[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 500, col 22
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Type[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Type[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 81, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Type[0]._FirstOcc
+         ]
+      >
+      coord: line 81, col 9
+   ]
+   coord: line 80, col 3
+]
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Type[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (Source.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            Type[0].Sym
+         ]
+      >
+      coord: line 132, col 9
+   ]
+   coord: line 131, col 3
+]
+>
+Computations for Rule rule_5 <
+Computation in RULE rule_5 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Cost[0].value
+   ]
+   right: 
+   RuleTermAcc: Integer[1]
+   coord: line 281, col 3
+]
+>
+Computations for Rule rule_6 <
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Cost[0].value
+   ]
+   right: 
+   IntValue: 1
+   coord: line 276, col 3
+]
+>
+Computations for Rule rule_7 <
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Function[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Function[0].IsFirstOcc
+   ]
+   coord: line 83, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Function[0].Builders
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Function[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Function[0].Builders
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: EQ
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Function[0].ntcount
+                           ]
+                           IntValue: 0
+                        >
+                        coord: line 618, col 12
+                     ]
+                     Call [
+                        name: PTGBuild0
+                        params: <
+                           Call [
+                              name: PTGId
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Function[0].Sym
+                                 ]
+                              >
+                              coord: line 620, col 13
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              Function[0].FieldDecls
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              Function[0].ArgDecls
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              Function[0].ArgNames
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              Function[0].FieldSets
+                           ]
+                        >
+                        coord: line 619, col 11
+                     ]
+                     Call [
+                        name: IF
+                        params: <
+                           Call [
+                              name: EQ
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Function[0].ntcount
+                                 ]
+                                 IntValue: 1
+                              >
+                              coord: line 625, col 12
+                           ]
+                           Call [
+                              name: PTGBuild1
+                              params: <
+                                 Call [
+                                    name: PTGId
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          Function[0].Sym
+                                       ]
+                                    >
+                                    coord: line 627, col 13
+                                 ]
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Function[0].FieldDecls
+                                 ]
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Function[0].ArgDecls
+                                 ]
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Function[0].ArgNames
+                                 ]
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Function[0].FieldSets
+                                 ]
+                              >
+                              coord: line 626, col 11
+                           ]
+                           Call [
+                              name: IF
+                              params: <
+                                 Call [
+                                    name: EQ
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          Function[0].ntcount
+                                       ]
+                                       IntValue: 2
+                                    >
+                                    coord: line 632, col 12
+                                 ]
+                                 Call [
+                                    name: PTGBuild2
+                                    params: <
+                                       Call [
+                                          name: PTGId
+                                          params: <
+                                             AttrAccRule [ 
+                                                IsAttr
+                                                Function[0].Sym
+                                             ]
+                                          >
+                                          coord: line 634, col 13
+                                       ]
+                                       AttrAccRule [ 
+                                          IsChain
+                                          Function[0].FieldDecls
+                                       ]
+                                       AttrAccRule [ 
+                                          IsChain
+                                          Function[0].ArgDecls
+                                       ]
+                                       AttrAccRule [ 
+                                          IsChain
+                                          Function[0].ArgNames
+                                       ]
+                                       AttrAccRule [ 
+                                          IsChain
+                                          Function[0].FieldSets
+                                       ]
+                                    >
+                                    coord: line 633, col 11
+                                 ]
+                                 Name: PTGNULL
+                              >
+                              coord: line 632, col 9
+                           ]
+                        >
+                        coord: line 625, col 9
+                     ]
+                  >
+                  coord: line 618, col 9
+               ]
+            >
+            coord: line 616, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Function[0].Builders
+         ]
+      >
+      coord: line 615, col 5
+   ]
+   coord: line 614, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Function[0].Externs
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Function[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Function[0].Externs
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: EQ
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Function[0].ntcount
+                           ]
+                           IntValue: 0
+                        >
+                        coord: line 645, col 12
+                     ]
+                     Call [
+                        name: PTGExtern0
+                        params: <
+                           Call [
+                              name: PTGId
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Function[0].Sym
+                                 ]
+                              >
+                              coord: line 645, col 42
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              Function[0].ArgDecls
+                           ]
+                        >
+                        coord: line 645, col 31
+                     ]
+                     Call [
+                        name: IF
+                        params: <
+                           Call [
+                              name: EQ
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    Function[0].ntcount
+                                 ]
+                                 IntValue: 1
+                              >
+                              coord: line 646, col 12
+                           ]
+                           Call [
+                              name: PTGExtern1
+                              params: <
+                                 Call [
+                                    name: PTGId
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          Function[0].Sym
+                                       ]
+                                    >
+                                    coord: line 646, col 42
+                                 ]
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Function[0].ArgDecls
+                                 ]
+                              >
+                              coord: line 646, col 31
+                           ]
+                           Call [
+                              name: IF
+                              params: <
+                                 Call [
+                                    name: EQ
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          Function[0].ntcount
+                                       ]
+                                       IntValue: 2
+                                    >
+                                    coord: line 647, col 12
+                                 ]
+                                 Call [
+                                    name: PTGExtern2
+                                    params: <
+                                       Call [
+                                          name: PTGId
+                                          params: <
+                                             AttrAccRule [ 
+                                                IsAttr
+                                                Function[0].Sym
+                                             ]
+                                          >
+                                          coord: line 647, col 42
+                                       ]
+                                       AttrAccRule [ 
+                                          IsChain
+                                          Function[0].ArgDecls
+                                       ]
+                                    >
+                                    coord: line 647, col 31
+                                 ]
+                                 Name: PTGNULL
+                              >
+                              coord: line 647, col 9
+                           ]
+                        >
+                        coord: line 646, col 9
+                     ]
+                  >
+                  coord: line 645, col 9
+               ]
+            >
+            coord: line 643, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Function[0].Externs
+         ]
+      >
+      coord: line 642, col 5
+   ]
+   coord: line 641, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Function[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Function[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 81, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Function[0]._FirstOcc
+         ]
+      >
+      coord: line 81, col 9
+   ]
+   coord: line 80, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Function[0].Key
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (Source.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            Function[0].Sym
+         ]
+      >
+      coord: line 357, col 16
+   ]
+   coord: line 357, col 3
+]
+>
+Computations for Rule rule_8 <
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Children[0].comsigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: obstack_grow
+               params: <
+                  Name: SigObstk
+                  Call [
+                     name: StringTable
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           Children[0].RightSym
+                        ]
+                     >
+                     coord: line 468, col 9
+                  ]
+                  Call [
+                     name: strlen
+                     params: <
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 Children[0].RightSym
+                              ]
+                           >
+                           coord: line 469, col 16
+                        ]
+                     >
+                     coord: line 469, col 9
+                  ]
+               >
+               coord: line 466, col 7
+            ]
+         >
+         coord: line 465, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Children[0].comsigs
+         ]
+      >
+      coord: line 465, col 5
+   ]
+   coord: line 464, col 3
+]
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Children[0].LeftSym
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Child[1].Sym
+   ]
+   coord: line 463, col 3
+]
+>
+Computations for Rule rule_9 <
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Children[0].LeftSym
+   ]
+   right: 
+   IntValue: 0
+   coord: line 362, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Children[0].comsigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: IF
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Child[2].IsNt
+                  ]
+                  Call [
+                     name: ORDER
+                     params: <
+                        Call [
+                           name: obstack_1grow
+                           params: <
+                              Name: SigObstk
+                              ChrValue: 176
+                           >
+                           coord: line 448, col 9
+                        ]
+                        Call [
+                           name: IF
+                           params: <
+                              Call [
+                                 name: EQ
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsChain
+                                       Children[1].ntindex
+                                    ]
+                                    IntValue: 1
+                                 >
+                                 coord: line 449, col 12
+                              ]
+                              Call [
+                                 name: obstack_grow
+                                 params: <
+                                    Name: SigObstk
+                                    Call [
+                                       name: StringTable
+                                       params: <
+                                          AttrAccRule [ 
+                                             IsAttr
+                                             Children[1].LeftSym
+                                          ]
+                                       >
+                                       coord: line 452, col 13
+                                    ]
+                                    Call [
+                                       name: strlen
+                                       params: <
+                                          Call [
+                                             name: StringTable
+                                             params: <
+                                                AttrAccRule [ 
+                                                   IsAttr
+                                                   Children[1].LeftSym
+                                                ]
+                                             >
+                                             coord: line 453, col 20
+                                          ]
+                                       >
+                                       coord: line 453, col 13
+                                    ]
+                                 >
+                                 coord: line 450, col 11
+                              ]
+                              Call [
+                                 name: obstack_grow
+                                 params: <
+                                    Name: SigObstk
+                                    Call [
+                                       name: StringTable
+                                       params: <
+                                          AttrAccRule [ 
+                                             IsAttr
+                                             Child[2].Sym
+                                          ]
+                                       >
+                                       coord: line 456, col 13
+                                    ]
+                                    Call [
+                                       name: strlen
+                                       params: <
+                                          Call [
+                                             name: StringTable
+                                             params: <
+                                                AttrAccRule [ 
+                                                   IsAttr
+                                                   Child[2].Sym
+                                                ]
+                                             >
+                                             coord: line 457, col 20
+                                          ]
+                                       >
+                                       coord: line 457, col 13
+                                    ]
+                                 >
+                                 coord: line 454, col 11
+                              ]
+                           >
+                           coord: line 449, col 9
+                        ]
+                     >
+                     coord: line 447, col 7
+                  ]
+               >
+               coord: line 446, col 5
+            ]
+         >
+         coord: line 445, col 23
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[2].comsigs
+         ]
+      >
+      coord: line 445, col 23
+   ]
+   coord: line 445, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Children[1].RightSym
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Child[2].Sym
+   ]
+   coord: line 443, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[2].sigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Child[2].IsNt
+            ]
+            Call [
+               name: obstack_1grow
+               params: <
+                  Name: SigObstk
+                  ChrValue: 175
+               >
+               coord: line 444, col 28
+            ]
+         >
+         coord: line 444, col 14
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Children[1].sigs
+         ]
+      >
+      coord: line 444, col 14
+   ]
+   coord: line 444, col 3
+]
+>
+Computations for Rule rule_10 <
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: HasNt
+   right: 
+   CONSTITUENTS (Child.IsNt) WITH (int, OR, IDENTICAL, ZERO) propagate value 
+   coord: line 415, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].GotUse
+   ]
+   right: 
+   IntValue: 1
+   coord: line 244, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].ntcount
+   ]
+   right: 
+   CONSTITUENTS (Child.IsNt) WITH (int, ADD, IDENTICAL, ZERO) propagate value 
+   coord: line 296, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].Sym
+   ]
+   right: 
+   IntValue: 0
+   coord: line 367, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].Ptg
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 599, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].comsigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: IF
+               params: <
+                  RuleAttrAcc: HasNt
+                  Call [
+                     name: obstack_1grow
+                     params: <
+                        Name: SigObstk
+                        ChrValue: 173
+                     >
+                     coord: line 436, col 15
+                  ]
+               >
+               coord: line 436, col 5
+            ]
+         >
+         coord: line 435, col 17
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Children[2].comsigs
+         ]
+      >
+      coord: line 435, col 17
+   ]
+   coord: line 435, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].sigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            RuleAttrAcc: HasNt
+            Call [
+               name: obstack_1grow
+               params: <
+                  Name: SigObstk
+                  ChrValue: 171
+               >
+               coord: line 426, col 24
+            ]
+         >
+         coord: line 426, col 14
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Children[2].sigs
+         ]
+      >
+      coord: line 426, col 14
+   ]
+   coord: line 426, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].IsNt
+   ]
+   right: 
+   IntValue: 1
+   coord: line 417, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[1].GotArity
+   ]
+   right: 
+   Call [
+      name: IsArity
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Terminal[1].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Child[0].ntcount
+         ]
+         IntValue: 100
+      >
+      coord: line 438, col 21
+   ]
+   coord: line 438, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Children[2].RightSym
+   ]
+   right: 
+   IntValue: 0
+   coord: line 363, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Children[2].comsigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: ORDER
+               params: <
+                  Call [
+                     name: obstack_grow
+                     params: <
+                        Name: SigObstk
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 Terminal[1].Sym
+                              ]
+                           >
+                           coord: line 431, col 11
+                        ]
+                        Call [
+                           name: strlen
+                           params: <
+                              Call [
+                                 name: StringTable
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsAttr
+                                       Terminal[1].Sym
+                                    ]
+                                 >
+                                 coord: line 432, col 18
+                              ]
+                           >
+                           coord: line 432, col 11
+                        ]
+                     >
+                     coord: line 429, col 9
+                  ]
+                  Call [
+                     name: IF
+                     params: <
+                        RuleAttrAcc: HasNt
+                        Call [
+                           name: obstack_1grow
+                           params: <
+                              Name: SigObstk
+                              ChrValue: 172
+                           >
+                           coord: line 433, col 19
+                        ]
+                     >
+                     coord: line 433, col 9
+                  ]
+               >
+               coord: line 428, col 7
+            ]
+         >
+         coord: line 427, col 20
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[0].comsigs
+         ]
+      >
+      coord: line 427, col 20
+   ]
+   coord: line 427, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Children[2].sigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ORDER
+         params: <
+            Call [
+               name: obstack_grow
+               params: <
+                  Name: SigObstk
+                  Call [
+                     name: StringTable
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           Terminal[1].Sym
+                        ]
+                     >
+                     coord: line 422, col 9
+                  ]
+                  Call [
+                     name: strlen
+                     params: <
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 Terminal[1].Sym
+                              ]
+                           >
+                           coord: line 423, col 16
+                        ]
+                     >
+                     coord: line 423, col 9
+                  ]
+               >
+               coord: line 420, col 7
+            ]
+            Call [
+               name: IF
+               params: <
+                  RuleAttrAcc: HasNt
+                  Call [
+                     name: obstack_1grow
+                     params: <
+                        Name: SigObstk
+                        ChrValue: 170
+                     >
+                     coord: line 424, col 17
+                  ]
+               >
+               coord: line 424, col 7
+            ]
+         >
+         coord: line 419, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[0].sigs
+         ]
+      >
+      coord: line 419, col 5
+   ]
+   coord: line 418, col 3
+]
+>
+Computations for Rule rule_11 <
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].GotUse
+   ]
+   right: 
+   IntValue: 1
+   coord: line 244, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].ntcount
+   ]
+   right: 
+   CONSTITUENTS (Child.IsNt) WITH (int, ADD, IDENTICAL, ZERO) propagate value 
+   coord: line 296, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].Sym
+   ]
+   right: 
+   IntValue: 0
+   coord: line 367, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].Ptg
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 599, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].comsigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: obstack_grow
+               params: <
+                  Name: SigObstk
+                  Call [
+                     name: StringTable
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           Terminal[1].Sym
+                        ]
+                     >
+                     coord: line 407, col 9
+                  ]
+                  Call [
+                     name: strlen
+                     params: <
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 Terminal[1].Sym
+                              ]
+                           >
+                           coord: line 408, col 16
+                        ]
+                     >
+                     coord: line 408, col 9
+                  ]
+               >
+               coord: line 405, col 7
+            ]
+         >
+         coord: line 404, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[0].comsigs
+         ]
+      >
+      coord: line 404, col 5
+   ]
+   coord: line 403, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].sigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: obstack_grow
+         params: <
+            Name: SigObstk
+            Call [
+               name: StringTable
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Terminal[1].Sym
+                  ]
+               >
+               coord: line 400, col 7
+            ]
+            Call [
+               name: strlen
+               params: <
+                  Call [
+                     name: StringTable
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           Terminal[1].Sym
+                        ]
+                     >
+                     coord: line 401, col 14
+                  ]
+               >
+               coord: line 401, col 7
+            ]
+         >
+         coord: line 398, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[0].sigs
+         ]
+      >
+      coord: line 398, col 5
+   ]
+   coord: line 397, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].IsNt
+   ]
+   right: 
+   IntValue: 1
+   coord: line 396, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Terminal[1].GotArity
+   ]
+   right: 
+   Call [
+      name: IsArity
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Terminal[1].Key
+         ]
+         IntValue: 0
+         IntValue: 100
+      >
+      coord: line 410, col 21
+   ]
+   coord: line 410, col 3
+]
+>
+Computations for Rule rule_12 <
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: type
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetType
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SymbolUse[1].Key
+            ]
+            Name: NoKey
+         >
+         coord: line 734, col 9
+      ]
+      deps: < 
+         INCLUDING (Source.GotAllTypes) propagate void
+      >
+      coord: line 734, col 9
+   ]
+   coord: line 734, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].ntcount
+   ]
+   right: 
+   CONSTITUENTS (Child.IsNt) WITH (int, ADD, IDENTICAL, ZERO) propagate value 
+   coord: line 296, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].revers
+   ]
+   right: 
+   Call [
+      name: PTGCommaSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Child[0].revers
+         ]
+         Call [
+            name: IF
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+               Call [
+                  name: PTGReducerCall
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           Call [
+                              name: ObtainSymbol
+                              params: <
+                                 RuleAttrAcc: type
+                                 Call [
+                                    name: GetSym
+                                    params: <
+                                       RuleAttrAcc: type
+                                       IntValue: 0
+                                    >
+                                    coord: line 750, col 36
+                                 ]
+                              >
+                              coord: line 750, col 17
+                           ]
+                        >
+                        coord: line 750, col 11
+                     ]
+                     Call [
+                        name: IF
+                        params: <
+                           Call [
+                              name: EQ
+                              params: <
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Child[0].ntindex
+                                 ]
+                                 IntValue: 0
+                              >
+                              coord: line 751, col 14
+                           ]
+                           IntValue: 1
+                           Call [
+                              name: IF
+                              params: <
+                                 Call [
+                                    name: EQ
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsChain
+                                          Child[0].ntindex
+                                       ]
+                                       IntValue: 1
+                                    >
+                                    coord: line 751, col 39
+                                 ]
+                                 IntValue: 0
+                                 AttrAccRule [ 
+                                    IsChain
+                                    Child[0].ntindex
+                                 ]
+                              >
+                              coord: line 751, col 36
+                           ]
+                        >
+                        coord: line 751, col 11
+                     ]
+                  >
+                  coord: line 749, col 9
+               ]
+               Call [
+                  name: PTGGetValue
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           INCLUDING (Signature.struct) propagate value 
+                        >
+                        coord: line 753, col 11
+                     ]
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].tindex
+                     ]
+                  >
+                  coord: line 752, col 9
+               ]
+            >
+            coord: line 748, col 7
+         ]
+      >
+      coord: line 746, col 5
+   ]
+   coord: line 745, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].leaves
+   ]
+   right: 
+   Call [
+      name: PTGCommaSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Child[0].leaves
+         ]
+         Call [
+            name: IF
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+               Call [
+                  name: PTGReducerCall
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           Call [
+                              name: ObtainSymbol
+                              params: <
+                                 RuleAttrAcc: type
+                                 Call [
+                                    name: GetSym
+                                    params: <
+                                       RuleAttrAcc: type
+                                       IntValue: 0
+                                    >
+                                    coord: line 740, col 36
+                                 ]
+                              >
+                              coord: line 740, col 17
+                           ]
+                        >
+                        coord: line 740, col 11
+                     ]
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].ntindex
+                     ]
+                  >
+                  coord: line 739, col 9
+               ]
+               Call [
+                  name: PTGGetValue
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           INCLUDING (Signature.struct) propagate value 
+                        >
+                        coord: line 743, col 11
+                     ]
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].tindex
+                     ]
+                  >
+                  coord: line 742, col 9
+               ]
+            >
+            coord: line 738, col 7
+         ]
+      >
+      coord: line 736, col 5
+   ]
+   coord: line 735, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].FieldSets
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: NOT
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+            >
+            coord: line 677, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Child[0].FieldSets
+               ]
+               Call [
+                  name: PTGFieldSet
+                  params: <
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].tindex
+                     ]
+                  >
+                  coord: line 680, col 9
+               ]
+            >
+            coord: line 678, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Child[0].FieldSets
+         ]
+      >
+      coord: line 677, col 5
+   ]
+   coord: line 676, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].ArgNames
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: NOT
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+            >
+            coord: line 671, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Child[0].ArgNames
+               ]
+               Call [
+                  name: PTGArgName
+                  params: <
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].tindex
+                     ]
+                  >
+                  coord: line 674, col 9
+               ]
+            >
+            coord: line 672, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Child[0].ArgNames
+         ]
+      >
+      coord: line 671, col 5
+   ]
+   coord: line 670, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].ArgDecls
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: NOT
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+            >
+            coord: line 665, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Child[0].ArgDecls
+               ]
+               Call [
+                  name: PTGArgDecl
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        SymbolUse[1].typeSym
+                     ]
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].tindex
+                     ]
+                  >
+                  coord: line 668, col 9
+               ]
+            >
+            coord: line 666, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Child[0].ArgDecls
+         ]
+      >
+      coord: line 665, col 5
+   ]
+   coord: line 664, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].FieldDecls
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: NOT
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+            >
+            coord: line 659, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Child[0].FieldDecls
+               ]
+               Call [
+                  name: PTGFieldDecl
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        SymbolUse[1].typeSym
+                     ]
+                     AttrAccRule [ 
+                        IsChain
+                        Child[0].tindex
+                     ]
+                  >
+                  coord: line 662, col 9
+               ]
+            >
+            coord: line 660, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Child[0].FieldDecls
+         ]
+      >
+      coord: line 659, col 5
+   ]
+   coord: line 658, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].Ptg
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SymbolUse[1].HasKind
+               ]
+               Call [
+                  name: NEG
+                  params: <
+                     IntValue: 1
+                  >
+                  coord: line 593, col 29
+               ]
+            >
+            coord: line 593, col 8
+         ]
+         Call [
+            name: PTGId
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SymbolUse[1].Sym
+               ]
+            >
+            coord: line 594, col 7
+         ]
+         Name: PTGNULL
+      >
+      coord: line 593, col 5
+   ]
+   coord: line 592, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].tindex
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Child[0].tindex
+         ]
+         Call [
+            name: NOT
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Child[0].IsNt
+               ]
+            >
+            coord: line 485, col 33
+         ]
+      >
+      coord: line 485, col 16
+   ]
+   coord: line 485, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].ntindex
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Child[0].ntindex
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Child[0].IsNt
+         ]
+      >
+      coord: line 484, col 17
+   ]
+   coord: line 484, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].funs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: NOT
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Child[0].IsNt
+                  ]
+               >
+               coord: line 382, col 8
+            ]
+            Call [
+               name: ORDER
+               params: <
+                  Call [
+                     name: obstack_1grow
+                     params: <
+                        Name: SigObstk
+                        ChrValue: 162
+                     >
+                     coord: line 384, col 9
+                  ]
+                  Call [
+                     name: obstack_grow
+                     params: <
+                        Name: SigObstk
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 SymbolUse[1].Sym
+                              ]
+                           >
+                           coord: line 387, col 11
+                        ]
+                        Call [
+                           name: strlen
+                           params: <
+                              Call [
+                                 name: StringTable
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsAttr
+                                       SymbolUse[1].Sym
+                                    ]
+                                 >
+                                 coord: line 388, col 18
+                              ]
+                           >
+                           coord: line 388, col 11
+                        ]
+                     >
+                     coord: line 385, col 9
+                  ]
+               >
+               coord: line 383, col 7
+            ]
+         >
+         coord: line 382, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[0].funs
+         ]
+      >
+      coord: line 382, col 5
+   ]
+   coord: line 381, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[0].sigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Child[0].IsNt
+            ]
+            Call [
+               name: obstack_grow
+               params: <
+                  Name: SigObstk
+                  Call [
+                     name: StringTable
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           SymbolUse[1].Sym
+                        ]
+                     >
+                     coord: line 378, col 9
+                  ]
+                  Call [
+                     name: strlen
+                     params: <
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 SymbolUse[1].Sym
+                              ]
+                           >
+                           coord: line 379, col 16
+                        ]
+                     >
+                     coord: line 379, col 9
+                  ]
+               >
+               coord: line 376, col 7
+            ]
+         >
+         coord: line 375, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[0].sigs
+         ]
+      >
+      coord: line 375, col 5
+   ]
+   coord: line 374, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].IsNt
+   ]
+   right: 
+   Call [
+      name: EQ
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolUse[1].HasKind
+         ]
+         IntValue: 2
+      >
+      coord: line 373, col 14
+   ]
+   coord: line 373, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].Sym
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      SymbolUse[1].Sym
+   ]
+   coord: line 372, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Child[0].GotUse
+   ]
+   right: 
+   Call [
+      name: ResetUsed
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SymbolUse[1].Key
+         ]
+         IntValue: 1
+      >
+      coord: line 240, col 16
+   ]
+   coord: line 240, col 3
+]
+>
+Computations for Rule rule_13 <
+Computation in RULE rule_13 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SymbolUse[1].FieldDecls
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 607, col 3
+]
+Computation in RULE rule_13 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SymbolUse[1].ArgDecls
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 608, col 3
+]
+Computation in RULE rule_13 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SymbolUse[1].ArgNames
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 609, col 3
+]
+Computation in RULE rule_13 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SymbolUse[1].FieldSets
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 610, col 3
+]
+Computation in RULE rule_13 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Signature[0].type
+            ]
+            Name: NoKey
+         >
+         coord: line 311, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            Call [
+               name: CatStrInd
+               params: <
+                  StrValue: No type declared for 
+                  AttrAccRule [ 
+                     IsAttr
+                     SymbolUse[1].Sym
+                  ]
+               >
+               coord: line 312, col 19
+            ]
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 312, col 5
+      ]
+   >
+   coord: line 311, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (Source.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            Signature[0].Sym
+         ]
+      >
+      coord: line 503, col 13
+   ]
+   coord: line 503, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Signature[0].Bind
+         ]
+      >
+      coord: line 504, col 12
+   ]
+   coord: line 504, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Signature[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 58, col 9
+      ]
+      deps: < 
+         INCLUDING (Source._GotUnique) propagate void
+      >
+      coord: line 58, col 9
+   ]
+   coord: line 57, col 3
+]
+Computation in RULE rule_13 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Signature[0].Unique
+            ]
+         >
+         coord: line 505, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined pattern
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 506, col 5
+      ]
+   >
+   coord: line 505, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Signature[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 55, col 9
+   ]
+   coord: line 54, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[0].comsigs
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].ComSym
+   ]
+   coord: line 334, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[0].funs
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Function[3].Sym
+   ]
+   coord: line 324, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[0].sigs
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].Sym
+   ]
+   coord: line 323, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].struct
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Function[3].Sym
+   ]
+   coord: line 322, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].ComSym
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: ORDER
+               params: <
+                  Call [
+                     name: obstack_1grow
+                     params: <
+                        Name: SigObstk
+                        ChrValue: 148
+                     >
+                     coord: line 318, col 11
+                  ]
+                  Call [
+                     name: MakeName
+                     params: <
+                        Call [
+                           name: obstack_finish
+                           params: <
+                              Name: SigObstk
+                           >
+                           coord: line 318, col 49
+                        ]
+                     >
+                     coord: line 318, col 40
+                  ]
+               >
+               coord: line 318, col 5
+            ]
+            IntValue: 0
+         >
+         coord: line 317, col 20
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[2].comsigs
+         ]
+      >
+      coord: line 317, col 20
+   ]
+   coord: line 317, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].Sym
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ORDER
+         params: <
+            Call [
+               name: obstack_1grow
+               params: <
+                  Name: SigObstk
+                  ChrValue: 144
+               >
+               coord: line 315, col 11
+            ]
+            Call [
+               name: MakeName
+               params: <
+                  Call [
+                     name: obstack_finish
+                     params: <
+                        Name: SigObstk
+                     >
+                     coord: line 315, col 49
+                  ]
+               >
+               coord: line 315, col 40
+            ]
+         >
+         coord: line 315, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[2].sigs
+         ]
+      >
+      coord: line 315, col 5
+   ]
+   coord: line 314, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].type
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetType
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SymbolUse[1].Key
+            ]
+            Name: NoKey
+         >
+         coord: line 310, col 5
+      ]
+      deps: < 
+         INCLUDING (Source.GotAllTypes) propagate void
+      >
+      coord: line 310, col 5
+   ]
+   coord: line 309, col 3
+]
+Computation in RULE rule_13 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[2].tindex
+   ]
+   right: 
+   IntValue: 0
+   coord: line 479, col 3
+]
+Computation in RULE rule_13 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[2].ntindex
+   ]
+   right: 
+   IntValue: 0
+   coord: line 478, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[2].funs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: EQ
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Child[2].ntcount
+                  ]
+                  IntValue: 0
+               >
+               coord: line 345, col 10
+            ]
+            Call [
+               name: obstack_grow
+               params: <
+                  Name: SigObstk
+                  StrValue: TP_0
+                  IntValue: 4
+               >
+               coord: line 345, col 30
+            ]
+            Call [
+               name: IF
+               params: <
+                  Call [
+                     name: EQ
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           Child[2].ntcount
+                        ]
+                        IntValue: 1
+                     >
+                     coord: line 346, col 10
+                  ]
+                  Call [
+                     name: obstack_grow
+                     params: <
+                        Name: SigObstk
+                        StrValue: TP_1
+                        IntValue: 4
+                     >
+                     coord: line 346, col 30
+                  ]
+                  Call [
+                     name: IF
+                     params: <
+                        Call [
+                           name: EQ
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 Child[2].ntcount
+                              ]
+                              IntValue: 2
+                           >
+                           coord: line 347, col 10
+                        ]
+                        Call [
+                           name: obstack_grow
+                           params: <
+                              Name: SigObstk
+                              StrValue: TP_2
+                              IntValue: 4
+                           >
+                           coord: line 347, col 30
+                        ]
+                     >
+                     coord: line 347, col 7
+                  ]
+               >
+               coord: line 346, col 7
+            ]
+         >
+         coord: line 345, col 7
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Signature[0].funs
+         ]
+      >
+      coord: line 345, col 7
+   ]
+   coord: line 344, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[2].comsigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            INCLUDING (Pattern.IsCommutative) propagate value 
+            Call [
+               name: ORDER
+               params: <
+                  Call [
+                     name: obstack_grow
+                     params: <
+                        Name: SigObstk
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 SymbolUse[1].Sym
+                              ]
+                           >
+                           coord: line 339, col 9
+                        ]
+                        Call [
+                           name: strlen
+                           params: <
+                              Call [
+                                 name: StringTable
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsAttr
+                                       SymbolUse[1].Sym
+                                    ]
+                                 >
+                                 coord: line 340, col 16
+                              ]
+                           >
+                           coord: line 340, col 9
+                        ]
+                     >
+                     coord: line 337, col 7
+                  ]
+                  Call [
+                     name: obstack_1grow
+                     params: <
+                        Name: SigObstk
+                        ChrValue: 153
+                     >
+                     coord: line 341, col 7
+                  ]
+               >
+               coord: line 336, col 5
+            ]
+         >
+         coord: line 335, col 17
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Signature[0].comsigs
+         ]
+      >
+      coord: line 335, col 17
+   ]
+   coord: line 335, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Child[2].sigs
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ORDER
+         params: <
+            Call [
+               name: obstack_grow
+               params: <
+                  Name: SigObstk
+                  Call [
+                     name: StringTable
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           SymbolUse[1].Sym
+                        ]
+                     >
+                     coord: line 329, col 9
+                  ]
+                  Call [
+                     name: strlen
+                     params: <
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 SymbolUse[1].Sym
+                              ]
+                           >
+                           coord: line 330, col 16
+                        ]
+                     >
+                     coord: line 330, col 9
+                  ]
+               >
+               coord: line 327, col 7
+            ]
+            Call [
+               name: obstack_1grow
+               params: <
+                  Name: SigObstk
+                  ChrValue: 152
+               >
+               coord: line 331, col 7
+            ]
+         >
+         coord: line 326, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Signature[0].sigs
+         ]
+      >
+      coord: line 326, col 5
+   ]
+   coord: line 325, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Function[3].ntcount
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Child[2].ntcount
+   ]
+   coord: line 352, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Function[3].Sym
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ORDER
+         params: <
+            Call [
+               name: obstack_1grow
+               params: <
+                  Name: SigObstk
+                  ChrValue: 157
+               >
+               coord: line 350, col 11
+            ]
+            Call [
+               name: MakeName
+               params: <
+                  Call [
+                     name: obstack_finish
+                     params: <
+                        Name: SigObstk
+                     >
+                     coord: line 350, col 49
+                  ]
+               >
+               coord: line 350, col 40
+            ]
+         >
+         coord: line 350, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Child[2].funs
+         ]
+      >
+      coord: line 350, col 5
+   ]
+   coord: line 349, col 3
+]
+>
+Computations for Rule rule_14 <
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: id
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         RuleTermAcc: Identifier[1]
+      >
+      coord: line 584, col 7
+   ]
+   coord: line 584, col 3
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Pattern[0].GotCase
+   ]
+   right: 
+   Call [
+      name: UpdateCases
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Signature[1].type
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               Call [
+                  name: PTGCase
+                  params: <
+                     AttrAccRule [ 
+                        IsChain
+                        Pattern[0].index
+                     ]
+                     RuleAttrAcc: id
+                     AttrAccRule [ 
+                        IsChain
+                        Signature[1].leaves
+                     ]
+                  >
+                  coord: line 728, col 9
+               ]
+               Call [
+                  name: PTGCase
+                  params: <
+                     Call [
+                        name: ADD
+                        params: <
+                           AttrAccRule [ 
+                              IsChain
+                              Pattern[0].index
+                           ]
+                           IntValue: 1
+                        >
+                        coord: line 729, col 17
+                     ]
+                     RuleAttrAcc: id
+                     AttrAccRule [ 
+                        IsChain
+                        Signature[1].revers
+                     ]
+                  >
+                  coord: line 729, col 9
+               ]
+            >
+            coord: line 727, col 7
+         ]
+      >
+      coord: line 725, col 5
+   ]
+   coord: line 724, col 3
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Pattern[0].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         Call [
+            name: PTGPattern
+            params: <
+               Call [
+                  name: PTGId
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        Signature[1].Sym
+                     ]
+                  >
+                  coord: line 586, col 16
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  Pattern[0].index
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  Cost[2].value
+               ]
+               RuleAttrAcc: id
+            >
+            coord: line 586, col 5
+         ]
+         Call [
+            name: PTGPattern
+            params: <
+               Call [
+                  name: PTGId
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        Signature[1].ComSym
+                     ]
+                  >
+                  coord: line 587, col 16
+               ]
+               Call [
+                  name: ADD
+                  params: <
+                     AttrAccRule [ 
+                        IsChain
+                        Pattern[0].index
+                     ]
+                     IntValue: 1
+                  >
+                  coord: line 587, col 40
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  Cost[2].value
+               ]
+               RuleAttrAcc: id
+            >
+            coord: line 587, col 5
+         ]
+      >
+      coord: line 585, col 15
+   ]
+   coord: line 585, col 3
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Pattern[0].IsCommutative
+   ]
+   right: 
+   IntValue: 1
+   coord: line 583, col 3
+]
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Pattern[0].index
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Pattern[0].index
+         ]
+         IntValue: 2
+      >
+      coord: line 271, col 17
+   ]
+   coord: line 271, col 3
+]
+Computation in RULE rule_14 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[1].revers
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 723, col 3
+]
+Computation in RULE rule_14 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[1].leaves
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 722, col 3
+]
+>
+Computations for Rule rule_15 <
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: id
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         RuleTermAcc: Identifier[1]
+      >
+      coord: line 576, col 7
+   ]
+   coord: line 576, col 3
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Pattern[0].GotCase
+   ]
+   right: 
+   Call [
+      name: UpdateCases
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Signature[1].type
+         ]
+         Call [
+            name: PTGCase
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Pattern[0].index
+               ]
+               RuleAttrAcc: id
+               AttrAccRule [ 
+                  IsChain
+                  Signature[1].leaves
+               ]
+            >
+            coord: line 717, col 32
+         ]
+      >
+      coord: line 717, col 5
+   ]
+   coord: line 716, col 3
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Pattern[0].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGPattern
+      params: <
+         Call [
+            name: PTGId
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Signature[1].Sym
+               ]
+            >
+            coord: line 578, col 16
+         ]
+         AttrAccRule [ 
+            IsChain
+            Pattern[0].index
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Cost[2].value
+         ]
+         RuleAttrAcc: id
+      >
+      coord: line 578, col 5
+   ]
+   coord: line 577, col 3
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Pattern[0].IsCommutative
+   ]
+   right: 
+   IntValue: 0
+   coord: line 575, col 3
+]
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Pattern[0].index
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Pattern[0].index
+         ]
+         IntValue: 1
+      >
+      coord: line 266, col 17
+   ]
+   coord: line 266, col 3
+]
+Computation in RULE rule_15 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[1].revers
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 715, col 3
+]
+Computation in RULE rule_15 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Signature[1].leaves
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 714, col 3
+]
+>
+Computations for Rule rule_16 <
+>
+Computations for Rule rule_17 <
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Declaration[0].type
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Type[2].Key
+   ]
+   coord: line 229, col 3
+]
+>
+Computations for Rule rule_18 <
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Include[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Include[0].IsFirstOcc
+   ]
+   coord: line 83, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Include[0].Includes
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Include[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Include[0].Includes
+               ]
+               Call [
+                  name: PTGInclude
+                  params: <
+                     Call [
+                        name: PTGId
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              Include[0].Sym
+                           ]
+                        >
+                        coord: line 542, col 39
+                     ]
+                  >
+                  coord: line 542, col 28
+               ]
+            >
+            coord: line 542, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            Include[0].Includes
+         ]
+      >
+      coord: line 541, col 5
+   ]
+   coord: line 540, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Include[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Include[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 81, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            Include[0]._FirstOcc
+         ]
+      >
+      coord: line 81, col 9
+   ]
+   coord: line 80, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Include[0].Sym
+   ]
+   right: 
+   RuleTermAcc: String[1]
+   coord: line 500, col 22
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Include[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Include[0].Bind
+         ]
+      >
+      coord: line 133, col 14
+   ]
+   coord: line 133, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Include[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (Source.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            Include[0].Sym
+         ]
+      >
+      coord: line 132, col 9
+   ]
+   coord: line 131, col 3
+]
+>
+Computations for Rule rule_19 <
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1]._FirstOcc
+   ]
+   right: 
+   StrValue: yes
+   coord: line 75, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].index
+   ]
+   right: 
+   IntValue: 1
+   coord: line 261, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].sigs
+   ]
+   right: 
+   CONSTITUENTS (Child.IsNt) propagate void
+   coord: line 290, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].comsigs
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].sigs
+   ]
+   coord: line 291, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].funs
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].comsigs
+   ]
+   coord: line 292, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Includes
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 514, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Termcodes
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 515, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Macros
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 520, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Builders
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 516, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Externs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 521, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Forwards
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 517, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Reducers
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 518, col 3
+]
+Computation in RULE rule_19 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1].Transforms
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 519, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotAllArities
+   ]
+   right: 
+   CONSTITUENTS (Terminal.GotArity) propagate void
+   coord: line 216, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotAllTypes
+   ]
+   right: 
+   Depend [
+      expr: 
+      CONSTITUENTS (SymbolDef.GotType) propagate void
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            Source[0].GotAllSymbols
+         ]
+      >
+      coord: line 223, col 20
+   ]
+   coord: line 223, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotAllSymbols
+   ]
+   right: 
+   CONSTITUENTS (Type.GotSymbol) propagate void
+   coord: line 249, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotAllUses
+   ]
+   right: 
+   CONSTITUENTS (Child.GotUse) propagate void
+   coord: line 224, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].Env
+   ]
+   right: 
+   Name: RootEnv
+   coord: line 96, col 3
+]
+Computation in RULE rule_19 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: tp_gen.burg
+      Call [
+         name: PTGBurg
+         params: <
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Termcodes
+            ]
+            CONSTITUENTS (Pattern.Ptg) WITH (PTGNode, PTGSeq, IDENTICAL, PTGNull) propagate value 
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Builders
+            ]
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Forwards
+            ]
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Reducers
+            ]
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Transforms
+            ]
+         >
+         coord: line 524, col 5
+      ]
+   >
+   coord: line 522, col 3
+]
+Computation in RULE rule_19 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: tp_gen.h
+      Call [
+         name: PTGHeader
+         params: <
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Includes
+            ]
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Macros
+            ]
+            AttrAccRule [ 
+               IsChain
+               LST_Source[1].Externs
+            ]
+         >
+         coord: line 533, col 5
+      ]
+   >
+   coord: line 531, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotAllCases
+   ]
+   right: 
+   CONSTITUENTS (Pattern.GotCase) propagate void
+   coord: line 688, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotKind
+   ]
+   right: 
+   CONSTITUENTS (SymbolDef.GotKind, Terminal.GotKind) SHIELD (Source) propagate void
+   coord: line 21, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0]._GotUnique
+   ]
+   right: 
+   CONSTITUENTS (Signature._GotUnique) SHIELD (Source) propagate void
+   coord: line 48, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      LST_Source[1]._FirstOcc
+   ]
+   coord: line 76, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotLocKeys
+   ]
+   right: 
+   CONSTITUENTS (Include.Key, Type.Key, SymbolDef.Key, Terminal.Key) SHIELD (Source) propagate void
+   coord: line 97, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Source[0].GotLocKeys
+   ]
+   coord: line 100, col 3
+]
+>

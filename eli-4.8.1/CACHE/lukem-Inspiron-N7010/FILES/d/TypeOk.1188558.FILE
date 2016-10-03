@@ -1,0 +1,5 @@
+%Type.Pointer.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Pointer.ok:label) \
+	(Type.demo/Pointer.ok) \
+	(Type.demo/Pointer.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Pointer.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

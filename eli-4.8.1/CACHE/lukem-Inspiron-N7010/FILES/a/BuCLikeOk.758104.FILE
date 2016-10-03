@@ -1,0 +1,5 @@
+%BuCLike.With.ok == . +cmd=cat (%trenn) \
+	(BuCLike.demo/With.ok:label) \
+	(BuCLike.demo/With.ok) \
+	(BuCLike.demo/With.ok +cmd=(BuCLike.fw.exe) :stdout :warn) \
+	(BuCLike.demo/With.ok +cmd=(BuCLike.fw.exe) :stdout) :stdout

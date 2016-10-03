@@ -1,0 +1,72 @@
+RULE rule_1:
+expression ::= expression '-' term
+END;
+
+RULE rule_2:
+expression ::= expression '+' term
+END;
+
+RULE rule_3:
+expression ::= term
+END;
+
+RULE rule_4:
+primary ::= '0'
+END;
+
+RULE rule_5:
+primary ::= '1'
+END;
+
+RULE rule_6:
+primary ::= '2'
+END;
+
+RULE rule_7:
+primary ::= '3'
+END;
+
+RULE rule_8:
+primary ::= '4'
+END;
+
+RULE rule_9:
+primary ::= '5'
+END;
+
+RULE rule_10:
+primary ::= '6'
+END;
+
+RULE rule_11:
+primary ::= '7'
+END;
+
+RULE rule_12:
+primary ::= '8'
+END;
+
+RULE rule_13:
+primary ::= '9'
+END;
+
+RULE rule_14:
+primary ::= '(' expression ')'
+END;
+
+RULE rule_15:
+program ::= expression
+END;
+
+RULE rule_16:
+term ::= primary
+END;
+
+RULE rule_17:
+term ::= term '/' primary
+END;
+
+RULE rule_18:
+term ::= term '*' primary
+END;
+

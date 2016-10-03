@@ -1,0 +1,232 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/e/p/Analysis.lido.8225014.lidoEta"
+
+
+RULE: xGrammar LISTOF xProduction END;
+
+RULE: xProduction ::= 'RULE' xRule ':' xSymbol '::='    xRHS 'END' ';' END; 
+RULE: xProduction ::= 'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';' END;
+
+RULE: xRHS LISTOF Element END;
+RULE: Syms LISTOF xSymbol END;
+
+RULE: Element ::=     xSymbol END;
+RULE: Element ::= '$' xSymbol END;
+RULE: Element ::= xLiteral    END;
+
+RULE: PatternSpec  ::=    PatternName ':' Items     END;
+RULE: PatternName  ::=    xIdentifier               END;
+RULE: Items        LISTOF Item                      END;
+RULE: Item         ::=    CString                   END;
+RULE: Item         ::=    '$'                       END;
+RULE: Item         ::=    '$' Number                END;
+RULE: Item         ::=    '$'        PtgType        END;
+RULE: Item         ::=    '$' Number PtgType        END;
+RULE: Item         ::=    '[' xIdentifier Items ']' END;
+RULE: Item         ::=    '{' Items '}'             END;
+
+
+SYMBOL xRoot:
+  Prefix: CharPtr;      
+
+SYMBOL xSymbol:
+  IsTerminal: int,      
+  Ptg: PTGNode,         
+  AttrPtg: PTGNode;     
+
+SYMBOL Element:
+  Mark: PTGNode;        
+
+
+SYMBOL xSymbol     INHERITS IdDefScope, LidoIdent   END;
+SYMBOL xRule       INHERITS IdDefScope, LidoIdent   END;
+SYMBOL PatternName INHERITS IdUseEnv,   PtgRuleName END;
+
+SYMBOL LidoIdent   COMPUTE SYNT.Sym = TERM;             END;
+SYMBOL PtgRuleName COMPUTE SYNT.Sym = MakePtgSym(TERM); END;
+
+
+SYMBOL xRoot COMPUTE
+  SYNT.GotProperties=
+    CONSTITUENTS (xSymbol.GotProperties,PtgRuleName.GotProperties);
+END;
+
+SYMBOL xSymbol COMPUTE
+  INH.GotProperties = 0;
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  xSymbol.GotProperties = ResetDefined(xSymbol.Key, 1);
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xSymbol.GotProperties =
+    ORDER(
+      ResetDefined(xSymbol.Key, 1),
+      ResetIsListofLhs(xSymbol.Key, 1));
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE
+  xSymbol.GotProperties = ResetComputedRoot(xSymbol.Key, 1);
+END;
+
+
+SYMBOL PtgRuleName COMPUTE
+  SYNT.GotProperties = FixPtgGiven(TERM,THIS.Key);
+END;
+
+
+SYMBOL xRoot COMPUTE
+  SYNT.Prefix=StringTable(GetClpValue(Prefix,NoStrIndex));
+END;
+
+SYMBOL xSymbol COMPUTE
+  SYNT.IsTerminal=
+    AND(NOT(GetDefined(THIS.Key,0)),NOT(GetComputedRoot(THIS.Key,0)))
+    <- INCLUDING xRoot.GotProperties;
+  SYNT.Ptg=PTGId(TERM);
+  SYNT.AttrPtg=PTGAttr(THIS.Ptg,INCLUDING xRoot.Prefix);
+END;
+
+CHAIN NontermCnt, TermCnt: int; 
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  CHAINSTART xRHS.NontermCnt = 1;
+  CHAINSTART xRHS.TermCnt    = xRHS.NontermCnt;
+END;
+
+SYMBOL Element COMPUTE SYNT.Mark=PTGNULL; END;
+
+RULE: Element ::= xSymbol
+COMPUTE
+  Element.Mark=
+    IF(xSymbol.IsTerminal,
+      PTGMarker(Element.TermCnt),
+      PTGMarker(Element.NontermCnt));
+  Element.NontermCnt=
+    IF(xSymbol.IsTerminal,Element.NontermCnt,ADD(Element.NontermCnt,1));
+  Element.TermCnt=
+    IF(xSymbol.IsTerminal,ADD(Element.TermCnt,1),Element.TermCnt);
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE
+  Element.Mark=PTGMarker(Element.NontermCnt);
+  Element.NontermCnt=ADD(Element.NontermCnt,1);
+END;
+
+
+CHAIN ClassComp: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  CHAINSTART HEAD.ClassComp=PTGPlainRules(THIS.Prefix);
+END;
+
+RULE: xProduction ::= 'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.ClassComp=
+    PTGSeq(
+      xProduction.ClassComp,
+      PTGListofRule(
+        INCLUDING xRoot.Prefix,
+        PTGAsIs(StringTable(xRule.Sym)),
+        xSymbol.Ptg,
+        Syms CONSTITUENTS xSymbol.AttrPtg
+          WITH(PTGNode, PTGCommaSeq, IDENTICAL, PTGNull),
+        Syms CONSTITUENTS xSymbol.Ptg
+          WITH(PTGNode, PTGCommaSeq, IDENTICAL, PTGNull)));
+END;
+
+
+CHAIN Inherit: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  CHAINSTART HEAD.Inherit=PTGNULL <- THIS.GotProperties;
+END;
+
+SYMBOL xSymbol INHERITS FirstOcc COMPUTE
+  THIS.Inherit =
+    IF(THIS.IsFirstOcc,
+      IF(GetIsListofLhs(THIS.Key,0),
+        PTGSeq(THIS.Inherit,PTGListComp(THIS.Ptg,INCLUDING xRoot.Prefix)),
+      IF(GetDefined(THIS.Key,0),
+        PTGSeq(THIS.Inherit,PTGNontComp(THIS.Ptg,INCLUDING xRoot.Prefix)),
+      IF(GetComputedRoot(THIS.Key,0),
+        PTGSeq(THIS.Inherit,PTGNontNoComp(THIS.Ptg,INCLUDING xRoot.Prefix)),
+        THIS.Inherit))),
+      THIS.Inherit);
+END;
+
+
+CHAIN PtgTemplates: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  CHAINSTART HEAD.PtgTemplates = PTGNULL;
+END;
+
+
+ATTR IdemPtg: PTGNode;
+
+SYMBOL PatternName COMPUTE
+  THIS.PtgTemplates =
+    IF(NE(THIS.Key,NoKey),
+      PTGSeq(THIS.PtgTemplates,INCLUDING PatternSpec.IdemPtg),
+      THIS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+RULE: PatternSpec ::= PatternName ':' Items
+COMPUTE
+  PatternSpec.IdemPtg=PTGAxiom(PatternName.IdemPtg,Items.IdemPtg);
+END;
+
+RULE: PatternName ::= xIdentifier 
+COMPUTE
+  PatternName.IdemPtg=PTGId(xIdentifier);
+END;
+
+RULE: Item ::= CString
+COMPUTE
+  Item.IdemPtg=PTGId(FwOut(CString,Warn));
+END;
+
+RULE: Item ::= '$'
+COMPUTE
+  Item.IdemPtg=PTGAsIs("$");
+END;
+
+RULE: Item ::= '$' Number
+COMPUTE
+  Item.IdemPtg=PTGIndex(Number);
+END;
+
+RULE: Item ::= '$' PtgType
+COMPUTE
+  Item.IdemPtg=PTGCType(StringTable(PtgType));
+END;
+
+RULE: Item ::= '$' Number PtgType
+COMPUTE
+  Item.IdemPtg=PTGIndTyp(Number,StringTable(PtgType));
+END;
+
+RULE: Item ::= '[' xIdentifier Items ']'
+COMPUTE
+  Item.IdemPtg=PTGCall(StringTable(xIdentifier),Items.IdemPtg);
+END;
+
+RULE: Item ::= '{' Items '}'
+COMPUTE
+  Item.IdemPtg=PTGOption(Items.IdemPtg);
+END;
+
+RULE: Items LISTOF Item
+COMPUTE
+  Items.IdemPtg=
+    CONSTITUENTS Item.IdemPtg SHIELD Item
+      WITH (PTGNode, PTGSpSeq, IDENTICAL, PTGNull);
+END;
+

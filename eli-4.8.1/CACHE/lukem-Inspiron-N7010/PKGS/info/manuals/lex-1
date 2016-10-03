@@ -1,0 +1,1109 @@
+This is Info file lex, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/lex.tnf.
+
+
+File: lex,  Node: Top,  Prev: (dir),  Up: (dir)
+
+   $Revision: 2.29 $
+
+   The purpose of the lexical analyzer is to partition the input text,
+delivering a sequence of "comments" and "basic symbols".  Comments are
+character sequences to be ignored, while basic symbols are character
+sequences that correspond to terminal symbols of the grammar defining
+the phrase structure of the input (*note Context-Free Grammars and
+Parsing: (syntax)Phrases.).
+
+   A user must define the forms of comments and the forms of all basic
+symbols corresponding to non-literal terminal symbols of the grammar. 
+Eli can deduce the form of a literal terminal symbol from the grammar
+specification.
+
+   The definition consists of one or more type-`gla' files.  Each line
+of a type-`gla' file describes a set of character sequences.  If a
+line begins with an identifier followed by a colon (:), then all of
+the character sequences described by the line are instances of the
+non-literal terminal symbol named by that identifier; otherwise they
+are comments.
+
+   Here is an example of a type-`gla' file:
+
+     HexInteger:  $0[Xx][0-9A-Fa-f]+
+                  $!  (auxEOL)
+     Identifier:  C_IDENTIFIER
+
+The first line of this specification uses a regular expression to
+define a hexadecimal integer as a zero, followed by the letter `X'
+(either upper or lower case) and one or more hexadecimal digits
+represented in the usual way.  In the second line, one form of comment
+is defined by a regular expression and the name of a C routine.  The C
+routine will be invoked when the regular expression has been matched. 
+This approach allows the user to define character sequences
+operationally when a declarative definition is tedious or does not
+support appropriate error reporting.
+
+   Since certain lexical structures are common to many languages, Eli
+provides a library of definitions that can be invoked simply be giving
+their names.  `C_IDENTIFIER', in the third line, is such an invocation. 
+The effect of the third line is to define the form of the basic symbol
+`Identifier' as that of an identifier in C: a letter or underscore
+followed by some sequence of letters, digits and underscores.
+
+* Menu:
+
+* Specifications::	A notation for describing character sequences.
+* Canned Descriptions::	Descriptions of commonly-used character sequences.
+* White Space::		Dealing with spaces, tabs and newlines.
+* Literal Symbols::	Descriptions obtained from other Eli specifications.
+* Case Insensitivity::	Treating upper- and lower-case letters identically
+* Generated Module::	Possible modifications for complex problems.
+
+* Index::               Index to this manual.
+
+ -- The Detailed Node Listing --
+
+Specifications
+
+* Regular Expressions::	A declarative specification of character sequences.
+* Auxiliary Scanners::	An operational specification of character sequences.
+* Token Processors::	Post-isolation analyses of character sequences.
+
+Regular Expressions
+
+* Quoting::  		Matching operator characters.
+* Classes::   	 	Sets of characters specified easily.
+* Composition::   	Building complex expressions
+* Ambiguity::  		What happens if the specification is ambiguous?
+
+Building complex regular expressions
+
+* Several::	Matching one sequence followed by another
+* Bar::		Matching either one sequence or another
+* Query::	Matching either a sequence or nothing at all
+* Plus::	Matching one or more successive occurrences of a sequence
+* Star::	Matching zero or more successive occurrences of a sequence
+* Count::	Matching some number of successive occurrences of a sequence
+
+Auxiliary Scanners
+
+* Available scanners::	Auxiliary scanners you can use directly
+* Building scanners::	How to construct your own auxiliary scanners
+
+Token Processors
+
+* Available Processors::	Token processors you can use directly
+* Building Processors::		How to construct your own token processors
+
+Canned Symbol Descriptions
+
+* Available Descriptions::	Names and informal characterizations
+* Definitions of Descriptions::	Specifications substituted for the names
+
+Spaces, Tabs and Newlines
+
+* Coordinates::	Maintaining the source text coordinates
+* Skipping::	Restoring the default behavior for white space
+
+Maintaining the Source Text Coordinates
+
+* Updating with code::		How the invariant is maintained
+* Updating with scanners::	Auxiliary scanners maintaining the invariant
+
+Literal Symbols
+
+* Overriding::	Overriding the Default Treatment of Literal Symbols
+* Surrogates::	Using Literal Symbols to Represent Other Things
+
+Overriding the Default Treatment of Literal Symbols
+
+* Override example::	A situation in which a complex operation is useful
+* The delit file::	Marking the literal symbol as a special case
+* Specifying behavior::	Providing a specification for the literal symbol
+
+Case Insensitivity
+
+* Folding::	A Case-Insensitive Token Processor
+* Keywords::	Making Literal Symbols Case Insensitive
+
+The Generated Lexical Analyzer Module
+
+* Text::	How the lexical analyzer interacts with the text
+* Reset::	How the scan pointer is reset
+* Classify::	How the next character sequence is classified
+* Occam::	An Example of Interface Usage
+
+The Classification Operation
+
+* Position::	Setting coordinate values
+* Continue::	Deciding on a continuation after a classification
+* Return::	Returning a classification
+
+
+File: lex,  Node: Specifications,  Next: Canned Descriptions,  Up: Top
+
+Specifications
+**************
+
+   A specification consists of a "regular expression", possibly the
+name of an "auxiliary scanner", and possibly the name of a "token
+processor".  Sequences of input characters are classified initially on
+the basis of the regular expression they match.  If the line
+containing the regular expression also contains the name of an
+auxiliary scanner, then that scanner is invoked after the regular
+expression has been matched.  An auxiliary scanner may lengthen or
+shorten the character sequence being classified.  If the line
+containing the regular expression also contains the name of a token
+processor, then that token processor is invoked after any auxiliary
+scanner.  A token processor may change the initial classification of
+the sequence, and may also calculate a value representing the sequence.
+
+   Specifications are provided in type-`gla' files whose contents obey
+the following phrase structure:
+
+     File: ( Specification NewLine )* .
+     Specification:
+         [ TokenName ':' ]
+         Pattern
+         [ '(' AuxiliaryScannerName ')' ]
+         [ '[' TokenProcessorName ']' ] .
+     Pattern: RegularExpression / CannedSpecificationName .
+     TokenName: Identifier .
+     CannedSpecificationName: Identifier .
+     AuxiliaryScannerName: Identifier .
+     TokenProcessorName: Identifier .
+
+   An `Identifier' is defined as in C, and a type-`gla' file may
+contain arbitrary empty lines, C comments and pre-processor directives. 
+Comments may also be written as character sequences enclosed in braces
+(`{ }') that do not themselves include braces.
+
+* Menu:
+
+* Regular Expressions::	A declarative specification of character sequences.
+* Auxiliary Scanners::	An operational specification of character sequences.
+* Token Processors::	Post-isolation analyses of character sequences.
+
+
+File: lex,  Node: Regular Expressions,  Next: Auxiliary Scanners,  Up: Specifications
+
+Regular Expressions
+===================
+
+   A regular expression is a pattern that defines a set of character
+sequences: If the regular expression matches a particular sequence
+then that sequence is a member of the set; otherwise it is not a
+member.  Here is a summary of Eli's regular expression notation:
+
+`c'
+     matches the character `c', unless `c' is space, tab, newline or
+     one of `\ " . [ ] ^ ( ) | ? + * { } / $ <'
+
+`\c'
+     matches `c' (*note Matching Operator Characters: Quoting.)
+
+`"s"'
+     matches the sequence `s' (*note Matching Operator Characters:
+     Quoting.)
+
+`.'
+     matches any character except newline
+
+`[xyz]'
+     matches exactly one of the characters `x', `y' or `z'
+
+`[^xyz]'
+     matches exactly one character that is *not* `x', `y' or `z'
+
+`[c-d]'
+     matches exactly one of the characters whose ASCII codes lie
+     between the codes for `c' and `d' (inclusive)
+
+`(e)'
+     matches a sequence matched by `e'
+
+`ef'
+     matches a sequence matched by `e' followed by a sequence matched
+     by `f'
+
+`e|f'
+     matches either a sequence matched by `e' or a sequence matched by
+     `f'
+
+`e?'
+     matches either an empty sequence or a sequence matched by `e'
+
+`e+'
+     matches one or more occurrences of a sequence matched by `e'
+
+`e*'
+     matches either an empty sequence or one or more occurrences of a
+     sequence matched by `e'
+
+`e{M,N}'
+     matches a sequence of no fewer than M and no more than N
+     occurrences of a sequence matched by `e'
+
+Each of the regular expressions `e?', `e+', `e*' and `e{M,N}' matches
+the longest sequence of characters consonant with its definition.
+
+   In a type-`gla' file, each regular expression is delimited on the
+left by `$' and on the right by white space:
+
+     $a57D
+     $[0-9]+
+     $[a-zA-Z_][a-zA-Z_0-9]*
+
+   The first example matches the single character sequence `a57D',
+while the second matches a sequence of one or more digits.  The third
+describes C-style identifiers: an initial letter or underscore,
+followed by zero or more alphanumeric characters or underscores.
+
+* Menu:
+
+* Quoting::  		Matching operator characters.
+* Classes::   	 	Sets of characters specified easily.
+* Composition::   	Building complex expressions
+* Ambiguity::  		What happens if the specification is ambiguous?
+
+
+File: lex,  Node: Quoting,  Next: Classes,  Up: Regular Expressions
+
+Matching operator characters
+----------------------------
+
+   A regular expression consists of "text characters" (which match the
+corresponding characters in the input character sequences) and
+"operator characters" (which specify repetitions, choices and other
+features).  The operator characters are the following:
+
+     \ " . [ ] ^ ( ) | ? + * { } / $ <
+
+Space, tab, newline and characters appearing in this list are *not*
+text characters; every other character *is* a text character.
+
+   If an operator character is to match an instance of itself in the
+input sequence then it must be marked in the regular expression as
+being a text character.  This can be done by preceding it with
+backslash (`\').  Any occurrence of an operator character (including
+backslash) that is preceded by backslash loses its operator status and
+is considered to be a text character.  The text characters space, tab
+and newline are represented as `\040', `\t' and `\n' respectively;
+`\b' represents the text character "backspace".  Any character except
+the ASCII NUL (code 0) can also be represented by a backslash,
+followed by zero, followed by the ASCII code for the character written
+as a sequence of up to three octal digits (the representation of a
+space character always has this form).
+
+   A sequence of operator characters can be used as a sequence of text
+characters by surrounding the sequence with double quote operators
+(`"'):
+
+     xyz"++"
+     "xyz++"
+
+Both of these patterns match the string `xyz++'.  As shown, it is
+harmless but unnecessary to quote a character that is not an operator.
+
+   Backslash is also effective within a sequence surrounded by double
+quote operators, and must be used to mark backslash, quote and white
+space:
+
+     "\t\\\040\"\040.\040[\040]\040^"
+
+This pattern matches an initial segment of the operator character
+display at the beginning of this section.
+
+
+File: lex,  Node: Classes,  Next: Composition,  Prev: Quoting,  Up: Regular Expressions
+
+Character classes
+-----------------
+
+   A "character class" is a pattern that defines a set of characters
+and matches exactly one character from that set.  The simplest
+character class representation is the period (`.'), which defines the
+set of all characters except newline.  Character classes can also be
+represented using the operator pair `[ ]'.  `[Abc]' defines the set of
+three characters `A', `b', and `c'.
+
+   Within square brackets, most operator meanings are ignored.  Only
+four characters are special: `\', `-', `^' and `]'.  In particular,
+the double quote character (`"') is not considered special and
+therefore cannot be used to surround a sequence of operator characters. 
+The `\' character provides the usual escapes within character class
+brackets.  Thus `[[\]]' matches either `[' or `]', because `\' causes
+the first `]' in the character class representation to be taken as a
+normal character rather than the closing bracket of the representation. 
+The following specification causes an error, however:
+     [["]"]
+
+The quote is not special in a character class, so the first `]' is the
+closing bracket of the set.  The second `"' is therefore outside the
+definition of the character class, and is taken as the beginning of a
+quoted string containing the second `]'.  Since there is no closing
+quote for this string, it is erroneous.
+
+   If the first character after the opening bracket of a character
+class is `^', the set defined by the remainder of the character class
+is complemented with respect to the computer's character set.  Using
+this notation, the character class represented by `.' can be described
+as `[^\n]'.
+
+   If `^' appears as any character of a class except the first, it is
+not considered to be an operator.  Thus `[^abc]' matches any character
+except `a', `b', or `c' but `[a^bc]' or `[abc^]' matches `a', `b', `c'
+or `^'.
+
+   Within a character class representation, `-' can be used to define
+a set of characters in terms of a range.  For example, `a-z' defines
+the set of lower-case letters and `A-Z' defines the set of upper-case
+letters.  The endpoints of a range may be specified in either order
+(i.e. both `0-9' and `9-0' define the set of digits).  Ranges can also
+be defined in terms of specific ASCII codes: `\041-\0176' is the set
+of all visible ASCII characters.  Using `-' between any pair of
+characters that are not both upper case letters, both lower case
+letters, or both digits defines an implementation-dependent set and
+will generate a warning.
+
+   Any number of ranges can be used in the representation of a
+character class.  For example, `[a-z0-9<>_]' will match any lower case
+letter, digit, angle bracket or underline while `[^a-zA-Z]' will match
+any character that is not a letter.  If it is desired to include the
+character `-' in a character class, it should either be escaped with
+`\' or it should occupy the first or last position.  Thus `[-+0-9]'
+will match `+', `-' or any digit, as will `[0-9\-+]'.
+
+
+File: lex,  Node: Composition,  Next: Ambiguity,  Prev: Classes,  Up: Regular Expressions
+
+Building complex regular expressions
+------------------------------------
+
+   Single characters, character strings and character classes are all
+simple regular expressions.  Each matches a particular set of
+character sequences.  More complex patterns are built from these
+simple regular expressions by concatenation, alternation and
+repetition.  The components of a complex pattern may be grouped by
+enclosing them in parentheses; a parenthesized expression behaves like
+a simple regular expression in further compositions.
+
+   Components must not be separated by white space, because white space
+terminates a regular expression.
+
+* Menu:
+
+* Several::	Matching one sequence followed by another
+* Bar::		Matching either one sequence or another
+* Query::	Matching either a sequence or nothing at all
+* Plus::	Matching one or more successive occurrences of a sequence
+* Star::	Matching zero or more successive occurrences of a sequence
+* Count::	Matching some number of successive occurrences of a sequence
+
+
+File: lex,  Node: Several,  Next: Bar,  Up: Composition
+
+Matching one sequence followed by another
+.........................................
+
+   When a complex regular expression is written as a sequence of
+components, the resulting pattern will match a sequence of characters
+consisting of a subsequence matching the first component, followed by
+a subsequence matching the second component, and so on:
+
+     [1-9]\.[0-9][0-9]
+
+This complex expression has four components: three character classes
+and the text character `.' (the backslash converts the operator
+character `.' to a text character).  It matches character sequences
+like `2.54' and `9.99', but not `0.59', `45.678' or `1x23'.
+
+
+File: lex,  Node: Bar,  Next: Query,  Prev: Several,  Up: Composition
+
+Matching either one sequence or another
+.......................................
+
+   When the components of a complex regular expression are separated
+by the operator `|', the resulting pattern will match a sequence of
+characters that matches at least one of the components:
+
+     [A-Za-z]|[1-9][0-9]&
+
+This complex expression has two immediate components: a character
+class and a complex expression that is the result of concatenating two
+character classes and a single character.  The complete expression
+matches character sequences like `B' and `10&', but not `X11' or `A&'.
+
+   Concatenation takes precedence over alternation in constructing a
+complex regular expression, so this example is equivalent to
+`[A-Za-z]|([1-9][0-9]&)'.  Parentheses can be used to group the
+expression differently:
+
+     ([A-Za-z]|[1-9][0-9])&
+
+This complex expression also has two immediate components, but they are
+a parenthesized expression and a single character.  The complete
+expression matches character sequences like `B&' and `10&'.
+
+
+File: lex,  Node: Query,  Next: Plus,  Prev: Bar,  Up: Composition
+
+Matching either a sequence or nothing at all
+............................................
+
+   When a complex regular expression consists of a single component
+followed by the operator `?', the resulting pattern will match either
+an empty sequence or a sequence of characters that matches the
+component:
+
+     (-|\+?)[1-9]
+
+Here the operand of `?' is the text character `+'.  This complex
+expression matches character sequences like `-1', `+2' and `3'.  In
+each case, the pattern matches the longest sequence of characters
+consonant with its definition.
+
+   The `?' operator takes precedence over both concatenation and
+alternation.  If its operand is a complex expression involving either
+of these operations, that complex expression must be parenthesized.
+
+
+File: lex,  Node: Plus,  Next: Star,  Prev: Query,  Up: Composition
+
+Matching one or more successive occurrences of a sequence
+.........................................................
+
+   When a complex regular expression consists of a single component
+followed by the operator `+', the resulting pattern will match a
+sequence of characters that matches one or more successive occurrences
+of a sequence matching the component:
+
+     [0-9]+
+
+This complex expression has one immediate component: a character class. 
+It matches character sequences like `0' and `1019'.  In each case, the
+pattern matches the longest sequence of characters consonant with its
+definition.
+
+   The `+' operator takes precedence over both concatenation and
+alternation.  If its operand is a complex expression involving either
+of these operations, that complex expression must be parenthesized.
+
+
+File: lex,  Node: Star,  Next: Count,  Prev: Plus,  Up: Composition
+
+Matching zero or more successive occurrences of a sequence
+..........................................................
+
+   When a complex regular expression consists of a single component
+followed by the operator `*', the resulting pattern will match a
+sequence of characters that matches an empty sequence or one or more
+successive occurrences of a sequence matching the component:
+
+     [1-9][0-9]*
+
+This complex expression has two immediate components: a character
+class and a complex expression whose operator is `*'.  That complex
+expression, in turn, has a single character class component.  The
+complete expression matches character sequences like `1' and `2992',
+but not `0' or `0101'.  In each case, the pattern matches the longest
+sequence of characters consonant with its definition.
+
+   The `*' operator takes precedence over both concatenation and
+alternation.  If its operand is a complex expression involving either
+of these operations, that complex expression must be parenthesized. 
+For example, `([1-9][0-9])*' would match character sequences like
+`1019' and `2992', but not `1' or `123'.
+
+
+File: lex,  Node: Count,  Prev: Star,  Up: Composition
+
+Matching some number of successive occurrences of a sequence
+............................................................
+
+   When a complex regular expression consists of a single component
+followed by the operator `{M,N}' (M and N integers greater than 0),
+the resulting pattern will match a sequence of characters that matches
+no fewer than M and no more than N successive occurrences of a
+sequence matching the component:
+
+     [A-Za-z][A-Za-z0-9]{1,5}
+
+This complex expression has two immediate components: a character
+class and a complex expression whose operator is `{1,5}'.  That
+complex expression, in turn, has a single character class component. 
+The complete expression matches character sequences like `A1' and
+`xyzzy', but not `identifier' or `01July'.  In each case, the pattern
+matches the longest sequence of characters consonant with its
+definition.
+
+   The `{M,N}' operator takes precedence over both concatenation and
+alternation.  If its operand is a complex expression involving either
+of these operations, that complex expression must be parenthesized. 
+For example, `([1-9][0-9]){1,2}' would match character sequences like
+`10' and `2992', but not `1', `123' or `123456'.
+
+
+File: lex,  Node: Ambiguity,  Prev: Composition,  Up: Regular Expressions
+
+What happens if the specification is ambiguous?
+-----------------------------------------------
+
+   When more than one expression can match the current character
+sequence, a choice is made as follows:
+
+  1. The longest match is preferred.
+
+  2. Among rules which match the same number of characters, the rule
+     given first is preferred.
+
+   Thus, suppose we have the following descriptions:
+
+     Limit: $55
+     Speed: $[0-9]+
+
+   If the input text is `550kts' then the sequence `550' is classified
+as `Speed', because `[0-9]+' matches three characters while `55'
+matches only two.  If the input is `55mph' then both patterns match
+two characters, and the sequence `55' is classified as `Limit' because
+`Limit' was given first.  Any shorter sequence of digits (e.g. `5kph')
+would not match the regular expression `55' and so the `Speed'
+classification would be used.
+
+   When more than one type-`gla' file is provided, specifications in
+different files have no defined order.  Thus if `Limit' and `Speed'
+appeared in different files, classification of the sequence `55' would
+be undefined.  If an ambiguity between two descriptions is to be
+resolved on the basis of their order of appearance, they must be given
+within the same type-`gla' file.
+
+
+File: lex,  Node: Auxiliary Scanners,  Next: Token Processors,  Prev: Regular Expressions,  Up: Specifications
+
+Auxiliary Scanners
+==================
+
+   An auxiliary scanner is a routine to be invoked after the pattern
+described by the regular expression has been matched.  The routine is
+passed a pointer to the matched string and the length of that string,
+and it returns a pointer to the first character that is not to be
+considered part of the string matched.  Thus an auxiliary scanner may
+increase, reduce or leave unchanged the number of characters matched
+by the regular expression.  This allows a user to specify
+operationally patterns that are tedious or impossible to describe
+using regular expressions (e.g. nested comments), or that require
+special operations during the match (e.g. sequences containing tabs or
+newlines -- *note White Space::.), or that would benefit from
+specialized error reporting.
+
+   An auxiliary scanner is invoked by giving its name, surrounded by
+parentheses (`( )'), on the same line as the associated regular
+expression:
+
+     $--  (auxEOL)
+
+This specification invokes the auxiliary scanner `auxEOL' whenever a
+sequence of two dashes is recognized, and passes it a pointer to the
+first of the two dashes and a length of 2.  As described below,
+`auxEOL' returns a pointer to the first character of the next line,
+after having updated the coordinate information.  This specification
+is the implementation of the canned description `ADA_COMMENT'.
+
+* Menu:
+
+* Available scanners::	Auxiliary scanners you can use directly
+* Building scanners::	How to construct your own auxiliary scanners
+
+
+File: lex,  Node: Available scanners,  Next: Building scanners,  Up: Auxiliary Scanners
+
+Available scanners
+------------------
+
+   All of the auxiliary scanners described in this section can be used
+simply by mentioning their names in a specification line.  They can
+also be invoked from arbitrary C programs if the invoker includes the
+header file `ScanProc.h'.  (The source code for that file is
+`$elipkg/Scan/ScanProc.h'.)
+
+   The name of the file containing each available auxiliary scanner is
+also given in this section.  It is not necessary to examine this file
+in order to use the auxiliary scanner, but sometimes an existing
+auxiliary scanner can be useful as a starting point for solving a
+similar problem (*note Building scanners::.).
+
+`auxNUL'
+     This routine is invoked automatically when the first character of
+     a sequence is the ASCII NUL character, a pattern that cannot be
+     specified by a regular expression.  In that case, the character
+     sequence matched by the associated pattern is an empty sequence. 
+     If information remains in the current input file, `auxNUL'
+     returns a pointer to the empty sequence at the beginning of that
+     information.  Effectively, this is a pointer to the new
+     information.
+
+     This routine is also invoked by any scanner that must accept a
+     newline character and continue.  Since an ASCII NUL character
+     signalling the end of the current information in the buffer can
+     occur immediately after any newline, a scanner that accepts a
+     newline and continues must check for NUL.  If a NUL is found, the
+     scanner invokes `auxNUL'.  Here is a typical code sequence that
+     such a scanner might use.  The variable `p' is the scan pointer
+     and `start' points to the beginning of the current token:
+
+          if (*p == '\0') {
+            int current = p - start;
+            TokenStart = start = auxNUL(start, current);
+            p = start + current;
+            StartLine = p - 1;
+            if (*p == '\0') {
+              /* Code to deal appropriately with end-of-file.
+               * Some of the possibilities are:
+               *   1. Output an error report and return p
+               *   2. Simply return p
+               *   3. Move to another file and continue
+               ***/
+            }
+          }
+
+     If information remains in the current input file, the library
+     version of `auxNUL' (*note Text Input: (lib)source.) appends that
+     information to the character sequence matched by the associated
+     pattern, possibly relocating the character sequence matched by
+     the associated pattern.  It returns a pointer to the first
+     character of the sequence matched by the associated pattern. 
+     Source code: `$elipkg/Scan/auxNUL.c'.
+
+     To obtain different behavior when the first character of a
+     sequence is the ASCII NUL character, supply your own routine with
+     the name `auxNUL' in a type-`c' file.  The easiest way to do this
+     is to copy the source code for the library routine into a local
+     file and then modify it.
+
+`auxEOF'
+     This routine is invoked automatically when the first character of
+     a sequence is the ASCII NUL character, a pattern that cannot be
+     specified by a regular expression, and no information remains in
+     the current input file.  In that case, the character sequence
+     matched by the associated pattern is an empty sequence.
+
+     The library version of `auxEOF' simply returns the argument
+     supplied to it.  Source code: `$elipkg/Scan/auxEOF.c'.
+
+     To obtain different behavior when the first character of a
+     sequence is the ASCII NUL character, and no information remains
+     in the current input file, supply your own routine with the name
+     `auxEOF' in a type-`c' file.  The easiest way to do this is to
+     copy the source code for the library routine into a local file
+     and then modify it.
+
+`coordAdjust'
+     Leaves the character sequence matched by the associated pattern
+     unchanged.  Updates the coordinate information to reflect the
+     tabs and newlines in that sequence.  Source code:
+     `$elipkg/Scan/coordAdjust.c'
+
+`auxNewLine'
+     Leaves the character sequence matched by the associated pattern
+     unchanged.  Updates the coordinate information under the
+     assumption that the last character of that sequence is a newline. 
+     (This is a special case that can be handled more efficiently than
+     the general case, for which `coordAdjust' would be used.) Source
+     code: `$elipkg/Scan/auxNewLine.c'
+
+`auxTab'
+     Leaves the character sequence matched by the associated pattern
+     unchanged.  Updates the coordinate information under the
+     assumption that the last character of that sequence is a tab. 
+     (This is a special case that can be handled more efficiently than
+     the general case, for which `coordAdjust' would be used.) Source
+     code: `$elipkg/Scan/auxTab.c'
+
+`auxEOL'
+     Extends the character sequence matched by the associated pattern
+     to the end of the current line, including the terminating newline. 
+     Updates the coordinate information to reflect the new position. 
+     Source code: `$elipkg/Scan/auxScanEOL.c'
+
+`auxNoEOL'
+     Extends the character sequence matched by the associated pattern
+     to the end of the current line, but does not include the
+     terminating newline.  Updates the coordinate information to
+     reflect the new position.  Source code: `$elipkg/Scan/auxNoEOL.c'
+
+`auxCString'
+     Completes a C string constant when provided with the opening quote
+     (`"').  Updates the coordinate information to reflect the tabs
+     and newlines in that sequence.  Source code:
+     `$elipkg/Scan/CchStr.c'.
+
+`auxCChar'
+     Completes a C character constant when provided with the opening
+     quote (`'').  Source code: `$elipkg/Scan/CchStr.c'.
+
+`auxCComment'
+     Completes a C comment when provided with the opening delimiter
+     (`/*').  Updates the coordinate information to reflect the tabs
+     and newlines in the comment.
+
+     The comment is terminated by the delimiter `*/', and may not
+     contain nested comments.
+
+     Source code: `$elipkg/Scan/Ccomment.c'
+
+`auxM2String'
+     Completes a string constant when provided with the opening quote,
+     possibly followed by other characters.  Updates the coordinate
+     information to reflect the tabs in that sequence.
+
+     The string constant is terminated by an occurrence of the opening
+     quote.  If a newline or the end of the input text is reached
+     before the constant terminates, `auxM2String' reports an error.
+
+     For Modula2, the opening quote is either the character `'' or the
+     character `"'.  This auxiliary scanner simply uses the first
+     character of the string matched by the regular expression as the
+     opening quote character, so it can complete any sequence of
+     characters that is terminated by the first character, and is
+     contained wholly within a single source line.  Note that the
+     characters matched by the regular expression are *not* re-scanned
+     for a closing quote.
+
+     Source code: `$elipkg/Scan/M2chStr.c'
+
+`auxM3Comment'
+     Completes a Modula2 or Modula3 comment when provided with the
+     opening delimiter (`(*').  Updates the coordinate information to
+     reflect the tabs and newlines in the comment.
+
+     The comment is terminated by the delimiter `*)', and may contain
+     nested comments.
+
+     Source code: `$elipkg/Scan/M3comment.c'
+
+`auxPascalString'
+     Completes a string constant when provided with the opening quote,
+     possibly followed by other characters.  Updates the coordinate
+     information to reflect the tabs in that sequence.
+
+     The string constant is terminated by an occurrence of the opening
+     quote that is not immediately followed by another occurrence of
+     the opening quote.  (Thus the opening quote character may appear
+     doubled within the string.) If a newline or the end of the input
+     text is reached before the constant terminates, `auxPascalString'
+     reports an error.
+
+     For Pascal, the opening quote is the character `''.  This
+     auxiliary scanner simply uses the first character of the string
+     matched by the regular expression as the opening quote character,
+     so it can complete any sequence of characters that is terminated
+     by a single occurrence of the first character, and not by two
+     successive occurrences of that character, and is contained wholly
+     within a single source line.  Note that the characters matched by
+     the regular expression are *not* re-scanned for a closing quote.
+
+     Source code: `$elipkg/Scan/pascalStr.c'
+
+`auxPascalComment'
+     Completes a Pascal comment when provided with the opening
+     delimiter (either `{' or `(*').  Updates the coordinate
+     information to reflect the tabs and newlines in the comment.
+
+     A comment is terminated by either the delimiter `}' or the
+     delimiter `*)', regardless of the opening delimiter.  Comments
+     may *not* be nested.
+
+     Source code: `$elipkg/Scan/pascalCom.c'
+
+`Ctext'
+     Completes a C compound statement when provided with the opening
+     brace (`{').  Updates the coordinate information to reflect the
+     tabs and newlines in the compound statement.
+
+     A compound statement is terminated by the matching close brace
+     (`}').  Compound statements may be nested, and unmatched braces
+     may be embedded in C strings, character constants or comments.
+
+     Source code: `$elipkg/Scan/Ctext.c'
+
+
+File: lex,  Node: Building scanners,  Prev: Available scanners,  Up: Auxiliary Scanners
+
+Building scanners
+-----------------
+
+   All auxiliary scanners obey the same interface conventions:
+
+     extern char *Name(char *start, int length);
+     /* Auxiliary scanner "Name"
+      *   On entry-
+      *     start points to the first character matching the associated
+      *       regular expression
+      *     length=number of characters matching the associated
+      *       regular expression
+      *   On exit-
+      *     Name points to the first character that does not belong to the
+      *       character sequence being classified
+      ***/
+
+Unless otherwise stated, `Name>=start' on return, and all characters
+in the half-open interval `[start,Name)' are in memory.
+
+   Any auxiliary scanner that passes over tabs or newline characters
+must update coordinate information (*note Maintaining the Source Text
+Coordinates: Coordinates.).  In addition, if the character following a
+newline is an ASCII NUL then the source buffer must be refilled (*note
+Text Input: (lib)source.).  The easiest way to develop an auxiliary
+scanner is therefore to start with one from the library that solves a
+similar problem.  Source file names for all of the available auxiliary
+scanners are given in the previous subsection.  To obtain a copy of
+(say) the source code for `auxNUL' as file `MyScanner.c' in your
+current directory, give the Eli request:
+
+     -> $elipkg/Scan/auxNUL.c > MyScanner.c
+
+After modifying `MyScanner.c', simply add its name to your
+type-`specs' file to make it available.
+
+
+File: lex,  Node: Token Processors,  Prev: Auxiliary Scanners,  Up: Specifications
+
+Token Processors
+================
+
+   A token processor is a routine to be invoked after the pattern
+described by the regular expression has been matched, and after any
+associated auxiliary scanner has been invoked.  It is passed a pointer
+to the matching character sequence, the length of that sequence, a
+pointer to an integer variable containing the classification, and a
+pointer to an integer variable to hold a value representing the
+character sequence.  The token processor may change the classification,
+and may compute a value to represent the sequence.
+
+   A token processor is invoked by giving its name, surrounded by
+brackets (`[ ]'), on the same line as the associated regular
+expression:
+
+     Integer: $[0-9]+  [mkint]
+
+This specification invokes the token processor `mkint' whenever a
+sequence of digits is recognized.  The arguments are a pointer to the
+first digit, the length of the digit sequence, a pointer to an integer
+variable containing the classification code for `Integer', and a
+pointer to an integer variable to hold a value representing the digit
+sequence.  As described below, `mkint' leaves the character sequence
+and its classification unchanged and sets the value to the decimal
+integer denoted by the digit sequence.  This specification is the
+implementation of the canned description `PASCAL_INTEGER'.
+
+* Menu:
+
+* Available Processors::	Token processors you can use directly
+* Building Processors::		How to construct your own token processors
+
+
+File: lex,  Node: Available Processors,  Next: Building Processors,  Up: Token Processors
+
+Available processors
+--------------------
+
+   All of the token processors described in this section can be used
+simply by mentioning their names in a specification line.  They can
+also be invoked from arbitrary C programs if the invoker includes the
+header file `ScanProc.h'.  (The source code for that file is
+`$elipkg/Scan/ScanProc.h'.)
+
+   The name of the file containing each available token processor is
+also given in this section.  It is not necessary to examine that file
+in order to use the token processor, but sometimes an existing token
+processor can be useful as a starting point for solving a similar
+problem (*note Building Processors::.).
+
+`c_mkchar'
+     Assumes that the character sequence has the form of a C character
+     constant.  Sets the value to the integer encoding of that
+     character constant.  Does not alter the initial classification. 
+     Source file: `$elipkg/Scan/CchStr.c'.
+
+`c_mkint'
+     Assumes that the character sequence has the form of a C integer
+     constant.  Sets the value to the integer represented by that
+     constant.  Does not alter the initial classification.  Source
+     file: `$elipkg/Scan/int.c'.
+
+`c_mkstr'
+     Assumes that the character sequence has the form of a C string
+     constant.  Stores a new copy of that constant in the character
+     storage module and sets the value to the index of that copy
+     (*note Character String Storage: (lib)storage.).  If the
+     character constant contains an escape sequence representing ASCII
+     NUL, it is truncated and an error report is issued.  The last
+     character of the stored constant is the character preceding the
+     first NUL.  Does not alter the initial classification.  Source
+     file: `$elipkg/Scan/CchStr.c'.
+
+`EndOfText'
+     This processor is invoked automatically when the end of the input
+     text is reached.  It assumes that the character sequence is
+     empty, and does nothing.  Source file: `$elipkg/Scan/dflteot.c'.
+
+     To obtain different behavior when the end of the input text is
+     reached, supply your own routine with the name `EndOfText' in a
+     type-`c' file.  The easiest way to do this is to copy the source
+     code for the library routine into a local file and then modify it.
+
+`lexerr'
+     Reports that the character sequence is not a token.  Does not
+     alter the initial classification, and does not compute a value. 
+     There is no source file for this token processor; it is a
+     component of the scanner itself, but its interface is exported so
+     that it can be used by other modules.
+
+`mkidn'
+     Looks the character sequence up in the identifier table (*note
+     Unique Identifier Management: (lib)identifier.).  If it is not in
+     the table, it is added with its classification unchanged. 
+     Otherwise `mkidn' changes the initial classification to the
+     classification given by the identifier table.  (The identifier
+     table can be initialized with pre-classified character strings,
+     *note Literal Symbols::..)
+
+     In any case, `mkidn' sets the value to the (unique) index of the
+     character sequence in the character storage module (*note
+     Character String Storage: (lib)storage.).  Source file:
+     `$elipkg/Scan/idn.c'.
+
+`mkint'
+     Assumes that the character sequence consists of one or more
+     decimal digits.  Sets the value to the integer denoted by that
+     sequence of digits.  Does not alter the initial classification. 
+     Source file: `$elipkg/Scan/int.c'.
+
+`mkstr'
+     Stores a new copy of the character sequence in the character
+     storage module and sets the value to the index of that copy
+     (*note Character String Storage: (lib)storage.).  Does not alter
+     the initial classification.  Source file: `$elipkg/Scan/str.c'.
+
+`modula_mkint'
+     Assumes that the character sequence consists of one or more
+     hexadecimal digits, possibly followed by a radix marker.  Sets
+     the value to the integer denoted by that sequence of digits,
+     interpreted in the given radix.  Does not alter the initial
+     classification.
+
+     Valid radix markers are `B' and `C' (indicating radix 8), and `H'
+     (indicating radix 16).  Sequences of digits not followed by a
+     radix marker are assumed to be radix 10.
+
+     Source file: `$elipkg/Scan/M2int.c'.
+
+
+File: lex,  Node: Building Processors,  Prev: Available Processors,  Up: Token Processors
+
+Building processors
+-------------------
+
+   All token processors obey the same interface conventions:
+
+     extern void Name(const char *start, int length, int *syncode, int *intrinsic);
+     /* Token processor "Name"
+      *   On entry-
+      *     start points to the first character of the sequence being classified
+      *     length=length of the sequence being classified
+      *     syncode points to a location containing the initial classification
+      *     intrinsic points to a location to receive the value
+      *   On exit-
+      *     syncode points to a location containing the final classification
+      *     intrinsic points to a location containing the value (if relevant)
+      ***/
+
+   The token processor can change the classification of the character
+sequence.  It may carry out any computation whatsoever, involving
+arbitrary modules, to obtain the information it needs.  Eli generates
+a file called `termcode.h' that contains `#define' directives
+specifying the classification code for each symbol appearing before a
+colon at the beginning of a line in a type-`gla' file.  Thus if `name:
+...' is a line in a type-`gla' file, a processor can use the following
+sequence to change the classification of any character sequence,
+including one that is initially classified as a comment, to `name':
+
+     #include "termcode.h"
+     ...
+        *syncode = name;
+     ...
+
+   All comments are classified by the value of the symbol `NORETURN',
+exported by the lexical analyzer module in file `gla.h'.  A token
+processor can cause the character sequence matched by its associated
+regular expression to be considered a comment by setting the
+classification to `NORETURN':
+
+     #include "gla.h"
+     ...
+        *syncode = NORETURN;
+     ...
+
+   The easiest way to develop a token processor is to start with one
+from the library that solves a similar problem.  Source file names for
+all of the available token processors are given in the previous
+subsection.  To obtain a copy of (say) the source code for `EndOfText'
+as file `MyProcessor.c' in your current directory, give the Eli
+request:
+
+     -> $elipkg/Scan/dflteot.c > MyProcessor.c
+
+After modifying `MyProcessor.c', simply add its name to your
+type-`specs' file to make it available.
+
+
+File: lex,  Node: Canned Descriptions,  Next: White Space,  Prev: Specifications,  Up: Top
+
+Canned Symbol Descriptions
+**************************
+
+   For many applications, the exact structure of the symbols that must
+be recognized is not important or the problem description specifies
+that the symbols should be the same as the symbols used in some other
+situation (e.g. identifiers might be specified to use the same format
+as C identifiers).  To cover this common situation, Eli provides a set
+of canned symbol descriptions.
+
+   To use a canned description, simply write the canned description's
+identifier in a specification instead of writing a regular expression. 
+For example, the following type-`gla' file tells Eli that the input
+text will contain C-style identifiers and strings, Ada-style comments,
+and Pascal-style integers:
+
+     Identifier: C_IDENTIFIER
+                 ADA_COMMENT
+     String:     C_STRING_LIT
+     Integer:    PASCAL_INTEGER
+
+   `Identifier', `String' and `Integer' would appear as non-literal
+terminal symbols in the context-free grammar defining the phrase
+structure of this input text (*note How to describe a context-free
+grammar: (syntax)Notation.).
+
+   The available canned descriptions are defined later in this section. 
+All of these definitions include a regular expression, and some include
+auxiliary scanners and/or token processors.  An auxiliary scanner or
+token processor specified by a canned description can be overridden by
+nominating a different one in the specification that names the canned
+description.  For example, the canned description `PASCAL_STRING'
+includes the token processor `mkstr' (*note Available scanners::.). 
+This token processor stores multiple copies of the same string in the
+character storage module.  The following specification overrides
+`mkstr' with `mkidn', which stores only one copy of each distinct
+string:
+
+     Str: PASCAL_STRING [mkidn]
+
+The auxiliary scanner `auxPascalString', included in the canned
+description, is not overridden by this specification.
+
+* Menu:
+
+* Available Descriptions::	Names and informal characterizations
+* Definitions of Descriptions::	Specifications substituted for the names
+
+

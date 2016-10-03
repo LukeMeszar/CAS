@@ -1,0 +1,2 @@
+
+if (RootEnv == NoEnv) RootEnv = NewEnv ();

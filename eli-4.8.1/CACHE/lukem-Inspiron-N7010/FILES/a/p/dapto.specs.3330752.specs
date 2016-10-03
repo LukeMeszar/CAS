@@ -1,0 +1,7 @@
+$/Name/CScope.gnrc +instance=Type   :inst
+$/Name/CScope.gnrc +instance=Export :inst
+$/Name/PreDefine.gnrc +instance=Type +referto=ident      :inst
+$/Name/PreDefId.gnrc  +instance=Type +referto=(/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/a/p/Predef.d.3327404.FILE) :inst
+$/Prop/Unique.gnrc +instance=Export :inst
+$/Output/PtgCommon.fw
+$/Tech/Strings.specs

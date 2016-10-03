@@ -1,0 +1,5 @@
+%CLike.Module.ok == . +cmd=cat (%trenn) \
+	(CLike.demo/Module.ok:label) \
+	(CLike.demo/Module.ok) \
+	(CLike.demo/Module.ok +cmd=(CLike.fw.exe) :stdout :warn) \
+	(CLike.demo/Module.ok +cmd=(CLike.fw.exe) :stdout) :stdout

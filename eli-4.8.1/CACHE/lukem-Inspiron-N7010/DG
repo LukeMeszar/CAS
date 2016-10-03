@@ -1,0 +1,7945 @@
+1.16.10
+.Eli Version 4.8.1 (? for help, ^D to exit)
+64 1075 73 28 2 560 1389 93 553 502 564 811 2198 
+.s. 1 918
+..lex_code 0 241
+..symbols 0 841
+..tex.vtd 0 1021
+..coding 0 747
+..reqmod 0 276
+..reqsym 0 296
+..dapto 0 151
+..delit 0 183
+..eta.h 0 245
+..specs 0 201
+..burg 0 36
+..cola 0 111
+..finl 0 788
+..gnrc 0 548
+..head 0 786
+..html 0 496
+..init 0 787
+..libs 0 316
+..lido 0 562
+..perr 0 736
+..roff 0 1001
+.,eqn 0 999
+..bib 0 1018
+..bst 0 1020
+..c++ 0 142
+..clp 0 68
+..cls 0 1019
+..con 0 682
+..ctl 0 563
+..cxx 0 142
+..eta 0 790
+..gla 0 400
+..map 0 653
+..oil 0 696
+..pdf 0 362
+..pdl 0 760
+..phi 0 789
+..ptg 0 809
+..str 0 22
+..sty 0 518
+..sym 0 634
+..tbl 0 1000
+..tcl 0 688
+..tex 0 352
+..tnf 0 354
+..ygi 0 964
+.,vw 0 919
+..cc 0 142
+..db 0 685
+..dg 0 973
+..fw 0 337
+..ps 0 364
+..sm 0 938
+..tp 0 854
+.,v 0 917
+..C 0 142
+..a 0 271
+..c 0 53
+..f 0 954
+..h 0 133
+..l 0 956
+..o 0 60
+..y 0 958
+1 .:noinput . 3 -1 -1 -1 -1 -1 10 157 0 0 0
+1 .OBJECT . 3 -1 -1 -1 552 -1 134 157 0 0 0
+2 .FILE . 3 -1 -1 -1 -1 0 181 157 0 0 0
+3 .LIST . 3 -1 -1 -1 -1 1 342 157 0 0 0
+4 .VOID . 3 -1 -1 -1 -1 2 -1 157 0 0 0
+5 .REFERENCE . 3 -1 -1 -1 -1 3 -1 157 0 0 0
+6 .EXECUTABLE . 3 -1 -1 -1 -1 4 -1 157 0 0 0
+7 .GENERIC . 3 -1 -1 -1 -1 5 -1 157 0 0 0
+8 .PIPE . 3 -1 -1 -1 -1 6 -1 606 0 0 0
+9 .DERIVED-DIRECTORY . 3 -1 -1 -1 -1 7 347 157 0 0 0
+2 .odin*expand_hooks . 3 -1 447 -1 436 -1 -1 157 0 1 0
+5 .odin*targets_ptr . 3 -1 434 -1 425 -1 -1 157 0 0 0
+2 .odin*targets . 3 -1 438 -1 428 -1 -1 157 0 0 0
+3 .odin*act_tgt.list . 3 -1 439 -1 429 -1 -1 157 0 0 0
+3 .odin*vir_tgt.list . 3 -1 440 -1 430 -1 -1 157 0 0 0
+9 .odin*vir_dir . 3 -1 441 -1 431 -1 -1 157 0 0 0
+4 .odin*copy . 3 -1 442 -1 432 -1 -1 607 1 0 0
+3 .odin*prm_values . 3 -1 448 -1 437 -1 -1 157 0 1 0
+3 .odin*view_spec . 3 -1 465 -1 454 -1 -1 157 0 0 0
+5 .first .first object in a list 2 -1 -1 -1 -1 395 -1 157 0 0 0
+5 .odin*apply . 3 -1 467 -1 456 -1 -1 375 0 1 0
+2 .odin*abstract .the abstract object of an instance 2 -1 -1 -1 -1 422 -1 157 0 0 0
+2 .str .String table initialization 1 -1 -1 -1 -1 8 -1 157 0 0 0
+2 .csmidnOut .Results of identifier and string table generation 2 -1 -1 -1 -1 10 -1 247 0 0 0
+2 .adtinit*csmidnOut . 3 -1 8 -1 0 -1 -1 247 0 0 0
+3 .extract . 2 22 9 -1 -1 9 -1 157 0 0 0
+2 .names .names of the elements of a list 1 -1 -1 -1 -1 403 -1 157 0 1 0
+9 .csmidnProd .Identifier and string table ADTs 2 -1 -1 -1 -1 11 -1 247 0 0 0
+2 .name .name of a file 1 -1 -1 -1 -1 402 -1 157 0 1 0
+9 .adtinit*csmidnProd . 3 -1 10 -1 1 -1 -1 247 0 0 0
+2 .cat .concatenation of the contents of the elements of a list 1 -1 -1 -1 -1 406 -1 157 0 0 0
+3 .level_8_specs_in .Intermediate for Level 8 union 2 -1 -1 -1 -1 87 364 434 0 1 0
+3 .eli*level_8_specs_in . 3 -1 11 -1 2 -1 -1 434 0 1 0
+3 .level_7_specs .Level 6 specifications 2 -1 -1 -1 109 -1 -1 425 0 0 0
+2 .etaIncl .List of generated Eta-Header-Files that can be included by other Tools 2 -1 -1 -1 -1 355 -1 225 0 0 0
+3 .list .read a list from a file 2 -1 -1 -1 -1 453 -1 157 0 1 0
+2 .burg .burg specification 1 -1 -1 -1 -1 12 375 157 0 0 0
+3 .burg.cmpd .Set of burg specification fragments 2 -1 -1 -1 -1 13 290 157 0 1 0
+3 .one.burg.cmpd .Singleton burg specification 2 -1 -1 -1 4 -1 -1 157 0 1 0
+3 .burg*one.burg.cmpd . 3 -1 12 -1 3 -1 -1 157 0 1 0
+3 .ext.burg.cmpd .Extracted burg specification fragments 2 -1 -1 -1 6 -1 -1 157 0 1 0
+3 .burg*ext.burg.cmpd . 3 -1 13 -1 5 -1 -1 157 0 1 0
+3 .extract . 2 36 14 -1 -1 14 -1 157 0 0 0
+9 .burgGen .Objects generated from burg specifications 2 -1 -1 -1 -1 15 288 157 0 0 0
+9 .burg*burgGen . 3 -1 15 -1 7 -1 -1 157 0 0 0
+2 .burgErr .Identity map for errors in standard form 2 -1 -1 -1 9 -1 -1 608 0 0 0
+2 .burg*burgErr . 3 -1 16 -1 8 -1 -1 608 0 0 0
+2 .line_err .Hooks that map errors in standard form 2 -1 -1 -1 -1 363 -1 616 0 0 0
+2 .burgOut .Results of burg processing 2 -1 -1 -1 -1 16 -1 157 0 0 0
+2 .burg*burgOut . 3 -1 17 -1 10 -1 -1 157 0 0 0
+3 .level_2_specs_in .Intermediate for Level 2 union 2 -1 -1 -1 -1 80 373 245 0 1 0
+3 .eli*level_2_specs_in . 3 -1 18 -1 11 -1 -1 245 0 1 0
+3 .level_1_specs .Level 1 specifications 2 -1 -1 -1 93 -1 -1 245 0 0 0
+2 .c .C source code 2 -1 -1 -1 -1 17 556 287 0 0 0
+2 .ls .filenames of the elements of a list 1 -1 -1 -1 -1 405 -1 157 0 0 0
+2 .c.o .C object module 2 -1 -1 -1 13 -1 -1 319 0 0 0
+2 .cc*c.o . 3 -1 19 -1 12 -1 -1 319 0 0 0
+2 .c_srcs .Source text needed for a C compilation 2 -1 -1 -1 -1 20 377 313 0 0 0
+2 .dir_of .Odinfile describing a virtual directory 2 -1 -1 -1 -1 305 -1 157 0 0 0
+9 .vir_dir .a virtual directory 2 -1 -1 -1 -1 389 -1 157 0 0 0
+2 .o .Object file 2 -1 -1 -1 -1 21 -1 337 0 0 0
+5 .lookup_c_srcs .Reference to a file naming files needed by C 2 -1 -1 -1 -1 19 -1 452 0 1 0
+5 .cc*lookup_c_srcs . 3 -1 20 -1 14 -1 -1 452 0 1 0
+3 .incl.all .Transitive incl dependence 2 -1 -1 -1 -1 43 -1 225 0 0 0
+5 .lookup . 2 57 21 -1 -1 18 -1 157 0 0 1
+2 .cc*c_srcs . 3 -1 22 -1 15 -1 -1 313 0 0 0
+2 .exe .Executable compiled from C independent of Eli 2 -1 -1 -1 -1 22 0 636 0 0 0
+2 .cc*exe . 3 -1 23 -1 16 -1 -1 638 0 0 0
+2 .clp .CLP specification 1 -1 -1 -1 -1 23 381 157 0 0 0
+3 .clp.cmpd .Set of clp specification fragments 2 -1 -1 -1 -1 24 287 157 0 1 0
+3 .one.clp.cmpd .Singleton clp specification 2 -1 -1 -1 18 -1 -1 157 0 1 0
+3 .clp*one.clp.cmpd . 3 -1 24 -1 17 -1 -1 157 0 1 0
+3 .ext.clp.cmpd .Extracted clp specification fragments 2 -1 -1 -1 20 -1 -1 157 0 1 0
+3 .clp*ext.clp.cmpd . 3 -1 25 -1 19 -1 -1 157 0 1 0
+3 .extract . 2 68 26 -1 -1 25 -1 157 0 0 0
+9 .clp_gen .Objects generated from CLP specifications 2 -1 -1 -1 -1 26 -1 225 0 0 0
+9 .clp*clp_gen . 3 -1 27 -1 21 -1 -1 225 0 0 0
+2 .cpp .Result of applying the C pre-processor to a set of files 2 -1 -1 -1 -1 51 280 225 0 0 0
+2 .clp_out .Results of CLP processing 2 -1 -1 -1 -1 27 285 245 0 0 0
+2 .clp*clp_out . 3 -1 28 -1 22 -1 -1 245 0 0 0
+3 .level_1_specs_in .Intermediate for Level 1 union 2 -1 -1 -1 -1 79 374 245 0 1 0
+3 .eli*level_1_specs_in . 3 -1 29 -1 23 -1 -1 245 0 1 0
+3 .allspecs .All specification files 1 -1 -1 -1 91 -1 414 225 0 1 0
+2 .clpErr .Identity map for errors in standard form 2 -1 -1 -1 25 -1 -1 617 0 0 0
+2 .clp*clpErr . 3 -1 30 -1 24 -1 -1 617 0 0 0
+10 .cola*colaCmrIn*composite . 3 -1 33 0 -1 -1 211 418 0 0 0
+2 .colaCmrIn .EBNF-COMAR data structure without bottomup constraints 2 -1 -1 -1 -1 28 -1 418 0 0 0
+2 .cola*colaCmrIn . 3 -1 31 -1 26 -1 -1 418 0 0 0
+2 .colaCmrBuIn .EBNF-COMAR data structure with bottomup constraints 2 -1 -1 -1 -1 29 -1 418 0 0 0
+2 .cola*colaCmrBuIn . 3 -1 32 -1 27 -1 -1 418 0 0 0
+2 .Pgram .Complete parsing grammar without bottomup constraints 2 -1 -1 -1 -1 327 -1 418 0 0 0
+2 .BuPgram .Complete parsing grammar with bottomup constraints 2 -1 -1 -1 -1 328 -1 418 0 0 0
+10 .cola*colaCmr*composite . 3 -1 38 2 -1 -1 209 418 0 0 0
+2 .colaCmr .The COMAR datastructure of the abstract parser 2 -1 -1 -1 -1 30 -1 418 0 0 0
+2 .cola*colaCmr . 3 -1 34 -1 28 -1 -1 418 0 0 0
+2 .colaAbs .The state table of the abstract parser 2 -1 -1 -1 -1 31 -1 418 0 0 0
+2 .cola*colaAbs . 3 -1 35 -1 29 -1 -1 418 0 0 0
+2 .colaErrTerms .C code for producing (... expected)-messages 2 -1 -1 -1 -1 32 -1 418 0 0 0
+2 .cola*colaErrTerms . 3 -1 36 -1 30 -1 -1 418 0 0 0
+2 .colaInfo .result of LALR(1)-analysis, conflict states/all states 1 -1 -1 -1 -1 33 -1 418 0 0 0
+2 .cola*colaInfo . 3 -1 37 -1 31 -1 -1 418 0 0 0
+2 .colaLalrOpt .cola analyzer options 2 -1 -1 -1 -1 35 -1 225 0 0 0
+9 .colaBe .Generation of the concrete parser 2 -1 -1 -1 -1 34 -1 418 0 0 0
+9 .cola*colaBe . 3 -1 39 -1 32 -1 -1 418 0 0 0
+2 .colaBackOpt .cola backend options 2 -1 -1 -1 -1 36 -1 225 0 0 0
+2 .colaErrOff .macro to stop the table driven parser after the first syntax error 2 -1 -1 -1 -1 37 -1 225 0 0 0
+10 .cola*colaLalrOpt*composite . 3 -1 43 6 -1 -1 283 225 0 0 0
+2 .cola*colaLalrOpt . 3 -1 40 -1 33 -1 -1 225 0 0 0
+2 .cola*colaBackOpt . 3 -1 41 -1 34 -1 -1 225 0 0 0
+2 .cola*colaErrOff . 3 -1 42 -1 35 -1 -1 225 0 0 0
+3 .cola.cmpd .Set of cola specification fragments 2 -1 -1 -1 -1 39 284 157 0 1 0
+2 .cola .Options for the parser generator cola 1 -1 -1 -1 -1 38 415 157 0 0 0
+3 .one.cola.cmpd .Singleton cola specification 2 -1 -1 -1 37 -1 -1 157 0 1 0
+3 .cola*one.cola.cmpd . 3 -1 44 -1 36 -1 -1 157 0 1 0
+3 .ext.cola.cmpd .Extracted cola specification fragments 2 -1 -1 -1 39 -1 -1 157 0 1 0
+3 .cola*ext.cola.cmpd . 3 -1 45 -1 38 -1 -1 157 0 1 0
+3 .extract . 2 111 46 -1 -1 40 -1 157 0 0 0
+10 .cola*colaOut*composite . 3 -1 49 9 -1 -1 205 418 0 0 0
+2 .colaOut .Selected COLA-generated parser 2 -1 -1 -1 -1 41 -1 418 0 0 0
+2 .cola*colaOut . 3 -1 47 -1 40 -1 -1 418 0 0 0
+2 .colaData .Selected COLA-generated information 2 -1 -1 -1 -1 42 -1 418 0 0 0
+2 .cola*colaData . 3 -1 48 -1 41 -1 -1 418 0 0 0
+3 .parserGen .Name of the selected parser generation step 2 -1 -1 -1 -1 310 -1 425 0 1 0
+3 .parser*parserGen . 3 -1 50 -1 42 -1 -1 425 0 1 0
+3 .parserInfo .Name of the selected parser information step 2 -1 -1 -1 -1 313 -1 425 0 1 0
+3 .parser*parserInfo . 3 -1 51 -1 43 -1 -1 425 0 1 0
+3 .cpp*incl.all . 3 -1 52 -1 44 -1 -1 225 0 0 0
+3 .incl.lst .Transitive incl collection 2 -1 -1 -1 -1 45 151 225 0 1 0
+3 .cpp*incl.lst . 3 -1 53 -1 45 -1 -1 225 0 1 0
+2 .incl.dir .Directly included file names 2 -1 -1 -1 -1 46 152 225 0 0 0
+3 .map . 2 127 54 -1 -1 44 -1 157 0 0 1
+2 .cpp*incl.dir . 3 -1 55 -1 46 -1 -1 225 0 0 0
+5 .dir .directory of a file 1 -1 -1 -1 -1 401 -1 157 0 0 0
+2 .h .C preprocessor include files 2 -1 -1 -1 -1 47 -1 271 0 0 0
+2 .cpp_tab .Table summarizing file and line offset information 2 -1 -1 -1 -1 48 -1 225 0 0 0
+2 .cpp*cpp_tab . 3 -1 56 -1 47 -1 -1 225 0 0 0
+2 .do_cpp .Result of applying the C pre-processor to one file 2 -1 -1 -1 -1 49 -1 225 0 0 0
+2 .cpp*do_cpp . 3 -1 57 -1 48 -1 -1 225 0 0 0
+2 .cpp*cpp . 3 -1 58 -1 49 -1 -1 225 0 0 0
+3 .map . 2 136 59 -1 -1 50 -1 157 0 0 1
+2 .cppErr .Error reports referred to component files 2 -1 -1 -1 51 -1 -1 238 0 0 0
+2 .cpp*cppErr . 3 -1 60 -1 50 -1 -1 238 0 0 0
+2 .cxx .C++ source code 1 -1 -1 -1 52 -1 557 157 0 0 0
+2 .o_src .source code for object module 2 -1 -1 -1 -1 435 -1 157 0 0 0
+5 .lookup_cxx_srcs .Reference to a file naming files needed by C++ 2 -1 -1 -1 53 -1 -1 449 0 1 0
+2 .cxx_srcs .Names of files needed for a C++ compilation 2 -1 -1 -1 54 -1 416 300 0 0 0
+2 .cxx.o .C++ object module 2 -1 -1 -1 55 -1 -1 301 0 0 0
+2 .cxx*cxx.o . 3 -1 61 -1 56 -1 -1 301 0 0 0
+5 .cxx*lookup_cxx_srcs . 3 -1 62 -1 57 -1 -1 449 0 1 0
+5 .lookup . 2 145 63 -1 -1 52 -1 157 0 0 1
+2 .cxx*cxx_srcs . 3 -1 64 -1 58 -1 -1 300 0 0 0
+2 .dapto .Specification of events and messages for monitoring 1 -1 -1 -1 -1 53 419 157 0 0 0
+3 .dapto.cmpd .Set of Dapto specifications 2 -1 -1 -1 -1 54 278 157 0 1 0
+3 .one.dapto.cmpd .Singleton Dapto specification 2 -1 -1 -1 60 -1 -1 157 0 1 0
+3 .dapto*one.dapto.cmpd . 3 -1 65 -1 59 -1 -1 157 0 1 0
+3 .ext.dapto.cmpd .Extracted Dapto specification fragments 2 -1 -1 -1 62 -1 -1 157 0 1 0
+3 .dapto*ext.dapto.cmpd . 3 -1 66 -1 61 -1 -1 157 0 1 0
+3 .extract . 2 151 67 -1 -1 55 -1 157 0 0 0
+9 .dapGen .Objects generated from Dapto specifications 2 -1 -1 -1 -1 56 276 225 0 0 0
+9 .dapto*dapGen . 3 -1 68 -1 63 -1 -1 225 0 0 0
+2 .labels .labels of the elements of a list 1 -1 -1 -1 -1 409 -1 157 0 0 0
+2 .dapOut .Support for execution monitoring 2 -1 -1 -1 -1 58 -1 230 0 0 0
+2 .dapto*dapOut . 3 -1 69 -1 64 -1 -1 230 0 0 0
+3 .map . 2 158 70 -1 -1 57 -1 157 0 0 1
+10 .dapto*init_sources*composite . 3 -1 74 11 -1 -1 271 660 0 0 0
+9 .init_sources .Source files for initialization 2 -1 -1 -1 -1 59 -1 660 0 0 0
+9 .dapto*init_sources . 3 -1 71 -1 65 -1 -1 660 0 0 0
+9 .init_objects .Object files for initialization 2 -1 -1 -1 -1 60 -1 660 0 0 0
+9 .dapto*init_objects . 3 -1 72 -1 66 -1 -1 660 0 0 0
+2 .libDb .Event database for library modules 2 -1 -1 -1 -1 61 268 660 0 0 0
+2 .dapto*libDb . 3 -1 73 -1 67 -1 -1 660 0 0 0
+2 .used_sources .Used source files 2 -1 -1 -1 -1 120 273 660 0 0 0
+2 .dapGenErr .Identity map for errors in standard form 2 -1 -1 -1 69 -1 -1 238 0 0 0
+2 .dapto*dapGenErr . 3 -1 75 -1 68 -1 -1 238 0 0 0
+3 .level_9_specs_in .Intermediate for Level 9 union 2 -1 -1 -1 -1 89 363 434 0 1 0
+3 .eli*level_9_specs_in . 3 -1 76 -1 70 -1 -1 434 0 1 0
+3 .level_8_specs .Level 8 specifications 2 -1 -1 -1 111 -1 -1 434 0 0 0
+6 .dbx .Berkeley symbolic debugger run 1 -1 -1 -1 -1 62 -1 675 0 0 0
+6 .dbx*dbx . 3 -1 77 -1 71 -1 -1 675 0 0 0
+3 .sources .Source files 2 -1 -1 -1 -1 123 -1 660 0 0 0
+3 .includes .Include files 2 -1 -1 -1 -1 125 -1 660 0 0 0
+6 .gdb .GNU symbolic debugger run 1 -1 -1 -1 -1 63 -1 675 0 0 0
+6 .dbx*gdb . 3 -1 78 -1 72 -1 -1 675 0 0 0
+2 .delit .Literals to be deleted from the finite-state machine 1 -1 -1 -1 -1 64 420 157 0 0 0
+3 .delit.cmpd .Set of delit specification fragments 2 -1 -1 -1 -1 65 -1 157 0 1 0
+3 .one.delit.cmpd .Singleton delit specification 2 -1 -1 -1 74 -1 -1 157 0 1 0
+3 .delit*one.delit.cmpd . 3 -1 79 -1 73 -1 -1 157 0 1 0
+3 .ext.delit.cmpd .Extracted delit specification fragments 2 -1 -1 -1 76 -1 -1 157 0 1 0
+3 .delit*ext.delit.cmpd . 3 -1 80 -1 75 -1 -1 157 0 1 0
+3 .extract . 2 183 81 -1 -1 66 -1 157 0 0 0
+3 .empty.delit.gla.cmpd .Empty delit specification derived from gla 2 -1 -1 -1 78 -1 -1 157 0 1 0
+3 .delit*empty.delit.gla.cmpd . 3 -1 82 -1 77 -1 -1 157 0 1 0
+3 .one.gla.cmpd .Singleton gla specification 2 -1 -1 -1 178 -1 425 157 0 1 0
+2 .lit_out .Results of literal processing 2 -1 -1 -1 -1 67 -1 225 0 0 0
+2 .delit*lit_out . 3 -1 83 -1 79 -1 -1 225 0 0 0
+3 .lex_code.cmpd .Set of lex_code specification fragments 2 -1 -1 -1 -1 181 -1 157 0 1 0
+9 .lit_gen .Generated literal descriptions 2 -1 -1 -1 -1 68 -1 225 0 0 0
+9 .delit*lit_gen . 3 -1 84 -1 80 -1 -1 225 0 0 0
+3 .level_7_specs_in .Intermediate for Level 7 union 2 -1 -1 -1 -1 86 366 425 0 1 0
+3 .eli*level_7_specs_in . 3 -1 85 -1 81 -1 -1 425 0 1 0
+3 .level_6_specs .Level 6 specifications 2 -1 -1 -1 107 -1 555 418 0 0 0
+2 .specs .Set of specifications defining the desired processor 1 -1 -1 -1 -1 69 435 157 0 0 0
+2 .sp .specs or reqmod 2 -1 -1 -1 -1 104 439 157 0 0 0
+2 .spfils .Set of specifications after pre-processing 2 -1 -1 -1 -1 70 558 225 0 0 0
+2 .eli*spfils . 3 -1 86 -1 82 -1 -1 225 0 0 0
+3 .SpecList .List of specifications 2 -1 -1 -1 -1 71 -1 434 0 1 0
+3 .level_0_specs_out .Base of a derivation to a complete program 2 -1 -1 -1 84 -1 -1 225 0 0 0
+3 .eli*level_0_specs_out . 3 -1 87 -1 83 -1 -1 225 0 0 0
+3 .expandlist .Files in a list of files and directories 2 -1 -1 -1 -1 306 -1 225 0 1 0
+3 .map . 2 208 88 -1 -1 72 -1 157 0 0 1
+3 .level_0_specs .Base of a derivation to a complete program 2 -1 -1 -1 85 -1 430 225 0 1 0
+3 .fwspecs .Specifications generated by FunnelWeb 2 -1 -1 -1 -1 73 429 225 0 1 0
+3 .eli*fwspecs . 3 -1 89 -1 86 -1 -1 225 0 1 0
+2 .fwOut .Results of FunnelWeb processing 2 -1 -1 -1 -1 151 -1 225 0 0 0
+3 .specs_closure .Closure on specs 2 -1 -1 -1 -1 76 428 225 0 1 0
+3 .eli*specs_closure . 3 -1 90 -1 87 -1 -1 225 0 1 0
+3 .extract . 2 201 91 -1 -1 74 -1 157 0 0 0
+3 .map . 2 214 92 -1 -1 75 -1 157 0 0 1
+3 .expfwspecs .Specifications generated by Funnelweb expanded 2 -1 -1 -1 -1 77 427 225 0 0 0
+3 .eli*expfwspecs . 3 -1 93 -1 88 -1 -1 225 0 0 0
+3 .allspecs_in .Intermediate for allspecs union 2 -1 -1 -1 -1 78 426 225 0 1 0
+3 .eli*allspecs_in . 3 -1 94 -1 89 -1 -1 225 0 1 0
+3 .eli*allspecs . 3 -1 95 -1 90 -1 -1 225 0 0 0
+3 .eli*level_1_specs . 3 -1 96 -1 92 -1 -1 245 0 0 0
+3 .level_2_specs .Level 2 specifications 2 -1 -1 -1 95 -1 -1 245 0 0 0
+3 .eli*level_2_specs . 3 -1 97 -1 94 -1 -1 245 0 0 0
+3 .level_3_specs_in .Intermediate for Level 3 union 2 -1 -1 -1 -1 81 372 415 0 1 0
+3 .eli*level_3_specs_in . 3 -1 98 -1 96 -1 -1 415 0 1 0
+3 .level_3_specs .Level 3 specifications 2 -1 -1 -1 98 -1 -1 415 0 0 0
+3 .eli*level_3_specs . 3 -1 99 -1 97 -1 -1 415 0 0 0
+3 .level_4_specs_in .Intermediate for Level 4 union 2 -1 -1 -1 -1 82 371 415 0 1 0
+3 .eli*level_4_specs_in . 3 -1 100 -1 99 -1 -1 415 0 1 0
+3 .level_4_specs .Level 4 specifications 2 -1 -1 -1 101 -1 -1 415 0 0 0
+3 .eli*level_4_specs . 3 -1 101 -1 100 -1 -1 415 0 0 0
+3 .level_5_specs_in .Intermediate for Level 5 union 2 -1 -1 -1 -1 83 370 418 0 1 0
+3 .eli*level_5_specs_in . 3 -1 102 -1 102 -1 -1 418 0 1 0
+3 .level_5_specs .Level 5 specifications 2 -1 -1 -1 104 -1 -1 418 0 0 0
+3 .eli*level_5_specs . 3 -1 103 -1 103 -1 -1 418 0 0 0
+3 .level_6_specs_in .Intermediate for Level 6 union 2 -1 -1 -1 -1 84 369 418 0 1 0
+3 .eli*level_6_specs_in . 3 -1 104 -1 105 -1 -1 418 0 1 0
+3 .eli*level_6_specs . 3 -1 105 -1 106 -1 -1 418 0 0 0
+2 .lex_code .Basic symbol coding 1 -1 -1 -1 -1 180 440 157 0 0 0
+3 .delete . 2 241 106 -1 -1 85 -1 157 0 0 0
+3 .eli*level_7_specs . 3 -1 107 -1 108 -1 -1 425 0 0 0
+3 .eli*level_8_specs . 3 -1 108 -1 110 -1 -1 434 0 0 0
+2 .eta_h .Header-files generated from Eta-Processing 2 -1 -1 -1 379 -1 -1 157 0 0 0
+3 .delete . 2 245 109 -1 -1 88 -1 157 0 0 0
+3 .level_9_specs .Level 9 specifications 2 -1 -1 -1 113 -1 549 434 0 0 0
+3 .eli*level_9_specs . 3 -1 110 -1 112 -1 -1 434 0 0 0
+3 .phiCollection .Intermediate for union 2 -1 -1 -1 -1 90 351 434 0 1 0
+3 .eli*phiCollection . 3 -1 111 -1 114 -1 -1 434 0 1 0
+3 .genlib .Library modules included implicitly 2 -1 -1 -1 -1 115 -1 434 0 1 0
+3 .phiInSpecs .Collection of user specs and reqmod specs 2 -1 -1 -1 -1 91 350 434 0 0 0
+3 .eli*phiInSpecs . 3 -1 112 -1 115 -1 -1 434 0 0 0
+3 .phiGenHeaders .List of headers generated by phi 2 -1 -1 -1 -1 92 -1 434 0 1 0
+3 .eli*phiGenHeaders . 3 -1 113 -1 116 -1 -1 434 0 1 0
+9 .phiOut .Include files for module intitiation/termination 2 -1 -1 -1 -1 350 -1 157 0 0 0
+9 .etaOut .Include files for module specialization 2 -1 -1 -1 -1 353 -1 157 0 0 0
+2 .definition .Original specification files 1 -1 -1 -1 -1 93 -1 225 0 0 0
+2 .eli*definition . 3 -1 114 -1 117 -1 -1 225 0 0 0
+3 .depend .source dependencies 1 -1 -1 -1 -1 411 -1 157 0 0 0
+3 .all_c .All C files arising from the specification 2 -1 -1 -1 -1 96 -1 688 0 1 0
+3 .eli*all_c . 3 -1 115 -1 118 -1 -1 688 0 1 0
+3 .extract . 2 53 116 -1 -1 94 -1 157 0 0 0
+3 .extract . 2 142 117 -1 -1 95 -1 157 0 0 0
+2 .dothlist .Header files from the specifications and frame 2 -1 -1 -1 -1 98 -1 701 0 0 0
+2 .eli*dothlist . 3 -1 118 -1 119 -1 -1 701 0 0 0
+3 .extract . 2 133 119 -1 -1 97 -1 157 0 0 0
+2 .pasted .Result of pasting two lists 2 -1 -1 -1 -1 370 -1 157 0 0 0
+3 .gencode_in .Intermediate for union 2 -1 -1 -1 -1 101 349 660 0 1 0
+3 .eli*gencode_in . 3 -1 120 -1 120 -1 -1 660 0 1 0
+2 .a .object library archive 1 -1 -1 -1 -1 441 -1 337 0 0 0
+3 .delete . 2 271 121 -1 -1 99 -1 157 0 0 0
+3 .delete . 2 60 122 -1 -1 100 -1 157 0 0 0
+3 .gencode .Generated source code 1 -1 -1 -1 -1 102 -1 660 0 0 0
+3 .eli*gencode . 3 -1 123 -1 121 -1 -1 660 0 0 0
+2 .reqmod .Names of required modules 1 -1 -1 -1 -1 103 -1 157 0 0 0
+2 .reqfils .Set of required modules after pre-processing 2 -1 -1 -1 -1 105 438 225 0 0 0
+2 .eli*reqfils . 3 -1 124 -1 122 -1 -1 225 0 0 0
+3 .reqlist .Base of a derivation of required modules 2 -1 -1 -1 -1 106 437 225 0 0 0
+3 .eli*reqlist . 3 -1 125 -1 123 -1 -1 225 0 0 0
+3 .libmods_fw .Specifications generated by FunnelWeb 2 -1 -1 -1 -1 107 436 225 0 1 0
+3 .eli*libmods_fw . 3 -1 126 -1 124 -1 -1 225 0 1 0
+3 .libmods .Closure on sp 2 -1 -1 -1 -1 110 -1 225 0 1 0
+3 .eli*libmods . 3 -1 127 -1 125 -1 -1 225 0 1 0
+3 .extract . 2 202 128 -1 -1 108 -1 157 0 0 0
+3 .map . 2 283 129 -1 -1 109 -1 157 0 0 1
+3 .reqmods .All reqmod files 2 -1 -1 -1 -1 112 353 434 0 1 0
+3 .eli*reqmods . 3 -1 130 -1 126 -1 -1 434 0 1 0
+3 .extract . 2 276 131 -1 -1 111 -1 157 0 0 0
+3 .genlist .List of all frame modules 2 -1 -1 -1 -1 113 -1 434 0 0 0
+3 .eli*genlist . 3 -1 132 -1 127 -1 -1 434 0 0 0
+3 .union .list union 1 -1 -1 -1 -1 407 182 157 0 0 0
+2 .framespecs .List of frame modules not overridden 2 -1 -1 -1 -1 114 352 434 0 0 0
+2 .eli*framespecs . 3 -1 133 -1 128 -1 -1 434 0 0 0
+3 .eli*genlib . 3 -1 134 -1 129 -1 -1 434 0 1 0
+2 .reqsym .Entry point symbols of required modules 1 -1 -1 -1 -1 116 -1 157 0 0 0
+10 .eli*used_sources*composite . 3 -1 137 14 -1 -1 275 660 0 0 0
+2 .eli*used_sources . 3 -1 135 -1 130 -1 -1 660 0 0 0
+2 .used_objects .Used object files 2 -1 -1 -1 -1 121 -1 660 0 0 0
+2 .eli*used_objects . 3 -1 136 -1 131 -1 -1 660 0 0 0
+3 .map . 2 61 138 -1 -1 117 -1 157 0 0 1
+3 .map . 2 60 139 -1 -1 118 -1 157 0 0 1
+3 .extract . 2 296 140 -1 -1 119 -1 157 0 0 0
+3 .srclist .List of source files 2 -1 -1 -1 -1 122 267 660 0 1 0
+3 .eli*srclist . 3 -1 141 -1 132 -1 -1 660 0 1 0
+3 .eli*sources . 3 -1 142 -1 133 -1 -1 660 0 0 0
+3 .eli*includes . 3 -1 143 -1 134 -1 -1 660 0 0 0
+3 .map . 2 63 144 -1 -1 124 -1 157 0 0 1
+3 .objlist .List of object files 2 -1 -1 -1 -1 126 266 660 0 1 0
+3 .eli*objlist . 3 -1 145 -1 135 -1 -1 660 0 1 0
+3 .objects .Object files 2 -1 -1 -1 -1 127 265 660 0 0 0
+3 .eli*objects . 3 -1 146 -1 136 -1 -1 660 0 0 0
+3 .dotafiles .Explicit libraries 2 -1 -1 -1 -1 129 -1 660 0 1 0
+3 .eli*dotafiles . 3 -1 147 -1 137 -1 -1 660 0 1 0
+3 .extract . 2 271 148 -1 -1 128 -1 157 0 0 0
+2 .libs .Libraries to include in the link 1 -1 -1 -1 -1 130 -1 157 0 0 0
+3 .libsfiles .Collection of all of the libs files 2 -1 -1 -1 -1 132 348 434 0 1 0
+3 .eli*libsfiles . 3 -1 149 -1 138 -1 -1 434 0 1 0
+3 .extract . 2 316 150 -1 -1 131 -1 157 0 0 0
+2 .libsflags .The complete set of linker flags to use 2 -1 -1 -1 -1 133 -1 434 0 0 0
+2 .eli*libsflags . 3 -1 151 -1 139 -1 -1 434 0 0 0
+2 .eli*exe . 3 -1 152 -1 140 -1 -1 636 0 0 0
+2 .library_flags .library command line flags 2 -1 -1 -1 -1 442 -1 706 0 0 0
+2 .so .Shared library 1 -1 -1 -1 -1 134 -1 660 0 0 0
+2 .eli*so . 3 -1 153 -1 141 -1 -1 660 0 0 0
+3 .source .Source and include files for the complete program 1 -1 -1 -1 -1 135 -1 636 0 1 0
+3 .eli*source . 3 -1 154 -1 142 -1 -1 636 0 1 0
+9 .mkfile .Makefile for the complete program 2 -1 -1 -1 -1 137 -1 636 0 0 0
+9 .eli*mkfile . 3 -1 155 -1 143 -1 -1 636 0 0 0
+2 .label .label of a file 1 -1 -1 -1 -1 408 -1 157 0 0 0
+2 .dep .Dependence line for a program 2 -1 -1 -1 -1 138 -1 563 0 0 0
+3 .map . 2 331 156 -1 -1 136 -1 157 0 0 1
+2 .c_dep .Dependence line for a C program 2 -1 -1 -1 145 -1 -1 563 0 0 0
+2 .eli*c_dep . 3 -1 157 -1 144 -1 -1 563 0 0 0
+2 .cxx_dep .Dependence line for a C++ program 2 -1 -1 -1 147 -1 -1 225 0 0 0
+2 .eli*cxx_dep . 3 -1 158 -1 146 -1 -1 225 0 0 0
+2 .fw .FunnelWeb specification 1 -1 -1 -1 -1 139 559 157 0 0 0
+3 .fw.cmpd .Set of fw specification fragments 2 -1 -1 -1 -1 140 264 157 0 1 0
+3 .one.fw.cmpd .Singleton set 2 -1 -1 -1 148 -1 -1 157 0 1 0
+3 .fw_srcs .Source text needed for FunnelWeb processing 2 -1 -1 -1 -1 141 -1 225 0 0 0
+9 .fwGen .Objects generated from a FunnelWeb specification 2 -1 -1 -1 -1 142 447 225 0 0 0
+3 .fwGenList .List of objects generated from a FunnelWeb specification 2 -1 -1 -1 -1 143 -1 225 0 1 0
+9 .fwSpec .Massaged specs files from a FunnelWeb file 2 -1 -1 -1 -1 144 445 225 0 0 0
+3 .fwSpecList .List of massaged specs files from a FunnelWeb file 2 -1 -1 -1 -1 145 -1 225 0 1 0
+2 .fwMap .Mapping from output objects to FunnelWeb specification 2 -1 -1 -1 -1 146 -1 225 0 0 0
+2 .fwNop .Files that are not to be placed into the pipe 2 -1 -1 -1 -1 147 -1 225 0 0 0
+3 .fwAll .All files from one FunnelWeb specification 2 -1 -1 -1 -1 148 -1 225 0 1 0
+2 .fwSel .Text representation of product file names 2 -1 -1 -1 -1 149 261 225 0 0 0
+3 .fwProd .All product files from one FunnelWeb specification 2 -1 -1 -1 -1 150 -1 225 0 1 0
+2 .fwErr .Map line errors in FunnelWeb output 2 -1 -1 -1 150 -1 -1 238 0 0 0
+2 .fwTex .TeX representation of a FunnelWeb specification 1 -1 -1 -1 -1 152 -1 378 0 0 0
+2 .tex .TeX formatter input 1 -1 -1 -1 -1 470 560 157 0 0 0
+2 .fwTexinfo .Texinfo representation of a FunnelWeb specification 1 -1 -1 -1 -1 153 -1 378 0 0 0
+2 .tnf .Specification of a hypertext document 1 -1 -1 -1 -1 192 475 157 0 0 0
+2 .fwHtml .HTML representation of a FunnelWeb specification 1 -1 -1 -1 -1 154 -1 378 0 0 0
+2 .fwRep .Derivation implied by the typesetter directive 2 -1 -1 -1 -1 155 -1 378 0 0 0
+2 .fwincl.dir .Directly included FunnelWeb file names 2 -1 -1 -1 -1 156 -1 225 0 0 0
+3 .fwincl.all .Transitive fwincl dependence 2 -1 -1 -1 -1 157 -1 225 0 1 0
+2 .expandtabs .Text file with tabs replaced by sequences of spaces 2 -1 -1 -1 -1 158 -1 157 0 0 0
+2 .tabsexpanded .Odinfile defining files with expanded tabs 2 -1 -1 -1 -1 159 -1 157 0 0 0
+5 .fw_pdf .Derive PDF from FunnelWeb 2 -1 -1 -1 151 160 -1 385 0 1 0
+2 .pdf .Portable Document Format file 1 -1 -1 -1 -1 476 -1 385 0 1 0
+5 .fw_ps .Derive PostScript from FunnelWeb 2 -1 -1 -1 152 161 -1 412 0 1 0
+2 .ps .Postscript file 1 -1 -1 -1 -1 475 -1 412 0 1 0
+3 .fw*one.fw.cmpd . 3 -1 159 -1 153 -1 -1 157 0 1 0
+3 .fw*fw.cmpd . 3 -1 160 -1 154 -1 -1 157 0 1 0
+3 .extract . 2 337 161 -1 -1 162 -1 157 0 0 0
+2 .fw*fwOut . 3 -1 162 -1 155 -1 -1 225 0 0 0
+3 .fw*fw_srcs . 3 -1 163 -1 156 -1 -1 225 0 0 0
+3 .fw*fwincl.all . 3 -1 164 -1 157 -1 -1 225 0 1 0
+3 .map . 2 358 165 -1 -1 163 -1 157 0 0 1
+2 .fw*fwincl.dir . 3 -1 166 -1 158 -1 -1 225 0 0 0
+2 .fw*fwSel . 3 -1 167 -1 159 -1 -1 225 0 0 0
+3 .map . 2 346 168 -1 -1 164 -1 157 0 0 1
+3 .fw*fwProd . 3 -1 169 -1 160 -1 -1 225 0 1 0
+3 .fw*fwSpecList . 3 -1 170 -1 161 -1 -1 225 0 1 0
+3 .fw*fwGenList . 3 -1 171 -1 162 -1 -1 225 0 1 0
+3 .direlms .Elements of a directory 2 -1 -1 -1 -1 304 344 157 0 1 0
+3 .delete . 2 201 172 -1 -1 165 -1 157 0 0 0
+3 .fw*fwAll . 3 -1 173 -1 163 -1 -1 225 0 1 0
+3 .map . 2 344 174 -1 -1 166 -1 157 0 0 1
+3 .map . 2 342 175 -1 -1 167 -1 157 0 0 1
+10 .fw*fwGen*composite . 3 -1 179 16 -1 -1 451 225 0 0 0
+9 .fw*fwGen . 3 -1 176 -1 164 -1 -1 225 0 0 0
+2 .fw*fwMap . 3 -1 177 -1 165 -1 -1 225 0 0 0
+2 .fw*fwNop . 3 -1 178 -1 166 -1 -1 225 0 0 0
+3 .map . 2 359 180 -1 -1 168 -1 157 0 0 1
+9 .fw*fwSpec . 3 -1 181 -1 167 -1 -1 225 0 0 0
+10 .fw*fwTex*composite . 3 -1 186 19 -1 -1 444 378 0 0 0
+2 .fw*fwTex . 3 -1 182 -1 168 -1 -1 378 0 0 0
+2 .fw*fwTexinfo . 3 -1 183 -1 169 -1 -1 378 0 0 0
+2 .fw*fwHtml . 3 -1 184 -1 170 -1 -1 378 0 0 0
+2 .fw*fwRep . 3 -1 185 -1 171 -1 -1 378 0 0 0
+2 .fw*fwErr . 3 -1 187 -1 172 -1 -1 238 0 0 0
+2 .fw*expandtabs . 3 -1 188 -1 173 -1 -1 157 0 0 0
+2 .fw*tabsexpanded . 3 -1 189 -1 174 -1 -1 157 0 0 0
+5 .fw*fw_pdf . 3 -1 190 -1 175 -1 -1 385 0 1 0
+5 .apply .apply operations from a file 2 -1 -1 -1 -1 416 -1 375 0 1 0
+5 .fw*fw_ps . 3 -1 191 -1 176 -1 -1 412 0 1 0
+2 .gla .Structure of comments and named terminals 1 -1 -1 -1 -1 169 561 157 0 0 0
+3 .gla.cmpd .Set of gla specification fragments 2 -1 -1 -1 -1 170 260 157 0 1 0
+3 .gla*one.gla.cmpd . 3 -1 192 -1 177 -1 -1 157 0 1 0
+3 .gla*gla.cmpd . 3 -1 193 -1 180 -1 -1 157 0 1 0
+3 .extract . 2 400 194 -1 -1 171 -1 157 0 0 0
+2 .gla_out .Results of scanner generation 2 -1 -1 -1 -1 172 -1 242 0 0 0
+2 .gla*gla_out . 3 -1 195 -1 181 -1 -1 242 0 0 0
+2 .scan_spec .Scanning specification 2 -1 -1 -1 -1 179 258 225 0 0 0
+9 .gla_be .Generated parts of the scanner (tables and code) 2 -1 -1 -1 -1 173 247 242 0 0 0
+9 .gla*gla_be . 3 -1 196 -1 182 -1 -1 242 0 0 0
+2 .backend_data .Data for the backend 2 -1 -1 -1 -1 178 -1 225 0 0 0
+2 .flex_binary .Automata states 2 -1 -1 -1 -1 174 -1 225 0 0 0
+2 .accept_binary .Accepting states 2 -1 -1 -1 -1 175 -1 225 0 0 0
+2 .lastdfa_binary .Number of states 2 -1 -1 -1 -1 176 -1 225 0 0 0
+2 .glaBeErr .Identity map for errors in standard form 2 -1 -1 -1 184 -1 -1 615 0 0 0
+2 .gla*glaBeErr . 3 -1 197 -1 183 -1 -1 615 0 0 0
+10 .gla*flex_binary*composite . 3 -1 201 23 -1 -1 250 225 0 0 0
+2 .gla*flex_binary . 3 -1 198 -1 185 -1 -1 225 0 0 0
+2 .gla*accept_binary . 3 -1 199 -1 186 -1 -1 225 0 0 0
+2 .gla*lastdfa_binary . 3 -1 200 -1 187 -1 -1 225 0 0 0
+2 .flex_spec .Flex input specification for scanner 2 -1 -1 -1 -1 177 251 225 0 0 0
+10 .gla*flex_spec*composite . 3 -1 204 26 -1 -1 255 225 0 0 0
+2 .gla*flex_spec . 3 -1 202 -1 188 -1 -1 225 0 0 0
+2 .gla*backend_data . 3 -1 203 -1 189 -1 -1 225 0 0 0
+2 .glaFeErr .Identity map for errors in standard form 2 -1 -1 -1 191 -1 -1 238 0 0 0
+2 .gla*glaFeErr . 3 -1 205 -1 190 -1 -1 238 0 0 0
+2 .gla*scan_spec . 3 -1 206 -1 192 -1 -1 225 0 0 0
+2 .dflt_codes .Default token codes 2 -1 -1 -1 -1 183 -1 225 0 0 0
+3 .one.lex_code.cmpd .Singleton lex_code specification 2 -1 -1 -1 194 -1 -1 157 0 1 0
+3 .gla*one.lex_code.cmpd . 3 -1 207 -1 193 -1 -1 157 0 1 0
+3 .ext.lex_code.cmpd .Extracted lex_code specification fragments 2 -1 -1 -1 196 -1 -1 157 0 1 0
+3 .gla*ext.lex_code.cmpd . 3 -1 208 -1 195 -1 -1 157 0 1 0
+3 .extract . 2 241 209 -1 -1 182 -1 157 0 0 0
+3 .empty.lex_code.gla.cmpd .Empty lex_code specification derived from gla 2 -1 -1 -1 198 -1 -1 157 0 1 0
+3 .gla*empty.lex_code.gla.cmpd . 3 -1 210 -1 197 -1 -1 157 0 1 0
+2 .gla*dflt_codes . 3 -1 211 -1 199 -1 -1 225 0 0 0
+2 .idem .Definition of a textual unparser 1 -1 -1 -1 -1 184 -1 715 0 0 0
+2 .tree .Definition of a structural unparser 1 -1 -1 -1 -1 185 -1 722 0 0 0
+3 .treeStruc .Definition of a tree structure 1 -1 -1 -1 -1 186 -1 722 0 1 0
+2 .PtgSpec .Names of files possibly specifying override patterns 2 -1 -1 -1 -1 187 -1 596 0 0 0
+2 .idem*PtgSpec . 3 -1 212 -1 200 -1 -1 596 0 0 0
+3 .idem.cmpd .Canonical tree and PTG templates 2 -1 -1 -1 -1 189 541 601 0 1 0
+3 .idem*idem.cmpd . 3 -1 213 -1 201 -1 -1 601 0 1 0
+2 .mapAbsTree .Complete abstract tree 2 -1 -1 -1 -1 283 -1 257 0 0 0
+3 .ptg.cmpd .Set of ptg specification fragments 2 -1 -1 -1 -1 357 191 157 0 1 0
+3 .map . 2 82 214 -1 -1 188 -1 157 0 0 1
+2 .idem*idem . 3 -1 215 -1 202 -1 -1 715 0 0 0
+2 .treeProc .View descriptor for tree unparser generator 2 -1 -1 -1 -1 190 -1 559 0 0 0
+2 .idem*treeProc . 3 -1 216 -1 203 -1 -1 559 0 0 0
+10 .idem*tree*composite . 3 -1 219 28 -1 -1 6 722 0 0 0
+2 .idem*tree . 3 -1 217 -1 204 -1 -1 722 0 0 0
+9 .treeDef .Files defining a tree structure 2 -1 -1 -1 -1 191 4 722 0 0 0
+9 .idem*treeDef . 3 -1 218 -1 205 -1 -1 722 0 0 0
+3 .view .view derived from a view specification 2 -1 -1 -1 -1 415 -1 157 0 0 0
+3 .idem*treeStruc . 3 -1 220 -1 206 -1 -1 722 0 1 0
+10 .info*tnf_dir*composite . 3 -1 223 30 -1 -1 470 157 0 0 0
+9 .tnf_dir .Directory holding the start node for browsing 2 -1 -1 -1 -1 193 -1 157 0 0 0
+9 .info*tnf_dir . 3 -1 221 -1 207 -1 -1 157 0 0 0
+2 .tnf_node .Name of the node at which browsing should start 2 -1 -1 -1 -1 194 -1 157 0 0 0
+2 .info*tnf_node . 3 -1 222 -1 208 -1 -1 157 0 0 0
+6 .display .Hypertext presentation of an object 1 -1 -1 -1 -1 195 -1 157 0 0 0
+6 .info*display . 3 -1 224 -1 209 -1 -1 157 0 0 0
+2 .help_tnf .Help display 2 -1 -1 -1 -1 196 -1 157 0 0 0
+2 .info*help_tnf . 3 -1 225 -1 210 -1 -1 157 0 0 0
+2 .filtered .Reports referred to input files 2 -1 -1 -1 -1 364 -1 157 0 0 0
+2 .errfiles .Input files to which reports are referred 2 -1 -1 -1 -1 365 -1 157 0 0 0
+10 .info*help_dir*composite . 3 -1 228 32 -1 -1 29 157 0 0 0
+9 .help_dir .Directory holding the start node for browsing 2 -1 -1 -1 -1 197 -1 157 0 0 0
+9 .info*help_dir . 3 -1 226 -1 211 -1 -1 157 0 0 0
+2 .help_node .Name of the node at which browsing should start 2 -1 -1 -1 -1 198 -1 157 0 0 0
+2 .info*help_node . 3 -1 227 -1 212 -1 -1 157 0 0 0
+2 .warn .warnings 1 -1 -1 -1 -1 400 31 157 0 0 0
+2 .expand_hooks .expand hooks 2 -1 -1 -1 -1 396 -1 157 0 1 0
+6 .help .Hypertext presentation of messages 1 -1 -1 -1 -1 199 -1 157 0 0 0
+6 .info*help . 3 -1 229 -1 213 -1 -1 157 0 0 0
+2 .std_err .Relate messages to system documentation 2 -1 -1 -1 -1 200 -1 724 0 0 0
+2 .info*std_err . 3 -1 230 -1 214 -1 -1 724 0 0 0
+10 .info*gindex_tnf*composite . 3 -1 233 34 -1 -1 383 225 0 0 0
+2 .gindex_tnf .Global index for a set of texinfo documents 1 -1 -1 -1 -1 202 -1 225 0 0 0
+2 .info*gindex_tnf . 3 -1 231 -1 215 -1 -1 225 0 0 0
+2 .index_info .Hypertext index for a set of texinfo documents 1 -1 -1 -1 -1 203 -1 225 0 0 0
+2 .info*index_info . 3 -1 232 -1 216 -1 -1 225 0 0 0
+3 .extract . 2 354 234 -1 -1 201 -1 157 0 0 0
+9 .info_data .Data for the hypertext browser 2 -1 -1 -1 -1 204 467 157 0 0 0
+9 .info*info_data . 3 -1 235 -1 217 -1 -1 157 0 0 0
+3 .info_data_list .Objects needed by hypertext browser 2 -1 -1 -1 -1 205 -1 157 0 1 0
+3 .info*info_data_list . 3 -1 236 -1 218 -1 -1 157 0 1 0
+3 .doc_info .Hypertext for a collection of texinfo documents 1 -1 -1 -1 -1 207 -1 225 0 1 0
+3 .info*doc_info . 3 -1 237 -1 219 -1 -1 225 0 1 0
+3 .map . 2 485 238 -1 -1 206 -1 157 0 0 1
+3 .doc_ps .PostScript for a collection of texinfo documents 1 -1 -1 -1 -1 209 -1 412 0 1 0
+3 .info*doc_ps . 3 -1 239 -1 220 -1 -1 412 0 1 0
+3 .map . 2 364 240 -1 -1 208 -1 157 0 0 1
+3 .doc_pdf .PDF for a collection of texinfo documents 1 -1 -1 -1 -1 211 -1 385 0 1 0
+3 .info*doc_pdf . 3 -1 241 -1 221 -1 -1 385 0 1 0
+3 .map . 2 362 242 -1 -1 210 -1 157 0 0 1
+2 .html .HyperText Markup Language file 1 -1 -1 -1 -1 212 -1 157 0 0 0
+3 .doc_html .HTML for a collection of texinfo documents 1 -1 -1 -1 -1 213 -1 225 0 1 0
+3 .info*doc_html . 3 -1 243 -1 222 -1 -1 225 0 1 0
+9 .tnfhtml .HTML files created from TeXInfo 2 -1 -1 -1 -1 220 -1 225 0 0 0
+2 .tex_input .TeX input modified for single/double sided 2 -1 -1 -1 -1 214 466 725 0 0 0
+2 .info*tex_input . 3 -1 244 -1 223 -1 -1 725 0 0 0
+10 .info*tnfdvi*composite . 3 -1 250 36 -1 -1 463 371 0 0 0
+2 .tnfdvi .Device independent format file 2 -1 -1 -1 229 -1 -1 371 0 0 0
+2 .info*tnfdvi . 3 -1 245 -1 224 -1 -1 371 0 0 0
+2 .tnflog .Log file output by tex 2 -1 -1 -1 230 -1 -1 371 0 0 0
+2 .info*tnflog . 3 -1 246 -1 225 -1 -1 371 0 0 0
+9 .tnfaux .Auxiliary files potentially modified by TeX 2 -1 -1 -1 -1 218 -1 371 0 0 0
+9 .info*tnfaux . 3 -1 247 -1 226 -1 -1 371 0 0 0
+9 .tnfndx .Directory of sorted index files 2 -1 -1 -1 -1 219 -1 371 0 0 0
+9 .info*tnfndx . 3 -1 248 -1 227 -1 -1 371 0 0 0
+2 .tnfpdf .PDF created from TeX or LaTeX 2 -1 -1 -1 -1 217 -1 371 0 0 0
+2 .info*tnfpdf . 3 -1 249 -1 228 -1 -1 371 0 0 0
+2 .rootName .Base name (no .tex suffix) of the root file 2 -1 -1 -1 -1 477 -1 169 0 0 0
+2 .texsp .Search path for the document basis 2 -1 -1 -1 -1 478 -1 180 0 0 0
+2 .tnfauxin.vtd .Auxiliary files input to the formatting step 2 -1 -1 -1 234 -1 -1 371 0 0 0
+3 .texbasis .Document basis 2 -1 -1 -1 -1 488 -1 183 0 1 0
+3 .extract . 2 352 251 -1 -1 215 -1 157 0 0 0
+2 .sty .Formatting style file 1 -1 -1 -1 -1 472 -1 157 0 0 0
+3 .extract . 2 518 252 -1 -1 216 -1 157 0 0 0
+3 .vir_tgt.list .virtual targets 2 -1 -1 -1 -1 388 34 157 0 0 0
+2 .dvi .Device independent format file 2 -1 -1 -1 -1 480 -1 374 0 0 0
+2 .tex.log .TeX log file 1 -1 -1 -1 -1 482 -1 374 0 0 0
+9 .info*tnfhtml . 3 -1 253 -1 231 -1 -1 225 0 0 0
+9 .tnfsndx .Sorted index with initial letters 2 -1 -1 -1 -1 221 -1 371 0 0 0
+9 .info*tnfsndx . 3 -1 254 -1 232 -1 -1 371 0 0 0
+2 .info*tnfauxin.vtd . 3 -1 255 -1 233 -1 -1 371 0 0 0
+2 .vtd .Virtual target definition file 1 -1 -1 -1 -1 386 -1 374 0 0 0
+5 .info.ps .PostScript from texinfo 2 -1 -1 -1 236 222 -1 412 0 1 0
+5 .info*info.ps . 3 -1 256 -1 235 -1 -1 412 0 1 0
+2 .texps .PostScript created from TeX or LaTeX 2 -1 -1 -1 523 -1 -1 412 0 0 0
+5 .info.pdf .PDF from texinfo 2 -1 -1 -1 238 223 -1 371 0 1 0
+5 .info*info.pdf . 3 -1 257 -1 237 -1 -1 371 0 1 0
+6 .odin_help .top level help for odin 2 -1 -1 -1 -1 417 -1 157 0 0 0
+6 .info*odin_help . 3 -1 258 -1 239 -1 -1 157 0 0 0
+2 .kwd .Selected gla specification 2 -1 -1 -1 -1 224 -1 225 0 0 0
+2 .kwd*kwd . 3 -1 259 -1 240 -1 -1 225 0 0 0
+2 .kwd.gla .GLA keyword descriptions 2 -1 -1 -1 -1 226 246 225 0 0 0
+2 .kwd*kwd.gla . 3 -1 260 -1 241 -1 -1 225 0 0 0
+3 .extract . 2 535 261 -1 -1 225 -1 157 0 0 0
+3 .kwd_specs .Keyword specifications 2 -1 -1 -1 -1 227 -1 225 0 1 0
+3 .kwd*kwd_specs . 3 -1 262 -1 242 -1 -1 225 0 1 0
+2 .kw.exe .Keyword recognizer 2 -1 -1 -1 -1 228 -1 225 0 0 0
+2 .kwd*kw.exe . 3 -1 263 -1 243 -1 -1 225 0 0 0
+9 .kwd_gen .Data generated by the keyword processor 2 -1 -1 -1 -1 229 -1 225 0 0 0
+9 .kwd*kwd_gen . 3 -1 264 -1 244 -1 -1 225 0 0 0
+2 .kwd_out .Results of KWD processing 2 -1 -1 -1 -1 230 -1 225 0 0 0
+2 .kwd*kwd_out . 3 -1 265 -1 245 -1 -1 225 0 0 0
+2 .gnrc .Generic module specification 1 -1 -1 -1 -1 231 482 157 0 0 0
+2 .instFiles .Files associated with the generic module 2 -1 -1 -1 -1 232 478 157 0 0 0
+2 .lib*instFiles . 3 -1 266 -1 246 -1 -1 157 0 0 0
+3 .instNeeds .Files needed when instantiating the generic module 2 -1 -1 -1 -1 233 -1 157 0 1 0
+3 .lib*instNeeds . 3 -1 267 -1 247 -1 -1 157 0 1 0
+9 .instGen .Files generated from generic specification 2 -1 -1 -1 -1 234 -1 556 0 0 0
+9 .lib*instGen . 3 -1 268 -1 248 -1 -1 556 0 0 0
+2 .instSpec .Specifications associated with the generic module 2 -1 -1 -1 -1 235 -1 157 0 0 0
+2 .lib*instSpec . 3 -1 269 -1 249 -1 -1 157 0 0 0
+3 .inst174 .Intermediate for union 2 -1 -1 -1 -1 237 477 558 0 1 0
+3 .lib*inst174 . 3 -1 270 -1 250 -1 -1 558 0 1 0
+3 .map . 2 210 271 -1 -1 236 -1 157 0 0 1
+3 .inst .Module generated from generic specification 1 -1 -1 -1 -1 238 -1 558 0 0 0
+3 .lib*inst . 3 -1 272 -1 251 -1 -1 558 0 0 0
+2 .lido .Attribute grammar written in LIDO 1 -1 -1 -1 -1 239 562 157 0 0 0
+2 .ctl .Control options for LIGA processing 1 -1 -1 -1 -1 240 494 157 0 0 0
+10 .liga*lidoEta*composite . 3 -1 275 41 -1 -1 491 246 0 0 0
+2 .lidoEta .Lido specification that includes lido.eta.h 2 -1 -1 -1 -1 241 -1 246 0 0 0
+2 .liga*lidoEta . 3 -1 273 -1 252 -1 -1 246 0 0 0
+2 .lidoEta_tab .Line offset information 2 -1 -1 -1 254 -1 -1 246 0 0 0
+2 .liga*lidoEta_tab . 3 -1 274 -1 253 -1 -1 246 0 0 0
+2 .lidoEtaErr .Error reports referred to component files 2 -1 -1 -1 256 -1 -1 613 0 0 0
+2 .liga*lidoEtaErr . 3 -1 276 -1 255 -1 -1 613 0 0 0
+3 .lido.cmpd .Set of lido specification fragments 2 -1 -1 -1 -1 242 245 246 0 1 0
+3 .one.lido.cmpd .Singleton lido specification 2 -1 -1 -1 258 -1 488 246 0 1 0
+3 .liga*one.lido.cmpd . 3 -1 277 -1 257 -1 -1 246 0 1 0
+3 .liga*lido.cmpd . 3 -1 278 -1 260 -1 -1 246 0 1 0
+3 .extract . 2 562 279 -1 -1 243 -1 157 0 0 0
+3 .map . 2 565 280 -1 -1 244 -1 157 0 0 1
+3 .ctl.cmpd .Set of ctl specification fragments 2 -1 -1 -1 -1 245 240 246 0 1 0
+3 .one.ctl.cmpd .Singleton ctl specification 2 -1 -1 -1 262 -1 -1 157 0 1 0
+3 .liga*one.ctl.cmpd . 3 -1 281 -1 261 -1 -1 157 0 1 0
+3 .liga*ctl.cmpd . 3 -1 282 -1 263 -1 -1 157 0 1 0
+3 .extract . 2 563 283 -1 -1 246 -1 157 0 0 0
+3 .empty.ctl.lido.cmpd .Empty ctl specification derived from lido 2 -1 -1 -1 265 -1 -1 246 0 1 0
+3 .liga*empty.ctl.lido.cmpd . 3 -1 284 -1 264 -1 -1 246 0 1 0
+2 .ligaOut .LIGA input exists then request products of LIGA 2 -1 -1 -1 -1 247 -1 259 0 0 0
+2 .liga*ligaOut . 3 -1 285 -1 266 -1 -1 259 0 0 0
+9 .ligaBe .Generation of the attribute evaluator 2 -1 -1 -1 -1 256 -1 259 0 0 0
+2 .MeBottomUp .Rules with BottomUp constraints 2 -1 -1 -1 -1 255 -1 255 0 0 0
+2 .ligaFe .LIGA frontend: LIDO analysis 2 -1 -1 -1 -1 248 -1 225 0 0 0
+2 .liga*ligaFe . 3 -1 286 -1 267 -1 -1 225 0 0 0
+10 .liga*exp_option*composite . 3 -1 291 43 -1 -1 239 237 0 0 0
+2 .exp_option .options for LIGA expand and LIGA replincl 2 -1 -1 -1 -1 249 -1 237 0 0 0
+2 .liga*exp_option . 3 -1 287 -1 268 -1 -1 237 0 0 0
+2 .ord_option .options for LIGA order 2 -1 -1 -1 -1 250 -1 237 0 0 0
+2 .liga*ord_option . 3 -1 288 -1 269 -1 -1 237 0 0 0
+2 .optUoption .options for LIGA optim before expand 2 -1 -1 -1 -1 251 -1 237 0 0 0
+2 .liga*optUoption . 3 -1 289 -1 270 -1 -1 237 0 0 0
+2 .back_option .options for LIGA backend 2 -1 -1 -1 -1 252 -1 237 0 0 0
+2 .liga*back_option . 3 -1 290 -1 271 -1 -1 237 0 0 0
+10 .liga*MeIdl*composite . 3 -1 295 47 -1 -1 235 255 0 0 0
+2 .MeIdl .IDL interface between Middle and Backend 2 -1 -1 -1 -1 253 -1 255 0 0 0
+2 .liga*MeIdl . 3 -1 292 -1 272 -1 -1 255 0 0 0
+2 .MeInfo .Protocol file of LIGAs Middle pass 1 -1 -1 -1 -1 254 -1 255 0 0 0
+2 .liga*MeInfo . 3 -1 293 -1 273 -1 -1 255 0 0 0
+2 .liga*MeBottomUp . 3 -1 294 -1 274 -1 -1 255 0 0 0
+9 .liga*ligaBe . 3 -1 296 -1 275 -1 -1 259 0 0 0
+3 .ligaResults .Contains all C files generated from LIGA 1 -1 -1 -1 -1 257 -1 418 0 1 0
+3 .liga*ligaResults . 3 -1 297 -1 276 -1 -1 418 0 1 0
+6 .gorto .Graphical dependence analysis possibly with output of arrange options 1 -1 -1 -1 -1 258 -1 418 0 0 0
+6 .liga*gorto . 3 -1 298 -1 277 -1 -1 418 0 0 0
+2 .ligaProd .Abstract rules extracted in LIDO notation 2 -1 -1 -1 -1 259 241 225 0 0 0
+2 .liga*ligaProd . 3 -1 299 -1 278 -1 -1 225 0 0 0
+2 .ligaProdErr .Identity map for errors in standard form 2 -1 -1 -1 280 -1 -1 238 0 0 0
+2 .liga*ligaProdErr . 3 -1 300 -1 279 -1 -1 238 0 0 0
+9 .showFeDir .Directory with generated Information about .lido specs after initial analysis 1 -1 -1 -1 -1 260 -1 225 0 0 0
+9 .liga*showFeDir . 3 -1 301 -1 281 -1 -1 225 0 0 0
+3 .showFe .Gives information about .lido specs after the initial analysis 1 -1 -1 -1 -1 261 -1 415 0 1 0
+3 .liga*showFe . 3 -1 302 -1 282 -1 -1 415 0 1 0
+9 .feInfoDir .Directory with information about .lido specs after initial analysis 1 -1 -1 -1 -1 262 -1 225 0 0 0
+9 .liga*feInfoDir . 3 -1 303 -1 283 -1 -1 225 0 0 0
+3 .feInfo .Gives information about .lido specs after the initial analysis 1 -1 -1 -1 -1 263 -1 415 0 1 0
+3 .liga*feInfo . 3 -1 304 -1 284 -1 -1 415 0 1 0
+9 .showMeDir .Directory with generated Information about .lido specs after the Middle pass 1 -1 -1 -1 -1 264 -1 237 0 0 0
+9 .liga*showMeDir . 3 -1 305 -1 285 -1 -1 237 0 0 0
+3 .showMe .Gives information about .lido specs after the Middle pass 1 -1 -1 -1 -1 265 -1 422 0 1 0
+3 .liga*showMe . 3 -1 306 -1 286 -1 -1 422 0 1 0
+2 .ExpInfo .Information of LIGA containing details about LIDO shorthand expansion 1 -1 -1 -1 -1 266 -1 418 0 0 0
+2 .liga*ExpInfo . 3 -1 307 -1 287 -1 -1 418 0 0 0
+2 .OrdInfo .Information of LIGA about the analysis of the LIDO input 1 -1 -1 -1 -1 267 -1 418 0 0 0
+2 .liga*OrdInfo . 3 -1 308 -1 288 -1 -1 418 0 0 0
+2 .OptimInfo .Information of LIGA containing details about attribute optimization 1 -1 -1 -1 -1 268 -1 418 0 0 0
+2 .liga*OptimInfo . 3 -1 309 -1 289 -1 -1 418 0 0 0
+2 .ligaErr .Map line errors in LIGA output 2 -1 -1 -1 291 -1 -1 260 0 0 0
+2 .liga*ligaErr . 3 -1 310 -1 290 -1 -1 260 0 0 0
+2 .sym .Symbolic grammar mappings 1 -1 -1 -1 -1 269 495 157 0 0 0
+3 .sym.cmpd .Set of sym specification fragments 2 -1 -1 -1 -1 270 232 157 0 1 0
+3 .one.sym.cmpd .Singleton sym specification 2 -1 -1 -1 293 -1 -1 157 0 1 0
+3 .maptool*one.sym.cmpd . 3 -1 311 -1 292 -1 -1 157 0 1 0
+3 .ext.sym.cmpd .Extracted sym specification fragments 2 -1 -1 -1 295 -1 -1 157 0 1 0
+3 .maptool*ext.sym.cmpd . 3 -1 312 -1 294 -1 -1 157 0 1 0
+3 .extract . 2 634 313 -1 -1 271 -1 157 0 0 0
+2 .SymToMap .Make a map file from a sym file 2 -1 -1 -1 -1 272 -1 225 0 0 0
+2 .maptool*SymToMap . 3 -1 314 -1 296 -1 -1 225 0 0 0
+2 .mapOut .Output from Maptool step 2 -1 -1 -1 -1 273 -1 257 0 0 0
+2 .maptool*mapOut . 3 -1 315 -1 297 -1 -1 257 0 0 0
+3 .con.cmpd .Set of con specification fragments 2 -1 -1 -1 -1 308 228 157 0 1 0
+9 .mapFe .Concrete syntax and grammar symbols 2 -1 -1 -1 -1 284 -1 257 0 0 0
+9 .mapBe .Abstract grammar 2 -1 -1 -1 -1 285 220 257 0 0 0
+2 .mapPgram .Parsing grammar without bottomup constraints 2 -1 -1 -1 -1 286 -1 257 0 0 0
+2 .mapBuOut .Output from Maptool step with bottomup constraints 2 -1 -1 -1 -1 275 -1 255 0 0 0
+2 .maptool*mapBuOut . 3 -1 316 -1 298 -1 -1 255 0 0 0
+3 .extract . 2 587 317 -1 -1 274 -1 157 0 0 0
+2 .mapBuPgram .Parsing grammar with bottomup constraints 2 -1 -1 -1 -1 287 -1 255 0 0 0
+2 .mapSrc .Concrete/Abstract syntax mapping 1 -1 -1 -1 -1 276 496 157 0 0 0
+3 .map.cmpd .Set of map specification fragments 2 -1 -1 -1 -1 277 -1 157 0 1 0
+3 .one.map.cmpd .Singleton map specification 2 -1 -1 -1 300 -1 -1 157 0 1 0
+3 .maptool*one.map.cmpd . 3 -1 318 -1 299 -1 -1 157 0 1 0
+3 .ext.map.cmpd .Extracted map specification fragments 2 -1 -1 -1 302 -1 -1 157 0 1 0
+3 .maptool*ext.map.cmpd . 3 -1 319 -1 301 -1 -1 157 0 1 0
+3 .extract . 2 653 320 -1 -1 278 -1 157 0 0 0
+2 .mapBnf .Strict BNF version of the concrete grammar 2 -1 -1 -1 -1 279 227 225 0 0 0
+2 .maptool*mapBnf . 3 -1 321 -1 303 -1 -1 225 0 0 0
+3 .mapIn .Input to the Maptool 2 -1 -1 -1 -1 280 -1 225 0 1 0
+3 .maptool*mapIn . 3 -1 322 -1 304 -1 -1 225 0 1 0
+2 .mapBnfErr .Identity map for errors in standard form 2 -1 -1 -1 306 -1 -1 238 0 0 0
+2 .maptool*mapBnfErr . 3 -1 323 -1 305 -1 -1 238 0 0 0
+10 .maptool*mapConSyn*composite . 3 -1 330 50 -1 -1 226 257 0 0 0
+2 .mapConSyn .Complete concrete syntax 2 -1 -1 -1 -1 281 -1 257 0 0 0
+2 .maptool*mapConSyn . 3 -1 324 -1 307 -1 -1 257 0 0 0
+2 .mapAbsSyn .Complete abstract syntax 2 -1 -1 -1 -1 282 -1 257 0 0 0
+2 .maptool*mapAbsSyn . 3 -1 325 -1 308 -1 -1 257 0 0 0
+2 .maptool*mapAbsTree . 3 -1 326 -1 309 -1 -1 257 0 0 0
+9 .maptool*mapFe . 3 -1 327 -1 310 -1 -1 257 0 0 0
+9 .maptool*mapBe . 3 -1 328 -1 311 -1 -1 257 0 0 0
+2 .maptool*mapPgram . 3 -1 329 -1 312 -1 -1 257 0 0 0
+2 .mapBeErr .Identity map for errors in standard form 2 -1 -1 -1 314 -1 -1 612 0 0 0
+2 .maptool*mapBeErr . 3 -1 331 -1 313 -1 -1 612 0 0 0
+2 .maptool*mapBuPgram . 3 -1 332 -1 315 -1 -1 255 0 0 0
+2 .absyntax .Complete abstract syntax 1 -1 -1 -1 -1 288 -1 415 0 0 0
+2 .maptool*absyntax . 3 -1 333 -1 316 -1 -1 415 0 0 0
+2 .consyntax .Complete concrete syntax 1 -1 -1 -1 -1 289 -1 415 0 0 0
+2 .maptool*consyntax . 3 -1 334 -1 317 -1 -1 415 0 0 0
+2 .con .Concrete syntax 1 -1 -1 -1 -1 307 563 157 0 0 0
+2 .abstree .Complete abstract tree grammar 1 -1 -1 -1 -1 290 -1 415 0 0 0
+2 .maptool*abstree . 3 -1 335 -1 318 -1 -1 415 0 0 0
+2 .db .Monitoring database 2 -1 -1 -1 -1 291 -1 157 0 0 0
+2 .monDb .Event database for execution monitoring 2 -1 -1 -1 -1 292 -1 660 0 0 0
+2 .noosa*monDb . 3 -1 336 -1 319 -1 -1 660 0 0 0
+2 .tcl .Tcl code fragment for monitoring support 1 -1 -1 -1 -1 293 -1 157 0 0 0
+3 .all_tcl .All Tcl code fragments arising from specs and library 2 -1 -1 -1 -1 295 -1 434 0 1 0
+3 .noosa*all_tcl . 3 -1 337 -1 320 -1 -1 434 0 1 0
+3 .extract . 2 688 338 -1 -1 294 -1 157 0 0 0
+6 .mon .Domain-specific execution monitoring run 1 -1 -1 -1 -1 296 -1 554 0 0 0
+6 .noosa*mon . 3 -1 339 -1 321 -1 -1 554 0 0 0
+6 .mongdb .Monitoring in conjunction with the GNU symbolic debugger 1 -1 -1 -1 -1 297 -1 534 0 0 0
+6 .noosa*mongdb . 3 -1 340 -1 322 -1 -1 534 0 0 0
+2 .oil .OIL specification 1 -1 -1 -1 -1 298 498 157 0 0 0
+3 .oil.cmpd .Set of oil specification fragments 2 -1 -1 -1 -1 299 231 157 0 1 0
+3 .one.oil.cmpd .Singleton oil specification 2 -1 -1 -1 324 -1 -1 157 0 1 0
+3 .oil*one.oil.cmpd . 3 -1 341 -1 323 -1 -1 157 0 1 0
+3 .ext.oil.cmpd .Extracted oil specification fragments 2 -1 -1 -1 326 -1 -1 157 0 1 0
+3 .oil*ext.oil.cmpd . 3 -1 342 -1 325 -1 -1 157 0 1 0
+3 .extract . 2 696 343 -1 -1 300 -1 157 0 0 0
+9 .oil_gen .Objects generated from OIL specifications 2 -1 -1 -1 -1 301 229 225 0 0 0
+9 .oil*oil_gen . 3 -1 344 -1 327 -1 -1 225 0 0 0
+2 .oil_out .Results of OIL processing 2 -1 -1 -1 -1 302 -1 225 0 0 0
+2 .oil*oil_out . 3 -1 345 -1 328 -1 -1 225 0 0 0
+2 .oil_genErr .Identity map for errors in standard form 2 -1 -1 -1 330 -1 -1 238 0 0 0
+2 .oil*oil_genErr . 3 -1 346 -1 329 -1 -1 238 0 0 0
+2 .dirnames .Names of the files in a directory 2 -1 -1 -1 -1 303 345 157 0 0 0
+3 .expanddir .Files in a directory 2 -1 -1 -1 331 -1 -1 225 0 1 0
+3 .expandspecs .Specs file 2 -1 -1 -1 332 -1 -1 225 0 1 0
+3 .expandfile .Arbitrary file 2 -1 -1 -1 333 -1 -1 157 0 1 0
+3 .oldodin*expanddir . 3 -1 347 -1 334 -1 -1 225 0 1 0
+3 .oldodin*expandspecs . 3 -1 348 -1 335 -1 -1 225 0 1 0
+3 .oldodin*expandfile . 3 -1 349 -1 336 -1 -1 157 0 1 0
+2 .oldodin*dirnames . 3 -1 350 -1 337 -1 -1 157 0 0 0
+3 .oldodin*direlms . 3 -1 351 -1 338 -1 -1 157 0 1 0
+2 .oldodin*names . 3 -1 352 -1 339 -1 -1 157 0 1 0
+2 .oldodin*labels . 3 -1 353 -1 340 -1 -1 157 0 0 0
+2 .oldodin*dir_of . 3 -1 354 -1 341 -1 -1 157 0 0 0
+3 .one.con.cmpd .Singleton con specification 2 -1 -1 -1 343 -1 -1 157 0 1 0
+3 .parser*one.con.cmpd . 3 -1 355 -1 342 -1 -1 157 0 1 0
+3 .parser*con.cmpd . 3 -1 356 -1 345 -1 -1 157 0 1 0
+3 .extract . 2 682 357 -1 -1 309 -1 157 0 0 0
+2 .pgsOut .Selected PGS-generated parser 2 -1 -1 -1 -1 339 -1 425 0 0 0
+2 .parserOut .Results of parser generation 2 -1 -1 -1 -1 312 -1 425 0 0 0
+2 .parser*parserOut . 3 -1 358 -1 346 -1 -1 425 0 0 0
+3 .extract . 2 648 359 -1 -1 311 -1 157 0 0 0
+2 .pgsData .Selected PGS-generated information 2 -1 -1 -1 -1 340 -1 425 0 0 0
+2 .infoOut .Name of the parser generation information product 2 -1 -1 -1 -1 314 365 425 0 0 0
+2 .parser*infoOut . 3 -1 360 -1 347 -1 -1 425 0 0 0
+5 .parsable .Information about parser generation 1 -1 -1 -1 -1 315 -1 425 0 1 0
+5 .parser*parsable . 3 -1 361 -1 348 -1 -1 425 0 1 0
+2 .bnf .EBNF -> BNF 1 -1 -1 -1 -1 317 -1 245 0 0 0
+2 .parser*bnf . 3 -1 362 -1 349 -1 -1 245 0 0 0
+2 .perr .Parser error recovery information 1 -1 -1 -1 -1 318 499 157 0 0 0
+3 .perr.cmpd .Set of perr specification fragments 2 -1 -1 -1 -1 319 219 157 0 1 0
+3 .one.perr.cmpd .Singleton perr specification 2 -1 -1 -1 351 -1 -1 157 0 1 0
+3 .parser*one.perr.cmpd . 3 -1 363 -1 350 -1 -1 157 0 1 0
+3 .ext.perr.cmpd .Extracted perr specification fragments 2 -1 -1 -1 353 -1 -1 157 0 1 0
+3 .parser*ext.perr.cmpd . 3 -1 364 -1 352 -1 -1 157 0 1 0
+3 .extract . 2 736 365 -1 -1 320 -1 157 0 0 0
+2 .perrGen .File generated from perr specifications 2 -1 -1 -1 -1 321 -1 225 0 0 0
+2 .parser*perrGen . 3 -1 366 -1 354 -1 -1 225 0 0 0
+2 .perrOut .Results of perr processing 2 -1 -1 -1 -1 322 -1 225 0 0 0
+2 .parser*perrOut . 3 -1 367 -1 355 -1 -1 225 0 0 0
+2 .coding .Symbol encodings 2 -1 -1 -1 -1 323 500 157 0 0 0
+3 .coding.cmpd .Set of coding specification fragments 2 -1 -1 -1 -1 324 -1 157 0 1 0
+3 .one.coding.cmpd .Singleton coding specification 2 -1 -1 -1 357 -1 -1 157 0 1 0
+3 .parser*one.coding.cmpd . 3 -1 368 -1 356 -1 -1 157 0 1 0
+3 .ext.coding.cmpd .Extracted coding specification fragments 2 -1 -1 -1 359 -1 -1 157 0 1 0
+3 .parser*ext.coding.cmpd . 3 -1 369 -1 358 -1 -1 157 0 1 0
+3 .extract . 2 747 370 -1 -1 325 -1 157 0 0 0
+10 .parser*Pgram*composite . 3 -1 373 56 -1 -1 217 418 0 0 0
+2 .parser*Pgram . 3 -1 371 -1 360 -1 -1 418 0 0 0
+2 .parser*BuPgram . 3 -1 372 -1 361 -1 -1 418 0 0 0
+3 .extract . 2 652 374 -1 -1 326 -1 157 0 0 0
+2 .pgram .Complete parsing grammar 1 -1 -1 -1 -1 329 -1 418 0 0 0
+2 .parser*pgram . 3 -1 375 -1 362 -1 -1 418 0 0 0
+2 .pdl .PDL specification 1 -1 -1 -1 -1 330 501 157 0 0 0
+3 .pdl.cmpd .Set of pdl specification fragments 2 -1 -1 -1 -1 331 200 157 0 1 0
+3 .one.pdl.cmpd .Singleton pdl specification 2 -1 -1 -1 364 -1 -1 157 0 1 0
+3 .pdl*one.pdl.cmpd . 3 -1 376 -1 363 -1 -1 157 0 1 0
+3 .ext.pdl.cmpd .Extracted pdl specification fragments 2 -1 -1 -1 366 -1 -1 157 0 1 0
+3 .pdl*ext.pdl.cmpd . 3 -1 377 -1 365 -1 -1 157 0 1 0
+3 .extract . 2 760 378 -1 -1 332 -1 157 0 0 0
+9 .pdlGen .Objects generated from PDL specifications 2 -1 -1 -1 -1 333 198 225 0 0 0
+9 .pdl*pdlGen . 3 -1 379 -1 367 -1 -1 225 0 0 0
+2 .pdlOut .Results of PDL processing 2 -1 -1 -1 -1 334 -1 225 0 0 0
+2 .pdl*pdlOut . 3 -1 380 -1 368 -1 -1 225 0 0 0
+2 .pdlGenErr .Identity map for errors in standard form 2 -1 -1 -1 370 -1 -1 238 0 0 0
+2 .pdl*pdlGenErr . 3 -1 381 -1 369 -1 -1 238 0 0 0
+9 .pgsGen .Objects generated from a parsing grammar 2 -1 -1 -1 -1 335 203 425 0 0 0
+9 .pgs*pgsGen . 3 -1 382 -1 371 -1 -1 425 0 0 0
+2 .pgsInfo .Information about PGS parser generation 1 -1 -1 -1 -1 336 -1 425 0 0 0
+2 .pgs*pgsInfo . 3 -1 383 -1 372 -1 -1 425 0 0 0
+2 .pgsConflict .Conflicting derivations 2 -1 -1 -1 -1 337 -1 157 0 0 0
+2 .pgs*pgsConflict . 3 -1 384 -1 373 -1 -1 157 0 0 0
+2 .pgsGenErr .PGS error report in standard form 2 -1 -1 -1 -1 338 -1 608 0 0 0
+2 .pgs*pgsGenErr . 3 -1 385 -1 374 -1 -1 608 0 0 0
+2 .pgsMiscErr .Identity map for errors in standard form 2 -1 -1 -1 376 -1 -1 611 0 0 0
+2 .pgs*pgsMiscErr . 3 -1 386 -1 375 -1 -1 611 0 0 0
+10 .pgs*pgsOut*composite . 3 -1 389 58 -1 -1 202 425 0 0 0
+2 .pgs*pgsOut . 3 -1 387 -1 377 -1 -1 425 0 0 0
+2 .pgs*pgsData . 3 -1 388 -1 378 -1 -1 425 0 0 0
+2 .head .Information to be prefaced to attribution modules 1 -1 -1 -1 -1 341 -1 157 0 0 0
+2 .init .Operations to be executed before starting 1 -1 -1 -1 -1 342 -1 157 0 0 0
+2 .finl .Operations to be executed after finishing 1 -1 -1 -1 -1 343 -1 157 0 0 0
+2 .phi .Files to be included at specified places in *.h and *.c-files 1 -1 -1 -1 -1 344 -1 157 0 0 0
+2 .eta .Files to be included at specified places in specification files 1 -1 -1 -1 -1 345 -1 157 0 0 0
+10 .phi*phiOut*composite . 3 -1 392 60 -1 -1 197 157 0 0 0
+9 .phi*phiOut . 3 -1 390 -1 380 -1 -1 157 0 0 0
+2 .phiMap .Mapping from output objects to Phi specification 2 -1 -1 -1 -1 351 -1 157 0 0 0
+2 .phi*phiMap . 3 -1 391 -1 381 -1 -1 157 0 0 0
+3 .extract . 2 786 393 -1 -1 346 -1 157 0 0 0
+3 .extract . 2 787 394 -1 -1 347 -1 157 0 0 0
+3 .extract . 2 788 395 -1 -1 348 -1 157 0 0 0
+3 .extract . 2 789 396 -1 -1 349 -1 157 0 0 0
+2 .phiErr .Map line errors in Phi output 2 -1 -1 -1 383 -1 -1 608 0 0 0
+2 .phi*phiErr . 3 -1 397 -1 382 -1 -1 608 0 0 0
+10 .phi*etaOut*composite . 3 -1 400 62 -1 -1 194 157 0 0 0
+9 .phi*etaOut . 3 -1 398 -1 384 -1 -1 157 0 0 0
+2 .etaMap .Mapping from output objects to eta specification 2 -1 -1 -1 -1 354 -1 157 0 0 0
+2 .phi*etaMap . 3 -1 399 -1 385 -1 -1 157 0 0 0
+3 .extract . 2 790 401 -1 -1 352 -1 157 0 0 0
+2 .phi*etaIncl . 3 -1 402 -1 386 -1 -1 225 0 0 0
+2 .etaErr .Map line errors in eta output 2 -1 -1 -1 388 -1 -1 608 0 0 0
+2 .phi*etaErr . 3 -1 403 -1 387 -1 -1 608 0 0 0
+2 .ptg .PTG specification 1 -1 -1 -1 -1 356 502 157 0 0 0
+3 .one.ptg.cmpd .Singleton ptg specification 2 -1 -1 -1 390 -1 -1 157 0 1 0
+3 .ptg*one.ptg.cmpd . 3 -1 404 -1 389 -1 -1 157 0 1 0
+3 .ext.ptg.cmpd .Extracted ptg specification fragments 2 -1 -1 -1 392 -1 -1 157 0 1 0
+3 .ptg*ext.ptg.cmpd . 3 -1 405 -1 391 -1 -1 157 0 1 0
+3 .extract . 2 809 406 -1 -1 358 -1 157 0 0 0
+9 .ptg_gen .Objects generated from PTG specifications 2 -1 -1 -1 -1 359 189 225 0 0 0
+9 .ptg*ptg_gen . 3 -1 407 -1 393 -1 -1 225 0 0 0
+2 .ptg_out .Results of PTG processing 2 -1 -1 -1 -1 360 -1 230 0 0 0
+2 .ptg*ptg_out . 3 -1 408 -1 394 -1 -1 230 0 0 0
+2 .ptg_genErr .Identity map for errors in standard form 2 -1 -1 -1 396 -1 -1 238 0 0 0
+2 .ptg*ptg_genErr . 3 -1 409 -1 395 -1 -1 238 0 0 0
+2 .index .Index to the elements of a compound file 1 -1 -1 -1 -1 361 -1 157 0 0 0
+2 .skeleton*index . 3 -1 410 -1 397 -1 -1 157 0 0 0
+2 .err_map .Reports referred to full path names of files 2 -1 -1 -1 -1 362 -1 728 0 0 0
+2 .skeleton*err_map . 3 -1 411 -1 398 -1 -1 728 0 0 0
+2 .no_map .Identity map for errors in standard form 2 -1 -1 -1 400 -1 -1 608 0 0 0
+2 .skeleton*no_map . 3 -1 412 -1 399 -1 -1 608 0 0 0
+10 .skeleton*filtered*composite . 3 -1 415 64 -1 -1 149 157 0 0 0
+2 .skeleton*filtered . 3 -1 413 -1 401 -1 -1 157 0 0 0
+2 .skeleton*errfiles . 3 -1 414 -1 402 -1 -1 157 0 0 0
+2 .msgtext .Text file of reports 2 -1 -1 -1 -1 366 -1 157 0 0 0
+2 .skeleton*msgtext . 3 -1 416 -1 403 -1 -1 157 0 0 0
+2 .warning .Standard presentation of warning messages 1 -1 -1 -1 -1 367 -1 157 0 0 0
+2 .skeleton*warning . 3 -1 417 -1 404 -1 -1 157 0 0 0
+2 .error .Standard presentation of error messages 1 -1 -1 -1 -1 368 -1 157 0 0 0
+2 .skeleton*error . 3 -1 418 -1 405 -1 -1 157 0 0 0
+2 .err .errors 1 -1 -1 -1 -1 399 33 157 0 0 0
+6 .viewlist .View of a compound object 1 -1 -1 -1 -1 369 -1 157 0 0 0
+6 .skeleton*viewlist . 3 -1 419 -1 406 -1 -1 157 0 0 0
+2 .skeleton*pasted . 3 -1 420 -1 407 -1 -1 157 0 0 0
+2 .skeleton*vtd . 3 -1 421 -1 408 -1 -1 157 0 0 0
+2 .symbols .Grammar symbols 2 -1 -1 -1 -1 371 503 157 0 0 0
+3 .symbols.cmpd .Set of symbols specification fragments 2 -1 -1 -1 -1 372 188 157 0 1 0
+3 .one.symbols.cmpd .Singleton symbols specification 2 -1 -1 -1 410 -1 -1 157 0 1 0
+3 .symcode*one.symbols.cmpd . 3 -1 422 -1 409 -1 -1 157 0 1 0
+3 .ext.symbols.cmpd .Extracted symbols specification fragments 2 -1 -1 -1 412 -1 -1 157 0 1 0
+3 .symcode*ext.symbols.cmpd . 3 -1 423 -1 411 -1 -1 157 0 1 0
+3 .extract . 2 841 424 -1 -1 373 -1 157 0 0 0
+2 .codeOut .Code generation planner 2 -1 -1 -1 -1 374 -1 225 0 0 0
+2 .symcode*codeOut . 3 -1 425 -1 413 -1 -1 225 0 0 0
+9 .codeGen .Output from generation of codes 2 -1 -1 -1 -1 375 186 225 0 0 0
+9 .symcode*codeGen . 3 -1 426 -1 414 -1 -1 225 0 0 0
+2 .symErr .Identity map for errors in standard form 2 -1 -1 -1 416 -1 -1 238 0 0 0
+2 .symcode*symErr . 3 -1 427 -1 415 -1 -1 238 0 0 0
+2 .tp .Tree parser specification 1 -1 -1 -1 -1 376 504 157 0 0 0
+3 .tp.cmpd .Set of tp specification fragments 2 -1 -1 -1 -1 377 185 157 0 1 0
+3 .one.tp.cmpd .Singleton tp specification 2 -1 -1 -1 418 -1 -1 157 0 1 0
+3 .tp*one.tp.cmpd . 3 -1 428 -1 417 -1 -1 157 0 1 0
+3 .ext.tp.cmpd .Extracted tp specification fragments 2 -1 -1 -1 420 -1 -1 157 0 1 0
+3 .tp*ext.tp.cmpd . 3 -1 429 -1 419 -1 -1 157 0 1 0
+3 .extract . 2 854 430 -1 -1 378 -1 157 0 0 0
+9 .tpGen .Objects generated from tree parser specifications 2 -1 -1 -1 -1 379 183 230 0 0 0
+9 .tp*tpGen . 3 -1 431 -1 421 -1 -1 230 0 0 0
+2 .tpOut .Results of tree parser processing 2 -1 -1 -1 -1 380 -1 230 0 0 0
+2 .tp*tpOut . 3 -1 432 -1 422 -1 -1 230 0 0 0
+2 .tpGenErr .Identity map for errors in standard form 2 -1 -1 -1 424 -1 -1 609 0 0 0
+2 .tp*tpGenErr . 3 -1 433 -1 423 -1 -1 609 0 0 0
+5 .targets_ptr .pointer to the targets file 2 -1 -1 -1 -1 381 36 157 0 0 0
+3 .targets_inc .directed nested target definitions 2 -1 -1 -1 -1 383 145 157 0 0 0
+3 .all_targets_inc .all nested target definitions 2 -1 -1 -1 -1 384 -1 157 0 1 0
+2 .targets .target definitions from an Odinfile 2 -1 -1 -1 -1 385 -1 157 0 0 0
+3 .act_tgt.list .actual targets 2 -1 -1 -1 -1 387 -1 157 0 0 0
+2 .atmc_prm_data .file containing parameter data 2 -1 -1 -1 -1 390 -1 157 0 0 0
+3 .cmpd_prm_data .file containing parameter data 2 -1 -1 -1 -1 391 -1 157 0 0 0
+4 .copy .copy 2 -1 -1 -1 -1 392 -1 607 0 0 0
+3 .copy_cmd .copy command 2 -1 -1 -1 -1 393 -1 729 0 0 0
+3 .prm_values .list of parameter values 2 -1 -1 -1 -1 394 -1 157 0 1 0
+3 .nested_hooks .nested hooks 2 -1 -1 -1 -1 397 -1 157 0 0 0
+2 .hook_values.of .Odinfile containing hook values 2 -1 -1 -1 -1 398 -1 157 0 0 0
+2 .filename .filename of a file 1 -1 -1 -1 -1 404 -1 157 0 0 0
+2 .id .id of an object 2 -1 -1 -1 -1 410 -1 157 0 0 0
+2 .source_names .source components of a system model 2 -1 -1 -1 -1 412 -1 157 0 0 0
+2 .operation_names .operation components of a system model 2 -1 -1 -1 -1 413 -1 157 0 0 0
+3 .view_spec .view specification 2 -1 -1 -1 -1 414 142 157 0 0 0
+2 .prefix_help .list of known prefixes 2 -1 -1 -1 -1 418 -1 157 0 0 0
+2 .suffix_help .list of known suffixes 2 -1 -1 -1 -1 419 -1 157 0 0 0
+2 .drv_help .applicable derivation types 2 -1 -1 -1 -1 420 -1 157 0 0 0
+2 .prm_help .applicable parameter types 2 -1 -1 -1 -1 421 -1 730 0 0 0
+3 .odin*targets_inc . 3 -1 435 -1 426 -1 -1 157 0 0 0
+3 .odin*all_targets_inc . 3 -1 436 -1 427 -1 -1 157 0 1 0
+3 .map . 2 869 437 -1 -1 423 -1 157 0 0 1
+3 .odin*copy_cmd . 3 -1 443 -1 433 -1 -1 729 0 0 0
+10 .odin*nested_hooks*composite . 3 -1 446 66 -1 -1 144 157 0 0 1
+3 .odin*nested_hooks . 3 -1 444 -1 434 -1 -1 157 0 0 0
+2 .odin*hook_values.of . 3 -1 445 -1 435 -1 -1 157 0 0 0
+5 .odin*first . 3 -1 449 -1 438 -1 -1 157 0 0 0
+2 .odin*err . 3 -1 450 -1 439 -1 -1 157 0 0 0
+2 .odin*warn . 3 -1 451 -1 440 -1 -1 157 0 0 0
+5 .odin*dir . 3 -1 452 -1 441 -1 -1 157 0 0 0
+2 .odin*name . 3 -1 453 -1 442 -1 -1 157 0 1 0
+2 .odin*names . 3 -1 454 -1 443 -1 -1 157 0 1 0
+2 .odin*filename . 3 -1 455 -1 444 -1 -1 157 0 0 0
+2 .odin*ls . 3 -1 456 -1 445 -1 -1 157 0 0 0
+2 .odin*cat . 3 -1 457 -1 446 -1 -1 157 0 0 0
+3 .odin*union . 3 -1 458 -1 447 -1 -1 157 0 0 0
+2 .odin*label . 3 -1 459 -1 448 -1 -1 157 0 0 0
+2 .odin*labels . 3 -1 460 -1 449 -1 -1 157 0 0 0
+2 .odin*id . 3 -1 461 -1 450 -1 -1 157 0 0 0
+3 .odin*depend . 3 -1 462 -1 451 -1 -1 157 0 0 0
+2 .odin*source_names . 3 -1 463 -1 452 -1 -1 157 0 0 0
+2 .odin*operation_names . 3 -1 464 -1 453 -1 -1 157 0 0 0
+3 .odin*view . 3 -1 466 -1 455 -1 -1 157 0 0 0
+6 .odin*odin_help . 3 -1 468 -1 457 -1 -1 157 0 0 0
+2 .odin*prefix_help . 3 -1 469 -1 458 -1 -1 157 0 0 0
+2 .odin*suffix_help . 3 -1 470 -1 459 -1 -1 157 0 0 0
+2 .odin*drv_help . 3 -1 471 -1 460 -1 -1 157 0 0 0
+2 .odin*prm_help . 3 -1 472 -1 461 -1 -1 730 0 0 0
+2 .,v .RCS version control file 1 -1 -1 -1 -1 424 506 157 0 0 0
+2 .sccs .SCCS version control file 1 -1 -1 -1 -1 425 508 157 0 0 0
+2 .,vw .a view-path system model 1 -1 -1 -1 -1 426 512 157 0 0 0
+2 .view.source.spec .specification of all possible source files in the view 2 -1 -1 -1 -1 427 -1 157 0 0 0
+7 .view.names .names of files in the view 2 -1 -1 -1 462 -1 -1 157 0 0 0
+2 .vw.of .odinfile containing the view versions 2 -1 -1 -1 -1 428 509 157 0 0 0
+7 .sccs.co .version from a version control file 2 -1 -1 -1 463 -1 -1 157 0 0 0
+7 .co .version from a version control file 2 -1 -1 -1 464 -1 -1 157 0 0 0
+2 .try.co .co if possible 2 -1 -1 -1 -1 430 -1 157 0 0 0
+5 .vw.dir .a directory containing the view versions 2 -1 -1 -1 -1 431 -1 157 0 1 0
+2 .sccs.log .log file 1 -1 -1 -1 466 -1 -1 157 0 0 0
+2 .log .log file 1 -1 -1 -1 -1 432 -1 287 0 0 0
+2 .vc*log . 3 -1 473 -1 467 -1 -1 157 0 0 0
+7 .vc*co . 3 -1 474 -1 468 -1 -1 157 0 0 0
+7 .vc*sccs.co . 3 -1 475 -1 469 -1 -1 157 0 0 0
+2 .vc*sccs.log . 3 -1 476 -1 470 -1 -1 157 0 0 0
+2 .vc*view.source.spec . 3 -1 477 -1 471 -1 -1 157 0 0 0
+7 .vc*view.names . 3 -1 478 -1 472 -1 -1 157 0 0 0
+2 .vc*vw.of . 3 -1 479 -1 473 -1 -1 157 0 0 0
+3 .map . 2 925 480 -1 -1 433 -1 157 0 0 1
+5 .vc*vw.dir . 3 -1 481 -1 474 -1 -1 157 0 1 0
+2 .sm .system model of source code files 1 -1 -1 -1 -1 436 516 157 0 0 0
+3 .sm.list .list of files in a system model 2 -1 -1 -1 -1 437 515 157 0 1 0
+3 .code.list .list of code files 2 -1 -1 -1 -1 438 514 157 0 1 0
+2 .libraries.view_desc .library view description 2 -1 -1 -1 -1 439 1 706 0 0 0
+2 .o_of .odinfile containing the object modules 2 -1 -1 -1 -1 440 513 337 0 0 0
+3 .libraries .library references 2 -1 -1 -1 -1 443 -1 706 0 1 0
+3 .code*sm.list . 3 -1 482 -1 475 -1 -1 157 0 1 0
+3 .code*code.list . 3 -1 483 -1 476 -1 -1 157 0 1 0
+3 .recurse . 2 939 484 -1 -1 444 -1 157 0 0 1
+2 .code*o_of . 3 -1 485 -1 477 -1 -1 337 0 0 0
+3 .map . 2 143 486 -1 -1 445 -1 157 0 0 1
+2 .code*a . 3 -1 487 -1 478 -1 -1 337 0 0 0
+10 .code*libraries.view_desc*composite . 3 -1 490 68 -1 -1 3 706 0 0 0
+2 .code*libraries.view_desc . 3 -1 488 -1 479 -1 -1 706 0 0 0
+2 .code*library_flags . 3 -1 489 -1 480 -1 -1 706 0 0 0
+3 .code*libraries . 3 -1 491 -1 481 -1 -1 706 0 1 0
+2 .f .Fortran77 source code 1 -1 -1 -1 482 -1 517 157 0 0 0
+2 .f77*o . 3 -1 492 -1 483 -1 -1 294 0 0 0
+2 .l .scanner grammar 1 -1 -1 -1 -1 446 518 157 0 0 0
+2 .lex*c . 3 -1 493 -1 484 -1 -1 276 0 0 0
+2 .y .yacc input 1 -1 -1 -1 -1 447 522 276 0 0 0
+2 .yacc.log .yacc table listing 2 -1 -1 -1 485 -1 -1 271 0 0 0
+10 .yacc*c*composite . 3 -1 497 70 -1 -1 521 271 0 0 0
+2 .yacc*c . 3 -1 494 -1 486 -1 -1 271 0 0 0
+2 .yacc*h . 3 -1 495 -1 487 -1 -1 271 0 0 0
+2 .yacc*yacc.log . 3 -1 496 -1 488 -1 -1 271 0 0 0
+2 .ygi .input grammar for the Tregrm tree-building parser generator 1 -1 -1 -1 -1 448 527 157 0 0 0
+2 .nod.h .parser node types 2 -1 -1 -1 489 -1 -1 276 0 0 0
+2 .tok.h .parser token types 2 -1 -1 -1 490 -1 -1 276 0 0 0
+2 .ygi.log .Tregrm listing 2 -1 -1 -1 491 -1 -1 276 0 0 0
+10 .tregrm*y*composite . 3 -1 502 73 -1 -1 526 276 0 0 0
+2 .tregrm*y . 3 -1 498 -1 492 -1 -1 276 0 0 0
+2 .tregrm*nod.h . 3 -1 499 -1 493 -1 -1 276 0 0 0
+2 .tregrm*tok.h . 3 -1 500 -1 494 -1 -1 276 0 0 0
+2 .tregrm*ygi.log . 3 -1 501 -1 495 -1 -1 276 0 0 0
+2 .dg .Odin Derivation Graph 1 -1 -1 -1 -1 449 532 157 0 0 0
+2 .dg.log .Derivation Graph log 1 -1 -1 -1 496 -1 -1 265 0 0 0
+2 .dg.tab .Derivation Graph tables 1 -1 -1 -1 -1 450 -1 265 0 0 0
+2 .dg.env .Derivation Graph environment variable definitions 1 -1 -1 -1 -1 451 -1 265 0 0 0
+10 .dg*dg.log*composite . 3 -1 507 77 -1 -1 531 265 0 0 0
+2 .dg*dg.log . 3 -1 503 -1 497 -1 -1 265 0 0 0
+2 .dg*c . 3 -1 504 -1 498 -1 -1 265 0 0 0
+2 .dg*dg.tab . 3 -1 505 -1 499 -1 -1 265 0 0 0
+2 .dg*dg.env . 3 -1 506 -1 500 -1 -1 265 0 0 0
+2 .profile .execution profile 1 -1 -1 -1 -1 452 -1 778 0 0 0
+2 .prof*profile . 3 -1 508 -1 501 -1 -1 778 0 0 0
+6 .redo .redo this object step 1 -1 -1 -1 -1 454 -1 157 0 0 0
+6 .redo_errs .redo all steps with errors 1 -1 -1 -1 -1 455 -1 157 0 0 0
+2 .boot_name .name of the boot-strap file 2 -1 -1 -1 -1 456 141 783 0 0 0
+5 .boot .boot-strap a file 2 -1 -1 -1 -1 457 -1 783 0 1 0
+2 .diff .differences between two files 1 -1 -1 -1 -1 458 -1 788 0 0 0
+4 .rcp .archive 1 -1 -1 -1 -1 459 -1 793 0 0 0
+6 .installpkg .install a versioned package or collection 1 -1 -1 -1 -1 460 -1 798 0 0 0
+3 .misc*list . 3 -1 509 -1 502 -1 -1 157 0 1 0
+6 .misc*redo . 3 -1 510 -1 503 -1 -1 157 0 0 0
+6 .misc*redo_errs . 3 -1 511 -1 504 -1 -1 157 0 0 0
+2 .misc*boot_name . 3 -1 512 -1 505 -1 -1 783 0 0 0
+5 .misc*boot . 3 -1 513 -1 506 -1 -1 783 0 1 0
+2 .misc*diff . 3 -1 514 -1 507 -1 -1 788 0 0 0
+4 .misc*rcp . 3 -1 515 -1 508 -1 -1 793 0 0 0
+6 .misc*installpkg . 3 -1 516 -1 509 -1 -1 798 0 0 0
+2 .eqn_in .eqn input 1 -1 -1 -1 -1 461 533 157 0 0 0
+2 .tbl_in .tbl input 2 -1 -1 -1 -1 462 138 157 0 0 0
+2 .roff .nroff/troff input 1 -1 -1 -1 -1 463 137 157 0 0 0
+2 .so_inc_spec .names of Nroff-style included files 2 -1 -1 -1 -1 464 140 217 0 0 0
+3 .so_inc .list of Nroff-style included files 2 -1 -1 -1 -1 465 139 217 0 1 0
+3 .all_so_inc .list of Nroff-style transitively included files 2 -1 -1 -1 -1 466 -1 217 0 1 0
+2 .eqn .output from eqn 1 -1 -1 -1 510 -1 -1 157 0 0 0
+7 .gnc.eqn .output from eqn 1 -1 -1 -1 511 -1 -1 157 0 0 0
+2 .tbl .output from tbl 1 -1 -1 -1 512 -1 -1 157 0 0 0
+2 .nroff .output from nroff 1 -1 -1 -1 -1 467 -1 223 0 0 0
+2 .roff*so_inc_spec . 3 -1 517 -1 513 -1 -1 217 0 0 0
+3 .roff*so_inc . 3 -1 518 -1 514 -1 -1 217 0 1 0
+3 .roff*all_so_inc . 3 -1 519 -1 515 -1 -1 217 0 1 0
+3 .map . 2 1004 520 -1 -1 468 -1 157 0 0 1
+2 .roff*eqn . 3 -1 521 -1 516 -1 -1 157 0 0 0
+7 .roff*gnc.eqn . 3 -1 522 -1 517 -1 -1 157 0 0 0
+2 .roff*tbl . 3 -1 523 -1 518 -1 -1 157 0 0 0
+2 .roff*nroff . 3 -1 524 -1 519 -1 -1 223 0 0 0
+5 .lookup . 2 1004 525 -1 -1 469 -1 157 0 0 1
+2 .bib .Bibliographic data file 1 -1 -1 -1 -1 471 -1 157 0 0 0
+2 .cls .Formatting style file 1 -1 -1 -1 -1 473 -1 157 0 0 0
+2 .bst .Bibliographic style file 1 -1 -1 -1 -1 474 -1 157 0 0 0
+2 .tex.vtd .Basis of a TeX formatted document 1 -1 -1 -1 520 -1 540 157 0 0 0
+2 .rootFileName .Simple name of the TeX file to be used as the root 2 -1 -1 -1 521 -1 -1 169 0 0 0
+2 .texnames .Text file containing local file names 2 -1 -1 -1 -1 479 22 171 0 0 0
+2 .texpdf .PDF created from TeX or LaTeX 2 -1 -1 -1 -1 481 -1 212 0 0 0
+2 .citations .Citation and bibliographic data commands 2 -1 -1 -1 -1 483 -1 212 0 0 0
+2 .indexntry .indexentry commands with page numbers 2 -1 -1 -1 -1 484 13 212 0 0 0
+9 .texauxout .Auxiliary files potentially modified by TeX 2 -1 -1 -1 -1 485 -1 212 0 0 0
+2 .texauxin.vtd .Auxiliary files input to the formatting step 2 -1 -1 -1 522 -1 -1 212 0 0 0
+2 .one_tex_vtd .Singleton set of TeX formatter inputs 2 -1 -1 -1 525 -1 -1 157 0 0 0
+2 .tex*one_tex_vtd . 3 -1 526 -1 524 -1 -1 157 0 0 0
+10 .tex*rootName*composite . 3 -1 529 81 -1 -1 24 169 0 0 0
+2 .tex*rootName . 3 -1 527 -1 526 -1 -1 169 0 0 0
+2 .tex*rootFileName . 3 -1 528 -1 527 -1 -1 169 0 0 0
+2 .tex*texsp . 3 -1 530 -1 528 -1 -1 180 0 0 0
+3 .texclose .Names of all files transitively referenced 2 -1 -1 -1 -1 487 -1 179 0 1 0
+3 .tex*texclose . 3 -1 531 -1 529 -1 -1 179 0 1 0
+3 .texfiles .Accessible files referenced 2 -1 -1 -1 -1 490 20 179 0 1 0
+3 .map . 2 1035 532 -1 -1 486 -1 157 0 0 1
+3 .tex*texbasis . 3 -1 533 -1 530 -1 -1 183 0 1 0
+2 .tex.view_desc .View descriptor for basis files 2 -1 -1 -1 -1 489 21 179 0 0 0
+2 .tex*tex.view_desc . 3 -1 534 -1 531 -1 -1 179 0 0 0
+2 .tex*texnames . 3 -1 535 -1 532 -1 -1 164 0 0 0
+3 .tex*texfiles . 3 -1 536 -1 533 -1 -1 179 0 1 0
+2 .fmtcmd .Formatting command 2 -1 -1 -1 -1 491 -1 805 0 0 0
+2 .tex*fmtcmd . 3 -1 537 -1 534 -1 -1 805 0 0 0
+10 .tex*dvi*composite . 3 -1 544 83 -1 -1 19 212 0 0 0
+2 .tex*dvi . 3 -1 538 -1 535 -1 -1 212 0 0 0
+2 .tex*texpdf . 3 -1 539 -1 536 -1 -1 212 0 0 0
+2 .tex*tex.log . 3 -1 540 -1 537 -1 -1 212 0 0 0
+2 .tex*citations . 3 -1 541 -1 538 -1 -1 212 0 0 0
+2 .tex*indexntry . 3 -1 542 -1 539 -1 -1 212 0 0 0
+9 .tex*texauxout . 3 -1 543 -1 540 -1 -1 212 0 0 0
+3 .extract . 2 1019 545 -1 -1 492 -1 157 0 0 0
+2 .tex.bbl .TeX bibliographic reference file 2 -1 -1 -1 -1 495 -1 212 0 0 0
+2 .tex*tex.bbl . 3 -1 546 -1 541 -1 -1 212 0 0 0
+3 .extract . 2 1018 547 -1 -1 493 -1 157 0 0 0
+3 .extract . 2 1020 548 -1 -1 494 -1 157 0 0 0
+10 .tex*tex.ind*composite . 3 -1 551 89 -1 -1 12 212 0 0 0
+2 .tex.ind .TeX index file 2 -1 -1 -1 -1 496 -1 212 0 0 0
+2 .tex*tex.ind . 3 -1 549 -1 542 -1 -1 212 0 0 0
+2 .tex.ilg .Messages from makeindex 1 -1 -1 -1 -1 497 -1 212 0 0 0
+2 .tex*tex.ilg . 3 -1 550 -1 543 -1 -1 212 0 0 0
+2 .tex*texauxin.vtd . 3 -1 552 -1 544 -1 -1 212 0 0 0
+2 .tex*texps . 3 -1 553 -1 545 -1 -1 412 0 0 0
+3 .extract . 2 364 554 -1 -1 498 -1 157 0 0 0
+5 .refpdf .Reference to a PDF file 2 -1 -1 -1 547 499 -1 212 0 1 0
+5 .tex*refpdf . 3 -1 555 -1 546 -1 -1 212 0 1 0
+6 .run .execution of a command line 2 -1 -1 -1 -1 500 -1 606 0 0 0
+8 .stdout .standard output from a test run 1 -1 -1 -1 548 -1 -1 606 0 0 0
+9 .output .output files from a test run 1 -1 -1 -1 -1 501 -1 606 0 0 0
+6 .run*run . 3 -1 556 -1 549 -1 -1 606 0 0 0
+10 .run*stdout*composite . 3 -1 559 91 -1 -1 136 606 0 0 0
+8 .run*stdout . 3 -1 557 -1 550 -1 -1 606 0 0 0
+9 .run*output . 3 -1 558 -1 551 -1 -1 606 0 0 0
+7
+8
+3
+2
+1
+0
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+.null .ignored parameter type 2 19
+.hookvalue .hook value 2 19
+.copy_dest .where to copy 2 19
+.apply .operations to apply 2 19
+.fold .Flag to suppress case distinctions in identifiers and keywords 1 19
+.incl .List of C preprocessor include file names and keys 2 19
+.cc .name of the C compiler 1 19
+.cc_flags .flags for cc 1 30
+.incls .List of files actually included 2 54
+.debug .Flag to request debugging information in object files 1 19
+.define .List of symbols to be defined by the C preprocessor 1 30
+.monitor .Flag to request generation of executable that can be monitored 1 19
+.nomain .Do not supply a main program 1 19
+.parser .Selects the parser generator 1 19
+.ignore .Prefix of include file names to be ignored 1 54
+.cxx .name of the C++ compiler 1 19
+.cxx_flags .flags for C++ compilation 1 30
+.prof .profiling flag 1 19
+.core .core dump of a test run 2 19
+.chapter .Section @A should be a chapter 1 54
+.printtokens .Flag to request that tokens be printed as they are read 1 19
+.prefix .Prefix to use for unparser attributes 1 19
+.patterns .PTG override patterns 1 54
+.lang .Language to be used for unparsed tree 1 19
+.docref .Switch to relate messages to system documentation 2 19
+.single .Create single-sided version of printed documentation 1 19
+.usepdf .Produce PDF code 2 19
+.texsearch .Directories to be searched first 1 54
+.instance .Name of a generic module instantiation 1 19
+.referto .Name of a referenced generic module instantiation 1 19
+.ExpI .Sets LIGA option: EXPAND: INFO; 1 19
+.OptimI .Sets LIGA option: OPTIM: INFO; 1 19
+.OrdI .Sets LIGA options: ORDER: GRAPH DIRECT_RULE VISIT_SEQUENCE; 1 19
+.RunGorto .Stops Liga after Expand for running Gorto 1 19
+.arg .Command line arguments 1 3
+.gnu .use gnu tools 2 19
+.pgsOpt .PGS Options 1 19
+.copy_dest_desc .where to copy 2 19
+.depend .dependency 2 3
+.prm_help .derivation for which parameter types are applicable 2 19
+.date .revision date 1 19
+.rev .revision number 1 19
+.state .revision state 1 19
+.who .revision author 1 19
+.view_sp .name of a directory in an view search path 1 54
+.lib .a library name 1 54
+.lib_sp .name of a directory in an library search path 1 54
+.f77_home .directory containing the C compiler 1 19
+.f77 .name of the C compiler 1 19
+.f77_flags .flags for f77 1 30
+.array_bds .array bound checking flag 1 19
+.yaccid .entry point for lexical analyzer 1 19
+.sys5 .use Unix System V conventions 1 19
+.conflict_ok .reduce/reduce and shift/reduce conflicts are OK 1 19
+.yacc .name of the yacc compiler 1 19
+.yacc_flags .flags for yacc 1 30
+.pkg .name of a package or a file containing package names 1 30
+.prof_data .trace file 1 3
+.prof_flags .prof flags 1 30
+.default .default value 1 19
+.other .another file 1 19
+.f_dest .file destination 1 19
+.d_dest .directory destination 1 19
+.home .home directory for relative pathnames 2 19
+.mp .macro package 1 19
+.tex .Use plain TeX 1 19
+.latex .Use LaTeX 1 19
+.texroot .Name of the TeX document root 1 19
+.dvips_flags .Options for dvips 1 54
+.index_flags .Options for makeindex 1 54
+.texsppt .Parameter type for search path information 2 19
+.cmd .host command 1 3
+.need .run dependency 1 3
+0
+1
+2
+3
+-1 -1
+4 -1
+1 -1
+9 -1
+10 -1
+9 4
+11 -1
+10 6
+9 7
+6 -1
+6 8
+7 -1
+7 8
+6 12
+8 -1
+6 11
+12 -1
+11 16
+13 -1
+5 -1
+14 -1
+5 20
+15 -1
+11 22
+10 23
+9 24
+16 -1
+15 26
+11 27
+10 28
+9 29
+17 -1
+9 31
+11 31
+9 33
+18 -1
+12 31
+9 36
+11 36
+9 38
+6 39
+6 32
+7 32
+6 42
+6 3
+7 3
+6 45
+10 31
+9 47
+7 48
+6 49
+10 33
+9 51
+7 52
+6 53
+19 -1
+20 -1
+11 56
+22 -1
+21 -1
+23 -1
+24 -1
+1 61
+25 -1
+26 -1
+28 -1
+29 -1
+28 66
+30 -1
+31 -1
+30 69
+32 -1
+31 71
+30 72
+33 -1
+34 -1
+11 75
+18 75
+11 77
+11 18
+36 -1
+11 80
+2 -1
+37 -1
+3 -1
+39 -1
+40 -1
+41 -1
+40 87
+42 -1
+41 89
+40 90
+43 -1
+42 92
+41 93
+40 94
+44 -1
+45 -1
+46 -1
+45 98
+47 -1
+17 100
+9 101
+48 -1
+47 103
+17 104
+9 105
+49 -1
+48 107
+47 108
+17 109
+9 110
+51 -1
+53 -1
+51 113
+52 -1
+52 113
+51 116
+35 -1
+35 117
+54 -1
+53 120
+52 121
+51 122
+35 123
+55 -1
+54 125
+53 126
+52 127
+51 128
+35 129
+56 -1
+57 -1
+58 -1
+57 133
+59 -1
+60 -1
+61 -1
+62 -1
+61 138
+63 -1
+64 -1
+67 -1
+27 -1
+70 -1
+65 -1
+66 -1
+65 146
+26 147
+69 -1
+68 -1
+71 -1
+72 -1
+71 152
+43 96
+42 154
+41 155
+40 156
+44 144
+43 158
+42 159
+41 160
+40 161
+7 157
+6 163
+44 142
+43 165
+42 166
+41 167
+40 168
+7 169
+6 170
+67 144
+44 172
+43 173
+42 174
+41 175
+40 176
+7 177
+6 178
+27 157
+27 177
+7 181
+6 182
+69 144
+67 184
+44 185
+43 186
+42 187
+41 188
+40 189
+27 190
+7 191
+6 192
+66 144
+65 194
+26 195
+66 172
+65 197
+26 198
+27 198
+26 200
+66 185
+65 202
+44 203
+43 204
+42 205
+41 206
+40 207
+27 208
+26 209
+7 210
+6 211
+44 140
+43 213
+42 214
+41 215
+40 216
+63 141
+44 218
+43 219
+42 220
+41 221
+40 222
+14 157
+5 224
+21 157
+14 226
+5 227
+11 224
+5 229
+13 80
+11 231
+32 157
+31 233
+30 234
+14 235
+5 236
+1 225
+20 157
+14 239
+11 240
+5 241
+12 224
+11 243
+5 244
+5 157
+4 157
+33 157
+14 248
+5 249
+32 248
+31 251
+30 252
+14 253
+5 254
+13 224
+5 256
+11 254
+5 258
+1 259
+44 131
+43 261
+42 262
+41 263
+40 264
+44 129
+43 266
+42 267
+41 268
+40 269
+35 270
+44 112
+43 272
+42 273
+41 274
+40 275
+55 131
+54 277
+53 278
+52 279
+51 280
+44 281
+43 282
+42 283
+41 284
+40 285
+35 286
+44 109
+43 288
+42 289
+41 290
+40 291
+17 292
+9 293
+16 157
+15 295
+11 296
+10 297
+9 298
+8 157
+8 299
+16 293
+15 302
+11 303
+10 304
+9 305
+8 306
+11 157
+10 308
+9 309
+7 310
+6 311
+8 287
+11 287
+10 314
+9 315
+8 316
+7 317
+6 318
+49 281
+48 320
+47 321
+44 322
+43 323
+42 324
+41 325
+40 326
+35 327
+17 328
+16 329
+15 330
+11 331
+10 332
+9 333
+8 334
+7 335
+6 336
+14 331
+11 338
+10 339
+9 340
+8 341
+7 342
+6 343
+5 344
+14 271
+5 346
+13 254
+5 348
+11 348
+5 350
+36 157
+33 352
+32 353
+31 354
+30 355
+14 356
+13 357
+11 358
+5 359
+11 256
+5 361
+26 142
+27 142
+26 364
+26 181
+7 366
+6 367
+25 366
+7 369
+6 370
+25 210
+7 372
+6 373
+3 157
+19 157
+14 376
+5 377
+3 378
+19 372
+14 380
+7 381
+6 382
+5 383
+3 384
+44 150
+43 386
+42 387
+41 388
+40 389
+68 184
+67 391
+66 392
+65 393
+44 394
+43 395
+42 396
+41 397
+40 398
+27 399
+26 400
+7 401
+6 402
+25 401
+7 404
+6 405
+19 404
+14 407
+7 408
+6 409
+5 410
+3 411
+12 256
+11 413
+5 414
+12 348
+11 416
+5 417
+13 236
+12 419
+11 420
+5 421
+12 358
+11 423
+5 424
+4 225
+4 242
+20 356
+14 428
+13 429
+12 430
+11 431
+5 432
+4 433
+34 352
+33 435
+32 436
+31 437
+30 438
+20 439
+18 440
+14 441
+13 442
+12 443
+11 444
+5 445
+4 446
+8 224
+5 448
+14 287
+8 450
+5 451
+17 287
+14 453
+12 454
+11 455
+9 456
+8 457
+6 458
+5 459
+12 338
+11 461
+10 462
+9 463
+8 464
+7 465
+6 466
+5 467
+36 327
+35 469
+34 470
+33 471
+32 472
+31 473
+30 474
+20 475
+18 476
+17 477
+16 478
+15 479
+14 480
+13 481
+12 482
+11 483
+10 484
+9 485
+8 486
+7 487
+6 488
+5 489
+4 490
+46 322
+45 492
+44 493
+43 494
+42 495
+41 496
+40 497
+35 498
+17 499
+16 500
+15 501
+14 502
+12 503
+11 504
+10 505
+9 506
+8 507
+7 508
+6 509
+5 510
+36 498
+35 512
+34 513
+33 514
+32 515
+31 516
+30 517
+20 518
+18 519
+17 520
+16 521
+15 522
+14 523
+13 524
+12 525
+11 526
+10 527
+9 528
+8 529
+7 530
+6 531
+5 532
+4 533
+14 440
+13 535
+12 536
+11 537
+5 538
+4 539
+17 519
+16 541
+15 542
+14 543
+13 544
+12 545
+11 546
+10 547
+9 548
+8 549
+7 550
+6 551
+5 552
+4 553
+29 157
+28 555
+14 556
+5 557
+23 157
+21 559
+14 560
+5 561
+5 450
+11 454
+10 564
+9 565
+7 566
+6 567
+5 568
+18 328
+17 570
+16 571
+15 572
+14 573
+12 574
+11 575
+10 576
+9 577
+8 578
+7 579
+6 580
+5 581
+18 499
+17 583
+16 584
+15 585
+14 586
+12 587
+11 588
+10 589
+9 590
+8 591
+7 592
+6 593
+5 594
+22 157
+14 596
+13 597
+12 598
+11 599
+5 600
+44 153
+43 602
+42 603
+41 604
+40 605
+2 157
+1 157
+1 230
+11 352
+1 425
+1 257
+1 246
+11 239
+1 242
+1 433
+1 245
+33 513
+32 618
+31 619
+30 620
+20 621
+17 622
+16 623
+15 624
+14 625
+13 626
+12 627
+11 628
+10 629
+9 630
+8 631
+7 632
+6 633
+5 634
+4 635
+7 287
+6 637
+17 157
+11 639
+9 640
+33 470
+32 642
+31 643
+30 644
+20 645
+17 646
+16 647
+15 648
+14 649
+13 650
+12 651
+11 652
+10 653
+9 654
+8 655
+7 656
+6 657
+5 658
+4 659
+18 622
+17 661
+16 662
+15 663
+14 664
+13 665
+12 666
+11 667
+10 668
+9 669
+8 670
+7 671
+6 672
+5 673
+4 674
+36 286
+35 676
+33 677
+32 678
+31 679
+30 680
+20 681
+14 682
+13 683
+12 684
+11 685
+5 686
+4 687
+36 270
+35 689
+33 690
+32 691
+31 692
+30 693
+20 694
+14 695
+13 696
+12 697
+11 698
+5 699
+4 700
+44 99
+43 702
+42 703
+41 704
+40 705
+9 157
+7 707
+6 708
+21 596
+14 710
+13 711
+12 712
+11 713
+5 714
+22 559
+21 716
+14 717
+13 718
+12 719
+11 720
+5 721
+24 157
+1 723
+25 157
+13 352
+11 726
+1 313
+37 157
+39 157
+51 131
+44 731
+43 732
+42 733
+41 734
+40 735
+44 134
+43 737
+42 738
+41 739
+40 740
+56 134
+55 742
+54 743
+53 744
+52 745
+51 746
+49 747
+48 748
+47 749
+46 750
+45 751
+44 752
+43 753
+42 754
+41 755
+40 756
+36 757
+35 758
+33 759
+32 760
+31 761
+30 762
+20 763
+17 764
+16 765
+15 766
+14 767
+13 768
+12 769
+11 770
+10 771
+9 772
+8 773
+7 774
+6 775
+5 776
+4 777
+44 135
+43 779
+42 780
+41 781
+40 782
+44 136
+43 784
+42 785
+41 786
+40 787
+44 139
+43 789
+42 790
+41 791
+40 792
+44 138
+43 794
+42 795
+41 796
+40 797
+44 198
+43 799
+42 800
+41 801
+40 802
+27 803
+26 804
+44 149
+43 806
+42 807
+41 808
+40 809
+.ODINCACHE .the Odin cache directory 1 . 0
+.ODIN_CC_HOME .directory containing the C compiler 2 . 0
+.ODIN_CC .name of the C compiler 2 .gcc 0
+.ODIN_CC_FLAGS .cc flags 2 .-g -O2 0
+.ODIN_CC_DEBUGF .debug flag for C compiler 2 .-g 0
+.ODIN_CC_I .directory containing default C include files 2 ./usr/include 0
+.ODIN_CXX_HOME .directory containing the C++ compiler 2 . 0
+.ODIN_CXX .name of the C++ compiler 2 .g++ 0
+.ODIN_CXX_FLAGS .C++ flags 2 . 0
+.ODIN_CXX_DEBUGF .debug flag for C++ compiler 2 .-g 0
+.ODIN_CXX_I .directory containing default C++ include files 2 . 0
+.elipkg .Location of packages 2 .($ODINCACHE/PKGS) 1
+.ODIN_VERSION_STR .odin-build release number 2 .1.17.11 0
+.ODIN_CPP .name of the C preprocessor 2 .gcc -E 0
+.ODIN_CPP_FLAGS .C preprocessor flags 2 . 0
+.ODIN_YACC .name of the yacc compiler 2 .yacc 0
+.ODIN_RANLIB .archive symbol table program 2 .ranlib 0
+.ODIN_RBSCMD .the name of the Odin remote-build-server 1 .odin/rbs.sh 0
+.ODIN_SHORTNAMES .use short cache filenames 1 . 0
+.ODIN_LOCALIPC .use Unix domain interprocess communication 1 . 0
+.ODIN_PASTE .name of the multi-file line merge command 1 .paste 0
+.DUMPCORE .whether to dump core when anomaly detected 1 .yes 0
+.ODIN_VC_RCS .look for RCS files in viewpath 2 .yes 0
+.ODIN_VC_SCCS .look for SCCS files in viewpath 2 .yes 0
+.ODIN_IGNORE .egrep expression for includes to ignore 2 ./usr/include 0
+.ODIN_LIB_SP .default library search path 2 ./lib /usr/lib 0
+.ODIN_SYS5 .use Unix System V conventions 1 . 0
+.ODIN_YACC_FLAGS .yacc flags 2 .-dv 0
+-1 -1
+0 -1
+1 -1 -1 -1 ..
+12 -1 -1 -1 ..
+2 -1 -1 -1 ..
+47 -1 -1 -1 ..
+8 -1 -1 -1 ..
+37 -1 -1 -1 ..
+10 -1 -1 -1 ..
+18 -1 -1 -1 ..
+11 0 -1 -1 .adtinit
+6 2 -1 -1 .odin
+11 5 1 -1 .adtinit
+21 9 -1 -1 .eli
+21 10 -1 -1 .burg
+21 12 -1 -1 .burg
+6 11 -1 -1 .odin
+11 13 -1 -1 .burg
+11 17 2 1 .burg
+11 21 -1 -1 .burg
+21 25 -1 -1 .eli
+11 26 13 -1 .cc
+21 38 -1 -1 .cc
+48 37 -1 -1 .odin
+11 39 14 -1 .cc
+11 42 15 -1 .cc
+21 46 -1 -1 .clp
+21 48 -1 -1 .clp
+6 47 -1 -1 .odin
+11 49 -1 1 .clp
+11 54 17 -1 .clp
+21 63 -1 -1 .eli
+11 64 2 1 .clp
+3 68 -1 -1 ..
+3 69 -1 -1 ..
+11 70 -1 -1 .cola
+3 74 -1 -1 ..
+3 75 -1 -1 ..
+3 76 -1 -1 ..
+3 77 -1 -1 ..
+11 78 -1 -1 .cola
+11 83 6 1 .cola
+3 97 -1 -1 ..
+3 98 -1 -1 ..
+3 99 -1 -1 ..
+11 100 -1 -1 .cola
+21 105 -1 -1 .cola
+21 107 -1 -1 .cola
+6 106 -1 -1 .odin
+3 108 -1 -1 ..
+3 109 -1 -1 ..
+11 110 18 -1 .cola
+21 114 -1 -1 .parser
+21 115 -1 -1 .parser
+36 116 -1 -1 .cpp
+21 117 -1 -1 .cpp
+4 118 -1 -1 .odin
+11 120 21 -1 .cpp
+11 126 -1 -1 .cpp
+11 129 -1 -1 .cpp
+11 134 -1 -1 .cpp
+4 136 -1 -1 .odin
+11 139 2 -1 .cpp
+11 144 30 -1 .cxx
+21 155 -1 -1 .cxx
+48 154 -1 -1 .odin
+11 156 14 -1 .cxx
+21 159 -1 -1 .dapto
+21 161 -1 -1 .dapto
+6 160 -1 -1 .odin
+11 162 -1 1 .dapto
+11 168 6 -1 .dapto
+4 169 -1 -1 .odin
+3 176 -1 -1 ..
+3 177 -1 -1 ..
+3 178 -1 -1 ..
+11 179 34 1 .dapto
+11 187 2 1 .dapto
+21 191 -1 -1 .eli
+11 192 35 -1 .dbx
+11 199 35 -1 .dbx
+21 206 -1 -1 .delit
+21 208 -1 -1 .delit
+6 207 -1 -1 .odin
+21 209 -1 -1 .delit
+11 210 -1 -1 .delit
+11 214 -1 -1 .delit
+21 217 -1 -1 .eli
+11 218 -1 -1 .eli
+36 225 -1 -1 .eli
+4 224 -1 -1 .odin
+21 226 -1 -1 .eli
+21 228 -1 -1 .eli
+6 229 -1 -1 .odin
+4 230 -1 -1 .odin
+36 232 -1 -1 .eli
+21 233 -1 -1 .eli
+36 234 -1 -1 .eli
+36 236 -1 -1 .eli
+36 238 -1 -1 .eli
+21 239 -1 -1 .eli
+36 240 -1 -1 .eli
+21 241 -1 -1 .eli
+36 242 -1 -1 .eli
+21 243 -1 -1 .eli
+36 244 -1 -1 .eli
+21 245 -1 -1 .eli
+36 246 -1 -1 .eli
+7 247 -1 -1 .odin
+36 249 -1 -1 .eli
+36 251 -1 -1 .eli
+7 252 -1 -1 .odin
+36 254 -1 -1 .eli
+21 255 -1 -1 .eli
+36 257 -1 -1 .eli
+21 258 -1 -1 .eli
+11 260 -1 -1 .eli
+21 264 -1 -1 .eli
+6 263 -1 -1 .odin
+6 265 -1 -1 .odin
+11 267 -1 -1 .eli
+6 268 -1 -1 .odin
+21 274 -1 -1 .eli
+7 272 -1 -1 .odin
+7 273 -1 -1 .odin
+36 278 -1 -1 .eli
+11 279 -1 -1 .eli
+36 285 -1 -1 .eli
+21 286 -1 -1 .eli
+21 288 -1 -1 .eli
+6 289 -1 -1 .odin
+4 290 -1 -1 .odin
+21 293 -1 -1 .eli
+6 292 -1 -1 .odin
+36 295 -1 -1 .eli
+11 296 -1 -1 .eli
+22 299 -1 -1 .eli
+3 300 -1 -1 ..
+3 301 -1 -1 ..
+11 302 40 -1 .eli
+4 305 -1 -1 .odin
+4 306 -1 -1 .odin
+6 311 -1 -1 .odin
+21 321 -1 1 .eli
+36 324 -1 -1 .eli
+36 326 -1 -1 .eli
+4 325 -1 -1 .odin
+21 327 -1 -1 .eli
+36 329 -1 -1 .eli
+21 331 -1 -1 .eli
+6 330 -1 -1 .odin
+21 334 -1 -1 .eli
+6 333 -1 -1 .odin
+35 336 -1 -1 .eli
+11 337 43 -1 .eli
+11 350 46 -1 .eli
+21 356 -1 -1 .eli
+11 359 54 -1 .eli
+4 367 -1 -1 .odin
+11 372 -1 -1 .eli
+11 377 -1 -1 .eli
+21 382 -1 -1 .fw
+21 384 -1 -1 .fw
+6 383 -1 -1 .odin
+11 385 -1 -1 .fw
+36 388 -1 -1 .fw
+21 389 -1 -1 .fw
+4 390 -1 -1 .odin
+11 392 21 -1 .fw
+11 399 -1 1 .fw
+4 400 -1 -1 .odin
+22 404 -1 -1 .fw
+21 405 -1 -1 .fw
+21 407 -1 -1 .fw
+7 406 -1 -1 .odin
+21 409 -1 -1 .fw
+4 408 -1 -1 .odin
+4 410 -1 -1 .odin
+3 412 -1 -1 ..
+3 413 -1 -1 ..
+3 414 -1 -1 ..
+11 415 -1 1 .fw
+4 421 -1 -1 .odin
+11 425 -1 1 .fw
+3 432 -1 -1 ..
+3 433 -1 -1 ..
+3 434 -1 -1 ..
+3 435 -1 -1 ..
+11 436 55 1 .fw
+11 446 2 1 .fw
+11 455 -1 1 .fw
+11 459 -1 1 .fw
+21 463 -1 -1 .fw
+21 464 -1 -1 .fw
+21 465 -1 -1 .gla
+21 467 -1 -1 .gla
+6 466 -1 -1 .odin
+11 468 -1 -1 .gla
+11 473 57 1 .gla
+11 484 2 1 .gla
+3 488 -1 -1 ..
+3 489 -1 -1 ..
+3 490 -1 -1 ..
+11 491 -1 1 .gla
+3 496 -1 -1 ..
+3 497 -1 -1 ..
+11 498 -1 -1 .gla
+11 503 2 -1 .gla
+11 507 -1 -1 .gla
+21 513 -1 -1 .gla
+21 515 -1 -1 .gla
+6 514 -1 -1 .odin
+21 516 -1 -1 .gla
+11 517 -1 -1 .gla
+11 520 58 -1 .idem
+21 523 -1 -1 .idem
+4 526 -1 -1 .odin
+11 529 59 -1 .idem
+11 533 60 -1 .idem
+3 537 -1 -1 ..
+3 538 -1 -1 ..
+11 539 59 -1 .idem
+21 543 -1 -1 .idem
+3 544 -1 -1 ..
+3 545 -1 -1 ..
+11 546 -1 -1 .info
+11 551 -1 -1 .info
+11 556 -1 -1 .info
+3 562 -1 -1 ..
+3 563 -1 -1 ..
+11 564 -1 -1 .info
+11 569 -1 -1 .info
+11 574 62 -1 .info
+3 578 -1 -1 ..
+3 579 -1 -1 ..
+11 580 -1 -1 .info
+6 581 -1 -1 .odin
+11 585 -1 -1 .info
+21 588 -1 -1 .info
+21 590 -1 -1 .info
+4 589 -1 -1 .odin
+21 592 -1 -1 .info
+4 591 -1 -1 .odin
+21 594 -1 -1 .info
+4 593 -1 -1 .odin
+21 595 -1 -1 .info
+11 596 63 -1 .info
+3 599 -1 -1 ..
+3 600 -1 -1 ..
+3 601 -1 -1 ..
+3 602 -1 -1 ..
+3 603 -1 -1 ..
+11 604 64 -1 .info
+6 609 -1 -1 .odin
+6 611 -1 -1 .odin
+11 614 -1 -1 .info
+11 620 -1 -1 .info
+11 623 -1 -1 .info
+21 627 -1 1 .info
+21 628 -1 1 .info
+11 629 -1 -1 .info
+11 633 -1 -1 .kwd
+35 637 -1 -1 .kwd
+6 636 -1 -1 .odin
+21 638 -1 -1 .kwd
+11 639 -1 -1 .kwd
+11 648 -1 -1 .kwd
+11 651 -1 -1 .kwd
+11 657 -1 -1 .lib
+21 661 -1 -1 .lib
+11 662 67 -1 .lib
+11 668 -1 -1 .lib
+21 672 -1 -1 .lib
+4 671 -1 -1 .odin
+36 674 -1 -1 .lib
+3 675 -1 -1 ..
+3 676 -1 -1 ..
+11 677 19 -1 .liga
+11 680 2 1 .liga
+21 685 -1 -1 .liga
+21 688 -1 -1 .liga
+6 686 -1 -1 .odin
+4 687 -1 -1 .odin
+21 689 -1 -1 .liga
+21 691 -1 -1 .liga
+6 690 -1 -1 .odin
+21 692 -1 -1 .liga
+11 693 -1 -1 .liga
+11 698 -1 -1 .liga
+3 701 -1 -1 ..
+3 702 -1 -1 ..
+3 703 -1 -1 ..
+3 704 -1 -1 ..
+11 705 73 -1 .liga
+3 711 -1 -1 ..
+3 712 -1 -1 ..
+3 713 -1 -1 ..
+11 714 74 -1 .liga
+11 723 6 -1 .liga
+21 730 -1 -1 .liga
+11 731 -1 -1 .liga
+11 736 -1 -1 .liga
+11 739 2 1 .liga
+11 743 -1 -1 .liga
+21 747 -1 -1 .liga
+11 748 -1 -1 .liga
+21 751 -1 -1 .liga
+11 752 -1 -1 .liga
+21 760 -1 -1 .liga
+35 761 -1 -1 .liga
+35 762 -1 -1 .liga
+35 763 -1 -1 .liga
+11 764 2 -1 .liga
+21 770 -1 -1 .maptool
+21 772 -1 -1 .maptool
+6 771 -1 -1 .odin
+11 773 -1 -1 .maptool
+11 776 -1 -1 .maptool
+11 783 -1 -1 .maptool
+6 785 -1 -1 .odin
+21 788 -1 -1 .maptool
+21 790 -1 -1 .maptool
+6 789 -1 -1 .odin
+11 791 -1 -1 .maptool
+21 795 -1 -1 .maptool
+11 799 2 1 .maptool
+3 803 -1 -1 ..
+3 804 -1 -1 ..
+3 805 -1 -1 ..
+3 806 -1 -1 ..
+3 807 -1 -1 ..
+3 808 -1 -1 ..
+11 809 18 -1 .maptool
+11 817 2 1 .maptool
+11 821 -1 -1 .maptool
+35 826 -1 -1 .maptool
+35 827 -1 -1 .maptool
+35 828 -1 -1 .maptool
+35 831 -1 -1 .noosa
+21 833 -1 -1 .noosa
+6 832 -1 -1 .odin
+11 835 76 -1 .noosa
+11 845 78 -1 .noosa
+21 857 -1 -1 .oil
+21 859 -1 -1 .oil
+6 858 -1 -1 .odin
+11 860 -1 -1 .oil
+11 864 -1 -1 .oil
+11 868 2 1 .oil
+21 873 -1 -1 .oldodin
+21 874 -1 -1 .oldodin
+21 875 -1 -1 .oldodin
+11 876 -1 -1 .oldodin
+22 878 -1 -1 .oldodin
+46 879 -1 -1 .oldodin
+20 880 -1 -1 .oldodin
+11 881 -1 -1 .oldodin
+21 884 -1 -1 .parser
+21 886 -1 -1 .parser
+6 885 -1 -1 .odin
+11 888 79 -1 .parser
+6 889 -1 -1 .odin
+11 898 18 -1 .parser
+22 903 -1 -1 .parser
+35 904 -1 -1 .parser
+21 905 -1 -1 .parser
+21 907 -1 -1 .parser
+6 906 -1 -1 .odin
+11 908 -1 1 .parser
+11 913 -1 -1 .parser
+21 916 -1 -1 .parser
+21 918 -1 -1 .parser
+6 917 -1 -1 .odin
+3 919 -1 -1 ..
+3 920 -1 -1 ..
+11 921 -1 1 .parser
+6 925 -1 -1 .odin
+11 930 -1 -1 .parser
+21 934 -1 -1 .pdl
+21 936 -1 -1 .pdl
+6 935 -1 -1 .odin
+11 937 -1 1 .pdl
+11 943 -1 -1 .pdl
+11 951 2 1 .pdl
+11 956 81 -1 .pgs
+11 968 80 -1 .pgs
+11 974 -1 -1 .pgs
+11 978 2 -1 .pgs
+11 982 2 1 .pgs
+3 986 -1 -1 ..
+3 987 -1 -1 ..
+11 988 18 -1 .pgs
+3 992 -1 -1 ..
+3 993 -1 -1 ..
+11 994 -1 -1 .phi
+6 995 -1 -1 .odin
+6 997 -1 -1 .odin
+6 999 -1 -1 .odin
+6 1001 -1 -1 .odin
+11 1007 2 -1 .phi
+3 1013 -1 -1 ..
+3 1014 -1 -1 ..
+11 1015 -1 -1 .phi
+6 1016 -1 -1 .odin
+11 1019 -1 -1 .phi
+11 1022 2 -1 .phi
+21 1028 -1 -1 .ptg
+21 1030 -1 -1 .ptg
+6 1029 -1 -1 .odin
+11 1031 -1 -1 .ptg
+11 1034 6 -1 .ptg
+11 1044 2 1 .ptg
+11 1049 -1 -1 .skeleton
+11 1053 2 -1 .skeleton
+11 1062 2 -1 .skeleton
+3 1066 -1 -1 ..
+3 1067 -1 -1 ..
+11 1068 -1 -1 .skeleton
+11 1070 -1 -1 .skeleton
+35 1074 -1 -1 .skeleton
+35 1075 -1 -1 .skeleton
+11 1076 -1 -1 .skeleton
+11 1081 -1 -1 .skeleton
+11 1086 -1 -1 .skeleton
+21 1091 -1 -1 .symcode
+21 1093 -1 -1 .symcode
+6 1092 -1 -1 .odin
+11 1094 -1 -1 .symcode
+11 1097 -1 -1 .symcode
+11 1099 2 1 .symcode
+21 1104 -1 -1 .tp
+21 1106 -1 -1 .tp
+6 1105 -1 -1 .odin
+11 1107 6 -1 .tp
+11 1118 -1 -1 .tp
+11 1121 2 1 .tp
+13 1126 -1 -1 .odin
+14 1127 -1 -1 .odin
+21 1129 -1 -1 .odin
+4 1128 -1 -1 .odin
+15 1131 -1 -1 .odin
+16 1133 -1 -1 .odin
+17 1134 -1 -1 .odin
+29 1135 -1 -1 .odin
+11 1136 82 -1 .odin
+28 1139 83 -1 .odin
+3 1141 -1 -1 ..
+3 1142 -1 -1 ..
+41 1143 -1 -1 .odin
+40 1144 -1 -1 .odin
+30 1146 -1 -1 .odin
+31 1147 -1 -1 .odin
+43 1148 -1 -1 .odin
+44 1149 -1 -1 .odin
+27 1150 -1 -1 .odin
+45 1151 -1 -1 .odin
+46 1152 -1 -1 .odin
+33 1153 -1 -1 .odin
+34 1154 -1 -1 .odin
+35 1155 -1 -1 .odin
+36 1156 -1 -1 .odin
+19 1157 -1 -1 .odin
+20 1158 -1 -1 .odin
+38 1159 -1 -1 .odin
+32 1160 -1 -1 .odin
+23 1161 -1 -1 .odin
+24 1162 -1 -1 .odin
+25 1163 -1 -1 .odin
+26 1164 -1 -1 .odin
+39 1165 84 -1 .odin
+11 1167 -1 -1 .odin
+49 1171 -1 -1 .odin
+50 1172 -1 -1 .odin
+51 1173 -1 -1 .odin
+52 1174 85 -1 .odin
+11 1176 95 -1 .vc
+11 1182 95 -1 .vc
+11 1188 88 -1 .vc
+11 1192 88 -1 .vc
+11 1196 96 -1 .vc
+11 1199 -1 -1 .vc
+11 1202 -1 -1 .vc
+4 1204 -1 -1 .odin
+21 1206 -1 -1 .vc
+22 1207 -1 -1 .code
+21 1209 -1 -1 .code
+5 1208 -1 -1 .odin
+11 1210 -1 -1 .code
+4 1211 -1 -1 .odin
+11 1214 -1 -1 .code
+3 1217 -1 -1 ..
+3 1218 -1 -1 ..
+11 1219 99 -1 .code
+21 1224 -1 -1 .code
+11 1225 111 -1 .f77
+11 1232 112 -1 .lex
+3 1235 -1 -1 ..
+3 1236 -1 -1 ..
+3 1237 -1 -1 ..
+11 1238 130 -1 .yacc
+3 1246 -1 -1 ..
+3 1247 -1 -1 ..
+3 1248 -1 -1 ..
+3 1249 -1 -1 ..
+11 1250 112 -1 .tregrm
+3 1254 -1 -1 ..
+3 1255 -1 -1 ..
+3 1256 -1 -1 ..
+3 1257 -1 -1 ..
+11 1258 131 -1 .dg
+11 1262 134 -1 .prof
+22 1267 -1 -1 .misc
+11 1268 -1 -1 .misc
+11 1270 -1 -1 .misc
+11 1272 135 -1 .misc
+22 1275 -1 -1 .misc
+11 1276 136 -1 .misc
+11 1279 139 -1 .misc
+11 1283 138 -1 .misc
+11 1287 140 -1 .roff
+22 1290 -1 -1 .roff
+21 1292 -1 -1 .roff
+4 1291 -1 -1 .odin
+11 1294 -1 -1 .roff
+11 1297 -1 -1 .roff
+11 1300 -1 -1 .roff
+11 1302 141 -1 .roff
+48 1306 -1 -1 .odin
+11 1308 -1 -1 .tex
+3 1311 -1 -1 ..
+3 1312 -1 -1 ..
+11 1313 142 -1 .tex
+11 1317 143 -1 .tex
+21 1321 -1 -1 .tex
+4 1322 -1 -1 .odin
+21 1324 -1 -1 .tex
+11 1325 144 -1 .tex
+11 1328 -1 -1 .tex
+21 1331 -1 -1 .tex
+11 1332 148 -1 .tex
+3 1337 -1 -1 ..
+3 1338 -1 -1 ..
+3 1339 -1 -1 ..
+3 1340 -1 -1 ..
+3 1341 -1 -1 ..
+3 1342 -1 -1 ..
+11 1343 -1 -1 .tex
+6 1350 -1 -1 .odin
+11 1353 -1 -1 .tex
+6 1356 -1 -1 .odin
+6 1358 -1 -1 .odin
+3 1360 -1 -1 ..
+3 1361 -1 -1 ..
+11 1362 149 -1 .tex
+11 1365 -1 -1 .tex
+11 1370 150 -1 .tex
+6 1374 -1 -1 .odin
+21 1376 -1 -1 .tex
+11 1377 153 -1 .run
+3 1382 -1 -1 ..
+3 1383 -1 -1 ..
+11 1384 153 -1 .run
+0
+1
+2
+3
+4
+5
+6
+7
+1 2 1 1
+2 2 1 3
+5 4 1 -1
+3 2 1 4
+7 2 1 -1
+9 2 1 6
+10 2 1 7
+11 2 1 8
+14 2 1 -1
+15 3 1 250
+20 3 1 -1
+23 4 1 -1
+21 3 1 -1
+24 2 1 14
+25 2 1 15
+26 2 1 16
+27 2 1 -1
+29 2 1 18
+33 2 1 19
+34 2 1 20
+35 2 1 -1
+36 2 1 22
+37 2 1 23
+38 2 1 24
+40 2 1 -1
+42 3 1 237
+47 2 1 27
+48 2 1 28
+49 2 1 29
+50 2 1 30
+54 2 1 31
+55 2 1 32
+56 2 1 33
+57 2 1 34
+58 2 1 35
+59 2 0 36
+61 2 0 -1
+66 4 1 -1
+62 3 1 -1
+67 2 1 40
+68 2 1 41
+69 2 1 -1
+70 2 1 43
+71 2 1 44
+72 2 1 45
+73 2 1 -1
+74 3 1 -1
+77 4 1 -1
+75 3 1 -1
+78 2 1 50
+79 2 1 51
+80 2 1 52
+82 2 1 53
+83 2 1 -1
+87 2 1 55
+88 2 1 56
+90 2 1 57
+92 2 1 58
+93 2 1 59
+94 2 1 60
+95 2 1 61
+96 2 1 62
+97 2 1 -1
+98 3 1 235
+103 2 1 65
+107 2 1 66
+108 2 1 67
+109 2 1 -1
+110 1 0 -1
+111 1 0 -1
+112 2 1 71
+113 2 1 72
+114 2 1 73
+115 2 0 -1
+116 1 0 -1
+117 1 0 -1
+118 1 0 -1
+119 1 0 -1
+120 2 1 79
+121 2 1 80
+122 2 1 81
+123 2 1 82
+124 2 0 -1
+125 2 1 84
+126 2 1 85
+127 2 1 86
+128 2 1 87
+129 2 1 88
+130 2 1 89
+131 2 1 90
+132 2 1 91
+133 2 0 92
+135 2 0 93
+137 2 0 94
+141 2 0 95
+145 2 0 96
+146 2 0 -1
+147 1 0 -1
+148 1 0 -1
+149 1 0 -1
+150 2 1 101
+151 2 1 102
+152 2 1 103
+154 2 0 104
+155 2 0 -1
+157 3 1 -1
+160 4 1 -1
+158 3 1 -1
+161 1 0 -1
+162 1 0 -1
+163 2 1 111
+164 2 1 112
+166 2 1 113
+168 2 1 -1
+169 3 1 887
+171 3 1 897
+173 4 1 -1
+174 3 1 119
+179 4 1 -1
+176 3 1 -1
+180 2 1 121
+181 4 1 122
+183 2 1 123
+184 2 1 124
+185 2 1 125
+186 2 1 -1
+187 2 1 127
+188 2 1 128
+189 2 1 -1
+190 2 1 130
+191 2 1 131
+192 2 1 132
+196 2 1 133
+197 2 0 -1
+199 2 1 135
+200 2 1 137
+203 4 1 -1
+201 2 1 138
+205 2 0 -1
+207 2 1 140
+208 2 1 141
+209 2 1 142
+210 2 1 143
+211 2 1 -1
+212 2 1 145
+213 2 1 146
+214 2 1 147
+218 2 1 148
+219 2 1 149
+220 2 1 150
+221 2 1 151
+222 2 1 152
+223 2 1 153
+224 2 0 -1
+230 4 1 -1
+226 3 1 -1
+231 2 1 157
+232 2 1 158
+233 2 1 -1
+234 3 1 -1
+237 4 1 -1
+235 3 1 -1
+238 2 1 163
+239 2 1 164
+241 2 1 165
+243 2 1 166
+244 2 1 167
+245 2 1 -1
+249 2 1 170
+252 4 1 -1
+250 2 1 171
+254 2 1 172
+255 2 1 173
+256 4 1 174
+258 2 0 175
+259 2 0 -1
+260 1 0 -1
+261 1 0 -1
+262 1 0 -1
+263 2 1 180
+264 2 1 181
+265 2 1 182
+268 2 1 183
+269 2 1 184
+270 2 1 185
+271 2 0 186
+273 2 0 -1
+277 2 1 188
+281 2 1 189
+282 2 1 190
+283 2 1 -1
+284 3 1 253
+289 2 1 193
+290 2 1 194
+293 2 1 195
+296 2 1 196
+297 2 1 197
+298 2 0 198
+299 2 0 -1
+300 2 1 200
+301 2 1 201
+304 2 1 202
+307 2 1 203
+308 2 1 204
+309 2 0 205
+310 2 0 -1
+311 3 1 -1
+314 4 1 -1
+312 3 1 -1
+315 3 1 -1
+317 2 1 211
+318 2 1 212
+320 2 1 213
+322 2 1 -1
+324 2 1 215
+325 2 1 216
+327 2 1 -1
+329 3 1 248
+334 2 1 219
+335 4 1 220
+337 2 1 221
+338 2 1 222
+339 2 1 223
+340 2 0 -1
+345 4 1 -1
+342 4 1 -1
+346 3 1 227
+347 3 1 -1
+351 3 1 231
+354 4 1 -1
+356 4 1 -1
+352 3 1 -1
+357 4 1 -1
+359 3 1 1021
+360 4 1 -1
+362 3 1 872
+363 4 1 -1
+365 3 1 955
+366 4 1 -1
+368 3 1 829
+369 4 1 -1
+371 3 1 1103
+372 4 1 -1
+374 3 1 769
+375 4 1 -1
+377 3 1 656
+378 4 1 -1
+382 4 1 -1
+380 3 1 933
+383 4 1 -1
+385 3 1 519
+386 4 1 -1
+390 4 1 -1
+388 3 1 -1
+391 4 1 -1
+393 3 1 256
+394 3 1 -1
+395 4 1 -1
+397 3 1 259
+400 3 1 -1
+403 2 1 261
+404 2 1 262
+408 2 0 -1
+413 4 1 -1
+411 3 1 266
+416 4 1 -1
+414 3 1 -1
+417 2 1 269
+420 4 1 -1
+418 2 1 270
+422 2 1 271
+425 2 1 -1
+429 4 1 -1
+431 4 1 -1
+427 3 1 275
+432 3 1 276
+434 3 1 277
+436 3 1 -1
+437 4 1 -1
+439 2 1 280
+440 4 1 281
+442 2 1 282
+443 2 1 283
+444 2 1 284
+445 2 0 -1
+447 4 1 -1
+449 3 1 287
+450 3 1 -1
+454 3 1 291
+457 4 1 -1
+459 4 1 -1
+455 3 1 -1
+462 4 1 -1
+460 3 1 294
+463 3 1 -1
+464 4 1 -1
+468 2 1 297
+469 2 1 298
+471 2 1 -1
+473 1 1 -1
+474 1 0 -1
+475 1 0 -1
+476 2 1 303
+477 2 1 304
+478 2 1 307
+483 4 1 -1
+486 4 1 -1
+479 2 1 308
+488 2 1 309
+490 2 1 310
+498 2 1 312
+503 4 1 -1
+501 2 1 313
+505 2 1 314
+508 2 1 315
+509 2 1 316
+510 2 1 317
+511 2 1 318
+512 2 1 319
+513 2 0 320
+519 2 0 -1
+526 3 1 322
+528 3 1 323
+530 3 1 -1
+534 4 1 -1
+539 4 1 -1
+535 4 1 -1
+540 3 1 328
+542 3 1 -1
+549 4 1 -1
+552 4 1 -1
+550 3 1 332
+553 3 1 -1
+557 4 1 -1
+555 3 1 335
+558 3 1 -1
+560 2 1 -1
+564 2 1 338
+565 2 1 339
+566 2 1 340
+569 2 1 341
+570 2 1 342
+571 2 1 343
+574 2 1 344
+576 2 1 345
+577 2 1 346
+578 2 1 347
+579 2 1 348
+580 2 0 349
+581 2 0 -1
+583 2 1 351
+584 2 1 352
+587 2 1 353
+588 2 1 354
+589 2 1 355
+590 2 0 -1
+591 3 1 357
+593 3 1 358
+594 3 1 -1
+599 2 1 360
+600 2 1 361
+601 2 1 362
+602 2 1 363
+603 2 1 364
+604 2 1 365
+605 2 1 366
+606 2 1 368
+611 4 1 -1
+607 2 1 369
+613 2 1 370
+614 2 1 371
+615 2 1 -1
+617 2 1 373
+618 2 1 374
+619 2 1 375
+621 2 1 376
+624 2 1 -1
+625 2 1 378
+626 2 1 379
+627 2 1 380
+629 2 1 381
+632 2 1 -1
+633 3 1 -1
+636 4 1 -1
+634 3 1 -1
+637 2 1 386
+638 2 1 387
+640 2 1 -1
+643 4 1 -1
+645 3 1 391
+649 4 1 -1
+646 3 1 -1
+650 2 1 393
+651 4 1 394
+653 2 1 395
+654 2 1 396
+655 2 1 397
+656 2 1 398
+657 2 0 -1
+658 2 1 401
+661 4 1 -1
+659 2 1 402
+663 2 1 403
+665 2 0 -1
+669 1 1 -1
+670 3 1 -1
+675 4 1 -1
+672 3 1 -1
+678 4 1 -1
+676 3 1 411
+681 4 1 -1
+679 3 1 -1
+682 1 0 -1
+683 1 0 -1
+684 1 0 -1
+685 2 1 416
+686 2 1 417
+687 2 1 418
+689 2 1 419
+691 2 1 420
+693 2 1 422
+698 4 1 -1
+696 2 0 423
+699 2 0 424
+703 2 0 -1
+707 2 1 426
+708 2 1 427
+709 2 1 428
+713 2 1 429
+716 2 1 430
+717 2 0 431
+720 2 0 -1
+724 1 0 -1
+725 1 0 -1
+726 1 0 -1
+727 1 0 -1
+728 2 1 437
+729 2 1 438
+730 2 1 439
+732 2 1 440
+734 2 1 441
+736 2 1 442
+739 2 1 443
+740 2 0 444
+742 2 0 445
+746 2 0 -1
+750 2 1 447
+751 2 1 448
+752 2 1 449
+753 2 1 450
+754 2 1 451
+757 2 1 452
+760 2 0 453
+761 2 0 454
+765 2 0 -1
+769 2 1 456
+770 2 1 457
+771 2 1 458
+772 2 0 -1
+776 2 1 460
+777 2 1 461
+779 2 1 462
+781 2 0 -1
+785 3 1 -1
+790 3 1 -1
+795 3 1 -1
+798 4 1 -1
+796 3 1 -1
+799 2 1 469
+800 2 1 470
+803 2 1 471
+805 2 1 472
+806 2 1 -1
+807 2 1 474
+808 2 1 475
+809 2 1 476
+810 2 1 477
+811 2 1 478
+812 2 1 479
+813 2 1 480
+814 2 1 481
+815 2 1 482
+816 2 1 483
+817 2 1 -1
+821 2 1 485
+825 2 1 486
+826 2 1 487
+827 2 1 -1
+828 1 0 -1
+829 1 0 -1
+830 1 0 -1
+831 2 1 492
+832 2 1 493
+833 2 1 494
+834 2 0 495
+835 2 0 -1
+839 1 0 -1
+840 1 0 -1
+841 2 1 499
+842 2 1 500
+843 2 1 501
+846 2 0 502
+847 2 0 -1
+848 2 1 504
+849 2 1 505
+850 2 1 506
+853 2 1 -1
+854 2 1 508
+855 2 1 509
+856 2 1 510
+858 2 1 511
+860 2 1 512
+862 2 0 -1
+863 3 1 -1
+866 4 1 -1
+864 3 1 -1
+867 3 1 -1
+869 2 1 518
+870 2 1 -1
+872 3 1 -1
+877 2 1 521
+878 2 1 522
+879 2 1 -1
+880 3 1 524
+884 3 1 525
+886 3 1 527
+893 4 1 -1
+889 3 1 528
+895 3 1 -1
+900 2 1 530
+901 2 1 531
+902 2 1 532
+905 2 1 -1
+906 2 1 534
+907 2 1 535
+908 2 1 536
+0 1 0 -1
+909 1 0 -1
+910 1 0 -1
+911 2 1 540
+912 2 1 541
+915 2 1 542
+918 2 1 -1
+919 3 1 -1
+921 1 0 -1
+922 1 0 -1
+923 2 1 547
+924 2 1 548
+926 2 1 549
+927 2 1 550
+928 2 1 -1
+929 2 1 552
+930 2 1 553
+931 2 1 554
+932 2 1 555
+933 2 1 -1
+934 2 1 557
+935 2 1 558
+936 2 1 559
+937 2 1 560
+938 2 1 561
+939 2 1 -1
+942 1 0 -1
+943 1 0 -1
+944 2 1 565
+945 2 1 566
+947 2 1 567
+951 2 1 568
+952 2 1 -1
+953 2 1 570
+954 2 1 571
+955 2 1 572
+956 2 1 573
+957 2 1 -1
+958 2 1 575
+959 2 1 576
+960 2 1 577
+961 2 1 -1
+962 1 0 -1
+963 1 0 -1
+964 2 1 582
+967 4 1 -1
+965 2 1 583
+969 2 1 584
+971 2 0 -1
+973 2 1 586
+974 2 1 587
+976 2 1 -1
+977 3 1 -1
+982 4 1 -1
+979 3 1 -1
+986 4 1 -1
+983 3 1 -1
+990 4 1 -1
+987 3 1 -1
+991 3 1 -1
+994 2 1 597
+995 2 1 598
+996 2 1 -1
+997 1 0 -1
+998 1 0 -1
+999 1 0 -1
+1000 1 0 -1
+1001 1 0 -1
+1002 2 1 605
+1003 2 1 606
+1004 2 1 607
+1006 2 1 608
+1008 6 1 610
+1014 4 1 -1
+1011 2 0 612
+1018 4 1 -1
+1015 2 0 613
+1019 6 0 -1
+1022 2 1 615
+1023 2 1 616
+1024 2 1 617
+1028 2 1 618
+1030 2 1 619
+1032 2 0 -1
+1034 2 1 621
+1035 2 1 622
+1037 2 1 -1
+1039 2 1 624
+1040 2 1 625
+1042 2 1 626
+1044 2 1 -1
+1046 3 1 -1
+1061 3 1 -1
+1077 2 1 630
+1078 2 1 631
+1079 2 1 632
+0 1 0 -1
+1080 2 1 634
+1081 2 1 635
+1082 2 1 -1
+1086 4 1 -1
+1084 2 1 -1
+1087 3 1 -1
+1088 2 1 640
+1089 2 1 641
+1090 2 1 642
+1091 2 1 643
+1092 2 1 644
+1093 2 1 645
+1094 2 0 646
+1095 2 0 647
+1096 2 0 -1
+1097 2 1 649
+1098 2 1 650
+1100 2 1 -1
+1102 2 1 652
+1103 2 1 653
+1105 2 1 654
+1108 2 1 655
+1110 2 0 -1
+1111 3 1 830
+1116 2 1 658
+1117 2 1 659
+1118 2 1 660
+1119 2 1 -1
+1120 3 1 -1
+1122 2 1 663
+1123 2 1 664
+1124 2 1 665
+1125 2 1 666
+1126 2 1 667
+1127 2 0 -1
+1128 2 1 669
+1129 2 1 670
+1130 2 1 -1
+1134 4 1 -1
+1131 3 1 673
+1135 3 1 -1
+1137 4 1 -1
+1138 1 0 -1
+1139 1 0 -1
+1140 2 1 678
+1141 2 1 679
+1142 2 1 -1
+1143 2 1 681
+1147 2 1 682
+1148 2 1 683
+1149 2 1 684
+1150 2 1 -1
+1151 3 1 -1
+1155 4 1 -1
+1157 4 1 -1
+1153 3 1 -1
+1158 3 1 -1
+1161 4 1 -1
+1159 3 1 -1
+1162 3 1 -1
+1164 2 1 694
+1165 2 1 695
+1166 2 1 696
+1168 2 1 697
+1170 2 1 -1
+1172 2 1 699
+1173 2 1 700
+1174 2 1 -1
+1176 1 0 -1
+1177 1 0 -1
+1178 1 0 -1
+1179 1 0 -1
+1180 2 1 706
+1181 2 1 707
+1182 2 1 708
+1184 2 1 709
+1185 2 1 710
+1186 2 1 -1
+1187 1 0 -1
+1188 1 0 -1
+1189 1 0 -1
+1190 2 1 715
+1191 2 1 716
+1192 2 1 717
+1193 2 1 718
+1194 2 1 719
+1195 2 1 720
+1196 2 1 721
+1198 2 1 722
+1200 2 1 -1
+1201 2 1 724
+1202 2 1 725
+1203 2 1 726
+1204 2 1 727
+1205 2 1 728
+1207 2 1 729
+1208 2 0 -1
+1210 3 1 -1
+1215 2 1 732
+1216 2 1 733
+1217 2 1 734
+1222 2 1 735
+1227 2 1 -1
+1231 2 1 737
+1232 2 1 738
+1233 2 1 -1
+1235 2 1 740
+1239 2 1 741
+1240 2 1 742
+1241 2 1 -1
+1242 2 1 744
+1243 2 1 745
+1244 2 1 746
+1246 2 1 -1
+1248 3 1 -1
+1253 2 1 749
+1254 2 1 750
+1255 2 1 -1
+1257 3 1 -1
+1262 2 1 753
+1263 2 1 754
+1264 2 1 755
+1266 2 1 756
+1268 2 1 757
+1269 2 1 758
+1270 2 1 759
+1271 2 1 -1
+1272 3 1 -1
+1277 6 1 -1
+1282 6 1 -1
+1287 6 1 -1
+1292 2 1 765
+1293 2 1 766
+1294 2 1 767
+1295 2 1 768
+1297 2 1 -1
+1298 3 1 -1
+1303 3 1 -1
+1306 4 1 -1
+1304 3 1 -1
+1307 2 1 774
+1308 2 1 775
+1309 2 1 -1
+1311 2 1 777
+1312 2 1 778
+1314 2 1 779
+1316 2 1 780
+1318 2 1 781
+1320 2 1 782
+1322 2 1 -1
+1323 2 1 784
+1324 2 1 786
+1328 4 1 -1
+1326 2 1 787
+1330 2 1 -1
+1332 3 1 -1
+1335 4 1 -1
+1333 3 1 -1
+1336 2 1 792
+1337 2 1 793
+1338 2 1 794
+1340 2 1 -1
+1341 3 1 796
+1342 3 1 797
+1343 3 1 798
+1344 3 1 -1
+1345 2 1 800
+1349 2 1 801
+1350 2 1 802
+1351 2 1 -1
+1352 1 0 -1
+1353 1 0 -1
+1354 1 0 -1
+1355 1 0 -1
+1356 1 0 -1
+1357 1 0 -1
+1358 2 1 810
+1359 2 1 811
+1360 2 1 812
+1362 2 1 813
+1364 2 1 814
+1365 2 1 815
+1366 2 1 816
+1367 2 1 -1
+1368 2 1 818
+1372 2 1 819
+1373 2 1 820
+1374 2 1 -1
+1375 2 1 822
+1376 2 1 823
+1377 2 1 824
+1379 2 1 825
+1382 2 1 -1
+1383 6 1 -1
+1387 6 1 -1
+1391 6 1 -1
+1395 3 1 -1
+1400 3 1 -1
+1405 2 1 -1
+1409 4 1 -1
+1407 3 1 834
+1410 3 1 -1
+1412 2 1 836
+1413 2 1 837
+1414 2 1 838
+1417 2 1 839
+1420 2 1 840
+1422 2 1 841
+1424 2 1 842
+1425 2 0 843
+1426 2 0 844
+1427 2 0 -1
+1428 2 1 846
+1429 2 1 847
+1430 2 1 848
+1435 2 1 849
+1440 2 1 850
+1443 2 1 851
+1446 2 1 852
+1448 2 1 853
+1449 2 1 854
+1451 2 1 855
+1452 2 0 856
+1455 2 0 -1
+1458 3 1 -1
+1461 4 1 -1
+1459 3 1 -1
+1462 2 1 861
+1463 2 1 862
+1464 2 1 863
+1466 2 1 -1
+1467 2 1 865
+1468 2 1 866
+1470 2 1 867
+1472 2 1 -1
+1473 2 1 869
+1477 2 1 870
+1478 2 1 871
+1479 2 1 -1
+1480 3 1 1048
+1485 3 1 -1
+1488 3 1 -1
+1490 3 1 -1
+1491 2 1 877
+1492 2 1 -1
+1493 1 1 -1
+1494 4 1 -1
+1495 4 1 -1
+1496 2 1 882
+1497 2 1 883
+1499 2 1 -1
+1501 3 1 -1
+1504 4 1 -1
+1502 3 1 -1
+1505 3 1 -1
+1507 2 1 890
+1510 4 1 -1
+1508 2 1 891
+1512 2 1 892
+1515 2 1 893
+1516 2 1 894
+1517 2 1 895
+1518 2 1 896
+1519 2 1 -1
+1520 3 1 -1
+1522 2 1 899
+1523 2 1 900
+1526 2 1 901
+1529 2 1 902
+1530 2 1 -1
+1531 1 1 -1
+1532 2 1 -1
+1536 3 1 -1
+1539 4 1 -1
+1537 3 1 -1
+1540 2 1 909
+1541 2 1 910
+1542 2 1 911
+1544 2 1 912
+1545 2 1 -1
+1549 2 1 914
+1550 2 1 915
+1552 2 1 -1
+1554 3 1 -1
+1557 4 1 -1
+1555 3 1 -1
+1558 1 0 -1
+1559 1 0 -1
+1560 2 1 922
+1561 2 1 923
+1563 2 1 924
+1566 2 1 926
+1571 4 1 -1
+1569 2 1 927
+1573 2 1 928
+1577 2 0 929
+1579 2 0 -1
+1581 2 1 931
+1582 2 1 932
+1586 2 1 -1
+1590 3 1 -1
+1592 3 1 -1
+1595 4 1 -1
+1593 3 1 -1
+1596 2 1 938
+1597 2 1 939
+1598 2 1 940
+1600 2 1 941
+1601 2 1 942
+1602 2 1 -1
+1606 2 1 944
+1607 2 1 945
+1609 2 1 946
+1611 2 1 947
+1612 2 1 948
+1613 2 1 949
+1614 2 1 950
+1615 2 1 -1
+1616 2 1 952
+1620 2 1 953
+1621 2 1 954
+1622 2 1 -1
+1623 3 1 -1
+1628 2 1 957
+1629 2 1 958
+1630 2 1 959
+1631 2 1 960
+1632 2 1 961
+1633 2 1 962
+1634 2 1 963
+1635 2 1 964
+1636 2 1 965
+1637 2 1 966
+1638 2 1 967
+1639 2 1 -1
+1640 2 1 969
+1641 2 1 970
+1642 2 1 971
+1643 2 1 972
+1644 2 1 973
+1645 2 1 -1
+1646 2 1 975
+1647 2 1 976
+1648 2 1 977
+1649 2 1 -1
+1650 2 1 979
+1651 2 1 980
+1652 2 1 981
+1653 2 1 -1
+1654 2 1 983
+1658 2 1 984
+1659 2 1 985
+1660 2 1 -1
+1661 1 0 -1
+1662 1 0 -1
+1663 2 1 989
+1664 2 1 990
+1666 2 1 991
+1668 2 1 -1
+1669 1 0 -1
+1670 1 0 -1
+1671 2 1 996
+1674 4 1 -1
+1672 2 1 998
+1678 4 1 -1
+1676 2 1 1000
+1682 4 1 -1
+1680 2 1 1002
+1686 4 1 -1
+1684 2 1 1003
+1688 2 0 1004
+1690 2 0 1005
+1692 2 0 1006
+1694 2 0 -1
+1696 2 1 1008
+1697 2 1 1009
+1698 2 1 1010
+1699 2 1 1011
+1700 2 1 1012
+1703 2 1 -1
+1706 1 0 -1
+1707 1 0 -1
+1708 2 1 1017
+1711 4 1 -1
+1709 2 1 1018
+1713 2 0 -1
+1715 2 1 1020
+1716 2 1 -1
+1720 3 1 -1
+1724 2 1 1023
+1725 2 1 1024
+1726 2 1 1025
+1727 2 1 1026
+1728 2 1 1027
+1731 2 1 -1
+1734 3 1 -1
+1737 4 1 -1
+1735 3 1 -1
+1738 2 1 1032
+1739 2 1 1033
+1740 2 1 -1
+1742 2 1 1035
+1743 2 1 1036
+1744 2 1 1037
+1746 2 1 1038
+1748 2 1 1039
+1749 2 0 1040
+1750 2 0 1041
+1751 2 0 1042
+1752 2 0 1043
+1753 2 0 -1
+1754 2 1 1045
+1758 2 1 1046
+1759 2 1 1047
+1760 2 1 -1
+1761 3 1 1125
+1766 2 1 1050
+1767 2 1 1051
+1768 2 1 1052
+1770 2 1 -1
+1772 2 1 1054
+1773 2 1 1055
+1774 2 1 1056
+1775 2 1 1057
+1778 2 1 1058
+1781 2 1 1059
+1782 2 0 1060
+1783 2 0 1061
+1784 2 0 -1
+1785 2 1 1063
+1786 2 1 1064
+1787 2 1 1065
+1788 2 1 -1
+1789 1 0 -1
+1790 1 0 -1
+1791 2 1 1069
+1792 2 1 -1
+1793 2 1 1071
+1794 2 1 1072
+1795 2 1 1073
+1796 2 1 -1
+1799 2 1 -1
+1802 2 1 -1
+1805 2 1 1077
+1806 2 1 1078
+1807 2 1 1079
+1810 2 1 1080
+1811 2 0 -1
+1812 2 1 1082
+1813 2 1 1083
+1814 2 1 1084
+1816 2 1 1085
+1818 2 1 -1
+1819 2 1 1087
+1820 2 1 1088
+1821 2 1 1089
+1823 2 1 1090
+1825 2 1 -1
+1826 3 1 -1
+1829 4 1 -1
+1827 3 1 -1
+1830 2 1 1095
+1831 2 1 1096
+1833 2 1 -1
+1835 2 1 1098
+1836 2 1 -1
+1838 2 1 1100
+1842 2 1 1101
+1843 2 1 1102
+1844 2 1 -1
+1845 3 1 -1
+1850 3 1 -1
+1853 4 1 -1
+1851 3 1 -1
+1854 2 1 1108
+1855 2 1 1109
+1856 2 1 1110
+1858 2 1 1111
+1859 2 1 1112
+1860 2 1 1113
+1861 2 1 1114
+1862 2 1 1115
+1863 2 1 1116
+1864 2 1 1117
+1865 2 1 -1
+1866 2 1 1119
+1867 2 1 1120
+1869 2 1 -1
+1871 2 1 1122
+1875 2 1 1123
+1876 2 1 1124
+1877 2 1 -1
+1878 3 1 -1
+1883 1 1 -1
+1884 1 1 -1
+1887 4 1 -1
+1885 3 1 1130
+1888 3 1 -1
+1889 1 1 1132
+1890 6 0 -1
+1891 1 1 -1
+1892 1 1 -1
+1893 4 1 -1
+1894 2 1 1137
+1895 2 1 1138
+1896 6 1 -1
+1897 2 1 1140
+1898 6 1 -1
+1899 1 0 -1
+1900 1 0 -1
+1901 1 1 -1
+1902 2 1 1145
+1903 2 1 -1
+1904 3 1 -1
+1905 1 1 -1
+1906 2 1 -1
+1907 2 1 -1
+1908 4 1 -1
+1909 3 1 -1
+1910 4 1 -1
+1911 4 1 -1
+1912 4 1 -1
+1913 2 1 -1
+1914 4 1 -1
+1915 3 1 -1
+1916 4 1 -1
+1917 3 1 -1
+1918 2 1 -1
+1919 1 1 -1
+1920 1 1 -1
+1921 1 1 -1
+1922 2 1 -1
+1923 3 1 1166
+1924 2 1 -1
+1925 2 1 1168
+1926 2 1 1169
+1927 2 1 1170
+0 1 0 -1
+1928 3 1 -1
+1929 3 1 -1
+1930 4 1 -1
+1931 4 1 1175
+1932 2 1 -1
+1933 2 1 1177
+1934 2 1 1178
+1935 2 1 1179
+1936 2 1 1180
+1937 2 1 1181
+1938 2 1 -1
+1939 2 1 1183
+1940 2 1 1184
+1941 2 1 1185
+1942 2 1 1186
+1943 2 1 1187
+1944 2 1 -1
+1945 2 1 1189
+1946 2 1 1190
+1947 2 1 1191
+1948 2 1 -1
+1949 2 1 1193
+1950 2 1 1194
+1951 2 1 1195
+1952 2 1 -1
+1953 2 1 1197
+1954 2 1 1198
+1956 2 1 -1
+1957 2 1 1200
+1958 2 1 1201
+1961 2 1 -1
+1963 2 1 1203
+1964 2 1 1205
+1969 4 1 -1
+1966 2 1 -1
+1971 3 1 -1
+1973 1 1 -1
+1976 4 1 -1
+1974 3 1 -1
+1977 2 1 1212
+1980 4 1 -1
+1978 2 1 1213
+1982 2 1 -1
+1985 2 1 1215
+1986 2 1 1216
+1988 2 0 -1
+1990 1 0 -1
+1991 1 0 -1
+1992 2 1 1220
+1993 2 1 1221
+1994 2 1 1222
+1995 6 0 1223
+0 1 0 -1
+1997 3 1 -1
+1999 2 1 1226
+2000 2 1 1227
+2001 2 1 1228
+2002 2 1 1229
+2003 2 1 1230
+2004 2 1 1231
+2005 2 1 -1
+2006 2 1 1233
+2007 2 1 1234
+2008 2 1 -1
+2009 1 0 -1
+2010 1 0 -1
+2011 1 0 -1
+2012 2 1 1239
+2013 2 1 1240
+2014 2 1 1241
+2015 2 1 1242
+2016 2 1 1243
+2017 2 1 1244
+2018 2 1 1245
+2019 2 1 -1
+2020 1 0 -1
+2021 1 0 -1
+2022 1 0 -1
+2023 1 0 -1
+2024 2 1 1251
+2025 2 1 1252
+2026 2 1 1253
+2027 2 1 -1
+2028 1 0 -1
+2029 1 0 -1
+2030 1 0 -1
+2031 1 0 -1
+2032 2 1 1259
+2033 2 1 1260
+2034 2 1 1261
+2035 2 1 -1
+2036 2 1 1263
+2037 2 1 1264
+2038 2 1 1265
+2040 2 1 1266
+2041 2 0 -1
+2042 1 1 -1
+2043 2 1 1269
+2044 2 1 -1
+2046 2 1 1271
+2047 2 1 -1
+2048 2 1 1273
+2049 6 1 1274
+2050 2 1 -1
+2051 1 1 -1
+2052 2 1 1277
+2053 2 1 1278
+2054 2 1 -1
+2055 2 1 1280
+2056 2 1 1281
+2057 2 1 1282
+2058 2 1 -1
+2059 2 1 1284
+2060 2 1 1285
+2061 2 1 1286
+2062 2 1 -1
+2063 2 1 1288
+2064 2 1 1289
+2065 4 1 -1
+2066 1 1 -1
+2069 4 1 -1
+2067 3 1 1293
+2070 3 1 -1
+2071 2 1 1295
+2072 2 1 1296
+2073 2 1 -1
+2074 2 1 1298
+2075 2 1 1299
+2076 2 1 -1
+2077 2 1 1301
+2078 2 1 -1
+2079 2 1 1303
+2080 2 1 1304
+2081 4 1 1305
+2083 2 1 1307
+2089 4 1 -1
+2084 2 0 -1
+2090 2 1 1309
+2091 2 1 1310
+2092 2 1 -1
+2093 1 0 -1
+2094 1 0 -1
+2095 2 1 1314
+2096 2 1 1315
+2097 2 1 1316
+2098 2 0 -1
+2100 2 1 1318
+2101 4 1 1319
+2103 4 1 1320
+2104 2 1 -1
+2105 3 1 1323
+2109 4 1 -1
+2106 3 1 -1
+2110 3 1 -1
+2114 2 1 1326
+2115 2 1 1327
+2116 2 1 -1
+2117 2 1 1329
+2118 2 1 1330
+2120 2 1 -1
+2121 3 1 -1
+2123 2 1 1333
+2124 2 1 1334
+2129 2 1 1335
+2130 2 1 1336
+2131 2 1 -1
+2132 1 0 -1
+2133 1 0 -1
+2134 1 0 -1
+2135 1 0 -1
+2136 1 0 -1
+2137 1 0 -1
+2138 2 1 1344
+2139 2 1 1345
+2140 2 1 1346
+2141 2 1 1347
+2142 6 1 1348
+2145 2 0 1349
+2147 2 0 1351
+2151 4 1 -1
+2149 2 0 1352
+2152 6 0 -1
+2155 2 1 1354
+2156 6 1 1355
+2157 2 1 1357
+2160 4 1 -1
+2158 2 0 1359
+2163 4 1 -1
+2161 2 0 -1
+2164 1 0 -1
+2165 1 0 -1
+2166 2 1 1363
+2167 6 1 1364
+2168 2 1 -1
+2169 2 1 1366
+2170 2 1 1367
+2171 6 1 1368
+2172 2 1 1369
+2173 2 1 -1
+2174 2 1 1371
+2175 2 1 1372
+2176 2 1 1373
+2177 2 1 1375
+2180 4 1 -1
+2178 2 0 -1
+2181 3 1 -1
+2184 2 1 1378
+2185 2 1 1379
+2186 2 1 1380
+2188 6 0 1381
+2189 2 0 -1
+2190 1 0 -1
+2191 1 0 -1
+2192 2 1 1385
+2193 2 1 1386
+2194 2 1 1387
+2196 2 0 1388
+2197 2 0 -1
+87 1
+89 -1
+94 3
+96 4
+98 5
+100 -1
+107 7
+108 8
+109 -1
+119 10
+121 -1
+166 12
+168 13
+170 -1
+298 15
+300 -1
+384 17
+385 18
+386 -1
+390 20
+391 21
+392 22
+393 -1
+417 24
+418 25
+419 -1
+422 27
+423 -1
+450 29
+452 -1
+457 31
+459 -1
+468 33
+470 -1
+479 35
+481 -1
+504 37
+506 38
+508 39
+510 40
+512 -1
+566 42
+568 -1
+592 44
+594 45
+596 46
+598 -1
+601 48
+603 49
+604 -1
+668 51
+670 52
+671 53
+672 54
+673 55
+674 -1
+755 57
+756 -1
+784 59
+785 -1
+792 61
+794 -1
+802 63
+804 -1
+828 65
+829 -1
+893 67
+894 -1
+951 69
+952 -1
+961 71
+962 72
+963 -1
+969 74
+970 75
+971 76
+972 -1
+978 78
+979 79
+980 80
+981 -1
+1032 82
+1033 -1
+1047 84
+1048 85
+1049 86
+1050 87
+1051 88
+1052 -1
+1060 90
+1062 -1
+1073 92
+1074 -1
+23 -1
+27 -1
+31 -1
+38 -1
+37 -1
+40 -1
+37 -1
+43 -1
+45 -1
+47 -1
+48 -1
+50 -1
+55 -1
+60 -1
+61 -1
+57 -1
+66 -1
+70 -1
+69 -1
+72 -1
+69 -1
+75 -1
+78 -1
+80 -1
+83 -1
+47 -1
+86 -1
+88 -1
+93 -1
+95 -1
+97 -1
+99 -1
+102 -1
+101 -1
+104 -1
+105 -1
+112 -1
+110 -1
+114 -1
+110 -1
+118 -1
+120 -1
+122 -1
+124 -1
+63 -1
+127 -1
+129 -1
+134 -1
+136 -1
+77 -1
+140 -1
+47 -1
+143 -1
+61 -1
+57 -1
+60 -1
+146 -1
+144 -1
+145 -1
+153 -1
+152 -1
+155 -1
+152 -1
+158 -1
+161 -1
+165 -1
+167 -1
+169 -1
+172 -1
+47 -1
+174 -1
+177 -1
+181 -1
+185 -1
+184 -1
+187 -1
+184 -1
+190 -1
+184 -1
+193 -1
+196 -1
+198 -1
+203 -1
+206 -1
+210 -1
+205 -1
+211 -1
+214 -1
+218 -1
+220 -1
+82 -1
+205 -1
+52 -1
+205 -1
+224 -1
+205 -1
+226 -1
+228 -1
+205 -1
+230 -1
+232 -1
+205 -1
+234 -1
+236 -1
+205 -1
+238 -1
+200 -1
+205 -1
+33 -1
+205 -1
+176 -1
+205 -1
+247 -1
+205 -1
+249 -1
+252 -1
+254 -1
+258 -1
+261 -1
+265 -1
+269 -1
+274 -1
+277 -1
+279 -1
+281 -1
+283 -1
+287 -1
+290 -1
+293 -1
+251 -1
+171 -1
+299 -1
+304 -1
+179 -1
+180 -1
+309 -1
+311 -1
+313 -1
+317 -1
+320 -1
+66 -1
+324 -1
+326 -1
+328 -1
+333 -1
+331 -1
+335 -1
+331 -1
+338 149
+210 -1
+47 -1
+362 -1
+364 -1
+339 -1
+338 -1
+213 -1
+340 -1
+358 -1
+357 -1
+348 -1
+349 -1
+344 -1
+342 -1
+347 -1
+341 -1
+345 -1
+346 -1
+343 -1
+351 -1
+353 -1
+355 -1
+356 -1
+350 -1
+359 -1
+360 -1
+361 -1
+363 -1
+192 -1
+82 179
+401 -1
+401 -1
+405 -1
+408 -1
+414 -1
+47 -1
+411 -1
+412 -1
+413 -1
+420 -1
+410 -1
+424 -1
+47 -1
+407 -1
+428 -1
+195 -1
+430 -1
+195 -1
+433 -1
+195 -1
+427 -1
+439 -1
+441 -1
+436 -1
+447 -1
+437 -1
+451 -1
+438 -1
+456 -1
+458 -1
+460 -1
+462 -1
+467 -1
+469 -1
+473 -1
+475 -1
+478 -1
+480 -1
+483 -1
+485 -1
+487 -1
+490 -1
+493 -1
+497 -1
+500 -1
+503 -1
+505 -1
+507 -1
+509 -1
+511 -1
+521 -1
+522 -1
+499 -1
+524 -1
+515 -1
+527 -1
+528 -1
+364 -1
+531 -1
+362 -1
+533 -1
+535 -1
+537 -1
+540 -1
+542 -1
+544 -1
+546 -1
+549 -1
+551 -1
+553 -1
+555 -1
+557 -1
+560 -1
+565 -1
+567 -1
+134 -1
+569 -1
+47 -1
+572 -1
+82 259
+571 -1
+571 -1
+578 -1
+577 -1
+577 -1
+582 -1
+577 -1
+584 -1
+588 -1
+591 -1
+593 -1
+595 -1
+597 -1
+600 -1
+602 -1
+587 -1
+586 -1
+606 -1
+608 -1
+610 -1
+612 -1
+47 -1
+614 -1
+616 -1
+618 -1
+620 -1
+622 -1
+624 -1
+626 -1
+628 -1
+630 -1
+632 -1
+47 -1
+636 -1
+635 -1
+638 -1
+635 -1
+641 -1
+643 -1
+649 -1
+655 -1
+654 -1
+657 -1
+654 -1
+660 -1
+662 -1
+664 -1
+47 -1
+667 -1
+669 -1
+443 -1
+646 -1
+647 -1
+648 -1
+675 -1
+47 -1
+652 -1
+678 -1
+680 -1
+683 -1
+686 -1
+689 -1
+692 -1
+694 -1
+698 -1
+697 -1
+700 -1
+697 -1
+703 -1
+705 -1
+707 -1
+47 -1
+208 -1
+208 -1
+208 -1
+710 -1
+711 -1
+712 -1
+709 -1
+378 -1
+26 -1
+160 -1
+58 -1
+721 -1
+82 344
+645 -1
+645 -1
+726 -1
+730 -1
+732 -1
+734 -1
+738 -1
+737 -1
+740 -1
+737 -1
+743 -1
+745 -1
+749 -1
+748 -1
+751 -1
+748 -1
+90 -1
+91 -1
+758 -1
+762 -1
+761 -1
+764 -1
+761 -1
+767 -1
+769 -1
+771 -1
+47 -1
+773 -1
+775 -1
+777 -1
+779 -1
+781 -1
+47 -1
+725 -1
+729 -1
+133 -1
+256 -1
+793 -1
+799 -1
+47 -1
+257 -1
+803 -1
+34 -1
+807 -1
+47 -1
+810 -1
+444 -1
+812 -1
+444 -1
+815 -1
+817 -1
+819 -1
+47 -1
+821 -1
+823 -1
+825 -1
+47 -1
+464 -1
+465 -1
+830 -1
+832 -1
+834 -1
+837 -1
+268 -1
+527 -1
+843 -1
+842 -1
+845 -1
+842 -1
+848 -1
+850 -1
+852 -1
+47 -1
+856 -1
+855 -1
+858 -1
+855 -1
+861 -1
+863 -1
+865 -1
+47 -1
+867 -1
+868 -1
+869 -1
+870 -1
+871 -1
+520 -1
+59 -1
+874 -1
+875 -1
+877 -1
+878 -1
+472 -1
+876 -1
+19 -1
+836 -1
+471 -1
+132 -1
+28 -1
+26 -1
+879 -1
+54 -1
+30 -1
+292 -1
+330 -1
+160 -1
+880 -1
+260 -1
+881 -1
+882 -1
+883 -1
+453 -1
+398 -1
+533 -1
+884 -1
+885 -1
+886 -1
+887 -1
+7 -1
+924 -1
+7 465
+925 -1
+928 -1
+928 -1
+924 -1
+923 -1
+927 -1
+920 -1
+921 -1
+922 -1
+926 -1
+939 -1
+940 -1
+942 -1
+271 -1
+941 -1
+323 -1
+943 -1
+143 -1
+60 -1
+53 -1
+928 -1
+53 -1
+133 -1
+959 -1
+133 -1
+133 -1
+928 -1
+958 -1
+965 -1
+966 -1
+967 -1
+928 -1
+974 -1
+53 -1
+975 -1
+976 -1
+982 -1
+35 -1
+984 -1
+985 -1
+986 -1
+987 -1
+988 -1
+989 -1
+990 -1
+1000 -1
+7 -1
+1001 -1
+1002 -1
+1003 -1
+1004 -1
+1005 -1
+1006 -1
+1007 -1
+1008 -1
+527 -1
+1023 -1
+527 -1
+364 -1
+1029 -1
+1021 -1
+513 -1
+1022 -1
+514 -1
+1035 -1
+516 -1
+1040 -1
+1023 -1
+1037 -1
+1044 -1
+521 -1
+1024 -1
+522 -1
+1025 -1
+1026 -1
+1027 -1
+1054 -1
+1059 -1
+1061 -1
+1028 -1
+530 -1
+1066 -1
+362 -1
+8 -1
+1068 -1
+1069 -1
+1070 -1
+0 -1
+1 429
+1 -1
+1 -1
+1 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+2 -1
+9 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+2 -1
+5 -1
+5 -1
+2 -1
+2 434
+2 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+9 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+2 -1
+5 -1
+2 -1
+3 -1
+3 -1
+9 -1
+3 -1
+2 -1
+9 -1
+9 -1
+2 -1
+6 -1
+6 -1
+2 -1
+3 -1
+3 -1
+2 -1
+9 -1
+202 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+202 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+82 -1
+2 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+3 -1
+2 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+2 -1
+3 -1
+3 -1
+9 -1
+3 -1
+9 -1
+3 -1
+2 -1
+2 -1
+3 -1
+2 -1
+3 -1
+2 -1
+352 -1
+354 -1
+2 -1
+2 -1
+2 -1
+3 -1
+2 -1
+2 -1
+5 -1
+5 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+3 -1
+2 -1
+9 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+337 -1
+337 -1
+3 -1
+2 -1
+3 -1
+3 -1
+2 -1
+9 -1
+2 -1
+9 -1
+2 -1
+6 -1
+2 -1
+9 -1
+2 -1
+6 -1
+2 -1
+3 -1
+354 -1
+2 -1
+9 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+352 -1
+3 -1
+3 -1
+2 -1
+9 -1
+9 -1
+9 -1
+9 -1
+5 -1
+5 -1
+2 -1
+3 -1
+400 -1
+3 -1
+2 -1
+9 -1
+2 -1
+2 -1
+2 -1
+3 -1
+9 -1
+2 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+9 -1
+3 -1
+6 -1
+2 -1
+9 -1
+3 -1
+9 -1
+3 -1
+9 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+2 -1
+3 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+3 -1
+2 -1
+2 -1
+2 -1
+9 -1
+9 -1
+2 -1
+2 -1
+562 -1
+682 -1
+562 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+6 -1
+6 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+2 -1
+3 -1
+2 -1
+3 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+2 -1
+5 316
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+9 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+3 -1
+9 -1
+2 -1
+3 -1
+9 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+6 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+9 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+2 382
+5 -1
+3 -1
+3 -1
+2 -1
+2 -1
+3 -1
+3 -1
+9 -1
+2 -1
+3 -1
+4 -1
+3 -1
+3 -1
+5 -1
+2 -1
+3 -1
+2 -1
+2 -1
+2 -1
+5 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+2 -1
+2 -1
+2 -1
+3 -1
+2 -1
+2 -1
+3 -1
+3 -1
+5 -1
+6 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+925 -1
+2 -1
+5 -1
+2 -1
+3 -1
+143 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+6 -1
+6 -1
+2 -1
+5 -1
+2 -1
+4 -1
+6 -1
+2 -1
+2 -1
+2 -1
+2 -1
+3 -1
+3 -1
+2 -1
+3 -1
+5 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+2 -1
+9 -1
+3 -1
+3 -1
+3 -1
+2 -1
+3 -1
+2 -1
+3 -1
+3 -1
+3 -1
+2 -1
+2 -1
+2 -1
+3 -1
+5 -1
+6 -1
+9 -1
+983 134 -1
+953 -1 -1
+952 -1 -1
+951 -1 2
+454 -1 -1
+452 -1 -1
+450 -1 5
+950 99 -1
+912 -1 7
+534 -1 8
+448 60 9
+1062 -1 -1
+1060 -1 11
+1058 149 -1
+1052 -1 -1
+1051 -1 14
+1050 -1 15
+1049 -1 16
+1048 -1 17
+1047 -1 18
+1036 179 -1
+1043 -1 -1
+1041 144 -1
+1033 -1 -1
+1032 -1 23
+1067 212 -1
+1031 142 25
+470 -1 -1
+468 -1 27
+474 -1 28
+833 -1 -1
+466 -1 30
+993 -1 -1
+835 -1 32
+15 -1 -1
+14 -1 -1
+13 -1 35
+1065 -1 -1
+1057 -1 37
+1056 -1 38
+1053 -1 39
+1038 -1 40
+1017 -1 41
+1012 -1 42
+992 -1 43
+948 -1 44
+946 -1 45
+936 -1 46
+916 85 47
+915 -1 48
+914 -1 49
+913 -1 50
+908 -1 51
+907 -1 52
+905 -1 53
+899 -1 54
+898 -1 55
+897 -1 56
+896 -1 57
+891 83 58
+890 -1 59
+860 -1 60
+847 -1 61
+814 -1 62
+805 -1 63
+798 -1 64
+797 -1 65
+796 -1 66
+795 -1 67
+766 -1 68
+757 -1 69
+753 -1 70
+742 -1 71
+728 -1 72
+724 -1 73
+702 -1 74
+691 -1 75
+659 -1 76
+651 -1 77
+640 -1 78
+581 -1 79
+576 -1 80
+575 -1 81
+559 -1 82
+539 -1 83
+519 -1 84
+517 -1 85
+495 -1 86
+492 -1 87
+489 -1 88
+482 -1 89
+445 -1 90
+432 -1 91
+404 -1 92
+387 -1 93
+382 -1 94
+381 -1 95
+379 -1 96
+374 -1 97
+371 -1 98
+367 -1 99
+332 -1 100
+319 -1 101
+315 -1 102
+308 -1 103
+303 -1 104
+302 -1 105
+301 -1 106
+289 -1 107
+286 -1 108
+285 -1 109
+273 -1 110
+272 -1 111
+267 -1 112
+264 -1 113
+263 -1 114
+246 -1 115
+242 -1 116
+217 -1 117
+216 -1 118
+209 -1 119
+189 -1 120
+163 -1 121
+157 -1 122
+149 -1 123
+139 -1 124
+130 -1 125
+116 -1 126
+74 -1 127
+64 -1 128
+42 -1 129
+25 -1 130
+20 84 131
+16 82 132
+11 -1 133
+1074 -1 -1
+1073 -1 135
+1016 223 -1
+1015 -1 -1
+1011 217 -1
+1010 -1 -1
+995 -1 -1
+911 -1 -1
+894 -1 -1
+893 -1 143
+889 157 -1
+829 -1 -1
+828 -1 146
+831 -1 147
+463 -1 148
+446 228 -1
+126 -1 -1
+128 225 -1
+1072 153 -1
+1071 153 153
+1013 -1 154
+1009 140 155
+998 138 156
+997 139 157
+996 136 158
+994 135 159
+991 -1 160
+910 -1 161
+909 -1 162
+901 -1 163
+892 -1 164
+888 -1 165
+827 -1 166
+778 -1 167
+715 -1 168
+476 62 169
+440 58 170
+395 -1 171
+372 21 172
+137 225 173
+131 21 174
+18 -1 175
+17 -1 176
+10 -1 177
+12 157 178
+780 2 179
+370 225 180
+822 -1 -1
+866 2 -1
+862 230 -1
+864 230 184
+853 2 -1
+851 225 -1
+849 225 187
+820 2 -1
+816 225 -1
+818 230 190
+804 -1 -1
+802 -1 192
+808 2 193
+794 -1 -1
+792 -1 195
+800 2 196
+772 2 -1
+768 225 -1
+770 225 199
+785 -1 -1
+784 -1 201
+782 2 -1
+121 -1 -1
+119 -1 204
+100 -1 -1
+98 -1 206
+96 -1 207
+94 -1 208
+89 -1 -1
+87 -1 210
+756 -1 -1
+755 -1 212
+776 80 213
+774 81 214
+85 -1 215
+783 232 216
+744 225 -1
+746 225 218
+676 2 -1
+674 -1 -1
+673 -1 221
+672 -1 222
+671 -1 223
+670 -1 224
+668 -1 225
+665 2 -1
+661 225 -1
+708 2 -1
+704 225 -1
+706 225 230
+642 225 -1
+604 -1 -1
+603 -1 233
+601 -1 234
+598 -1 -1
+596 -1 236
+594 -1 237
+592 -1 238
+590 237 -1
+613 2 -1
+619 225 -1
+615 225 242
+611 225 243
+589 225 244
+541 -1 -1
+415 2 -1
+419 -1 -1
+418 -1 248
+417 -1 249
+416 -1 -1
+423 -1 -1
+422 -1 252
+543 -1 253
+409 57 254
+421 225 -1
+425 238 256
+406 242 257
+536 225 -1
+435 225 259
+375 -1 -1
+380 225 -1
+368 225 262
+373 225 263
+325 46 -1
+312 -1 -1
+306 -1 -1
+687 -1 -1
+170 -1 -1
+168 -1 269
+166 -1 270
+164 34 -1
+305 34 272
+300 -1 -1
+298 -1 274
+173 2 -1
+162 230 -1
+159 225 277
+135 -1 -1
+141 2 279
+109 -1 -1
+108 -1 281
+107 -1 282
+106 225 -1
+84 2 -1
+76 225 -1
+79 245 286
+46 2 -1
+44 -1 -1
+49 -1 289
+906 -1 -1
+904 -1 291
+903 -1 292
+902 -1 293
+900 -1 294
+895 -1 295
+859 157 296
+846 157 297
+840 -1 298
+839 -1 299
+838 -1 300
+813 157 301
+801 157 302
+791 157 303
+765 157 304
+752 157 305
+741 157 306
+723 157 307
+720 -1 308
+701 157 309
+658 157 310
+639 157 311
+580 157 312
+574 246 313
+538 225 314
+431 157 315
+403 157 316
+396 -1 317
+366 157 318
+188 157 319
+156 157 320
+138 225 321
+115 157 322
+73 157 323
+41 157 324
+29 247 325
+663 225 326
+623 237 327
+599 255 328
+545 225 329
+426 225 330
+197 225 331
+24 247 332
+677 255 333
+666 257 334
+605 259 335
+547 225 336
+194 225 337
+650 255 338
+644 257 339
+633 260 340
+585 259 341
+719 -1 -1
+718 -1 343
+717 -1 -1
+716 -1 -1
+713 225 346
+321 225 -1
+275 225 -1
+255 157 -1
+253 225 -1
+295 -1 -1
+291 225 -1
+288 157 -1
+262 287 354
+294 225 355
+690 225 356
+318 225 357
+314 345 358
+250 225 359
+270 345 360
+266 347 361
+248 225 -1
+244 225 -1
+733 -1 -1
+243 225 -1
+731 360 -1
+727 360 367
+240 225 -1
+237 225 -1
+233 225 -1
+229 225 -1
+225 225 -1
+223 225 -1
+39 -1 -1
+824 2 -1
+56 13 376
+334 225 -1
+67 15 378
+65 14 379
+71 -1 -1
+481 -1 -1
+479 -1 382
+806 157 -1
+523 157 384
+498 157 385
+494 385 386
+491 412 387
+488 157 388
+477 157 389
+81 245 390
+51 245 391
+735 245 392
+227 415 393
+684 415 394
+681 415 395
+679 415 396
+231 415 397
+235 418 398
+631 418 399
+629 418 400
+627 418 401
+625 422 402
+621 415 403
+617 415 404
+609 418 405
+607 418 406
+239 418 407
+759 418 408
+199 425 409
+32 434 410
+175 434 411
+695 534 412
+693 554 413
+113 -1 -1
+147 30 -1
+336 225 -1
+150 14 417
+154 -1 -1
+186 -1 -1
+434 157 -1
+191 157 421
+426 225 422
+197 225 423
+194 225 424
+222 225 -1
+221 225 -1
+219 225 -1
+215 225 -1
+212 225 -1
+259 -1 -1
+207 225 431
+826 2 -1
+714 225 433
+204 225 434
+284 225 -1
+282 225 -1
+280 -1 -1
+278 225 -1
+429 -1 -1
+393 -1 -1
+392 -1 441
+391 -1 442
+390 -1 443
+376 225 -1
+388 157 -1
+377 157 446
+386 -1 -1
+385 -1 448
+384 -1 449
+394 2 450
+369 225 -1
+365 -1 452
+389 378 453
+383 225 454
+399 412 455
+397 385 456
+1042 15 -1
+512 -1 -1
+510 -1 459
+508 -1 460
+506 -1 461
+504 -1 462
+526 368 -1
+525 368 464
+502 368 465
+486 -1 -1
+459 -1 -1
+457 -1 468
+461 -1 469
+501 63 -1
+484 -1 471
+455 -1 472
+532 371 473
+529 412 474
+402 -1 -1
+561 -1 -1
+552 -1 -1
+556 -1 -1
+550 -1 479
+554 67 480
+558 558 481
+583 157 -1
+623 237 483
+599 255 484
+605 259 485
+633 260 486
+585 259 487
+568 -1 -1
+566 -1 489
+570 2 490
+573 19 -1
+564 19 492
+579 -1 -1
+637 -1 -1
+656 -1 -1
+722 -1 -1
+699 -1 -1
+739 -1 -1
+750 -1 -1
+763 -1 -1
+811 -1 -1
+844 -1 -1
+857 -1 -1
+930 95 -1
+929 95 505
+932 88 -1
+931 88 507
+937 -1 -1
+933 96 -1
+934 96 510
+935 157 511
+949 -1 -1
+947 337 -1
+945 157 -1
+944 -1 -1
+955 111 -1
+957 112 -1
+963 -1 -1
+962 -1 519
+961 -1 520
+960 130 -1
+972 -1 -1
+971 -1 523
+970 -1 524
+969 -1 525
+968 112 -1
+981 -1 -1
+980 -1 528
+979 -1 529
+978 -1 530
+977 131 -1
+1014 -1 -1
+1034 143 26
+1045 201 534
+1039 183 535
+1046 212 536
+1064 412 537
+1055 212 538
+1063 212 539
+449 562 150
+297 468 362
+329 511 542
+310 468 543
+307 468 544
+327 511 545
+322 511 546
+182 595 547
+178 595 548
+754 349 368
+92 349 550
+103 351 551
+117 351 552
+125 360 553
+123 360 554
+62 452 380
+148 449 418
+442 601 432
+442 601 457
+1030 -1 458
+442 601 476
+442 601 493
+442 601 497
+3 0 -1 . 0 -1 -1
+2 -1 -1 .csmidnOut.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 3 -1 . 0 -1 4
+3 25 -1 . 0 -1 6
+3 1 -1 . 0 -1 -1
+3 26 -1 . 0 -1 -1
+3 27 -1 . 0 -1 8
+3 28 -1 . 0 -1 -1
+2 -1 -1 .csmidnProd.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 3 -1 . 0 -1 12
+3 25 -1 . 0 -1 13
+3 30 -1 . 0 -1 -1
+4 -1 4 . 0 -1 -1
+3 33 -1 . 0 -1 16
+4 -1 5 . 0 17 18
+3 34 -1 . 0 -1 -1
+3 23 -1 . 0 -1 19
+3 35 -1 . 0 -1 -1
+3 36 -1 . 0 -1 -1
+3 3 -1 . 0 -1 22
+3 42 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .burgGen.sh 0 -1 -1
+2 -1 -1 .burg.exe 0 -1 -1
+2 -1 -1 .burg.err 0 -1 -1
+3 37 -1 . 0 -1 28
+3 30 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 30
+6 -1 -1 .PKGS 0 -1 31
+6 -1 -1 .skeleton 0 -1 32
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 43 -1 . 0 -1 -1
+1 -1 -1 .burgErr 0 -1 -1
+2 -1 -1 .burgOut.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 37 -1 . 0 -1 39
+3 26 -1 . 0 -1 -1
+3 43 -1 . 0 -1 41
+3 28 -1 . 0 -1 -1
+3 52 -1 . 0 -1 43
+4 -1 5 . 0 44 45
+3 34 -1 . 0 -1 -1
+3 48 -1 . 0 -1 46
+3 35 -1 . 0 -1 -1
+2 -1 -1 .c.o.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 57 -1 . 0 -1 -1
+3 57 -1 . 0 -1 51
+3 35 -1 . 0 -1 52
+3 58 -1 . 0 -1 53
+3 59 -1 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 10 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+4 -1 6 . 0 -1 -1
+4 -1 7 . 0 -1 -1
+3 57 -1 . 0 -1 60
+3 35 -1 . 0 -1 -1
+2 -1 -1 .errfilter.sed 0 -1 -1
+3 53 -1 . 0 -1 63
+4 -1 8 . 0 64 65
+3 63 -1 . 0 -1 -1
+3 64 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .c_srcs.sh 0 -1 -1
+3 53 -1 . 0 -1 -1
+4 -1 8 . 0 -1 -1
+2 -1 -1 .cexe.sh 0 -1 -1
+3 53 -1 . 0 -1 -1
+4 -1 6 . 0 -1 -1
+4 -1 7 . 0 -1 -1
+3 68 -1 . 0 -1 -1
+3 3 -1 . 0 -1 76
+3 74 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .clp_gen.sh 0 -1 -1
+2 -1 -1 .clp.exe 0 -1 -1
+3 69 -1 . 0 -1 81
+3 77 -1 . 0 -1 -1
+2 -1 -1 .clp.err 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 84
+6 -1 -1 .PKGS 0 -1 85
+6 -1 -1 .skeleton 0 -1 86
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .clp_out.sh 0 -1 -1
+3 69 -1 . 0 -1 89
+3 26 -1 . 0 -1 -1
+3 75 -1 . 0 -1 91
+3 28 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .clp.c 0 -1 -1
+2 -1 -1 .clp.h 0 -1 -1
+2 -1 -1 .clp.specs 0 -1 -1
+2 -1 -1 .clp.dapto 0 -1 -1
+4 -1 12 . 0 -1 -1
+3 82 -1 . 0 -1 99
+4 -1 5 . 0 100 101
+3 34 -1 . 0 -1 -1
+3 78 -1 . 0 -1 102
+3 35 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 104
+6 -1 -1 .PKGS 0 -1 105
+6 -1 -1 .skeleton 0 -1 106
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 78 -1 . 0 -1 -1
+1 -1 -1 .clpErr 0 -1 -1
+3 85 -1 . 0 -1 -1
+3 85 -1 . 0 -1 -1
+2 -1 -1 .colaFe.sh 0 -1 -1
+3 90 -1 . 0 -1 -1
+3 91 -1 . 0 -1 -1
+2 -1 -1 .colaPgs2cm.exe 0 -1 -1
+3 92 -1 . 0 -1 -1
+3 92 -1 . 0 -1 -1
+3 92 -1 . 0 -1 -1
+3 92 -1 . 0 -1 -1
+2 -1 -1 .colaLalr.sh 0 -1 -1
+3 86 -1 . 0 -1 -1
+3 88 -1 . 0 -1 -1
+3 101 -1 . 0 -1 -1
+2 -1 -1 .colaAbsprs.exe 0 -1 -1
+2 -1 -1 .colaBe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 93 -1 . 0 -1 -1
+3 95 -1 . 0 -1 -1
+3 104 -1 . 0 -1 -1
+3 105 -1 . 0 -1 -1
+3 97 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .Frames 0 -1 134
+6 -1 -1 .cola.dapto 0 -1 -1
+2 -1 -1 .Frames 0 -1 136
+6 -1 -1 .parser.c 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 138
+6 -1 -1 .PKGS 0 -1 139
+6 -1 -1 .parser 0 -1 140
+6 -1 -1 .mon_cprods.c 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 142
+6 -1 -1 .PKGS 0 -1 143
+6 -1 -1 .parser 0 -1 144
+6 -1 -1 .parser.h 0 -1 -1
+2 -1 -1 .colaConn.exe 0 -1 -1
+2 -1 -1 .colaTbl.exe 0 -1 -1
+3 106 -1 . 0 -1 -1
+3 106 -1 . 0 -1 -1
+3 106 -1 . 0 -1 -1
+2 -1 -1 .colaOpt.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 110 -1 . 0 -1 153
+3 77 -1 . 0 -1 -1
+2 -1 -1 .colaOption.exe 0 -1 -1
+2 -1 -1 .Info 0 -1 156
+6 -1 -1 .mess_sort 0 -1 -1
+3 111 -1 . 0 -1 -1
+3 3 -1 . 0 -1 159
+3 116 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 117 -1 . 0 -1 -1
+3 117 -1 . 0 -1 -1
+2 -1 -1 .colaOut.sh 0 -1 -1
+3 102 -1 . 0 -1 165
+3 28 -1 . 0 -1 -1
+3 99 -1 . 0 -1 167
+3 28 -1 . 0 -1 -1
+4 -1 13 . 0 -1 -1
+3 118 -1 . 0 -1 170
+3 35 -1 . 0 -1 -1
+3 120 -1 . 0 -1 172
+3 35 -1 . 0 -1 -1
+3 127 -1 . 0 -1 -1
+3 129 -1 . 0 -1 175
+3 35 -1 . 0 -1 -1
+3 129 -1 . 0 -1 177
+3 35 -1 . 0 -1 178
+3 130 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .incl.dir.sh 0 -1 -1
+3 2 -1 . 0 -1 182
+3 132 -1 . 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 5 . 0 -1 -1
+4 -1 14 . 0 -1 -1
+2 -1 -1 .cpp_tab.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 77 -1 . 0 -1 -1
+2 -1 -1 .do_cpp.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 2 -1 . 0 -1 193
+3 63 -1 . 0 -1 194
+3 58 -1 . 0 -1 195
+3 59 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 2 -1 . 0 -1 198
+3 63 -1 . 0 -1 -1
+2 -1 -1 .cpp.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 3 -1 . 0 -1 202
+3 139 -1 . 0 -1 204
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 206
+3 139 -1 . 0 -1 -1
+2 -1 -1 .cppErr.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 134 -1 . 0 -1 -1
+1 -1 -1 .cppErr 0 -1 -1
+3 77 -1 . 0 -1 -1
+2 -1 -1 .cxx.o.sh 0 -1 -1
+3 145 -1 . 0 -1 -1
+3 145 -1 . 0 -1 215
+3 35 -1 . 0 -1 216
+3 58 -1 . 0 -1 217
+3 59 -1 . 0 -1 -1
+2 -1 -1 .errfilter.sed 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 10 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+4 -1 15 . 0 -1 -1
+4 -1 16 . 0 -1 -1
+3 57 -1 . 0 -1 225
+3 35 -1 . 0 -1 -1
+3 142 -1 . 0 -1 227
+4 -1 8 . 0 228 229
+3 63 -1 . 0 -1 -1
+3 149 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .cxx_srcs.sh 0 -1 -1
+3 142 -1 . 0 -1 -1
+4 -1 8 . 0 -1 -1
+3 151 -1 . 0 -1 -1
+3 3 -1 . 0 -1 236
+3 157 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .dapGen.sh 0 -1 -1
+3 152 -1 . 0 -1 240
+3 77 -1 . 0 -1 -1
+3 152 -1 . 0 -1 242
+3 160 -1 . 0 -1 -1
+2 -1 -1 .dapto.exe 0 -1 -1
+2 -1 -1 .dapto.err 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 246
+6 -1 -1 .PKGS 0 -1 247
+6 -1 -1 .skeleton 0 -1 248
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .dapOut.sh 0 -1 -1
+3 152 -1 . 0 -1 251
+3 163 -1 . 0 -1 253
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .dapto.reqmod 0 -1 -1
+2 -1 -1 .dapto.dapto 0 -1 257
+3 158 -1 . 0 -1 -1
+2 -1 -1 .dapto.c 0 -1 -1
+2 -1 -1 .dapto.h 0 -1 -1
+3 164 -1 . 0 -1 -1
+3 164 -1 . 0 -1 -1
+3 164 -1 . 0 -1 -1
+2 -1 -1 .init.sh 0 -1 -1
+3 171 -1 . 0 -1 -1
+3 171 -1 . 0 -1 266
+3 35 -1 . 0 -1 267
+3 160 -1 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 17 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+3 171 -1 . 0 -1 272
+3 35 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 274
+6 -1 -1 .PKGS 0 -1 275
+6 -1 -1 .skeleton 0 -1 276
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 278
+6 -1 -1 .PKGS 0 -1 279
+6 -1 -1 .skeleton 0 -1 280
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 158 -1 . 0 -1 -1
+1 -1 -1 .dapGenErr 0 -1 -1
+3 176 -1 . 0 -1 285
+4 -1 5 . 0 286 287
+3 34 -1 . 0 -1 -1
+3 161 -1 . 0 -1 288
+3 35 -1 . 0 -1 -1
+2 -1 -1 .dbx.sh 0 -1 -1
+3 179 -1 . 0 -1 291
+3 58 -1 . 0 -1 292
+3 59 -1 . 0 -1 -1
+3 180 -1 . 0 -1 294
+3 58 -1 . 0 -1 295
+3 59 -1 . 0 -1 -1
+3 66 -1 . 0 -1 -1
+4 -1 18 . 0 -1 -1
+3 179 -1 . 0 -1 -1
+3 180 -1 . 0 -1 -1
+2 -1 -1 .gdb.sh 0 -1 -1
+3 179 -1 . 0 -1 302
+3 58 -1 . 0 -1 303
+3 59 -1 . 0 -1 -1
+3 180 -1 . 0 -1 305
+3 58 -1 . 0 -1 306
+3 59 -1 . 0 -1 -1
+3 66 -1 . 0 -1 -1
+4 -1 18 . 0 -1 -1
+3 179 -1 . 0 -1 -1
+3 180 -1 . 0 -1 -1
+3 183 -1 . 0 -1 -1
+3 3 -1 . 0 -1 313
+3 189 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 192 -1 . 0 -1 316
+3 189 -1 . 0 -1 -1
+2 -1 -1 .lit_out.sh 0 -1 -1
+3 184 -1 . 0 -1 319
+3 26 -1 . 0 -1 -1
+3 195 -1 . 0 -1 321
+3 26 -1 . 0 -1 -1
+3 196 -1 . 0 -1 323
+3 28 -1 . 0 -1 -1
+2 -1 -1 .lit_gen.sh 0 -1 -1
+3 184 -1 . 0 -1 326
+3 77 -1 . 0 -1 -1
+3 195 -1 . 0 -1 328
+3 77 -1 . 0 -1 -1
+3 200 -1 . 0 -1 330
+4 -1 5 . 0 331 332
+3 34 -1 . 0 -1 -1
+3 193 -1 . 0 -1 333
+3 35 -1 . 0 -1 -1
+2 -1 -1 .spfils.sh 0 -1 -1
+3 201 -1 . 0 -1 336
+3 132 -1 . 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 201 -1 . 0 -1 -1
+1 -1 -1 .spfils 0 -1 -1
+3 201 -1 . 0 -1 341
+3 63 -1 . 0 -1 -1
+3 203 -1 . 0 -1 343
+3 35 -1 . 0 -1 344
+3 209 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 210 -1 . 0 -1 -1
+3 210 -1 . 0 -1 348
+3 213 -1 . 0 -1 349
+3 35 -1 . 0 -1 350
+3 209 -1 . 0 -1 -1
+3 211 -1 . 0 -1 -1
+3 211 -1 . 0 -1 353
+3 216 -1 . 0 -1 355
+3 1 -1 . 0 -1 -1
+3 217 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 214 -1 . 0 -1 358
+3 209 -1 . 0 -1 -1
+3 218 -1 . 0 -1 -1
+3 220 -1 . 0 -1 361
+3 209 -1 . 0 -1 -1
+3 82 -1 . 0 -1 -1
+3 80 -1 . 0 -1 364
+3 209 -1 . 0 -1 -1
+3 52 -1 . 0 -1 -1
+3 50 -1 . 0 -1 367
+3 209 -1 . 0 -1 -1
+3 224 -1 . 0 -1 -1
+3 226 -1 . 0 -1 370
+3 209 -1 . 0 -1 -1
+3 228 -1 . 0 -1 -1
+3 230 -1 . 0 -1 373
+3 209 -1 . 0 -1 -1
+3 232 -1 . 0 -1 -1
+3 234 -1 . 0 -1 376
+3 209 -1 . 0 -1 -1
+3 236 -1 . 0 -1 -1
+3 238 -1 . 0 -1 379
+3 209 -1 . 0 -1 -1
+3 200 -1 . 0 -1 381
+3 242 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 198 -1 . 0 -1 384
+3 209 -1 . 0 -1 -1
+3 33 -1 . 0 -1 -1
+3 31 -1 . 0 -1 387
+3 209 -1 . 0 -1 -1
+3 176 -1 . 0 -1 389
+3 246 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 174 -1 . 0 -1 392
+3 209 -1 . 0 -1 -1
+3 247 -1 . 0 -1 -1
+3 251 -1 . 0 -1 -1
+3 249 -1 . 0 -1 396
+3 209 -1 . 0 -1 -1
+3 252 -1 . 0 -1 398
+3 256 -1 . 0 -1 399
+3 35 -1 . 0 -1 -1
+3 252 -1 . 0 -1 401
+3 257 -1 . 0 -1 402
+3 35 -1 . 0 -1 -1
+2 -1 -1 .definition.sh 0 -1 -1
+3 203 -1 . 0 -1 405
+3 35 -1 . 0 -1 406
+3 260 -1 . 0 -1 407
+3 54 -1 . 0 -1 -1
+3 203 -1 . 0 -1 409
+3 35 -1 . 0 -1 410
+3 260 -1 . 0 -1 -1
+3 247 -1 . 0 -1 412
+3 263 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 247 -1 . 0 -1 415
+3 264 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .includes.sh 0 -1 -1
+3 247 -1 . 0 -1 419
+3 267 -1 . 0 -1 421
+3 1 -1 . 0 -1 -1
+3 268 -1 . 0 -1 -1
+3 251 -1 . 0 -1 423
+3 267 -1 . 0 -1 424
+3 268 -1 . 0 -1 -1
+3 254 -1 . 0 -1 426
+3 268 -1 . 0 -1 -1
+3 247 -1 . 0 -1 428
+3 272 -1 . 0 -1 430
+3 1 -1 . 0 -1 -1
+3 273 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 251 -1 . 0 -1 433
+3 263 -1 . 0 -1 -1
+3 251 -1 . 0 -1 435
+3 267 -1 . 0 -1 -1
+3 254 -1 . 0 -1 -1
+3 269 -1 . 0 -1 438
+3 209 -1 . 0 -1 -1
+2 -1 -1 .spfils.sh 0 -1 -1
+3 202 -1 . 0 -1 441
+3 132 -1 . 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 202 -1 . 0 -1 -1
+1 -1 -1 .reqfils 0 -1 -1
+3 202 -1 . 0 -1 446
+3 63 -1 . 0 -1 -1
+3 277 -1 . 0 -1 448
+3 35 -1 . 0 -1 -1
+3 279 -1 . 0 -1 -1
+3 279 -1 . 0 -1 451
+3 213 -1 . 0 -1 452
+3 35 -1 . 0 -1 453
+3 209 -1 . 0 -1 -1
+3 281 -1 . 0 -1 -1
+3 281 -1 . 0 -1 456
+3 285 -1 . 0 -1 458
+3 1 -1 . 0 -1 -1
+3 286 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 247 -1 . 0 -1 461
+3 289 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .eli.reqmod 0 -1 -1
+3 287 -1 . 0 -1 465
+3 286 -1 . 0 -1 466
+3 292 -1 . 0 -1 467
+3 209 -1 . 0 -1 -1
+2 -1 -1 .filter.sh 0 -1 -1
+3 290 -1 . 0 -1 470
+3 268 -1 . 0 -1 -1
+3 247 -1 . 0 -1 472
+3 160 -1 . 0 -1 -1
+3 293 -1 . 0 -1 -1
+3 297 -1 . 0 -1 -1
+3 297 -1 . 0 -1 -1
+2 -1 -1 .used.sh 0 -1 -1
+2 -1 -1 .loaded.exe 0 -1 -1
+2 -1 -1 .main.reqsym 0 -1 -1
+3 261 -1 . 0 -1 480
+4 -1 5 . 0 481 482
+3 265 -1 . 0 -1 -1
+3 301 -1 . 0 -1 484
+3 1 -1 . 0 -1 -1
+3 292 -1 . 0 -1 485
+3 302 -1 . 0 -1 487
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 261 -1 . 0 -1 489
+3 26 -1 . 0 -1 -1
+3 251 -1 . 0 -1 491
+3 263 -1 . 0 -1 492
+4 -1 5 . 0 493 494
+3 265 -1 . 0 -1 -1
+3 301 -1 . 0 -1 495
+3 292 -1 . 0 -1 496
+3 302 -1 . 0 -1 497
+3 54 -1 . 0 -1 -1
+3 251 -1 . 0 -1 499
+3 263 -1 . 0 -1 500
+3 26 -1 . 0 -1 -1
+3 3 -1 . 0 -1 502
+3 303 -1 . 0 -1 504
+3 1 -1 . 0 -1 -1
+3 30 -1 . 0 -1 -1
+3 251 -1 . 0 -1 506
+3 303 -1 . 0 -1 507
+3 30 -1 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 17 . 0 -1 -1
+4 -1 12 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+4 -1 6 . 0 -1 -1
+3 261 -1 . 0 -1 514
+4 -1 5 . 0 515 516
+3 265 -1 . 0 -1 -1
+3 301 -1 . 0 -1 517
+3 292 -1 . 0 -1 518
+3 302 -1 . 0 -1 -1
+3 251 -1 . 0 -1 520
+3 263 -1 . 0 -1 521
+4 -1 5 . 0 522 523
+3 265 -1 . 0 -1 -1
+3 301 -1 . 0 -1 524
+3 292 -1 . 0 -1 525
+3 302 -1 . 0 -1 -1
+3 171 -1 . 0 -1 527
+3 35 -1 . 0 -1 -1
+3 165 -1 . 0 -1 529
+3 35 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 531
+6 -1 -1 .PKGS 0 -1 532
+6 -1 -1 .Adt 0 -1 533
+6 -1 -1 .obstack.c 0 -1 -1
+3 304 -1 . 0 -1 -1
+3 179 -1 . 0 -1 536
+4 -1 5 . 0 537 538
+3 265 -1 . 0 -1 -1
+3 308 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 299 -1 . 0 -1 541
+3 35 -1 . 0 -1 -1
+3 165 -1 . 0 -1 543
+3 35 -1 . 0 -1 544
+4 -1 5 . 0 545 546
+3 265 -1 . 0 -1 -1
+3 301 -1 . 0 -1 547
+3 292 -1 . 0 -1 548
+3 302 -1 . 0 -1 -1
+3 309 -1 . 0 -1 -1
+3 247 -1 . 0 -1 551
+3 315 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 251 -1 . 0 -1 554
+3 315 -1 . 0 -1 -1
+3 247 -1 . 0 -1 556
+3 319 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 251 -1 . 0 -1 559
+3 319 -1 . 0 -1 -1
+3 317 -1 . 0 -1 561
+3 77 -1 . 0 -1 562
+3 35 -1 . 0 -1 563
+3 30 -1 . 0 -1 -1
+2 -1 -1 .exe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 311 -1 . 0 -1 567
+3 58 -1 . 0 -1 568
+3 59 -1 . 0 -1 -1
+3 320 -1 . 0 -1 -1
+3 323 -1 . 0 -1 -1
+3 313 -1 . 0 -1 572
+3 58 -1 . 0 -1 573
+3 59 -1 . 0 -1 -1
+3 313 -1 . 0 -1 575
+3 160 -1 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 17 . 0 -1 -1
+4 -1 6 . 0 -1 -1
+4 -1 7 . 0 -1 -1
+3 311 -1 . 0 -1 -1
+3 247 -1 . 0 -1 582
+3 315 -1 . 0 -1 -1
+2 -1 -1 .so.sh 0 -1 -1
+3 311 -1 . 0 -1 585
+3 58 -1 . 0 -1 586
+3 59 -1 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 6 . 0 -1 -1
+4 -1 7 . 0 -1 -1
+3 311 -1 . 0 -1 -1
+3 328 -1 . 0 -1 592
+3 35 -1 . 0 -1 -1
+3 179 -1 . 0 -1 -1
+3 179 -1 . 0 -1 595
+4 -1 5 . 0 596 597
+3 265 -1 . 0 -1 -1
+3 308 -1 . 0 -1 598
+3 292 -1 . 0 -1 -1
+2 -1 -1 .mkfile.sh 0 -1 -1
+4 -1 6 . 0 -1 -1
+4 -1 7 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 17 . 0 -1 -1
+4 -1 10 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+3 330 -1 . 0 -1 -1
+3 179 -1 . 0 -1 608
+4 -1 5 . 0 609 610
+3 265 -1 . 0 -1 -1
+3 332 -1 . 0 -1 612
+3 1 -1 . 0 -1 -1
+3 30 -1 . 0 -1 -1
+3 320 -1 . 0 -1 -1
+3 323 -1 . 0 -1 -1
+3 313 -1 . 0 -1 616
+3 54 -1 . 0 -1 -1
+2 -1 -1 .c_dep.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 53 -1 . 0 -1 620
+3 330 -1 . 0 -1 -1
+3 53 -1 . 0 -1 622
+3 63 -1 . 0 -1 623
+3 160 -1 . 0 -1 -1
+1 -1 -1 .c_dep 0 -1 -1
+2 -1 -1 .c_dep.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 142 -1 . 0 -1 628
+3 330 -1 . 0 -1 -1
+3 142 -1 . 0 -1 630
+3 63 -1 . 0 -1 631
+3 160 -1 . 0 -1 -1
+1 -1 -1 .cxx_dep 0 -1 -1
+3 337 -1 . 0 -1 -1
+3 3 -1 . 0 -1 635
+3 367 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .fwOut.sh 0 -1 -1
+3 338 -1 . 0 -1 639
+3 26 -1 . 0 -1 -1
+3 338 -1 . 0 -1 641
+3 349 -1 . 0 -1 642
+3 28 -1 . 0 -1 -1
+3 337 -1 . 0 -1 644
+3 358 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 357 -1 . 0 -1 647
+3 35 -1 . 0 -1 648
+3 371 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .fwincl.dir.sh 0 -1 -1
+3 2 -1 . 0 -1 652
+3 132 -1 . 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 5 . 0 -1 -1
+4 -1 14 . 0 -1 -1
+2 -1 -1 .fw_incl.exe 0 -1 -1
+2 -1 -1 .fwSel.sh 0 -1 -1
+3 338 -1 . 0 -1 660
+3 374 -1 . 0 -1 662
+3 1 -1 . 0 -1 -1
+3 30 -1 . 0 -1 -1
+3 347 -1 . 0 -1 664
+3 268 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 666
+6 -1 -1 .PKGS 0 -1 667
+6 -1 -1 .skeleton 0 -1 668
+6 -1 -1 .sed.exe 0 -1 -1
+3 348 -1 . 0 -1 -1
+3 343 -1 . 0 -1 671
+3 208 -1 . 0 -1 -1
+3 341 -1 . 0 -1 673
+3 378 -1 . 0 -1 674
+3 379 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 338 -1 . 0 -1 677
+3 381 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 338 -1 . 0 -1 680
+3 382 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 383 -1 . 0 -1 -1
+3 383 -1 . 0 -1 -1
+3 383 -1 . 0 -1 -1
+2 -1 -1 .fwTangle.sh 0 -1 -1
+2 -1 -1 .fw.exe 0 -1 -1
+3 337 -1 . 0 -1 688
+3 330 -1 . 0 -1 -1
+3 340 -1 . 0 -1 690
+3 54 -1 . 0 -1 -1
+3 340 -1 . 0 -1 692
+3 160 -1 . 0 -1 -1
+3 340 -1 . 0 -1 694
+3 360 -1 . 0 -1 695
+3 59 -1 . 0 -1 -1
+3 340 -1 . 0 -1 697
+3 387 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 700
+6 -1 -1 .PKGS 0 -1 701
+6 -1 -1 .skeleton 0 -1 702
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 704
+6 -1 -1 .PKGS 0 -1 705
+6 -1 -1 .skeleton 0 -1 706
+6 -1 -1 .err_map.exe 0 -1 -1
+2 -1 -1 .fwSpec.sh 0 -1 -1
+2 -1 -1 .fwSpec.sed 0 -1 -1
+3 341 -1 . 0 -1 710
+3 35 -1 . 0 -1 711
+3 216 -1 . 0 -1 712
+3 160 -1 . 0 -1 -1
+3 341 -1 . 0 -1 714
+3 35 -1 . 0 -1 715
+3 268 -1 . 0 -1 -1
+3 341 -1 . 0 -1 -1
+3 341 -1 . 0 -1 718
+3 35 -1 . 0 -1 719
+3 216 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 721
+6 -1 -1 .PKGS 0 -1 722
+6 -1 -1 .skeleton 0 -1 723
+6 -1 -1 .sed.exe 0 -1 -1
+3 389 -1 . 0 -1 -1
+3 389 -1 . 0 -1 -1
+3 389 -1 . 0 -1 -1
+3 389 -1 . 0 -1 -1
+2 -1 -1 .fwWeave.sh 0 -1 -1
+2 -1 -1 .fw.exe 0 -1 -1
+3 337 -1 . 0 -1 731
+3 330 -1 . 0 -1 -1
+3 340 -1 . 0 -1 733
+3 54 -1 . 0 -1 -1
+3 340 -1 . 0 -1 735
+3 160 -1 . 0 -1 -1
+3 340 -1 . 0 -1 737
+3 360 -1 . 0 -1 738
+3 59 -1 . 0 -1 -1
+4 -1 19 . 0 -1 -1
+3 340 -1 . 0 -1 741
+3 387 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 743
+6 -1 -1 .PKGS 0 -1 744
+6 -1 -1 .skeleton 0 -1 745
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 747
+6 -1 -1 .PKGS 0 -1 748
+6 -1 -1 .skeleton 0 -1 749
+6 -1 -1 .err_map.exe 0 -1 -1
+2 -1 -1 .fwErr.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 345 -1 . 0 -1 -1
+3 341 -1 . 0 -1 755
+3 35 -1 . 0 -1 756
+3 54 -1 . 0 -1 -1
+3 341 -1 . 0 -1 758
+3 35 -1 . 0 -1 759
+3 160 -1 . 0 -1 -1
+2 -1 -1 .fw_errors.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 762
+6 -1 -1 .PKGS 0 -1 763
+6 -1 -1 .skeleton 0 -1 764
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 766
+6 -1 -1 .PKGS 0 -1 767
+6 -1 -1 .skeleton 0 -1 768
+6 -1 -1 .err_map.exe 0 -1 -1
+2 -1 -1 .expandtabs.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 2 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 773
+6 -1 -1 .PKGS 0 -1 774
+6 -1 -1 .skeleton 0 -1 775
+6 -1 -1 .eliexpand.exe 0 -1 -1
+2 -1 -1 .tabsexpanded.sh 0 -1 -1
+3 3 -1 . 0 -1 778
+3 160 -1 . 0 -1 -1
+3 3 -1 . 0 -1 780
+3 54 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 782
+6 -1 -1 .PKGS 0 -1 783
+6 -1 -1 .skeleton 0 -1 784
+6 -1 -1 .paste.exe 0 -1 -1
+3 337 -1 . 0 -1 786
+4 -1 3 . 0 787 788
+3 356 -1 . 0 -1 -1
+3 398 -1 . 0 -1 789
+3 362 -1 . 0 -1 -1
+3 337 -1 . 0 -1 791
+4 -1 3 . 0 792 793
+3 356 -1 . 0 -1 -1
+3 398 -1 . 0 -1 794
+3 364 -1 . 0 -1 -1
+3 400 -1 . 0 -1 -1
+3 3 -1 . 0 -1 797
+3 404 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .gla_out.sh 0 -1 -1
+3 407 -1 . 0 -1 801
+3 35 -1 . 0 -1 802
+3 26 -1 . 0 -1 -1
+3 408 -1 . 0 -1 804
+3 28 -1 . 0 -1 -1
+2 -1 -1 .gla.specs 0 -1 -1
+2 -1 -1 .dfltscan.reqmod 0 -1 -1
+2 -1 -1 .gla_be.sh 0 -1 -1
+2 -1 -1 .gla_be.exe 0 -1 -1
+3 410 -1 . 0 -1 -1
+3 411 -1 . 0 -1 -1
+3 412 -1 . 0 -1 -1
+3 413 -1 . 0 -1 -1
+4 -1 20 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .specs_ref 0 -1 -1
+2 -1 -1 .reqmod_ref 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 818
+6 -1 -1 .PKGS 0 -1 819
+6 -1 -1 .skeleton 0 -1 820
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 822
+6 -1 -1 .PKGS 0 -1 823
+6 -1 -1 .skeleton 0 -1 824
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 408 -1 . 0 -1 -1
+1 -1 -1 .glaBeErr 0 -1 -1
+3 416 -1 . 0 -1 -1
+3 416 -1 . 0 -1 -1
+3 416 -1 . 0 -1 -1
+2 -1 -1 .flex_out.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 420 -1 . 0 -1 -1
+2 -1 -1 .flex.exe 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 836
+6 -1 -1 .PKGS 0 -1 837
+6 -1 -1 .skeleton 0 -1 838
+6 -1 -1 .sed.exe 0 -1 -1
+3 421 -1 . 0 -1 -1
+3 421 -1 . 0 -1 -1
+2 -1 -1 .gla_fe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 407 -1 . 0 -1 844
+3 35 -1 . 0 -1 845
+3 77 -1 . 0 -1 -1
+2 -1 -1 .gla_fe.exe 0 -1 -1
+2 -1 -1 .gla.err 0 -1 -1
+2 -1 -1 .glaFeErr.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 407 -1 . 0 -1 851
+3 35 -1 . 0 -1 852
+3 77 -1 . 0 -1 -1
+3 420 -1 . 0 -1 -1
+2 -1 -1 .scan_spec.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 401 -1 . 0 -1 857
+3 26 -1 . 0 -1 -1
+3 195 -1 . 0 -1 859
+3 26 -1 . 0 -1 -1
+3 427 -1 . 0 -1 861
+3 28 -1 . 0 -1 -1
+2 -1 -1 .separator 0 -1 -1
+3 241 -1 . 0 -1 -1
+3 3 -1 . 0 -1 865
+3 432 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 192 -1 . 0 -1 868
+3 432 -1 . 0 -1 -1
+2 -1 -1 .dflt_codes.sh 0 -1 -1
+3 401 -1 . 0 -1 871
+3 77 -1 . 0 -1 -1
+3 33 -1 . 0 -1 873
+4 -1 5 . 0 874 875
+3 34 -1 . 0 -1 -1
+3 405 -1 . 0 -1 876
+3 35 -1 . 0 -1 -1
+2 -1 -1 .PtgSpec.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 22 . 0 -1 -1
+3 224 -1 . 0 -1 881
+4 -1 5 . 0 882 883
+3 34 -1 . 0 -1 -1
+3 443 -1 . 0 -1 -1
+3 82 -1 . 0 -1 885
+3 444 -1 . 0 -1 -1
+3 439 -1 . 0 -1 887
+3 35 -1 . 0 -1 888
+3 444 -1 . 0 -1 -1
+3 439 -1 . 0 -1 890
+3 35 -1 . 0 -1 891
+3 367 -1 . 0 -1 892
+3 445 -1 . 0 -1 894
+3 1 -1 . 0 -1 -1
+3 444 -1 . 0 -1 -1
+3 439 -1 . 0 -1 896
+3 35 -1 . 0 -1 897
+3 216 -1 . 0 -1 898
+3 445 -1 . 0 -1 899
+3 444 -1 . 0 -1 -1
+2 -1 -1 .idem.sh 0 -1 -1
+2 -1 -1 .Idem.exe 0 -1 -1
+3 441 -1 . 0 -1 903
+3 292 -1 . 0 -1 904
+3 77 -1 . 0 -1 -1
+4 -1 21 . 0 -1 -1
+2 -1 -1 .treeProc.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+4 -1 23 . 0 -1 -1
+3 449 -1 . 0 -1 -1
+3 449 -1 . 0 -1 -1
+2 -1 -1 .tree.sh 0 -1 -1
+3 447 -1 . 0 -1 913
+3 453 -1 . 0 -1 914
+3 19 -1 . 0 -1 -1
+3 441 -1 . 0 -1 916
+3 292 -1 . 0 -1 917
+3 77 -1 . 0 -1 -1
+4 -1 21 . 0 -1 -1
+3 451 -1 . 0 -1 920
+3 35 -1 . 0 -1 -1
+3 455 -1 . 0 -1 -1
+3 455 -1 . 0 -1 -1
+2 -1 -1 .makeinfo.sh 0 -1 -1
+2 -1 -1 .texinfo 0 -1 925
+6 -1 -1 .makeinfo.exe 0 -1 -1
+3 354 -1 . 0 -1 -1
+1 -1 -1 .tnf_dir 0 -1 -1
+1 -1 -1 .tnf_node 0 -1 -1
+2 -1 -1 .hypertext.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 456 -1 . 0 -1 -1
+3 458 -1 . 0 -1 -1
+1 -1 -1 .display 0 -1 -1
+2 -1 -1 .help.sh 0 -1 -1
+2 -1 -1 .help_header 0 -1 -1
+2 -1 -1 .help_trailer 0 -1 -1
+2 -1 -1 .hypermsg.exe 0 -1 -1
+3 464 -1 . 0 -1 -1
+3 465 -1 . 0 -1 940
+3 35 -1 . 0 -1 941
+3 268 -1 . 0 -1 -1
+3 466 -1 . 0 -1 -1
+3 466 -1 . 0 -1 -1
+2 -1 -1 .makeinfo.sh 0 -1 -1
+2 -1 -1 .texinfo 0 -1 946
+6 -1 -1 .makeinfo.exe 0 -1 -1
+3 471 -1 . 0 -1 948
+4 -1 24 . 0 -1 949
+3 472 -1 . 0 -1 950
+3 462 -1 . 0 -1 -1
+1 -1 -1 .help_dir 0 -1 -1
+1 -1 -1 .help_node 0 -1 -1
+2 -1 -1 .hypertext.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 467 -1 . 0 -1 -1
+3 469 -1 . 0 -1 -1
+1 -1 -1 .help 0 -1 -1
+2 -1 -1 .std_err.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 24 . 0 -1 -1
+3 477 -1 . 0 -1 -1
+3 477 -1 . 0 -1 -1
+2 -1 -1 .all_info.sh 0 -1 -1
+3 82 -1 . 0 -1 966
+3 482 -1 . 0 -1 968
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+2 -1 -1 .texinfo 0 -1 970
+6 -1 -1 .makeinfo.exe 0 -1 -1
+3 82 -1 . 0 -1 972
+3 482 -1 . 0 -1 -1
+2 -1 -1 .info_data.sh 0 -1 -1
+2 -1 -1 .texinfo 0 -1 975
+6 -1 -1 .makeinfo.exe 0 -1 -1
+3 354 -1 . 0 -1 -1
+3 483 -1 . 0 -1 978
+3 35 -1 . 0 -1 -1
+3 82 -1 . 0 -1 980
+3 482 -1 . 0 -1 981
+3 489 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 82 -1 . 0 -1 984
+3 482 -1 . 0 -1 985
+3 492 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 82 -1 . 0 -1 988
+3 482 -1 . 0 -1 989
+3 495 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 82 -1 . 0 -1 992
+3 499 -1 . 0 -1 993
+3 35 -1 . 0 -1 -1
+2 -1 -1 .tex_input.sh 0 -1 -1
+3 354 -1 . 0 -1 -1
+4 -1 25 . 0 -1 -1
+3 502 -1 . 0 -1 -1
+3 502 -1 . 0 -1 -1
+3 502 -1 . 0 -1 -1
+3 502 -1 . 0 -1 -1
+3 502 -1 . 0 -1 -1
+2 -1 -1 .tex.sh 0 -1 -1
+4 -1 26 . 0 -1 -1
+3 500 -1 . 0 -1 1005
+3 513 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1007
+3 514 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1009
+3 515 -1 . 0 -1 1010
+3 59 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1012
+3 516 -1 . 0 -1 1013
+3 517 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1016
+3 516 -1 . 0 -1 1017
+3 519 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1020
+3 515 -1 . 0 -1 1021
+3 520 -1 . 0 -1 -1
+2 -1 -1 .texi2html.sh 0 -1 -1
+2 -1 -1 .texi2html 0 -1 -1
+3 82 -1 . 0 -1 1025
+3 482 -1 . 0 -1 1026
+3 58 -1 . 0 -1 1027
+3 59 -1 . 0 -1 -1
+2 -1 -1 .html 0 -1 1029
+6 -1 -1 .HEAD.html 0 -1 -1
+2 -1 -1 .html 0 -1 1031
+6 -1 -1 .FOOT.html 0 -1 -1
+3 82 -1 . 0 -1 1033
+3 482 -1 . 0 -1 -1
+2 -1 -1 .index.sh 0 -1 -1
+3 500 -1 . 0 -1 1036
+3 509 -1 . 0 -1 -1
+2 -1 -1 .texinfo 0 -1 1038
+6 -1 -1 .texindex.exe 0 -1 -1
+2 -1 -1 .tnfauxin.sh 0 -1 -1
+3 500 -1 . 0 -1 1041
+3 513 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1043
+3 507 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1045
+3 524 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1047
+4 -1 27 . 0 1048 1060
+5 -1 27 . 0 1049 1051
+3 354 -1 . 0 -1 1050
+3 132 -1 . 0 -1 -1
+5 -1 27 . 0 1052 1053
+2 -1 -1 .tnf 0 -1 -1
+5 -1 27 . 0 1054 1055
+2 -1 -1 .. 0 -1 -1
+5 -1 27 . 0 1056 -1
+2 -1 -1 .ODINCACHE 1 -1 1057
+6 -1 -1 .PKGS 0 -1 1058
+6 -1 -1 .liga 0 -1 1059
+6 -1 -1 .Info 0 -1 -1
+3 530 -1 . 0 -1 -1
+3 500 -1 . 0 -1 1062
+4 -1 27 . 0 1063 1075
+5 -1 27 . 0 1064 1066
+3 354 -1 . 0 -1 1065
+3 132 -1 . 0 -1 -1
+5 -1 27 . 0 1067 1068
+2 -1 -1 .tnf 0 -1 -1
+5 -1 27 . 0 1069 1070
+2 -1 -1 .. 0 -1 -1
+5 -1 27 . 0 1071 -1
+2 -1 -1 .ODINCACHE 1 -1 1072
+6 -1 -1 .PKGS 0 -1 1073
+6 -1 -1 .liga 0 -1 1074
+6 -1 -1 .Info 0 -1 -1
+4 -1 26 . 0 -1 1076
+3 511 -1 . 0 -1 -1
+1 -1 -1 ./bin/cp 0 -1 -1
+2 -1 -1 .doc.sh 0 -1 -1
+1 -1 -1 .odin_help 0 -1 -1
+2 -1 -1 .kwd.sh 0 -1 -1
+2 -1 -1 .kwfilter.exe 0 -1 -1
+3 401 -1 . 0 -1 1083
+3 77 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1085
+3 539 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 537 -1 . 0 -1 -1
+2 -1 -1 .kw.exe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 410 -1 . 0 -1 -1
+3 411 -1 . 0 -1 -1
+3 412 -1 . 0 -1 -1
+3 413 -1 . 0 -1 -1
+2 -1 -1 .kwd.c 0 -1 -1
+2 -1 -1 .match.c 0 -1 -1
+2 -1 -1 .match.h 0 -1 -1
+2 -1 -1 .kwd_gen.sh 0 -1 -1
+3 195 -1 . 0 -1 1099
+3 77 -1 . 0 -1 -1
+3 540 -1 . 0 -1 1101
+3 542 -1 . 0 -1 -1
+2 -1 -1 .kwd_out.sh 0 -1 -1
+3 195 -1 . 0 -1 1104
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1106
+3 539 -1 . 0 -1 1107
+3 26 -1 . 0 -1 -1
+3 544 -1 . 0 -1 1109
+3 28 -1 . 0 -1 -1
+3 195 -1 . 0 -1 -1
+3 236 -1 . 0 -1 1112
+4 -1 5 . 0 1113 1114
+3 34 -1 . 0 -1 -1
+3 546 -1 . 0 -1 1115
+3 35 -1 . 0 -1 -1
+2 -1 -1 .instFiles.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 548 -1 . 0 -1 -1
+1 -1 -1 .instFiles 0 -1 -1
+3 549 -1 . 0 -1 1121
+3 35 -1 . 0 -1 -1
+2 -1 -1 .instGen.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 548 -1 . 0 -1 -1
+4 -1 28 . 0 -1 -1
+4 -1 29 . 0 -1 -1
+3 551 -1 . 0 -1 -1
+2 -1 -1 .instSpec.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 548 -1 . 0 -1 -1
+3 555 -1 . 0 -1 1132
+3 35 -1 . 0 -1 1133
+3 559 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 553 -1 . 0 -1 1136
+3 35 -1 . 0 -1 -1
+3 557 -1 . 0 -1 -1
+3 564 -1 . 0 -1 -1
+3 564 -1 . 0 -1 -1
+2 -1 -1 .ligaEta.sh 0 -1 -1
+3 562 -1 . 0 -1 -1
+4 -1 5 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1144
+6 -1 -1 .PKGS 0 -1 1145
+6 -1 -1 .cpp 0 -1 1146
+6 -1 -1 .cppErr.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 567 -1 . 0 -1 -1
+1 -1 -1 .lidoEtaErr 0 -1 -1
+3 565 -1 . 0 -1 -1
+3 562 -1 . 0 -1 1152
+3 565 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1154
+3 575 -1 . 0 -1 1156
+3 1 -1 . 0 -1 -1
+3 576 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 563 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1160
+3 581 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 572 -1 . 0 -1 1163
+3 581 -1 . 0 -1 -1
+2 -1 -1 .ligaOut.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 571 -1 . 0 -1 1167
+3 26 -1 . 0 -1 -1
+3 586 -1 . 0 -1 1169
+3 28 -1 . 0 -1 -1
+3 587 -1 . 0 -1 1171
+3 28 -1 . 0 -1 -1
+2 -1 -1 .ligaFe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 571 -1 . 0 -1 1175
+3 77 -1 . 0 -1 -1
+3 590 -1 . 0 -1 -1
+3 590 -1 . 0 -1 -1
+3 590 -1 . 0 -1 -1
+3 590 -1 . 0 -1 -1
+2 -1 -1 .ligaOption.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 577 -1 . 0 -1 1183
+3 77 -1 . 0 -1 -1
+4 -1 30 . 0 -1 -1
+4 -1 31 . 0 -1 -1
+4 -1 32 . 0 -1 -1
+3 599 -1 . 0 -1 -1
+3 599 -1 . 0 -1 -1
+3 599 -1 . 0 -1 -1
+2 -1 -1 .ligaMe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 588 -1 . 0 -1 -1
+3 591 -1 . 0 -1 -1
+3 593 -1 . 0 -1 -1
+3 595 -1 . 0 -1 -1
+3 571 -1 . 0 -1 1197
+3 77 -1 . 0 -1 -1
+3 571 -1 . 0 -1 1199
+3 134 -1 . 0 -1 -1
+4 -1 33 . 0 -1 -1
+2 -1 -1 .ligaBe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 600 -1 . 0 -1 -1
+3 597 -1 . 0 -1 -1
+3 571 -1 . 0 -1 1206
+3 77 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .Frames 0 -1 1209
+6 -1 -1 .liga.dapto 0 -1 -1
+3 232 -1 . 0 -1 1211
+4 -1 5 . 0 1212 1213
+3 34 -1 . 0 -1 -1
+3 586 -1 . 0 -1 1214
+3 35 -1 . 0 -1 -1
+2 -1 -1 .gorto.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 232 -1 . 0 -1 1218
+4 -1 5 . 0 1219 1220
+3 34 -1 . 0 -1 -1
+3 571 -1 . 0 -1 1221
+3 77 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1223
+4 -1 5 . 0 1224 1225
+3 34 -1 . 0 -1 -1
+4 -1 33 . 0 -1 1226
+3 600 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1228
+4 -1 5 . 0 1229 1230
+3 34 -1 . 0 -1 -1
+3 593 -1 . 0 -1 -1
+2 -1 -1 .ligaProd.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 571 -1 . 0 -1 1234
+3 77 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1236
+6 -1 -1 .PKGS 0 -1 1237
+6 -1 -1 .skeleton 0 -1 1238
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 610 -1 . 0 -1 -1
+1 -1 -1 .ligaProdErr 0 -1 -1
+2 -1 -1 .showFe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 571 -1 . 0 -1 1245
+3 77 -1 . 0 -1 -1
+3 571 -1 . 0 -1 1247
+3 134 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1249
+4 -1 5 . 0 1250 1251
+3 34 -1 . 0 -1 -1
+3 614 -1 . 0 -1 1252
+3 35 -1 . 0 -1 -1
+2 -1 -1 .feInfo.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 571 -1 . 0 -1 1256
+3 77 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1258
+4 -1 5 . 0 1259 1260
+3 34 -1 . 0 -1 -1
+3 618 -1 . 0 -1 1261
+3 35 -1 . 0 -1 -1
+2 -1 -1 .showMe.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 571 -1 . 0 -1 1265
+3 77 -1 . 0 -1 -1
+3 571 -1 . 0 -1 1267
+3 134 -1 . 0 -1 -1
+3 588 -1 . 0 -1 -1
+3 591 -1 . 0 -1 -1
+3 593 -1 . 0 -1 -1
+3 595 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1273
+4 -1 5 . 0 1274 1275
+3 34 -1 . 0 -1 -1
+3 622 -1 . 0 -1 1276
+3 35 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1278
+4 -1 5 . 0 1279 1280
+3 34 -1 . 0 -1 -1
+4 -1 30 . 0 -1 1281
+3 602 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1283
+4 -1 5 . 0 1284 1285
+3 34 -1 . 0 -1 -1
+4 -1 32 . 0 -1 1286
+3 602 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1288
+4 -1 5 . 0 1289 1290
+3 34 -1 . 0 -1 -1
+4 -1 31 . 0 -1 1291
+3 602 -1 . 0 -1 -1
+2 -1 -1 .ligaErr.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 571 -1 . 0 -1 1296
+3 77 -1 . 0 -1 -1
+3 586 -1 . 0 -1 -1
+3 232 -1 . 0 -1 1299
+4 -1 5 . 0 1300 1301
+3 34 -1 . 0 -1 -1
+3 584 -1 . 0 -1 1302
+3 35 -1 . 0 -1 -1
+3 634 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1305
+3 640 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .SymToMap.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 635 -1 . 0 -1 1310
+3 77 -1 . 0 -1 -1
+2 -1 -1 .mapOut.sh 0 -1 -1
+3 571 -1 . 0 -1 1313
+3 26 -1 . 0 -1 -1
+3 645 -1 . 0 -1 1315
+3 26 -1 . 0 -1 -1
+3 646 -1 . 0 -1 1317
+3 28 -1 . 0 -1 -1
+3 647 -1 . 0 -1 1319
+3 28 -1 . 0 -1 -1
+3 648 -1 . 0 -1 1321
+3 28 -1 . 0 -1 -1
+2 -1 -1 .treestack.h 0 -1 -1
+2 -1 -1 .mapBuOut.sh 0 -1 -1
+3 571 -1 . 0 -1 1325
+3 26 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1327
+3 651 -1 . 0 -1 1329
+3 1 -1 . 0 -1 -1
+3 30 -1 . 0 -1 -1
+3 652 -1 . 0 -1 1331
+3 28 -1 . 0 -1 -1
+3 653 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1334
+3 659 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .mapBnf.sh 0 -1 -1
+2 -1 -1 .ebnf.exe 0 -1 -1
+3 645 -1 . 0 -1 1339
+3 77 -1 . 0 -1 -1
+2 -1 -1 .maptool.err 0 -1 -1
+3 660 -1 . 0 -1 -1
+3 610 -1 . 0 -1 -1
+3 654 -1 . 0 -1 -1
+3 641 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1346
+6 -1 -1 .PKGS 0 -1 1347
+6 -1 -1 .skeleton 0 -1 1348
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 660 -1 . 0 -1 -1
+1 -1 -1 .mapBnfErr 0 -1 -1
+3 666 -1 . 0 -1 -1
+3 666 -1 . 0 -1 -1
+3 666 -1 . 0 -1 -1
+3 666 -1 . 0 -1 -1
+3 666 -1 . 0 -1 -1
+3 666 -1 . 0 -1 -1
+2 -1 -1 .mapGen.sh 0 -1 -1
+2 -1 -1 .maptool.exe 0 -1 -1
+3 571 -1 . 0 -1 1361
+3 26 -1 . 0 -1 -1
+3 662 -1 . 0 -1 1363
+3 77 -1 . 0 -1 -1
+4 -1 13 . 0 -1 -1
+2 -1 -1 .maptool.err 0 -1 -1
+2 -1 -1 .treedef.h 0 -1 -1
+2 -1 -1 .treestack.c 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1369
+6 -1 -1 .PKGS 0 -1 1370
+6 -1 -1 .skeleton 0 -1 1371
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 647 -1 . 0 -1 -1
+1 -1 -1 .mapBeErr 0 -1 -1
+2 -1 -1 .mapBuGen.sh 0 -1 -1
+2 -1 -1 .maptool.exe 0 -1 -1
+3 662 -1 . 0 -1 1378
+3 77 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1380
+3 651 -1 . 0 -1 1381
+3 30 -1 . 0 -1 -1
+2 -1 -1 .maptool.err 0 -1 -1
+3 224 -1 . 0 -1 1384
+4 -1 5 . 0 1385 1386
+3 34 -1 . 0 -1 -1
+3 669 -1 . 0 -1 -1
+3 224 -1 . 0 -1 1388
+4 -1 5 . 0 1389 1390
+3 34 -1 . 0 -1 -1
+3 667 -1 . 0 -1 -1
+3 224 -1 . 0 -1 1392
+4 -1 5 . 0 1393 1394
+3 34 -1 . 0 -1 -1
+3 443 -1 . 0 -1 -1
+3 224 -1 . 0 -1 1396
+4 -1 5 . 0 1397 1398
+3 34 -1 . 0 -1 -1
+3 643 -1 . 0 -1 1399
+3 35 -1 . 0 -1 -1
+3 236 -1 . 0 -1 1401
+4 -1 5 . 0 1402 1403
+3 34 -1 . 0 -1 -1
+3 649 -1 . 0 -1 1404
+3 35 -1 . 0 -1 -1
+3 169 -1 . 0 -1 1406
+3 35 -1 . 0 -1 -1
+3 247 -1 . 0 -1 1408
+3 691 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 251 -1 . 0 -1 1411
+3 691 -1 . 0 -1 -1
+2 -1 -1 .mon.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 82 -1 . 0 -1 1415
+4 -1 11 . 0 -1 1416
+3 66 -1 . 0 -1 -1
+3 82 -1 . 0 -1 1418
+4 -1 11 . 0 -1 1419
+3 686 -1 . 0 -1 -1
+3 689 -1 . 0 -1 1421
+3 30 -1 . 0 -1 -1
+4 -1 34 . 0 -1 1423
+3 54 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+4 -1 34 . 0 -1 -1
+2 -1 -1 .noosa.exe 0 -1 -1
+2 -1 -1 .noosa.tcl 0 -1 -1
+2 -1 -1 .mongdb.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 82 -1 . 0 -1 1431
+4 -1 11 . 0 -1 1432
+3 179 -1 . 0 -1 1433
+3 58 -1 . 0 -1 1434
+3 59 -1 . 0 -1 -1
+3 82 -1 . 0 -1 1436
+4 -1 11 . 0 -1 1437
+3 180 -1 . 0 -1 1438
+3 58 -1 . 0 -1 1439
+3 59 -1 . 0 -1 -1
+3 82 -1 . 0 -1 1441
+4 -1 11 . 0 -1 1442
+3 66 -1 . 0 -1 -1
+3 82 -1 . 0 -1 1444
+4 -1 11 . 0 -1 1445
+3 686 -1 . 0 -1 -1
+3 689 -1 . 0 -1 1447
+3 30 -1 . 0 -1 -1
+4 -1 18 . 0 -1 -1
+4 -1 34 . 0 -1 1450
+3 54 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+3 82 -1 . 0 -1 1453
+4 -1 11 . 0 -1 1454
+3 179 -1 . 0 -1 -1
+3 82 -1 . 0 -1 1456
+4 -1 11 . 0 -1 1457
+3 180 -1 . 0 -1 -1
+3 696 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1460
+3 702 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .oil_gen.sh 0 -1 -1
+2 -1 -1 .oil.exe 0 -1 -1
+3 697 -1 . 0 -1 1465
+3 77 -1 . 0 -1 -1
+2 -1 -1 .oil.err 0 -1 -1
+2 -1 -1 .oil_out.sh 0 -1 -1
+3 697 -1 . 0 -1 1469
+3 26 -1 . 0 -1 -1
+3 703 -1 . 0 -1 1471
+3 28 -1 . 0 -1 -1
+2 -1 -1 .oil.specs 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1474
+6 -1 -1 .PKGS 0 -1 1475
+6 -1 -1 .skeleton 0 -1 1476
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 703 -1 . 0 -1 -1
+1 -1 -1 .oil_genErr 0 -1 -1
+3 82 -1 . 0 -1 1481
+4 -1 5 . 0 1482 1483
+3 34 -1 . 0 -1 -1
+3 705 -1 . 0 -1 1484
+3 35 -1 . 0 -1 -1
+3 9 -1 . 0 -1 1486
+3 378 -1 . 0 -1 1487
+3 209 -1 . 0 -1 -1
+3 201 -1 . 0 -1 1489
+3 82 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+2 -1 -1 .ls.sh 0 -1 -1
+3 9 -1 . 0 -1 -1
+3 709 -1 . 0 -1 -1
+3 378 -1 . 0 -1 -1
+3 378 -1 . 0 -1 -1
+2 -1 -1 .dir.sh 0 -1 -1
+3 3 -1 . 0 -1 1498
+3 160 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1500
+3 54 -1 . 0 -1 -1
+3 682 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1503
+3 724 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 725 -1 . 0 -1 1506
+3 35 -1 . 0 -1 -1
+2 -1 -1 .parserOut.sh 0 -1 -1
+3 200 -1 . 0 -1 1509
+3 728 -1 . 0 -1 1511
+3 1 -1 . 0 -1 -1
+3 26 -1 . 0 -1 -1
+3 200 -1 . 0 -1 1513
+3 122 -1 . 0 -1 1514
+3 26 -1 . 0 -1 -1
+4 -1 13 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .parser.reqmod 0 -1 -1
+2 -1 -1 .mon_cprods.c 0 -1 -1
+2 -1 -1 .dfltparse.reqmod 0 -1 -1
+3 729 -1 . 0 -1 1521
+3 35 -1 . 0 -1 -1
+2 -1 -1 .infoOut.sh 0 -1 -1
+3 200 -1 . 0 -1 1524
+3 728 -1 . 0 -1 1525
+3 26 -1 . 0 -1 -1
+3 200 -1 . 0 -1 1527
+3 124 -1 . 0 -1 1528
+3 26 -1 . 0 -1 -1
+4 -1 13 . 0 -1 -1
+2 -1 -1 .noneInfo 0 -1 -1
+3 730 -1 . 0 -1 -1
+3 224 -1 . 0 -1 1533
+4 -1 5 . 0 1534 1535
+3 34 -1 . 0 -1 -1
+3 660 -1 . 0 -1 -1
+3 736 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1538
+3 742 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .perrGen.sh 0 -1 -1
+7 -1 -1 .perrExe 0 -1 -1
+3 737 -1 . 0 -1 1543
+3 77 -1 . 0 -1 -1
+2 -1 -1 .perr.err 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1546
+6 -1 -1 .PKGS 0 -1 1547
+6 -1 -1 .skeleton 0 -1 1548
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .perrOut.sh 0 -1 -1
+3 737 -1 . 0 -1 1551
+3 26 -1 . 0 -1 -1
+3 743 -1 . 0 -1 1553
+3 28 -1 . 0 -1 -1
+3 747 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1556
+3 753 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 754 -1 . 0 -1 -1
+3 754 -1 . 0 -1 -1
+2 -1 -1 .pgram.sh 0 -1 -1
+3 748 -1 . 0 -1 1562
+3 77 -1 . 0 -1 -1
+3 745 -1 . 0 -1 1564
+3 35 -1 . 0 -1 1565
+3 30 -1 . 0 -1 -1
+3 200 -1 . 0 -1 1567
+3 728 -1 . 0 -1 1568
+3 54 -1 . 0 -1 -1
+3 200 -1 . 0 -1 1570
+3 757 -1 . 0 -1 1572
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1574
+6 -1 -1 .PKGS 0 -1 1575
+6 -1 -1 .skeleton 0 -1 1576
+6 -1 -1 .sed.exe 0 -1 -1
+3 200 -1 . 0 -1 1578
+3 728 -1 . 0 -1 -1
+3 200 -1 . 0 -1 1580
+3 757 -1 . 0 -1 -1
+2 -1 -1 .UserPgram.sh 0 -1 -1
+3 200 -1 . 0 -1 1583
+4 -1 5 . 0 1584 1585
+3 34 -1 . 0 -1 -1
+3 90 -1 . 0 -1 -1
+3 200 -1 . 0 -1 1587
+4 -1 5 . 0 1588 1589
+3 34 -1 . 0 -1 -1
+3 91 -1 . 0 -1 -1
+3 726 -1 . 0 -1 1591
+3 35 -1 . 0 -1 -1
+3 760 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1594
+3 766 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .pdlGen.sh 0 -1 -1
+2 -1 -1 .pdl.exe 0 -1 -1
+3 761 -1 . 0 -1 1599
+3 77 -1 . 0 -1 -1
+2 -1 -1 .lib.pdl 0 -1 -1
+2 -1 -1 .pdl.err 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1603
+6 -1 -1 .PKGS 0 -1 1604
+6 -1 -1 .skeleton 0 -1 1605
+6 -1 -1 .sed.exe 0 -1 -1
+2 -1 -1 .pdlOut.sh 0 -1 -1
+3 761 -1 . 0 -1 1608
+3 26 -1 . 0 -1 -1
+3 767 -1 . 0 -1 1610
+3 28 -1 . 0 -1 -1
+2 -1 -1 .deftbl.head 0 -1 -1
+2 -1 -1 .deftbl.save.eta 0 -1 -1
+2 -1 -1 .deftbl.reqmod 0 -1 -1
+2 -1 -1 .pdl.dapto 0 -1 -1
+2 -1 -1 .pdl.tcl 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1617
+6 -1 -1 .PKGS 0 -1 1618
+6 -1 -1 .skeleton 0 -1 1619
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 767 -1 . 0 -1 -1
+1 -1 -1 .pdlGenErr 0 -1 -1
+3 52 -1 . 0 -1 1624
+4 -1 5 . 0 1625 1626
+3 34 -1 . 0 -1 -1
+3 769 -1 . 0 -1 1627
+3 35 -1 . 0 -1 -1
+2 -1 -1 .pgsGen.sh 0 -1 -1
+3 90 -1 . 0 -1 -1
+3 91 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+4 -1 36 . 0 -1 -1
+2 -1 -1 .eingabe.exe 0 -1 -1
+2 -1 -1 .analyse.exe 0 -1 -1
+2 -1 -1 .pgs_optim.exe 0 -1 -1
+2 -1 -1 .buildtab.exe 0 -1 -1
+2 -1 -1 .StructConn 0 -1 -1
+2 -1 -1 .parser.c 0 -1 -1
+2 -1 -1 .pgs.dapto 0 -1 -1
+2 -1 -1 .pgsInfo.sh 0 -1 -1
+3 90 -1 . 0 -1 -1
+3 91 -1 . 0 -1 -1
+4 -1 36 . 0 -1 -1
+2 -1 -1 .eingabe.exe 0 -1 -1
+2 -1 -1 .analyse.exe 0 -1 -1
+2 -1 -1 .pgsConflict.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+2 -1 -1 .eingabe.exe 0 -1 -1
+2 -1 -1 .analyse.exe 0 -1 -1
+2 -1 -1 .pgsGenErr.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 777 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1655
+6 -1 -1 .PKGS 0 -1 1656
+6 -1 -1 .skeleton 0 -1 1657
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 773 -1 . 0 -1 -1
+1 -1 -1 .pgsMiscErr 0 -1 -1
+3 783 -1 . 0 -1 -1
+3 783 -1 . 0 -1 -1
+2 -1 -1 .pgsOut.sh 0 -1 -1
+3 773 -1 . 0 -1 1665
+3 28 -1 . 0 -1 -1
+3 775 -1 . 0 -1 1667
+3 28 -1 . 0 -1 -1
+4 -1 13 . 0 -1 -1
+3 791 -1 . 0 -1 -1
+3 791 -1 . 0 -1 -1
+2 -1 -1 .phiOut.sh 0 -1 -1
+3 3 -1 . 0 -1 1673
+3 795 -1 . 0 -1 1675
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1677
+3 796 -1 . 0 -1 1679
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1681
+3 797 -1 . 0 -1 1683
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1685
+3 798 -1 . 0 -1 1687
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1689
+3 795 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1691
+3 796 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1693
+3 797 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1695
+3 798 -1 . 0 -1 -1
+2 -1 -1 .phiErr.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 793 -1 . 0 -1 -1
+3 256 -1 . 0 -1 1701
+3 35 -1 . 0 -1 1702
+3 54 -1 . 0 -1 -1
+3 256 -1 . 0 -1 1704
+3 35 -1 . 0 -1 1705
+3 160 -1 . 0 -1 -1
+3 801 -1 . 0 -1 -1
+3 801 -1 . 0 -1 -1
+2 -1 -1 .etaOut.sh 0 -1 -1
+3 3 -1 . 0 -1 1710
+3 805 -1 . 0 -1 1712
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1714
+3 805 -1 . 0 -1 -1
+2 -1 -1 .etaIncl.sh 0 -1 -1
+3 82 -1 . 0 -1 1717
+3 257 -1 . 0 -1 1718
+3 378 -1 . 0 -1 1719
+3 268 -1 . 0 -1 -1
+3 218 -1 . 0 -1 1721
+3 257 -1 . 0 -1 1722
+3 35 -1 . 0 -1 1723
+3 209 -1 . 0 -1 -1
+2 -1 -1 .etaErr.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 803 -1 . 0 -1 -1
+3 257 -1 . 0 -1 1729
+3 35 -1 . 0 -1 1730
+3 54 -1 . 0 -1 -1
+3 257 -1 . 0 -1 1732
+3 35 -1 . 0 -1 1733
+3 160 -1 . 0 -1 -1
+3 809 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1736
+3 814 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .ptg_gen.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 444 -1 . 0 -1 1741
+3 77 -1 . 0 -1 -1
+2 -1 -1 .ptg_out.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 444 -1 . 0 -1 1745
+3 26 -1 . 0 -1 -1
+3 815 -1 . 0 -1 1747
+3 28 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+2 -1 -1 .ptgadt.ptg.phi 0 -1 -1
+2 -1 -1 .ptgadt.head 0 -1 -1
+2 -1 -1 .ptgadt.reqmod 0 -1 -1
+2 -1 -1 .ptg.dapto 0 -1 -1
+2 -1 -1 .ptg.tcl 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1755
+6 -1 -1 .PKGS 0 -1 1756
+6 -1 -1 .skeleton 0 -1 1757
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 815 -1 . 0 -1 -1
+1 -1 -1 .ptg_genErr 0 -1 -1
+3 82 -1 . 0 -1 1762
+4 -1 5 . 0 1763 1764
+3 34 -1 . 0 -1 -1
+3 817 -1 . 0 -1 1765
+3 35 -1 . 0 -1 -1
+2 -1 -1 .index.sh 0 -1 -1
+2 -1 -1 .paste.exe 0 -1 -1
+3 292 -1 . 0 -1 1769
+3 160 -1 . 0 -1 -1
+3 292 -1 . 0 -1 1771
+3 26 -1 . 0 -1 -1
+2 -1 -1 .err_map.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 57 -1 . 0 -1 1776
+3 35 -1 . 0 -1 1777
+3 54 -1 . 0 -1 -1
+3 57 -1 . 0 -1 1779
+3 35 -1 . 0 -1 1780
+3 160 -1 . 0 -1 -1
+3 57 -1 . 0 -1 -1
+2 -1 -1 .err_map.exe 0 -1 -1
+2 -1 -1 .cat-n.exe 0 -1 -1
+2 -1 -1 .line_err.exe 0 -1 -1
+2 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 201 -1 . 0 -1 -1
+1 -1 -1 .no_map 0 -1 -1
+3 827 -1 . 0 -1 -1
+3 827 -1 . 0 -1 -1
+2 -1 -1 .err_filter.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+2 -1 -1 .msgtext.sh 0 -1 -1
+2 -1 -1 .sed.exe 0 -1 -1
+3 464 -1 . 0 -1 -1
+3 465 -1 . 0 -1 1797
+3 35 -1 . 0 -1 1798
+3 268 -1 . 0 -1 -1
+3 471 -1 . 0 -1 1800
+3 472 -1 . 0 -1 1801
+3 830 -1 . 0 -1 -1
+3 836 -1 . 0 -1 1803
+3 472 -1 . 0 -1 1804
+3 830 -1 . 0 -1 -1
+2 -1 -1 .viewlist.sh 0 -1 -1
+2 -1 -1 .sed.exe 0 -1 -1
+3 3 -1 . 0 -1 1808
+3 58 -1 . 0 -1 1809
+3 59 -1 . 0 -1 -1
+2 -1 -1 .doview 0 -1 -1
+3 3 -1 . 0 -1 -1
+2 -1 -1 .paste.sh 0 -1 -1
+2 -1 -1 .paste.exe 0 -1 -1
+3 3 -1 . 0 -1 1815
+3 54 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1817
+3 160 -1 . 0 -1 -1
+1 -1 -1 .pasted 0 -1 -1
+2 -1 -1 .paste.sh 0 -1 -1
+2 -1 -1 .vtd.exe 0 -1 -1
+3 3 -1 . 0 -1 1822
+3 160 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1824
+3 26 -1 . 0 -1 -1
+1 -1 -1 .vtd 0 -1 -1
+3 841 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1828
+3 847 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .codeOut.sh 0 -1 -1
+3 842 -1 . 0 -1 1832
+3 26 -1 . 0 -1 -1
+3 850 -1 . 0 -1 1834
+3 28 -1 . 0 -1 -1
+2 -1 -1 .codeGen.sh 0 -1 -1
+3 842 -1 . 0 -1 1837
+3 77 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1839
+6 -1 -1 .PKGS 0 -1 1840
+6 -1 -1 .skeleton 0 -1 1841
+6 -1 -1 .no_loc.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 850 -1 . 0 -1 -1
+1 -1 -1 .symErr 0 -1 -1
+3 228 -1 . 0 -1 1846
+4 -1 5 . 0 1847 1848
+3 34 -1 . 0 -1 -1
+3 848 -1 . 0 -1 1849
+3 35 -1 . 0 -1 -1
+3 854 -1 . 0 -1 -1
+3 3 -1 . 0 -1 1852
+3 860 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .tpGen.sh 0 -1 -1
+2 -1 -1 .. 0 -1 -1
+3 855 -1 . 0 -1 1857
+3 77 -1 . 0 -1 -1
+4 -1 11 . 0 -1 -1
+1 -1 -1 .NEED 0 -1 -1
+2 -1 -1 .tp.exe 0 -1 -1
+2 -1 -1 .tp.err 0 -1 -1
+2 -1 -1 .tp.INIT.phi 0 -1 -1
+2 -1 -1 .tpnode.h 0 -1 -1
+2 -1 -1 .tp.dapto 0 -1 -1
+2 -1 -1 .tp.tcl 0 -1 -1
+2 -1 -1 .tpOut.sh 0 -1 -1
+3 855 -1 . 0 -1 1868
+3 26 -1 . 0 -1 -1
+3 861 -1 . 0 -1 1870
+3 28 -1 . 0 -1 -1
+2 -1 -1 .ODINCACHE 1 -1 1872
+6 -1 -1 .PKGS 0 -1 1873
+6 -1 -1 .skeleton 0 -1 1874
+6 -1 -1 .no_map.sh 0 -1 -1
+4 -1 1 . 0 -1 -1
+3 861 -1 . 0 -1 -1
+1 -1 -1 .tpGenErr 0 -1 -1
+3 82 -1 . 0 -1 1879
+4 -1 5 . 0 1880 1881
+3 34 -1 . 0 -1 -1
+3 863 -1 . 0 -1 1882
+3 35 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 868 -1 . 0 -1 1886
+3 890 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 868 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 869 -1 . 0 -1 -1
+3 867 -1 . 0 -1 -1
+3 867 -1 . 0 -1 -1
+3 520 -1 . 0 -1 -1
+2 -1 -1 .copy.sh 0 -1 -1
+3 1 -1 . 0 -1 -1
+4 -1 2 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+4 -1 37 . 0 -1 -1
+3 892 -1 . 0 -1 -1
+3 892 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 877 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 3 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 3 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 3 -1 . 0 -1 -1
+3 3 -1 . 0 -1 -1
+3 3 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 3 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+3 883 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+4 -1 3 . 0 -1 -1
+1 -1 -1 ./bin/cp 0 -1 -1
+2 -1 -1 .help.sh 0 -1 -1
+1 -1 -1 .odin_help 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+4 -1 39 . 0 -1 -1
+2 -1 -1 .rcs.log.sh 0 -1 -1
+3 917 -1 . 0 -1 -1
+4 -1 40 . 0 -1 -1
+4 -1 41 . 0 -1 -1
+4 -1 42 . 0 -1 -1
+4 -1 43 . 0 -1 -1
+2 -1 -1 .rcs_co.sh 0 -1 -1
+3 917 -1 . 0 -1 -1
+4 -1 40 . 0 -1 -1
+4 -1 41 . 0 -1 -1
+4 -1 42 . 0 -1 -1
+4 -1 43 . 0 -1 -1
+2 -1 -1 .sccs_co.sh 0 -1 -1
+3 918 -1 . 0 -1 -1
+4 -1 40 . 0 -1 -1
+4 -1 41 . 0 -1 -1
+2 -1 -1 .sccs.log.sh 0 -1 -1
+3 918 -1 . 0 -1 -1
+4 -1 40 . 0 -1 -1
+4 -1 41 . 0 -1 -1
+2 -1 -1 .vw.sh 0 -1 -1
+3 919 -1 . 0 -1 1955
+3 881 -1 . 0 -1 -1
+4 -1 44 . 0 -1 -1
+2 -1 -1 .merge.sh 0 -1 -1
+3 920 -1 . 0 -1 1959
+3 453 -1 . 0 -1 1960
+3 26 -1 . 0 -1 -1
+3 919 -1 . 0 -1 1962
+3 882 -1 . 0 -1 -1
+2 -1 -1 .vw.of.sh 0 -1 -1
+3 919 -1 . 0 -1 1965
+3 881 -1 . 0 -1 -1
+3 921 -1 . 0 -1 1967
+3 35 -1 . 0 -1 1968
+3 936 -1 . 0 -1 1970
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 922 -1 . 0 -1 1972
+3 59 -1 . 0 -1 -1
+3 938 -1 . 0 -1 -1
+3 939 -1 . 0 -1 1975
+3 946 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .o_of.sh 0 -1 -1
+3 940 -1 . 0 -1 1979
+3 948 -1 . 0 -1 1981
+3 1 -1 . 0 -1 -1
+3 54 -1 . 0 -1 -1
+3 940 -1 . 0 -1 1983
+3 302 -1 . 0 -1 1984
+3 54 -1 . 0 -1 -1
+2 -1 -1 .ar.sh 0 -1 -1
+3 942 -1 . 0 -1 1987
+3 59 -1 . 0 -1 -1
+3 942 -1 . 0 -1 1989
+3 520 -1 . 0 -1 -1
+3 950 -1 . 0 -1 -1
+3 950 -1 . 0 -1 -1
+2 -1 -1 .libraries.sh 0 -1 -1
+4 -1 45 . 0 -1 -1
+4 -1 46 . 0 -1 -1
+3 941 -1 . 0 -1 1996
+3 943 -1 . 0 -1 -1
+3 941 -1 . 0 -1 1998
+3 453 -1 . 0 -1 -1
+2 -1 -1 .f_obj.sh 0 -1 -1
+3 954 -1 . 0 -1 -1
+4 -1 9 . 0 -1 -1
+4 -1 17 . 0 -1 -1
+4 -1 47 . 0 -1 -1
+4 -1 48 . 0 -1 -1
+4 -1 49 . 0 -1 -1
+2 -1 -1 .lex.sh 0 -1 -1
+3 956 -1 . 0 -1 -1
+4 -1 51 . 0 -1 -1
+3 960 -1 . 0 -1 -1
+3 960 -1 . 0 -1 -1
+3 960 -1 . 0 -1 -1
+2 -1 -1 .yacc.sh 0 -1 -1
+3 958 -1 . 0 -1 -1
+4 -1 51 . 0 -1 -1
+4 -1 53 . 0 -1 -1
+4 -1 52 . 0 -1 -1
+4 -1 35 . 0 -1 -1
+4 -1 54 . 0 -1 -1
+4 -1 55 . 0 -1 -1
+3 968 -1 . 0 -1 -1
+3 968 -1 . 0 -1 -1
+3 968 -1 . 0 -1 -1
+3 968 -1 . 0 -1 -1
+2 -1 -1 .ygt.sh 0 -1 -1
+3 964 -1 . 0 -1 -1
+4 -1 51 . 0 -1 -1
+2 -1 -1 .tregrm.exe 0 -1 -1
+3 977 -1 . 0 -1 -1
+3 977 -1 . 0 -1 -1
+3 977 -1 . 0 -1 -1
+3 977 -1 . 0 -1 -1
+2 -1 -1 .dg_out.sh 0 -1 -1
+2 -1 -1 .dg.exe 0 -1 -1
+3 973 -1 . 0 -1 -1
+4 -1 56 . 0 -1 -1
+2 -1 -1 .profile.sh 0 -1 -1
+3 66 -1 . 0 -1 -1
+4 -1 57 . 0 -1 2039
+3 54 -1 . 0 -1 -1
+4 -1 58 . 0 -1 -1
+4 -1 57 . 0 -1 -1
+3 2 -1 . 0 -1 -1
+2 -1 -1 .redo.sh 0 -1 -1
+3 1 -1 . 0 -1 2045
+3 28 -1 . 0 -1 -1
+2 -1 -1 .redo_errs.sh 0 -1 -1
+3 836 -1 . 0 -1 -1
+2 -1 -1 .boot.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 59 . 0 -1 -1
+3 986 -1 . 0 -1 -1
+2 -1 -1 .diff.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 60 . 0 -1 -1
+2 -1 -1 .rcp.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 61 . 0 -1 -1
+4 -1 62 . 0 -1 -1
+2 -1 -1 .install.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 62 . 0 -1 -1
+2 -1 -1 .INSTALL 0 -1 -1
+2 -1 -1 .so_inc.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 63 . 0 -1 -1
+3 1002 -1 . 0 -1 -1
+3 1003 -1 . 0 -1 2068
+3 1012 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1003 -1 . 0 -1 -1
+2 -1 -1 .eqn.sh 0 -1 -1
+1 -1 -1 .eqn 0 -1 -1
+3 2 -1 . 0 -1 -1
+2 -1 -1 .eqn.sh 0 -1 -1
+1 -1 -1 .gnc.eqn 0 -1 -1
+3 999 -1 . 0 -1 -1
+2 -1 -1 .tbl.sh 0 -1 -1
+3 1000 -1 . 0 -1 -1
+2 -1 -1 .nroff.sh 0 -1 -1
+3 1001 -1 . 0 -1 -1
+3 1001 -1 . 0 -1 2082
+3 132 -1 . 0 -1 -1
+4 -1 64 . 0 -1 -1
+3 1001 -1 . 0 -1 2085
+4 -1 63 . 0 2086 2088
+3 1001 -1 . 0 -1 2087
+3 132 -1 . 0 -1 -1
+3 1017 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+2 -1 -1 .oneTex.sh 0 -1 -1
+3 352 -1 . 0 -1 -1
+3 330 -1 . 0 -1 -1
+3 1031 -1 . 0 -1 -1
+3 1031 -1 . 0 -1 -1
+2 -1 -1 .root.sh 0 -1 -1
+3 1021 -1 . 0 -1 -1
+4 -1 67 . 0 -1 -1
+3 1021 -1 . 0 -1 2099
+3 520 -1 . 0 -1 -1
+2 -1 -1 .texsp.sh 0 -1 -1
+3 1021 -1 . 0 -1 2102
+3 59 -1 . 0 -1 -1
+3 132 -1 . 0 -1 -1
+4 -1 27 . 0 -1 -1
+3 1037 -1 . 0 -1 -1
+3 1037 -1 . 0 -1 2107
+3 517 -1 . 0 -1 2108
+3 1038 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1022 -1 . 0 -1 2111
+4 -1 70 . 0 2112 2113
+3 514 -1 . 0 -1 -1
+3 1035 -1 . 0 -1 -1
+2 -1 -1 .tex_view.sh 0 -1 -1
+3 1023 -1 . 0 -1 -1
+4 -1 70 . 0 -1 -1
+2 -1 -1 .texscan.sh 0 -1 -1
+2 -1 -1 .texscan.c 0 -1 2119
+3 66 -1 . 0 -1 -1
+3 352 -1 . 0 -1 -1
+3 1040 -1 . 0 -1 2122
+3 453 -1 . 0 -1 -1
+2 -1 -1 .fmtcmd.sh 0 -1 -1
+3 1022 -1 . 0 -1 2125
+4 -1 70 . 0 2126 2127
+3 514 -1 . 0 -1 -1
+3 1037 -1 . 0 -1 2128
+3 54 -1 . 0 -1 -1
+4 -1 65 . 0 -1 -1
+4 -1 66 . 0 -1 -1
+4 -1 26 . 0 -1 -1
+3 1046 -1 . 0 -1 -1
+3 1046 -1 . 0 -1 -1
+3 1046 -1 . 0 -1 -1
+3 1046 -1 . 0 -1 -1
+3 1046 -1 . 0 -1 -1
+3 1046 -1 . 0 -1 -1
+2 -1 -1 .tex.sh 0 -1 -1
+3 1044 -1 . 0 -1 -1
+3 513 -1 . 0 -1 -1
+3 514 -1 . 0 -1 -1
+3 1021 -1 . 0 -1 2143
+3 1028 -1 . 0 -1 2144
+3 59 -1 . 0 -1 -1
+3 516 -1 . 0 -1 2146
+3 517 -1 . 0 -1 -1
+3 516 -1 . 0 -1 2148
+3 519 -1 . 0 -1 -1
+3 516 -1 . 0 -1 2150
+3 1053 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1021 -1 . 0 -1 2153
+3 1028 -1 . 0 -1 2154
+3 520 -1 . 0 -1 -1
+2 -1 -1 .bibtex.sh 0 -1 -1
+3 1025 -1 . 0 -1 -1
+3 514 -1 . 0 -1 -1
+3 516 -1 . 0 -1 2159
+3 1056 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 516 -1 . 0 -1 2162
+3 1057 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1058 -1 . 0 -1 -1
+3 1058 -1 . 0 -1 -1
+2 -1 -1 .makeindex.sh 0 -1 -1
+3 1026 -1 . 0 -1 -1
+4 -1 69 . 0 -1 -1
+2 -1 -1 .texauxin.sh 0 -1 -1
+3 513 -1 . 0 -1 -1
+3 1027 -1 . 0 -1 -1
+3 1054 -1 . 0 -1 -1
+3 1059 -1 . 0 -1 -1
+2 -1 -1 .dvips.sh 0 -1 -1
+3 521 -1 . 0 -1 -1
+3 514 -1 . 0 -1 -1
+4 -1 68 . 0 -1 -1
+3 516 -1 . 0 -1 2179
+3 1065 -1 . 0 -1 -1
+3 1 -1 . 0 -1 -1
+3 1021 -1 . 0 -1 2182
+4 -1 26 . 0 -1 2183
+3 1024 -1 . 0 -1 -1
+2 -1 -1 .run.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 71 . 0 -1 2187
+3 54 -1 . 0 -1 -1
+4 -1 71 . 0 -1 -1
+4 -1 72 . 0 -1 -1
+3 1072 -1 . 0 -1 -1
+3 1072 -1 . 0 -1 -1
+2 -1 -1 .pipe.run.sh 0 -1 -1
+3 2 -1 . 0 -1 -1
+4 -1 71 . 0 -1 2195
+3 54 -1 . 0 -1 -1
+4 -1 71 . 0 -1 -1
+4 -1 72 . 0 -1 -1

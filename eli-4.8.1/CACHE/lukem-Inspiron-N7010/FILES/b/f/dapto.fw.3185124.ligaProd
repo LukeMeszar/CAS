@@ -1,0 +1,13 @@
+RULE rule_11:	spec ::= aspects END;
+RULE rule_10:	aspect_stmt ::= 'aspect' iddef ';' sigs 'end' ';' END;
+RULE rule_9:	event_sig ::= 'event' iddef export str event_block ';' END;
+RULE rule_8:	export ::= '*' END;
+RULE rule_7:	export ::=  END;
+RULE rule_6:	attr ::= typeid iddef str END;
+RULE rule_5:	sig ::= bstr END;
+RULE rule_4:	sig ::= str END;
+RULE rule_3:	body ::= text END;
+RULE rule_2:	param ::= typeid iddef str END;
+RULE rule_1:	translation_sig ::= 'translation' iddef iduse str body END;
+RULE operation_sig2:	operation_sig ::= 'operation' iddef str operation_block ':' typeid body END;
+RULE operation_sig1:	operation_sig ::= 'operation' iddef str operation_block body END;

@@ -1,0 +1,2267 @@
+
+Computations for Rule LST_xProductionrule_18 <
+>
+Computations for Rule LST_0rule_18 <
+>
+Computations for Rule LST_Elementrule_15 <
+>
+Computations for Rule LST_0rule_15 <
+>
+Computations for Rule LST_xSymbolrule_14 <
+Computation in RULE LST_xSymbolrule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[1].GotProperties
+   ]
+   right: 
+   IntValue: 0
+   coord: line 177, col 3
+]
+>
+Computations for Rule LST_0rule_14 <
+>
+Computations for Rule LST_Itemrule_8 <
+>
+Computations for Rule LST_0rule_8 <
+>
+Computations for Rule rule_1 <
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGOption
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Items[1].IdemPtg
+         ]
+      >
+      coord: line 346, col 16
+   ]
+   coord: line 346, col 3
+]
+>
+Computations for Rule rule_2 <
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGCall
+      params: <
+         Call [
+            name: StringTable
+            params: <
+               RuleTermAcc: xIdentifier[1]
+            >
+            coord: line 341, col 24
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Items[1].IdemPtg
+         ]
+      >
+      coord: line 341, col 16
+   ]
+   coord: line 341, col 3
+]
+>
+Computations for Rule rule_3 <
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGIndTyp
+      params: <
+         RuleTermAcc: Number[1]
+         Call [
+            name: StringTable
+            params: <
+               RuleTermAcc: PtgType[2]
+            >
+            coord: line 336, col 33
+         ]
+      >
+      coord: line 336, col 16
+   ]
+   coord: line 336, col 3
+]
+>
+Computations for Rule rule_4 <
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGCType
+      params: <
+         Call [
+            name: StringTable
+            params: <
+               RuleTermAcc: PtgType[1]
+            >
+            coord: line 331, col 25
+         ]
+      >
+      coord: line 331, col 16
+   ]
+   coord: line 331, col 3
+]
+>
+Computations for Rule rule_5 <
+Computation in RULE rule_5 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGIndex
+      params: <
+         RuleTermAcc: Number[1]
+      >
+      coord: line 326, col 16
+   ]
+   coord: line 326, col 3
+]
+>
+Computations for Rule rule_6 <
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGAsIs
+      params: <
+         StrValue: $
+      >
+      coord: line 321, col 16
+   ]
+   coord: line 321, col 3
+]
+>
+Computations for Rule rule_7 <
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Item[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         Call [
+            name: FwOut
+            params: <
+               RuleTermAcc: CString[1]
+               Name: Warn
+            >
+            coord: line 316, col 22
+         ]
+      >
+      coord: line 316, col 16
+   ]
+   coord: line 316, col 3
+]
+>
+Computations for Rule rule_8 <
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Items[0].IdemPtg
+   ]
+   right: 
+   CONSTITUENTS (Item.IdemPtg) SHIELD (Item) WITH (PTGNode, PTGSpSeq, IDENTICAL, PTGNull) propagate value 
+   coord: line 351, col 3
+]
+>
+Computations for Rule rule_9 <
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      PatternName[0].PtgTemplates
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: NE
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     PatternName[0].Key
+                  ]
+                  Name: NoKey
+               >
+               coord: line 298, col 8
+            ]
+            Call [
+               name: PTGSeq
+               params: <
+                  AttrAccRule [ 
+                     IsChain
+                     PatternName[0].PtgTemplates
+                  ]
+                  INCLUDING (PatternSpec.IdemPtg) propagate value 
+               >
+               coord: line 299, col 7
+            ]
+            AttrAccRule [ 
+               IsChain
+               PatternName[0].PtgTemplates
+            ]
+         >
+         coord: line 298, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 298, col 5
+   ]
+   coord: line 297, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternName[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            PatternName[0].Bind
+         ]
+      >
+      coord: line 63, col 14
+   ]
+   coord: line 63, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternName[0].Bind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: BindingInEnv
+         params: <
+            INCLUDING (xRoot.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               PatternName[0].Sym
+            ]
+         >
+         coord: line 60, col 9
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotKeys) propagate void
+         AttrAccRule [ 
+            IsAttr
+            PatternName[0]._InhPrecond
+         ]
+      >
+      coord: line 60, col 9
+   ]
+   coord: line 59, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternName[0].Sym
+   ]
+   right: 
+   Call [
+      name: MakePtgSym
+      params: <
+         RuleTermAcc: xIdentifier[1]
+      >
+      coord: line 168, col 39
+   ]
+   coord: line 168, col 28
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternName[0]._InhPrecond
+   ]
+   right: 
+   StrValue: yes
+   coord: line 69, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternName[0].GotProperties
+   ]
+   right: 
+   Call [
+      name: FixPtgGiven
+      params: <
+         RuleTermAcc: xIdentifier[1]
+         AttrAccRule [ 
+            IsAttr
+            PatternName[0].Key
+         ]
+      >
+      coord: line 200, col 24
+   ]
+   coord: line 200, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternName[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         RuleTermAcc: xIdentifier[1]
+      >
+      coord: line 311, col 23
+   ]
+   coord: line 311, col 3
+]
+>
+Computations for Rule rule_10 <
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      PatternSpec[0].IdemPtg
+   ]
+   right: 
+   Call [
+      name: PTGAxiom
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            PatternName[1].IdemPtg
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Items[2].IdemPtg
+         ]
+      >
+      coord: line 306, col 23
+   ]
+   coord: line 306, col 3
+]
+>
+Computations for Rule rule_11 <
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Mark
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 224, col 24
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Insert
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 427, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].TreeGram
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         Call [
+            name: FwOut
+            params: <
+               RuleTermAcc: xLiteral[1]
+               Name: Warn
+            >
+            coord: line 398, col 26
+         ]
+      >
+      coord: line 398, col 20
+   ]
+   coord: line 398, col 3
+]
+>
+Computations for Rule rule_12 <
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Insert
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Mark
+   ]
+   coord: line 437, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].TreeGram
+   ]
+   right: 
+   Call [
+      name: PTGComputedRoot
+      params: <
+         Call [
+            name: StringTable
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xSymbol[1].Sym
+               ]
+            >
+            coord: line 393, col 36
+         ]
+      >
+      coord: line 393, col 20
+   ]
+   coord: line 393, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Element[0].NontermCnt
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Element[0].NontermCnt
+         ]
+         IntValue: 1
+      >
+      coord: line 241, col 22
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Mark
+   ]
+   right: 
+   Call [
+      name: PTGMarker
+      params: <
+         AttrAccRule [ 
+            IsChain
+            Element[0].NontermCnt
+         ]
+      >
+      coord: line 240, col 16
+   ]
+   coord: line 240, col 3
+]
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[1].GotProperties
+   ]
+   right: 
+   Call [
+      name: ResetComputedRoot
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[1].Key
+         ]
+         IntValue: 1
+      >
+      coord: line 195, col 27
+   ]
+   coord: line 195, col 3
+]
+>
+Computations for Rule rule_13 <
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Insert
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Mark
+   ]
+   coord: line 432, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].TreeGram
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[1].Ptg
+   ]
+   coord: line 388, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Element[0].TermCnt
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[1].IsTerminal
+         ]
+         Call [
+            name: ADD
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Element[0].TermCnt
+               ]
+               IntValue: 1
+            >
+            coord: line 235, col 27
+         ]
+         AttrAccRule [ 
+            IsChain
+            Element[0].TermCnt
+         ]
+      >
+      coord: line 235, col 5
+   ]
+   coord: line 234, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Element[0].NontermCnt
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[1].IsTerminal
+         ]
+         AttrAccRule [ 
+            IsChain
+            Element[0].NontermCnt
+         ]
+         Call [
+            name: ADD
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Element[0].NontermCnt
+               ]
+               IntValue: 1
+            >
+            coord: line 233, col 46
+         ]
+      >
+      coord: line 233, col 5
+   ]
+   coord: line 232, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Element[0].Mark
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[1].IsTerminal
+         ]
+         Call [
+            name: PTGMarker
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Element[0].TermCnt
+               ]
+            >
+            coord: line 230, col 7
+         ]
+         Call [
+            name: PTGMarker
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  Element[0].NontermCnt
+               ]
+            >
+            coord: line 231, col 7
+         ]
+      >
+      coord: line 229, col 5
+   ]
+   coord: line 228, col 3
+]
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[1].GotProperties
+   ]
+   right: 
+   IntValue: 0
+   coord: line 177, col 3
+]
+>
+Computations for Rule rule_14 <
+>
+Computations for Rule rule_15 <
+>
+Computations for Rule rule_16 <
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xProduction[0].PtgTemplates
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: PTGSeq
+         params: <
+            AttrAccRule [ 
+               IsChain
+               Syms[3].PtgTemplates
+            ]
+            Call [
+               name: PTGTriple
+               params: <
+                  Call [
+                     name: IF
+                     params: <
+                        Call [
+                           name: GetNoPtgGiven
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 xRule[1].Key
+                              ]
+                              IntValue: 1
+                           >
+                           coord: line 461, col 12
+                        ]
+                        Call [
+                           name: PTGListProd
+                           params: <
+                              INCLUDING (xRoot.Prefix) propagate value 
+                              Call [
+                                 name: StringTable
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsAttr
+                                       xRule[1].Sym
+                                    ]
+                                 >
+                                 coord: line 462, col 46
+                              ]
+                           >
+                           coord: line 462, col 11
+                        ]
+                        Name: PTGNULL
+                     >
+                     coord: line 461, col 9
+                  ]
+                  Call [
+                     name: IF
+                     params: <
+                        Call [
+                           name: GetNoPtg2Given
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 xRule[1].Key
+                              ]
+                              IntValue: 1
+                           >
+                           coord: line 464, col 12
+                        ]
+                        Call [
+                           name: PTGListProd2
+                           params: <
+                              INCLUDING (xRoot.Prefix) propagate value 
+                              Call [
+                                 name: StringTable
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsAttr
+                                       xRule[1].Sym
+                                    ]
+                                 >
+                                 coord: line 465, col 47
+                              ]
+                           >
+                           coord: line 465, col 11
+                        ]
+                        Name: PTGNULL
+                     >
+                     coord: line 464, col 9
+                  ]
+                  Call [
+                     name: IF
+                     params: <
+                        Call [
+                           name: GetNoPtg1Given
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 xRule[1].Key
+                              ]
+                              IntValue: 1
+                           >
+                           coord: line 467, col 12
+                        ]
+                        Call [
+                           name: PTGListProd1
+                           params: <
+                              INCLUDING (xRoot.Prefix) propagate value 
+                              Call [
+                                 name: StringTable
+                                 params: <
+                                    AttrAccRule [ 
+                                       IsAttr
+                                       xRule[1].Sym
+                                    ]
+                                 >
+                                 coord: line 468, col 47
+                              ]
+                           >
+                           coord: line 468, col 11
+                        ]
+                        Name: PTGNULL
+                     >
+                     coord: line 467, col 9
+                  ]
+               >
+               coord: line 460, col 7
+            ]
+         >
+         coord: line 458, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 458, col 5
+   ]
+   coord: line 457, col 3
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xProduction[0].TreeGram
+   ]
+   right: 
+   Call [
+      name: PTGListof
+      params: <
+         Call [
+            name: StringTable
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xRule[1].Sym
+               ]
+            >
+            coord: line 380, col 7
+         ]
+         Call [
+            name: StringTable
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xSymbol[2].Sym
+               ]
+            >
+            coord: line 381, col 7
+         ]
+         CONSTITUENTS (xSymbol.Ptg) WITH (PTGNode, PTGAltSeq, IDENTICAL, PTGNull) propagate value 
+      >
+      coord: line 379, col 5
+   ]
+   coord: line 378, col 3
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xProduction[0].ClassComp
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            xProduction[0].ClassComp
+         ]
+         Call [
+            name: PTGListofRule
+            params: <
+               INCLUDING (xRoot.Prefix) propagate value 
+               Call [
+                  name: PTGAsIs
+                  params: <
+                     Call [
+                        name: StringTable
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              xRule[1].Sym
+                           ]
+                        >
+                        coord: line 258, col 17
+                     ]
+                  >
+                  coord: line 258, col 9
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  xSymbol[2].Ptg
+               ]
+               CONSTITUENTS (xSymbol.AttrPtg) WITH (PTGNode, PTGCommaSeq, IDENTICAL, PTGNull) propagate value 
+               CONSTITUENTS (xSymbol.Ptg) WITH (PTGNode, PTGCommaSeq, IDENTICAL, PTGNull) propagate value 
+            >
+            coord: line 256, col 7
+         ]
+      >
+      coord: line 254, col 5
+   ]
+   coord: line 253, col 3
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[2].GotProperties
+   ]
+   right: 
+   Call [
+      name: ORDER
+      params: <
+         Call [
+            name: ResetDefined
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xSymbol[2].Key
+               ]
+               IntValue: 1
+            >
+            coord: line 189, col 7
+         ]
+         Call [
+            name: ResetIsListofLhs
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xSymbol[2].Key
+               ]
+               IntValue: 1
+            >
+            coord: line 190, col 7
+         ]
+      >
+      coord: line 188, col 5
+   ]
+   coord: line 187, col 3
+]
+>
+Computations for Rule rule_17 <
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xProduction[0].PtgTemplates
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: GetNoPtgGiven
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     xRule[1].Key
+                  ]
+                  IntValue: 1
+               >
+               coord: line 443, col 8
+            ]
+            Call [
+               name: PTGSeq
+               params: <
+                  AttrAccRule [ 
+                     IsChain
+                     xRHS[3].PtgTemplates
+                  ]
+                  Call [
+                     name: PTGPlainProd
+                     params: <
+                        INCLUDING (xRoot.Prefix) propagate value 
+                        Call [
+                           name: StringTable
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 xRule[1].Sym
+                              ]
+                           >
+                           coord: line 448, col 11
+                        ]
+                        CONSTITUENTS (Element.Insert) WITH (PTGNode, PTGSepSeq, IDENTICAL, PTGNull) propagate value 
+                     >
+                     coord: line 446, col 9
+                  ]
+               >
+               coord: line 444, col 7
+            ]
+            AttrAccRule [ 
+               IsChain
+               xRHS[3].PtgTemplates
+            ]
+         >
+         coord: line 443, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 443, col 5
+   ]
+   coord: line 442, col 3
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xProduction[0].TreeGram
+   ]
+   right: 
+   Call [
+      name: PTGPlain
+      params: <
+         Call [
+            name: StringTable
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xRule[1].Sym
+               ]
+            >
+            coord: line 370, col 7
+         ]
+         Call [
+            name: StringTable
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xSymbol[2].Sym
+               ]
+            >
+            coord: line 371, col 7
+         ]
+         CONSTITUENTS (Element.TreeGram) WITH (PTGNode, PTGSpaceSeq, IDENTICAL, PTGNull) propagate value 
+      >
+      coord: line 369, col 5
+   ]
+   coord: line 368, col 3
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[2].GotProperties
+   ]
+   right: 
+   Call [
+      name: ResetDefined
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[2].Key
+         ]
+         IntValue: 1
+      >
+      coord: line 182, col 27
+   ]
+   coord: line 182, col 3
+]
+Computation in RULE rule_17 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xRHS[3].TermCnt
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      xRHS[3].NontermCnt
+   ]
+   coord: line 221, col 3
+]
+Computation in RULE rule_17 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xRHS[3].NontermCnt
+   ]
+   right: 
+   IntValue: 1
+   coord: line 220, col 3
+]
+>
+Computations for Rule rule_18 <
+>
+Computations for Rule rule_26 <
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xSymbol[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].IsFirstOcc
+   ]
+   coord: line 122, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xSymbol[0].Inherit
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].IsFirstOcc
+         ]
+         Call [
+            name: IF
+            params: <
+               Call [
+                  name: GetIsListofLhs
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        xSymbol[0].Key
+                     ]
+                     IntValue: 0
+                  >
+                  coord: line 276, col 10
+               ]
+               Call [
+                  name: PTGSeq
+                  params: <
+                     AttrAccRule [ 
+                        IsChain
+                        xSymbol[0].Inherit
+                     ]
+                     Call [
+                        name: PTGListComp
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              xSymbol[0].Ptg
+                           ]
+                           INCLUDING (xRoot.Prefix) propagate value 
+                        >
+                        coord: line 277, col 29
+                     ]
+                  >
+                  coord: line 277, col 9
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: GetDefined
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              xSymbol[0].Key
+                           ]
+                           IntValue: 0
+                        >
+                        coord: line 278, col 10
+                     ]
+                     Call [
+                        name: PTGSeq
+                        params: <
+                           AttrAccRule [ 
+                              IsChain
+                              xSymbol[0].Inherit
+                           ]
+                           Call [
+                              name: PTGNontComp
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    xSymbol[0].Ptg
+                                 ]
+                                 INCLUDING (xRoot.Prefix) propagate value 
+                              >
+                              coord: line 279, col 29
+                           ]
+                        >
+                        coord: line 279, col 9
+                     ]
+                     Call [
+                        name: IF
+                        params: <
+                           Call [
+                              name: GetComputedRoot
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    xSymbol[0].Key
+                                 ]
+                                 IntValue: 0
+                              >
+                              coord: line 280, col 10
+                           ]
+                           Call [
+                              name: PTGSeq
+                              params: <
+                                 AttrAccRule [ 
+                                    IsChain
+                                    xSymbol[0].Inherit
+                                 ]
+                                 Call [
+                                    name: PTGNontNoComp
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          xSymbol[0].Ptg
+                                       ]
+                                       INCLUDING (xRoot.Prefix) propagate value 
+                                    >
+                                    coord: line 281, col 29
+                                 ]
+                              >
+                              coord: line 281, col 9
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              xSymbol[0].Inherit
+                           ]
+                        >
+                        coord: line 280, col 7
+                     ]
+                  >
+                  coord: line 278, col 7
+               ]
+            >
+            coord: line 276, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            xSymbol[0].Inherit
+         ]
+      >
+      coord: line 275, col 5
+   ]
+   coord: line 274, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xSymbol[0].PtgTemplates
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: AND
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     xSymbol[0].IsTerminal
+                  ]
+                  Call [
+                     name: AND
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].IsFirstOcc
+                        ]
+                        Call [
+                           name: GetNoPtgGiven
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 xSymbol[0].Key
+                              ]
+                              IntValue: 1
+                           >
+                           coord: line 417, col 48
+                        ]
+                     >
+                     coord: line 417, col 28
+                  ]
+               >
+               coord: line 417, col 8
+            ]
+            Call [
+               name: PTGSeq
+               params: <
+                  AttrAccRule [ 
+                     IsChain
+                     xSymbol[0].PtgTemplates
+                  ]
+                  Call [
+                     name: PTGTerm
+                     params: <
+                        INCLUDING (xRoot.Prefix) propagate value 
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].Ptg
+                        ]
+                     >
+                     coord: line 418, col 32
+                  ]
+               >
+               coord: line 418, col 7
+            ]
+            AttrAccRule [ 
+               IsChain
+               xSymbol[0].PtgTemplates
+            ]
+         >
+         coord: line 417, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 417, col 5
+   ]
+   coord: line 416, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].IsTerminal
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: AND
+         params: <
+            Call [
+               name: NOT
+               params: <
+                  Call [
+                     name: GetDefined
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].Key
+                        ]
+                        IntValue: 0
+                     >
+                     coord: line 210, col 13
+                  ]
+               >
+               coord: line 210, col 9
+            ]
+            Call [
+               name: NOT
+               params: <
+                  Call [
+                     name: GetComputedRoot
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].Key
+                        ]
+                        IntValue: 0
+                     >
+                     coord: line 210, col 41
+                  ]
+               >
+               coord: line 210, col 37
+            ]
+         >
+         coord: line 210, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 210, col 5
+   ]
+   coord: line 209, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         RuleTermAcc: xIdentifier[1]
+      >
+      coord: line 212, col 12
+   ]
+   coord: line 212, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].AttrPtg
+   ]
+   right: 
+   Call [
+      name: PTGAttr
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].Ptg
+         ]
+         INCLUDING (xRoot.Prefix) propagate value 
+      >
+      coord: line 213, col 16
+   ]
+   coord: line 213, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].Bind
+         ]
+      >
+      coord: line 49, col 14
+   ]
+   coord: line 49, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               xSymbol[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 120, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            xSymbol[0]._FirstOcc
+         ]
+      >
+      coord: line 120, col 9
+   ]
+   coord: line 119, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Sym
+   ]
+   right: 
+   RuleTermAcc: xIdentifier[1]
+   coord: line 167, col 28
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (xRoot.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].Sym
+         ]
+      >
+      coord: line 48, col 9
+   ]
+   coord: line 47, col 3
+]
+>
+Computations for Rule rule_25 <
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xSymbol[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].IsFirstOcc
+   ]
+   coord: line 122, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xSymbol[0].Inherit
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].IsFirstOcc
+         ]
+         Call [
+            name: IF
+            params: <
+               Call [
+                  name: GetIsListofLhs
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        xSymbol[0].Key
+                     ]
+                     IntValue: 0
+                  >
+                  coord: line 276, col 10
+               ]
+               Call [
+                  name: PTGSeq
+                  params: <
+                     AttrAccRule [ 
+                        IsChain
+                        xSymbol[0].Inherit
+                     ]
+                     Call [
+                        name: PTGListComp
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              xSymbol[0].Ptg
+                           ]
+                           INCLUDING (xRoot.Prefix) propagate value 
+                        >
+                        coord: line 277, col 29
+                     ]
+                  >
+                  coord: line 277, col 9
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: GetDefined
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              xSymbol[0].Key
+                           ]
+                           IntValue: 0
+                        >
+                        coord: line 278, col 10
+                     ]
+                     Call [
+                        name: PTGSeq
+                        params: <
+                           AttrAccRule [ 
+                              IsChain
+                              xSymbol[0].Inherit
+                           ]
+                           Call [
+                              name: PTGNontComp
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    xSymbol[0].Ptg
+                                 ]
+                                 INCLUDING (xRoot.Prefix) propagate value 
+                              >
+                              coord: line 279, col 29
+                           ]
+                        >
+                        coord: line 279, col 9
+                     ]
+                     Call [
+                        name: IF
+                        params: <
+                           Call [
+                              name: GetComputedRoot
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    xSymbol[0].Key
+                                 ]
+                                 IntValue: 0
+                              >
+                              coord: line 280, col 10
+                           ]
+                           Call [
+                              name: PTGSeq
+                              params: <
+                                 AttrAccRule [ 
+                                    IsChain
+                                    xSymbol[0].Inherit
+                                 ]
+                                 Call [
+                                    name: PTGNontNoComp
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          xSymbol[0].Ptg
+                                       ]
+                                       INCLUDING (xRoot.Prefix) propagate value 
+                                    >
+                                    coord: line 281, col 29
+                                 ]
+                              >
+                              coord: line 281, col 9
+                           ]
+                           AttrAccRule [ 
+                              IsChain
+                              xSymbol[0].Inherit
+                           ]
+                        >
+                        coord: line 280, col 7
+                     ]
+                  >
+                  coord: line 278, col 7
+               ]
+            >
+            coord: line 276, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            xSymbol[0].Inherit
+         ]
+      >
+      coord: line 275, col 5
+   ]
+   coord: line 274, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xSymbol[0].PtgTemplates
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: AND
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     xSymbol[0].IsTerminal
+                  ]
+                  Call [
+                     name: AND
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].IsFirstOcc
+                        ]
+                        Call [
+                           name: GetNoPtgGiven
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 xSymbol[0].Key
+                              ]
+                              IntValue: 1
+                           >
+                           coord: line 417, col 48
+                        ]
+                     >
+                     coord: line 417, col 28
+                  ]
+               >
+               coord: line 417, col 8
+            ]
+            Call [
+               name: PTGSeq
+               params: <
+                  AttrAccRule [ 
+                     IsChain
+                     xSymbol[0].PtgTemplates
+                  ]
+                  Call [
+                     name: PTGTerm
+                     params: <
+                        INCLUDING (xRoot.Prefix) propagate value 
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].Ptg
+                        ]
+                     >
+                     coord: line 418, col 32
+                  ]
+               >
+               coord: line 418, col 7
+            ]
+            AttrAccRule [ 
+               IsChain
+               xSymbol[0].PtgTemplates
+            ]
+         >
+         coord: line 417, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 417, col 5
+   ]
+   coord: line 416, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].IsTerminal
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: AND
+         params: <
+            Call [
+               name: NOT
+               params: <
+                  Call [
+                     name: GetDefined
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].Key
+                        ]
+                        IntValue: 0
+                     >
+                     coord: line 210, col 13
+                  ]
+               >
+               coord: line 210, col 9
+            ]
+            Call [
+               name: NOT
+               params: <
+                  Call [
+                     name: GetComputedRoot
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           xSymbol[0].Key
+                        ]
+                        IntValue: 0
+                     >
+                     coord: line 210, col 41
+                  ]
+               >
+               coord: line 210, col 37
+            ]
+         >
+         coord: line 210, col 5
+      ]
+      deps: < 
+         INCLUDING (xRoot.GotProperties) propagate void
+      >
+      coord: line 210, col 5
+   ]
+   coord: line 209, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         RuleTermAcc: PtgType[1]
+      >
+      coord: line 212, col 12
+   ]
+   coord: line 212, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].AttrPtg
+   ]
+   right: 
+   Call [
+      name: PTGAttr
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].Ptg
+         ]
+         INCLUDING (xRoot.Prefix) propagate value 
+      >
+      coord: line 213, col 16
+   ]
+   coord: line 213, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].Bind
+         ]
+      >
+      coord: line 49, col 14
+   ]
+   coord: line 49, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               xSymbol[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 120, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            xSymbol[0]._FirstOcc
+         ]
+      >
+      coord: line 120, col 9
+   ]
+   coord: line 119, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Sym
+   ]
+   right: 
+   RuleTermAcc: PtgType[1]
+   coord: line 167, col 28
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xSymbol[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (xRoot.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            xSymbol[0].Sym
+         ]
+      >
+      coord: line 48, col 9
+   ]
+   coord: line 47, col 3
+]
+>
+Computations for Rule rule_24 <
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRule[0].Sym
+   ]
+   right: 
+   RuleTermAcc: xIdentifier[1]
+   coord: line 167, col 28
+]
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRule[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xRule[0].Bind
+         ]
+      >
+      coord: line 49, col 14
+   ]
+   coord: line 49, col 3
+]
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRule[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (xRoot.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            xRule[0].Sym
+         ]
+      >
+      coord: line 48, col 9
+   ]
+   coord: line 47, col 3
+]
+>
+Computations for Rule rule_23 <
+Computation in RULE rule_23 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRule[0].Sym
+   ]
+   right: 
+   RuleTermAcc: PtgType[1]
+   coord: line 167, col 28
+]
+Computation in RULE rule_23 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRule[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xRule[0].Bind
+         ]
+      >
+      coord: line 49, col 14
+   ]
+   coord: line 49, col 3
+]
+Computation in RULE rule_23 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRule[0].Bind
+   ]
+   right: 
+   Call [
+      name: BindIdn
+      params: <
+         INCLUDING (xRoot.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            xRule[0].Sym
+         ]
+      >
+      coord: line 48, col 9
+   ]
+   coord: line 47, col 3
+]
+>
+Computations for Rule rule_22 <
+Computation in RULE rule_22 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xGrammar[1]._FirstOcc
+   ]
+   right: 
+   StrValue: yes
+   coord: line 114, col 3
+]
+Computation in RULE rule_22 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xGrammar[1].ClassComp
+   ]
+   right: 
+   Call [
+      name: PTGPlainRules
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xRoot[0].Prefix
+         ]
+      >
+      coord: line 248, col 29
+   ]
+   coord: line 248, col 3
+]
+Computation in RULE rule_22 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xGrammar[1].Inherit
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: PTGNULL
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            xRoot[0].GotProperties
+         ]
+      >
+      coord: line 270, col 27
+   ]
+   coord: line 270, col 3
+]
+Computation in RULE rule_22 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xGrammar[1].PtgTemplates
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 290, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].Prefix
+   ]
+   right: 
+   Call [
+      name: StringTable
+      params: <
+         Call [
+            name: GetClpValue
+            params: <
+               Name: Prefix
+               Name: NoStrIndex
+            >
+            coord: line 205, col 27
+         ]
+      >
+      coord: line 205, col 15
+   ]
+   coord: line 205, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].GotProperties
+   ]
+   right: 
+   CONSTITUENTS (xSymbol.GotProperties, PatternName.GotProperties) propagate void
+   coord: line 172, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].TreeGram
+   ]
+   right: 
+   CONSTITUENTS (xProduction.TreeGram) WITH (PTGNode, PTGSeq, IDENTICAL, PTGNull) propagate value 
+   coord: line 361, col 3
+]
+Computation in RULE rule_22 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: tree
+      Call [
+         name: PTGFrame
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               xRoot[0].Prefix
+            ]
+            AttrAccRule [ 
+               IsAttr
+               xRoot[0].TreeGram
+            ]
+            AttrAccRule [ 
+               IsChain
+               PTGSpec[2].ClassComp
+            ]
+            AttrAccRule [ 
+               IsChain
+               PTGSpec[2].Inherit
+            ]
+            AttrAccRule [ 
+               IsChain
+               PTGSpec[2].PtgTemplates
+            ]
+         >
+         coord: line 406, col 5
+      ]
+   >
+   coord: line 404, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].Env
+   ]
+   right: 
+   Name: RootEnv
+   coord: line 12, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].GotLocKeys
+   ]
+   right: 
+   CONSTITUENTS (xRule.Key, xSymbol.Key) SHIELD (xRoot) propagate void
+   coord: line 13, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].GotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].GotLocKeys
+   ]
+   coord: line 16, col 3
+]
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xRoot[0].GotFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      PTGSpec[2]._FirstOcc
+   ]
+   coord: line 115, col 3
+]
+>
+Computations for Rule rule_21 <
+>
+Computations for Rule rule_20 <
+>
+Computations for Rule rule_19 <
+>

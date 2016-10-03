@@ -1,0 +1,1 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/CScope.gnrc +instance=Export :lib*instGen/ExportCScope.fw :fw*fwSpec/ExportCScope.specs :eli*level_0_specs_out :fw*fwProd

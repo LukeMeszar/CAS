@@ -1,0 +1,4 @@
+%Type.ArrayType.err == . +cmd=cat (%trenn) \
+	(Type.demo/ArrayType.err:label) \
+	(Type.demo/ArrayType.err) \
+	((Type.demo/ArrayType.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

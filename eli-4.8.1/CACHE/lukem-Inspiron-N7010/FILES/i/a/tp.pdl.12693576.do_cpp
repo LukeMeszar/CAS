@@ -1,0 +1,38 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/h/w/tp.pdl.12534960.pdl"
+
+
+Arity: int [Is];
+Index: int [Terminal];
+
+TYPE Terminal(DefTableKey key)
+{ static int index = 1;
+
+  if (key == NoKey) return 0;
+  if (!ACCESS) VALUE = index++;
+  return VALUE;
+}
+
+
+Type: DefTableKey;
+Used: int;
+
+
+Sym: int;
+
+
+Symbol: int [Obtain];
+
+int Obtain(DefTableKey key, int sym)
+{ if (key == NoKey) return 0;
+  if (!ACCESS) VALUE = IndCatStrStr("Reduce_",StringTable(sym));
+  return VALUE;
+} "Strings.h"
+
+Cases: PTGNode [Update];
+
+void Update(DefTableKey key, PTGNode add)
+{ if (key == NoKey) return;
+  if (!ACCESS) VALUE = add;
+  else VALUE = PTGSeq(VALUE, add);
+} "ptg_gen.h"
+

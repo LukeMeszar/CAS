@@ -1,0 +1,6 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/clp/clp.fw :phi*etaIncl) :pdl*pdlGen
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/deftbl.head
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/deftbl.save.eta
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/deftbl.reqmod
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/pdl.dapto
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/pdl.tcl

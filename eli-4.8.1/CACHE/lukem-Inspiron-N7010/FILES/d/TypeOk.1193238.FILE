@@ -1,0 +1,5 @@
+%Type.StrEqArr.ok == . +cmd=cat (%trenn) \
+	(Type.demo/StrEqArr.ok:label) \
+	(Type.demo/StrEqArr.ok) \
+	(Type.demo/StrEqArr.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/StrEqArr.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

@@ -1,0 +1,76 @@
+@=~
+~p typesetter = texinfo
+~p maximum_input_line_length = infinity
+~! $Id: Unique.fw,v 3.4 1997/08/29 12:08:20 mjung Exp $
+~!
+~! (C) Copyright 1997 University of Paderborn.
+~! 
+~! This file is part of the Eli Module Library.
+~! 
+~! The Eli Module Library is free software; you can redistribute it and/or
+~! modify it under the terms of the GNU Library General Public License as
+~! published by the Free Software Foundation; either version 2 of the
+~! License, or (at your option) any later version.
+~! 
+~! The Eli Module Library is distributed in the hope that it will be
+~! useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+~! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+~! Library General Public License for more details.
+~! 
+~! You should have received a copy of the GNU Library General Public
+~! License along with the Eli Module Library; see the file COPYING.LIB.
+~! If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+~! Suite 330, Boston, MA 02111-1307, USA. 
+~!
+
+
+This module associates a boolean property Unique
+to object keys. It has the value 1 if the object occurs
+exactly once in the CLASS SYMBOL context Unique, otherwise
+it has the value 0. The final value of the property is
+obtained by the attribute Unique.Unique, e.g.
+used to issue a message.
+
+The computations of this module are associated to CLASS SYMBOLs having
+the following roles:
+
+RangeUnique
+	subtree containing the Unique to be checked.
+	RangeUnique is inherited to the grammar root by default.
+
+Unique
+	CLASS SYMBOL representing a context checked to be unique.
+	Unique.Key identifies the object.
+	If this object has no other Unique occurrence
+	Unique.Unique is set to 1, to 0 otherwise.
+
+~O~<Unique.pdl~>~{
+Unique:	int;
+~}
+
+~O~<Unique.lido~>~{
+CLASS SYMBOL ROOTCLASS INHERITS RangeUnique END;
+
+CLASS SYMBOL RangeUnique:
+		_GotUnique:	VOID;
+
+CLASS SYMBOL Unique:
+		_GotUnique:	VOID,
+		Key:		DefTableKey,
+		Unique:		int	SYNT;
+
+CLASS SYMBOL RangeUnique	COMPUTE
+  SYNT._GotUnique =
+	CONSTITUENTS Unique._GotUnique
+		SHIELD RangeUnique;
+END;
+
+CLASS SYMBOL Unique	COMPUTE
+  SYNT._GotUnique = 
+	SetUnique (THIS.Key, 1, 0);
+
+  SYNT.Unique =
+	GetUnique (THIS.Key, 0)
+	DEPENDS_ON INCLUDING RangeUnique._GotUnique;
+END;
+~}

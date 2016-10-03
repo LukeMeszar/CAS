@@ -1,0 +1,4 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.specs :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.specs :phi*etaIncl) :pdl*pdlGen/pdl_gen.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.specs :pgs*pgsGen/pgs_gen.c

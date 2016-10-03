@@ -1,0 +1,4 @@
+%CLike.Module.err == . +cmd=cat (%trenn) \
+	(CLike.demo/Module.err:label) \
+	(CLike.demo/Module.err) \
+	((CLike.demo/Module.err +cmd=(CLike.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors) :stdout) :stdout

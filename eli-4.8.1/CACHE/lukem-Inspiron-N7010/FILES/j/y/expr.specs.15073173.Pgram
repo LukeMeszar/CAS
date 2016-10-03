@@ -1,0 +1,56 @@
+$CODE
+EOF=1.
+'-'=2.
+'+'=3.
+'0'=4.
+'1'=5.
+'2'=6.
+'3'=7.
+'4'=8.
+'5'=9.
+'6'=10.
+'7'=11.
+'8'=12.
+'9'=13.
+'('=14.
+')'=15.
+'/'=16.
+'*'=17.
+$GRAMMAR
+<$START_SYMBOL>: program .
+expression: expression '-' term &'ExprMinus();' .
+
+expression: expression '+' term &'ExprPlus();' .
+
+expression: term .
+
+primary: '0' &'ExprInt(0);' .
+
+primary: '1' &'ExprInt(1);' .
+
+primary: '2' &'ExprInt(2);' .
+
+primary: '3' &'ExprInt(3);' .
+
+primary: '4' &'ExprInt(4);' .
+
+primary: '5' &'ExprInt(5);' .
+
+primary: '6' &'ExprInt(6);' .
+
+primary: '7' &'ExprInt(7);' .
+
+primary: '8' &'ExprInt(8);' .
+
+primary: '9' &'ExprInt(9);' .
+
+primary: '(' expression ')' .
+
+program: expression &'ExprFinl();' .
+
+term: primary .
+
+term: term '/' primary &'ExprDiv();' .
+
+term: term '*' primary &'ExprTimes();' .
+

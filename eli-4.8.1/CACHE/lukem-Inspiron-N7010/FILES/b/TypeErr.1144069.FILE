@@ -1,0 +1,4 @@
+%Type.TEST == . +cmd=cat (%trenn) \
+	(Type.demo/TEST:label) \
+	(Type.demo/TEST) \
+	((Type.demo/TEST +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

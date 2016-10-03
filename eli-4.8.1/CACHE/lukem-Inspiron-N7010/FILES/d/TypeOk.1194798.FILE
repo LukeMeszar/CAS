@@ -1,0 +1,5 @@
+%Type.Structequal.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Structequal.ok:label) \
+	(Type.demo/Structequal.ok) \
+	(Type.demo/Structequal.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Structequal.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

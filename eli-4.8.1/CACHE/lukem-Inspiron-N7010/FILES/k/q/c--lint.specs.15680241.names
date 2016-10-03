@@ -1,0 +1,1 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_3_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :symcode*codeGen/code.lex_code +monitor +parser=cola

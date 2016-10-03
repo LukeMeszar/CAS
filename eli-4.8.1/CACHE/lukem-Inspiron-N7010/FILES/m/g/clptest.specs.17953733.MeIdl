@@ -1,0 +1,72 @@
+-- structure LIGA
+AttrEval[attrrules	<Attribution[attrrules	<Call[col	14;
+row	10;
+params	<Val[col	14;
+row	10;
+v	0]
+>;
+name	"show"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	9]
+>;
+defseq	<Typedef[did	1;
+dname	"VOID";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	2;
+dname	"$VOID_LIST";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	3;
+dname	"int";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	4;
+dname	"$BOOL";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	5;
+dname	"$SYMB";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	6;
+dname	"POSITION";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	7;
+dname	"NODEPTR";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Symb[did	8;
+dname	"prog";
+row	4;
+col	8;
+attrs	<>;
+tornt	0]
+ Prod[did	9;
+dname	"axiom";
+row	7;
+col	6;
+rhs	<Literal[row	7;
+col	6;
+str	"dummy"]
+>;
+lhs	8]
+>]
+#

@@ -1,0 +1,32 @@
+INCLUDING Constructs:
+   
+   INCLUDING (tparam.joined) propagate value 
+      occurs in  (227, 5)
+   INCLUDING (tparam.usage) propagate value 
+      occurs in  (227, 5),  (227, 5)
+   INCLUDING (tparam.desc) propagate value 
+      occurs in  (238, 5),  (227, 5),  (227, 5)
+   INCLUDING (tparam.spaced) propagate value 
+      occurs in  (227, 5)
+   INCLUDING (tparam.opt) propagate value 
+      occurs in  (225, 5)
+   INCLUDING (tparam.joinedstr) propagate value 
+      occurs in  (68, 5)
+   INCLUDING (tparam.docid) propagate value 
+      occurs in  (67, 5)
+   INCLUDING (tparam.nameid) propagate value 
+      occurs in  (66, 5)
+   INCLUDING (spec.maxstrlen) propagate value 
+      occurs in  (227, 5),  (227, 5),  (39, 5)
+   
+
+CONSTITUENT Constructs:
+   
+   
+
+CONSTITUENTS Constructs:
+   
+   CONSTITUENTS (literal.len) SHIELD (doc) WITH (int, MAX, IDENTICAL, ZERO) propagate value 
+      occurs in  (18, 5)
+   
+

@@ -1,0 +1,7 @@
+$/oil/oil.specs
+$/Output/LeafPtg.gnrc :inst
+$/Prop/FirstOcc.gnrc                :inst
+$/Prop/FirstOcc.gnrc +instance=Type :inst
+$/Adt/PtrList.gnrc +instance=DefTableKey +referto=deftbl :inst
+$/Adt/PtrList.gnrc +instance=tOilOp +referto=oiladt2 :inst
+$/Adt/PtrList.gnrc +instance=tOilClassOp +referto=oiladt2 :inst

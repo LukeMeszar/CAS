@@ -1,0 +1,83 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/y/oil.con.5051997.con"
+
+
+OIL: SpecificationElement* .
+
+
+SpecificationElement: Operation.
+
+Operation:
+  'OPER' Oper+ /
+  'COERCION' Coerce+ .
+
+Oper: OpDefList OperationSig CostSpecification ';' .
+
+Coerce: OpDef CoercionSig CostSpecification ';' .
+
+OpDefList: OpDef // ',' .
+
+OperationSig: '(' ArgSig ')' ':' TypeIdentifier .
+ArgSig: / TypeIdentifier / TypeIdentifier ',' ArgSig .
+CoercionSig: '(' OneArg ')' ':' TypeIdentifier .
+OneArg: TypeIdentifier .
+
+
+
+SpecificationElement: Identification .
+Identification: 'INDICATION' Indication+.
+
+Indication: IndDef ':' OpRefList ';' .
+
+OpRefList: OpRef // ',' .
+
+
+SpecificationElement: Class .
+Class:
+  'CLASS' ClassName ClassBody .
+
+ClassBody:
+  '(' [ClassParameters] ')' 'BEGIN' ClassOperation+ 'END' ';' .
+
+ClassParameters: ClassParameter // ',' .
+
+
+ClassOperation:
+  'OPER' ClassOper+ /
+  'COERCION' ClassCoerce+ .
+
+ClassOper: ClassOpDefList ClassOperationSig CostSpecification ';' .
+
+ClassCoerce: ClassOpDef ClassCoercionSig CostSpecification ';' .
+
+ClassOpDefList: ClassOpDef // ',' .
+
+ClassOperationSig: '(' ClassArgSig ')' ':' TypeIdentifier .
+ClassArgSig: / TypeIdentifier / TypeIdentifier ',' ClassArgSig .
+ClassCoercionSig: '(' ClassOneArg ')' ':' TypeIdentifier .
+ClassOneArg: TypeIdentifier .
+
+
+
+SpecificationElement: EquivalenceClass .
+EquivalenceClass: 'SET' SetIdDef '=' xTypeExpr ';' .
+SetIdDef: Identifier .
+
+xTypeExpr:
+  xTEterm /
+  xTypeExpr '+' xTEterm /
+  xTypeExpr '-' xTEterm .
+
+xTEterm:
+  xTEprimary /
+  xTEterm '*' xTEprimary .
+
+xTEprimary:
+  SetIdUse /
+  '[' xTypeList ']' /
+  '(' xTypeExpr ')' .
+
+SetIdUse: Identifier .
+xTypeList: Singleton // ',' .
+Singleton: TypeIdentifier .
+
+

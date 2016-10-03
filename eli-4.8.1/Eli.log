@@ -1,0 +1,431 @@
+make[1]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli'
+
+Making pkg
+make[2]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg'
+
+Making pkg/Adt
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Adt'
+
+Making pkg/Input
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Input'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Input'
+
+Making pkg/Name
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Name'
+
+Making pkg/Name/Examples
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Name/Examples'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Name/Examples'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Name'
+
+Making pkg/Output
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Output'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Output'
+
+Making pkg/Prop
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Prop'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Prop'
+
+Making pkg/Scan
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Scan'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Scan'
+
+Making pkg/Tech
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Tech'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Tech'
+
+Making pkg/Type
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type'
+
+Making pkg/Type/Examples
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type/Examples'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Type'
+
+Making pkg/Unparser
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/Unparser'
+
+Making pkg/adtinit
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/adtinit'
+
+Making pkg/adtinit/src
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/adtinit/src'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/adtinit/src'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/adtinit'
+
+Making pkg/burg
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/burg'
+
+Making pkg/burg/burg
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/burg/burg'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/burg/burg'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/burg'
+
+Making pkg/cc
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cc'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cc'
+
+Making pkg/cola
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola'
+
+Making pkg/cola/Frames
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/Frames'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/Frames'
+
+Making pkg/cola/Info
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/Info'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/Info'
+
+Making pkg/cola/idl
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/idl'
+
+Making pkg/cola/idl/idllib
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/idl/idllib'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/idl/idllib'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/idl'
+
+Making pkg/cola/lib
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lib'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lib'
+
+Making pkg/cola/trafos
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos'
+
+Making pkg/cola/trafos/fmt
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos/fmt'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos/fmt'
+
+Making pkg/cola/trafos/pgs2cmr
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos/pgs2cmr'
+
+Making pkg/cola/trafos/pgs2cmr/derivedSrcs
+make[6]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos/pgs2cmr/derivedSrcs'
+gcc -o pgs2cmr.exe  driver.o clpintf.o clp.o csm.o obsave.o deftbl.o err.o source.o pdl_gen.o VoidPtrList.o clplib.o chain.o TchainList.o DynSpace.o LiteralAlgScope.o envmod.o BitSet.o NonliteralAlgScope.o treecon.o nodecode.o parser.o treestack.o glahead.o auxNUL.o auxEOF.o dflteot.o tabsize.o mkidnwod.o idn.o int.o pascalStr.o auxScanEOL.o Ccomment.o dfltrepar.o attrmain.o visitprocs.o visitmap.o comar_ins.o MakeName.o classify.o wrtcomar.o obstack.o ../../../lib/lib.a ../../../idl/IDL.a 
+make[6]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos/pgs2cmr/derivedSrcs'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos/pgs2cmr'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/trafos'
+
+Making pkg/cola/lalr
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr'
+
+Making pkg/cola/lalr/front
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/front'
+
+Making pkg/cola/lalr/front/lalr
+make[6]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/front/lalr'
+make[6]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/front/lalr'
+rm -f ../../colaAbsprs.exe
+gcc colaAbsprs.o lalr/lalr.a ../../trafos/fmt/fmt.a ../../lib/lib.a ../../idl/IDL.a  -I../../idl -I../../lib -Ilalr -I../../trafos/fmt -o ../../colaAbsprs.exe
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/front'
+
+Making pkg/cola/lalr/back
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/back'
+
+Making pkg/cola/lalr/back/both
+make[6]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/back/both'
+make[6]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/back/both'
+
+Making pkg/cola/lalr/back/table
+make[6]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/back/table'
+gcc -I../both -I../../../idl BUILDPRS.o build_copa.o table.a ../both/both.a ../../../idl/IDL.a -o ../../../colaTbl.exe
+make[6]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/back/table'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/back'
+
+Making pkg/cola/lalr/helptools
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/helptools'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr/helptools'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/lalr'
+
+Making pkg/cola/option
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/option'
+
+Making pkg/cola/option/derivedSrcs
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/option/derivedSrcs'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/option/derivedSrcs'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola/option'
+ln trafos/pgs2cmr/derivedSrcs/pgs2cmr.exe colaPgs2cm.exe
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cola'
+
+Making pkg/cpp
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cpp'
+
+Making pkg/cpp/gnu_cpp
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cpp/gnu_cpp'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cpp/gnu_cpp'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cpp'
+
+Making pkg/cxx
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cxx'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/cxx'
+
+Making pkg/dbx
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/dbx'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/dbx'
+
+Making pkg/delit
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/delit'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/delit'
+
+Making pkg/eli
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli'
+
+Making pkg/eli/ofiles
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli/ofiles'
+make[4]: `try.exe' is up to date.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli/ofiles'
+
+Making pkg/eli/src
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli/src'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli/src'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/eli'
+
+Making pkg/gla
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla'
+
+Making pkg/gla/nflex
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/nflex'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/nflex'
+
+Making pkg/gla/frontend
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/frontend'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/frontend'
+
+Making pkg/gla/backend
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/backend'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/backend'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla'
+
+Making pkg/idl
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/idl'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/idl'
+
+Making pkg/kwd
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/kwd'
+
+Making pkg/kwd/derivedSrcs
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/kwd/derivedSrcs'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/kwd/derivedSrcs'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/kwd'
+
+Making pkg/lib
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/lib'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/lib'
+
+Making pkg/liga
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga'
+
+Making pkg/liga/Frames
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Frames'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Frames'
+
+Making pkg/liga/Info
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Info'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Info'
+
+Making pkg/liga/idl
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/idl'
+
+Making pkg/liga/idl/idllib
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/idl/idllib'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/idl/idllib'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/idl'
+
+Making pkg/liga/option
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/option'
+
+Making pkg/liga/option/derivedSrcs
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/option/derivedSrcs'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/option/derivedSrcs'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/option'
+
+Making pkg/liga/ligascel
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligascel'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligascel'
+
+Making pkg/liga/ligaProd
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligaProd'
+
+Making pkg/liga/ligaProd/derivedSrcs
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligaProd/derivedSrcs'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligaProd/derivedSrcs'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligaProd'
+
+Making pkg/liga/ligaErr
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligaErr'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/ligaErr'
+
+Making pkg/liga/backend
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/backend'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/backend'
+
+Making pkg/liga/frontend
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/frontend'
+
+Making pkg/liga/frontend/derivedSrcs
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/frontend/derivedSrcs'
+gcc -o Lido.exe  driver.o clpintf.o clp.o csm.o obsave.o deftbl.o err.o source.o pdl_gen.o DefTableKeyList.o clplib.o AlgScope.o envmod.o BitSet.o PreDefId.o IdentTerm.o PreDefMod.o idn.o treecon.o nodecode.o treebuild.o parser.o treestack.o scanswitch.o pascalStr.o glahead.o auxNUL.o auxEOF.o dflteot.o tabsize.o Cint.o p_mkstr.o str.o auxScanEOL.o CchStr.o pascalCom.o Ccomment.o dfltrepar.o attrmain.o visitprocs.o visitmap.o Strings.o CompRepr.o DynSpace.o PExprList.o Remote.o SymbAttrList.o SymbolUses.o GrammarRules.o ProdSymbolList.o RuleProdList.o Prod.o MakeName.o ShieldSet.o Accumulate.o InheritRepr.o Compute.o ptg_gen.o PtgCommon.o Indent.o IdlStringOut.o SymbolOcc.o Attribute.o RemoteSet.o SymbAttr.o Grammar.o Inherit.o Predefined.o RuleOutput.o SymbolOutput.o CheckRuleComps.o RemoteOut.o DefsOut.o ReprOut.o CompOut.o obstack.o ../../idl/IDL.a 
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/frontend/derivedSrcs'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/frontend'
+
+Making pkg/liga/middle
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle'
+
+Making pkg/liga/middle/expand
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle/expand'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle/expand'
+
+Making pkg/liga/middle/optim
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle/optim'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle/optim'
+
+Making pkg/liga/middle/order
+make[5]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle/order'
+make[5]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle/order'
+gcc -I../idl -I../option -I../ligascel -Iorder -Iexpand -Ioptim -I. -o ../ligaMe.exe obstack.o middle_mem.o middle.o linemap.o expand/exp_io.o expand/expchain.o expand/expclass.o expand/expconstit.o expand/expidl.o expand/expincl.o expand/expref.o expand/exptransfer.o expand/exptrav.o expand/do_expand.o expand/exp_prot.o order/bottomup.o order/induce.o order/initdp.o order/option.o order/ordout.o order/do_order.o order/part.o order/reftab.o order/set.o order/visit.o order/depmod.o optim/OPTIM.o optim/optbuildstr.o optim/do_optim.o optim/optfct.o optim/optgroup.o optim/optidl.o optim/optlifet.o optim/optout.o optim/optvar.o optim/chkbu.o optim/optcycle.o optim/termtrafo.o ../option/opt_input.o ../idl/IDL.a ../ligascel/err.o ../ligascel/printerr.o ../ligascel/source.o 
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/middle'
+
+Making pkg/liga/show
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/show'
+gcc -I../idl -I../ligascel -IderivedSrcs -o ../ligaShow.exe show.o showproc.o derivedSrcs/ptg_gen.o map_errors.o derivedSrcs/obstack.o ../idl/IDL.a 
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/show'
+
+Making pkg/liga/gorto
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/gorto'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/gorto'
+ln frontend/derivedSrcs/Lido.exe ligaFe.exe
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga'
+
+Making pkg/lint
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/lint'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/lint'
+
+Making pkg/maptool
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/maptool'
+
+Making pkg/maptool/complete
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/maptool/complete'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/maptool/complete'
+
+Making pkg/maptool/ebnf
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/maptool/ebnf'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/maptool/ebnf'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/maptool'
+
+Making pkg/noosa
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/noosa'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/noosa'
+
+Making pkg/odi
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/odi'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/odi'
+
+Making pkg/oldodin
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/oldodin'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/oldodin'
+
+Making pkg/pdl
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pdl'
+
+Making pkg/pdl/derivedSrcs
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pdl/derivedSrcs'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pdl/derivedSrcs'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pdl'
+
+Making pkg/pgs
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pgs'
+
+Making pkg/pgs/src
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pgs/src'
+gcc  -o analyse.exe analyse.o options.o showEx.o \
+	obstack.o p2c.a
+gcc  -o buildtab.exe buildtab.c p2c.a
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pgs/src'
+ln src/analyse.exe analyse.exe
+ln src/buildtab.exe buildtab.exe
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/pgs'
+
+Making pkg/phi
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/phi'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/phi'
+
+Making pkg/ptg
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/ptg'
+
+Making pkg/ptg/sample
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/ptg/sample'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/ptg/sample'
+
+Making pkg/ptg/derivedSrcs
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/ptg/derivedSrcs'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/ptg/derivedSrcs'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/ptg'
+
+Making pkg/skeleton
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/skeleton'
+
+Making pkg/skeleton/gnu_sed
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/skeleton/gnu_sed'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/skeleton/gnu_sed'
+
+Making pkg/skeleton/src
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/skeleton/src'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/skeleton/src'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/skeleton'
+
+Making pkg/symcode
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/symcode'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/symcode'
+
+Making pkg/version
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/version'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/version'
+
+Making pkg/fw
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/fw'
+
+Making pkg/fw/src
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/fw/src'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/fw/src'
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/fw'
+
+Making pkg/info
+make[3]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info'
+
+Making pkg/info/texinfo
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/texinfo'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/texinfo'
+
+Making pkg/info/tnf
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf'
+
+Making pkg/info/html
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/html'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/html'
+
+Making pkg/info/hypermsg
+make[4]: Entering directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/hypermsg'
+make[4]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/hypermsg'
+/home/user/Dropbox/CAS/eli-4.8.1/bin/eli -c /home/user/Dropbox/CAS/eli-4.8.1/CACHE \
+		'tnf%hypertext >manuals; tnf%index >manuals/gindex'
+/home/user/Dropbox/CAS/eli-4.8.1/bin/eli: 44: /home/user/Dropbox/CAS/eli-4.8.1/bin/eli: /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/bin/odin: not found
+make[3]: *** [man] Error 127
+make[3]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg/info'
+make[2]: *** [alldir] Error 1
+make[2]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli/pkg'
+make[1]: *** [notest] Error 2
+make[1]: Leaving directory `/home/user/Dropbox/CAS/eli-4.8.1/Eli'

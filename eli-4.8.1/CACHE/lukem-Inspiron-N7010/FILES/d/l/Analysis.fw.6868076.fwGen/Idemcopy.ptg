@@ -1,0 +1,15 @@
+
+Plain:
+  "RULE " $1 string ": " $2 string " ::= "    $3 " END;\n"
+
+SpaceSeq:
+  $ { " " } $
+
+Listof:
+  "RULE " $1 string ": " $2 string " LISTOF " $3 " END;\n"
+
+AltSeq:
+  $ { " | " } $
+
+ComputedRoot:
+  "$ " $1 string

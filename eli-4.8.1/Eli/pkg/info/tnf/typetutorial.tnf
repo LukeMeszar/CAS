@@ -1,0 +1,3259 @@
+\input texinfo
+@setchapternewpage odd
+@setfilename TypeTutorial
+@node Top, , , (dir),
+
+
+@settitle Tutorial on Type Analysis
+@setchapternewpage odd
+@paragraphindent 0
+
+
+@titlepage
+@center @titlefont{Tutorial on Type Analysis}
+@sp 4
+@center Compiler and Programming Language Group
+@center University of Paderborn
+@center Faculty for Electrical Engineering, Computer Science and Mathematics
+@center Department of Computer Science
+@center 33098 Paderborn, Germany
+@sp 4
+@center Copyright, 2008 University of Paderborn
+@end titlepage
+
+@ifinfo
+@chapheading Tutorial on Type Analysis
+
+$Revision: 2.2 $
+
+@end ifinfo
+
+@iftex
+@ifclear html
+@chapheading Overview
+@end ifclear
+@end iftex
+
+This tutorial is an introduction to the solution of the type analysis
+task required for programming language implementation. 
+It demonstrates many aspects of that task which may occur in 
+programming languages or in special purpose languages. 
+The tutorial demonstrates how the components of Eli's type analysis
+library are used to solve that task.
+The tutorial proceeds from basic aspects, such as declarations,
+typed entities, and overloaded operators, up to more complex 
+aspects, such as type definitions and function types.
+
+This tutorial may be used for a practical introduction to the
+specification techniques for type analysis, or as a source of
+examples that show how to solve certain problems, or it may give
+hints for language design.
+
+This file is an executable specification. An analyzer for an
+artificial language can be generated from it. The language is
+kept small by restricting it to those constructs necessary to
+demonstrate type analysis tasks, not regarding its usability
+for programming.
+The generated analyzer produces output that reports the result of
+type analysis, i.e. the type property of program entities, and error
+reports where examples violate specified language properties.
+
+The explanations in this tutorial assume that the reader is familiar
+with the use of the Eli system, with the use of its module library,
+and knows the general description of the type analysis task
+in the documentation of the module library.
+Furthermore, the reader should be familiar with basic concepts of
+the name analysis task. Its solution is a precondition for
+type analysis. It is described only briefly in this text.
+There is a separate tutorial for name analysis, see 
+@ref{Top, , Overview, nametutorial, Tutorial on Name Analysis}.
+
+Chapter 1 specifies a small language kernel and solves the
+name analysis and the type analysis task for it. 
+The focus of the following chapters is on
+type analysis only. The topics are arranged in an order such that
+no forward references are needed. Readers may stop reading at
+any section after section 7. They then have a complete description
+of the type analysis task for a language that has the constructs
+and concepts introduced so far. (It should even be possible to
+drop the rest of the specification and generate an analyzer
+for the language specified so far. This feature has not yet been
+tried.)
+For that purpose the example language is presented such that
+from section 5 on each section augments the language by some
+new constructs and concepts that demonstrate the aspect of
+concern. Readers are asked for some patience until they see
+what the whole language is.
+
+
+
+@menu
+* Kernel:: Kernel Language.
+* Type:: Type Checking in Expressions.
+* Operator:: Operator Overloading.
+* Type1:: Type Conversion.
+* Record:: Record Types.
+* Array:: Array Types.
+* Union:: Union Types.
+* Functions:: Functions.
+* Type3:: Type Definitions.
+* Pointer:: Pointer Types.
+* Function:: Function Types.
+* Appendix:: Appendix: Syntax.
+
+Kernel Language
+
+* Basic:: Basic Scope Rules.
+* Types:: Types in the Kernel Language.
+
+Record Types
+
+* Type2:: Type Equivalence.
+* Qualified:: Qualified Names.
+
+Appendix: Syntax
+
+* Concrete:: Concrete Kernel Syntax.
+* Concrete1:: Concrete Expression Syntax.
+* Concrete2:: Concrete Function Syntax.
+* Other:: Other concrete productions.
+@end menu
+
+@node Kernel, Type, , Top, 
+@chapter Kernel Language
+
+
+We start with a very simple kernel language where a @code{Program}
+is a @code{Block} consisting of @code{Declarations} for variables,
+assignment @code{Statements}, and trivial @code{Expressions}.
+Other forms of @code{Declarations}
+and @code{Expressions} are added to the grammar when the
+type analysis task is further refined.
+
+Here is a simple example program:
+
+@b{SimpleExamp}[1]==
+@example
+begin
+  var   int i, int j,
+        bool b, bool c,
+        int r, int s;
+  i = 1;
+  b = true;
+  r = 3;
+  j = i;
+  c = b;
+  s = r;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+Structure and notation of the kernel language is specified here
+by its abstract syntax.
+
+@i{Abstract Kernel syntax}[2]==
+@example
+RULE: Program      ::=    Block END;
+RULE: Block        ::=    'begin' Declarations Statements 'end' END;
+RULE: Declarations LISTOF Declaration END;
+RULE: Statements   LISTOF Statement END;
+
+RULE: Declaration  ::=    'var' ObjDecls ';' END;
+RULE: ObjDecls     LISTOF ObjDecl  END;
+RULE: ObjDecl      ::=    TypeDenoter DefIdent END;
+RULE: TypeDenoter  ::=    'int' END;
+RULE: TypeDenoter  ::=    'bool' END;
+RULE: TypeDenoter  ::=    'void' END;
+
+RULE: Statement    ::=    Variable '=' Expression ';' END;
+RULE: Statement    ::=    Expression ';' END;
+
+RULE: Expression   ::=    Variable END;
+RULE: Expression   ::=    IntNumber END;
+RULE: Expression   ::=    'true' END;
+RULE: Expression   ::=    'false' END;
+
+RULE: Variable     ::=    UseIdent END;
+
+RULE: DefIdent     ::=    Ident END;
+RULE: UseIdent     ::=    Ident END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+Concrete syntax rules corresponding to the @code{LISTOF} constructs
+above, specifications of the notations of
+identifiers, literals, and comments are given in the appendix.
+
+@menu
+* Basic:: Basic Scope Rules.
+* Types:: Types in the Kernel Language.
+@end menu
+
+@node Basic, Types, , Kernel, 
+@section Basic Scope Rules
+
+
+The basic task of name analysis is consistent renaming.
+For each identifier occurrence a @code{Key} attribute is computed such
+that it identifies a program entity uniquely. 
+@code{Key}s are used to associate properties
+to program entities and to retrieve those properties in different
+contexts. The symbols @code{DefIdent}, @code{UseIdent}
+distinguish defining and used identifier occurrences.
+
+The scope rules of a language determine how identifier occurrences
+are bound to program entities. We specify Algol-like scope rules
+for our language. The basic Algol-like scope rule reads:
+
+@quotation
+A definition of an identifier @code{a} is valid in the whole smallest
+range that encloses that definition, except inner ranges that
+contain another definition of @code{a}.
+@end quotation
+
+Hence, a definition in an outer range is hidden by a definition
+of the same identifier in an inner range for the whole inner range.
+Identifiers may be applied before they are defined.
+
+We instantiate a library module that provides computations
+according to this scope rule:
+
+@i{Basic scope module}[3]==
+@example
+$/Name/AlgScope.gnrc:inst
+@end example
+@smalldisplay
+This macro is invoked in definition 14.
+@end smalldisplay
+
+
+The use of that module requires that every identifier occurrence
+has the attribute @code{Sym} representing
+the identifier encoding. Hence we specify a computational role
+@code{IdentOcc} that provides that attribute, and will be inherited
+by any identifier occurrence.
+
+The computational roles @code{RangeScope},
+@code{IdDefScope}, and @code{IdUseEnv} are associated to the corresponding
+symbols of our grammar:
+
+@i{Kernel scope rules}[4]==
+@example
+TERM Ident: int;
+ATTR Sym: int;
+CLASS SYMBOL IdentOcc COMPUTE SYNT.Sym = TERM; END;
+
+SYMBOL Block    INHERITS RangeScope END;
+SYMBOL DefIdent INHERITS IdDefScope, IdentOcc END;
+SYMBOL UseIdent INHERITS IdUseEnv, IdentOcc END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+
+Erroneous programs may violate the scope rules in two different
+situations:
+
+@itemize @bullet
+@item
+A particular applied identifier occurrence has no valid defining
+identifier occurrence.
+
+@item
+There are more than one defining identifier occurrences for the same
+identifier in a range.
+@end itemize
+
+Such situations shall be indicated by error messages.
+Furthermore, we want every defining occurrence of a multiply
+defined identifier be marked by a message.
+
+For that purpose we use the following two library modules:
+
+@i{Message support}[5]==
+@example
+$/Tech/Strings.specs
+$/Prop/OccCnt.gnrc:inst
+@end example
+@smalldisplay
+This macro is invoked in definition 14.
+@end smalldisplay
+
+
+The @code{Strings} module provides a function that concatenates
+a string and an identifier, to be used for error messages
+related to identifiers.
+
+The @code{OccCnt} module provides computations that count how
+often an entity identified by a @code{Key} attribute occurs
+in certain contexts, in our case in a defining context.
+
+The check for existence of a definition is directly obtained from
+the module role @code{ChkIdUse}.
+For the second check we specify a computational role
+@code{ChkUnique} in order to reuse it for several grammar symbols.
+If an entity occurs more than once in the @code{ChkUnique}
+context it is multiply defined.
+
+@i{Scope checks}[6]==
+@example
+SYMBOL UseIdent INHERITS ChkIdUse END;
+SYMBOL DefIdent INHERITS ChkUnique END;
+
+SYMBOL ChkUnique INHERITS Count, TotalCnt COMPUTE
+  IF (GT (THIS.TotalCnt, 1),
+  message (ERROR, 
+           CatStrInd ("identifier is multiply defined: ", 
+                      THIS.Sym),
+           0, COORDREF));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+
+
+@node Types, , Basic, Kernel, 
+@section Types in the Kernel Language
+
+
+We use the modules @code{Typing} to support type analysis.
+As we are going to specify structural equivalence for some
+kinds of type, we also instantiate the module @code{StructEquiv}.
+@i{Type analysis module}[7]==
+@example
+$/Type/Typing.gnrc:inst
+$/Type/StructEquiv.fw
+@end example
+@smalldisplay
+This macro is invoked in definition 14.
+@end smalldisplay
+
+So, we have to adopt the modules' strategy for representing types:
+
+Types are represented by @code{DefTableKey}s.
+Such a key is created for each program construct which
+denotes a particular type. The unknown type is represented
+by @code{NoKey}. 
+
+The kernel language has only language defined types:
+@code{int}, @code{bool}, and @code{void}.
+Each of them is represented by a known key. 
+Here we introduce only the key for the type @code{void}, as the other
+types occur in operator specification, and are introduced there:
+@i{Language defined type keys}[8]==
+@example
+voidType -> IsType = @{1@};
+@end example
+@smalldisplay
+This macro is invoked in definition 15.
+@end smalldisplay
+
+All type keys have a property @code{IsType}, which distinguishes 
+them from keys representing entities other than types. 
+Usually the property @code{IsType} is not set or accessed by user 
+specifications. Module roles ensure that they are properly used.
+
+The following computations set the @code{Type} attributes of the
+constructs that denote languge defined types:
+@i{Language defined types}[9]==
+@example
+RULE: TypeDenoter ::= 'int'  COMPUTE TypeDenoter.Type = intType;  END;
+RULE: TypeDenoter ::= 'bool' COMPUTE TypeDenoter.Type = boolType; END;
+RULE: TypeDenoter ::= 'void' COMPUTE TypeDenoter.Type = voidType; END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+Further forms of @code{TypeDenoter}s for user defined types are 
+specified in subsequent sections.
+
+We now consider a variable declaration as an example for
+a language construct that defines a typed entity.
+In our language a variable declaration may define several
+variables. An @code{ObjDecl} states the type and the name for
+each of them. 
+
+The pair of module roles @code{TypedDefinition} and @code{TypedDefId}
+supports the pattern of declaring typed entities:
+@code{ObjDecl} has the role @code{TypedDefinition}, i.e. a construct
+that specifies the types of all @code{TypedDefId}s in its subtree.
+The attribute @code{ObjDecl.Type} has to be set appropriately:
+
+@i{Declarations}[10]==
+@example
+SYMBOL ObjDecl INHERITS TypedDefinition END;
+SYMBOL DefIdent INHERITS TypedDefId END;
+
+ATTR Type: DefTableKey;
+
+RULE: ObjDecl ::= TypeDenoter DefIdent COMPUTE
+  ObjDecl.Type = TypeDenoter.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+
+The module roles @code{TypedUseId} classifies a used name of a typed 
+entity, and causes the attribute  @code{TypedUseId.Type}
+to be set to the type defined for that entity.
+The corresponding check role issues messages if that classification
+is violated:
+
+@i{Typed identifiers}[11]==
+@example
+SYMBOL UseIdent INHERITS TypedUseId, ChkTypedUseId END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+
+In order to report some results of the type analysis
+we associate two properties to every type key:
+a string value @code{TypeName} and the number of the
+line where the type is introduced. (The latter will become
+more significant when user defined types are defined for
+the language.)
+
+@i{Output properties}[12]==
+@example
+TypeName: CharPtr; "Strings.h"
+TypeLine: int;
+
+intType ->  TypeName = @{"int"@};
+boolType -> TypeName = @{"bool"@};
+voidType -> TypeName = @{"void"@};
+
+intType ->  TypeLine = @{0@};
+boolType -> TypeLine = @{0@};
+voidType -> TypeLine = @{0@};
+@end example
+@smalldisplay
+This macro is invoked in definition 15.
+@end smalldisplay
+
+
+For every used identifier the name and the defining line of its type 
+is printed:
+@i{Kernel output}[13]==
+@example
+SYMBOL UseIdent INHERITS PrtType END;
+
+SYMBOL PrtType COMPUTE
+  printf ("line %d Type %s defined in line %d\n", LINE,
+          GetTypeName (THIS.Type, "no type name"),
+          GetTypeLine (THIS.Type, 0))
+  <- INCLUDING  Program.TypeIsSet;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 16.
+@end smalldisplay
+
+
+@b{Kernel.specs}[14]==
+@example
+@i{Basic scope module}[3]
+@i{Message support}[5]
+@i{Type analysis module}[7]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Kernel.pdl}[15]==
+@example
+@i{Language defined type keys}[8]
+@i{Output properties}[12]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Kernel.lido}[16]==
+@example
+@i{Abstract Kernel syntax}[2]
+@i{Kernel scope rules}[4]
+@i{Scope checks}[6]
+@i{Language defined types}[9]
+@i{Declarations}[10]
+@i{Typed identifiers}[11]
+@i{Kernel output}[13]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Kernel.gla}[17]==
+@example
+@i{Token notation}[137]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Kernel.con}[18]==
+@example
+@i{Concrete Kernel syntax}[135]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Oprand.sym}[19]==
+@example
+@i{Expression mapping}[136]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Type, Operator, Kernel, Top, 
+@chapter Type Checking in Expressions
+
+
+Expressions consist of typed names and literals and of operators
+that are applied to operands of certain types and yield a result
+of a certain type. Determining the types of expressions and 
+checking the related type rules of the language is a significant
+subtask of type analysis. The type rules of languages are usually
+formulated in terms of concepts like "type of program constructs 
+and entities", "signature of operators", "operator overloading", 
+"type conversion". They have common and well-understood meaning
+for type analysis in general. Of course, the type rules established 
+for a particular language instantiate these concepts in a specific
+way, e.g. define a specific set of operators with their signature
+and state which conversions may be applied to resolve overloading.
+
+Eli's type analysis module @code{Expression} provides reusable 
+roles and computations to formulate the language specific 
+instantiation of the concepts mentioned above. The type analysis
+for expressions is generated from such a specification.
+
+@i{Expression module}[20]==
+@example
+$/Type/Expression.gnrc:inst
+@end example
+@smalldisplay
+This macro is invoked in definition 26.
+@end smalldisplay
+
+
+This module carries out type analysis on expression trees, 
+which are subtrees made up of connected expression nodes. 
+An expression node is a node representing a program construct
+that yields a value of a certain type.
+The module provides the role @code{ExpressionSymbol} to be inherited by
+symbols that are expression symbols in that sense:
+
+@i{Expression symbols}[21]==
+@example
+SYMBOL Expression INHERITS ExpressionSymbol END;
+SYMBOL Variable INHERITS ExpressionSymbol END;
+@end example
+@smalldisplay
+This macro is invoked in definition 27.
+@end smalldisplay
+
+
+The type of each expression node is characterized by two attributes: 
+@code{ExpressionSymbol.Type} describes the type of the values this
+expression may yield. @code{ExpressionSymbol.Required} may be used to
+specify that the upper context requires the expression to yield 
+a value of a particular type. As @code{ExpressionSymbol.Required} is
+used to compute @code{ExpressionSymbol.Type}, it may not depend
+on the @code{Type} attribute.
+
+Expression symbols may occur in different contexts with respect to
+the structure of the expression trees: root contexts, leaf contexts, and
+inner contexts. The module provides different computational roles
+for those contexts. In leaf contexts the type of the leaf expression
+must be stated using the computational role @code{PrimaryContext}.
+Note that in the third role below the expression node is a leaf
+with respect to the expression tree, although the context has one
+subtree, that is not an expression node:
+
+@i{Leaf nodes}[22]==
+@example
+RULE: Expression ::= IntNumber COMPUTE
+  PrimaryContext (Expression, intType);
+END;
+
+RULE: Expression ::= 'true' COMPUTE
+  PrimaryContext (Expression, boolType);
+END;
+
+RULE: Expression ::= 'false' COMPUTE
+  PrimaryContext (Expression, boolType);
+END;
+
+RULE: Variable ::= UseIdent COMPUTE
+  PrimaryContext (Variable, UseIdent.Type);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 27.
+@end smalldisplay
+
+
+The computational role @code{TransferContext} is used for contexts
+that have an expression node on the left-hand side and one on the
+right-hand side, and both have the same type properties:
+
+@i{Transfer nodes}[23]==
+@example
+RULE: Expression ::= Variable COMPUTE
+  TransferContext (Expression, Variable);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 27.
+@end smalldisplay
+
+
+The node representing an assignment statement has two children.
+Both are considered as roots of expression trees.
+For the @code{Variable} the assignment context does not impose
+any restriction on its type; hence, nothing is specified for
+that node:
+
+@i{Assignment}[24]==
+@example
+RULE: Statement ::= Variable '=' Expression ';' COMPUTE
+  RootContext (Variable.Type, , Expression);
+  Indication (assignOpr);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 27.
+@end smalldisplay
+
+@code{explain the purpose of assignOpr??}
+
+The @code{Expression} on the right-hand side of the assignment
+is required to yield a value of the type of the @code{Variable}.
+
+An expression in the role of a statement is another example for
+a root context. On execution the value of the expression   will
+just be discarded. Hence, there is no requirement on its type
+to be stated or checked:
+@i{Expression statement}[25]==
+@example
+RULE: Statement ::=  Expression ';' END;
+@end example
+@smalldisplay
+This macro is invoked in definition 27.
+@end smalldisplay
+
+
+@b{Expression.specs}[26]==
+@example
+@i{Expression module}[20]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@b{Expression.lido}[27]==
+@example
+@i{Expression symbols}[21]
+@i{Leaf nodes}[22]
+@i{Transfer nodes}[23]
+@i{Assignment}[24]
+@i{Expression statement}[25]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Operator, Type1, Type, Top, 
+@chapter Operator Overloading
+
+
+We here extend our language by binary and unary operators in
+order to demonstrate type analysis for expressions with
+overloaded operators.
+
+Operators are overloaded in our language,
+i.e. an operator symbol like @code{+}
+may denote one of several operations, e.g. integer addition or
+logical disjunktion (or).
+The distinction is made using the types of the operands. 
+Hence, we associate to an operator symbol like @code{+} an
+indication like @code{AddOp}, which represents a set of
+operators, like @code{iAdd, bOr}.
+
+Each of the following rules associates an indication name
+to the attribute @code{BinOpr.Indic}. (The indication names
+are introduced below.)
+
+@i{Operator Indications}[28]==
+@example
+RULE: BinOpr ::= '+' COMPUTE BinOpr.Indic = AddOp; END;
+RULE: BinOpr ::= '-' COMPUTE BinOpr.Indic = SubOp; END;
+RULE: BinOpr ::= '*' COMPUTE BinOpr.Indic = MulOp; END;
+RULE: BinOpr ::= '/' COMPUTE BinOpr.Indic = DivOp; END;
+
+RULE: UnOpr ::= '+' COMPUTE UnOpr.Indic = PlusOp; END;
+RULE: UnOpr ::= '-' COMPUTE UnOpr.Indic = NegOp; END;
+RULE: UnOpr ::= '!' COMPUTE UnOpr.Indic = NotOp; END;
+@end example
+@smalldisplay
+This macro is invoked in definition 34.
+@end smalldisplay
+
+
+For each of the operator indications at least one meaning is specified
+by one of the following operation descriptions.
+The first component of an operation description relates it
+to an indication representing the operator symbol, 
+the second component is a unique name for the operation.
+
+The third component describes the signature of the
+operation expressed in terms of keys for predefined types.
+
+All names are automatically introduced as names
+for definition table keys. They may be used explicitly in 
+specifications to distinguish operations, or to associate
+properties to them.
+
+For each language defined operator its signature is specified;
+operators that have the same signature can be comprised
+in one definition:
+@i{Oil Operation Signatures}[29]==
+@example
+OPER
+  iAdd, iSub, iMul, iDiv (intType,intType):intType;
+  iPlus, iNeg            (intType):intType;
+  bOr, bAnd              (boolType,boolType):boolType;
+  bNot                   (boolType):boolType;
+@end example
+@smalldisplay
+This macro is invoked in definition 35.
+@end smalldisplay
+
+
+Next, we associate a set of operators to every indication.
+Here, for example the @code{AddOp} is overloaded with three
+operations: @code{iAdd} and @code{bOr}, and @code{MulOp} is 
+overloaded with @code{iMul} and @code{bAnd}. All other
+indications have singleton sets:
+@i{Oil indications}[30]==
+@example
+INDICATION
+  AddOp:  iAdd, bOr;
+  SubOp:  iSub;
+  MulOp:  iMul, bAnd;
+  DivOp:  iDiv;
+  PlusOp: iPlus;
+  NegOp:  iNeg;
+  NotOp:  bNot;
+@end example
+@smalldisplay
+This macro is invoked in definition 35.
+@end smalldisplay
+
+
+The operation signatures as given above require
+operands to have exactly those types. E.g. @code{a + 1}
+is illegal if @code{a} was of type @code{boolType}.
+
+Type analysis for binary and unary expressions needs to compute
+the @code{Type} attribute of the whole expression (the result type
+of the operation) and the required types of operands (the corresponding
+type of the signature of the identified target operator).
+The latter may differ from the type of the operand in case that coercion is
+applied. 
+We obtain these computations from the @code{Expression} module.
+
+@i{Operator contexts}[31]==
+@example
+SYMBOL BinOpr INHERITS OperatorSymbol END;
+
+RULE: Expression ::= Expression BinOpr Expression COMPUTE
+  DyadicContext (Expression[1], BinOpr, Expression[2], Expression[3]);
+END;
+
+SYMBOL UnOpr INHERITS OperatorSymbol END;
+RULE: Expression ::= UnOpr Expression COMPUTE
+  MonadicContext (Expression[1], UnOpr, Expression[2]);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 36.
+@end smalldisplay
+
+
+The key of the identified operation could be obtained by
+@code{BinOpr.Oper} or @code{UnOpr.Oper}, if necessary e.g.
+for translation.
+
+@b{Operator.con}[32]==
+@example
+@i{Expression syntax}[138]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Operator.sym}[33]==
+@example
+@i{Operators}[139]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Indications.lido}[34]==
+@example
+@i{Operator Indications}[28]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Operator.oil}[35]==
+@example
+@i{Oil Operation Signatures}[29]
+@i{Oil indications}[30]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Operator.lido}[36]==
+@example
+@i{Operator contexts}[31]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+
+@node Type1, Record, Operator, Top, 
+@chapter Type Conversion
+
+
+This chapter introduces type conversion to our language. We say, a value 
+of a certain type @code{t} is converted into a corresponding
+value of some other type @code{s}. For example, a conversion of integral 
+values into floating point values is defined for many languages.
+We consider such a conversion be executed by a conversion
+operator that has a signature @code{t->s}. We call a conversion
+@code{coercion} if the application of a conversion operator 
+is determined implicitly, for example in the process of
+overloading resolution.
+
+In order to demonstrate type conversion, we extend our language
+by a second arithmetic type for floating point values an call the
+type @code{real}.
+
+The type representation is extended by:
+
+@i{Real type representation}[37]==
+@example
+realType -> TypeName = @{"real"@};
+@end example
+@smalldisplay
+This macro is invoked in definition 44.
+@end smalldisplay
+
+
+We add a new type denoter to the language
+
+@i{Real type denoter}[38]==
+@example
+RULE: TypeDenoter ::= 'real' COMPUTE TypeDenoter.Type = realType; END;
+@end example
+@smalldisplay
+This macro is invoked in definition 45.
+@end smalldisplay
+
+and introduce literals of type @code{real}:
+
+@i{Real literals}[39]==
+@example
+RULE: Expression ::= RealNumber COMPUTE
+  PrimaryContext (Expression, realType);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 45.
+@end smalldisplay
+
+
+Now we extend the set of operator specifications by 
+operators for the type @code{real}:
+
+@i{Real operators}[40]==
+@example
+OPER
+  rAdd  (realType,realType):realType;
+  rSub  (realType,realType):realType;
+  rMul  (realType,realType):realType;
+  rDiv  (realType,realType):realType;
+
+  rPlus (realType):realType;
+  rNeg  (realType):realType;
+@end example
+@smalldisplay
+This macro is invoked in definition 46.
+@end smalldisplay
+
+
+We specify that the @code{real} operators overload the 
+corresponding ones for the type @code{int} by adding them
+to the corresponding indication:
+
+@i{Real operators overload}[41]==
+@example
+INDICATION
+  AddOp: rAdd;
+  SubOp: rSub;
+  MulOp: rMul;
+  DivOp: rDiv;
+  PlusOp: rPlus;
+  NegOp:  rNeg;
+@end example
+@smalldisplay
+This macro is invoked in definition 46.
+@end smalldisplay
+
+
+Now we want to allow that overloading resolution takes conversion
+from @code{int} to @code{real} into account. That means in an expression
+like @code{a + 1} the operand types need not match exactly to the 
+signature of a @code{+} operator, if coercion could convert the
+operand types into those required by the signature. In particular 
+@code{a} could have type @code{real}. In that case
+coercion from @code{int} to @code{real} would be applied to @code{1}
+in order to use the @code{real} addition operator.
+
+So, we define such a coercion operator @code{iTor} with the 
+signature @code{int->real}:
+
+@i{Predefined Coercion Operator}[42]==
+@example
+COERCION
+  iTor (intType):realType;
+@end example
+@smalldisplay
+This macro is invoked in definition 46.
+@end smalldisplay
+
+
+Finally we reconsider the type rules for assignments. We want
+to allow to have an @code{int} variable
+on the left-hand side and a @code{real} expression on the right,
+say @code{i = 3.4;}
+That means the result of the expression is to be converted to
+an @code{int} value, which is then assigned to the variable.
+
+For that purpose we specify a conversion operator @code{rToi}
+with the signature @code{real->int}, and associate it to
+the operator indication @code{assignOpr} which has been 
+introduced for the assignment context:
+
+@i{Assignment Conversion Operator}[43]==
+@example
+OPER
+   rToi (realType):intType;
+INDICATION
+  assignOpr: rToi;
+@end example
+@smalldisplay
+This macro is invoked in definition 46.
+@end smalldisplay
+
+
+Note: The conversion operator @code{rToi} is only applicable in
+a context that is chacterized by the indication @code{assignOpr},
+it is NOT applied as a coercion when resolving overloaded
+operators.
+
+@b{RealType.pdl}[44]==
+@example
+@i{Real type representation}[37]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{RealType.lido}[45]==
+@example
+@i{Real type denoter}[38]
+@i{Real literals}[39]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{OperatorExtensions.oil}[46]==
+@example
+@i{Real operators}[40]
+@i{Real operators overload}[41]
+@i{Assignment Conversion Operator}[43]
+@i{Predefined Coercion Operator}[42]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+
+@node Record, Array, Type1, Top, 
+@chapter Record Types
+
+
+We introduce record types to our language in order to
+demonstrate how composed user defined types are specified.
+A record type is described by a sequence of field declarations
+which have the same semantics as @code{ObjDecls} used in variable
+declarations. A notation for variables is added that allows to
+select a component from a variable.
+
+Here is an example program that defines and uses a record 
+variable named @code{rv}:
+
+@b{RecordExamp}[47]==
+@example
+begin
+  var   record int i, bool b, real r end rv;
+  var   int j, bool c, real s;
+  j = rv.i;
+  c = rv.b;
+  s = rv.r;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+The following productions describe record types
+and component selections:
+
+@i{Abstract record syntax}[48]==
+@example
+RULE: TypeDenoter ::= RecordType END;
+RULE: RecordType  ::='record' ObjDecls 'end' END;
+
+RULE: Variable    ::= Variable '.' SelectIdent END;
+RULE: SelectIdent ::= Ident END;
+@end example
+@smalldisplay
+This macro is invoked in definition 62.
+@end smalldisplay
+
+
+An abstraction of a record type is the sequence of component
+definitions, each consisting of a type and a name.
+A @code{RecordType} describes such a type abstraction. 
+It inherits the module role @code{TypeDenotation}:
+
+@i{Type denoter}[49]==
+@example
+SYMBOL RecordType INHERITS TypeDenotation END;
+
+RULE: TypeDenoter ::= RecordType COMPUTE
+  TypeDenoter.Type = RecordType.Type;
+END;
+
+RULE: RecordType ::= 'record' ObjDecls 'end' COMPUTE
+  .GotTypeProp =
+    ORDER (
+      ResetTypeName (RecordType.Type, "record..."),
+      ResetTypeLine (RecordType.Type, LINE));
+
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 62.
+@end smalldisplay
+
+The last computation above sets the properties @code{TypeName} and
+@code{TypeLine} of the created type for the facility of printing 
+type information we have introduced above. 
+The attribute @code{GotTypeProp} represents that state. It
+is used in another instance of this RULE context below, where
+further properties are associated to the type.
+
+The construct for component selection, e.g. @code{rv.i}, demonstrate
+a typical situation where type ananlysis and name analysis depend
+on each other: The type of the variable @code{rv} has a property,
+which is a scope; it is used to lookup a binding for the selector 
+@code{i}.
+Hence we instantiate the name analysis module @code{ScopeProp},
+which supports scopes as properties. It is adapted to the needs
+of type analysis by the module @code{TypeDep}:
+@i{Scope property module}[50]==
+@example
+$/Name/ScopeProp.gnrc:inst
+$/Type/TypeDep.gnrc:inst
+@end example
+@smalldisplay
+This macro is invoked in definition 60.
+@end smalldisplay
+
+
+The role @code{ExportRange} of the @code{ScopeProp} module
+specifies the @code{RecordType} to be a range that may export
+its bindings to be lookedup outside of that range, e.g. in
+component selections.
+Its scope of component definitions
+is associated to the @code{ScopeKey}. The @code{ScopeKey}
+is specified to be the type key created by the role
+@code{TypeDenotation}:
+@i{Range}[51]==
+@example
+SYMBOL RecordType INHERITS ExportRange COMPUTE
+  SYNT.ScopeKey = SYNT.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 62.
+@end smalldisplay
+
+
+@menu
+* Type2:: Type Equivalence.
+* Qualified:: Qualified Names.
+@end menu
+
+@node Type2, Qualified, , Record, 
+@section Type Equivalence
+
+
+As record types have non-trivial abstractions,
+the question arises under which circumstances two record types
+are the same. Consider the following examples:
+@b{RecordEqual}[52]==
+@example
+begin
+  var   record int i, bool b, real r end va;
+  var   record int i, bool b, real r end vc;
+  var   record int j, bool k, real l end vd;
+  va = vc;
+  va = vd;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+Typing rules of the language have to state which of the variables
+@code{va}, @code{vc}, and @code{vd} have the same type,
+and which of the assignments are correct.
+Languages usually apply one of two different typing rules:
+
+The first rule states that every
+occurrence of a description of a record type
+(or of any other compound type) introduces a type
+different from all other types, even from those that are
+equally notated. Under this rule all three variables 
+have different types.
+This rule is called name equivalence, because every type
+description gets a name - explicitly or implicitly, as in
+this example -and types are distingushed by their names.
+
+The second rule states that two types are equal if their
+abstractions are equal; i.e. the sequences of components 
+coincide elementwise in the types and names of components.
+In the above example @code{va} and @code{vc}
+have the same types. This rule is called structural
+equivalence. 
+
+In case of structural equivalence the type rules of the language
+may define precisely, which type properties belong to the
+abstraction that is used to determine type equivalence.
+For example, the rule could state that the types of the
+record components belong to the abstraction, and the
+names of the components do not belong to it. In that case
+all four variables of the above example would have the same type.
+
+The type analysis library provides a module @code{StructEquiv} 
+that extends the @code{Typing} module, such that any of these
+these variants of equivalence rules can be supported:
+@i{Struct equiv module}[53]==
+@example
+$/Type/StructEquiv.fw
+@end example
+@smalldisplay
+This macro is invoked in definition 60.
+@end smalldisplay
+
+
+In this language stuctural equivalence is
+specified, such that for record types only the sequence of types, 
+but not the names of components are relevant for structural
+type equivalence.
+
+
+
+The following computation in the RULE context of a record
+type denotation specifies which properties of a record type
+are considered for the check whether two types are equivalent.
+Here we state two rules:
+
+First, a record type can only be equivalent to a type that is
+a record type, too. For that purpose we introduce a
+key @code{RecordClass} that identifies the category of record
+types:
+@i{Type class}[54]==
+@example
+RecordClass;
+@end example
+@smalldisplay
+This macro is invoked in definition 61.
+@end smalldisplay
+
+The rule computation @code{AddTypeToBlock} below associates every 
+record type to that initial set @code{RecordClass}. The equivalence
+check will then partition it as far as necessary into subsets
+of record types which are equivalent.
+
+Second, two record types @code{s} and @code{t} are equivalent if 
+the types of their fields are pairwise equivalent in the given
+order. For that purpose a list of component types is computed
+@code{ObjDecls.OpndTypeList} using roles of the @code{LidoList}
+module and given as the third argument of @code{AddTypeToBlock}.
+
+Beyond type equivalence, our language requires further checks
+on type structures. So, the list of component types is also
+associated as a property @code{ComponentTypes} to the type key 
+by a function @code{VResetComponentTypes} that yields the
+property value as its result:
+@i{Component type property}[55]==
+@example
+ComponentTypes: DefTableKeyList [VReset]; "DefTableKeyList.h"
+@end example
+@smalldisplay
+This macro is invoked in definition 61.
+@end smalldisplay
+
+@i{PropLib module}[56]==
+@example
+$/Prop/PropLib.fw
+@end example
+@smalldisplay
+This macro is invoked in definition 60.
+@end smalldisplay
+
+
+The attribute @code{RecordType.GotType} states that all properties
+of the record type are associated to its key. Hence, a dependence
+on the attribute @code{GotTypeProp} computed above is added here.
+@i{Type equality computation}[57]==
+@example
+RULE: RecordType ::= 'record' ObjDecls 'end' COMPUTE
+  RecordType.GotType =
+      AddTypeToBlock
+         (RecordType.Type, RecordClass, 
+          VResetComponentTypes (RecordType.Type, ObjDecls.OpndTypeList))
+      <- .GotTypeProp;
+END;
+
+SYMBOL ObjDecls INHERITS OpndTypeListRoot END;
+SYMBOL ObjDecl INHERITS OpndTypeListElem END;
+
+SYMBOL ObjDecl COMPUTE
+  SYNT.DefTableKeyElem = SYNT.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 62.
+@end smalldisplay
+
+
+
+@node Qualified, , Type2, Record, 
+@section Qualified Names
+
+
+A record component selection of the form @code{Variable.SelectIdent}
+is considered as a qualified name: The @code{SelectIdent} is an applied
+occurrence of an identifier that is qualified by the 
+@code{Variable} preceeding the dot. Its type is expected to have a
+scope property that has a binding for that identifier.
+
+@code{Variable.SelectIdent} is a leaf of an expression
+tree. Its type is determined by the type of @code{SelectIdent}, as
+specified using the @code{PrimaryContext} computation.
+@i{Selection expression}[58]==
+@example
+RULE: Variable ::= Variable '.' SelectIdent COMPUTE
+  PrimaryContext (Variable[1], SelectIdent.Type);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 62.
+@end smalldisplay
+
+
+@code{SelectIdent} combines roles of name analysis and type analysis:
+It is a qualified identifier use (@code{QualIdUse}). The role requires
+that the attribute @code{SelectIdent.ScopeKey} is computed.
+A module computation accesses the (@code{Scope} property from it, 
+stores it in @code{SelectIdent.Scope} and searches a binding 
+for the identifier; the role @code{ChkQualIdUse} gives a message
+if the scope exists, but no binding is found.
+A user computation is required to check whether the type
+has a scope property.
+
+The roles @code{TypedUseId}, @code{ChkTypedUseId}, and @code{PrtType}
+determine, check, and output the type of the @code{SelectIdent}.
+
+@i{Selection types}[59]==
+@example
+SYMBOL SelectIdent INHERITS 
+        QualIdUse, ChkQualIdUse, IdentOcc,
+        TypedUseId, ChkTypedUseId, PrtType
+END;
+
+RULE: Variable ::= Variable '.' SelectIdent COMPUTE
+  SelectIdent.ScopeKey = Variable[2].Type;
+
+  IF (EQ (SelectIdent.Scope, NoEnv),
+  message (ERROR, "selection applied to non record type", 
+           0, COORDREF));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 62.
+@end smalldisplay
+
+
+@b{Record.specs}[60]==
+@example
+@i{Scope property module}[50]
+@i{Struct equiv module}[53]
+@i{PropLib module}[56]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Record.pdl}[61]==
+@example
+@i{Type class}[54]
+@i{Component type property}[55]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Record.lido}[62]==
+@example
+@i{Abstract record syntax}[48]
+@i{Type denoter}[49]
+@i{Range}[51]
+@i{Type equality computation}[57]
+@i{Selection expression}[58]
+@i{Selection types}[59]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Array, Union, Record, Top, 
+@chapter Array Types
+
+
+We now add array types to our language. We specify that two
+array types are structural equivalent if their element types
+are equivalent, and if the types have the same number of elements.
+Hence, type equivalence is not only determined by the component types.
+
+Here is an example program that uses arrays, records, and
+type definitions in combination:
+
+@b{ArrayExamp}[63]==
+@example
+begin
+  var   int k;
+  var   int[5] pi, int[5] pj;
+  var   record int i, bool b, real[3] r end [2] rv;
+  type  bool[4] bt;
+  var   bt vbt, bt wbt;
+  var   real[6][7] m;
+  pi[1] = k;
+  vbt = wbt;
+  rv[2].b = true;
+  rv[1].r[k] = 3.2;
+  m[1][k] = 1.0;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+We extend the grammar by notations for
+array type denoters and by indexed variables:
+
+@i{ Abstract array syntax}[64]==
+@example
+RULE: TypeDenoter ::= ArrayType END;
+RULE: ArrayType   ::= TypeDenoter '[' ArraySize ']' END;
+RULE: ArraySize   ::= IntNumber END;
+
+RULE: Variable    ::= Variable '[' Expression ']' END;
+@end example
+@smalldisplay
+This macro is invoked in definition 74.
+@end smalldisplay
+
+
+In this language an array type is described by two properties:
+the element type and the number of elements:
+@i{Array type properties}[65]==
+@example
+ElemType:       DefTableKey;
+ElemNo:         int;
+@end example
+@smalldisplay
+This macro is invoked in definition 73.
+@end smalldisplay
+
+
+In the context of a type denotation for an @code{ArrayType}
+the two properties of the type are set together with the
+@code{TypeName} to indicate the array type in the output.
+The attribute @code{GotTypeProp} specifies that these properties
+are set.
+
+@i{Array type denoter}[66]==
+@example
+SYMBOL ArrayType INHERITS TypeDenotation END;
+
+RULE: ArrayType ::= TypeDenoter '[' ArraySize ']' COMPUTE
+  .GotTypeProp =
+     ORDER
+       (ResetElemType (ArrayType.Type, TypeDenoter.Type),
+        ResetElemNo   (ArrayType.Type, ArraySize.Size),
+        ResetTypeName (ArrayType.Type, "array..."),
+        ResetTypeLine (ArrayType.Type, LINE));
+END;
+
+TERM IntNumber: int;
+
+SYMBOL ArraySize: Size: int;
+
+RULE: ArraySize ::= IntNumber COMPUTE
+  ArraySize.Size = IntNumber;
+END;
+
+RULE: TypeDenoter ::= ArrayType COMPUTE
+  TypeDenoter.Type = ArrayType.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 74.
+@end smalldisplay
+
+
+Finally it is stated that array elements of type
+void are not allowed. We can not simply compare @code{voidType}
+and the type key, because @code{TypeDenoter.Type} not necessarily 
+contains the final element type; it may be related to it.
+The final type key is obtained by the function @code{FinalType}
+in a state that is characterized by @code{INCLUDING Program.TypeIsSet}.
+@i{Array check element type }[67]==
+@example
+RULE: ArrayType ::= TypeDenoter '[' ArraySize ']' COMPUTE
+  IF (EQ (FinalType (TypeDenoter.Type), voidType),
+      message (ERROR, "Wrong element type", 0, COORDREF))
+  <- INCLUDING Program.TypeIsSet;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 74.
+@end smalldisplay
+
+
+
+Two array types are equivalent if and only if their element types are
+equivalent and if they have the same number of elements.
+
+In order to state the equivalence with respect to array sizes,
+we establish a bijective mapping between any array size that occurs
+in the program and a definition table key. 
+That number mapping is computed by
+turning an array size into an identifier and then binding that
+identifier in a scope that serves just this purpose.
+
+@i{Size mapping}[68]==
+@example
+$/Tech/MakeName.gnrc:inst
+$/Name/CScope.gnrc+instance=SizeMap :inst
+@end example
+@smalldisplay
+This macro is invoked in definition 72.
+@end smalldisplay
+
+
+@i{Array size mapping}[69]==
+@example
+SYMBOL ArraySize INHERITS SizeMapIdDefScope END;
+
+RULE: ArraySize ::= IntNumber COMPUTE
+  ArraySize.Sym = IdnNumb (0, IntNumber);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 74.
+@end smalldisplay
+
+
+The @code{ArraySize.Key} serves as the initial set of potential
+equivalent array types; it is used as the second argument of the
+RULE computation @code{AddTypeToBlock}. 
+The type of the element may contribute to type equivalence of
+array types. Hence, the third argument of @code{AddTypeToBlock}
+is a singleton list, which is also set as the @code{ComponentTypes}
+property of the array type:
+
+@i{Array type equivalence}[70]==
+@example
+RULE: ArrayType ::= TypeDenoter '[' ArraySize ']' COMPUTE
+  ArrayType.GotType =
+    AddTypeToBlock 
+     (ArrayType.Type, ArraySize.Key, 
+      VResetComponentTypes 
+        (ArrayType.Type, SingleDefTableKeyList (TypeDenoter.Type)))
+    <- .GotTypeProp;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 74.
+@end smalldisplay
+
+
+Type analysis in the context of an indexed variable is 
+specified as a join of three expression subtrees: @code{Variable[1]},
+the left-hand side of the rule is a leaf of an expression tree. 
+@code{PrimaryContext} is used to state  that its type is the
+@code{ElemType} property of @code{Variable[2]}.
+
+@code{Variable[2]}, which yields the array, is considered
+to be the root of an expression subtree. No requirements
+are specified. It has to be
+checked explicitly that its type is an array type.
+
+The subcript expression is a separate expression subtree.
+It has to be of type int, as specified by its @code{Required} 
+attribute.
+
+@i{Indexing}[71]==
+@example
+RULE: Variable ::= Variable '[' Expression ']' COMPUTE
+  PrimaryContext
+    (Variable[1],
+     GetElemType (Variable[2].Type, NoKey));
+
+  IF (EQ (GetElemType (Variable[2].Type, NoKey), NoKey),
+    message (ERROR, "Not an array", 0, COORDREF));
+
+  Expression.Required = intType;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 74.
+@end smalldisplay
+
+
+@b{Array.specs}[72]==
+@example
+@i{Size mapping}[68]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Array.pdl}[73]==
+@example
+@i{Array type properties}[65]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Array.lido}[74]==
+@example
+@i{ Abstract array syntax}[64]
+@i{Array type denoter}[66]
+@i{Array check element type }[67]
+@i{Array size mapping}[69]
+@i{Array type equivalence}[70]
+@i{Indexing}[71]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Union, Functions, Array, Top, 
+@chapter Union Types
+
+
+We introduce union types to our language in order to
+demonstrate how subtype relations and their coercions are specified.
+A union type is described by a sequence of type denotations, which
+constitute the subtypes of the specified union type.
+A value of one of the subtypes can be coerced to the union type.
+A value of a union type can be treated as a value of one of
+the subtypes using a cast operation or a case statement.
+
+Here is an example program that defines and uses a union
+variable named @code{rv}:
+
+@b{UnionExamp}[75]==
+@example
+begin
+  var   union int, bool end rv;
+  var   int j, bool c;
+  rv = 42; rv = true;
+  j = <int> rv;
+  case rv of
+    int t: j = t;
+    bool t: c = t;
+  end
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+In the @code{case} statement the @code{case} expression has a union
+type. Each case declares a variable of a subtype of that
+union type. The branch which corresponds to the current type 
+of the @code{case} expression is selected, its variable is
+initialized with the value of the @code{case} expression,
+and the statement is executed.
+
+The following productions describe union types, type casts,
+and @code{case} statements:
+@i{Abstract union syntax}[76]==
+@example
+RULE: TypeDenoter ::= UnionType END;
+RULE: UnionType  ::= 'union' UnitedTypes 'end' END;
+RULE: UnitedTypes LISTOF UnitedType END;
+RULE: UnitedType ::= TypeDenoter END;
+
+RULE: Expression ::= '<' TypeDenoter '>' Expression END;
+
+RULE: Statement ::= CaseStmt END;
+RULE: CaseStmt ::= 'case' Expression 'of' Cases 'end' END;
+RULE: Cases LISTOF Case END;
+RULE: Case ::= ObjDecl ':' Statement END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+The following computations introduce a type denoter for union types
+and associate properties for test output to it:
+In order to check whether a type is a union type, as required
+for example in a case statement, we introduce a property
+@code{IsUnionType}. 
+@i{Is union type}[77]==
+@example
+IsUnionType: int;
+@end example
+@smalldisplay
+This macro is invoked in definition 87.
+@end smalldisplay
+
+
+@i{Union type denoter}[78]==
+@example
+SYMBOL UnionType INHERITS TypeDenotation END;
+
+RULE: UnionType ::= 'union' UnitedTypes 'end' COMPUTE
+  .GotTypeProp =
+      ORDER (
+        ResetIsUnionType (UnionType.Type, 1),
+        ResetTypeName (UnionType.Type, "union..."),
+        ResetTypeLine (UnionType.Type, LINE));
+END;
+
+RULE: TypeDenoter ::= UnionType COMPUTE
+  TypeDenoter.Type = UnionType.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+
+For the comparison of union types stuctural equivalence is
+specified, such that the fact that it is a union type and
+the sequence of subtypes are relevant for type equality. 
+@code{UnionClass} is the the set 
+containing all union types for initialization of the 
+equivalence check.
+
+@i{Union type class}[79]==
+@example
+UnionClass;
+@end example
+@smalldisplay
+This macro is invoked in definition 87.
+@end smalldisplay
+
+
+The @code{UnionClass} and the sequence @code{UnitedTypes.OpndTypeList}
+are used as arguments of @code{AddTypeToBlock} to specify type
+equivalence of union types. Property @code{ComponentTypes} is
+set accordingly:
+
+@i{Union type equality computation}[80]==
+@example
+RULE: UnionType ::= 'union' UnitedTypes 'end' COMPUTE
+  UnionType.GotType =
+      AddTypeToBlock 
+        (UnionType.Type, UnionClass, 
+         VResetComponentTypes (UnionType.Type, UnitedTypes.OpndTypeList))
+      <- .GotTypeProp;
+END;
+
+SYMBOL UnitedTypes INHERITS OpndTypeListRoot END;
+SYMBOL UnitedType  INHERITS OpndTypeListElem END;
+
+RULE: UnitedType ::= TypeDenoter COMPUTE
+  UnitedType.Type = TypeDenoter.Type;
+  UnitedType.DefTableKeyElem = UnitedType.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+Note, that here the order of the subtypes in the type denoter
+is relevant for type equality. If that is not desired,
+one could for example sort the list of the component types
+in a canonical order before using it as an argument of
+@code{AddTypeToBlock}.
+
+For each union type we introduce two groups of conversion 
+operators: A widening coercion from each subtype type to the 
+union type, and a down cast from the union type to each subtype.
+For the latter an indication has to be introduced:
+@i{Downcast indication}[81]==
+@example
+DownCast;
+UnionWiden;
+@end example
+@smalldisplay
+This macro is invoked in definition 87.
+@end smalldisplay
+
+
+As a pair of operators has to be introduced for each subtype,
+the context of the subtype denoter is the right place
+to do it.
+The coercion operator is not created explicitly; 
+it is only stated that the subtype is @code{Coercible} to
+the union type. The down cast conversion is introduced
+as a @code{MonadicOperator}:
+
+@i{Widening coercion computation}[82]==
+@example
+SYMBOL UnitedType INHERITS OperatorDefs COMPUTE
+  SYNT.GotOper =
+    ORDER
+      (Coercible (UnionWiden, THIS.Type, INCLUDING UnionType.Type),
+       MonadicOperator
+        (DownCast, NewKey(), 
+         INCLUDING UnionType.Type, THIS.Type));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+The context of the down cast construct imposes a requirement on the type of
+the operand expression.
+Any conversion operator of the @code{DownCast} indication can be applied to
+the operand expression, in addition to any coercions, to satisfy this
+requirement:
+
+@i{Down cast}[83]==
+@example
+RULE: Expression ::= '<' TypeDenoter '>' Expression COMPUTE
+  CastContext (Expression[1], , Expression[2], TypeDenoter.Type);
+  Indication (DownCast);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+In a @code{case} statement it is required that the @code{case}
+expression has a union type:
+
+@i{Union case statement}[84]==
+@example
+SYMBOL CaseStmt: Type: DefTableKey;
+
+RULE: CaseStmt ::= 'case' Expression 'of' Cases 'end' COMPUTE
+  CaseStmt.Type = Expression.Type;
+
+  IF (NOT (GetIsUnionType (Expression.Type, 0)),
+  message (ERROR, "Case expression must have a union type",
+           0,COORDREF))
+  <- INCLUDING Program.TypeIsSet;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+Each branch of a @code{case} statement forms a range for
+the declaration of the variable that gets the value of the
+@code{case} expression if that case is selected.
+It is required that the type of the variable is a subtype of
+the type of the case expression.
+We here require that it is coercible to the type of the
+@code{case} expression, although that is not quite exact.
+@i{Union case}[85]==
+@example
+SYMBOL Case INHERITS RangeScope END;
+
+RULE: Case ::= ObjDecl ':' Statement COMPUTE
+  IF (NOT (IsCoercible 
+             (ObjDecl.Type, INCLUDING CaseStmt.Type)),
+  message (ERROR, "Must be a subtype of the case expression",
+           0, COORDREF))
+  <- INCLUDING Program.GotType;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+In other contexts @code{ObjDecl} occurs in a CHAIN.
+To avoid an error message on missing a chain start we apply the 
+role @code{OpndTypeListRoot} here, which has the CHAINSTART, although
+that role is not needed:
+
+@i{Union CHAIN workaraound}[86]==
+@example
+SYMBOL Cases INHERITS OpndTypeListRoot END;
+@end example
+@smalldisplay
+This macro is invoked in definition 88.
+@end smalldisplay
+
+
+@b{Union.pdl}[87]==
+@example
+@i{Is union type}[77]
+@i{Union type class}[79]
+@i{Downcast indication}[81]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Union.lido}[88]==
+@example
+@i{Abstract union syntax}[76]
+@i{Union type denoter}[78]
+@i{Union type equality computation}[80]
+@i{Widening coercion computation}[82]
+@i{Down cast}[83]
+@i{Union case}[85]
+@i{Union case statement}[84]
+@i{Union CHAIN workaraound}[86]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Union.con}[89]==
+@example
+@i{Concrete union syntax}[144]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Functions, Type3, Union, Top, 
+@chapter Functions
+
+
+This chapter introduces definitions and calls of parameterized
+functions. Type analysis has to check that the signature of a 
+function call matches the signature of the called function,
+and that functions return a value of the specified type.
+
+Here is an example program that defines some functions.
+The grammar for function calls and return statements is
+given below.
+
+@b{FunctionExamp}[90]==
+@example
+begin
+  var   int i, int j,
+        bool b, bool c,
+        real r, real s;
+
+  fun f (int x, real y) real
+  begin r = x * y; return r;end;
+
+  fun g (real z) void
+  begin r = z; return; end;
+
+  s = f (i+1, 3.4);
+  g (f (j, s));
+  return;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+We first extend the grammar by productions for 
+function declarations:
+@i{Abstract function syntax}[91]==
+@example
+RULE: Declaration ::=  FunctionDecl END;
+RULE: FunctionDecl ::= 'fun' DefIdent Function ';' END;
+RULE: Function ::=     FunctionHead Block END;
+RULE: FunctionHead ::= '(' Parameters ')' TypeDenoter END;
+RULE: Parameters LISTOF Parameter END;
+RULE: Parameter ::= TypeDenoter DefIdent END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+A function type is characterized by its signature, i.e.
+the sequence of the types of its parameters and the result type.
+(Note: If we had more than one mode of parameter passing,
+the abstraction of a parameter in the function signature
+would be a pair: parameter passing mode and parameter type.)
+
+We first consider the name analysis aspect of a function
+declaration: The @code{Function} subtree is a range where the
+parameter definitions are valid. The function @code{Block} is
+nested in that range. Since the @code{DefIdent}s of parameters
+are already completely specified for name analysis, we need
+only:
+
+@i{Function range}[92]==
+@example
+SYMBOL Function INHERITS RangeScope END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+Now we consider a function declaration as a definition
+of a typed entity, and apply the same specification pattern
+as used for variable declarations.
+Furthermore, each @code{Parameter} is also a @code{TypedDefinition}.
+There is no problem in nesting definitions of typed entities
+this way.
+
+@i{Function declaration types}[93]==
+@example
+SYMBOL FunctionDecl INHERITS TypedDefinition END;
+
+RULE: FunctionDecl ::= 'fun' DefIdent Function ';' COMPUTE
+  FunctionDecl.Type = Function.Type;
+END;
+
+RULE: Function ::= FunctionHead Block COMPUTE
+  Function.Type = FunctionHead.Type;
+END;
+
+SYMBOL Parameter INHERITS TypedDefinition END;
+
+RULE: Parameter ::= TypeDenoter DefIdent COMPUTE
+  Parameter.Type = TypeDenoter.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+Next, we specify how the type of a function is composed.
+The @code{FunctionHead}, which contains the signature,
+is treated as a @code{TypeDenotation} for a function type.
+
+@i{Function type}[94]==
+@example
+SYMBOL FunctionHead INHERITS TypeDenotation, OperatorDefs END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+Furthermore, a function declaration introduces an operator.
+This is indicated by the role @code{OperatorDefs}.
+The computation @code{ListOperator} creates a new operator,
+identified by @code{FunctionHead.Type}.
+The types of the parameters together with the result type
+@code{TypeDenoter.Type} form its signature.
+
+@i{Function signature}[95]==
+@example
+RULE: FunctionHead ::= '(' Parameters ')' TypeDenoter COMPUTE
+  FunctionHead.GotOper +=
+     ListOperator (
+       FunctionHead.Type,
+       FunctionHead.Type,
+       Parameters.OpndTypeList,
+       TypeDenoter.Type);
+END;
+
+SYMBOL Parameters INHERITS OpndTypeListRoot END;
+SYMBOL Parameter INHERITS OpndTypeListElem END;
+
+RULE: Parameter ::= TypeDenoter DefIdent COMPUTE
+  Parameter.DefTableKeyElem = TypeDenoter.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+Function calls are integrated in the expression syntax of
+our language. We chose a very general form of an @code{Expression}
+to denote the function to be called. That allows us to later expand the
+language by expressions which yield a function.
+That feature does not create additional problems for type analysis.
+
+We also introduce return statements into our language:
+
+@i{Abstract call syntax}[96]==
+@example
+RULE: Expression ::=    Expression '(' Arguments ')' END;
+RULE: Arguments  LISTOF Argument END;
+RULE: Argument   ::=    Expression END;
+
+RULE: Statement  ::=    'return' ';' END;
+RULE: Statement  ::=    'return' Expression ';' END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+Type analysis for a function call is straight-forward:
+A call is treated as an operation which takes the arguments
+as operands. @code{Expression[2]} yields the function to be
+called. Its type provides the operator indication, which may be 
+overloaded with several operations, as stated in the context
+of the function definition.
+The precoined computation @code{ListContext} connects the
+expression subtree of the arguments with @code{Expression[1]}
+representing the result.
+
+@i{Call types}[97]==
+@example
+SYMBOL Arguments INHERITS OpndExprListRoot END;
+SYMBOL Argument INHERITS OpndExprListElem END;
+
+RULE: Expression ::= Expression '(' Arguments ')' COMPUTE
+  ListContext (Expression[1], , Arguments);
+  Indication (Expression[2].Type);
+
+  IF(BadOperator,
+    message
+      (ERROR,
+       "Call does not match the functions' signatures",
+       0, COORDREF));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+The following context connects the @code{Argument} node
+with the expression subtree forming the actual parameter.
+If they had the same type properties, we would have used
+a @code{TransferContext} computation. However, in our language
+we want to allow that the type of the @code{Expression} need not 
+match exactly the type required for the @code{Argument} as
+specified in the signature of the function. As in assignments
+it shall be allowed that the expression yields a value
+of type @code{real} which then is converted to an @code{int}
+value if required by the function signature, e.g. in 
+@code{f(3.4)}.
+
+Hence, we use a @code{ConversionContext} which allowes to
+connect the @code{Argument} via an operator with the 
+@code{Expression} node. The indication @code{assignOpr}
+is specified for this context. It states that the same 
+conversion operators as in assignments (i.e. @code{rToi})
+and all coercion operators (i.e. @code{iTor}) may be used to
+convert the result of the @code{Expression} to the type of the
+@code{Argument}, if necessary:
+
+@i{Arguments}[98]==
+@example
+RULE: Argument ::= Expression COMPUTE
+  ConversionContext (Argument, , Expression);
+  Indication (assignOpr);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+A return statement refers to the immediately enclosing function
+declaration. It has to be checked that a value of a type is returned
+that is compatible to the result type, if the latter is not @code{void}.
+A return from the outermost program level is considered as if
+the program was a @code{void} function.
+Conversions that are additionally applicable are specified in the same 
+way as in the @code{Argument} context above.
+
+The attribute value @code{Function.ResultType} stems from the context of
+a type denotation. Hence, its value may not be used directly in a 
+compare with a type key as @code{voidType}. The function @code{FinalType}
+has to access the related type key, and the precondition
+@code{INCLUDING Program.TypeIsSet} has to be stated.
+
+@i{Return statements}[99]==
+@example
+ATTR ResultType: DefTableKey;
+
+RULE: Statement ::= 'return' Expression ';' COMPUTE
+  RootContext (
+    INCLUDING (Function.ResultType, Program.ResultType), , Expression);
+  Indication (assignOpr);
+END;
+
+RULE: Statement ::= 'return' ';' COMPUTE
+  IF (NOT (EQ (voidType,
+               FinalType (
+                  INCLUDING (Function.ResultType, 
+                             Program.ResultType)))),
+  message (ERROR, "return value required", 0, COORDREF))
+  <- INCLUDING Program.TypeIsSet;
+END;
+
+SYMBOL Program COMPUTE 
+  SYNT.ResultType = voidType;
+END;
+
+RULE: Function ::= FunctionHead Block COMPUTE
+  Function.ResultType = FunctionHead.ResultType;
+END;
+
+RULE: FunctionHead ::= '(' Parameters ')' TypeDenoter COMPUTE
+  FunctionHead.ResultType = TypeDenoter.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 100.
+@end smalldisplay
+
+
+@b{Function.lido}[100]==
+@example
+@i{Abstract function syntax}[91]
+@i{Abstract call syntax}[96]
+@i{Function declaration types}[93]
+@i{Function range}[92]
+@i{Function type}[94]
+@i{Function signature}[95]
+@i{Call types}[97]
+@i{Arguments}[98]
+@i{Return statements}[99]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Function.con}[101]==
+@example
+@i{Function declaration syntax}[140]
+@i{Call syntax}[141]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+
+@node Type3, Pointer, Functions, Top, 
+@chapter Type Definitions
+
+
+This chapter introduces type definitions to the language.
+A name can be defined for any @code{TypeDenoter} and can be
+used to denote that type.
+
+Here is an example program with type definitions. It makes
+use of the facility that identifiers may be defined after
+their uses:
+
+@b{TypedefExamp}[102]==
+@example
+begin
+  var   tt rv;
+  type  t tt;
+  type  record int i, bool b, real r end t;
+  var   int j, bool c, real s;
+  var   t rt;
+  j = rv.i;
+  c = rv.b;
+  s = rv.r;
+  rt = rv;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+The following productions are added to the grammar:
+
+@i{Abstract type declaration syntax}[103]==
+@example
+RULE: Declaration  ::= 'type' TypeDenoter TypeDefIdent ';' END;
+RULE: TypeDefIdent ::= Ident END;
+
+RULE: TypeDenoter  ::= TypeUseIdent END;
+RULE: TypeUseIdent ::= Ident END;
+@end example
+@smalldisplay
+This macro is invoked in definition 113.
+@end smalldisplay
+
+A type definition introduces a new name for a type given
+by the @code{TypeDenoter}. We distinguish between defining occurrences
+@code{TypeDefIdent} used occurrences @code{TypeUseIdent} of type names.
+
+In our language we specify that
+a type definition does not introduce a new type, rather it introduces
+another name for a type. Hence, there may be many different
+names for the same type. Furthermore, even two @code{TypeDenoter}
+that differ in certain aspects may denote the same type.
+This view can be supported by the roles of the @code{StructEquiv} module:
+For each kind of types it is stated which of its properties
+distinguish two types of that kind (see record types or array types).
+
+Hence, in the following specification we only have to characterize
+a defining occurrence of a type identifier by the corresponding
+roles of the name analysis module and those for a defining
+occurrence of a type identifier (@code{TypeDefDefId},
+@code{ChkTypeDefDefId}). In the @code{Declaration} context
+the @code{Type} attribute is just passed from the @code{TypeDenoter}
+to the @code{TypeDefIdent}.
+
+@i{Type declaration computation}[104]==
+@example
+SYMBOL TypeDefIdent INHERITS 
+        ChkUnique, IdDefScope, IdentOcc,
+        TypeDefDefId, ChkTypeDefDefId
+END;
+
+RULE: Declaration ::= 'type' TypeDenoter TypeDefIdent ';' COMPUTE
+  TypeDefIdent.Type = TypeDenoter.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 113.
+@end smalldisplay
+
+
+Used occurrences of type identifiers are characterized by the module
+roles @code{TypeDefUseId} and @code{ChkTypeDefUseId}, and by the
+roles that characterize used indentifier occurrences of any kind:
+
+@i{Used type identifiers}[105]==
+@example
+SYMBOL TypeUseIdent INHERITS 
+   IdUseEnv, IdentOcc, ChkIdUse,
+   TypeDefUseId, ChkTypeDefUseId END;
+
+RULE: TypeDenoter ::= TypeUseIdent COMPUTE
+  TypeDenoter.Type = TypeUseIdent.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 113.
+@end smalldisplay
+
+
+
+A language that has facilities to define names for types and allows
+identifier uses before their definitions, opens the possibility
+to define types recursively, e.g.
+@example
+  type record int i, rt x end rt;
+@end example
+In many languages such a type @code{rt} would be disallowed,
+because a value of type @code{rt} may not contain another value
+of the same type. However, if the type of the component @code{x}
+was defined to be @code{pointer to rt} instead of @code{rt},
+then a useful list type would be defined. 
+
+This example illustrates that the existence of type definitions
+may cause the need to specify  which recursive
+type definitions are considered legal for a certain language.
+In our language, as defined so far, any recursion in a type
+definition is considered to be disallowed.
+However, the situation changes when there are types, like
+pointer types, such that that recursion is allowed when it
+passes through such a type.
+
+Hence, we introduce three properties:
+@code{IsRecursiveType}, @code{IsNotRecursiveType} 
+indicates whether a type is illegally recursive.
+@code{AllowRecurType} indicates that recursion through such a type
+is allowed. The latter will be set when such types are introduced,
+i.e. in the chapter on pointer types:
+@i{Check recursive types properties}[106]==
+@example
+IsRecursiveType: int;
+IsNotRecursiveType: int;
+AllowRecurType: int;
+@end example
+@smalldisplay
+This macro is invoked in definition 112.
+@end smalldisplay
+
+
+Such a check is performed by a function @code{ChkRecursiveType}
+which is applied to
+a type @code{t} and recursively walks through the component 
+types of @code{t}. If it reaches @code{t} again (without having 
+passed through a type that allows recursion), the type is indicated
+to be illegally recursive.
+
+@i{Check for recursive types}[107]==
+@example
+SYMBOL TypeDefIdent COMPUTE
+  IF (ChkRecursiveType (THIS.Type),
+    message (ERROR, CatStrInd ("Recursively defined type: ", 
+                               THIS.Sym),
+             0, COORDREF))
+    <- INCLUDING Program.GotAllTypes;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 113.
+@end smalldisplay
+
+
+The implementation of the type walk algorithm uses a property
+that indicates whether a type is currently visited by the algorithm:
+@i{Visiting property}[108]==
+@example
+Visiting: int;
+@end example
+@smalldisplay
+This macro is invoked in definition 112.
+@end smalldisplay
+
+
+The following C module implements an algorithm that walks recursively
+through the components of a type to check whether the type is
+defined illegally recursively.
+
+@b{RecTypeChk.head}[109]==
+@example
+#include "RecTypeChk.h"
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{RecTypeChk.h}[110]==
+@example
+#include "deftbl.h"
+extern int ChkRecursiveType (DefTableKey tp);
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{RecTypeChk.c}[111]==
+@example
+#include "pdl_gen.h"
+#include "StructEquiv.h"
+#include "Typing.h"
+
+#ifdef TEST
+#define TEST 1
+#include <stdio.h>
+#endif
+
+static DefTableKey origType;
+
+
+int VisitCompOfType (DefTableKey node, DefTableKey component)
+/* This is the function used by the type walk that checks
+   for recursive types. It is called for every visit from a type node
+   to one of its components. 5 cases are distinguished, as explained below:
+*/
+@{ 
+#ifdef TEST
+  printf ("visit at %s (%d) component %s (%d)\n", 
+      GetTypeName (node, "no name"),
+      GetTypeLine (node, 0),
+      GetTypeName (component, "no name"),
+      GetTypeLine (component, 0));
+#endif
+  if (GetAllowRecurType (component, 0))
+     /* do not visit a component type that allows recursion */
+     return 1; 
+  else @{
+     if (FinalType (component) == FinalType (origType)) @{
+       /* the type under investigation contains itself on a path
+          that does not lead through a type which allows for
+          recursion
+       */
+       ResetIsRecursiveType (origType, 1);
+       ResetIsRecursiveType (component, 1);
+       return 2; /* terminate walk */
+     @}
+     if (GetIsRecursiveType (component, 0)) @{
+     /* The component type of the node is already
+        recognized to be recursive 
+     */
+        ResetIsRecursiveType (origType, 1);
+        return 2; /* terminate walk */
+     @}
+     if (GetVisiting (component, 0)) @{
+       /* This component lies on a non-pointer cycle 
+          not involving the original type under investigation 
+       */
+       ResetIsRecursiveType (origType, 1);
+       ResetIsRecursiveType (component, 1);
+       return 2; /* terminate walk */
+     @}
+  @}
+  return 0; /* visit this component */
+@}
+
+int RecWalkType (DefTableKey currType)
+/* 
+     Every direct or indirect component type of tp is visited, unless
+     the call VisitCompOfType (curr, comp) shortcuts the walk. 
+     If it returns
+       0: comp is visited
+       1: comp is skipped
+       2: the walk is terminated
+*/
+@{ DefTableKeyList compseq;
+  DefTableKey compType;
+  int visitRes;
+  currType = FinalType (currType);
+
+  /* Do not visit a node, that is currently visited: */
+  if (GetVisiting (currType, 0)) return 1;
+  ResetVisiting (currType, 1);
+
+  /* consider all component types: */
+  for (compseq = GetComponentTypes (currType, NULLDefTableKeyList);
+       compseq != NULLDefTableKeyList;
+       compseq = TailDefTableKeyList (compseq)) @{
+     compType = FinalType (HeadDefTableKeyList (compseq));
+
+     /* Skip non-type: */
+     if (compType == NoKey) continue;
+
+     /* Visit this component: */
+     visitRes = VisitCompOfType (currType, compType);
+
+     /* The component visit indicates how to continue: */
+     switch (visitRes) @{
+       case 0:            /* dive into the component */
+          if (RecWalkType (compType)) @{
+             /* the type walk is to be terminated */
+             visitRes = 2;
+             goto ret;
+          @};
+          break;
+       case 1:            /* do not dive into the component */
+          break;
+       case 2:            /* terminate the walk */
+          visitRes = 2;
+          goto ret;
+       default:;
+       @}
+       /* iteration of components continues */
+     @}
+     visitRes = 0; /* components elaborated */
+ret:
+  ResetVisiting (currType, 0);
+  return visitRes;
+@}
+
+
+int ChkRecursiveType (DefTableKey tp)
+/* on entry:
+     The results of the type equivalence analysis must be computed and
+     stored in the type data base.
+     tp represents a type.
+   method:
+     A walk through the type structure of tp is initiated,
+     and then executed.
+     VisitCompOfType (curr, comp) is called whenever
+     a direct component comp of the type curr is visited.
+     origType stores the type for which the recursion check is initiated.
+     Every type that is found to be illegally recursive is marked by 
+     the property IsRecursiveType. It is also used to shortcut
+     the walk through the type structure.
+   on exit:
+     1 is returned if the type tp directly or indirectly
+     has tp as a component type, and the path to it is not
+     legal for recursion
+     0 is returned otherwise.
+*/
+@{ 
+  tp = FinalType (tp);
+  origType = tp;
+  if (GetIsRecursiveType (tp, 0)) return 1;
+  if (GetIsNotRecursiveType (tp, 0)) return 0;
+
+  /* the result is not yet known: */
+  RecWalkType (tp);
+
+  return GetIsRecursiveType (tp, 0);
+@}
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{TypeDef.pdl}[112]==
+@example
+@i{Check recursive types properties}[106]
+@i{Visiting property}[108]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{TypeDef.lido}[113]==
+@example
+@i{Abstract type declaration syntax}[103]
+@i{Type declaration computation}[104]
+@i{Used type identifiers}[105]
+@i{Check for recursive types}[107]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Pointer, Function, Type3, Top, 
+@chapter Pointer Types
+
+
+In this chapter we introduce pointer types to our language.
+The notation @code{t !} denotes a type for
+values that point to values of type @code{t}.
+
+A new @code{Variable} notation is introduced:
+In @code{v !} the dereferencing operator @code{!} is applied to 
+the variable @code{v}, which must have a pointer type. The result
+of the operation is the value that @code{v} points to. 
+
+A pointer value of type @code{t !} is created by execution of a 
+generator @code{new t}, where @code{t} is a type denotation.
+
+Here is an example program that uses these pointer constructs
+in different contexts:
+
+@b{PointerExamp}[114]==
+@example
+begin
+  var   int k;
+  var   int! pi, int! pj;
+  var   record int i, bool b, real! r end! rv;
+  type  record int x, t! next end t;
+  var   t l;
+  pi = new int;
+  pi! = 1;
+  pi = pj;
+  pi! = pj!;
+  rv!.b = true;
+  rv!.r! = 3.2;
+  l.next!.x = 1;
+  l.next = nil;
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+The following productions are added to the grammar:
+
+@i{Abstract pointer syntax}[115]==
+@example
+RULE: TypeDenoter ::= PointerType END;
+RULE: PointerType ::= TypeDenoter '!' END;
+
+RULE: Variable    ::= Variable '!' END;
+RULE: Expression  ::= 'nil' END;
+RULE: Expression  ::= Generator END;
+RULE: Generator   ::= 'new' TypeDenoter END;
+@end example
+@smalldisplay
+This macro is invoked in definition 125.
+@end smalldisplay
+
+
+There are two constructs which introduce a pointer type.
+The first one is a denoter for a pointer type. Two monadic 
+operators are created for each pointer type: 
+One is applied to a pointer and yields the value pointed to, 
+the other yields the reference of an entity instead of its 
+value. The dereferencing operators of all pointer types are
+overloaded on the indication @code{DerefOpr}, correspondingly
+all operators that prevent dereferencing are overloaded 
+on the indication @code{RefOpr}.
+We also introduce an artificial type for the @code{nil} symbol:
+@i{Pointer operators}[116]==
+@example
+DerefOpr;
+RefOpr;
+NilOpr;
+nilType -> IsType = @{1@};
+@end example
+@smalldisplay
+This macro is invoked in definition 124.
+@end smalldisplay
+
+
+Creating these pairs of operators for a pointer type establishes 
+the condition @code{PointerType.GotOper}, which is a precondition 
+for operator identification. Furthermore, we state that the type 
+of the @code{nil} symbol is coercible to each pointer type.
+
+@i{Pointer type denotation}[117]==
+@example
+RULE: TypeDenoter ::= PointerType COMPUTE
+  TypeDenoter.Type = PointerType.Type;
+END;
+
+SYMBOL PointerType INHERITS TypeDenotation, OperatorDefs END;
+
+RULE: PointerType ::= TypeDenoter '!' COMPUTE
+  PointerType.GotOper +=
+    ORDER 
+      (Coercible (NilOpr, nilType, PointerType.Type),
+       MonadicOperator
+         (DerefOpr, NewKey(), PointerType.Type, TypeDenoter.Type),
+       MonadicOperator
+         (RefOpr, NewKey(), TypeDenoter.Type, PointerType.Type));
+END;
+
+RULE: Expression  ::= 'nil' COMPUTE
+  PrimaryContext (Expression, nilType);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 125.
+@end smalldisplay
+
+
+
+A generator also introduces a pointer type. The
+@code{TypeDenoter} states which is the type pointed to.
+Generators may occur as operand in expressions:
+
+@i{Generator}[118]==
+@example
+SYMBOL Generator INHERITS TypeDenotation, OperatorDefs END;
+
+RULE: Generator ::= 'new' TypeDenoter COMPUTE
+  Generator.GotOper +=
+    ORDER (
+    MonadicOperator
+       (DerefOpr, NewKey(), Generator.Type, TypeDenoter.Type),
+    MonadicOperator
+       (RefOpr, NewKey(), TypeDenoter.Type, Generator.Type));
+END;
+
+RULE: Expression ::= Generator COMPUTE
+  PrimaryContext (Expression, Generator.Type);
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 125.
+@end smalldisplay
+
+
+Types @code{t !}, @code{s !} and the types created by @code{new t} and 
+@code{new s} are all considered to be equivalent in our language, if the 
+types @code{s} and @code{t} are equivalent, with respect to renaming 
+and to equivalence rules for the particular type categories.
+
+We use the facilities of the @code{StructEquiv} module to specify
+such structural type equivalence for pointer types.
+In particular two conditions are specified for types @code{a} and
+@code{b} to be equivalent: Both have to be of the kind @code{PointerClass},
+and their sequences of component types have to be elementwise equivalent, 
+in this case the single type pointed to:
+@b{EqualPtrTypes.lido}[119]==
+@example
+RULE: PointerType ::= TypeDenoter '!' COMPUTE
+  PointerType.GotType =
+    AddTypeToBlock
+      (PointerType.Type, PointerClass,
+       VResetComponentTypes 
+         (PointerType.Type, SingleDefTableKeyList (TypeDenoter.Type)))
+  <- .moreTypeProperies;
+END;
+
+RULE: Generator ::= 'new' TypeDenoter COMPUTE
+  Generator.GotType =
+    AddTypeToBlock
+      (Generator.Type, PointerClass,
+       VResetComponentTypes 
+         (Generator.Type, SingleDefTableKeyList (TypeDenoter.Type)))
+  <- .moreTypeProperies;
+END;
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+The @code{PointerClass} is a unique key used to distinguish
+this kind of types from other kinds, e.g. array types:
+
+@i{Pointer type equality}[120]==
+@example
+PointerClass;
+@end example
+@smalldisplay
+This macro is invoked in definition 124.
+@end smalldisplay
+
+
+Pointer types are to be treated especially when types are checked for
+equivalence: On the one hand, a type is allowed to be 
+recursively defined if the recursion goes through a pointer 
+component, for example in @code{type record int i, rec! p end rec;}.
+That is why we associate the property @code{AllowRecurType}
+to the pointer type, together with the properties defining the
+output for types. 
+
+@i{Pointer types allow recursion}[121]==
+@example
+RULE: PointerType ::= TypeDenoter '!' COMPUTE
+  .moreTypeProperies =
+    ORDER
+      (ResetTypeName (PointerType.Type, "pointer..."),
+       ResetTypeLine (PointerType.Type, LINE),
+       ResetAllowRecurType (PointerType.Type, 1));
+END;
+
+RULE: Generator ::= 'new' TypeDenoter COMPUTE
+  .moreTypeProperies =
+    ORDER
+      (ResetTypeName (Generator.Type, "pointer..."),
+       ResetTypeLine (Generator.Type, LINE),
+       ResetAllowRecurType (Generator.Type, 1));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 125.
+@end smalldisplay
+
+
+On the other hand, we have to check that pointer types are not
+defined directly recursively, or indirectly recursively s.t.
+only pointer types are involved:
+@example
+  type p1! p1;
+  type p2! p3;
+  type p3! p2;
+@end example
+In the example above all three type are pairwise equivalent.
+
+@i{Recursion check for pointer types}[122]==
+@example
+RULE: PointerType ::= TypeDenoter '!' COMPUTE
+  IF (EQ (FinalType (PointerType.Type), FinalType (TypeDenoter.Type)),
+    message (ERROR, "Recursively defined pointer type", 
+             0, COORDREF))
+    <- INCLUDING Program.TypeIsSet;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 125.
+@end smalldisplay
+
+
+For the dereferencing operation applied to a @code{Variable} we 
+specify that in the following context a suitable operator that
+overloads the @code{DerefOpr} indication is applicable:
+
+@i{Pointer variable}[123]==
+@example
+RULE: Variable ::= Variable '!' COMPUTE
+  MonadicContext (Variable[1], , Variable[2]);
+  Indication (DerefOpr);
+
+  IF(BadOperator,
+    message(ERROR,"Dereferencing not allowed", 0, COORDREF));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 125.
+@end smalldisplay
+
+
+@b{Pointer.pdl}[124]==
+@example
+@i{Pointer type equality}[120]
+@i{Pointer operators}[116]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Pointer.lido}[125]==
+@example
+@i{Abstract pointer syntax}[115]
+@i{Pointer type denotation}[117]
+@i{Generator}[118]
+@i{Pointer types allow recursion}[121]
+@i{Recursion check for pointer types}[122]
+@i{Pointer variable}[123]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{Pointer.con}[126]==
+@example
+@i{Concrete pointer syntax}[143]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Function, Appendix, Pointer, Top, 
+@chapter Function Types
+
+
+We finally extend our language towards the orthogonal use of
+functions, i.e. wherever a typed entity is allowed it can
+have a function type. In particular, evaluation of an expression
+may yield a function, which may be called, assigned to a variable,
+passed as an argument, or returned as a function result.
+For that purpose it is sufficient to add another
+@code{TypeDenoter} which denotes function types. New notations 
+for expressions are not needed.
+
+Here is an example program that defines a function type
+and a higher order function:
+
+@b{FctTypeExamp}[127]==
+@example
+begin
+  fun mul (int x, real y) real
+  begin return x * y; end;
+
+  fun add (int x, real y) real
+  begin return x + y; end;
+
+  type (int, real -> real) fct;
+
+  fun apply2 (real z, fct ff) real
+  begin return ff (2, z); end;
+
+  var real r;
+
+  r = apply2 (3.1, add);
+  r = apply2 (3.1, mul);
+end
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+The following productions are added to the grammer:
+
+@i{Abstract function type syntax}[128]==
+@example
+RULE: TypeDenoter  ::=    FunctionType END;
+RULE: FunctionType ::=    '(' ParamTypes '->' TypeDenoter ')' END;
+RULE: ParamTypes   LISTOF ParamType END;
+RULE: ParamType    ::=    TypeDenoter END;
+@end example
+@smalldisplay
+This macro is invoked in definition 133.
+@end smalldisplay
+
+
+The specifications for @code{FunctionType}s exactly correspond
+to those for @code{FunctionHead}s in the context of function
+declarations. An Operator is created, that has a signature as
+given by the types of the parameters and of the result:
+
+@i{Function type denotation}[129]==
+@example
+RULE: TypeDenoter ::= FunctionType COMPUTE
+  TypeDenoter.Type = FunctionType.Type;
+END;
+
+SYMBOL FunctionType INHERITS TypeDenotation, OperatorDefs END;
+
+RULE: FunctionType ::= '(' ParamTypes '->' TypeDenoter ')' COMPUTE
+  FunctionType.GotOper +=
+     ListOperator (
+       FunctionType.Type,
+       FunctionType.Type,
+       ParamTypes.OpndTypeList,
+       TypeDenoter.Type);
+
+ .moreTypeProperies =
+    ORDER
+      (ResetTypeName (FunctionType.Type, "function..."),
+       ResetTypeLine (FunctionType.Type, LINE));
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 133.
+@end smalldisplay
+
+
+The introduction of function types to our language allows programs
+to use values which represent functions. They have a function type
+which must fit to the type required in the context.
+For example, the @code{apply2 (3.1, add)} passes the function
+@code{add} as an argument of the called function @code{apply2}.
+Hence, the type of the declared function @code{add} must be
+equivalent to the type required for the second parameter of 
+@code{apply2} (or coercible under type rules for parameter,
+as specified in the chapter on functions).
+
+In this case we have to specify structural equivalence of function
+types, in oder to let the type rules allow such uses of functions.
+If we would specify name equivalence instead, then for the above 
+example, the signature of the function declaration and the
+type @code{fct} specified for the second parameter of @code{apply2}
+are different notations of types. They would be considered
+not to be name equivalent; but, they are structural equivalent.
+
+Structural type equivalence is specified for denotations of 
+function types that either occur in a type denotation or
+as the signature of a declared function.
+We state that two types @code{a} and @code{b} are equivalent
+if both have the kind @code{FunctionClass}, and the component
+types, which are the types of the parameters and of the result,
+are elementwise equivalent:
+
+@i{Function type equivalence}[130]==
+@example
+RULE: FunctionHead ::= '(' Parameters ')' TypeDenoter COMPUTE
+  FunctionHead.GotType = 
+    ORDER (
+      AddTypeToBlock (
+         FunctionHead.Type, FunctionClass,
+         VResetComponentTypes 
+           (FunctionHead.Type, 
+            ConsDefTableKeyList
+              (TypeDenoter.Type, Parameters.OpndTypeList))),
+         ResetTypeName (FunctionHead.Type, "function..."),
+         ResetTypeLine (FunctionHead.Type, LINE));
+END;
+
+RULE: FunctionType ::= '(' ParamTypes '->' TypeDenoter ')' COMPUTE
+  FunctionType.GotType =
+    AddTypeToBlock
+      (FunctionType.Type, FunctionClass,
+         VResetComponentTypes 
+           (FunctionType.Type, 
+            ConsDefTableKeyList
+             (TypeDenoter.Type, ParamTypes.OpndTypeList)))
+  <- .moreTypeProperies;
+END;
+
+SYMBOL ParamTypes INHERITS OpndTypeListRoot END;
+SYMBOL ParamType INHERITS OpndTypeListElem END;
+
+RULE: ParamType ::= TypeDenoter COMPUTE
+  ParamType.Type = TypeDenoter.Type;
+END;
+@end example
+@smalldisplay
+This macro is invoked in definition 133.
+@end smalldisplay
+
+
+@i{Function class}[131]==
+@example
+FunctionClass;
+@end example
+@smalldisplay
+This macro is invoked in definition 132.
+@end smalldisplay
+
+
+We require for our language, that a function type @code{f} may not
+directly or indirectly have a component type @code{f}, unless the
+recursion passes through a pointer type. The check is specified
+in the context of type definitions.
+
+@b{FunctionType.pdl}[132]==
+@example
+@i{Function class}[131]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+@b{FunctionType.lido}[133]==
+@example
+@i{Abstract function type syntax}[128]
+@i{Function type denotation}[129]
+@i{Function type equivalence}[130]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+@b{FunctionType.con}[134]==
+@example
+@i{Function type syntax}[142]
+@end example
+@smalldisplay
+This macro is attached to a product file.
+@end smalldisplay
+
+
+
+@node Appendix, , Function, Top, 
+@chapter Appendix: Syntax
+
+
+@menu
+* Concrete:: Concrete Kernel Syntax.
+* Concrete1:: Concrete Expression Syntax.
+* Concrete2:: Concrete Function Syntax.
+* Other:: Other concrete productions.
+@end menu
+
+@node Concrete, Concrete1, , Appendix, 
+@section Concrete Kernel Syntax
+
+
+@i{Concrete Kernel syntax}[135]==
+@example
+Declarations:   Declaration*.
+Declaration:    'var' ObjDecls ';'.
+ObjDecls:       [ObjDecl // ','].
+Statements:     Statement*.
+
+Expression:     Factor.
+Factor:         Operand.
+Operand:        IntNumber.
+Operand:        RealNumber.
+Operand:        'true'.
+Operand:        'false'.
+Operand:        Variable.
+@end example
+@smalldisplay
+This macro is invoked in definition 18.
+@end smalldisplay
+
+
+The expression syntax is prepared to introduce operators
+of different precedences (2 for binary and 1 for unary operators).
+
+@code{Factor} and @code{Operand} are represented by
+@code{Expression} contexts in the tree grammar:
+
+@i{Expression mapping}[136]==
+@example
+Expression ::= Factor Operand.
+@end example
+@smalldisplay
+This macro is invoked in definition 19.
+@end smalldisplay
+
+
+The notation of identifiers, numbers, and comments is chosen as in Pascal:
+
+@i{Token notation}[137]==
+@example
+Ident:          PASCAL_IDENTIFIER
+IntNumber:      PASCAL_INTEGER
+RealNumber:     PASCAL_REAL
+                PASCAL_COMMENT
+@end example
+@smalldisplay
+This macro is invoked in definition 17.
+@end smalldisplay
+
+
+@node Concrete1, Concrete2, Concrete, Appendix, 
+@section Concrete Expression Syntax
+
+
+@i{Expression syntax}[138]==
+@example
+Expression:     Expression AddOpr Factor.
+Factor:         Factor MulOpr Operand.
+Operand:        MonOpr Operand.
+Operand:        '(' Expression ')'.
+AddOpr:         '+' / '-'.
+MulOpr:         '*' / '/'.
+MonOpr:         '+' / '-' / '!'.
+@end example
+@smalldisplay
+This macro is invoked in definition 32.
+@end smalldisplay
+
+
+The following specification unifies the binary operators that have
+different precedences into one symbol class @code{BinOpr} of the
+abstract syntax. 
+
+@i{Operators}[139]==
+@example
+BinOpr ::= AddOpr MulOpr.
+UnOpr ::= MonOpr.
+@end example
+@smalldisplay
+This macro is invoked in definition 33.
+@end smalldisplay
+
+
+@node Concrete2, Other, Concrete1, Appendix, 
+@section Concrete Function Syntax
+
+
+@i{Function declaration syntax}[140]==
+@example
+Parameters:     [Parameter // ','].
+@end example
+@smalldisplay
+This macro is invoked in definition 101.
+@end smalldisplay
+
+
+@i{Call syntax}[141]==
+@example
+Arguments:      [Argument // ','].
+@end example
+@smalldisplay
+This macro is invoked in definition 101.
+@end smalldisplay
+
+
+@i{Function type syntax}[142]==
+@example
+ParamTypes:     [ParamType // ','].
+@end example
+@smalldisplay
+This macro is invoked in definition 134.
+@end smalldisplay
+
+
+@node Other, , Concrete2, Appendix, 
+@section Other concrete productions
+
+
+@i{Concrete pointer syntax}[143]==
+@example
+Operand: 'nil'.
+@end example
+@smalldisplay
+This macro is invoked in definition 126.
+@end smalldisplay
+
+
+Concrete notations are stated for the comma separated
+sequence of type denoters. The specific precedence of the
+cast expression and its parentheses avoid a parsing conflict.
+@i{Concrete union syntax}[144]==
+@example
+UnitedTypes: UnitedTypes ',' UnitedType.
+UnitedTypes: UnitedType.
+Operand: '<' TypeDenoter '>' Operand.
+@end example
+@smalldisplay
+This macro is invoked in definition 89.
+@end smalldisplay
+
+
+@contents
+
+@bye

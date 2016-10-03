@@ -1,0 +1,4336 @@
+-- structure LIGA
+AttrEval[attrrules	<Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	38]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	39]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	40]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	41]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	42]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	43]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	44]
+ Attribution[attrrules	<Call[col	3;
+row	28;
+params	<Attracc[col	3;
+row	28;
+attrid	108;
+symbno	1]
+ Call[col	22;
+row	28;
+params	<Including[col	22;
+row	28;
+inclattrs	<Symbattr[attrdef	110;
+symbdef	32]
+ Symbattr[attrdef	108;
+symbdef	31]
+>;
+genattrid	157;
+genattr	"_incl0"]
+>;
+name	"NewScope"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	45]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	46]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	47]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	48]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	49]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	50]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	51]
+ Attribution[attrrules	<Call[col	3;
+row	23;
+params	<Attracc[col	3;
+row	23;
+attrid	110;
+symbno	1]
+ Call[col	13;
+row	23;
+params	<>;
+name	"NewEnv"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	52]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	11;
+row	321;
+params	<Attracc[col	11;
+row	321;
+attrid	106;
+symbno	0]
+ Call[col	15;
+row	324;
+params	<Attracc[col	15;
+row	323;
+attrid	96;
+symbno	1]
+ Attracc[col	15;
+row	324;
+attrid	106;
+symbno	2]
+>;
+name	"OilIdResultTS1"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	11;
+row	325;
+params	<Attracc[col	11;
+row	325;
+attrid	95;
+symbno	1]
+ Call[col	15;
+row	329;
+params	<Attracc[col	15;
+row	327;
+attrid	107;
+symbno	0]
+ Attracc[col	15;
+row	328;
+attrid	96;
+symbno	1]
+ Attracc[col	15;
+row	329;
+attrid	106;
+symbno	2]
+>;
+name	"OilIdOpTS1"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	1]
+ Call[col	11;
+row	330;
+params	<Attracc[col	11;
+row	330;
+attrid	107;
+symbno	2]
+ Call[col	60;
+row	330;
+params	<Attracc[col	46;
+row	330;
+attrid	95;
+symbno	1]
+ Val[col	60;
+row	330;
+v	1]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	53]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	3]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	11;
+row	301;
+params	<Attracc[col	11;
+row	301;
+attrid	106;
+symbno	0]
+ Call[col	15;
+row	305;
+params	<Attracc[col	15;
+row	303;
+attrid	98;
+symbno	2]
+ Attracc[col	15;
+row	304;
+attrid	106;
+symbno	1]
+ Attracc[col	15;
+row	305;
+attrid	106;
+symbno	3]
+>;
+name	"OilIdResultTS2"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	11;
+row	306;
+params	<Attracc[col	11;
+row	306;
+attrid	97;
+symbno	2]
+ Call[col	15;
+row	311;
+params	<Attracc[col	15;
+row	308;
+attrid	107;
+symbno	0]
+ Attracc[col	15;
+row	309;
+attrid	98;
+symbno	2]
+ Attracc[col	15;
+row	310;
+attrid	106;
+symbno	1]
+ Attracc[col	15;
+row	311;
+attrid	106;
+symbno	3]
+>;
+name	"OilIdOpTS2"]
+>;
+name	"$ASSIGN"]
+ Call[col	11;
+row	312;
+params	<Attracc[col	11;
+row	312;
+attrid	107;
+symbno	1]
+ Call[col	61;
+row	312;
+params	<Attracc[col	46;
+row	312;
+attrid	97;
+symbno	2]
+ Val[col	61;
+row	312;
+v	1]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Call[col	11;
+row	313;
+params	<Attracc[col	11;
+row	313;
+attrid	107;
+symbno	3]
+ Call[col	61;
+row	313;
+params	<Attracc[col	46;
+row	313;
+attrid	97;
+symbno	2]
+ Val[col	61;
+row	313;
+v	2]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	54]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	290;
+params	<Attracc[col	3;
+row	290;
+attrid	106;
+symbno	0]
+ Call[col	16;
+row	292;
+params	<Call[col	37;
+row	291;
+params	<Call[col	37;
+row	291;
+params	<Attracc[col	26;
+row	291;
+attrid	115;
+symbno	1]
+ Name[col	37;
+row	291;
+n	"OilTypeunknown_t"]
+>;
+name	"GetType"]
+>;
+name	"OilTypeToSet"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	55]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	285;
+params	<Attracc[col	9;
+row	285;
+attrid	106;
+symbno	0]
+ Call[col	42;
+row	285;
+params	<Name[col	42;
+row	285;
+n	"OilTypefloat_t"]
+>;
+name	"OilTypeToSet"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	56]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	281;
+params	<Attracc[col	9;
+row	281;
+attrid	106;
+symbno	0]
+ Call[col	42;
+row	281;
+params	<Name[col	42;
+row	281;
+n	"OilTypeint_t"]
+>;
+name	"OilTypeToSet"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	57]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	3;
+row	274;
+params	<Call[col	60;
+row	274;
+params	<Attracc[col	33;
+row	274;
+attrid	118;
+symbno	1]
+ Name[col	44;
+row	274;
+n	"OilTypefloat_t"]
+ Val[col	60;
+row	274;
+v	0]
+>;
+name	"SetType"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotType"]
+>;
+name	"$MON"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	58]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	3;
+row	269;
+params	<Call[col	58;
+row	269;
+params	<Attracc[col	33;
+row	269;
+attrid	118;
+symbno	1]
+ Name[col	44;
+row	269;
+n	"OilTypeint_t"]
+ Val[col	58;
+row	269;
+v	0]
+>;
+name	"SetType"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotType"]
+>;
+name	"$MON"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	59]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	9;
+row	264;
+params	<Attracc[col	9;
+row	264;
+attrid	107;
+symbno	1]
+ Including[col	27;
+row	264;
+inclattrs	<Symbattr[attrdef	92;
+symbdef	19]
+>;
+genattrid	144;
+genattr	"_incl2"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	60]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Call[col	3;
+row	259;
+params	<Call[col	56;
+row	260;
+params	<Attracc[col	13;
+row	260;
+attrid	118;
+symbno	1]
+ Including[col	24;
+row	260;
+inclattrs	<Symbattr[attrdef	92;
+symbdef	19]
+>;
+genattrid	145;
+genattr	"_incl2"]
+ Val[col	56;
+row	260;
+v	0]
+>;
+name	"SetType"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotType"]
+>;
+name	"$MON"]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	61]
+ Attribution[attrrules	<Call[col	9;
+row	254;
+params	<Attracc[col	9;
+row	254;
+attrid	92;
+symbno	0]
+ Name[col	30;
+row	254;
+n	"OilTypefloat_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	62]
+ Attribution[attrrules	<Call[col	9;
+row	250;
+params	<Attracc[col	9;
+row	250;
+attrid	92;
+symbno	0]
+ Name[col	30;
+row	250;
+n	"OilTypeint_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	63]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	123;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	238;
+params	<Attracc[col	9;
+row	238;
+attrid	96;
+symbno	0]
+ Name[col	25;
+row	238;
+n	"OilOpUMinus"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	95;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	123;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	64]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	124;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	234;
+params	<Attracc[col	9;
+row	234;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	234;
+n	"OilOpPercent"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	124;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	65]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	125;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	230;
+params	<Attracc[col	9;
+row	230;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	230;
+n	"OilOpSlash"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	125;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	66]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	126;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	226;
+params	<Attracc[col	9;
+row	226;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	226;
+n	"OilOpStar"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	126;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	67]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	127;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	222;
+params	<Attracc[col	9;
+row	222;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	222;
+n	"OilOpMinus"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	127;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	68]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	128;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	218;
+params	<Attracc[col	9;
+row	218;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	218;
+n	"OilOpPlus"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	128;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	69]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	129;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	213;
+params	<Attracc[col	9;
+row	213;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	213;
+n	"OilOpGreater"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	129;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	70]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	130;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	209;
+params	<Attracc[col	9;
+row	209;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	209;
+n	"OilOpLess"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	130;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	71]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	131;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	205;
+params	<Attracc[col	9;
+row	205;
+attrid	98;
+symbno	0]
+ Name[col	26;
+row	205;
+n	"OilOpEquEqu"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	97;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	131;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	72]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	132;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	200;
+params	<Attracc[col	9;
+row	200;
+attrid	100;
+symbno	0]
+ Name[col	26;
+row	200;
+n	"OilOpExclam"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	99;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	132;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	73]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	11;
+row	186;
+params	<Attracc[col	11;
+row	186;
+attrid	106;
+symbno	0]
+ Call[col	15;
+row	189;
+params	<Attracc[col	15;
+row	188;
+attrid	100;
+symbno	1]
+ Attracc[col	15;
+row	189;
+attrid	106;
+symbno	2]
+>;
+name	"OilIdResultTS1"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	11;
+row	190;
+params	<Attracc[col	11;
+row	190;
+attrid	99;
+symbno	1]
+ Call[col	15;
+row	194;
+params	<Attracc[col	15;
+row	192;
+attrid	107;
+symbno	0]
+ Attracc[col	15;
+row	193;
+attrid	100;
+symbno	1]
+ Attracc[col	15;
+row	194;
+attrid	106;
+symbno	2]
+>;
+name	"OilIdOpTS1"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	1]
+ Call[col	11;
+row	195;
+params	<Attracc[col	11;
+row	195;
+attrid	107;
+symbno	2]
+ Call[col	61;
+row	195;
+params	<Attracc[col	46;
+row	195;
+attrid	99;
+symbno	1]
+ Val[col	61;
+row	195;
+v	1]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	74]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	133;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	179;
+params	<Attracc[col	9;
+row	179;
+attrid	102;
+symbno	0]
+ Name[col	35;
+row	179;
+n	"OilOpAmpAmp"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	101;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	133;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	75]
+ Attribution[attrrules	<Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	134;
+symbno	0]
+ Name[col	59;
+row	336;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	175;
+params	<Attracc[col	9;
+row	175;
+attrid	102;
+symbno	0]
+ Name[col	35;
+row	175;
+n	"OilOpBarBar"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	59;
+row	336;
+params	<Call[col	23;
+row	335;
+params	<Call[col	23;
+row	335;
+params	<Attracc[col	23;
+row	335;
+attrid	101;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	59;
+row	336;
+params	<Name[col	13;
+row	336;
+n	"FATAL"]
+ Call[col	20;
+row	336;
+params	<Literal[row	0;
+col	0;
+str	"Invalid operator in this context"]
+>;
+name	"$STRING"]
+ Val[col	56;
+row	336;
+v	0]
+ Call[col	59;
+row	336;
+params	<Attracc[col	59;
+row	336;
+attrid	134;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	76]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	3]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	11;
+row	158;
+params	<Attracc[col	11;
+row	158;
+attrid	106;
+symbno	0]
+ Call[col	15;
+row	162;
+params	<Attracc[col	15;
+row	160;
+attrid	102;
+symbno	2]
+ Attracc[col	15;
+row	161;
+attrid	106;
+symbno	1]
+ Attracc[col	15;
+row	162;
+attrid	106;
+symbno	3]
+>;
+name	"OilIdResultTS2"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	11;
+row	163;
+params	<Attracc[col	11;
+row	163;
+attrid	101;
+symbno	2]
+ Call[col	15;
+row	168;
+params	<Attracc[col	15;
+row	165;
+attrid	107;
+symbno	0]
+ Attracc[col	15;
+row	166;
+attrid	102;
+symbno	2]
+ Attracc[col	15;
+row	167;
+attrid	106;
+symbno	1]
+ Attracc[col	15;
+row	168;
+attrid	106;
+symbno	3]
+>;
+name	"OilIdOpTS2"]
+>;
+name	"$ASSIGN"]
+ Call[col	11;
+row	169;
+params	<Attracc[col	11;
+row	169;
+attrid	107;
+symbno	1]
+ Call[col	70;
+row	169;
+params	<Attracc[col	46;
+row	169;
+attrid	101;
+symbno	2]
+ Val[col	70;
+row	169;
+v	1]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Call[col	11;
+row	170;
+params	<Attracc[col	11;
+row	170;
+attrid	107;
+symbno	3]
+ Call[col	70;
+row	170;
+params	<Attracc[col	46;
+row	170;
+attrid	101;
+symbno	2]
+ Val[col	70;
+row	170;
+v	2]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	77]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	3]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	3;
+row	148;
+params	<Attracc[col	3;
+row	148;
+attrid	107;
+symbno	1]
+ Name[col	24;
+row	148;
+n	"OilTypeint_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	121;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	146;
+params	<Attracc[col	3;
+row	146;
+attrid	106;
+symbno	0]
+ Call[col	52;
+row	147;
+params	<Call[col	52;
+row	147;
+params	<Attracc[col	29;
+row	147;
+attrid	106;
+symbno	2]
+ Attracc[col	52;
+row	147;
+attrid	106;
+symbno	3]
+>;
+name	"OilBalance"]
+>;
+name	"OilTypeToSet"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	3;
+row	149;
+params	<Attracc[col	3;
+row	149;
+attrid	107;
+symbno	2]
+ Attracc[col	24;
+row	149;
+attrid	107;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	2]
+ Call[col	3;
+row	150;
+params	<Attracc[col	3;
+row	150;
+attrid	107;
+symbno	3]
+ Attracc[col	24;
+row	150;
+attrid	107;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	120;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	78]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Call[col	3;
+row	126;
+params	<Attracc[col	3;
+row	126;
+attrid	121;
+symbno	0]
+ Call[col	16;
+row	128;
+params	<Call[col	37;
+row	127;
+params	<Call[col	37;
+row	127;
+params	<Attracc[col	26;
+row	127;
+attrid	115;
+symbno	1]
+ Name[col	37;
+row	127;
+n	"OilTypeunknown_t"]
+>;
+name	"GetType"]
+>;
+name	"OilTypeToSet"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	135;
+params	<Attracc[col	3;
+row	135;
+attrid	106;
+symbno	0]
+ Call[col	7;
+row	139;
+params	<Name[col	7;
+row	137;
+n	"OilOpEqual"]
+ Attracc[col	7;
+row	138;
+attrid	121;
+symbno	0]
+ Attracc[col	7;
+row	139;
+attrid	106;
+symbno	2]
+>;
+name	"OilIdResultTS2"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	3;
+row	129;
+params	<Attracc[col	3;
+row	129;
+attrid	120;
+symbno	0]
+ Call[col	7;
+row	134;
+params	<Attracc[col	7;
+row	131;
+attrid	107;
+symbno	0]
+ Name[col	7;
+row	132;
+n	"OilOpEqual"]
+ Attracc[col	7;
+row	133;
+attrid	121;
+symbno	0]
+ Attracc[col	7;
+row	134;
+attrid	106;
+symbno	2]
+>;
+name	"OilIdOpTS2"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	140;
+params	<Attracc[col	3;
+row	140;
+attrid	107;
+symbno	2]
+ Call[col	48;
+row	140;
+params	<Attracc[col	38;
+row	140;
+attrid	120;
+symbno	0]
+ Val[col	48;
+row	140;
+v	2]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	2]
+ Visit[ord	3;
+symbno	0]
+>;
+prodid	79]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	9;
+row	119;
+params	<Attracc[col	9;
+row	119;
+attrid	107;
+symbno	1]
+ Name[col	27;
+row	119;
+n	"OilTypevoid_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	80]
+ Attribution[attrrules	<Call[col	9;
+row	115;
+params	<Attracc[col	9;
+row	115;
+attrid	103;
+symbno	0]
+ Name[col	25;
+row	115;
+n	"OilTypefloat_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	81]
+ Attribution[attrrules	<Call[col	9;
+row	111;
+params	<Attracc[col	9;
+row	111;
+attrid	103;
+symbno	0]
+ Name[col	25;
+row	111;
+n	"OilTypeint_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	82]
+ Attribution[attrrules	<Call[col	14;
+row	24;
+params	<Call[col	37;
+row	24;
+params	<Literal[row	0;
+col	0;
+str	"yes"]
+>;
+name	"$STRING"]
+ Val[col	0;
+row	0;
+v	1]
+ Name[col	0;
+row	0;
+n	"AllEarlierRenamed_pre"]
+>;
+name	"$MON"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Call[col	3;
+row	28;
+params	<Attracc[col	3;
+row	28;
+attrid	108;
+symbno	3]
+ Call[col	22;
+row	28;
+params	<Attracc[col	22;
+row	28;
+attrid	110;
+symbno	0]
+>;
+name	"NewScope"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	3]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Call[col	9;
+row	107;
+params	<Attracc[col	9;
+row	107;
+attrid	112;
+symbno	0]
+ Attracc[col	22;
+row	107;
+attrid	103;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Call[col	24;
+row	88;
+params	<Attracc[col	24;
+row	88;
+attrid	113;
+symbno	0]
+ Name[col	41;
+row	88;
+n	"NoKey"]
+>;
+name	"$ASSIGN"]
+ Call[col	24;
+row	77;
+params	<Attracc[col	24;
+row	77;
+attrid	114;
+symbno	0]
+ Name[col	38;
+row	77;
+n	"NoKey"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	3]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	83]
+ Attribution[attrrules	<Call[col	16;
+row	102;
+params	<Attracc[col	16;
+row	102;
+attrid	135;
+symbno	0]
+ Name[col	16;
+row	102;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	3;
+row	98;
+params	<Attracc[col	3;
+row	98;
+attrid	122;
+symbno	0]
+ Call[col	53;
+row	99;
+params	<Including[col	16;
+row	99;
+inclattrs	<Symbattr[attrdef	112;
+symbdef	32]
+>;
+genattrid	140;
+genattr	"_incl3"]
+ Name[col	40;
+row	99;
+n	"OilOpReturn"]
+ Attracc[col	53;
+row	99;
+attrid	106;
+symbno	1]
+>;
+name	"OilIdOpTS1"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	103;
+params	<Attracc[col	3;
+row	103;
+attrid	107;
+symbno	1]
+ Call[col	45;
+row	103;
+params	<Attracc[col	35;
+row	103;
+attrid	122;
+symbno	0]
+ Val[col	45;
+row	103;
+v	1]
+>;
+name	"OilGetArgType"]
+>;
+name	"$ASSIGN"]
+ Call[col	16;
+row	102;
+params	<Call[col	23;
+row	100;
+params	<Call[col	23;
+row	100;
+params	<Attracc[col	23;
+row	100;
+attrid	122;
+symbno	0]
+>;
+name	"OilIsValidOp"]
+>;
+name	"NOT"]
+ Call[col	16;
+row	102;
+params	<Name[col	13;
+row	101;
+n	"FATAL"]
+ Call[col	20;
+row	101;
+params	<Literal[row	0;
+col	0;
+str	"Returned value incompatible with program type"]
+>;
+name	"$STRING"]
+ Val[col	13;
+row	102;
+v	0]
+ Call[col	16;
+row	102;
+params	<Attracc[col	16;
+row	102;
+attrid	135;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	84]
+ Attribution[attrrules	<Call[col	63;
+row	93;
+params	<Attracc[col	63;
+row	93;
+attrid	136;
+symbno	0]
+ Name[col	63;
+row	93;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	63;
+row	93;
+params	<Call[col	65;
+row	92;
+params	<Including[col	9;
+row	92;
+inclattrs	<Symbattr[attrdef	113;
+symbdef	32]
+ Symbattr[attrdef	104;
+symbdef	28]
+>;
+genattrid	137;
+genattr	"_incl4"]
+ Name[col	65;
+row	92;
+n	"NoKey"]
+>;
+name	"EQ"]
+ Call[col	63;
+row	93;
+params	<Name[col	13;
+row	93;
+n	"FATAL"]
+ Call[col	20;
+row	93;
+params	<Literal[row	0;
+col	0;
+str	"continue must be inside an iteration"]
+>;
+name	"$STRING"]
+ Val[col	60;
+row	93;
+v	0]
+ Call[col	63;
+row	93;
+params	<Attracc[col	63;
+row	93;
+attrid	136;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	85]
+ Attribution[attrrules	<Call[col	60;
+row	82;
+params	<Attracc[col	60;
+row	82;
+attrid	137;
+symbno	0]
+ Name[col	60;
+row	82;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	60;
+row	82;
+params	<Call[col	59;
+row	81;
+params	<Including[col	9;
+row	81;
+inclattrs	<Symbattr[attrdef	114;
+symbdef	32]
+ Symbattr[attrdef	105;
+symbdef	28]
+>;
+genattrid	134;
+genattr	"_incl5"]
+ Name[col	59;
+row	81;
+n	"NoKey"]
+>;
+name	"EQ"]
+ Call[col	60;
+row	82;
+params	<Name[col	13;
+row	82;
+n	"FATAL"]
+ Call[col	20;
+row	82;
+params	<Literal[row	0;
+col	0;
+str	"break must be inside an iteration"]
+>;
+name	"$STRING"]
+ Val[col	57;
+row	82;
+v	0]
+ Call[col	60;
+row	82;
+params	<Attracc[col	60;
+row	82;
+attrid	137;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	86]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	9;
+row	71;
+params	<Attracc[col	9;
+row	71;
+attrid	107;
+symbno	1]
+ Name[col	27;
+row	71;
+n	"OilTypeint_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Call[col	26;
+row	87;
+params	<Attracc[col	26;
+row	87;
+attrid	104;
+symbno	0]
+ Call[col	43;
+row	87;
+params	<>;
+name	"NewKey"]
+>;
+name	"$ASSIGN"]
+ Call[col	26;
+row	76;
+params	<Attracc[col	26;
+row	76;
+attrid	105;
+symbno	0]
+ Call[col	40;
+row	76;
+params	<>;
+name	"NewKey"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	87]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	3]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	9;
+row	67;
+params	<Attracc[col	9;
+row	67;
+attrid	107;
+symbno	1]
+ Name[col	27;
+row	67;
+n	"OilTypeint_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	3]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	88]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	9;
+row	63;
+params	<Attracc[col	9;
+row	63;
+attrid	107;
+symbno	1]
+ Name[col	27;
+row	63;
+n	"OilTypeint_t"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	122;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	89]
+ Attribution[attrrules	<Call[col	19;
+row	9;
+params	<Attracc[col	19;
+row	9;
+attrid	138;
+symbno	0]
+ Call[col	19;
+row	9;
+params	<Val[col	19;
+row	9;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	69;
+row	57;
+params	<Attracc[col	69;
+row	57;
+attrid	139;
+symbno	0]
+ Name[col	69;
+row	57;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	9;
+params	<Attracc[col	9;
+row	9;
+attrid	116;
+symbno	0]
+ Attracc[col	19;
+row	9;
+attrid	138;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	38;
+params	<Attracc[col	3;
+row	38;
+attrid	115;
+symbno	0]
+ Call[col	56;
+row	39;
+params	<Call[col	35;
+row	39;
+params	<Including[col	14;
+row	39;
+inclattrs	<Symbattr[attrdef	110;
+symbdef	32]
+ Symbattr[attrdef	108;
+symbdef	31]
+>;
+genattrid	167;
+genattr	"_incl0"]
+ Attracc[col	35;
+row	39;
+attrid	116;
+symbno	0]
+>;
+name	"KeyInEnv"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	69;
+row	57;
+params	<Call[col	19;
+row	57;
+params	<Attracc[col	9;
+row	57;
+attrid	115;
+symbno	0]
+ Name[col	19;
+row	57;
+n	"NoKey"]
+>;
+name	"EQ"]
+ Call[col	69;
+row	57;
+params	<Name[col	35;
+row	57;
+n	"FATAL"]
+ Call[col	42;
+row	57;
+params	<Literal[row	0;
+col	0;
+str	"Undefined identifier"]
+>;
+name	"$STRING"]
+ Val[col	66;
+row	57;
+v	0]
+ Call[col	69;
+row	57;
+params	<Attracc[col	69;
+row	57;
+attrid	139;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	90]
+ Attribution[attrrules	<Call[col	19;
+row	5;
+params	<Attracc[col	19;
+row	5;
+attrid	140;
+symbno	0]
+ Call[col	19;
+row	5;
+params	<Val[col	19;
+row	5;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	54;
+row	51;
+params	<Attracc[col	54;
+row	51;
+attrid	141;
+symbno	0]
+ Name[col	54;
+row	51;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	9;
+row	5;
+params	<Attracc[col	9;
+row	5;
+attrid	119;
+symbno	0]
+ Attracc[col	19;
+row	5;
+attrid	140;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	32;
+params	<Attracc[col	3;
+row	32;
+attrid	118;
+symbno	0]
+ Call[col	57;
+row	33;
+params	<Call[col	36;
+row	33;
+params	<Including[col	15;
+row	33;
+inclattrs	<Symbattr[attrdef	110;
+symbdef	32]
+ Symbattr[attrdef	108;
+symbdef	31]
+>;
+genattrid	160;
+genattr	"_incl0"]
+ Attracc[col	36;
+row	33;
+attrid	119;
+symbno	0]
+>;
+name	"DefineIdn"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	49;
+params	<Call[col	34;
+row	49;
+params	<Attracc[col	21;
+row	49;
+attrid	118;
+symbno	0]
+ Val[col	31;
+row	49;
+v	1]
+ Val[col	34;
+row	49;
+v	2]
+>;
+name	"SetDef"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"Def"]
+>;
+name	"$MON"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	16;
+row	52;
+params	<Call[col	54;
+row	51;
+params	<Call[col	29;
+row	50;
+params	<Call[col	25;
+row	50;
+params	<Attracc[col	16;
+row	50;
+attrid	118;
+symbno	0]
+ Val[col	25;
+row	50;
+v	0]
+>;
+name	"GetDef"]
+ Val[col	29;
+row	50;
+v	2]
+>;
+name	"EQ"]
+ Call[col	54;
+row	51;
+params	<Name[col	13;
+row	51;
+n	"FATAL"]
+ Call[col	20;
+row	51;
+params	<Literal[row	0;
+col	0;
+str	"Multiply-defined identifier"]
+>;
+name	"$STRING"]
+ Val[col	51;
+row	51;
+v	0]
+ Call[col	54;
+row	51;
+params	<Attracc[col	54;
+row	51;
+attrid	141;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	91]
+>;
+defseq	<Typedef[did	1;
+dname	"VOID";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	2;
+dname	"$VOID_LIST";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	3;
+dname	"int";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	4;
+dname	"$BOOL";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	5;
+dname	"$SYMB";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	6;
+dname	"POSITION";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	7;
+dname	"NODEPTR";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	8;
+dname	"tOilOp";
+row	295;
+col	28;
+listedto	0;
+extname	""]
+ Typedef[did	9;
+dname	"tOilTypeSet";
+row	277;
+col	16;
+listedto	0;
+extname	""]
+ Typedef[did	10;
+dname	"tOilType";
+row	247;
+col	12;
+listedto	0;
+extname	""]
+ Typedef[did	11;
+dname	"DefTableKey";
+row	18;
+col	11;
+listedto	0;
+extname	""]
+ Typedef[did	12;
+dname	"Environment";
+row	16;
+col	11;
+listedto	0;
+extname	""]
+ Typedef[did	35;
+dname	"FloatDenotation";
+row	284;
+col	31;
+listedto	0;
+extname	"$TERM"]
+ Typedef[did	36;
+dname	"IntDenotation";
+row	280;
+col	29;
+listedto	0;
+extname	"$TERM"]
+ Typedef[did	37;
+dname	"Identifier";
+row	4;
+col	36;
+listedto	0;
+extname	"$TERM"]
+ Symb[did	14;
+dname	"VariableDeclList";
+row	349;
+col	18;
+attrs	<>;
+tornt	0]
+ Symb[did	15;
+dname	"StatementList";
+row	345;
+col	18;
+attrs	<>;
+tornt	0]
+ Symb[did	16;
+dname	"Axiom";
+row	341;
+col	1;
+attrs	<>;
+tornt	0]
+ Symb[did	17;
+dname	"OptInitialize";
+row	257;
+col	38;
+attrs	<>;
+tornt	0]
+ Symb[did	18;
+dname	"VarIdList";
+row	249;
+col	40;
+attrs	<>;
+tornt	0]
+ Symb[did	19;
+dname	"VariableDeclSeg";
+row	249;
+col	14;
+attrs	<Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	10;
+col	264;
+row	53;
+name	"type";
+did	92]
+>;
+tornt	0]
+ Symb[did	20;
+dname	"ParameterDecl";
+row	244;
+col	56;
+attrs	<>;
+tornt	0]
+ Symb[did	21;
+dname	"VariableDecl";
+row	244;
+col	34;
+attrs	<>;
+tornt	0]
+ Symb[did	22;
+dname	"Unop";
+row	237;
+col	16;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	64;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	123]
+ Attrdef[globname	"Unop_operator";
+part	2;
+gen	0;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	330;
+row	51;
+name	"operator";
+did	95]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	328;
+row	20;
+name	"indication";
+did	96]
+>;
+tornt	0]
+ Symb[did	23;
+dname	"Binop";
+row	204;
+col	15;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	72;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	131]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	71;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	130]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	70;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	129]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	69;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	128]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	68;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	127]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	67;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	126]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	66;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	125]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	65;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	124]
+ Attrdef[globname	"Binop_operator";
+part	2;
+gen	0;
+store	1;
+prodid	0;
+class	1;
+typeid	8;
+col	313;
+row	52;
+name	"operator";
+did	97]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	309;
+row	21;
+name	"indication";
+did	98]
+>;
+tornt	0]
+ Symb[did	24;
+dname	"Notop";
+row	182;
+col	8;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	73;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	132]
+ Attrdef[globname	"Notop_operator";
+part	2;
+gen	0;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	195;
+row	52;
+name	"operator";
+did	99]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	200;
+row	15;
+name	"indication";
+did	100]
+>;
+tornt	0]
+ Symb[did	25;
+dname	"ShortCircuitOp";
+row	154;
+col	8;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	76;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	134]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	75;
+class	0;
+typeid	6;
+col	59;
+row	336;
+name	"_pos";
+did	133]
+ Attrdef[globname	"ShortCircuitOp_operator";
+part	2;
+gen	0;
+store	1;
+prodid	0;
+class	1;
+typeid	8;
+col	170;
+row	61;
+name	"operator";
+did	101]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	179;
+row	24;
+name	"indication";
+did	102]
+>;
+tornt	0]
+ Symb[did	26;
+dname	"ParameterList";
+row	106;
+col	52;
+attrs	<>;
+tornt	0]
+ Symb[did	27;
+dname	"ResultType";
+row	106;
+col	26;
+attrs	<Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	10;
+col	115;
+row	20;
+name	"type";
+did	103]
+>;
+tornt	0]
+ Symb[did	28;
+dname	"WhileStmt";
+row	70;
+col	12;
+attrs	<Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	92;
+row	30;
+name	"ContinueLbl";
+did	104]
+ Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	81;
+row	30;
+name	"BreakLbl";
+did	105]
+>;
+tornt	0]
+ Symb[did	29;
+dname	"Expression";
+row	62;
+col	39;
+attrs	<Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	79;
+class	0;
+typeid	9;
+col	138;
+row	8;
+name	"possible_RuleAttr_79";
+did	121]
+ Attrdef[globname	"Expression_operator_RuleAttr_79";
+part	3;
+gen	0;
+store	1;
+prodid	79;
+class	0;
+typeid	8;
+col	140;
+row	39;
+name	"operator_RuleAttr_79";
+did	120]
+ Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	9;
+col	329;
+row	29;
+name	"possible";
+did	106]
+ Attrdef[globname	"Expression_yields";
+part	3;
+gen	0;
+store	1;
+prodid	0;
+class	1;
+typeid	10;
+col	330;
+row	25;
+name	"yields";
+did	107]
+>;
+tornt	0]
+ Symb[did	30;
+dname	"Statement";
+row	62;
+col	16;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	86;
+class	0;
+typeid	6;
+col	60;
+row	82;
+name	"_pos";
+did	137]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	85;
+class	0;
+typeid	6;
+col	63;
+row	93;
+name	"_pos";
+did	136]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	84;
+class	0;
+typeid	6;
+col	16;
+row	102;
+name	"_pos";
+did	135]
+ Attrdef[globname	"Statement_operator_RuleAttr_84";
+part	2;
+gen	0;
+store	0;
+prodid	84;
+class	0;
+typeid	8;
+col	103;
+row	36;
+name	"operator_RuleAttr_84";
+did	122]
+>;
+tornt	0]
+ Symb[did	31;
+dname	"Compound";
+row	14;
+col	8;
+attrs	<Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	1;
+typeid	12;
+col	14;
+row	8;
+name	"Env";
+did	108]
+>;
+tornt	0]
+ Symb[did	32;
+dname	"Program";
+row	13;
+col	8;
+attrs	<Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	1;
+typeid	12;
+col	13;
+row	8;
+name	"Env";
+did	110]
+ Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	10;
+col	107;
+row	17;
+name	"type";
+did	112]
+ Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	92;
+row	51;
+name	"ContinueLbl";
+did	113]
+ Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	81;
+row	48;
+name	"BreakLbl";
+did	114]
+>;
+tornt	0]
+ Symb[did	33;
+dname	"IdUse";
+row	8;
+col	25;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	90;
+class	0;
+typeid	6;
+col	69;
+row	57;
+name	"_pos";
+did	139]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	90;
+class	0;
+typeid	3;
+col	19;
+row	9;
+name	"TERM_1";
+did	138]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	291;
+row	32;
+name	"Key";
+did	115]
+ Attrdef[globname	"IdUse_Sym";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	39;
+row	40;
+name	"Sym";
+did	116]
+>;
+tornt	0]
+ Symb[did	34;
+dname	"IdDef";
+row	4;
+col	26;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	91;
+class	0;
+typeid	6;
+col	54;
+row	51;
+name	"_pos";
+did	141]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	91;
+class	0;
+typeid	3;
+col	19;
+row	5;
+name	"TERM_1";
+did	140]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	274;
+row	39;
+name	"Key";
+did	118]
+ Attrdef[globname	"IdDef_Sym";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	33;
+row	41;
+name	"Sym";
+did	119]
+>;
+tornt	0]
+ Prod[did	38;
+dname	"rule_15";
+row	396;
+col	6;
+rhs	<Symbol[row	397;
+col	15;
+did	18]
+ Literal[row	396;
+col	6;
+str	","]
+ Symbol[row	397;
+col	29;
+did	21]
+>;
+lhs	18]
+ Prod[did	39;
+dname	"rule_14";
+row	392;
+col	6;
+rhs	<Symbol[row	393;
+col	15;
+did	21]
+>;
+lhs	18]
+ Prod[did	40;
+dname	"rule_13";
+row	388;
+col	6;
+rhs	<Symbol[row	389;
+col	22;
+did	19]
+>;
+lhs	14]
+ Prod[did	41;
+dname	"rule_12";
+row	384;
+col	6;
+rhs	<Symbol[row	385;
+col	22;
+did	14]
+ Symbol[row	385;
+col	39;
+did	19]
+>;
+lhs	14]
+ Prod[did	42;
+dname	"rule_11";
+row	380;
+col	6;
+rhs	<Symbol[row	381;
+col	15;
+did	28]
+>;
+lhs	30]
+ Prod[did	43;
+dname	"rule_10";
+row	376;
+col	6;
+rhs	<Symbol[row	377;
+col	19;
+did	15]
+ Symbol[row	377;
+col	33;
+did	30]
+>;
+lhs	15]
+ Prod[did	44;
+dname	"rule_9";
+row	372;
+col	6;
+rhs	<Symbol[row	373;
+col	19;
+did	30]
+>;
+lhs	15]
+ Prod[did	45;
+dname	"rule_8";
+row	368;
+col	6;
+rhs	<Symbol[row	369;
+col	15;
+did	31]
+>;
+lhs	30]
+ Prod[did	46;
+dname	"rule_7";
+row	364;
+col	6;
+rhs	<Literal[row	364;
+col	6;
+str	";"]
+>;
+lhs	30]
+ Prod[did	47;
+dname	"rule_6";
+row	360;
+col	6;
+rhs	<Symbol[row	361;
+col	19;
+did	26]
+ Literal[row	360;
+col	6;
+str	","]
+ Symbol[row	361;
+col	37;
+did	20]
+>;
+lhs	26]
+ Prod[did	48;
+dname	"rule_5";
+row	356;
+col	6;
+rhs	<Symbol[row	357;
+col	19;
+did	20]
+>;
+lhs	26]
+ Prod[did	49;
+dname	"rule_4";
+row	352;
+col	6;
+rhs	<>;
+lhs	17]
+ Prod[did	50;
+dname	"rule_3";
+row	348;
+col	6;
+rhs	<Literal[row	348;
+col	6;
+str	"{"]
+ Symbol[row	349;
+col	18;
+did	14]
+ Symbol[row	349;
+col	35;
+did	15]
+ Literal[row	348;
+col	6;
+str	"}"]
+>;
+lhs	31]
+ Prod[did	51;
+dname	"rule_2";
+row	344;
+col	6;
+rhs	<Literal[row	344;
+col	6;
+str	"{"]
+ Symbol[row	345;
+col	18;
+did	15]
+ Literal[row	344;
+col	6;
+str	"}"]
+>;
+lhs	31]
+ Prod[did	52;
+dname	"rule_1";
+row	340;
+col	6;
+rhs	<Symbol[row	341;
+col	11;
+did	32]
+>;
+lhs	16]
+ Prod[did	53;
+dname	"MonadicExp";
+row	319;
+col	6;
+rhs	<Symbol[row	319;
+col	33;
+did	22]
+ Symbol[row	319;
+col	38;
+did	29]
+>;
+lhs	29]
+ Prod[did	54;
+dname	"DyadicExp";
+row	299;
+col	6;
+rhs	<Symbol[row	299;
+col	32;
+did	29]
+ Symbol[row	299;
+col	43;
+did	23]
+ Symbol[row	299;
+col	49;
+did	29]
+>;
+lhs	29]
+ Prod[did	55;
+dname	"IdnVal";
+row	288;
+col	6;
+rhs	<Symbol[row	288;
+col	29;
+did	33]
+>;
+lhs	29]
+ Prod[did	56;
+dname	"FloatVal";
+row	284;
+col	6;
+rhs	<Literal[row	284;
+col	31;
+str	""]
+ Literal[row	284;
+col	31;
+str	"FloatDenotation"]
+ Literal[row	284;
+col	31;
+str	"int"]
+>;
+lhs	29]
+ Prod[did	57;
+dname	"IntVal";
+row	280;
+col	6;
+rhs	<Literal[row	280;
+col	29;
+str	""]
+ Literal[row	280;
+col	29;
+str	"IntDenotation"]
+ Literal[row	280;
+col	29;
+str	"int"]
+>;
+lhs	29]
+ Prod[did	58;
+dname	"FloatParDecl";
+row	272;
+col	6;
+rhs	<Literal[row	272;
+col	6;
+str	"float"]
+ Symbol[row	272;
+col	46;
+did	34]
+>;
+lhs	20]
+ Prod[did	59;
+dname	"IntParDecl";
+row	267;
+col	6;
+rhs	<Literal[row	267;
+col	6;
+str	"int"]
+ Symbol[row	267;
+col	42;
+did	34]
+>;
+lhs	20]
+ Prod[did	60;
+dname	"Initialize";
+row	263;
+col	6;
+rhs	<Literal[row	263;
+col	6;
+str	"="]
+ Symbol[row	263;
+col	40;
+did	29]
+>;
+lhs	17]
+ Prod[did	61;
+dname	"VarDecl";
+row	257;
+col	6;
+rhs	<Symbol[row	257;
+col	32;
+did	34]
+ Symbol[row	257;
+col	38;
+did	17]
+>;
+lhs	21]
+ Prod[did	62;
+dname	"FloatVar";
+row	253;
+col	6;
+rhs	<Literal[row	253;
+col	6;
+str	"float"]
+ Symbol[row	253;
+col	44;
+did	18]
+ Literal[row	253;
+col	6;
+str	";"]
+>;
+lhs	19]
+ Prod[did	63;
+dname	"IntVar";
+row	249;
+col	6;
+rhs	<Literal[row	249;
+col	6;
+str	"int"]
+ Symbol[row	249;
+col	40;
+did	18]
+ Literal[row	249;
+col	6;
+str	";"]
+>;
+lhs	19]
+ Prod[did	64;
+dname	"UMinusOp";
+row	237;
+col	6;
+rhs	<Literal[row	237;
+col	6;
+str	"-"]
+>;
+lhs	22]
+ Prod[did	65;
+dname	"PercentOp";
+row	233;
+col	6;
+rhs	<Literal[row	233;
+col	6;
+str	"%"]
+>;
+lhs	23]
+ Prod[did	66;
+dname	"SlashOp";
+row	229;
+col	6;
+rhs	<Literal[row	229;
+col	6;
+str	"/"]
+>;
+lhs	23]
+ Prod[did	67;
+dname	"StarOp";
+row	225;
+col	6;
+rhs	<Literal[row	225;
+col	6;
+str	"*"]
+>;
+lhs	23]
+ Prod[did	68;
+dname	"MinusOp";
+row	221;
+col	6;
+rhs	<Literal[row	221;
+col	6;
+str	"-"]
+>;
+lhs	23]
+ Prod[did	69;
+dname	"PlusOp";
+row	217;
+col	6;
+rhs	<Literal[row	217;
+col	6;
+str	"+"]
+>;
+lhs	23]
+ Prod[did	70;
+dname	"GreaterOp";
+row	212;
+col	6;
+rhs	<Literal[row	212;
+col	6;
+str	">"]
+>;
+lhs	23]
+ Prod[did	71;
+dname	"LessOp";
+row	208;
+col	6;
+rhs	<Literal[row	208;
+col	6;
+str	"<"]
+>;
+lhs	23]
+ Prod[did	72;
+dname	"EqualOp";
+row	204;
+col	6;
+rhs	<Literal[row	204;
+col	6;
+str	"=="]
+>;
+lhs	23]
+ Prod[did	73;
+dname	"ExclOp";
+row	199;
+col	6;
+rhs	<Literal[row	199;
+col	6;
+str	"!"]
+>;
+lhs	24]
+ Prod[did	74;
+dname	"NotExp";
+row	184;
+col	6;
+rhs	<Symbol[row	184;
+col	29;
+did	24]
+ Symbol[row	184;
+col	35;
+did	29]
+>;
+lhs	29]
+ Prod[did	75;
+dname	"AmpOp";
+row	178;
+col	6;
+rhs	<Literal[row	178;
+col	6;
+str	"&&"]
+>;
+lhs	25]
+ Prod[did	76;
+dname	"BarOp";
+row	174;
+col	6;
+rhs	<Literal[row	174;
+col	6;
+str	"||"]
+>;
+lhs	25]
+ Prod[did	77;
+dname	"ShortCircuitExp";
+row	156;
+col	6;
+rhs	<Symbol[row	156;
+col	38;
+did	29]
+ Symbol[row	156;
+col	49;
+did	25]
+ Symbol[row	156;
+col	64;
+did	29]
+>;
+lhs	29]
+ Prod[did	78;
+dname	"CondExp";
+row	144;
+col	6;
+rhs	<Symbol[row	144;
+col	30;
+did	29]
+ Literal[row	144;
+col	6;
+str	"?"]
+ Symbol[row	144;
+col	45;
+did	29]
+ Literal[row	144;
+col	6;
+str	":"]
+ Symbol[row	144;
+col	60;
+did	29]
+>;
+lhs	29]
+ Prod[did	79;
+dname	"AssignExp";
+row	124;
+col	6;
+rhs	<Symbol[row	124;
+col	32;
+did	33]
+ Literal[row	124;
+col	6;
+str	"="]
+ Symbol[row	124;
+col	42;
+did	29]
+>;
+lhs	29]
+ Prod[did	80;
+dname	"ExprStmt";
+row	118;
+col	6;
+rhs	<Symbol[row	118;
+col	30;
+did	29]
+ Literal[row	118;
+col	6;
+str	";"]
+>;
+lhs	30]
+ Prod[did	81;
+dname	"FloatResult";
+row	114;
+col	6;
+rhs	<Literal[row	114;
+col	6;
+str	"float"]
+>;
+lhs	27]
+ Prod[did	82;
+dname	"IntResult";
+row	110;
+col	6;
+rhs	<Literal[row	110;
+col	6;
+str	"int"]
+>;
+lhs	27]
+ Prod[did	83;
+dname	"Source";
+row	106;
+col	6;
+rhs	<Symbol[row	106;
+col	26;
+did	27]
+ Literal[row	106;
+col	37;
+str	""]
+ Literal[row	106;
+col	37;
+str	"Identifier"]
+ Literal[row	106;
+col	37;
+str	"int"]
+ Literal[row	106;
+col	6;
+str	"("]
+ Symbol[row	106;
+col	52;
+did	26]
+ Literal[row	106;
+col	6;
+str	")"]
+ Symbol[row	106;
+col	70;
+did	31]
+>;
+lhs	32]
+ Prod[did	84;
+dname	"ReturnStmt";
+row	96;
+col	6;
+rhs	<Literal[row	96;
+col	6;
+str	"return"]
+ Symbol[row	96;
+col	41;
+did	29]
+ Literal[row	96;
+col	6;
+str	";"]
+>;
+lhs	30]
+ Prod[did	85;
+dname	"ContinueStmt";
+row	90;
+col	6;
+rhs	<Literal[row	90;
+col	6;
+str	"continue"]
+ Literal[row	90;
+col	6;
+str	";"]
+>;
+lhs	30]
+ Prod[did	86;
+dname	"BreakStmt";
+row	79;
+col	6;
+rhs	<Literal[row	79;
+col	6;
+str	"break"]
+ Literal[row	79;
+col	6;
+str	";"]
+>;
+lhs	30]
+ Prod[did	87;
+dname	"Loop";
+row	70;
+col	6;
+rhs	<Literal[row	70;
+col	6;
+str	"while"]
+ Literal[row	70;
+col	6;
+str	"("]
+ Symbol[row	70;
+col	38;
+did	29]
+ Literal[row	70;
+col	6;
+str	")"]
+ Symbol[row	70;
+col	53;
+did	30]
+>;
+lhs	28]
+ Prod[did	88;
+dname	"TwoSided";
+row	66;
+col	6;
+rhs	<Literal[row	66;
+col	6;
+str	"if"]
+ Literal[row	66;
+col	6;
+str	"("]
+ Symbol[row	66;
+col	39;
+did	29]
+ Literal[row	66;
+col	6;
+str	")"]
+ Symbol[row	66;
+col	54;
+did	30]
+ Literal[row	66;
+col	6;
+str	"else"]
+ Symbol[row	66;
+col	71;
+did	30]
+>;
+lhs	30]
+ Prod[did	89;
+dname	"OneSided";
+row	62;
+col	6;
+rhs	<Literal[row	62;
+col	6;
+str	"if"]
+ Literal[row	62;
+col	6;
+str	"("]
+ Symbol[row	62;
+col	39;
+did	29]
+ Literal[row	62;
+col	6;
+str	")"]
+ Symbol[row	62;
+col	54;
+did	30]
+>;
+lhs	30]
+ Prod[did	90;
+dname	"AppliedOccurrence";
+row	8;
+col	6;
+rhs	<Literal[row	8;
+col	35;
+str	""]
+ Literal[row	8;
+col	35;
+str	"Identifier"]
+ Literal[row	8;
+col	35;
+str	"int"]
+>;
+lhs	33]
+ Prod[did	91;
+dname	"DefiningOccurrence";
+row	4;
+col	6;
+rhs	<Literal[row	4;
+col	36;
+str	""]
+ Literal[row	4;
+col	36;
+str	"Identifier"]
+ Literal[row	4;
+col	36;
+str	"int"]
+>;
+lhs	34]
+>]
+#

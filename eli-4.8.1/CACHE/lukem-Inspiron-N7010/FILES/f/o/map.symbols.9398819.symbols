@@ -1,0 +1,17 @@
+'|'
+'$'
+'{'
+'}'
+Number
+PtgType
+'['
+xIdentifier
+']'
+':'
+'RULE'
+'::='
+'END'
+';'
+'LISTOF'
+xLiteral
+CString

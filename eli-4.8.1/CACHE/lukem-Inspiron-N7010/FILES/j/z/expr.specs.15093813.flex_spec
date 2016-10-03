@@ -1,0 +1,20 @@
+%%
+
+"-"	1; /* ext=2 sourceLine=4 */
+"\+"	2; /* ext=3 sourceLine=5 */
+"0"	3; /* ext=4 sourceLine=6 */
+"1"	4; /* ext=5 sourceLine=7 */
+"2"	5; /* ext=6 sourceLine=8 */
+"3"	6; /* ext=7 sourceLine=9 */
+"4"	7; /* ext=8 sourceLine=10 */
+"5"	8; /* ext=9 sourceLine=11 */
+"6"	9; /* ext=10 sourceLine=12 */
+"7"	10; /* ext=11 sourceLine=13 */
+"8"	11; /* ext=12 sourceLine=14 */
+"9"	12; /* ext=13 sourceLine=15 */
+"\("	13; /* ext=14 sourceLine=16 */
+"\)"	14; /* ext=15 sourceLine=17 */
+"\/"	15; /* ext=16 sourceLine=18 */
+"\*"	16; /* ext=17 sourceLine=19 */
+
+

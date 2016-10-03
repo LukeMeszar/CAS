@@ -1,0 +1,4 @@
+%Type.Simple.err == . +cmd=cat (%trenn) \
+	(Type.demo/Simple.err:label) \
+	(Type.demo/Simple.err) \
+	((Type.demo/Simple.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

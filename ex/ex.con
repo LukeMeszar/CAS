@@ -1,0 +1,7 @@
+Root: Program .
+Program: (Assignment / Print)+ .
+Assignment: Var '=' Exp .
+Print: Exp .
+Exp: Exp ('+' / '-') Term / Term .
+Term: Term ('*' / '/') Factor / Factor .
+Factor: Var / Num / '(' Exp ')' .

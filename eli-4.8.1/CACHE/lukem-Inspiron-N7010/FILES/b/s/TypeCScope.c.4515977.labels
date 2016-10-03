@@ -1,0 +1,7 @@
+TypeCScope.c
+TypeCScope.h
+envmod.h
+deftbl.h
+obstack.h
+BitSet.h
+eliproto.h

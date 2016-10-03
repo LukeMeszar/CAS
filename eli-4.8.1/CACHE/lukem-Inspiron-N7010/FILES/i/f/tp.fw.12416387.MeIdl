@@ -1,0 +1,7601 @@
+-- structure LIGA
+AttrEval[attrrules	<Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	3;
+symbno	2]
+ Visit[ord	3;
+symbno	0]
+ Visit[ord	4;
+symbno	1]
+ Visit[ord	4;
+symbno	2]
+ Visit[ord	4;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	222;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	220;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	220;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	223;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	2]
+ Visit[ord	5;
+symbno	0]
+ Visit[ord	6;
+symbno	1]
+ Visit[ord	6;
+symbno	2]
+ Call[col	1;
+row	187;
+params	<Attracc[col	1;
+row	187;
+attrid	401;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	123;
+symbno	1]
+>;
+name	"IDENTICAL"]
+ Attracc[col	0;
+row	0;
+attrid	401;
+symbno	2]
+>;
+name	"PTGSeq"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	52]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	2]
+ Visit[ord	3;
+symbno	0]
+ Visit[ord	4;
+symbno	2]
+ Visit[ord	4;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	220;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	220;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	2]
+ Visit[ord	5;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	6;
+symbno	2]
+ Call[col	1;
+row	187;
+params	<Attracc[col	1;
+row	187;
+attrid	401;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	401;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	53]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	2]
+ Visit[ord	3;
+symbno	0]
+ Visit[ord	4;
+symbno	2]
+ Visit[ord	4;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	220;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	220;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	2]
+ Visit[ord	5;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	6;
+symbno	2]
+ Call[col	1;
+row	187;
+params	<Attracc[col	1;
+row	187;
+attrid	401;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	401;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	54]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	0]
+ Visit[ord	4;
+symbno	0]
+ Visit[ord	5;
+symbno	0]
+ Call[col	1;
+row	187;
+params	<Attracc[col	1;
+row	187;
+attrid	401;
+symbno	0]
+ Call[col	1;
+row	187;
+params	<>;
+name	"PTGNull"]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	221;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	220;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	55]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	56]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	57]
+ Attribution[attrrules	<Call[col	3;
+row	153;
+params	<Call[col	22;
+row	153;
+params	<Literal[row	0;
+col	0;
+str	"yes"]
+>;
+name	"$STRING"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"_InhPrecond"]
+>;
+name	"$MON"]
+ Call[col	22;
+row	500;
+params	<Attracc[col	22;
+row	500;
+attrid	99;
+symbno	0]
+ Call[col	31;
+row	500;
+params	<Val[col	31;
+row	500;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	143;
+params	<Attracc[col	3;
+row	143;
+attrid	96;
+symbno	0]
+ Call[col	13;
+row	146;
+params	<Call[col	47;
+row	144;
+params	<Including[col	23;
+row	144;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	186;
+genattr	"_incl0"]
+ Attracc[col	47;
+row	144;
+attrid	99;
+symbno	0]
+>;
+name	"BindingInEnv"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	147;
+params	<Attracc[col	3;
+row	147;
+attrid	100;
+symbno	0]
+ Call[col	21;
+row	147;
+params	<Attracc[col	21;
+row	147;
+attrid	96;
+symbno	0]
+>;
+name	"KeyOf"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	31;
+params	<Attracc[col	3;
+row	31;
+attrid	98;
+symbno	0]
+ Call[col	20;
+row	33;
+params	<Call[col	28;
+row	32;
+params	<Attracc[col	18;
+row	32;
+attrid	100;
+symbno	0]
+ Name[col	28;
+row	32;
+n	"IntNone"]
+>;
+name	"GetKind"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	323;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	322;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	315;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	314;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	307;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	306;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	299;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	298;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	653;
+params	<Attracc[col	3;
+row	653;
+attrid	97;
+symbno	0]
+ Call[col	22;
+row	653;
+params	<Attracc[col	22;
+row	653;
+attrid	99;
+symbno	0]
+>;
+name	"PTGId"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	58]
+ Attribution[attrrules	<Call[col	22;
+row	500;
+params	<Attracc[col	22;
+row	500;
+attrid	112;
+symbno	0]
+ Call[col	31;
+row	500;
+params	<Val[col	31;
+row	500;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	235;
+params	<Attracc[col	3;
+row	235;
+attrid	113;
+symbno	0]
+ Including[col	13;
+row	235;
+inclattrs	<Symbattr[attrdef	125;
+symbdef	46]
+>;
+genattrid	171;
+genattr	"_incl3"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	233;
+params	<Attracc[col	3;
+row	233;
+attrid	115;
+symbno	0]
+ Val[col	13;
+row	233;
+v	2]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	131;
+params	<Attracc[col	3;
+row	131;
+attrid	110;
+symbno	0]
+ Call[col	42;
+row	132;
+params	<Including[col	18;
+row	132;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	197;
+genattr	"_incl0"]
+ Attracc[col	42;
+row	132;
+attrid	112;
+symbno	0]
+>;
+name	"BindIdn"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	133;
+params	<Attracc[col	3;
+row	133;
+attrid	114;
+symbno	0]
+ Call[col	21;
+row	133;
+params	<Attracc[col	21;
+row	133;
+attrid	110;
+symbno	0]
+>;
+name	"KeyOf"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	234;
+params	<Call[col	35;
+row	234;
+params	<Attracc[col	26;
+row	234;
+attrid	114;
+symbno	0]
+ Attracc[col	35;
+row	234;
+attrid	113;
+symbno	0]
+>;
+name	"ResetType"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotType"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	26;
+params	<Call[col	43;
+row	27;
+params	<Attracc[col	22;
+row	27;
+attrid	114;
+symbno	0]
+ Attracc[col	32;
+row	27;
+attrid	115;
+symbno	0]
+ Name[col	43;
+row	27;
+n	"IntMultiple"]
+>;
+name	"SetDiffKind"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotKind"]
+>;
+name	"$MON"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	3;
+row	761;
+params	<Attracc[col	3;
+row	761;
+attrid	373;
+symbno	0]
+ Call[col	32;
+row	766;
+params	<Attracc[col	7;
+row	763;
+attrid	372;
+symbno	0]
+ Call[col	32;
+row	766;
+params	<Call[col	15;
+row	765;
+params	<Attracc[col	15;
+row	765;
+attrid	112;
+symbno	0]
+>;
+name	"PTGId"]
+ Call[col	32;
+row	766;
+params	<Call[col	38;
+row	766;
+params	<Call[col	32;
+row	766;
+params	<Attracc[col	22;
+row	766;
+attrid	113;
+symbno	0]
+ Val[col	32;
+row	766;
+v	0]
+>;
+name	"GetSym"]
+>;
+name	"$DEP"]
+>;
+name	"PTGId"]
+>;
+name	"PTGTransform"]
+>;
+name	"PTGSeq"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	767;
+params	<Attracc[col	3;
+row	767;
+attrid	339;
+symbno	0]
+ Call[col	32;
+row	772;
+params	<Attracc[col	7;
+row	769;
+attrid	338;
+symbno	0]
+ Call[col	32;
+row	772;
+params	<Call[col	15;
+row	771;
+params	<Attracc[col	15;
+row	771;
+attrid	112;
+symbno	0]
+>;
+name	"PTGId"]
+ Call[col	32;
+row	772;
+params	<Call[col	38;
+row	772;
+params	<Call[col	32;
+row	772;
+params	<Attracc[col	22;
+row	772;
+attrid	113;
+symbno	0]
+ Val[col	32;
+row	772;
+v	0]
+>;
+name	"GetSym"]
+>;
+name	"$DEP"]
+>;
+name	"PTGId"]
+>;
+name	"PTGTransformDecl"]
+>;
+name	"PTGSeq"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	59]
+ Attribution[attrrules	<Call[col	42;
+row	211;
+params	<Attracc[col	42;
+row	211;
+attrid	423;
+symbno	0]
+ Name[col	42;
+row	211;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Call[col	22;
+row	500;
+params	<Attracc[col	22;
+row	500;
+attrid	82;
+symbno	0]
+ Call[col	31;
+row	500;
+params	<Val[col	31;
+row	500;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	209;
+params	<Attracc[col	3;
+row	209;
+attrid	85;
+symbno	0]
+ Val[col	13;
+row	209;
+v	1]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	131;
+params	<Attracc[col	3;
+row	131;
+attrid	79;
+symbno	0]
+ Call[col	42;
+row	132;
+params	<Including[col	18;
+row	132;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	196;
+genattr	"_incl0"]
+ Attracc[col	42;
+row	132;
+attrid	82;
+symbno	0]
+>;
+name	"BindIdn"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	133;
+params	<Attracc[col	3;
+row	133;
+attrid	84;
+symbno	0]
+ Call[col	21;
+row	133;
+params	<Attracc[col	21;
+row	133;
+attrid	79;
+symbno	0]
+>;
+name	"KeyOf"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	26;
+params	<Call[col	43;
+row	27;
+params	<Attracc[col	22;
+row	27;
+attrid	84;
+symbno	0]
+ Attracc[col	32;
+row	27;
+attrid	85;
+symbno	0]
+ Name[col	43;
+row	27;
+n	"IntMultiple"]
+>;
+name	"SetDiffKind"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotKind"]
+>;
+name	"$MON"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	8;
+row	212;
+params	<Call[col	42;
+row	211;
+params	<Call[col	32;
+row	210;
+params	<Call[col	27;
+row	210;
+params	<Attracc[col	18;
+row	210;
+attrid	84;
+symbno	0]
+ Val[col	27;
+row	210;
+v	100]
+>;
+name	"GetArity"]
+ Val[col	32;
+row	210;
+v	100]
+>;
+name	"EQ"]
+ Call[col	42;
+row	211;
+params	<Name[col	13;
+row	211;
+n	"ERROR"]
+ Call[col	19;
+row	211;
+params	<Literal[row	0;
+col	0;
+str	"Inconsistent arity"]
+>;
+name	"$STRING"]
+ Val[col	40;
+row	211;
+v	0]
+ Call[col	42;
+row	211;
+params	<Attracc[col	42;
+row	211;
+attrid	423;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Call[col	3;
+row	80;
+params	<Attracc[col	3;
+row	80;
+attrid	81;
+symbno	0]
+ Call[col	20;
+row	82;
+params	<Call[col	38;
+row	81;
+params	<Attracc[col	25;
+row	81;
+attrid	84;
+symbno	0]
+ Val[col	35;
+row	81;
+v	1]
+ Val[col	38;
+row	81;
+v	0]
+>;
+name	"SetGetFirstOcc"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	557;
+params	<Attracc[col	3;
+row	557;
+attrid	281;
+symbno	0]
+ Call[col	7;
+row	562;
+params	<Attracc[col	8;
+row	558;
+attrid	81;
+symbno	0]
+ Call[col	48;
+row	561;
+params	<Attracc[col	9;
+row	560;
+attrid	280;
+symbno	0]
+ Call[col	48;
+row	561;
+params	<Call[col	24;
+row	561;
+params	<Attracc[col	24;
+row	561;
+attrid	82;
+symbno	0]
+>;
+name	"PTGId"]
+ Call[col	48;
+row	561;
+params	<Attracc[col	48;
+row	561;
+attrid	84;
+symbno	0]
+>;
+name	"TerminalIndex"]
+>;
+name	"PTGMacro"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	562;
+attrid	280;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	551;
+params	<Attracc[col	3;
+row	551;
+attrid	269;
+symbno	0]
+ Call[col	7;
+row	556;
+params	<Attracc[col	8;
+row	552;
+attrid	81;
+symbno	0]
+ Call[col	47;
+row	555;
+params	<Attracc[col	9;
+row	554;
+attrid	268;
+symbno	0]
+ Call[col	47;
+row	555;
+params	<Call[col	23;
+row	555;
+params	<Attracc[col	23;
+row	555;
+attrid	82;
+symbno	0]
+>;
+name	"PTGId"]
+ Call[col	47;
+row	555;
+params	<Attracc[col	47;
+row	555;
+attrid	84;
+symbno	0]
+>;
+name	"TerminalIndex"]
+>;
+name	"PTGTerm"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	556;
+attrid	268;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	60]
+ Attribution[attrrules	<Call[col	22;
+row	500;
+params	<Attracc[col	22;
+row	500;
+attrid	119;
+symbno	0]
+ Call[col	31;
+row	500;
+params	<Val[col	31;
+row	500;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	131;
+params	<Attracc[col	3;
+row	131;
+attrid	117;
+symbno	0]
+ Call[col	42;
+row	132;
+params	<Including[col	18;
+row	132;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	194;
+genattr	"_incl0"]
+ Attracc[col	42;
+row	132;
+attrid	119;
+symbno	0]
+>;
+name	"BindIdn"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	133;
+params	<Attracc[col	3;
+row	133;
+attrid	121;
+symbno	0]
+ Call[col	21;
+row	133;
+params	<Attracc[col	21;
+row	133;
+attrid	117;
+symbno	0]
+>;
+name	"KeyOf"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	253;
+params	<Call[col	36;
+row	253;
+params	<Attracc[col	27;
+row	253;
+attrid	121;
+symbno	0]
+ Attracc[col	36;
+row	253;
+attrid	119;
+symbno	0]
+>;
+name	"ResetSym"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotSymbol"]
+>;
+name	"$MON"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	3;
+row	80;
+params	<Attracc[col	3;
+row	80;
+attrid	118;
+symbno	0]
+ Call[col	20;
+row	82;
+params	<Call[col	38;
+row	81;
+params	<Attracc[col	25;
+row	81;
+attrid	121;
+symbno	0]
+ Val[col	35;
+row	81;
+v	1]
+ Val[col	38;
+row	81;
+v	0]
+>;
+name	"SetGetFirstOcc"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	700;
+params	<Attracc[col	3;
+row	700;
+attrid	355;
+symbno	0]
+ Call[col	7;
+row	709;
+params	<Attracc[col	8;
+row	701;
+attrid	118;
+symbno	0]
+ Call[col	11;
+row	708;
+params	<Attracc[col	9;
+row	703;
+attrid	354;
+symbno	0]
+ Call[col	11;
+row	708;
+params	<Call[col	17;
+row	705;
+params	<Attracc[col	17;
+row	705;
+attrid	119;
+symbno	0]
+>;
+name	"PTGId"]
+ Call[col	39;
+row	706;
+params	<Call[col	39;
+row	706;
+params	<Attracc[col	30;
+row	706;
+attrid	121;
+symbno	0]
+ Attracc[col	39;
+row	706;
+attrid	119;
+symbno	0]
+>;
+name	"ObtainSymbol"]
+>;
+name	"PTGId"]
+ Call[col	41;
+row	707;
+params	<Call[col	29;
+row	707;
+params	<Attracc[col	20;
+row	707;
+attrid	121;
+symbno	0]
+ Name[col	29;
+row	707;
+n	"PTGNULL"]
+>;
+name	"GetCases"]
+>;
+name	"$DEP"]
+ Attracc[col	11;
+row	708;
+attrid	119;
+symbno	0]
+>;
+name	"PTGReducer"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	709;
+attrid	354;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	692;
+params	<Attracc[col	3;
+row	692;
+attrid	349;
+symbno	0]
+ Call[col	7;
+row	699;
+params	<Attracc[col	8;
+row	693;
+attrid	118;
+symbno	0]
+ Call[col	39;
+row	698;
+params	<Attracc[col	9;
+row	695;
+attrid	348;
+symbno	0]
+ Call[col	39;
+row	698;
+params	<Call[col	17;
+row	697;
+params	<Attracc[col	17;
+row	697;
+attrid	119;
+symbno	0]
+>;
+name	"PTGId"]
+ Call[col	39;
+row	698;
+params	<Call[col	39;
+row	698;
+params	<Attracc[col	30;
+row	698;
+attrid	121;
+symbno	0]
+ Attracc[col	39;
+row	698;
+attrid	119;
+symbno	0]
+>;
+name	"ObtainSymbol"]
+>;
+name	"PTGId"]
+>;
+name	"PTGForward"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	699;
+attrid	348;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	61]
+ Attribution[attrrules	<Call[col	3;
+row	281;
+params	<Attracc[col	3;
+row	281;
+attrid	101;
+symbno	0]
+ Call[col	14;
+row	281;
+params	<Val[col	14;
+row	281;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	62]
+ Attribution[attrrules	<Call[col	3;
+row	276;
+params	<Attracc[col	3;
+row	276;
+attrid	101;
+symbno	0]
+ Val[col	14;
+row	276;
+v	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	63]
+ Attribution[attrrules	<Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	329;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	328;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	321;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	320;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	313;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	312;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	305;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	304;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	357;
+params	<Attracc[col	3;
+row	357;
+attrid	87;
+symbno	0]
+ Call[col	47;
+row	357;
+params	<Including[col	26;
+row	357;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	193;
+genattr	"_incl0"]
+ Attracc[col	47;
+row	357;
+attrid	89;
+symbno	0]
+>;
+name	"DefineIdn"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	80;
+params	<Attracc[col	3;
+row	80;
+attrid	86;
+symbno	0]
+ Call[col	20;
+row	82;
+params	<Call[col	38;
+row	81;
+params	<Attracc[col	25;
+row	81;
+attrid	87;
+symbno	0]
+ Val[col	35;
+row	81;
+v	1]
+ Val[col	38;
+row	81;
+v	0]
+>;
+name	"SetGetFirstOcc"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	641;
+params	<Attracc[col	3;
+row	641;
+attrid	333;
+symbno	0]
+ Call[col	7;
+row	649;
+params	<Attracc[col	8;
+row	642;
+attrid	86;
+symbno	0]
+ Call[col	9;
+row	648;
+params	<Attracc[col	9;
+row	644;
+attrid	332;
+symbno	0]
+ Call[col	9;
+row	648;
+params	<Call[col	28;
+row	645;
+params	<Attracc[col	15;
+row	645;
+attrid	88;
+symbno	0]
+ Val[col	28;
+row	645;
+v	0]
+>;
+name	"EQ"]
+ Call[col	58;
+row	645;
+params	<Call[col	48;
+row	645;
+params	<Attracc[col	48;
+row	645;
+attrid	89;
+symbno	0]
+>;
+name	"PTGId"]
+ Attracc[col	58;
+row	645;
+attrid	312;
+symbno	0]
+>;
+name	"PTGExtern0"]
+ Call[col	9;
+row	648;
+params	<Call[col	28;
+row	646;
+params	<Attracc[col	15;
+row	646;
+attrid	88;
+symbno	0]
+ Val[col	28;
+row	646;
+v	1]
+>;
+name	"EQ"]
+ Call[col	58;
+row	646;
+params	<Call[col	48;
+row	646;
+params	<Attracc[col	48;
+row	646;
+attrid	89;
+symbno	0]
+>;
+name	"PTGId"]
+ Attracc[col	58;
+row	646;
+attrid	312;
+symbno	0]
+>;
+name	"PTGExtern1"]
+ Call[col	9;
+row	648;
+params	<Call[col	28;
+row	647;
+params	<Attracc[col	15;
+row	647;
+attrid	88;
+symbno	0]
+ Val[col	28;
+row	647;
+v	2]
+>;
+name	"EQ"]
+ Call[col	58;
+row	647;
+params	<Call[col	48;
+row	647;
+params	<Attracc[col	48;
+row	647;
+attrid	89;
+symbno	0]
+>;
+name	"PTGId"]
+ Attracc[col	58;
+row	647;
+attrid	312;
+symbno	0]
+>;
+name	"PTGExtern2"]
+ Name[col	9;
+row	648;
+n	"PTGNULL"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	649;
+attrid	332;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	614;
+params	<Attracc[col	3;
+row	614;
+attrid	293;
+symbno	0]
+ Call[col	7;
+row	640;
+params	<Attracc[col	8;
+row	615;
+attrid	86;
+symbno	0]
+ Call[col	11;
+row	639;
+params	<Attracc[col	9;
+row	617;
+attrid	292;
+symbno	0]
+ Call[col	11;
+row	639;
+params	<Call[col	28;
+row	618;
+params	<Attracc[col	15;
+row	618;
+attrid	88;
+symbno	0]
+ Val[col	28;
+row	618;
+v	0]
+>;
+name	"EQ"]
+ Call[col	13;
+row	624;
+params	<Call[col	19;
+row	620;
+params	<Attracc[col	19;
+row	620;
+attrid	89;
+symbno	0]
+>;
+name	"PTGId"]
+ Attracc[col	13;
+row	621;
+attrid	304;
+symbno	0]
+ Attracc[col	13;
+row	622;
+attrid	312;
+symbno	0]
+ Attracc[col	13;
+row	623;
+attrid	320;
+symbno	0]
+ Attracc[col	13;
+row	624;
+attrid	328;
+symbno	0]
+>;
+name	"PTGBuild0"]
+ Call[col	11;
+row	639;
+params	<Call[col	28;
+row	625;
+params	<Attracc[col	15;
+row	625;
+attrid	88;
+symbno	0]
+ Val[col	28;
+row	625;
+v	1]
+>;
+name	"EQ"]
+ Call[col	13;
+row	631;
+params	<Call[col	19;
+row	627;
+params	<Attracc[col	19;
+row	627;
+attrid	89;
+symbno	0]
+>;
+name	"PTGId"]
+ Attracc[col	13;
+row	628;
+attrid	304;
+symbno	0]
+ Attracc[col	13;
+row	629;
+attrid	312;
+symbno	0]
+ Attracc[col	13;
+row	630;
+attrid	320;
+symbno	0]
+ Attracc[col	13;
+row	631;
+attrid	328;
+symbno	0]
+>;
+name	"PTGBuild1"]
+ Call[col	11;
+row	639;
+params	<Call[col	28;
+row	632;
+params	<Attracc[col	15;
+row	632;
+attrid	88;
+symbno	0]
+ Val[col	28;
+row	632;
+v	2]
+>;
+name	"EQ"]
+ Call[col	13;
+row	638;
+params	<Call[col	19;
+row	634;
+params	<Attracc[col	19;
+row	634;
+attrid	89;
+symbno	0]
+>;
+name	"PTGId"]
+ Attracc[col	13;
+row	635;
+attrid	304;
+symbno	0]
+ Attracc[col	13;
+row	636;
+attrid	312;
+symbno	0]
+ Attracc[col	13;
+row	637;
+attrid	320;
+symbno	0]
+ Attracc[col	13;
+row	638;
+attrid	328;
+symbno	0]
+>;
+name	"PTGBuild2"]
+ Name[col	11;
+row	639;
+n	"PTGNULL"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	640;
+attrid	292;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	64]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	1;
+row	198;
+params	<Attracc[col	1;
+row	198;
+attrid	421;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	93;
+symbno	1]
+>;
+name	"IDENTICAL"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	3;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	254;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	256;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	1]
+ Call[col	1;
+row	198;
+params	<Attracc[col	1;
+row	198;
+attrid	422;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	93;
+symbno	1]
+>;
+name	"IDENTICAL"]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	257;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	255;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	464;
+params	<Call[col	8;
+row	470;
+params	<Call[col	28;
+row	469;
+params	<Including[col	8;
+row	465;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	150;
+genattr	"_incl7"]
+ Call[col	28;
+row	469;
+params	<Name[col	9;
+row	467;
+n	"SigObstk"]
+ Call[col	21;
+row	468;
+params	<Attracc[col	21;
+row	468;
+attrid	77;
+symbno	0]
+>;
+name	"StringTable"]
+ Call[col	28;
+row	469;
+params	<Call[col	28;
+row	469;
+params	<Attracc[col	28;
+row	469;
+attrid	77;
+symbno	0]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"comsigs_post"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	463;
+params	<Attracc[col	3;
+row	463;
+attrid	78;
+symbno	0]
+ Attracc[col	22;
+row	463;
+attrid	91;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	0]
+ Visit[ord	5;
+symbno	1]
+ Visit[ord	5;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	258;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	260;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	1]
+ Visit[ord	6;
+symbno	0]
+ Visit[ord	7;
+symbno	1]
+ Visit[ord	7;
+symbno	0]
+>;
+prodid	65]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Call[col	1;
+row	197;
+params	<Attracc[col	1;
+row	197;
+attrid	421;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	421;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	93;
+symbno	2]
+>;
+name	"IDENTICAL"]
+>;
+name	"OR"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	1]
+ Call[col	3;
+row	444;
+params	<Call[col	60;
+row	444;
+params	<Call[col	51;
+row	444;
+params	<Attracc[col	17;
+row	444;
+attrid	93;
+symbno	2]
+ Call[col	51;
+row	444;
+params	<Name[col	42;
+row	444;
+n	"SigObstk"]
+ Call[col	51;
+row	444;
+params	<Literal[row	0;
+col	0;
+str	","]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	2]
+ Name[col	0;
+row	0;
+n	"sigs_pre"]
+>;
+name	"$MON"]
+ Visit[ord	3;
+symbno	2]
+ Visit[ord	3;
+symbno	0]
+ Call[col	3;
+row	443;
+params	<Attracc[col	3;
+row	443;
+attrid	77;
+symbno	1]
+ Attracc[col	26;
+row	443;
+attrid	91;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	254;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	257;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	2]
+ Call[col	1;
+row	197;
+params	<Attracc[col	1;
+row	197;
+attrid	422;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	422;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	93;
+symbno	2]
+>;
+name	"IDENTICAL"]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	257;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	255;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	445;
+params	<Call[col	8;
+row	458;
+params	<Call[col	32;
+row	457;
+params	<Including[col	26;
+row	445;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	150;
+genattr	"_incl7"]
+ Call[col	32;
+row	457;
+params	<Attracc[col	8;
+row	446;
+attrid	93;
+symbno	2]
+ Call[col	32;
+row	457;
+params	<Call[col	32;
+row	448;
+params	<Name[col	23;
+row	448;
+n	"SigObstk"]
+ Call[col	32;
+row	448;
+params	<Literal[row	0;
+col	0;
+str	","]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+ Call[col	32;
+row	457;
+params	<Call[col	35;
+row	449;
+params	<Attracc[col	15;
+row	449;
+attrid	257;
+symbno	1]
+ Val[col	35;
+row	449;
+v	1]
+>;
+name	"EQ"]
+ Call[col	32;
+row	453;
+params	<Name[col	13;
+row	451;
+n	"SigObstk"]
+ Call[col	25;
+row	452;
+params	<Attracc[col	25;
+row	452;
+attrid	78;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	32;
+row	453;
+params	<Call[col	32;
+row	453;
+params	<Attracc[col	32;
+row	453;
+attrid	78;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+ Call[col	32;
+row	457;
+params	<Name[col	13;
+row	455;
+n	"SigObstk"]
+ Call[col	25;
+row	456;
+params	<Attracc[col	25;
+row	456;
+attrid	91;
+symbno	2]
+>;
+name	"StringTable"]
+ Call[col	32;
+row	457;
+params	<Call[col	32;
+row	457;
+params	<Attracc[col	32;
+row	457;
+attrid	91;
+symbno	2]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+>;
+name	"IF"]
+>;
+name	"ORDER"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"comsigs_post"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	362;
+params	<Attracc[col	3;
+row	362;
+attrid	78;
+symbno	0]
+ Val[col	18;
+row	362;
+v	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	0]
+ Visit[ord	5;
+symbno	1]
+ Visit[ord	5;
+symbno	2]
+ Visit[ord	5;
+symbno	0]
+ Visit[ord	6;
+symbno	1]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	258;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	261;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	2]
+ Visit[ord	6;
+symbno	0]
+ Visit[ord	7;
+symbno	1]
+ Visit[ord	7;
+symbno	2]
+ Visit[ord	7;
+symbno	0]
+>;
+prodid	66]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	2]
+ Call[col	3;
+row	417;
+params	<Attracc[col	3;
+row	417;
+attrid	93;
+symbno	0]
+ Val[col	14;
+row	417;
+v	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	3;
+row	415;
+params	<Attracc[col	3;
+row	415;
+attrid	141;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	421;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	418;
+params	<Call[col	8;
+row	425;
+params	<Call[col	40;
+row	424;
+params	<Call[col	28;
+row	423;
+params	<Name[col	9;
+row	421;
+n	"SigObstk"]
+ Call[col	21;
+row	422;
+params	<Attracc[col	21;
+row	422;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	28;
+row	423;
+params	<Call[col	28;
+row	423;
+params	<Attracc[col	28;
+row	423;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+ Call[col	40;
+row	424;
+params	<Attracc[col	10;
+row	424;
+attrid	141;
+symbno	0]
+ Call[col	40;
+row	424;
+params	<Name[col	31;
+row	424;
+n	"SigObstk"]
+ Call[col	40;
+row	424;
+params	<Literal[row	0;
+col	0;
+str	"("]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"IF"]
+>;
+name	"ORDER"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	2]
+ Name[col	0;
+row	0;
+n	"sigs_pre"]
+>;
+name	"$MON"]
+ Visit[ord	3;
+symbno	2]
+ Call[col	3;
+row	426;
+params	<Call[col	56;
+row	426;
+params	<Call[col	47;
+row	426;
+params	<Attracc[col	17;
+row	426;
+attrid	141;
+symbno	0]
+ Call[col	47;
+row	426;
+params	<Name[col	38;
+row	426;
+n	"SigObstk"]
+ Call[col	47;
+row	426;
+params	<Literal[row	0;
+col	0;
+str	")"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"sigs_post"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	367;
+params	<Attracc[col	3;
+row	367;
+attrid	91;
+symbno	0]
+ Val[col	14;
+row	367;
+v	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	256;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	254;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	427;
+params	<Call[col	8;
+row	434;
+params	<Call[col	42;
+row	433;
+params	<Including[col	23;
+row	427;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	151;
+genattr	"_incl7"]
+ Call[col	42;
+row	433;
+params	<Call[col	30;
+row	432;
+params	<Name[col	11;
+row	430;
+n	"SigObstk"]
+ Call[col	23;
+row	431;
+params	<Attracc[col	23;
+row	431;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	30;
+row	432;
+params	<Call[col	30;
+row	432;
+params	<Attracc[col	30;
+row	432;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+ Call[col	42;
+row	433;
+params	<Attracc[col	12;
+row	433;
+attrid	141;
+symbno	0]
+ Call[col	42;
+row	433;
+params	<Name[col	33;
+row	433;
+n	"SigObstk"]
+ Call[col	42;
+row	433;
+params	<Literal[row	0;
+col	0;
+str	"("]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"IF"]
+>;
+name	"ORDER"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	2]
+ Name[col	0;
+row	0;
+n	"comsigs_pre"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	363;
+params	<Attracc[col	3;
+row	363;
+attrid	77;
+symbno	2]
+ Val[col	18;
+row	363;
+v	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	255;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	257;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	435;
+params	<Call[col	8;
+row	437;
+params	<Call[col	38;
+row	436;
+params	<Including[col	20;
+row	435;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	151;
+genattr	"_incl7"]
+ Call[col	38;
+row	436;
+params	<Attracc[col	8;
+row	436;
+attrid	141;
+symbno	0]
+ Call[col	38;
+row	436;
+params	<Name[col	29;
+row	436;
+n	"SigObstk"]
+ Call[col	38;
+row	436;
+params	<Literal[row	0;
+col	0;
+str	")"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"comsigs_post"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	296;
+params	<Attracc[col	3;
+row	296;
+attrid	92;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	422;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	0]
+ Visit[ord	5;
+symbno	2]
+ Visit[ord	5;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	260;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	258;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	142;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	438;
+params	<Call[col	56;
+row	438;
+params	<Attracc[col	29;
+row	438;
+attrid	84;
+symbno	1]
+ Attracc[col	42;
+row	438;
+attrid	92;
+symbno	0]
+ Val[col	56;
+row	438;
+v	100]
+>;
+name	"IsArity"]
+ Val[col	0;
+row	0;
+v	1]
+ Name[col	0;
+row	0;
+n	"GotArity"]
+>;
+name	"$MON"]
+ Visit[ord	6;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	7;
+symbno	2]
+ Call[col	3;
+row	599;
+params	<Attracc[col	3;
+row	599;
+attrid	90;
+symbno	0]
+ Name[col	12;
+row	599;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	7;
+symbno	0]
+>;
+prodid	67]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Call[col	3;
+row	396;
+params	<Attracc[col	3;
+row	396;
+attrid	93;
+symbno	0]
+ Val[col	14;
+row	396;
+v	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	141;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	367;
+params	<Attracc[col	3;
+row	367;
+attrid	91;
+symbno	0]
+ Val[col	14;
+row	367;
+v	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	397;
+params	<Call[col	8;
+row	402;
+params	<Call[col	26;
+row	401;
+params	<Name[col	7;
+row	399;
+n	"SigObstk"]
+ Call[col	19;
+row	400;
+params	<Attracc[col	19;
+row	400;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	26;
+row	401;
+params	<Call[col	26;
+row	401;
+params	<Attracc[col	26;
+row	401;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"sigs_post"]
+>;
+name	"$MON"]
+ Visit[ord	3;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	255;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	254;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	403;
+params	<Call[col	10;
+row	409;
+params	<Call[col	28;
+row	408;
+params	<Including[col	8;
+row	404;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	151;
+genattr	"_incl7"]
+ Call[col	28;
+row	408;
+params	<Name[col	9;
+row	406;
+n	"SigObstk"]
+ Call[col	21;
+row	407;
+params	<Attracc[col	21;
+row	407;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	28;
+row	408;
+params	<Call[col	28;
+row	408;
+params	<Attracc[col	28;
+row	408;
+attrid	82;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"comsigs_post"]
+>;
+name	"$MON"]
+ Call[col	3;
+row	296;
+params	<Attracc[col	3;
+row	296;
+attrid	92;
+symbno	0]
+ Call[col	1;
+row	195;
+params	<>;
+name	"ZERO"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	0]
+ Visit[ord	5;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	259;
+symbno	0]
+ Attracc[col	0;
+row	0;
+attrid	258;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	142;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	410;
+params	<Call[col	44;
+row	410;
+params	<Attracc[col	29;
+row	410;
+attrid	84;
+symbno	1]
+ Val[col	42;
+row	410;
+v	0]
+ Val[col	44;
+row	410;
+v	100]
+>;
+name	"IsArity"]
+ Val[col	0;
+row	0;
+v	1]
+ Name[col	0;
+row	0;
+n	"GotArity"]
+>;
+name	"$MON"]
+ Visit[ord	6;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Call[col	3;
+row	599;
+params	<Attracc[col	3;
+row	599;
+attrid	90;
+symbno	0]
+ Name[col	12;
+row	599;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	7;
+symbno	0]
+>;
+prodid	68]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	0]
+ Visit[ord	1;
+symbno	1]
+ Call[col	3;
+row	373;
+params	<Attracc[col	3;
+row	373;
+attrid	93;
+symbno	0]
+ Call[col	35;
+row	373;
+params	<Attracc[col	17;
+row	373;
+attrid	98;
+symbno	1]
+ Val[col	35;
+row	373;
+v	2]
+>;
+name	"EQ"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	141;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	372;
+params	<Attracc[col	3;
+row	372;
+attrid	91;
+symbno	0]
+ Attracc[col	15;
+row	372;
+attrid	99;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	374;
+params	<Call[col	8;
+row	380;
+params	<Call[col	28;
+row	379;
+params	<Attracc[col	8;
+row	375;
+attrid	93;
+symbno	0]
+ Call[col	28;
+row	379;
+params	<Name[col	9;
+row	377;
+n	"SigObstk"]
+ Call[col	21;
+row	378;
+params	<Attracc[col	21;
+row	378;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	28;
+row	379;
+params	<Call[col	28;
+row	379;
+params	<Attracc[col	28;
+row	379;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"sigs_post"]
+>;
+name	"$MON"]
+ Visit[ord	3;
+symbno	0]
+ Call[col	3;
+row	484;
+params	<Attracc[col	3;
+row	484;
+attrid	255;
+symbno	0]
+ Call[col	35;
+row	484;
+params	<Attracc[col	21;
+row	484;
+attrid	254;
+symbno	0]
+ Attracc[col	35;
+row	484;
+attrid	93;
+symbno	0]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	296;
+params	<Attracc[col	3;
+row	296;
+attrid	92;
+symbno	0]
+ Call[col	1;
+row	194;
+params	<>;
+name	"ZERO"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	0]
+ Call[col	3;
+row	381;
+params	<Call[col	8;
+row	389;
+params	<Call[col	30;
+row	388;
+params	<Call[col	12;
+row	382;
+params	<Attracc[col	12;
+row	382;
+attrid	93;
+symbno	0]
+>;
+name	"NOT"]
+ Call[col	30;
+row	388;
+params	<Call[col	32;
+row	384;
+params	<Name[col	23;
+row	384;
+n	"SigObstk"]
+ Call[col	32;
+row	384;
+params	<Literal[row	0;
+col	0;
+str	"_"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+ Call[col	30;
+row	388;
+params	<Name[col	11;
+row	386;
+n	"SigObstk"]
+ Call[col	23;
+row	387;
+params	<Attracc[col	23;
+row	387;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	30;
+row	388;
+params	<Call[col	30;
+row	388;
+params	<Attracc[col	30;
+row	388;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+>;
+name	"ORDER"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"funs_post"]
+>;
+name	"$MON"]
+ Visit[ord	5;
+symbno	0]
+ Call[col	3;
+row	485;
+params	<Attracc[col	3;
+row	485;
+attrid	259;
+symbno	0]
+ Call[col	37;
+row	485;
+params	<Attracc[col	20;
+row	485;
+attrid	258;
+symbno	0]
+ Call[col	37;
+row	485;
+params	<Attracc[col	37;
+row	485;
+attrid	93;
+symbno	0]
+>;
+name	"NOT"]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	734;
+params	<Attracc[col	3;
+row	734;
+attrid	142;
+symbno	0]
+ Call[col	41;
+row	734;
+params	<Call[col	31;
+row	734;
+params	<Attracc[col	17;
+row	734;
+attrid	100;
+symbno	1]
+ Name[col	31;
+row	734;
+n	"NoKey"]
+>;
+name	"GetType"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	745;
+params	<Attracc[col	3;
+row	745;
+attrid	367;
+symbno	0]
+ Call[col	11;
+row	754;
+params	<Attracc[col	7;
+row	747;
+attrid	366;
+symbno	0]
+ Call[col	11;
+row	754;
+params	<Attracc[col	10;
+row	748;
+attrid	93;
+symbno	0]
+ Call[col	61;
+row	751;
+params	<Call[col	49;
+row	750;
+params	<Call[col	49;
+row	750;
+params	<Attracc[col	30;
+row	750;
+attrid	142;
+symbno	0]
+ Call[col	49;
+row	750;
+params	<Attracc[col	43;
+row	750;
+attrid	142;
+symbno	0]
+ Val[col	49;
+row	750;
+v	0]
+>;
+name	"GetSym"]
+>;
+name	"ObtainSymbol"]
+>;
+name	"PTGId"]
+ Call[col	61;
+row	751;
+params	<Call[col	31;
+row	751;
+params	<Attracc[col	17;
+row	751;
+attrid	254;
+symbno	0]
+ Val[col	31;
+row	751;
+v	0]
+>;
+name	"EQ"]
+ Val[col	34;
+row	751;
+v	1]
+ Call[col	61;
+row	751;
+params	<Call[col	56;
+row	751;
+params	<Attracc[col	42;
+row	751;
+attrid	254;
+symbno	0]
+ Val[col	56;
+row	751;
+v	1]
+>;
+name	"EQ"]
+ Val[col	59;
+row	751;
+v	0]
+ Attracc[col	61;
+row	751;
+attrid	254;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"PTGReducerCall"]
+ Call[col	11;
+row	754;
+params	<Call[col	17;
+row	753;
+params	<Including[col	17;
+row	753;
+inclattrs	<Symbattr[attrdef	106;
+symbdef	41]
+>;
+genattrid	148;
+genattr	"_incl8"]
+>;
+name	"PTGId"]
+ Attracc[col	11;
+row	754;
+attrid	258;
+symbno	0]
+>;
+name	"PTGGetValue"]
+>;
+name	"IF"]
+>;
+name	"PTGCommaSeq"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	735;
+params	<Attracc[col	3;
+row	735;
+attrid	361;
+symbno	0]
+ Call[col	11;
+row	744;
+params	<Attracc[col	7;
+row	737;
+attrid	360;
+symbno	0]
+ Call[col	11;
+row	744;
+params	<Attracc[col	10;
+row	738;
+attrid	93;
+symbno	0]
+ Call[col	11;
+row	741;
+params	<Call[col	49;
+row	740;
+params	<Call[col	49;
+row	740;
+params	<Attracc[col	30;
+row	740;
+attrid	142;
+symbno	0]
+ Call[col	49;
+row	740;
+params	<Attracc[col	43;
+row	740;
+attrid	142;
+symbno	0]
+ Val[col	49;
+row	740;
+v	0]
+>;
+name	"GetSym"]
+>;
+name	"ObtainSymbol"]
+>;
+name	"PTGId"]
+ Attracc[col	11;
+row	741;
+attrid	254;
+symbno	0]
+>;
+name	"PTGReducerCall"]
+ Call[col	11;
+row	744;
+params	<Call[col	17;
+row	743;
+params	<Including[col	17;
+row	743;
+inclattrs	<Symbattr[attrdef	106;
+symbdef	41]
+>;
+genattrid	148;
+genattr	"_incl8"]
+>;
+name	"PTGId"]
+ Attracc[col	11;
+row	744;
+attrid	258;
+symbno	0]
+>;
+name	"PTGGetValue"]
+>;
+name	"IF"]
+>;
+name	"PTGCommaSeq"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	322;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	324;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	314;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	316;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	306;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	308;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	298;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	300;
+symbno	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	1]
+ Call[col	3;
+row	676;
+params	<Attracc[col	3;
+row	676;
+attrid	325;
+symbno	0]
+ Call[col	7;
+row	681;
+params	<Call[col	12;
+row	677;
+params	<Attracc[col	12;
+row	677;
+attrid	93;
+symbno	0]
+>;
+name	"NOT"]
+ Call[col	21;
+row	680;
+params	<Attracc[col	9;
+row	679;
+attrid	324;
+symbno	0]
+ Call[col	21;
+row	680;
+params	<Attracc[col	21;
+row	680;
+attrid	258;
+symbno	0]
+>;
+name	"PTGFieldSet"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	681;
+attrid	324;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	670;
+params	<Attracc[col	3;
+row	670;
+attrid	317;
+symbno	0]
+ Call[col	7;
+row	675;
+params	<Call[col	12;
+row	671;
+params	<Attracc[col	12;
+row	671;
+attrid	93;
+symbno	0]
+>;
+name	"NOT"]
+ Call[col	20;
+row	674;
+params	<Attracc[col	9;
+row	673;
+attrid	316;
+symbno	0]
+ Call[col	20;
+row	674;
+params	<Attracc[col	20;
+row	674;
+attrid	258;
+symbno	0]
+>;
+name	"PTGArgName"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	675;
+attrid	316;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	664;
+params	<Attracc[col	3;
+row	664;
+attrid	309;
+symbno	0]
+ Call[col	7;
+row	669;
+params	<Call[col	12;
+row	665;
+params	<Attracc[col	12;
+row	665;
+attrid	93;
+symbno	0]
+>;
+name	"NOT"]
+ Call[col	38;
+row	668;
+params	<Attracc[col	9;
+row	667;
+attrid	308;
+symbno	0]
+ Call[col	38;
+row	668;
+params	<Attracc[col	20;
+row	668;
+attrid	97;
+symbno	1]
+ Attracc[col	38;
+row	668;
+attrid	258;
+symbno	0]
+>;
+name	"PTGArgDecl"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	669;
+attrid	308;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	658;
+params	<Attracc[col	3;
+row	658;
+attrid	301;
+symbno	0]
+ Call[col	7;
+row	663;
+params	<Call[col	12;
+row	659;
+params	<Attracc[col	12;
+row	659;
+attrid	93;
+symbno	0]
+>;
+name	"NOT"]
+ Call[col	40;
+row	662;
+params	<Attracc[col	9;
+row	661;
+attrid	300;
+symbno	0]
+ Call[col	40;
+row	662;
+params	<Attracc[col	22;
+row	662;
+attrid	97;
+symbno	1]
+ Attracc[col	40;
+row	662;
+attrid	258;
+symbno	0]
+>;
+name	"PTGFieldDecl"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	663;
+attrid	300;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	592;
+params	<Attracc[col	3;
+row	592;
+attrid	90;
+symbno	0]
+ Call[col	7;
+row	595;
+params	<Call[col	33;
+row	593;
+params	<Attracc[col	11;
+row	593;
+attrid	98;
+symbno	1]
+ Call[col	33;
+row	593;
+params	<Val[col	33;
+row	593;
+v	1]
+>;
+name	"NEG"]
+>;
+name	"EQ"]
+ Call[col	13;
+row	594;
+params	<Attracc[col	13;
+row	594;
+attrid	99;
+symbno	1]
+>;
+name	"PTGId"]
+ Name[col	7;
+row	595;
+n	"PTGNULL"]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	240;
+params	<Call[col	40;
+row	240;
+params	<Attracc[col	26;
+row	240;
+attrid	100;
+symbno	1]
+ Val[col	40;
+row	240;
+v	1]
+>;
+name	"ResetUsed"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotUse"]
+>;
+name	"$MON"]
+ Visit[ord	7;
+symbno	0]
+>;
+prodid	69]
+ Attribution[attrrules	<Call[col	70;
+row	312;
+params	<Attracc[col	70;
+row	312;
+attrid	424;
+symbno	0]
+ Name[col	70;
+row	312;
+n	"COORDREF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	1;
+symbno	1]
+ Call[col	14;
+row	610;
+params	<Attracc[col	14;
+row	610;
+attrid	322;
+symbno	1]
+ Name[col	29;
+row	610;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	609;
+params	<Attracc[col	14;
+row	609;
+attrid	314;
+symbno	1]
+ Name[col	28;
+row	609;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	608;
+params	<Attracc[col	14;
+row	608;
+attrid	306;
+symbno	1]
+ Name[col	28;
+row	608;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	607;
+params	<Attracc[col	14;
+row	607;
+attrid	298;
+symbno	1]
+ Name[col	30;
+row	607;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+ Call[col	3;
+row	325;
+params	<Call[col	8;
+row	332;
+params	<Call[col	30;
+row	331;
+params	<Call[col	28;
+row	330;
+params	<Name[col	9;
+row	328;
+n	"SigObstk"]
+ Call[col	21;
+row	329;
+params	<Attracc[col	21;
+row	329;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	28;
+row	330;
+params	<Call[col	28;
+row	330;
+params	<Attracc[col	28;
+row	330;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+ Call[col	30;
+row	331;
+params	<Name[col	21;
+row	331;
+n	"SigObstk"]
+ Call[col	30;
+row	331;
+params	<Literal[row	0;
+col	0;
+str	":"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"ORDER"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	2]
+ Name[col	0;
+row	0;
+n	"sigs_pre"]
+>;
+name	"$MON"]
+ Visit[ord	3;
+symbno	2]
+ Call[col	3;
+row	314;
+params	<Attracc[col	3;
+row	314;
+attrid	107;
+symbno	0]
+ Call[col	8;
+row	316;
+params	<Call[col	64;
+row	315;
+params	<Call[col	34;
+row	315;
+params	<Name[col	25;
+row	315;
+n	"SigObstk"]
+ Call[col	34;
+row	315;
+params	<Literal[row	0;
+col	0;
+str	"\0"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+ Call[col	64;
+row	315;
+params	<Call[col	64;
+row	315;
+params	<Name[col	64;
+row	315;
+n	"SigObstk"]
+>;
+name	"obstack_finish"]
+>;
+name	"MakeName"]
+>;
+name	"ORDER"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	3;
+symbno	0]
+ Call[col	14;
+row	478;
+params	<Attracc[col	14;
+row	478;
+attrid	254;
+symbno	2]
+ Val[col	28;
+row	478;
+v	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	335;
+params	<Call[col	8;
+row	342;
+params	<Call[col	30;
+row	341;
+params	<Including[col	20;
+row	335;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	152;
+genattr	"_incl7"]
+ Call[col	30;
+row	341;
+params	<Call[col	28;
+row	340;
+params	<Name[col	9;
+row	338;
+n	"SigObstk"]
+ Call[col	21;
+row	339;
+params	<Attracc[col	21;
+row	339;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+ Call[col	28;
+row	340;
+params	<Call[col	28;
+row	340;
+params	<Attracc[col	28;
+row	340;
+attrid	99;
+symbno	1]
+>;
+name	"StringTable"]
+>;
+name	"strlen"]
+>;
+name	"obstack_grow"]
+ Call[col	30;
+row	341;
+params	<Name[col	21;
+row	341;
+n	"SigObstk"]
+ Call[col	30;
+row	341;
+params	<Literal[row	0;
+col	0;
+str	":"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+>;
+name	"ORDER"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	2]
+ Name[col	0;
+row	0;
+n	"comsigs_pre"]
+>;
+name	"$MON"]
+ Visit[ord	4;
+symbno	2]
+ Call[col	3;
+row	317;
+params	<Attracc[col	3;
+row	317;
+attrid	109;
+symbno	0]
+ Call[col	8;
+row	320;
+params	<Call[col	5;
+row	319;
+params	<Including[col	23;
+row	317;
+inclattrs	<Symbattr[attrdef	124;
+symbdef	45]
+>;
+genattrid	152;
+genattr	"_incl7"]
+ Call[col	64;
+row	318;
+params	<Call[col	34;
+row	318;
+params	<Name[col	25;
+row	318;
+n	"SigObstk"]
+ Call[col	34;
+row	318;
+params	<Literal[row	0;
+col	0;
+str	"\0"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+ Call[col	64;
+row	318;
+params	<Call[col	64;
+row	318;
+params	<Name[col	64;
+row	318;
+n	"SigObstk"]
+>;
+name	"obstack_finish"]
+>;
+name	"MakeName"]
+>;
+name	"ORDER"]
+ Val[col	5;
+row	319;
+v	0]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	0]
+ Call[col	3;
+row	344;
+params	<Call[col	8;
+row	348;
+params	<Call[col	60;
+row	347;
+params	<Call[col	27;
+row	345;
+params	<Attracc[col	13;
+row	345;
+attrid	92;
+symbno	2]
+ Val[col	27;
+row	345;
+v	0]
+>;
+name	"EQ"]
+ Call[col	60;
+row	345;
+params	<Name[col	43;
+row	345;
+n	"SigObstk"]
+ Call[col	52;
+row	345;
+params	<Literal[row	0;
+col	0;
+str	"TP_0"]
+>;
+name	"$STRING"]
+ Val[col	60;
+row	345;
+v	4]
+>;
+name	"obstack_grow"]
+ Call[col	60;
+row	347;
+params	<Call[col	27;
+row	346;
+params	<Attracc[col	13;
+row	346;
+attrid	92;
+symbno	2]
+ Val[col	27;
+row	346;
+v	1]
+>;
+name	"EQ"]
+ Call[col	60;
+row	346;
+params	<Name[col	43;
+row	346;
+n	"SigObstk"]
+ Call[col	52;
+row	346;
+params	<Literal[row	0;
+col	0;
+str	"TP_1"]
+>;
+name	"$STRING"]
+ Val[col	60;
+row	346;
+v	4]
+>;
+name	"obstack_grow"]
+ Call[col	60;
+row	347;
+params	<Call[col	27;
+row	347;
+params	<Attracc[col	13;
+row	347;
+attrid	92;
+symbno	2]
+ Val[col	27;
+row	347;
+v	2]
+>;
+name	"EQ"]
+ Call[col	60;
+row	347;
+params	<Name[col	43;
+row	347;
+n	"SigObstk"]
+ Call[col	52;
+row	347;
+params	<Literal[row	0;
+col	0;
+str	"TP_2"]
+>;
+name	"$STRING"]
+ Val[col	60;
+row	347;
+v	4]
+>;
+name	"obstack_grow"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"IF"]
+>;
+name	"$DEP"]
+ Val[col	0;
+row	0;
+v	2]
+ Name[col	0;
+row	0;
+n	"funs_pre"]
+>;
+name	"$MON"]
+ Visit[ord	5;
+symbno	2]
+ Call[col	14;
+row	479;
+params	<Attracc[col	14;
+row	479;
+attrid	258;
+symbno	2]
+ Val[col	27;
+row	479;
+v	0]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	349;
+params	<Attracc[col	3;
+row	349;
+attrid	89;
+symbno	3]
+ Call[col	8;
+row	351;
+params	<Call[col	64;
+row	350;
+params	<Call[col	34;
+row	350;
+params	<Name[col	25;
+row	350;
+n	"SigObstk"]
+ Call[col	34;
+row	350;
+params	<Literal[row	0;
+col	0;
+str	"\0"]
+>;
+name	"$CHAR"]
+>;
+name	"obstack_1grow"]
+ Call[col	64;
+row	350;
+params	<Call[col	64;
+row	350;
+params	<Name[col	64;
+row	350;
+n	"SigObstk"]
+>;
+name	"obstack_finish"]
+>;
+name	"MakeName"]
+>;
+name	"ORDER"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	322;
+params	<Attracc[col	3;
+row	322;
+attrid	106;
+symbno	0]
+ Attracc[col	20;
+row	322;
+attrid	89;
+symbno	3]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	2]
+ Call[col	3;
+row	503;
+params	<Attracc[col	3;
+row	503;
+attrid	105;
+symbno	0]
+ Call[col	44;
+row	503;
+params	<Including[col	21;
+row	503;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	189;
+genattr	"_incl0"]
+ Attracc[col	44;
+row	503;
+attrid	107;
+symbno	0]
+>;
+name	"BindIdn"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	309;
+params	<Attracc[col	3;
+row	309;
+attrid	108;
+symbno	0]
+ Call[col	37;
+row	310;
+params	<Call[col	27;
+row	310;
+params	<Attracc[col	13;
+row	310;
+attrid	100;
+symbno	1]
+ Name[col	27;
+row	310;
+n	"NoKey"]
+>;
+name	"GetType"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	504;
+params	<Attracc[col	3;
+row	504;
+attrid	104;
+symbno	0]
+ Call[col	18;
+row	504;
+params	<Attracc[col	18;
+row	504;
+attrid	105;
+symbno	0]
+>;
+name	"KeyOf"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	54;
+params	<Call[col	33;
+row	55;
+params	<Attracc[col	20;
+row	55;
+attrid	104;
+symbno	0]
+ Val[col	30;
+row	55;
+v	1]
+ Val[col	33;
+row	55;
+v	0]
+>;
+name	"SetUnique"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"_GotUnique"]
+>;
+name	"$MON"]
+ Call[col	70;
+row	312;
+params	<Call[col	24;
+row	311;
+params	<Attracc[col	9;
+row	311;
+attrid	108;
+symbno	0]
+ Name[col	24;
+row	311;
+n	"NoKey"]
+>;
+name	"EQ"]
+ Call[col	70;
+row	312;
+params	<Name[col	13;
+row	312;
+n	"ERROR"]
+ Call[col	53;
+row	312;
+params	<Call[col	29;
+row	312;
+params	<Literal[row	0;
+col	0;
+str	"No type declared for "]
+>;
+name	"$STRING"]
+ Attracc[col	53;
+row	312;
+attrid	99;
+symbno	1]
+>;
+name	"CatStrInd"]
+ Val[col	68;
+row	312;
+v	0]
+ Call[col	70;
+row	312;
+params	<Attracc[col	70;
+row	312;
+attrid	424;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	5;
+symbno	0]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	324;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	323;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	316;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	315;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	308;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	307;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	300;
+symbno	2]
+ Attracc[col	0;
+row	0;
+attrid	299;
+symbno	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	7;
+symbno	2]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	328;
+symbno	3]
+ Attracc[col	0;
+row	0;
+attrid	325;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	320;
+symbno	3]
+ Attracc[col	0;
+row	0;
+attrid	317;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	312;
+symbno	3]
+ Attracc[col	0;
+row	0;
+attrid	309;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	304;
+symbno	3]
+ Attracc[col	0;
+row	0;
+attrid	301;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	352;
+params	<Attracc[col	3;
+row	352;
+attrid	88;
+symbno	3]
+ Attracc[col	20;
+row	352;
+attrid	92;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	3]
+ Call[col	3;
+row	57;
+params	<Attracc[col	3;
+row	57;
+attrid	103;
+symbno	0]
+ Call[col	20;
+row	59;
+params	<Call[col	30;
+row	58;
+params	<Attracc[col	20;
+row	58;
+attrid	104;
+symbno	0]
+ Val[col	30;
+row	58;
+v	0]
+>;
+name	"GetUnique"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	48;
+row	506;
+params	<Call[col	10;
+row	505;
+params	<Attracc[col	10;
+row	505;
+attrid	103;
+symbno	0]
+>;
+name	"NOT"]
+ Call[col	48;
+row	506;
+params	<Name[col	13;
+row	506;
+n	"ERROR"]
+ Call[col	19;
+row	506;
+params	<Literal[row	0;
+col	0;
+str	"Multiply-defined pattern"]
+>;
+name	"$STRING"]
+ Val[col	46;
+row	506;
+v	0]
+ Call[col	48;
+row	506;
+params	<Attracc[col	48;
+row	506;
+attrid	424;
+symbno	0]
+>;
+name	"$ADR"]
+>;
+name	"message"]
+>;
+name	"IF"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	70]
+ Attribution[attrrules	<Call[col	13;
+row	584;
+params	<Attracc[col	13;
+row	584;
+attrid	425;
+symbno	0]
+ Call[col	13;
+row	584;
+params	<Val[col	13;
+row	584;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	3;
+symbno	0]
+ Call[col	3;
+row	583;
+params	<Attracc[col	3;
+row	583;
+attrid	124;
+symbno	0]
+ Val[col	27;
+row	583;
+v	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	1]
+ Visit[ord	4;
+symbno	0]
+ Call[col	14;
+row	723;
+params	<Attracc[col	14;
+row	723;
+attrid	364;
+symbno	1]
+ Name[col	31;
+row	723;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	722;
+params	<Attracc[col	14;
+row	722;
+attrid	358;
+symbno	1]
+ Name[col	31;
+row	722;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	1]
+ Call[col	3;
+row	271;
+params	<Attracc[col	3;
+row	271;
+attrid	223;
+symbno	0]
+ Call[col	35;
+row	271;
+params	<Attracc[col	21;
+row	271;
+attrid	222;
+symbno	0]
+ Val[col	35;
+row	271;
+v	2]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	144;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	584;
+params	<Attracc[col	3;
+row	584;
+attrid	143;
+symbno	0]
+ Call[col	13;
+row	584;
+params	<Attracc[col	13;
+row	584;
+attrid	425;
+symbno	0]
+>;
+name	"PTGId"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	724;
+params	<Call[col	42;
+row	729;
+params	<Attracc[col	7;
+row	726;
+attrid	108;
+symbno	1]
+ Call[col	42;
+row	729;
+params	<Call[col	35;
+row	728;
+params	<Attracc[col	17;
+row	728;
+attrid	222;
+symbno	0]
+ Attracc[col	31;
+row	728;
+attrid	143;
+symbno	0]
+ Attracc[col	35;
+row	728;
+attrid	359;
+symbno	1]
+>;
+name	"PTGCase"]
+ Call[col	42;
+row	729;
+params	<Call[col	35;
+row	729;
+params	<Attracc[col	21;
+row	729;
+attrid	222;
+symbno	0]
+ Val[col	35;
+row	729;
+v	1]
+>;
+name	"ADD"]
+ Attracc[col	38;
+row	729;
+attrid	143;
+symbno	0]
+ Attracc[col	42;
+row	729;
+attrid	365;
+symbno	1]
+>;
+name	"PTGCase"]
+>;
+name	"PTGSeq"]
+>;
+name	"UpdateCases"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotCase"]
+>;
+name	"$MON"]
+ Visit[ord	5;
+symbno	0]
+ Visit[ord	6;
+symbno	1]
+ Call[col	3;
+row	585;
+params	<Attracc[col	3;
+row	585;
+attrid	123;
+symbno	0]
+ Call[col	72;
+row	587;
+params	<Call[col	62;
+row	586;
+params	<Call[col	22;
+row	586;
+params	<Attracc[col	22;
+row	586;
+attrid	107;
+symbno	1]
+>;
+name	"PTGId"]
+ Attracc[col	37;
+row	586;
+attrid	222;
+symbno	0]
+ Attracc[col	51;
+row	586;
+attrid	101;
+symbno	2]
+ Attracc[col	62;
+row	586;
+attrid	143;
+symbno	0]
+>;
+name	"PTGPattern"]
+ Call[col	72;
+row	587;
+params	<Call[col	22;
+row	587;
+params	<Attracc[col	22;
+row	587;
+attrid	109;
+symbno	1]
+>;
+name	"PTGId"]
+ Call[col	58;
+row	587;
+params	<Attracc[col	44;
+row	587;
+attrid	222;
+symbno	0]
+ Val[col	58;
+row	587;
+v	1]
+>;
+name	"ADD"]
+ Attracc[col	61;
+row	587;
+attrid	101;
+symbno	2]
+ Attracc[col	72;
+row	587;
+attrid	143;
+symbno	0]
+>;
+name	"PTGPattern"]
+>;
+name	"PTGSeq"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	71]
+ Attribution[attrrules	<Call[col	13;
+row	576;
+params	<Attracc[col	13;
+row	576;
+attrid	426;
+symbno	0]
+ Call[col	13;
+row	576;
+params	<Val[col	13;
+row	576;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	2]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	3;
+symbno	0]
+ Call[col	3;
+row	575;
+params	<Attracc[col	3;
+row	575;
+attrid	124;
+symbno	0]
+ Val[col	27;
+row	575;
+v	0]
+>;
+name	"$ASSIGN"]
+ Visit[ord	4;
+symbno	1]
+ Visit[ord	4;
+symbno	0]
+ Call[col	14;
+row	715;
+params	<Attracc[col	14;
+row	715;
+attrid	364;
+symbno	1]
+ Name[col	31;
+row	715;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	714;
+params	<Attracc[col	14;
+row	714;
+attrid	358;
+symbno	1]
+ Name[col	31;
+row	714;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	1]
+ Call[col	3;
+row	266;
+params	<Attracc[col	3;
+row	266;
+attrid	223;
+symbno	0]
+ Call[col	35;
+row	266;
+params	<Attracc[col	21;
+row	266;
+attrid	222;
+symbno	0]
+ Val[col	35;
+row	266;
+v	1]
+>;
+name	"ADD"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	576;
+params	<Attracc[col	3;
+row	576;
+attrid	144;
+symbno	0]
+ Call[col	13;
+row	576;
+params	<Attracc[col	13;
+row	576;
+attrid	426;
+symbno	0]
+>;
+name	"PTGId"]
+>;
+name	"$ASSIGN"]
+ Call[col	0;
+row	0;
+params	<Attracc[col	0;
+row	0;
+attrid	143;
+symbno	0]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"VOID"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	716;
+params	<Call[col	58;
+row	717;
+params	<Attracc[col	17;
+row	717;
+attrid	108;
+symbno	1]
+ Call[col	58;
+row	717;
+params	<Attracc[col	40;
+row	717;
+attrid	222;
+symbno	0]
+ Attracc[col	54;
+row	717;
+attrid	144;
+symbno	0]
+ Attracc[col	58;
+row	717;
+attrid	359;
+symbno	1]
+>;
+name	"PTGCase"]
+>;
+name	"UpdateCases"]
+ Val[col	0;
+row	0;
+v	0]
+ Name[col	0;
+row	0;
+n	"GotCase"]
+>;
+name	"$MON"]
+ Visit[ord	5;
+symbno	0]
+ Visit[ord	6;
+symbno	1]
+ Call[col	3;
+row	577;
+params	<Attracc[col	3;
+row	577;
+attrid	123;
+symbno	0]
+ Call[col	62;
+row	578;
+params	<Call[col	22;
+row	578;
+params	<Attracc[col	22;
+row	578;
+attrid	107;
+symbno	1]
+>;
+name	"PTGId"]
+ Attracc[col	37;
+row	578;
+attrid	222;
+symbno	0]
+ Attracc[col	51;
+row	578;
+attrid	101;
+symbno	2]
+ Attracc[col	62;
+row	578;
+attrid	144;
+symbno	0]
+>;
+name	"PTGPattern"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	6;
+symbno	0]
+>;
+prodid	72]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	73]
+ Attribution[attrrules	<Visit[ord	1;
+symbno	2]
+ Call[col	3;
+row	229;
+params	<Attracc[col	3;
+row	229;
+attrid	125;
+symbno	0]
+ Attracc[col	20;
+row	229;
+attrid	121;
+symbno	2]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	1;
+symbno	0]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	2;
+symbno	2]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	74]
+ Attribution[attrrules	<Call[col	22;
+row	500;
+params	<Attracc[col	22;
+row	500;
+attrid	128;
+symbno	0]
+ Call[col	31;
+row	500;
+params	<Val[col	31;
+row	500;
+v	1]
+>;
+name	"$TERM"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	131;
+params	<Attracc[col	3;
+row	131;
+attrid	126;
+symbno	0]
+ Call[col	42;
+row	132;
+params	<Including[col	18;
+row	132;
+inclattrs	<Symbattr[attrdef	136;
+symbdef	48]
+>;
+genattrid	192;
+genattr	"_incl0"]
+ Attracc[col	42;
+row	132;
+attrid	128;
+symbno	0]
+>;
+name	"BindIdn"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	133;
+params	<Attracc[col	3;
+row	133;
+attrid	127;
+symbno	0]
+ Call[col	21;
+row	133;
+params	<Attracc[col	21;
+row	133;
+attrid	126;
+symbno	0]
+>;
+name	"KeyOf"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	0]
+ Call[col	3;
+row	80;
+params	<Attracc[col	3;
+row	80;
+attrid	129;
+symbno	0]
+ Call[col	20;
+row	82;
+params	<Call[col	38;
+row	81;
+params	<Attracc[col	25;
+row	81;
+attrid	127;
+symbno	0]
+ Val[col	35;
+row	81;
+v	1]
+ Val[col	38;
+row	81;
+v	0]
+>;
+name	"SetGetFirstOcc"]
+>;
+name	"$DEP"]
+>;
+name	"$ASSIGN"]
+ Call[col	3;
+row	540;
+params	<Attracc[col	3;
+row	540;
+attrid	265;
+symbno	0]
+ Call[col	7;
+row	543;
+params	<Attracc[col	8;
+row	541;
+attrid	129;
+symbno	0]
+ Call[col	45;
+row	542;
+params	<Attracc[col	14;
+row	542;
+attrid	264;
+symbno	0]
+ Call[col	45;
+row	542;
+params	<Call[col	45;
+row	542;
+params	<Attracc[col	45;
+row	542;
+attrid	128;
+symbno	0]
+>;
+name	"PTGId"]
+>;
+name	"PTGInclude"]
+>;
+name	"PTGSeq"]
+ Attracc[col	7;
+row	543;
+attrid	264;
+symbno	0]
+>;
+name	"IF"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	2;
+symbno	0]
+>;
+prodid	75]
+ Attribution[attrrules	<Call[col	3;
+row	96;
+params	<Attracc[col	3;
+row	96;
+attrid	136;
+symbno	0]
+ Name[col	14;
+row	96;
+n	"RootEnv"]
+>;
+name	"$ASSIGN"]
+ Visit[ord	1;
+symbno	1]
+ Visit[ord	2;
+symbno	1]
+ Visit[ord	3;
+symbno	1]
+ Visit[ord	4;
+symbno	1]
+ Call[col	14;
+row	261;
+params	<Attracc[col	14;
+row	261;
+attrid	220;
+symbno	1]
+ Val[col	25;
+row	261;
+v	1]
+>;
+name	"$ASSIGN"]
+ Visit[ord	5;
+symbno	1]
+ Call[col	14;
+row	519;
+params	<Attracc[col	14;
+row	519;
+attrid	370;
+symbno	1]
+ Name[col	30;
+row	519;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	518;
+params	<Attracc[col	14;
+row	518;
+attrid	352;
+symbno	1]
+ Name[col	28;
+row	518;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	517;
+params	<Attracc[col	14;
+row	517;
+attrid	346;
+symbno	1]
+ Name[col	28;
+row	517;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	521;
+params	<Attracc[col	14;
+row	521;
+attrid	330;
+symbno	1]
+ Name[col	27;
+row	521;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	516;
+params	<Attracc[col	14;
+row	516;
+attrid	290;
+symbno	1]
+ Name[col	28;
+row	516;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	520;
+params	<Attracc[col	14;
+row	520;
+attrid	278;
+symbno	1]
+ Name[col	26;
+row	520;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	515;
+params	<Attracc[col	14;
+row	515;
+attrid	266;
+symbno	1]
+ Name[col	29;
+row	515;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	514;
+params	<Attracc[col	14;
+row	514;
+attrid	262;
+symbno	1]
+ Name[col	28;
+row	514;
+n	"PTGNULL"]
+>;
+name	"$ASSIGN"]
+ Call[col	14;
+row	75;
+params	<Call[col	31;
+row	75;
+params	<Literal[row	0;
+col	0;
+str	"yes"]
+>;
+name	"$STRING"]
+ Val[col	0;
+row	0;
+v	1]
+ Name[col	0;
+row	0;
+n	"_FirstOcc_pre"]
+>;
+name	"$MON"]
+ Visit[ord	6;
+symbno	1]
+ Call[col	7;
+row	536;
+params	<Call[col	5;
+row	532;
+params	<Literal[row	0;
+col	0;
+str	"tp_gen.h"]
+>;
+name	"$STRING"]
+ Call[col	7;
+row	536;
+params	<Attracc[col	7;
+row	534;
+attrid	263;
+symbno	1]
+ Attracc[col	7;
+row	535;
+attrid	279;
+symbno	1]
+ Attracc[col	7;
+row	536;
+attrid	331;
+symbno	1]
+>;
+name	"PTGHeader"]
+>;
+name	"PTGOutFile"]
+ Call[col	7;
+row	530;
+params	<Call[col	5;
+row	523;
+params	<Literal[row	0;
+col	0;
+str	"tp_gen.burg"]
+>;
+name	"$STRING"]
+ Call[col	7;
+row	530;
+params	<Attracc[col	7;
+row	525;
+attrid	267;
+symbno	1]
+ Attracc[col	0;
+row	0;
+attrid	401;
+symbno	1]
+ Attracc[col	7;
+row	527;
+attrid	291;
+symbno	1]
+ Attracc[col	7;
+row	528;
+attrid	347;
+symbno	1]
+ Attracc[col	7;
+row	529;
+attrid	353;
+symbno	1]
+ Attracc[col	7;
+row	530;
+attrid	371;
+symbno	1]
+>;
+name	"PTGBurg"]
+>;
+name	"PTGOutFile"]
+ Visit[ord	1;
+symbno	0]
+>;
+prodid	76]
+>;
+defseq	<Typedef[did	1;
+dname	"VOID";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	2;
+dname	"$VOID_LIST";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	3;
+dname	"int";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	4;
+dname	"$BOOL";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	5;
+dname	"$SYMB";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	6;
+dname	"POSITION";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	7;
+dname	"NODEPTR";
+row	0;
+col	0;
+listedto	0;
+extname	""]
+ Typedef[did	8;
+dname	"PTGNode";
+row	510;
+col	17;
+listedto	0;
+extname	""]
+ Typedef[did	9;
+dname	"Binding";
+row	126;
+col	17;
+listedto	0;
+extname	""]
+ Typedef[did	10;
+dname	"Environment";
+row	91;
+col	17;
+listedto	0;
+extname	""]
+ Typedef[did	11;
+dname	"DefTableKey";
+row	12;
+col	25;
+listedto	0;
+extname	""]
+ Typedef[did	49;
+dname	"Integer";
+row	201;
+col	33;
+listedto	0;
+extname	"$TERM"]
+ Typedef[did	50;
+dname	"Identifier";
+row	191;
+col	41;
+listedto	0;
+extname	"$TERM"]
+ Typedef[did	51;
+dname	"String";
+row	188;
+col	26;
+listedto	0;
+extname	"$TERM"]
+ Symb[did	33;
+dname	"LST_Source";
+row	187;
+col	1;
+attrs	<Attrdef[globname	"LST_Source__const6";
+part	6;
+gen	2;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	7;
+row	526;
+name	"_const6";
+did	401]
+ Attrdef[globname	"DeclarationTransforms_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Transforms_post";
+did	371]
+ Attrdef[globname	"DeclarationTransforms_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Transforms_pre";
+did	370]
+ Attrdef[globname	"DeclarationReducers_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Reducers_post";
+did	353]
+ Attrdef[globname	"DeclarationReducers_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Reducers_pre";
+did	352]
+ Attrdef[globname	"DeclarationForwards_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Forwards_post";
+did	347]
+ Attrdef[globname	"DeclarationForwards_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Forwards_pre";
+did	346]
+ Attrdef[globname	"DeclarationExterns_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Externs_post";
+did	331]
+ Attrdef[globname	"DeclarationExterns_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Externs_pre";
+did	330]
+ Attrdef[globname	"PatternBuilders_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Builders_post";
+did	291]
+ Attrdef[globname	"PatternBuilders_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Builders_pre";
+did	290]
+ Attrdef[globname	"PatternMacros_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Macros_post";
+did	279]
+ Attrdef[globname	"PatternMacros_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Macros_pre";
+did	278]
+ Attrdef[globname	"PatternTermcodes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Termcodes_post";
+did	267]
+ Attrdef[globname	"PatternTermcodes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Termcodes_pre";
+did	266]
+ Attrdef[globname	"IncludeIncludes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	187;
+name	"Includes_post";
+did	263]
+ Attrdef[globname	"IncludeIncludes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	187;
+name	"Includes_pre";
+did	262]
+ Attrdef[globname	"Patternindex_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	1;
+row	187;
+name	"index_post";
+did	221]
+ Attrdef[globname	"";
+part	5;
+gen	3;
+store	2;
+prodid	0;
+class	1;
+typeid	3;
+col	1;
+row	187;
+name	"index_pre";
+did	220]
+>;
+tornt	0]
+ Symb[did	34;
+dname	"LST_Nonterms";
+row	190;
+col	1;
+attrs	<Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	190;
+name	"Transforms_post";
+did	375]
+ Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	190;
+name	"Transforms_pre";
+did	374]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	1;
+row	190;
+name	"Externs_post";
+did	341]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	1;
+row	190;
+name	"Externs_pre";
+did	340]
+>;
+tornt	0]
+ Symb[did	35;
+dname	"Children";
+row	196;
+col	39;
+attrs	<Attrdef[globname	"Children__const0";
+part	4;
+gen	2;
+store	1;
+prodid	0;
+class	0;
+typeid	3;
+col	5;
+row	297;
+name	"_const0";
+did	422]
+ Attrdef[globname	"";
+part	2;
+gen	2;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	5;
+row	416;
+name	"_const1";
+did	421]
+ Attrdef[globname	"Childrenrevers_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"revers_post";
+did	369]
+ Attrdef[globname	"Childrenrevers_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"revers_pre";
+did	368]
+ Attrdef[globname	"Childrenleaves_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"leaves_post";
+did	363]
+ Attrdef[globname	"Childrenleaves_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"leaves_pre";
+did	362]
+ Attrdef[globname	"FunctionFieldSets_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"FieldSets_post";
+did	327]
+ Attrdef[globname	"FunctionFieldSets_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"FieldSets_pre";
+did	326]
+ Attrdef[globname	"FunctionArgNames_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"ArgNames_post";
+did	319]
+ Attrdef[globname	"FunctionArgNames_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"ArgNames_pre";
+did	318]
+ Attrdef[globname	"FunctionArgDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"ArgDecls_post";
+did	311]
+ Attrdef[globname	"FunctionArgDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"ArgDecls_pre";
+did	310]
+ Attrdef[globname	"FunctionFieldDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"FieldDecls_post";
+did	303]
+ Attrdef[globname	"FunctionFieldDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"FieldDecls_pre";
+did	302]
+ Attrdef[globname	"PatternMacros_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"Macros_post";
+did	285]
+ Attrdef[globname	"PatternMacros_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"Macros_pre";
+did	284]
+ Attrdef[globname	"PatternTermcodes_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	196;
+name	"Termcodes_post";
+did	273]
+ Attrdef[globname	"PatternTermcodes_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	196;
+name	"Termcodes_pre";
+did	272]
+ Attrdef[globname	"Childrentindex_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	39;
+row	196;
+name	"tindex_post";
+did	261]
+ Attrdef[globname	"Childrentindex_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	3;
+col	39;
+row	196;
+name	"tindex_pre";
+did	260]
+ Attrdef[globname	"Children_ntindex_post";
+part	4;
+gen	3;
+store	1;
+prodid	0;
+class	0;
+typeid	3;
+col	39;
+row	196;
+name	"ntindex_post";
+did	257]
+ Attrdef[globname	"Childrenntindex_pre";
+part	4;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	3;
+col	39;
+row	196;
+name	"ntindex_pre";
+did	256]
+ Attrdef[globname	"Children_RightSym";
+part	4;
+gen	0;
+store	1;
+prodid	0;
+class	1;
+typeid	3;
+col	469;
+row	37;
+name	"RightSym";
+did	77]
+ Attrdef[globname	"Children_LeftSym";
+part	4;
+gen	0;
+store	1;
+prodid	0;
+class	0;
+typeid	3;
+col	463;
+row	12;
+name	"LeftSym";
+did	78]
+>;
+tornt	0]
+ Symb[did	36;
+dname	"Terminal";
+row	195;
+col	26;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	60;
+class	0;
+typeid	6;
+col	42;
+row	211;
+name	"_pos";
+did	423]
+ Attrdef[globname	"PatternMacros_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	195;
+name	"Macros_post";
+did	281]
+ Attrdef[globname	"PatternMacros_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	195;
+name	"Macros_pre";
+did	280]
+ Attrdef[globname	"PatternTermcodes_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	195;
+name	"Termcodes_post";
+did	269]
+ Attrdef[globname	"PatternTermcodes_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	195;
+name	"Termcodes_pre";
+did	268]
+ Attrdef[globname	"Terminal_Bind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	9;
+col	195;
+row	26;
+name	"Bind";
+did	79]
+ Attrdef[globname	"Terminal_IsFirstOcc";
+part	2;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	558;
+row	13;
+name	"IsFirstOcc";
+did	81]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	561;
+row	29;
+name	"Sym";
+did	82]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	561;
+row	53;
+name	"Key";
+did	84]
+ Attrdef[globname	"Terminal_Kind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	209;
+row	8;
+name	"Kind";
+did	85]
+>;
+tornt	0]
+ Symb[did	37;
+dname	"Function";
+row	193;
+col	48;
+attrs	<Attrdef[globname	"DeclarationExterns_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	48;
+row	193;
+name	"Externs_post";
+did	333]
+ Attrdef[globname	"DeclarationExterns_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	48;
+row	193;
+name	"Externs_pre";
+did	332]
+ Attrdef[globname	"FunctionFieldSets_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	48;
+row	193;
+name	"FieldSets_post";
+did	329]
+ Attrdef[globname	"FunctionFieldSets_pre";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	48;
+row	193;
+name	"FieldSets_pre";
+did	328]
+ Attrdef[globname	"FunctionArgNames_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	48;
+row	193;
+name	"ArgNames_post";
+did	321]
+ Attrdef[globname	"FunctionArgNames_pre";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	48;
+row	193;
+name	"ArgNames_pre";
+did	320]
+ Attrdef[globname	"FunctionArgDecls_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	48;
+row	193;
+name	"ArgDecls_post";
+did	313]
+ Attrdef[globname	"FunctionArgDecls_pre";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	48;
+row	193;
+name	"ArgDecls_pre";
+did	312]
+ Attrdef[globname	"FunctionFieldDecls_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	48;
+row	193;
+name	"FieldDecls_post";
+did	305]
+ Attrdef[globname	"FunctionFieldDecls_pre";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	48;
+row	193;
+name	"FieldDecls_pre";
+did	304]
+ Attrdef[globname	"PatternBuilders_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	48;
+row	193;
+name	"Builders_post";
+did	293]
+ Attrdef[globname	"PatternBuilders_post";
+part	1;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	48;
+row	193;
+name	"Builders_pre";
+did	292]
+ Attrdef[globname	"Function_IsFirstOcc";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	642;
+row	13;
+name	"IsFirstOcc";
+did	86]
+ Attrdef[globname	"Function_Key";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	11;
+col	357;
+row	12;
+name	"Key";
+did	87]
+ Attrdef[globname	"Function_ntcount";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	1;
+typeid	3;
+col	647;
+row	20;
+name	"ntcount";
+did	88]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	1;
+typeid	3;
+col	647;
+row	53;
+name	"Sym";
+did	89]
+>;
+tornt	0]
+ Symb[did	38;
+dname	"Child";
+row	193;
+col	42;
+attrs	<Attrdef[globname	"Childrenrevers_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"revers_post";
+did	367]
+ Attrdef[globname	"Childrenrevers_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"revers_pre";
+did	366]
+ Attrdef[globname	"Childrenleaves_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"leaves_post";
+did	361]
+ Attrdef[globname	"Childrenleaves_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"leaves_pre";
+did	360]
+ Attrdef[globname	"FunctionFieldSets_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"FieldSets_post";
+did	325]
+ Attrdef[globname	"FunctionFieldSets_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"FieldSets_pre";
+did	324]
+ Attrdef[globname	"FunctionArgNames_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"ArgNames_post";
+did	317]
+ Attrdef[globname	"FunctionArgNames_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"ArgNames_pre";
+did	316]
+ Attrdef[globname	"FunctionArgDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"ArgDecls_post";
+did	309]
+ Attrdef[globname	"FunctionArgDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"ArgDecls_pre";
+did	308]
+ Attrdef[globname	"FunctionFieldDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"FieldDecls_post";
+did	301]
+ Attrdef[globname	"FunctionFieldDecls_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"FieldDecls_pre";
+did	300]
+ Attrdef[globname	"PatternMacros_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"Macros_post";
+did	283]
+ Attrdef[globname	"PatternMacros_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"Macros_pre";
+did	282]
+ Attrdef[globname	"PatternTermcodes_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	42;
+row	193;
+name	"Termcodes_post";
+did	271]
+ Attrdef[globname	"PatternTermcodes_post";
+part	7;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	42;
+row	193;
+name	"Termcodes_pre";
+did	270]
+ Attrdef[globname	"Childrentindex_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	42;
+row	193;
+name	"tindex_post";
+did	259]
+ Attrdef[globname	"";
+part	6;
+gen	3;
+store	2;
+prodid	0;
+class	1;
+typeid	3;
+col	42;
+row	193;
+name	"tindex_pre";
+did	258]
+ Attrdef[globname	"Childrenntindex_pre";
+part	4;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	42;
+row	193;
+name	"ntindex_post";
+did	255]
+ Attrdef[globname	"";
+part	4;
+gen	3;
+store	2;
+prodid	0;
+class	1;
+typeid	3;
+col	42;
+row	193;
+name	"ntindex_pre";
+did	254]
+ Attrdef[globname	"Child_type_RuleAttr_69";
+part	6;
+gen	0;
+store	0;
+prodid	69;
+class	0;
+typeid	11;
+col	750;
+row	44;
+name	"type_RuleAttr_69";
+did	142]
+ Attrdef[globname	"";
+part	3;
+gen	0;
+store	2;
+prodid	67;
+class	0;
+typeid	3;
+col	436;
+row	9;
+name	"HasNt_RuleAttr_67";
+did	141]
+ Attrdef[globname	"Child_Ptg";
+part	7;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	599;
+row	8;
+name	"Ptg";
+did	90]
+ Attrdef[globname	"";
+part	3;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	463;
+row	28;
+name	"Sym";
+did	91]
+ Attrdef[globname	"";
+part	4;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	438;
+row	48;
+name	"ntcount";
+did	92]
+ Attrdef[globname	"";
+part	2;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	748;
+row	16;
+name	"IsNt";
+did	93]
+>;
+tornt	0]
+ Symb[did	39;
+dname	"SymbolUse";
+row	193;
+col	26;
+attrs	<Attrdef[globname	"";
+part	2;
+gen	3;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	193;
+name	"FieldSets_post";
+did	323]
+ Attrdef[globname	"FunctionFieldSets_pre";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	193;
+name	"FieldSets_pre";
+did	322]
+ Attrdef[globname	"";
+part	2;
+gen	3;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	193;
+name	"ArgNames_post";
+did	315]
+ Attrdef[globname	"FunctionArgNames_pre";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	193;
+name	"ArgNames_pre";
+did	314]
+ Attrdef[globname	"";
+part	2;
+gen	3;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	193;
+name	"ArgDecls_post";
+did	307]
+ Attrdef[globname	"FunctionArgDecls_pre";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	193;
+name	"ArgDecls_pre";
+did	306]
+ Attrdef[globname	"";
+part	2;
+gen	3;
+store	2;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	193;
+name	"FieldDecls_post";
+did	299]
+ Attrdef[globname	"FunctionFieldDecls_pre";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	193;
+name	"FieldDecls_pre";
+did	298]
+ Attrdef[globname	"SymbolUse_Bind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	9;
+col	193;
+row	26;
+name	"Bind";
+did	96]
+ Attrdef[globname	"SymbolUse_typeSym";
+part	2;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	668;
+row	30;
+name	"typeSym";
+did	97]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	593;
+row	21;
+name	"HasKind";
+did	98]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	653;
+row	27;
+name	"Sym";
+did	99]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	734;
+row	27;
+name	"Key";
+did	100]
+>;
+tornt	0]
+ Symb[did	40;
+dname	"Cost";
+row	191;
+col	52;
+attrs	<Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	587;
+row	66;
+name	"value";
+did	101]
+>;
+tornt	0]
+ Symb[did	41;
+dname	"Signature";
+row	191;
+col	26;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	70;
+class	0;
+typeid	6;
+col	70;
+row	312;
+name	"_pos";
+did	424]
+ Attrdef[globname	"Childrenrevers_post";
+part	5;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	191;
+name	"revers_post";
+did	365]
+ Attrdef[globname	"Childrenrevers_post";
+part	5;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	191;
+name	"revers_pre";
+did	364]
+ Attrdef[globname	"Childrenleaves_post";
+part	5;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	191;
+name	"leaves_post";
+did	359]
+ Attrdef[globname	"Childrenleaves_post";
+part	5;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	191;
+name	"leaves_pre";
+did	358]
+ Attrdef[globname	"DeclarationExterns_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	191;
+name	"Externs_post";
+did	335]
+ Attrdef[globname	"DeclarationExterns_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	191;
+name	"Externs_pre";
+did	334]
+ Attrdef[globname	"PatternBuilders_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	191;
+name	"Builders_post";
+did	295]
+ Attrdef[globname	"PatternBuilders_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	191;
+name	"Builders_pre";
+did	294]
+ Attrdef[globname	"PatternMacros_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	191;
+name	"Macros_post";
+did	287]
+ Attrdef[globname	"PatternMacros_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	191;
+name	"Macros_pre";
+did	286]
+ Attrdef[globname	"PatternTermcodes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	191;
+name	"Termcodes_post";
+did	275]
+ Attrdef[globname	"PatternTermcodes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	191;
+name	"Termcodes_pre";
+did	274]
+ Attrdef[globname	"Signature_Unique";
+part	6;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	505;
+row	15;
+name	"Unique";
+did	103]
+ Attrdef[globname	"";
+part	5;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	504;
+row	8;
+name	"Key";
+did	104]
+ Attrdef[globname	"Signature_Bind";
+part	5;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	9;
+col	504;
+row	23;
+name	"Bind";
+did	105]
+ Attrdef[globname	"";
+part	5;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	753;
+row	37;
+name	"struct";
+did	106]
+ Attrdef[globname	"";
+part	3;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	586;
+row	32;
+name	"Sym";
+did	107]
+ Attrdef[globname	"Signature_type";
+part	5;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	11;
+col	726;
+row	17;
+name	"type";
+did	108]
+ Attrdef[globname	"";
+part	4;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	587;
+row	32;
+name	"ComSym";
+did	109]
+>;
+tornt	0]
+ Symb[did	42;
+dname	"SymbolDef";
+row	190;
+col	26;
+attrs	<Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	190;
+name	"Transforms_post";
+did	373]
+ Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	190;
+name	"Transforms_pre";
+did	372]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	190;
+name	"Externs_post";
+did	339]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	190;
+name	"Externs_pre";
+did	338]
+ Attrdef[globname	"SymbolDef_Bind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	9;
+col	190;
+row	26;
+name	"Bind";
+did	110]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	771;
+row	20;
+name	"Sym";
+did	112]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	772;
+row	27;
+name	"type";
+did	113]
+ Attrdef[globname	"SymbolDef_Key";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	11;
+col	234;
+row	31;
+name	"Key";
+did	114]
+ Attrdef[globname	"SymbolDef_Kind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	233;
+row	8;
+name	"Kind";
+did	115]
+>;
+tornt	0]
+ Symb[did	43;
+dname	"Type";
+row	189;
+col	39;
+attrs	<Attrdef[globname	"DeclarationReducers_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	189;
+name	"Reducers_post";
+did	355]
+ Attrdef[globname	"DeclarationReducers_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	189;
+name	"Reducers_pre";
+did	354]
+ Attrdef[globname	"DeclarationForwards_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	39;
+row	189;
+name	"Forwards_post";
+did	349]
+ Attrdef[globname	"DeclarationForwards_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	39;
+row	189;
+name	"Forwards_pre";
+did	348]
+ Attrdef[globname	"Type_Bind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	9;
+col	189;
+row	39;
+name	"Bind";
+did	117]
+ Attrdef[globname	"Type_IsFirstOcc";
+part	2;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	701;
+row	13;
+name	"IsFirstOcc";
+did	118]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	708;
+row	16;
+name	"Sym";
+did	119]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	707;
+row	25;
+name	"Key";
+did	121]
+>;
+tornt	0]
+ Symb[did	44;
+dname	"Nonterms";
+row	189;
+col	26;
+attrs	<Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	189;
+name	"Transforms_post";
+did	377]
+ Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	189;
+name	"Transforms_pre";
+did	376]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	189;
+name	"Externs_post";
+did	343]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	189;
+name	"Externs_pre";
+did	342]
+>;
+tornt	0]
+ Symb[did	45;
+dname	"Pattern";
+row	187;
+col	50;
+attrs	<Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	72;
+class	0;
+typeid	3;
+col	13;
+row	576;
+name	"TERM_1";
+did	426]
+ Attrdef[globname	"";
+part	0;
+gen	4;
+store	2;
+prodid	71;
+class	0;
+typeid	3;
+col	13;
+row	584;
+name	"TERM_1";
+did	425]
+ Attrdef[globname	"DeclarationExterns_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	50;
+row	187;
+name	"Externs_post";
+did	337]
+ Attrdef[globname	"DeclarationExterns_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	50;
+row	187;
+name	"Externs_pre";
+did	336]
+ Attrdef[globname	"PatternBuilders_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	50;
+row	187;
+name	"Builders_post";
+did	297]
+ Attrdef[globname	"PatternBuilders_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	50;
+row	187;
+name	"Builders_pre";
+did	296]
+ Attrdef[globname	"PatternMacros_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	50;
+row	187;
+name	"Macros_post";
+did	289]
+ Attrdef[globname	"PatternMacros_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	50;
+row	187;
+name	"Macros_pre";
+did	288]
+ Attrdef[globname	"PatternTermcodes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	50;
+row	187;
+name	"Termcodes_post";
+did	277]
+ Attrdef[globname	"PatternTermcodes_post";
+part	6;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	50;
+row	187;
+name	"Termcodes_pre";
+did	276]
+ Attrdef[globname	"Patternindex_post";
+part	5;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	50;
+row	187;
+name	"index_post";
+did	223]
+ Attrdef[globname	"";
+part	5;
+gen	3;
+store	2;
+prodid	0;
+class	1;
+typeid	3;
+col	50;
+row	187;
+name	"index_pre";
+did	222]
+ Attrdef[globname	"";
+part	5;
+gen	0;
+store	2;
+prodid	72;
+class	0;
+typeid	8;
+col	717;
+row	55;
+name	"id_RuleAttr_72";
+did	144]
+ Attrdef[globname	"";
+part	5;
+gen	0;
+store	2;
+prodid	71;
+class	0;
+typeid	8;
+col	729;
+row	39;
+name	"id_RuleAttr_71";
+did	143]
+ Attrdef[globname	"Pattern_Ptg";
+part	6;
+gen	0;
+store	1;
+prodid	0;
+class	0;
+typeid	8;
+col	585;
+row	11;
+name	"Ptg";
+did	123]
+ Attrdef[globname	"";
+part	4;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	583;
+row	11;
+name	"IsCommutative";
+did	124]
+>;
+tornt	0]
+ Symb[did	46;
+dname	"Declaration";
+row	187;
+col	36;
+attrs	<Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	36;
+row	187;
+name	"Transforms_post";
+did	379]
+ Attrdef[globname	"DeclarationTransforms_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	36;
+row	187;
+name	"Transforms_pre";
+did	378]
+ Attrdef[globname	"DeclarationReducers_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	36;
+row	187;
+name	"Reducers_post";
+did	357]
+ Attrdef[globname	"DeclarationReducers_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	36;
+row	187;
+name	"Reducers_pre";
+did	356]
+ Attrdef[globname	"DeclarationForwards_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	36;
+row	187;
+name	"Forwards_post";
+did	351]
+ Attrdef[globname	"DeclarationForwards_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	36;
+row	187;
+name	"Forwards_pre";
+did	350]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	36;
+row	187;
+name	"Externs_post";
+did	345]
+ Attrdef[globname	"DeclarationExterns_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	36;
+row	187;
+name	"Externs_pre";
+did	344]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	235;
+row	35;
+name	"type";
+did	125]
+>;
+tornt	0]
+ Symb[did	47;
+dname	"Include";
+row	187;
+col	26;
+attrs	<Attrdef[globname	"IncludeIncludes_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	0;
+typeid	8;
+col	26;
+row	187;
+name	"Includes_post";
+did	265]
+ Attrdef[globname	"IncludeIncludes_post";
+part	2;
+gen	3;
+store	0;
+prodid	0;
+class	1;
+typeid	8;
+col	26;
+row	187;
+name	"Includes_pre";
+did	264]
+ Attrdef[globname	"Include_Bind";
+part	1;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	9;
+col	187;
+row	26;
+name	"Bind";
+did	126]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	11;
+col	187;
+row	26;
+name	"Key";
+did	127]
+ Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	3;
+col	542;
+row	50;
+name	"Sym";
+did	128]
+ Attrdef[globname	"Include_IsFirstOcc";
+part	2;
+gen	0;
+store	0;
+prodid	0;
+class	0;
+typeid	3;
+col	541;
+row	13;
+name	"IsFirstOcc";
+did	129]
+>;
+tornt	0]
+ Symb[did	48;
+dname	"Source";
+row	187;
+col	7;
+attrs	<Attrdef[globname	"";
+part	1;
+gen	0;
+store	2;
+prodid	0;
+class	0;
+typeid	10;
+col	357;
+row	43;
+name	"Env";
+did	136]
+>;
+tornt	0]
+ Prod[did	52;
+dname	"LST_Patternrule_19";
+row	187;
+col	1;
+rhs	<Symbol[row	187;
+col	1;
+did	45]
+ Symbol[row	187;
+col	1;
+did	33]
+>;
+lhs	33]
+ Prod[did	53;
+dname	"LST_Declarationrule_19";
+row	187;
+col	1;
+rhs	<Symbol[row	187;
+col	1;
+did	46]
+ Symbol[row	187;
+col	1;
+did	33]
+>;
+lhs	33]
+ Prod[did	54;
+dname	"LST_Includerule_19";
+row	187;
+col	1;
+rhs	<Symbol[row	187;
+col	1;
+did	47]
+ Symbol[row	187;
+col	1;
+did	33]
+>;
+lhs	33]
+ Prod[did	55;
+dname	"LST_0rule_19";
+row	187;
+col	1;
+rhs	<>;
+lhs	33]
+ Prod[did	56;
+dname	"LST_SymbolDefrule_16";
+row	190;
+col	1;
+rhs	<Symbol[row	190;
+col	1;
+did	42]
+ Symbol[row	190;
+col	1;
+did	34]
+>;
+lhs	34]
+ Prod[did	57;
+dname	"LST_0rule_16";
+row	190;
+col	1;
+rhs	<>;
+lhs	34]
+ Prod[did	58;
+dname	"rule_1";
+row	205;
+col	1;
+rhs	<Literal[row	849;
+col	15;
+str	""]
+ Literal[row	849;
+col	15;
+str	"Identifier"]
+ Literal[row	849;
+col	15;
+str	"int"]
+>;
+lhs	39]
+ Prod[did	59;
+dname	"rule_2";
+row	204;
+col	1;
+rhs	<Literal[row	845;
+col	15;
+str	""]
+ Literal[row	845;
+col	15;
+str	"Identifier"]
+ Literal[row	845;
+col	15;
+str	"int"]
+>;
+lhs	42]
+ Prod[did	60;
+dname	"rule_3";
+row	203;
+col	1;
+rhs	<Literal[row	841;
+col	14;
+str	""]
+ Literal[row	841;
+col	14;
+str	"Identifier"]
+ Literal[row	841;
+col	14;
+str	"int"]
+>;
+lhs	36]
+ Prod[did	61;
+dname	"rule_4";
+row	202;
+col	1;
+rhs	<Literal[row	837;
+col	10;
+str	""]
+ Literal[row	837;
+col	10;
+str	"Identifier"]
+ Literal[row	837;
+col	10;
+str	"int"]
+>;
+lhs	43]
+ Prod[did	62;
+dname	"rule_5";
+row	201;
+col	1;
+rhs	<Literal[row	201;
+col	1;
+str	"COST"]
+ Literal[row	833;
+col	17;
+str	""]
+ Literal[row	833;
+col	17;
+str	"Integer"]
+ Literal[row	833;
+col	17;
+str	"int"]
+>;
+lhs	40]
+ Prod[did	63;
+dname	"rule_6";
+row	200;
+col	1;
+rhs	<>;
+lhs	40]
+ Prod[did	64;
+dname	"rule_7";
+row	199;
+col	1;
+rhs	<>;
+lhs	37]
+ Prod[did	65;
+dname	"rule_8";
+row	198;
+col	1;
+rhs	<Symbol[row	821;
+col	14;
+did	38]
+>;
+lhs	35]
+ Prod[did	66;
+dname	"rule_9";
+row	197;
+col	1;
+rhs	<Symbol[row	817;
+col	14;
+did	35]
+ Literal[row	197;
+col	1;
+str	","]
+ Symbol[row	817;
+col	27;
+did	38]
+>;
+lhs	35]
+ Prod[did	67;
+dname	"rule_10";
+row	196;
+col	1;
+rhs	<Symbol[row	813;
+col	11;
+did	36]
+ Literal[row	196;
+col	1;
+str	"("]
+ Symbol[row	813;
+col	24;
+did	35]
+ Literal[row	196;
+col	1;
+str	")"]
+>;
+lhs	38]
+ Prod[did	68;
+dname	"rule_11";
+row	195;
+col	1;
+rhs	<Symbol[row	809;
+col	11;
+did	36]
+ Literal[row	195;
+col	1;
+str	"("]
+ Literal[row	195;
+col	1;
+str	")"]
+>;
+lhs	38]
+ Prod[did	69;
+dname	"rule_12";
+row	194;
+col	1;
+rhs	<Symbol[row	805;
+col	11;
+did	39]
+>;
+lhs	38]
+ Prod[did	70;
+dname	"rule_13";
+row	193;
+col	1;
+rhs	<Symbol[row	801;
+col	15;
+did	39]
+ Literal[row	193;
+col	1;
+str	"::="]
+ Symbol[row	801;
+col	31;
+did	38]
+ Symbol[row	801;
+col	37;
+did	37]
+>;
+lhs	41]
+ Prod[did	71;
+dname	"rule_14";
+row	192;
+col	1;
+rhs	<Symbol[row	797;
+col	13;
+did	41]
+ Literal[row	192;
+col	1;
+str	"::"]
+ Literal[row	797;
+col	28;
+str	""]
+ Literal[row	797;
+col	28;
+str	"Identifier"]
+ Literal[row	797;
+col	28;
+str	"int"]
+ Symbol[row	797;
+col	39;
+did	40]
+ Literal[row	192;
+col	1;
+str	";"]
+>;
+lhs	45]
+ Prod[did	72;
+dname	"rule_15";
+row	191;
+col	1;
+rhs	<Symbol[row	793;
+col	13;
+did	41]
+ Literal[row	191;
+col	1;
+str	":"]
+ Literal[row	793;
+col	27;
+str	""]
+ Literal[row	793;
+col	27;
+str	"Identifier"]
+ Literal[row	793;
+col	27;
+str	"int"]
+ Symbol[row	793;
+col	38;
+did	40]
+ Literal[row	191;
+col	1;
+str	";"]
+>;
+lhs	45]
+ Prod[did	73;
+dname	"rule_16";
+row	190;
+col	1;
+rhs	<Symbol[row	190;
+col	1;
+did	34]
+>;
+lhs	44]
+ Prod[did	74;
+dname	"rule_17";
+row	189;
+col	1;
+rhs	<Symbol[row	785;
+col	17;
+did	44]
+ Literal[row	189;
+col	1;
+str	":"]
+ Symbol[row	785;
+col	30;
+did	43]
+ Literal[row	189;
+col	1;
+str	";"]
+>;
+lhs	46]
+ Prod[did	75;
+dname	"rule_18";
+row	188;
+col	1;
+rhs	<Literal[row	781;
+col	13;
+str	""]
+ Literal[row	781;
+col	13;
+str	"String"]
+ Literal[row	781;
+col	13;
+str	"int"]
+>;
+lhs	47]
+ Prod[did	76;
+dname	"rule_19";
+row	187;
+col	1;
+rhs	<Symbol[row	187;
+col	1;
+did	33]
+>;
+lhs	48]
+>]
+#

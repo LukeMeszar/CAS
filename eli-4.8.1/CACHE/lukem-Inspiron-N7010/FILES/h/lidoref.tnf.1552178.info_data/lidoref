@@ -1,0 +1,41 @@
+This is Info file lidoref, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Info/lidoref.tnf.
+
+Indirect:
+lidoref-1: 138
+lidoref-2: 47273
+
+Tag Table:
+(Indirect)
+Node: top140
+Node: Introduction1501
+Node: Overall Structure3447
+Node: Rule Specifications5910
+Node: Productions8046
+Node: Symbol Specifications12050
+Node: Computations15851
+Node: Attribute Computations and Plain Computations17240
+Node: Accumulating Computations21580
+Node: Attributes25581
+Node: Types and Classes of Attributes28992
+Node: Expressions31486
+Node: Dependent Expressions31855
+Node: Terminal Access33052
+Node: Simple Expressions34837
+Node: Inheritance of Computations36690
+Node: Remote Attribute Access39522
+Node: INCLUDING40713
+Node: CONSTITUENT(S)42618
+Node: CHAIN47275
+Node: Computed Subtrees54888
+Node: Tree Construction Functions57668
+Node: Iterations60812
+Node: Predefined Entities63402
+Node: Outdated Constructs70431
+Node: Terminals70754
+Node: Keywords71611
+Node: Pragmas71950
+Node: Syntax73045
+Node: Index77849
+
+End Tag Table

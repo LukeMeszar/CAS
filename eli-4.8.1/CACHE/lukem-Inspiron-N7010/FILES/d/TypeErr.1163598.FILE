@@ -1,0 +1,4 @@
+%Type.RecPtr.err == . +cmd=cat (%trenn) \
+	(Type.demo/RecPtr.err:label) \
+	(Type.demo/RecPtr.err) \
+	((Type.demo/RecPtr.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

@@ -1,0 +1,18 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.con"
+
+
+
+program: expression &'ExprFinl();' .
+
+expression:
+   term /
+   expression '+' term &'ExprPlus();' /
+   expression '-' term &'ExprMinus();' .
+
+term:
+   primary /
+   term '*' primary &'ExprTimes();' /
+   term '/' primary &'ExprDiv();' .
+
+primary:
+   '(' expression ')' .

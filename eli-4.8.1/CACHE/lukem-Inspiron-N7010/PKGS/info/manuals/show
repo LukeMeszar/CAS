@@ -1,0 +1,53 @@
+This is Info file show, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/liga/Info/show.tnf.
+
+
+File: show,  Node: top,  Up: (dir)
+
+SHOW - A LIDO Table Viewer
+**************************
+
+   The LIGA module "show" translates internal representations of LIDO
+text into readable text. The text contains information about the
+symbols, attributes, computations and visit-sequences of the LIDO
+text. This information helps the user to learn what is LIGA's view of
+the given LIDO text, especially for tracing errors.
+
+   The show module can be applied to the output (*_idl) of any LIGA
+phase.  In Eli it is activated by the derivations
+     :showFe:viewlist, :showMe:viewlist
+   These requests start a shell in a directory, containing three
+generated files:
+
+`symbols.info'
+     contains a `TERM' and a `NONTERM' specification mentioning all
+     grammar symbols of the AG.
+
+     It helps to find symbols which are not intended to be terminals.
+
+`attrs.info'
+     contains the attribute specifications for each symbol. Type and
+     class are given for each attribute, additionally its visit number,
+     the storage decision, and the origin of the attribute - if that
+     information exists.
+
+     This information is helpful to get an overview about the
+     attributes and their properties, and to find attributes which
+     have a misspelled name.
+
+`visit.info'
+     contains the visit-sequence for each production.  It is just the
+     set of operations if the input to show was not processed by order. 
+Both files `symbols.info' & `attrs.info' are LIDO text which might be
+added to a LIDO file.
+
+   All source code references contained in the files have the form
+`(Fi:line:col)' where `Fi' is a reference to the original source file
+name listed in the header of the file.
+
+
+
+Tag Table:
+Node: top134
+
+End Tag Table

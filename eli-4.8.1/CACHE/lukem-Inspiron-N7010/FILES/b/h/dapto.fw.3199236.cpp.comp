@@ -1,0 +1,2144 @@
+
+Computations for Rule rule_1 <
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: translationvars
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         Call [
+            name: GetTranslationVars
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iduse[2].Key
+               ]
+               Name: PTGNULL
+            >
+            coord: line 593, col 32
+         ]
+         Call [
+            name: PTGtranslationvar
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+            >
+            coord: line 594, col 32
+         ]
+      >
+      coord: line 593, col 24
+   ]
+   coord: line 593, col 5
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: translations
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         Call [
+            name: GetTranslations
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iduse[2].Key
+               ]
+               Name: PTGNULL
+            >
+            coord: line 588, col 29
+         ]
+         Call [
+            name: PTGtranslation
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  body[3].line
+               ]
+               Name: filename
+               AttrAccRule [ 
+                  IsAttr
+                  body[3].bodycode
+               ]
+            >
+            coord: line 589, col 29
+         ]
+      >
+      coord: line 588, col 21
+   ]
+   coord: line 588, col 5
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      translation_sig[0].translationsset
+   ]
+   right: 
+   Call [
+      name: ORDER
+      params: <
+         Call [
+            name: SetTranslations
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iduse[2].Key
+               ]
+               RuleAttrAcc: translations
+               RuleAttrAcc: translations
+            >
+            coord: line 596, col 16
+         ]
+         Call [
+            name: SetTranslationVars
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iduse[2].Key
+               ]
+               RuleAttrAcc: translationvars
+               RuleAttrAcc: translationvars
+            >
+            coord: line 597, col 16
+         ]
+      >
+      coord: line 596, col 9
+   ]
+   coord: line 595, col 5
+]
+>
+Computations for Rule rule_2 <
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].argcount
+   ]
+   right: 
+   Call [
+      name: ADD
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].argcount
+         ]
+         IntValue: 1
+      >
+      coord: line 334, col 21
+   ]
+   coord: line 334, col 5
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].argvars
+   ]
+   right: 
+   Call [
+      name: PTGSSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].argvars
+         ]
+         Call [
+            name: PTGDecl
+            params: <
+               Call [
+                  name: Gettype
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        typeid[1].Key
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        typeid[1].idcode
+                     ]
+                  >
+                  coord: line 515, col 39
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[2].idcode
+               ]
+            >
+            coord: line 515, col 30
+         ]
+      >
+      coord: line 514, col 21
+   ]
+   coord: line 514, col 5
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].args
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].args
+         ]
+         Call [
+            name: PTGarg
+            params: <
+               Call [
+                  name: Getsend
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        typeid[1].Key
+                     ]
+                     Call [
+                        name: StringTable
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              typeid[1].Sym
+                           ]
+                        >
+                        coord: line 512, col 43
+                     ]
+                  >
+                  coord: line 511, col 34
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[2].idcode
+               ]
+            >
+            coord: line 511, col 26
+         ]
+      >
+      coord: line 510, col 18
+   ]
+   coord: line 510, col 5
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      param[0].names
+   ]
+   right: 
+   Call [
+      name: PTGNSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            param[0].names
+         ]
+         Call [
+            name: Getamp
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  typeid[1].Key
+               ]
+               StrValue: &
+            >
+            coord: line 508, col 41
+         ]
+         AttrAccRule [ 
+            IsAttr
+            iddef[2].idcode
+         ]
+      >
+      coord: line 508, col 19
+   ]
+   coord: line 508, col 5
+]
+>
+Computations for Rule rule_3 <
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      body[0].bodycode
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         RuleTermAcc: text[1]
+      >
+      coord: line 462, col 21
+   ]
+   coord: line 462, col 5
+]
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      body[0].line
+   ]
+   right: 
+   Name: LINE
+   coord: line 461, col 5
+]
+>
+Computations for Rule rule_4 <
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      sig[0].incls
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            sig[0].incls
+         ]
+         Call [
+            name: PTGincl
+            params: <
+               Call [
+                  name: PTGId
+                  params: <
+                     RuleTermAcc: str[1]
+                  >
+                  coord: line 424, col 45
+               ]
+            >
+            coord: line 424, col 36
+         ]
+      >
+      coord: line 424, col 17
+   ]
+   coord: line 424, col 5
+]
+>
+Computations for Rule rule_5 <
+Computation in RULE rule_5 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      sig[0].incls
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            sig[0].incls
+         ]
+         Call [
+            name: PTGincl
+            params: <
+               Call [
+                  name: PTGId
+                  params: <
+                     RuleTermAcc: bstr[1]
+                  >
+                  coord: line 418, col 45
+               ]
+            >
+            coord: line 418, col 36
+         ]
+      >
+      coord: line 418, col 17
+   ]
+   coord: line 418, col 5
+]
+>
+Computations for Rule rule_6 <
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: arg
+   right: 
+   Call [
+      name: PTGSSeq
+      params: <
+         RuleAttrAcc: type
+         Call [
+            name: PTGAsIs
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[2].idcode
+               ]
+            >
+            coord: line 554, col 28
+         ]
+      >
+      coord: line 554, col 12
+   ]
+   coord: line 554, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: type
+   right: 
+   Call [
+      name: PTGAsIs
+      params: <
+         Call [
+            name: Gettype
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  typeid[1].Key
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  typeid[1].idcode
+               ]
+            >
+            coord: line 553, col 22
+         ]
+      >
+      coord: line 553, col 13
+   ]
+   coord: line 553, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: cast
+   right: 
+   Call [
+      name: Getcast
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            typeid[1].Key
+         ]
+         Call [
+            name: PTGAsIs
+            params: <
+               StrValue: (long)
+            >
+            coord: line 549, col 34
+         ]
+      >
+      coord: line 549, col 13
+   ]
+   coord: line 549, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      attr[0].sends
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            attr[0].sends
+         ]
+         Call [
+            name: PTGsend
+            params: <
+               Call [
+                  name: Getsend
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        typeid[1].Key
+                     ]
+                     Call [
+                        name: StringTable
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              typeid[1].Sym
+                           ]
+                        >
+                        coord: line 562, col 44
+                     ]
+                  >
+                  coord: line 561, col 35
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[2].idcode
+               ]
+            >
+            coord: line 561, col 26
+         ]
+      >
+      coord: line 560, col 18
+   ]
+   coord: line 560, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      attr[0].ansitypes
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  attr[0].args
+               ]
+               Name: PTGNULL
+            >
+            coord: line 558, col 26
+         ]
+         RuleAttrAcc: type
+         Call [
+            name: PTGCommaSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  attr[0].ansitypes
+               ]
+               RuleAttrAcc: type
+            >
+            coord: line 559, col 26
+         ]
+      >
+      coord: line 558, col 22
+   ]
+   coord: line 558, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      attr[0].types
+   ]
+   right: 
+   Call [
+      name: PTGDeclSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            attr[0].types
+         ]
+         RuleAttrAcc: arg
+      >
+      coord: line 557, col 18
+   ]
+   coord: line 557, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      attr[0].ansiargs
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  attr[0].args
+               ]
+               Name: PTGNULL
+            >
+            coord: line 555, col 25
+         ]
+         RuleAttrAcc: arg
+         Call [
+            name: PTGCommaSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  attr[0].ansiargs
+               ]
+               RuleAttrAcc: arg
+            >
+            coord: line 556, col 25
+         ]
+      >
+      coord: line 555, col 21
+   ]
+   coord: line 555, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      attr[0].args
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  attr[0].args
+               ]
+               Name: PTGNULL
+            >
+            coord: line 550, col 21
+         ]
+         Call [
+            name: PTGAsIs
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[2].idcode
+               ]
+            >
+            coord: line 551, col 21
+         ]
+         Call [
+            name: PTGCommaSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  attr[0].args
+               ]
+               Call [
+                  name: PTGAsIs
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        iddef[2].idcode
+                     ]
+                  >
+                  coord: line 552, col 45
+               ]
+            >
+            coord: line 552, col 21
+         ]
+      >
+      coord: line 550, col 17
+   ]
+   coord: line 550, col 5
+]
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      attr[0].attrdbs
+   ]
+   right: 
+   Call [
+      name: PTGSSeq3
+      params: <
+         AttrAccRule [ 
+            IsChain
+            attr[0].attrdbs
+         ]
+         AttrAccRule [ 
+            IsAttr
+            iddef[2].idcode
+         ]
+         Call [
+            name: PTGId
+            params: <
+               RuleTermAcc: str[1]
+            >
+            coord: line 392, col 58
+         ]
+      >
+      coord: line 392, col 20
+   ]
+   coord: line 392, col 5
+]
+>
+Computations for Rule rule_7 <
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      export[0].exported
+   ]
+   right: 
+   IntValue: 0
+   coord: line 384, col 5
+]
+>
+Computations for Rule rule_8 <
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      export[0].exported
+   ]
+   right: 
+   IntValue: 1
+   coord: line 378, col 5
+]
+>
+Computations for Rule rule_9 <
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      event_sig[0].translationvars
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetTranslationVars
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               iddef[1].Key
+            ]
+            Name: PTGNULL
+         >
+         coord: line 581, col 33
+      ]
+      deps: < 
+         INCLUDING (spec.translationsset) propagate void
+      >
+      coord: line 581, col 33
+   ]
+   coord: line 581, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      event_sig[0].translations
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetTranslations
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               iddef[1].Key
+            ]
+            Name: PTGNULL
+         >
+         coord: line 579, col 30
+      ]
+      deps: < 
+         INCLUDING (spec.translationsset) propagate void
+      >
+      coord: line 579, col 30
+   ]
+   coord: line 579, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_sig[0].sigs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            event_sig[0].sigs
+         ]
+         Call [
+            name: PTGsig
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  event_block[3].ansitypes
+               ]
+            >
+            coord: line 539, col 30
+         ]
+      >
+      coord: line 538, col 22
+   ]
+   coord: line 538, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_sig[0].funcs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            event_sig[0].funcs
+         ]
+         Call [
+            name: PTGefunc
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  event_sig[0].translationvars
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  event_block[3].ansiargs
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  event_block[3].args
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  event_block[3].types
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  event_block[3].sends
+               ]
+            >
+            coord: line 532, col 31
+         ]
+      >
+      coord: line 531, col 23
+   ]
+   coord: line 531, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_sig[0].eventdbs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            event_sig[0].eventdbs
+         ]
+         Call [
+            name: PTGeventdb
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+               Call [
+                  name: PTGId
+                  params: <
+                     RuleTermAcc: str[1]
+                  >
+                  coord: line 368, col 46
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  event_block[3].attrdbs
+               ]
+               Call [
+                  name: PTGNumb
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        export[2].exported
+                     ]
+                  >
+                  coord: line 370, col 46
+               ]
+            >
+            coord: line 367, col 34
+         ]
+      >
+      coord: line 366, col 26
+   ]
+   coord: line 366, col 5
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      event_block[3].ExportEnv
+   ]
+   right: 
+   Call [
+      name: NewScope
+      params: <
+         INCLUDING (operation_block.ExportEnv, spec.ExportEnv, event_block.ExportEnv) propagate value 
+      >
+      coord: line 169, col 9
+   ]
+   coord: line 168, col 3
+]
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_block[3].sends
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 529, col 5
+]
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_block[3].ansitypes
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 528, col 5
+]
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_block[3].types
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 527, col 5
+]
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_block[3].ansiargs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 526, col 5
+]
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_block[3].args
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 525, col 5
+]
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      event_block[3].attrdbs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 364, col 5
+]
+>
+Computations for Rule rule_10 <
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspect_stmt[0].aspectdbs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            aspect_stmt[0].aspectdbs
+         ]
+         Call [
+            name: PTGaspectdb
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+            >
+            coord: line 356, col 37
+         ]
+      >
+      coord: line 355, col 29
+   ]
+   coord: line 355, col 5
+]
+>
+Computations for Rule rule_11 <
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1]._C_TypeGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].TypeEnv
+   ]
+   coord: line 14, col 3
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1]._C_ExportGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].ExportEnv
+   ]
+   coord: line 158, col 3
+]
+Computation in RULE rule_11 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      Name: reqsymfilename
+      Call [
+         name: PTGreqsyms
+         params: <
+            AttrAccRule [ 
+               IsChain
+               aspects[1].reqsyms
+            ]
+         >
+         coord: line 632, col 33
+      ]
+   >
+   coord: line 632, col 5
+]
+Computation in RULE rule_11 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      Name: hfilename
+      Call [
+         name: PTGhfile
+         params: <
+            Call [
+               name: PTGAsIs
+               params: <
+                  Name: basefilename
+               >
+               coord: line 409, col 38
+            ]
+            AttrAccRule [ 
+               IsChain
+               aspects[1].sigs
+            ]
+            AttrAccRule [ 
+               IsChain
+               aspects[1].incls
+            ]
+         >
+         coord: line 409, col 28
+      ]
+   >
+   coord: line 409, col 5
+]
+Computation in RULE rule_11 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      Name: cfilename
+      Call [
+         name: PTGcfile
+         params: <
+            Call [
+               name: PTGAsIs
+               params: <
+                  Name: basefilename
+               >
+               coord: line 406, col 38
+            ]
+            AttrAccRule [ 
+               IsChain
+               aspects[1].funcs
+            ]
+            AttrAccRule [ 
+               IsChain
+               aspects[1].entries
+            ]
+         >
+         coord: line 406, col 28
+      ]
+   >
+   coord: line 406, col 5
+]
+Computation in RULE rule_11 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      Name: dbfilename
+      Call [
+         name: PTGdb
+         params: <
+            AttrAccRule [ 
+               IsChain
+               aspects[1].aspectdbs
+            ]
+            AttrAccRule [ 
+               IsChain
+               aspects[1].eventdbs
+            ]
+         >
+         coord: line 347, col 29
+      ]
+   >
+   coord: line 347, col 5
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].TypeEnv
+   ]
+   right: 
+   Name: TypeRootEnv
+   coord: line 13, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].TypeGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1]._C_TypeGotKeys
+   ]
+   coord: line 15, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].ExportEnv
+   ]
+   right: 
+   Name: ExportRootEnv
+   coord: line 157, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].ExportGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1]._C_ExportGotKeys
+   ]
+   coord: line 159, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0]._GotExportUnique
+   ]
+   right: 
+   CONSTITUENTS (iddef._GotExportUnique) SHIELD (operation_block, spec, event_block) propagate void
+   coord: line 302, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      spec[0].translationsset
+   ]
+   right: 
+   CONSTITUENTS (translation_sig.translationsset) propagate void
+   coord: line 573, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].reqsyms
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 631, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].sigs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 408, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].funcs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 405, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].entries
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 404, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].incls
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 403, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].eventdbs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 346, col 5
+]
+Computation in RULE rule_11 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      aspects[1].aspectdbs
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 345, col 5
+]
+>
+Computations for Rule rule_31 <
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      typeid[0]._C_TypeGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      typeid[0].Key
+   ]
+   coord: line 45, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      typeid[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            typeid[0].Bind
+         ]
+      >
+      coord: line 44, col 14
+   ]
+   coord: line 44, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      typeid[0].Sym
+   ]
+   right: 
+   RuleTermAcc: ident[1]
+   coord: line 605, col 25
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      typeid[0].idcode
+   ]
+   right: 
+   Call [
+      name: StringTable
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            typeid[0].Sym
+         ]
+      >
+      coord: line 433, col 19
+   ]
+   coord: line 433, col 5
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      typeid[0].Bind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: BindIdn
+         params: <
+            INCLUDING (spec.TypeEnv) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               typeid[0].Sym
+            ]
+         >
+         coord: line 42, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            typeid[0]._C_TypeGotKeys
+         ]
+      >
+      coord: line 42, col 9
+   ]
+   coord: line 41, col 3
+]
+>
+Computations for Rule rule_30 <
+>
+Computations for Rule rule_29 <
+>
+Computations for Rule rule_28 <
+>
+Computations for Rule rule_27 <
+>
+Computations for Rule rule_26 <
+>
+Computations for Rule rule_25 <
+>
+Computations for Rule rule_24 <
+>
+Computations for Rule rule_23 <
+>
+Computations for Rule rule_22 <
+>
+Computations for Rule rule_21 <
+>
+Computations for Rule rule_20 <
+>
+Computations for Rule rule_19 <
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      operation_block[0].ExportGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      optparams[1]._C_ExportGotKeys
+   ]
+   coord: line 170, col 3
+]
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      operation_block[0]._GotExportUnique
+   ]
+   right: 
+   CONSTITUENTS (iddef._GotExportUnique) SHIELD (operation_block, spec, event_block) propagate void
+   coord: line 302, col 3
+]
+>
+Computations for Rule rule_18 <
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      iduse[0]._C_ExportGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      iduse[0].Key
+   ]
+   coord: line 203, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iduse[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            iduse[0].Bind
+         ]
+      >
+      coord: line 202, col 14
+   ]
+   coord: line 202, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iduse[0].Bind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: BindingInEnv
+         params: <
+            INCLUDING (operation_block.ExportEnv, spec.ExportEnv, event_block.ExportEnv) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               iduse[0].Sym
+            ]
+         >
+         coord: line 200, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            iduse[0]._C_ExportGotKeys
+         ]
+         AttrAccRule [ 
+            IsAttr
+            iduse[0]._ExportInhPrecond
+         ]
+      >
+      coord: line 200, col 9
+   ]
+   coord: line 199, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iduse[0].Sym
+   ]
+   right: 
+   RuleTermAcc: ident[1]
+   coord: line 605, col 25
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iduse[0]._ExportInhPrecond
+   ]
+   right: 
+   StrValue: yes
+   coord: line 209, col 3
+]
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iduse[0].idcode
+   ]
+   right: 
+   Call [
+      name: StringTable
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            iduse[0].Sym
+         ]
+      >
+      coord: line 433, col 19
+   ]
+   coord: line 433, col 5
+]
+>
+Computations for Rule rule_17 <
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      iddef[0]._C_ExportGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0].Key
+   ]
+   coord: line 189, col 3
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0].idcode
+   ]
+   right: 
+   Call [
+      name: StringTable
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            iddef[0].Sym
+         ]
+      >
+      coord: line 433, col 19
+   ]
+   coord: line 433, col 5
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0].Key
+   ]
+   right: 
+   Call [
+      name: KeyOf
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            iddef[0].Bind
+         ]
+      >
+      coord: line 188, col 14
+   ]
+   coord: line 188, col 3
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0].Bind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: BindIdn
+         params: <
+            INCLUDING (operation_block.ExportEnv, spec.ExportEnv, event_block.ExportEnv) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               iddef[0].Sym
+            ]
+         >
+         coord: line 186, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            iddef[0]._C_ExportGotKeys
+         ]
+      >
+      coord: line 186, col 9
+   ]
+   coord: line 185, col 3
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: ident[1]
+   coord: line 605, col 25
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0]._GotExportUnique
+   ]
+   right: 
+   Call [
+      name: SetExportUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            iddef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 309, col 9
+   ]
+   coord: line 308, col 3
+]
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      iddef[0].ExportUnique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetExportUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               iddef[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 312, col 9
+      ]
+      deps: < 
+         INCLUDING (operation_block._GotExportUnique, spec._GotExportUnique, event_block._GotExportUnique) propagate void
+      >
+      coord: line 312, col 9
+   ]
+   coord: line 311, col 3
+]
+>
+Computations for Rule rule_16 <
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      event_block[0].ExportGotKeys
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      optattrs[1]._C_ExportGotKeys
+   ]
+   coord: line 170, col 3
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      event_block[0]._GotExportUnique
+   ]
+   right: 
+   CONSTITUENTS (iddef._GotExportUnique) SHIELD (operation_block, spec, event_block) propagate void
+   coord: line 302, col 3
+]
+>
+Computations for Rule rule_15 <
+>
+Computations for Rule rule_14 <
+>
+Computations for Rule rule_13 <
+>
+Computations for Rule rule_12 <
+>
+Computations for Rule operation_sig2 <
+Computation in RULE operation_sig2 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NE
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               typeid[3].Key
+            ]
+            Name: strKey
+         >
+         coord: line 619, col 9
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Non-string return type
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 620, col 9
+      ]
+   >
+   coord: line 619, col 5
+]
+Computation in RULE operation_sig2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_sig[0].reqsyms
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            operation_sig[0].reqsyms
+         ]
+         Call [
+            name: PTGreqsym
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+            >
+            coord: line 646, col 37
+         ]
+      >
+      coord: line 645, col 29
+   ]
+   coord: line 645, col 5
+]
+Computation in RULE operation_sig2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_sig[0].funcs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            operation_sig[0].funcs
+         ]
+         Call [
+            name: PTGcmdfunc
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  operation_block[2].argvars
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: EQ
+                        params: <
+                           AttrAccRule [ 
+                              IsChain
+                              operation_block[2].argcount
+                           ]
+                           IntValue: 0
+                        >
+                        coord: line 494, col 47
+                     ]
+                     Name: PTGNULL
+                     AttrAccRule [ 
+                        IsChain
+                        operation_block[2].args
+                     ]
+                  >
+                  coord: line 494, col 43
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  body[4].bodycode
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  body[4].line
+               ]
+               Name: filename
+            >
+            coord: line 492, col 31
+         ]
+      >
+      coord: line 491, col 27
+   ]
+   coord: line 491, col 5
+]
+Computation in RULE operation_sig2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_sig[0].entries
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            operation_sig[0].entries
+         ]
+         Call [
+            name: PTGentry
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+            >
+            coord: line 451, col 37
+         ]
+      >
+      coord: line 450, col 29
+   ]
+   coord: line 450, col 5
+]
+Computation in RULE operation_sig2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      operation_block[2].ExportEnv
+   ]
+   right: 
+   Call [
+      name: NewScope
+      params: <
+         INCLUDING (operation_block.ExportEnv, spec.ExportEnv, event_block.ExportEnv) propagate value 
+      >
+      coord: line 169, col 9
+   ]
+   coord: line 168, col 3
+]
+Computation in RULE operation_sig2 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].names
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 490, col 5
+]
+Computation in RULE operation_sig2 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].argvars
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 489, col 5
+]
+Computation in RULE operation_sig2 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].args
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 488, col 5
+]
+Computation in RULE operation_sig2 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].argcount
+   ]
+   right: 
+   IntValue: 0
+   coord: line 329, col 9
+]
+>
+Computations for Rule operation_sig1 <
+Computation in RULE operation_sig1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_sig[0].reqsyms
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            operation_sig[0].reqsyms
+         ]
+         Call [
+            name: PTGreqsym
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+            >
+            coord: line 639, col 37
+         ]
+      >
+      coord: line 638, col 29
+   ]
+   coord: line 638, col 5
+]
+Computation in RULE operation_sig1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_sig[0].funcs
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            operation_sig[0].funcs
+         ]
+         Call [
+            name: PTGcmdfunc
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  operation_block[2].argvars
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: EQ
+                        params: <
+                           AttrAccRule [ 
+                              IsChain
+                              operation_block[2].argcount
+                           ]
+                           IntValue: 0
+                        >
+                        coord: line 475, col 47
+                     ]
+                     Name: PTGNULL
+                     AttrAccRule [ 
+                        IsChain
+                        operation_block[2].args
+                     ]
+                  >
+                  coord: line 475, col 43
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  body[3].bodycode
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  body[3].line
+               ]
+               Name: filename
+            >
+            coord: line 473, col 31
+         ]
+      >
+      coord: line 472, col 27
+   ]
+   coord: line 472, col 5
+]
+Computation in RULE operation_sig1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_sig[0].entries
+   ]
+   right: 
+   Call [
+      name: PTGSeq
+      params: <
+         AttrAccRule [ 
+            IsChain
+            operation_sig[0].entries
+         ]
+         Call [
+            name: PTGentry
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  iddef[1].idcode
+               ]
+            >
+            coord: line 444, col 37
+         ]
+      >
+      coord: line 443, col 29
+   ]
+   coord: line 443, col 5
+]
+Computation in RULE operation_sig1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      operation_block[2].ExportEnv
+   ]
+   right: 
+   Call [
+      name: NewScope
+      params: <
+         INCLUDING (operation_block.ExportEnv, spec.ExportEnv, event_block.ExportEnv) propagate value 
+      >
+      coord: line 169, col 9
+   ]
+   coord: line 168, col 3
+]
+Computation in RULE operation_sig1 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].names
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 471, col 5
+]
+Computation in RULE operation_sig1 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].argvars
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 470, col 5
+]
+Computation in RULE operation_sig1 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].args
+   ]
+   right: 
+   Name: PTGNULL
+   coord: line 469, col 5
+]
+Computation in RULE operation_sig1 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      operation_block[2].argcount
+   ]
+   right: 
+   IntValue: 0
+   coord: line 323, col 9
+]
+>

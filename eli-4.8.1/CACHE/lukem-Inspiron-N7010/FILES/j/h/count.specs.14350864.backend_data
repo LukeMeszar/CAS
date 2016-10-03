@@ -1,0 +1,11 @@
+1 0 2
+word
+[A-Za-z]+
+(null)
+CountWord
+2
+(null)
+[.:,;!?()/\"\'*-]
+(null)
+(null)
+15001

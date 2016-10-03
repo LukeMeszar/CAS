@@ -1,0 +1,205 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/g/i/Cpp.lido.10438814.lidoEta"
+
+
+SYMBOL xRoot COMPUTE
+  PTGOutFile(
+    "tree",
+    PTGFrame(
+      THIS.Prefix,
+      THIS.TreeGram,
+      TAIL.ClassComp,
+      TAIL.Inherit,
+      TAIL.PtgTemplates));
+END;
+
+
+SYMBOL xSymbol COMPUTE
+  THIS.PtgTemplates =
+    IF(AND(THIS.IsTerminal,AND(THIS.IsFirstOcc,GetNoPtgGiven(THIS.Key,1))),
+      PTGSeq(THIS.PtgTemplates,PTGTerm(INCLUDING xRoot.Prefix,THIS.Ptg)),
+      THIS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+ATTR Insert: PTGNode;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  xProduction.PtgTemplates=
+    IF(GetNoPtgGiven(xRule.Key,1),
+      PTGSeq(
+        xRHS.PtgTemplates,
+        PTGPlainProd(
+          INCLUDING xRoot.Prefix,
+          StringTable(xRule.Sym),
+          xRHS CONSTITUENTS Element.Insert
+            WITH (PTGNode, PTGSepSeq, IDENTICAL, PTGNull))),
+      xRHS.PtgTemplates)
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+RULE: Element ::= xLiteral
+COMPUTE
+  Element.Insert = PTGNULL;
+END;
+
+RULE: Element ::= xSymbol
+COMPUTE
+  Element.Insert = Element.Mark;
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE
+  Element.Insert = Element.Mark;
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.PtgTemplates=
+    PTGSeq(
+      Syms.PtgTemplates,
+      PTGTriple(
+        IF(GetNoPtgGiven(xRule.Key,1),
+          PTGListProd(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL),
+        IF(GetNoPtg2Given(xRule.Key,1),
+          PTGListProd2(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL),
+        IF(GetNoPtg1Given(xRule.Key,1),
+          PTGListProd1(INCLUDING xRoot.Prefix,StringTable(xRule.Sym)),
+          PTGNULL)))
+    <- INCLUDING xRoot.GotProperties;
+END;
+
+
+ATTR Fwd, Visit, Class: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  PTGOutFile(
+    CatStrStr(THIS.ModuleBasename,".h"),
+    PTGHeader(
+      THIS.Prefix,
+      CONSTITUENTS xRule.Fwd WITH(PTGNode,PTGSeq,IDENTICAL,PTGNull),
+      CONSTITUENTS xRule.Visit WITH(PTGNode,PTGSeq,IDENTICAL,PTGNull),
+      IF(THIS.HasListof,PTGDeclareCombine(THIS.Prefix),PTGNULL),
+      CONSTITUENTS xSymbol.Class WITH(PTGNode,PTGSeq,IDENTICAL,PTGNull),
+      CONSTITUENTS xProduction.Class WITH(PTGNode,PTGSeq,IDENTICAL,PTGNull)));
+END;
+
+SYMBOL xRule COMPUTE
+  SYNT.Fwd=PTGForward(StringTable(THIS.Sym));
+  SYNT.Visit=PTGVisit(StringTable(THIS.Sym));
+END;
+
+
+SYMBOL xRoot:
+  HasListof:      int,          
+  ModuleBasename: CharPtr;      
+
+SYMBOL xRoot COMPUTE
+  SYNT.HasListof=
+    CONSTITUENTS xProduction.IsListof WITH (int, OR, IDENTICAL, ZERO);
+  SYNT.ModuleBasename=CatStrStr("treeDef/", THIS.Prefix);
+END;
+
+SYMBOL xProduction:
+  IsListof:       int;          
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  xProduction.IsListof=0;
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.IsListof=1;
+END;
+
+
+SYMBOL xSymbol COMPUTE
+  SYNT.Class=
+    IF(AND(THIS.IsFirstOcc,NOT(THIS.IsTerminal)),
+      PTGSymbolClass(THIS.Ptg,INCLUDING xRoot.Prefix),
+      PTGNULL);
+END;
+
+
+CHAIN cnt: int;
+ATTR Argument, Assign, Access, Declare: PTGNode;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE
+  .Declare=
+    xRHS CONSTITUENTS Element.Declare
+      WITH(PTGNode, PTGSeq, IDENTICAL, PTGNull);
+  CHAINSTART xRHS.cnt=1;
+  xProduction.Class=
+    PTGProductionClass(
+      StringTable(xRule.Sym),
+      xSymbol.Ptg,
+      xRHS CONSTITUENTS Element.Argument
+        WITH(PTGNode, PTGCommaSeq, IDENTICAL, PTGNull),
+      xRHS CONSTITUENTS Element.Assign
+        WITH(PTGNode, PTGSeq, IDENTICAL, PTGNull),
+      xRHS CONSTITUENTS Element.Access
+        WITH(PTGNode, PTGSeq, IDENTICAL, PTGNull),
+      IF(EQ(.Declare,PTGNULL),PTGNULL,PTGVars(.Declare)),
+      INCLUDING xRoot.Prefix);
+END;
+
+SYMBOL Element COMPUTE
+  THIS.cnt=ADD(THIS.cnt,1);
+END;
+
+RULE: Element ::= xLiteral
+COMPUTE
+  Element.Argument = PTGNULL;
+  Element.Assign = PTGNULL;
+  Element.Access = PTGNULL;
+  Element.Declare = PTGNULL;
+END;
+
+SYMBOL xSymbol: Type: PTGNode;
+
+SYMBOL xSymbol COMPUTE
+  SYNT.Type=IF(THIS.IsTerminal,PTGAsIs("string"),PTGPointer(THIS.Ptg));
+END;
+
+RULE: Element ::= xSymbol
+COMPUTE
+  Element.Argument = PTGArgument(xSymbol.Type,Element.cnt);
+  Element.Assign = PTGAssign(Element.cnt);
+  Element.Access = PTGAccess(xSymbol.Type,Element.cnt);
+  Element.Declare = PTGDeclare(xSymbol.Type,Element.cnt);
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE
+  Element.Argument = PTGNULL;
+  Element.Assign = PTGComputed(xSymbol.Type,Element.cnt);
+  Element.Access=
+    PTGSeq(
+      PTGSet(xSymbol.Type,Element.cnt),
+      PTGAccess(xSymbol.Type,Element.cnt));
+  Element.Declare = PTGDeclare(xSymbol.Type,Element.cnt);
+END;
+
+RULE: xProduction ::=  'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE
+  xProduction.Class=
+    PTGListofProdClass(
+      StringTable(xRule.Sym),
+      xSymbol.Ptg,
+      INCLUDING xRoot.Prefix);
+END;
+
+
+ATTR Fwd, Visit, Class: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  IF(THIS.HasListof,
+    PTGOutFile(
+      CatStrStr(THIS.ModuleBasename,".cc"),
+      PTGCombine(THIS.Prefix)));
+END;
+

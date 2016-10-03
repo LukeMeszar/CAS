@@ -1,0 +1,8 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/ignorecase/pascal.gla"
+
+
+
+Integer:	PASCAL_INTEGER
+Real:		PASCAL_REAL
+String:		PASCAL_STRING
+		PASCAL_COMMENT

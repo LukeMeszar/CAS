@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/ignorecase
+diff /home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/l/l/input.17352385.FILE /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/ignorecase/result

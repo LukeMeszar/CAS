@@ -1,0 +1,1 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/digitcalc/expr.specs :phi*etaIncl) :clp*clp_gen

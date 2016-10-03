@@ -1,0 +1,89 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           1
+
+MAX. NUMBER OF SYMBOLS IN RULE:        1
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:     0
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:   0
+
+NUMBER OF DEFINED SYMBOLS:             1
+
+NUMBER OF CONTEXT-FREE RULES:          1
+
+NUMBER OF ALL ATTRIBUTES:              0
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+
+
+
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :     0
+
+      -> 0 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :     0
+
+
+NUMBER OF TREE NODE COMPONENTS :     0
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->   0 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->   0 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :     0
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :     0
+    -> NEW NUMBER OF SEMANTIC RULES :     0
+
+

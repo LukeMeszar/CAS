@@ -1,0 +1,58 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/c/dbgen.lido.3836422.lidoEta"
+
+
+CHAIN aspectdbs, eventdbs : PTGNode;
+
+RULE:
+    spec ::= aspects
+COMPUTE
+    CHAINSTART HEAD.aspectdbs = PTGNULL;
+    CHAINSTART HEAD.eventdbs = PTGNULL;
+    PTGOutFile (dbfilename, PTGdb (aspects.aspectdbs, aspects.eventdbs));
+END;
+
+CHAIN aspectdbs : PTGNode;
+
+RULE:
+    aspect_stmt ::= 'aspect' iddef ';' sigs 'end' ';'
+COMPUTE
+    aspect_stmt.aspectdbs = PTGSeq (aspect_stmt.aspectdbs,
+                                    PTGaspectdb (iddef.idcode));
+END;
+
+CHAIN eventdbs, attrdbs : PTGNode;
+
+RULE:
+    event_sig ::= 'event' iddef export str event_block ';'
+COMPUTE
+    CHAINSTART event_block.attrdbs = PTGNULL;
+
+    event_sig.eventdbs = PTGSeq (event_sig.eventdbs,
+                                 PTGeventdb (iddef.idcode,
+                                             PTGId (str),
+                                             event_block.attrdbs,
+                                             PTGNumb (export.exported)));
+END;
+
+ATTR exported : int;
+
+RULE:
+    export ::= '*'
+COMPUTE
+    export.exported = 1;
+END;
+
+RULE:
+    export ::= 
+COMPUTE
+    export.exported = 0;
+END;
+
+CHAIN attrdbs : PTGNode;
+
+RULE:
+    attr ::= typeid iddef str
+COMPUTE
+    attr.attrdbs = PTGSSeq3 (attr.attrdbs, iddef.idcode, PTGId (str));
+END;
+

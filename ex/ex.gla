@@ -1,0 +1,2 @@
+Var:	$[a-zA-Z]	[mkidn]
+Num:	$[0-9]+		[mkint]

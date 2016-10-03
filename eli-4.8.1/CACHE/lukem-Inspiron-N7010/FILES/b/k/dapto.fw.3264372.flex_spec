@@ -1,0 +1,21 @@
+%%
+
+"aspect"	1; /* ext=2 sourceLine=12 */
+";"	2; /* ext=3 sourceLine=13 */
+"end"	3; /* ext=4 sourceLine=14 */
+","	4; /* ext=5 sourceLine=15 */
+"\("	5; /* ext=7 sourceLine=17 */
+"\)"	6; /* ext=8 sourceLine=18 */
+"event"	7; /* ext=9 sourceLine=19 */
+"\*"	8; /* ext=10 sourceLine=20 */
+"operation"	9; /* ext=12 sourceLine=22 */
+":"	10; /* ext=14 sourceLine=24 */
+"translation"	11; /* ext=16 sourceLine=26 */
+
+
+[a-zA-Z_\0300-\0326\0330-\0366\0370-\0377][a-zA-Z_\0300-\0326\0330-\0366\0370-\03770-9]*	12; /* ext=11 sourceLine=3 */
+\"	13; /* ext=6 sourceLine=4 */
+\<[^>]+\>	14; /* ext=15 sourceLine=5 */
+\{	15; /* ext=13 sourceLine=6 */
+"/*"	16; /* ext=15001 sourceLine=7 */
+#	17; /* ext=15001 sourceLine=8 */

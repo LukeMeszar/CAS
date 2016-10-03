@@ -1,0 +1,44 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/g/i/Idemcopy.lido.10438110.lidoEta"
+
+ATTR TreeGram: PTGNode;
+
+SYMBOL xRoot COMPUTE
+  SYNT.TreeGram=
+    CONSTITUENTS xProduction.TreeGram
+      WITH (PTGNode, PTGSeq, IDENTICAL, PTGNull);
+END;
+
+RULE: xProduction ::= 'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';'
+COMPUTE 
+  xProduction.TreeGram=
+    PTGPlain(
+      StringTable(xRule.Sym),
+      StringTable(xSymbol.Sym),
+      CONSTITUENTS Element.TreeGram 
+      WITH (PTGNode, PTGSpaceSeq, IDENTICAL, PTGNull));
+END; 
+
+RULE: xProduction ::= 'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';'
+COMPUTE 
+  xProduction.TreeGram=
+    PTGListof(
+      StringTable(xRule.Sym),
+      StringTable(xSymbol.Sym),
+      Syms CONSTITUENTS xSymbol.Ptg
+        WITH (PTGNode, PTGAltSeq, IDENTICAL, PTGNull));
+END;
+
+RULE: Element ::= xSymbol
+COMPUTE 
+  Element.TreeGram=xSymbol.Ptg;
+END;
+
+RULE: Element ::= '$' xSymbol
+COMPUTE 
+  Element.TreeGram=PTGComputedRoot(StringTable(xSymbol.Sym));
+END;
+
+RULE: Element ::= xLiteral
+COMPUTE 
+  Element.TreeGram=PTGId(FwOut(xLiteral,Warn));
+END;

@@ -1,0 +1,1401 @@
+-- structure AbsParser
+absparsertype[ParsingTab	< Rowtype[Entries	< shift[CMR_DT_index	33;
+NextState	3]
+ shiftred[CMR_DT_index	42;
+Rule	44]
+ shift[CMR_DT_index	124;
+NextState	2]
+ shiftred[CMR_DT_index	18;
+Rule	138]
+ shiftred[CMR_DT_index	17;
+Rule	136]
+>;
+Errsymb	18]
+ Rowtype[Entries	< shift[CMR_DT_index	12;
+NextState	4]
+>;
+Errsymb	12]
+ Rowtype[Entries	< accept[CMR_DT_index	1]
+>;
+Errsymb	1]
+ Rowtype[Entries	< shift[CMR_DT_index	20;
+NextState	5]
+>;
+Errsymb	20]
+ Rowtype[Entries	< shift[CMR_DT_index	112;
+NextState	8]
+ shiftred[CMR_DT_index	107;
+Rule	114]
+ shift[CMR_DT_index	17;
+NextState	7]
+ shift[CMR_DT_index	18;
+NextState	6]
+>;
+Errsymb	17]
+ Rowtype[Entries	< shiftred[CMR_DT_index	88;
+Rule	111]
+ shiftred[CMR_DT_index	12;
+Rule	90]
+>;
+Errsymb	12]
+ Rowtype[Entries	< shiftred[CMR_DT_index	88;
+Rule	109]
+ shiftred[CMR_DT_index	12;
+Rule	90]
+>;
+Errsymb	12]
+ Rowtype[Entries	< shift[CMR_DT_index	21;
+NextState	10]
+ shift[CMR_DT_index	19;
+NextState	9]
+>;
+Errsymb	21]
+ Rowtype[Entries	< shiftred[CMR_DT_index	107;
+Rule	116]
+ shift[CMR_DT_index	17;
+NextState	7]
+ shift[CMR_DT_index	18;
+NextState	6]
+>;
+Errsymb	17]
+ Rowtype[Entries	< shiftred[CMR_DT_index	54;
+Rule	126]
+ shift[CMR_DT_index	6;
+NextState	11]
+>;
+Errsymb	6]
+ Rowtype[Entries	< shift[CMR_DT_index	55;
+NextState	30]
+ shiftred[CMR_DT_index	139;
+Rule	156]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+ shift[CMR_DT_index	58;
+NextState	14]
+ shiftred[CMR_DT_index	174;
+Rule	178]
+ shift[CMR_DT_index	17;
+NextState	13]
+ shift[CMR_DT_index	18;
+NextState	12]
+>;
+Errsymb	28]
+ Rowtype[Entries	< shift[CMR_DT_index	179;
+NextState	59]
+ shiftred[CMR_DT_index	171;
+Rule	185]
+ shift[CMR_DT_index	88;
+NextState	55]
+ shiftred[CMR_DT_index	12;
+Rule	90]
+>;
+Errsymb	12]
+ Rowtype[Entries	< shift[CMR_DT_index	179;
+NextState	56]
+ shiftred[CMR_DT_index	171;
+Rule	185]
+ shift[CMR_DT_index	88;
+NextState	55]
+ shiftred[CMR_DT_index	12;
+Rule	90]
+>;
+Errsymb	12]
+ Rowtype[Entries	< shift[CMR_DT_index	55;
+NextState	54]
+ shiftred[CMR_DT_index	139;
+Rule	156]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+ shiftred[CMR_DT_index	174;
+Rule	176]
+ shift[CMR_DT_index	17;
+NextState	13]
+ shift[CMR_DT_index	18;
+NextState	12]
+>;
+Errsymb	28]
+ Rowtype[Entries	< shift[CMR_DT_index	20;
+NextState	51]
+>;
+Errsymb	20]
+ Rowtype[Entries	< shiftred[CMR_DT_index	79;
+Rule	87]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shiftred[CMR_DT_index	79;
+Rule	82]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	11;
+NextState	50]
+ reduce[CMR_DT_index	2;
+Rule	121]
+ reduce[CMR_DT_index	3;
+Rule	121]
+ reduce[CMR_DT_index	4;
+Rule	121]
+ reduce[CMR_DT_index	5;
+Rule	121]
+ reduce[CMR_DT_index	8;
+Rule	121]
+ reduce[CMR_DT_index	9;
+Rule	121]
+ reduce[CMR_DT_index	10;
+Rule	121]
+ reduce[CMR_DT_index	13;
+Rule	121]
+ reduce[CMR_DT_index	14;
+Rule	121]
+ reduce[CMR_DT_index	15;
+Rule	121]
+ reduce[CMR_DT_index	19;
+Rule	121]
+ reduce[CMR_DT_index	21;
+Rule	121]
+ reduce[CMR_DT_index	24;
+Rule	121]
+ reduce[CMR_DT_index	25;
+Rule	121]
+ reduce[CMR_DT_index	26;
+Rule	121]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	64;
+NextState	49]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	93;
+NextState	47]
+ shiftred[CMR_DT_index	15;
+Rule	99]
+ shiftred[CMR_DT_index	13;
+Rule	95]
+ shiftred[CMR_DT_index	14;
+Rule	97]
+ reduce[CMR_DT_index	2;
+Rule	166]
+ reduce[CMR_DT_index	3;
+Rule	166]
+ reduce[CMR_DT_index	4;
+Rule	166]
+ reduce[CMR_DT_index	5;
+Rule	166]
+ reduce[CMR_DT_index	8;
+Rule	166]
+ reduce[CMR_DT_index	9;
+Rule	166]
+ reduce[CMR_DT_index	10;
+Rule	166]
+ reduce[CMR_DT_index	19;
+Rule	166]
+ reduce[CMR_DT_index	21;
+Rule	166]
+ reduce[CMR_DT_index	24;
+Rule	166]
+ reduce[CMR_DT_index	25;
+Rule	166]
+ reduce[CMR_DT_index	26;
+Rule	166]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	34;
+NextState	45]
+ shiftred[CMR_DT_index	3;
+Rule	38]
+ shiftred[CMR_DT_index	2;
+Rule	36]
+ shift[CMR_DT_index	129;
+NextState	44]
+ shiftred[CMR_DT_index	25;
+Rule	134]
+ shiftred[CMR_DT_index	24;
+Rule	132]
+ reduce[CMR_DT_index	4;
+Rule	128]
+ reduce[CMR_DT_index	5;
+Rule	128]
+ reduce[CMR_DT_index	8;
+Rule	128]
+ reduce[CMR_DT_index	9;
+Rule	128]
+ reduce[CMR_DT_index	10;
+Rule	128]
+ reduce[CMR_DT_index	19;
+Rule	128]
+ reduce[CMR_DT_index	21;
+Rule	128]
+ reduce[CMR_DT_index	26;
+Rule	128]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	51;
+NextState	43]
+ shiftred[CMR_DT_index	10;
+Rule	74]
+ reduce[CMR_DT_index	4;
+Rule	50]
+ reduce[CMR_DT_index	5;
+Rule	50]
+ reduce[CMR_DT_index	8;
+Rule	50]
+ reduce[CMR_DT_index	9;
+Rule	50]
+ reduce[CMR_DT_index	19;
+Rule	50]
+ reduce[CMR_DT_index	21;
+Rule	50]
+ reduce[CMR_DT_index	26;
+Rule	50]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	39;
+NextState	40]
+ shiftred[CMR_DT_index	4;
+Rule	41]
+ reduce[CMR_DT_index	5;
+Rule	71]
+ reduce[CMR_DT_index	8;
+Rule	71]
+ reduce[CMR_DT_index	9;
+Rule	71]
+ reduce[CMR_DT_index	19;
+Rule	71]
+ reduce[CMR_DT_index	21;
+Rule	71]
+ reduce[CMR_DT_index	26;
+Rule	71]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	45;
+NextState	38]
+ shiftred[CMR_DT_index	5;
+Rule	47]
+ shift[CMR_DT_index	8;
+NextState	37]
+ reduce[CMR_DT_index	9;
+Rule	63]
+ reduce[CMR_DT_index	19;
+Rule	63]
+ reduce[CMR_DT_index	21;
+Rule	63]
+ reduce[CMR_DT_index	26;
+Rule	63]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	26;
+Rule	149]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	64;
+NextState	36]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	20;
+NextState	31]
+>;
+Errsymb	20]
+ Rowtype[Entries	< shiftred[CMR_DT_index	26;
+Rule	143]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	26;
+Rule	147]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	7;
+Rule	57]
+ shiftred[CMR_DT_index	139;
+Rule	158]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+>;
+Errsymb	7]
+ Rowtype[Entries	< shift[CMR_DT_index	64;
+NextState	32]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	21;
+NextState	33]
+>;
+Errsymb	21]
+ Rowtype[Entries	< shift[CMR_DT_index	139;
+NextState	34]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+>;
+Errsymb	28]
+ Rowtype[Entries	< shift[CMR_DT_index	30;
+NextState	35]
+ reduce[CMR_DT_index	2;
+Rule	152]
+ reduce[CMR_DT_index	6;
+Rule	152]
+ reduce[CMR_DT_index	7;
+Rule	152]
+ reduce[CMR_DT_index	12;
+Rule	152]
+ reduce[CMR_DT_index	16;
+Rule	152]
+ reduce[CMR_DT_index	20;
+Rule	152]
+ reduce[CMR_DT_index	22;
+Rule	152]
+ reduce[CMR_DT_index	23;
+Rule	152]
+ reduce[CMR_DT_index	26;
+Rule	152]
+ reduce[CMR_DT_index	27;
+Rule	152]
+ reduce[CMR_DT_index	28;
+Rule	152]
+ reduce[CMR_DT_index	29;
+Rule	152]
+ reduce[CMR_DT_index	31;
+Rule	152]
+ reduce[CMR_DT_index	32;
+Rule	152]
+>;
+Errsymb	30]
+ Rowtype[Entries	< shiftred[CMR_DT_index	139;
+Rule	154]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+>;
+Errsymb	28]
+ Rowtype[Entries	< shiftred[CMR_DT_index	26;
+Rule	160]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shift[CMR_DT_index	64;
+NextState	41]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	67;
+NextState	39]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	39;
+NextState	40]
+ shiftred[CMR_DT_index	4;
+Rule	41]
+ reduce[CMR_DT_index	5;
+Rule	72]
+ reduce[CMR_DT_index	8;
+Rule	72]
+ reduce[CMR_DT_index	9;
+Rule	72]
+ reduce[CMR_DT_index	19;
+Rule	72]
+ reduce[CMR_DT_index	21;
+Rule	72]
+ reduce[CMR_DT_index	26;
+Rule	72]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	48;
+Rule	70]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	9;
+NextState	42]
+>;
+Errsymb	9]
+ Rowtype[Entries	< shiftred[CMR_DT_index	61;
+Rule	66]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shiftred[CMR_DT_index	49;
+Rule	53]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	127;
+NextState	48]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	164;
+NextState	46]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	93;
+NextState	47]
+ shiftred[CMR_DT_index	15;
+Rule	99]
+ shiftred[CMR_DT_index	13;
+Rule	95]
+ shiftred[CMR_DT_index	14;
+Rule	97]
+ reduce[CMR_DT_index	2;
+Rule	165]
+ reduce[CMR_DT_index	3;
+Rule	165]
+ reduce[CMR_DT_index	4;
+Rule	165]
+ reduce[CMR_DT_index	5;
+Rule	165]
+ reduce[CMR_DT_index	8;
+Rule	165]
+ reduce[CMR_DT_index	9;
+Rule	165]
+ reduce[CMR_DT_index	10;
+Rule	165]
+ reduce[CMR_DT_index	19;
+Rule	165]
+ reduce[CMR_DT_index	21;
+Rule	165]
+ reduce[CMR_DT_index	24;
+Rule	165]
+ reduce[CMR_DT_index	25;
+Rule	165]
+ reduce[CMR_DT_index	26;
+Rule	165]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	79;
+Rule	168]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shiftred[CMR_DT_index	76;
+Rule	121]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	34;
+NextState	45]
+ shiftred[CMR_DT_index	3;
+Rule	38]
+ shiftred[CMR_DT_index	2;
+Rule	36]
+ reduce[CMR_DT_index	4;
+Rule	130]
+ reduce[CMR_DT_index	5;
+Rule	130]
+ reduce[CMR_DT_index	8;
+Rule	130]
+ reduce[CMR_DT_index	9;
+Rule	130]
+ reduce[CMR_DT_index	10;
+Rule	130]
+ reduce[CMR_DT_index	19;
+Rule	130]
+ reduce[CMR_DT_index	21;
+Rule	130]
+ reduce[CMR_DT_index	26;
+Rule	130]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	21;
+Rule	117]
+>;
+Errsymb	21]
+ Rowtype[Entries	< shiftred[CMR_DT_index	64;
+Rule	78]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	64;
+NextState	52]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shift[CMR_DT_index	21;
+NextState	53]
+>;
+Errsymb	21]
+ Rowtype[Entries	< shiftred[CMR_DT_index	139;
+Rule	189]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+>;
+Errsymb	28]
+ Rowtype[Entries	< shiftred[CMR_DT_index	7;
+Rule	60]
+ shiftred[CMR_DT_index	139;
+Rule	158]
+ shift[CMR_DT_index	28;
+NextState	29]
+ shiftred[CMR_DT_index	26;
+Rule	141]
+ shift[CMR_DT_index	27;
+NextState	28]
+ shift[CMR_DT_index	29;
+NextState	27]
+ shift[CMR_DT_index	31;
+NextState	26]
+ shiftred[CMR_DT_index	54;
+Rule	145]
+ shift[CMR_DT_index	6;
+NextState	11]
+ shift[CMR_DT_index	64;
+NextState	25]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+ shiftred[CMR_DT_index	161;
+Rule	163]
+ shift[CMR_DT_index	32;
+NextState	15]
+>;
+Errsymb	7]
+ Rowtype[Entries	< shiftred[CMR_DT_index	102;
+Rule	173]
+ shift[CMR_DT_index	11;
+NextState	58]
+ reduce[CMR_DT_index	19;
+Rule	104]
+ reduce[CMR_DT_index	26;
+Rule	104]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	26;
+Rule	181]
+ shift[CMR_DT_index	19;
+NextState	57]
+>;
+Errsymb	26]
+ Rowtype[Entries	< shiftred[CMR_DT_index	171;
+Rule	187]
+ shift[CMR_DT_index	88;
+NextState	55]
+ shiftred[CMR_DT_index	12;
+Rule	90]
+>;
+Errsymb	12]
+ Rowtype[Entries	< shiftred[CMR_DT_index	64;
+Rule	106]
+ shiftred[CMR_DT_index	61;
+Rule	75]
+ shift[CMR_DT_index	62;
+NextState	24]
+ shift[CMR_DT_index	67;
+NextState	23]
+ shiftred[CMR_DT_index	48;
+Rule	68]
+ shift[CMR_DT_index	49;
+NextState	22]
+ shift[CMR_DT_index	127;
+NextState	21]
+ shift[CMR_DT_index	164;
+NextState	20]
+ shiftred[CMR_DT_index	79;
+Rule	167]
+ shiftred[CMR_DT_index	83;
+Rule	84]
+ shiftred[CMR_DT_index	23;
+Rule	123]
+ shift[CMR_DT_index	20;
+NextState	19]
+ shiftred[CMR_DT_index	22;
+Rule	119]
+ shift[CMR_DT_index	76;
+NextState	18]
+ shiftred[CMR_DT_index	12;
+Rule	92]
+ shift[CMR_DT_index	80;
+NextState	17]
+ shiftred[CMR_DT_index	16;
+Rule	101]
+ shift[CMR_DT_index	85;
+NextState	16]
+ shiftred[CMR_DT_index	2;
+Rule	170]
+>;
+Errsymb	23]
+ Rowtype[Entries	< shiftred[CMR_DT_index	26;
+Rule	183]
+ shift[CMR_DT_index	19;
+NextState	57]
+>;
+Errsymb	26]
+>;
+IsDeterm	TRUE]
+#

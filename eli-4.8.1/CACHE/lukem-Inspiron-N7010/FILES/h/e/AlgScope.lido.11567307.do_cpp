@@ -1,0 +1,99 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/h/e/AlgScope.lido.11536243.lidoEta"
+
+
+CLASS SYMBOL ROOTCLASS INHERITS RootScope END;
+
+CLASS SYMBOL RootScope:
+        Env:    Environment     SYNT,   
+        GotLocKeys:     VOID    SYNT,   
+        GotKeys:                VOID    SYNT;   
+
+CLASS SYMBOL RootScope COMPUTE
+  SYNT.Env = RootEnv;
+  SYNT.GotLocKeys =
+        CONSTITUENTS IdDefScope.Key 
+        SHIELD (RangeScope, RootScope);
+  SYNT.GotKeys = SYNT.GotLocKeys;
+END;
+
+
+CLASS SYMBOL RangeScope:
+        Env:    Environment     INH,    
+        GotLocKeys:     VOID    SYNT,   
+        GotKeys:                VOID    INH;    
+
+CLASS SYMBOL RangeScope COMPUTE
+  INH.Env =
+        NewScope (INCLUDING AnyScope.Env);
+  SYNT.GotLocKeys =
+        CONSTITUENTS IdDefScope.Key SHIELD AnyScope;
+  INH.GotKeys =
+        INCLUDING AnyScope.GotKeys
+        <- SYNT.GotLocKeys;
+END;
+
+
+CLASS SYMBOL AnyScope END;
+CLASS SYMBOL RootScope  INHERITS AnyScope END;
+CLASS SYMBOL RangeScope INHERITS AnyScope END;
+
+
+CLASS SYMBOL IdDefScope:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL IdDefScope COMPUTE
+  SYNT.Bind =
+        BindIdn (INCLUDING AnyScope.Env, THIS.Sym);
+  SYNT.Key = KeyOf (SYNT.Bind);
+END;
+
+
+CLASS SYMBOL IdUseEnv:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL IdUseEnv INHERITS _InhPrecondDefault COMPUTE
+  SYNT.Bind =
+        BindingInEnv (INCLUDING AnyScope.Env, THIS.Sym)
+        <- (INCLUDING AnyScope.GotKeys,
+            SYNT._InhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+END;
+
+CLASS SYMBOL _InhPrecondDefault:
+        _InhPrecond:    VOID    SYNT;   
+CLASS SYMBOL _InhPrecondDefault COMPUTE
+  SYNT._InhPrecond = "yes";
+END;
+
+
+CLASS SYMBOL IdUseScope:
+        Sym:            int,                    
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT;   
+
+CLASS SYMBOL IdUseScope INHERITS _InhPrecondDefault COMPUTE
+  SYNT.Bind =
+        BindingInScope (INCLUDING AnyScope.Env, THIS.Sym)
+        <- (INCLUDING AnyScope.GotLocKeys,
+            SYNT._InhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+END;
+
+
+CLASS SYMBOL ChkIdUse:
+        Key:    DefTableKey     SYNT,   
+        Sym:            int,                    
+        SymErr:         int             SYNT,   
+        SymMsg:         VOID            SYNT;   
+
+CLASS SYMBOL ChkIdUse COMPUTE
+  SYNT.SymErr = EQ (THIS.Key, NoKey);
+  SYNT.SymMsg = IF (THIS.SymErr,
+    message (ERROR, CatStrInd ("Identifier is not defined: ", THIS.Sym),
+           0, COORDREF));
+END;
+

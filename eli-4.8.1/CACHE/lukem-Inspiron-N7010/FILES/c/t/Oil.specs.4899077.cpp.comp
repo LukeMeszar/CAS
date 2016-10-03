@@ -1,0 +1,5669 @@
+
+Computations for Rule rule_1 <
+Computation in RULE rule_1 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassOpDef[1].SetNames
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: NULLDefTableKeyList
+      deps: < 
+         INCLUDING (OIL.GotAllDefs) propagate void
+         INCLUDING (OIL.GotAllTypes) propagate void
+         INCLUDING (OIL.GotAllNames) propagate void
+      >
+      coord: line 407, col 5
+   ]
+   coord: line 406, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassCoerce[0].SetBinding
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: FirstSetBinding
+         params: <
+            AttrAccRule [ 
+               IsChain
+               CostSpecification[3].SetNames
+            ]
+         >
+         coord: line 412, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 412, col 5
+   ]
+   coord: line 411, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassCoerce[0].Done
+   ]
+   right: 
+   Loop [
+      expr: 
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassCoerce[0].SetBinding
+            ]
+            Name: NoSetBinding
+         >
+         coord: line 414, col 11
+      ]
+      attr:  
+      AttrAccRule [ 
+         IsAttr
+         ClassCoerce[0].SetBinding
+      ]
+      iter:  
+      Depend [
+         expr: 
+         Call [
+            name: NextSetBinding
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  ClassCoerce[0].SetBinding
+               ]
+            >
+            coord: line 415, col 29
+         ]
+         deps: < 
+            AttrAccRule [ 
+               IsAttr
+               ClassCoerce[0].defined
+            ]
+         >
+         coord: line 415, col 29
+      ]
+      coord: line 414, col 5
+   ]
+   coord: line 413, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassCoerce[0].defined
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: AddClassCoercions
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[1].Key
+            ]
+         >
+         coord: line 635, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[1].classOpList
+         ]
+      >
+      coord: line 635, col 5
+   ]
+   coord: line 634, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassCoerce[0].cost
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      CostSpecification[3].cost
+   ]
+   coord: line 633, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassCoerce[0].classSignature
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassSignature[2].classSignature
+   ]
+   coord: line 632, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_2 <
+Computation in RULE rule_2 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassOpDefList[1].SetNames
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: NULLDefTableKeyList
+      deps: < 
+         INCLUDING (OIL.GotAllDefs) propagate void
+         INCLUDING (OIL.GotAllTypes) propagate void
+         INCLUDING (OIL.GotAllNames) propagate void
+      >
+      coord: line 407, col 5
+   ]
+   coord: line 406, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOper[0].SetBinding
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: FirstSetBinding
+         params: <
+            AttrAccRule [ 
+               IsChain
+               CostSpecification[3].SetNames
+            ]
+         >
+         coord: line 412, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 412, col 5
+   ]
+   coord: line 411, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOper[0].Done
+   ]
+   right: 
+   Loop [
+      expr: 
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOper[0].SetBinding
+            ]
+            Name: NoSetBinding
+         >
+         coord: line 414, col 11
+      ]
+      attr:  
+      AttrAccRule [ 
+         IsAttr
+         ClassOper[0].SetBinding
+      ]
+      iter:  
+      Depend [
+         expr: 
+         Call [
+            name: NextSetBinding
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  ClassOper[0].SetBinding
+               ]
+            >
+            coord: line 415, col 29
+         ]
+         deps: < 
+            AttrAccRule [ 
+               IsAttr
+               ClassOper[0].defined
+            ]
+         >
+         coord: line 415, col 29
+      ]
+      coord: line 414, col 5
+   ]
+   coord: line 413, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOper[0].defined
+   ]
+   right: 
+   CONSTITUENTS (ClassOpDef.classOpList) propagate void
+   coord: line 627, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOper[0].cost
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      CostSpecification[3].cost
+   ]
+   coord: line 626, col 3
+]
+Computation in RULE rule_2 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOper[0].classSignature
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassSignature[2].classSignature
+   ]
+   coord: line 625, col 3
+]
+>
+Computations for Rule rule_3 <
+Computation in RULE rule_3 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassSignature[0].classSignature
+   ]
+   right: 
+   Call [
+      name: OilAddClassSigArg
+      params: <
+         Call [
+            name: GetBindingStatus
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SignatureElement[2].Key
+               ]
+               Name: eSpecTypeRef
+            >
+            coord: line 597, col 7
+         ]
+         AttrAccRule [ 
+            IsAttr
+            SignatureElement[2].type
+         ]
+         Call [
+            name: GetParameterIndex
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SignatureElement[2].Key
+               ]
+               IntValue: 0
+            >
+            coord: line 599, col 7
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ClassSignature[1].classSignature
+         ]
+      >
+      coord: line 596, col 5
+   ]
+   coord: line 595, col 3
+]
+>
+Computations for Rule rule_4 <
+Computation in RULE rule_4 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassSignature[0].classSignature
+   ]
+   right: 
+   Call [
+      name: OilAddClassSigArg
+      params: <
+         Call [
+            name: GetBindingStatus
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SignatureElement[1].Key
+               ]
+               Name: eSpecTypeRef
+            >
+            coord: line 587, col 7
+         ]
+         AttrAccRule [ 
+            IsAttr
+            SignatureElement[1].type
+         ]
+         Call [
+            name: GetParameterIndex
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SignatureElement[1].Key
+               ]
+               IntValue: 0
+            >
+            coord: line 589, col 7
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ClassSignature[2].classSignature
+         ]
+      >
+      coord: line 586, col 5
+   ]
+   coord: line 585, col 3
+]
+>
+Computations for Rule rule_5 <
+Computation in RULE rule_5 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassSignature[0].classSignature
+   ]
+   right: 
+   Call [
+      name: OilAddClassSigArg
+      params: <
+         Call [
+            name: GetBindingStatus
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SignatureElement[1].Key
+               ]
+               Name: eSpecTypeRef
+            >
+            coord: line 577, col 7
+         ]
+         AttrAccRule [ 
+            IsAttr
+            SignatureElement[1].type
+         ]
+         Call [
+            name: GetParameterIndex
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  SignatureElement[1].Key
+               ]
+               IntValue: 0
+            >
+            coord: line 579, col 7
+         ]
+         Call [
+            name: OilNewClassSigArg
+            params: <
+            >
+            coord: line 580, col 7
+         ]
+      >
+      coord: line 576, col 5
+   ]
+   coord: line 575, col 3
+]
+>
+Computations for Rule rule_6 <
+Computation in RULE rule_6 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassSignature[0].classSignature
+   ]
+   right: 
+   Call [
+      name: OilNewClassSigArg
+      params: <
+      >
+      coord: line 570, col 33
+   ]
+   coord: line 570, col 3
+]
+>
+Computations for Rule rule_7 <
+Computation in RULE rule_7 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassName[1].GotEarlierBindings
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      Class[0].GotEarlierTypes
+   ]
+   coord: line 534, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Class[0].GotEarlierTypes
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      ClassBody[2].GotEarlierBindings
+   ]
+   coord: line 535, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Class[0].defined
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      ClassBody[2].GotEarlierBindings
+   ]
+   coord: line 536, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Class[0].class
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[1].class
+   ]
+   coord: line 525, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+Computation in RULE rule_7 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[1].argNum
+   ]
+   right: 
+   CONSTITUENTS (ClassParameter.Key) WITH (int, ADD, ARGTOONE, ZERO) propagate value 
+   coord: line 526, col 3
+]
+>
+Computations for Rule rule_8 <
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Indication[0].indication
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: HeadtOilOpList
+         params: <
+            Call [
+               name: GetOperator
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     IndDef[1].Key
+                  ]
+                  Name: NULLtOilOpList
+               >
+               coord: line 489, col 20
+            ]
+         >
+         coord: line 489, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.GotAllIndications) propagate void
+      >
+      coord: line 489, col 5
+   ]
+   coord: line 488, col 3
+]
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IndDef[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_9 <
+Computation in RULE rule_9 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[1].SetNames
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: NULLDefTableKeyList
+      deps: < 
+         INCLUDING (OIL.GotAllDefs) propagate void
+         INCLUDING (OIL.GotAllTypes) propagate void
+         INCLUDING (OIL.GotAllNames) propagate void
+      >
+      coord: line 407, col 5
+   ]
+   coord: line 406, col 3
+]
+Computation in RULE rule_9 ATTR 
+Depend [
+   expr: 
+   Call [
+      name: AddCoercions
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[1].Key
+         ]
+      >
+      coord: line 473, col 3
+   ]
+   deps: < 
+      AttrAccRule [ 
+         IsAttr
+         Coerce[0].Done
+      ]
+   >
+   coord: line 473, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Coerce[0].Done
+   ]
+   right: 
+   Loop [
+      expr: 
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Coerce[0].SetBinding
+            ]
+            Name: NoSetBinding
+         >
+         coord: line 414, col 11
+      ]
+      attr:  
+      AttrAccRule [ 
+         IsAttr
+         Coerce[0].SetBinding
+      ]
+      iter:  
+      Depend [
+         expr: 
+         Call [
+            name: NextSetBinding
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Coerce[0].SetBinding
+               ]
+            >
+            coord: line 415, col 29
+         ]
+         deps: < 
+            AttrAccRule [ 
+               IsAttr
+               Coerce[0].defined
+            ]
+         >
+         coord: line 415, col 29
+      ]
+      coord: line 414, col 5
+   ]
+   coord: line 413, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Coerce[0].SetBinding
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: FirstSetBinding
+         params: <
+            AttrAccRule [ 
+               IsChain
+               CostSpecification[3].SetNames
+            ]
+         >
+         coord: line 412, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 412, col 5
+   ]
+   coord: line 411, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Coerce[0].defined
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[1].OpList
+   ]
+   coord: line 472, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Coerce[0].cost
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      CostSpecification[3].cost
+   ]
+   coord: line 471, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Coerce[0].signature
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[2].signature
+   ]
+   coord: line 470, col 3
+]
+Computation in RULE rule_9 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_10 <
+Computation in RULE rule_10 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDefList[1].SetNames
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: NULLDefTableKeyList
+      deps: < 
+         INCLUDING (OIL.GotAllDefs) propagate void
+         INCLUDING (OIL.GotAllTypes) propagate void
+         INCLUDING (OIL.GotAllNames) propagate void
+      >
+      coord: line 407, col 5
+   ]
+   coord: line 406, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Oper[0].SetBinding
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: FirstSetBinding
+         params: <
+            AttrAccRule [ 
+               IsChain
+               CostSpecification[3].SetNames
+            ]
+         >
+         coord: line 412, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 412, col 5
+   ]
+   coord: line 411, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Oper[0].Done
+   ]
+   right: 
+   Loop [
+      expr: 
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               Oper[0].SetBinding
+            ]
+            Name: NoSetBinding
+         >
+         coord: line 414, col 11
+      ]
+      attr:  
+      AttrAccRule [ 
+         IsAttr
+         Oper[0].SetBinding
+      ]
+      iter:  
+      Depend [
+         expr: 
+         Call [
+            name: NextSetBinding
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Oper[0].SetBinding
+               ]
+            >
+            coord: line 415, col 29
+         ]
+         deps: < 
+            AttrAccRule [ 
+               IsAttr
+               Oper[0].defined
+            ]
+         >
+         coord: line 415, col 29
+      ]
+      coord: line 414, col 5
+   ]
+   coord: line 413, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Oper[0].defined
+   ]
+   right: 
+   CONSTITUENTS (OpDef.OpList) propagate void
+   coord: line 465, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Oper[0].cost
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      CostSpecification[3].cost
+   ]
+   coord: line 464, col 3
+]
+Computation in RULE rule_10 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Oper[0].signature
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[2].signature
+   ]
+   coord: line 463, col 3
+]
+>
+Computations for Rule rule_11 <
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SignatureElement[0].type
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetType
+         params: <
+            Call [
+               name: GetBoundType
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     TypeIdentifier[1].Key
+                  ]
+                  AttrAccRule [ 
+                     IsAttr
+                     TypeIdentifier[1].Key
+                  ]
+               >
+               coord: line 434, col 7
+            ]
+            Call [
+               name: OilErrorType
+               params: <
+               >
+               coord: line 435, col 7
+            ]
+         >
+         coord: line 433, col 5
+      ]
+      deps: < 
+         INCLUDING (Oper.SetBinding, Coerce.SetBinding, ClassOper.SetBinding, ClassCoerce.SetBinding) propagate void
+      >
+      coord: line 433, col 5
+   ]
+   coord: line 432, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      SignatureElement[0].SetNames
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: NE
+            params: <
+               Call [
+                  name: GetTypeSet
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        TypeIdentifier[1].Key
+                     ]
+                     Name: NULLDefTableKeyList
+                  >
+                  coord: line 425, col 9
+               ]
+               Name: NULLDefTableKeyList
+            >
+            coord: line 424, col 7
+         ]
+         Call [
+            name: AddToSetDefTableKeyList
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  TypeIdentifier[1].Key
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  SignatureElement[0].SetNames
+               ]
+               Name: CmpKey
+            >
+            coord: line 427, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            SignatureElement[0].SetNames
+         ]
+      >
+      coord: line 423, col 5
+   ]
+   coord: line 422, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SignatureElement[0].Key
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[1].Key
+   ]
+   coord: line 421, col 3
+]
+Computation in RULE rule_11 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_12 <
+Computation in RULE rule_12 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].signature
+   ]
+   right: 
+   Call [
+      name: OilAddArgSig
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SignatureElement[2].type
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Signature[1].signature
+         ]
+      >
+      coord: line 397, col 5
+   ]
+   coord: line 396, col 3
+]
+>
+Computations for Rule rule_13 <
+Computation in RULE rule_13 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].signature
+   ]
+   right: 
+   Call [
+      name: OilAddArgSig
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SignatureElement[1].type
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Signature[2].signature
+         ]
+      >
+      coord: line 391, col 5
+   ]
+   coord: line 390, col 3
+]
+>
+Computations for Rule rule_14 <
+Computation in RULE rule_14 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].signature
+   ]
+   right: 
+   Call [
+      name: OilAddArgSig
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SignatureElement[1].type
+         ]
+         Call [
+            name: OilNewArgSig
+            params: <
+            >
+            coord: line 385, col 58
+         ]
+      >
+      coord: line 385, col 23
+   ]
+   coord: line 385, col 3
+]
+>
+Computations for Rule rule_15 <
+Computation in RULE rule_15 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Signature[0].signature
+   ]
+   right: 
+   Call [
+      name: OilNewArgSig
+      params: <
+      >
+      coord: line 380, col 23
+   ]
+   coord: line 380, col 3
+]
+>
+Computations for Rule rule_16 <
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      Singleton[0].partialSet
+   ]
+   right: 
+   Call [
+      name: AddToSetDefTableKeyList
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[1].Key
+         ]
+         AttrAccRule [ 
+            IsChain
+            Singleton[0].partialSet
+         ]
+         Name: CmpKey
+      >
+      coord: line 369, col 5
+   ]
+   coord: line 368, col 3
+]
+Computation in RULE rule_16 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_17 <
+Computation in RULE rule_17 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xTypeExpr[0].set
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      xTypeList[1].partialSet
+   ]
+   coord: line 363, col 3
+]
+Computation in RULE rule_17 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xTypeList[1].partialSet
+   ]
+   right: 
+   Name: NULLDefTableKeyList
+   coord: line 362, col 3
+]
+>
+Computations for Rule rule_18 <
+Computation in RULE rule_18 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xTypeExpr[0].set
+   ]
+   right: 
+   Call [
+      name: Intersection
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xTypeExpr[1].set
+         ]
+         AttrAccRule [ 
+            IsAttr
+            xTypeExpr[2].set
+         ]
+      >
+      coord: line 354, col 20
+   ]
+   coord: line 354, col 3
+]
+>
+Computations for Rule rule_19 <
+Computation in RULE rule_19 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xTypeExpr[0].set
+   ]
+   right: 
+   Call [
+      name: Difference
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xTypeExpr[1].set
+         ]
+         AttrAccRule [ 
+            IsAttr
+            xTypeExpr[2].set
+         ]
+      >
+      coord: line 349, col 20
+   ]
+   coord: line 349, col 3
+]
+>
+Computations for Rule rule_20 <
+Computation in RULE rule_20 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xTypeExpr[0].set
+   ]
+   right: 
+   Call [
+      name: Union
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            xTypeExpr[1].set
+         ]
+         AttrAccRule [ 
+            IsAttr
+            xTypeExpr[2].set
+         ]
+      >
+      coord: line 344, col 20
+   ]
+   coord: line 344, col 3
+]
+>
+Computations for Rule rule_21 <
+Computation in RULE rule_21 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      xTypeExpr[0].GotEarlierSets
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  xTypeExpr[0].set
+               ]
+               Name: NULLDefTableKeyList
+            >
+            coord: line 337, col 8
+         ]
+         Call [
+            name: message
+            params: <
+               Name: ERROR
+               StrValue: Undefined set
+               IntValue: 0
+               Name: COORDREF
+            >
+            coord: line 338, col 7
+         ]
+      >
+      coord: line 337, col 5
+   ]
+   coord: line 336, col 3
+]
+Computation in RULE rule_21 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      xTypeExpr[0].set
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetTypeSet
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SetIdUse[1].Key
+            ]
+            Name: NULLDefTableKeyList
+         >
+         coord: line 334, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            xTypeExpr[0].GotEarlierSets
+         ]
+      >
+      coord: line 334, col 5
+   ]
+   coord: line 333, col 3
+]
+>
+Computations for Rule rule_22 <
+Computation in RULE rule_22 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      EquivalenceClass[0].GotEarlierSets
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ResetTypeSet
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SetIdDef[1].Key
+            ]
+            AttrAccRule [ 
+               IsAttr
+               xTypeExpr[2].set
+            ]
+         >
+         coord: line 327, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            EquivalenceClass[0].GotEarlierSets
+         ]
+      >
+      coord: line 327, col 5
+   ]
+   coord: line 326, col 3
+]
+>
+Computations for Rule rule_23 <
+Computation in RULE rule_23 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdUse[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               SetIdUse[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_23 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SetIdUse[0].Key
+            ]
+            Name: NoKey
+         >
+         coord: line 219, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Undefined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 220, col 5
+      ]
+   >
+   coord: line 219, col 3
+]
+Computation in RULE rule_23 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdUse[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 216, col 39
+]
+>
+Computations for Rule rule_24 <
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdDef[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SetIdDef[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_24 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               SetIdDef[0].Unique
+            ]
+         >
+         coord: line 210, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 211, col 5
+      ]
+   >
+   coord: line 210, col 3
+]
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               SetIdDef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdDef[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            SetIdDef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdDef[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            SetIdDef[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_24 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      SetIdDef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 207, col 39
+]
+>
+Computations for Rule rule_25 <
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpRef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               OpRef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_25 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpRef[0].Key
+            ]
+            Name: NoKey
+         >
+         coord: line 199, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Undefined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 200, col 5
+      ]
+   >
+   coord: line 199, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpRef[0].bind
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: AddIdentifications
+         params: <
+            INCLUDING (Indication.indication) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               OpRef[0].Key
+            ]
+         >
+         coord: line 495, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.GotAllOperators) propagate void
+      >
+      coord: line 495, col 5
+   ]
+   coord: line 494, col 3
+]
+Computation in RULE rule_25 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpRef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 196, col 36
+]
+>
+Computations for Rule rule_26 <
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      IndDef[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      IndDef[0]._OperFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].IsOperFirstOcc
+   ]
+   coord: line 122, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      IndDef[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IndDef[0].IsOperFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  IndDef[0].KnownKeys
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: OneOperator
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              IndDef[0].Key
+                           ]
+                        >
+                        coord: line 702, col 12
+                     ]
+                     Call [
+                        name: PTGOperatorProperty
+                        params: <
+                           Call [
+                              name: PTGNumb
+                              params: <
+                                 Call [
+                                    name: ID
+                                    params: <
+                                       Call [
+                                          name: Operator
+                                          params: <
+                                             AttrAccRule [ 
+                                                IsAttr
+                                                IndDef[0].Key
+                                             ]
+                                          >
+                                          coord: line 703, col 42
+                                       ]
+                                    >
+                                    coord: line 703, col 39
+                                 ]
+                              >
+                              coord: line 703, col 31
+                           ]
+                           AttrAccRule [ 
+                              IsAttr
+                              IndDef[0].Ptg
+                           ]
+                        >
+                        coord: line 703, col 11
+                     ]
+                     Call [
+                        name: PTGMultOperator
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              IndDef[0].Ptg
+                           ]
+                        >
+                        coord: line 704, col 11
+                     ]
+                  >
+                  coord: line 702, col 9
+               ]
+            >
+            coord: line 700, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            IndDef[0].KnownKeys
+         ]
+      >
+      coord: line 699, col 5
+   ]
+   coord: line 698, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      IndDef[0].OilExterns
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: AND
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  IndDef[0].IsOperFirstOcc
+               ]
+               Call [
+                  name: OneOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        IndDef[0].Key
+                     ]
+                  >
+                  coord: line 748, col 32
+               ]
+            >
+            coord: line 748, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  IndDef[0].OilExterns
+               ]
+               Call [
+                  name: PTGOperatorSymbol
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 Call [
+                                    name: Operator
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          IndDef[0].Key
+                                       ]
+                                    >
+                                    coord: line 751, col 38
+                                 ]
+                              >
+                              coord: line 751, col 35
+                           ]
+                        >
+                        coord: line 751, col 27
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        IndDef[0].Ptg
+                     ]
+                  >
+                  coord: line 751, col 9
+               ]
+            >
+            coord: line 749, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            IndDef[0].OilExterns
+         ]
+      >
+      coord: line 748, col 5
+   ]
+   coord: line 747, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               IndDef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].OpList
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: IF
+         params: <
+            Call [
+               name: EQ
+               params: <
+                  Call [
+                     name: GetOperator
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           IndDef[0].Key
+                        ]
+                        Name: NULLtOilOpList
+                     >
+                     coord: line 506, col 11
+                  ]
+                  Name: NULLtOilOpList
+               >
+               coord: line 506, col 8
+            ]
+            Call [
+               name: ResetOperator
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     IndDef[0].Key
+                  ]
+                  Call [
+                     name: ConstOilOpList
+                     params: <
+                        Call [
+                           name: OilNewOp
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 IndDef[0].Key
+                              ]
+                              Call [
+                                 name: OilNewArgSig
+                                 params: <
+                                 >
+                                 coord: line 510, col 30
+                              ]
+                              IntValue: 0
+                           >
+                           coord: line 510, col 11
+                        ]
+                        Name: NULLtOilOpList
+                     >
+                     coord: line 509, col 9
+                  ]
+               >
+               coord: line 507, col 7
+            ]
+         >
+         coord: line 506, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.GotAllOperators) propagate void
+      >
+      coord: line 506, col 5
+   ]
+   coord: line 505, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               IndDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            IndDef[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].IsOperFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetOperFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               IndDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 120, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            IndDef[0]._OperFirstOcc
+         ]
+      >
+      coord: line 120, col 9
+   ]
+   coord: line 119, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            IndDef[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IndDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            IndDef[0].Sym
+         ]
+      >
+      coord: line 284, col 17
+   ]
+   coord: line 284, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].dumped
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IndDef[0].IsFirstOcc
+         ]
+         Depend [
+            expr: 
+            Call [
+               name: DumpOps
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     IndDef[0].Key
+                  ]
+               >
+               coord: line 667, col 25
+            ]
+            deps: < 
+               INCLUDING (OIL.DumpInit) propagate void
+            >
+            coord: line 667, col 25
+         ]
+      >
+      coord: line 667, col 5
+   ]
+   coord: line 666, col 3
+]
+Computation in RULE rule_26 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IndDef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 192, col 37
+]
+>
+Computations for Rule rule_27 <
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassParameter[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassParameter[0].ParameterIndex
+   ]
+   right: 
+   Call [
+      name: ORDER
+      params: <
+         Call [
+            name: ResetBindingStatus
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  ClassParameter[0].Key
+               ]
+               Name: eElementRef
+            >
+            coord: line 560, col 7
+         ]
+         Call [
+            name: ResetParameterIndex
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  ClassParameter[0].Key
+               ]
+               AttrAccRule [ 
+                  IsChain
+                  ClassParameter[0].ParameterIndex
+               ]
+            >
+            coord: line 561, col 7
+         ]
+         Call [
+            name: ADD
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  ClassParameter[0].ParameterIndex
+               ]
+               IntValue: 1
+            >
+            coord: line 562, col 7
+         ]
+      >
+      coord: line 559, col 5
+   ]
+   coord: line 558, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassParameter[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_27 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassParameter[0].Unique
+            ]
+         >
+         coord: line 185, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 186, col 5
+      ]
+   >
+   coord: line 185, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (ClassBody.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            ClassParameter[0].Sym
+         ]
+      >
+      coord: line 251, col 14
+   ]
+   coord: line 251, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               ClassParameter[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassParameter[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassParameter[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            ClassParameter[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_27 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassParameter[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 182, col 45
+]
+>
+Computations for Rule rule_28 <
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassName[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassName[0].GotEarlierBindings
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ResetBindingStatus
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassName[0].Key
+            ]
+            Name: eClassRef
+         >
+         coord: line 541, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            ClassName[0].GotEarlierBindings
+         ]
+      >
+      coord: line 541, col 5
+   ]
+   coord: line 540, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassName[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  ClassName[0].KnownKeys
+               ]
+               Call [
+                  name: PTGClassProperty
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    ClassName[0].class
+                                 ]
+                              >
+                              coord: line 714, col 34
+                           ]
+                        >
+                        coord: line 714, col 26
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassName[0].Ptg
+                     ]
+                  >
+                  coord: line 714, col 9
+               ]
+            >
+            coord: line 712, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            ClassName[0].KnownKeys
+         ]
+      >
+      coord: line 711, col 5
+   ]
+   coord: line 710, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassName[0].OilExterns
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  ClassName[0].OilExterns
+               ]
+               Call [
+                  name: PTGClassSymbol
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    ClassName[0].class
+                                 ]
+                              >
+                              coord: line 761, col 32
+                           ]
+                        >
+                        coord: line 761, col 24
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassName[0].Ptg
+                     ]
+                  >
+                  coord: line 761, col 9
+               ]
+            >
+            coord: line 759, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            ClassName[0].OilExterns
+         ]
+      >
+      coord: line 758, col 5
+   ]
+   coord: line 757, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassName[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_28 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassName[0].Unique
+            ]
+         >
+         coord: line 176, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 177, col 5
+      ]
+   >
+   coord: line 176, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].class
+   ]
+   right: 
+   Call [
+      name: OilNewClass
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].argNum
+         ]
+      >
+      coord: line 520, col 14
+   ]
+   coord: line 520, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               ClassName[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].dumped
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].IsFirstOcc
+         ]
+         Depend [
+            expr: 
+            Call [
+               name: OilDumpClass
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     ClassName[0].class
+                  ]
+               >
+               coord: line 673, col 25
+            ]
+            deps: < 
+               INCLUDING (OIL.DumpInit) propagate void
+            >
+            coord: line 673, col 25
+         ]
+      >
+      coord: line 673, col 5
+   ]
+   coord: line 672, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassName[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            ClassName[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ClassName[0].Sym
+         ]
+      >
+      coord: line 284, col 17
+   ]
+   coord: line 284, col 3
+]
+Computation in RULE rule_28 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassName[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 173, col 40
+]
+>
+Computations for Rule rule_29 <
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      TypeIdentifier[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      TypeIdentifier[0]._TypeFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].IsTypeFirstOcc
+   ]
+   coord: line 98, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      TypeIdentifier[0].GotEarlierTypes
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].type
+   ]
+   coord: line 311, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      TypeIdentifier[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].DoType
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  TypeIdentifier[0].KnownKeys
+               ]
+               Call [
+                  name: PTGTypeProperty
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    TypeIdentifier[0].type
+                                 ]
+                              >
+                              coord: line 692, col 33
+                           ]
+                        >
+                        coord: line 692, col 25
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        TypeIdentifier[0].Ptg
+                     ]
+                  >
+                  coord: line 692, col 9
+               ]
+            >
+            coord: line 690, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            TypeIdentifier[0].KnownKeys
+         ]
+      >
+      coord: line 689, col 5
+   ]
+   coord: line 688, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      TypeIdentifier[0].OilExterns
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].DoType
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  TypeIdentifier[0].OilExterns
+               ]
+               Call [
+                  name: PTGTypeSymbol
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 AttrAccRule [ 
+                                    IsAttr
+                                    TypeIdentifier[0].type
+                                 ]
+                              >
+                              coord: line 741, col 31
+                           ]
+                        >
+                        coord: line 741, col 23
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        TypeIdentifier[0].Ptg
+                     ]
+                  >
+                  coord: line 741, col 9
+               ]
+            >
+            coord: line 739, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            TypeIdentifier[0].OilExterns
+         ]
+      >
+      coord: line 738, col 5
+   ]
+   coord: line 737, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].type
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: ORDER
+         params: <
+            Call [
+               name: IF
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     TypeIdentifier[0].DoType
+                  ]
+                  Call [
+                     name: ResetType
+                     params: <
+                        AttrAccRule [ 
+                           IsAttr
+                           TypeIdentifier[0].Key
+                        ]
+                        Call [
+                           name: OilNewType
+                           params: <
+                              AttrAccRule [ 
+                                 IsAttr
+                                 TypeIdentifier[0].Key
+                              ]
+                           >
+                           coord: line 308, col 43
+                        ]
+                     >
+                     coord: line 308, col 23
+                  ]
+               >
+               coord: line 308, col 7
+            ]
+            Call [
+               name: GetType
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     TypeIdentifier[0].Key
+                  ]
+                  Call [
+                     name: OilErrorType
+                     params: <
+                     >
+                     coord: line 309, col 24
+                  ]
+               >
+               coord: line 309, col 7
+            ]
+         >
+         coord: line 307, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            TypeIdentifier[0].GotEarlierTypes
+         ]
+      >
+      coord: line 307, col 5
+   ]
+   coord: line 306, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].DoType
+   ]
+   right: 
+   Call [
+      name: AND
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].IsTypeFirstOcc
+         ]
+         Call [
+            name: EQ
+            params: <
+               Call [
+                  name: GetTypeSet
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        TypeIdentifier[0].Key
+                     ]
+                     Name: NULLDefTableKeyList
+                  >
+                  coord: line 280, col 10
+               ]
+               Name: NULLDefTableKeyList
+            >
+            coord: line 280, col 7
+         ]
+      >
+      coord: line 278, col 5
+   ]
+   coord: line 277, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               TypeIdentifier[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].dumped
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].DoType
+         ]
+         Depend [
+            expr: 
+            Call [
+               name: OilDumpType
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     TypeIdentifier[0].type
+                  ]
+               >
+               coord: line 661, col 21
+            ]
+            deps: < 
+               INCLUDING (OIL.DumpInit) propagate void
+            >
+            coord: line 661, col 21
+         ]
+      >
+      coord: line 661, col 5
+   ]
+   coord: line 660, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               TypeIdentifier[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            TypeIdentifier[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].IsTypeFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetTypeFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               TypeIdentifier[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 96, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            TypeIdentifier[0]._TypeFirstOcc
+         ]
+      >
+      coord: line 96, col 9
+   ]
+   coord: line 95, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            TypeIdentifier[0].Sym
+         ]
+      >
+      coord: line 276, col 17
+   ]
+   coord: line 276, col 3
+]
+Computation in RULE rule_29 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      TypeIdentifier[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 167, col 45
+]
+>
+Computations for Rule rule_30 <
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassOpDef[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassOpDef[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  ClassOpDef[0].KnownKeys
+               ]
+               Call [
+                  name: PTGMultOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassOpDef[0].Ptg
+                     ]
+                  >
+                  coord: line 722, col 29
+               ]
+            >
+            coord: line 722, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            ClassOpDef[0].KnownKeys
+         ]
+      >
+      coord: line 721, col 5
+   ]
+   coord: line 720, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_30 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Unique
+            ]
+         >
+         coord: line 162, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 163, col 5
+      ]
+   >
+   coord: line 162, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].classOpList
+   ]
+   right: 
+   Call [
+      name: ResetClassOperator
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Key
+         ]
+         Call [
+            name: ConstOilClassOpList
+            params: <
+               Call [
+                  name: OilAddClassOp
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassOpDef[0].Key
+                     ]
+                     INCLUDING (ClassOper.classSignature, ClassCoerce.classSignature) propagate value 
+                     INCLUDING (ClassOper.cost, ClassCoerce.cost) propagate value 
+                     INCLUDING (Class.class) propagate value 
+                  >
+                  coord: line 609, col 9
+               ]
+               Call [
+                  name: GetClassOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassOpDef[0].Key
+                     ]
+                     Name: NULLtOilClassOpList
+                  >
+                  coord: line 614, col 9
+               ]
+            >
+            coord: line 608, col 7
+         ]
+      >
+      coord: line 606, col 5
+   ]
+   coord: line 605, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            ClassOpDef[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Sym
+         ]
+      >
+      coord: line 284, col 17
+   ]
+   coord: line 284, col 3
+]
+Computation in RULE rule_30 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 159, col 41
+]
+>
+Computations for Rule rule_31 <
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0]._OperFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsOperFirstOcc
+   ]
+   coord: line 122, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].IsOperFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  OpDef[0].KnownKeys
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: OneOperator
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              OpDef[0].Key
+                           ]
+                        >
+                        coord: line 702, col 12
+                     ]
+                     Call [
+                        name: PTGOperatorProperty
+                        params: <
+                           Call [
+                              name: PTGNumb
+                              params: <
+                                 Call [
+                                    name: ID
+                                    params: <
+                                       Call [
+                                          name: Operator
+                                          params: <
+                                             AttrAccRule [ 
+                                                IsAttr
+                                                OpDef[0].Key
+                                             ]
+                                          >
+                                          coord: line 703, col 42
+                                       ]
+                                    >
+                                    coord: line 703, col 39
+                                 ]
+                              >
+                              coord: line 703, col 31
+                           ]
+                           AttrAccRule [ 
+                              IsAttr
+                              OpDef[0].Ptg
+                           ]
+                        >
+                        coord: line 703, col 11
+                     ]
+                     Call [
+                        name: PTGMultOperator
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              OpDef[0].Ptg
+                           ]
+                        >
+                        coord: line 704, col 11
+                     ]
+                  >
+                  coord: line 702, col 9
+               ]
+            >
+            coord: line 700, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            OpDef[0].KnownKeys
+         ]
+      >
+      coord: line 699, col 5
+   ]
+   coord: line 698, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0].OilExterns
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: AND
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  OpDef[0].IsOperFirstOcc
+               ]
+               Call [
+                  name: OneOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Key
+                     ]
+                  >
+                  coord: line 748, col 32
+               ]
+            >
+            coord: line 748, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  OpDef[0].OilExterns
+               ]
+               Call [
+                  name: PTGOperatorSymbol
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 Call [
+                                    name: Operator
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          OpDef[0].Key
+                                       ]
+                                    >
+                                    coord: line 751, col 38
+                                 ]
+                              >
+                              coord: line 751, col 35
+                           ]
+                        >
+                        coord: line 751, col 27
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Ptg
+                     ]
+                  >
+                  coord: line 751, col 9
+               ]
+            >
+            coord: line 749, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            OpDef[0].OilExterns
+         ]
+      >
+      coord: line 748, col 5
+   ]
+   coord: line 747, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_31 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Unique
+            ]
+         >
+         coord: line 153, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 154, col 5
+      ]
+   >
+   coord: line 153, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].OpList
+   ]
+   right: 
+   Call [
+      name: ResetOperator
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Key
+         ]
+         Call [
+            name: ConstOilOpList
+            params: <
+               Call [
+                  name: OilNewOp
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Key
+                     ]
+                     INCLUDING (Oper.signature, Coerce.signature) propagate value 
+                     INCLUDING (Oper.cost, Coerce.cost) propagate value 
+                  >
+                  coord: line 448, col 9
+               ]
+               Call [
+                  name: GetOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Key
+                     ]
+                     Name: NULLtOilOpList
+                  >
+                  coord: line 452, col 9
+               ]
+            >
+            coord: line 447, col 7
+         ]
+      >
+      coord: line 445, col 5
+   ]
+   coord: line 444, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            OpDef[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsOperFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetOperFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 120, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            OpDef[0]._OperFirstOcc
+         ]
+      >
+      coord: line 120, col 9
+   ]
+   coord: line 119, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Sym
+         ]
+      >
+      coord: line 284, col 17
+   ]
+   coord: line 284, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].dumped
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].IsFirstOcc
+         ]
+         Depend [
+            expr: 
+            Call [
+               name: DumpOps
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     OpDef[0].Key
+                  ]
+               >
+               coord: line 667, col 25
+            ]
+            deps: < 
+               INCLUDING (OIL.DumpInit) propagate void
+            >
+            coord: line 667, col 25
+         ]
+      >
+      coord: line 667, col 5
+   ]
+   coord: line 666, col 3
+]
+Computation in RULE rule_31 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 150, col 36
+]
+>
+Computations for Rule rule_32 <
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassOpDef[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassOpDef[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].IsFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  ClassOpDef[0].KnownKeys
+               ]
+               Call [
+                  name: PTGMultOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassOpDef[0].Ptg
+                     ]
+                  >
+                  coord: line 722, col 29
+               ]
+            >
+            coord: line 722, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            ClassOpDef[0].KnownKeys
+         ]
+      >
+      coord: line 721, col 5
+   ]
+   coord: line 720, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_32 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Unique
+            ]
+         >
+         coord: line 162, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 163, col 5
+      ]
+   >
+   coord: line 162, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].classOpList
+   ]
+   right: 
+   Call [
+      name: ResetClassOperator
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Key
+         ]
+         Call [
+            name: ConstOilClassOpList
+            params: <
+               Call [
+                  name: OilAddClassOp
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassOpDef[0].Key
+                     ]
+                     INCLUDING (ClassOper.classSignature, ClassCoerce.classSignature) propagate value 
+                     INCLUDING (ClassOper.cost, ClassCoerce.cost) propagate value 
+                     INCLUDING (Class.class) propagate value 
+                  >
+                  coord: line 609, col 9
+               ]
+               Call [
+                  name: GetClassOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        ClassOpDef[0].Key
+                     ]
+                     Name: NULLtOilClassOpList
+                  >
+                  coord: line 614, col 9
+               ]
+            >
+            coord: line 608, col 7
+         ]
+      >
+      coord: line 606, col 5
+   ]
+   coord: line 605, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               ClassOpDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            ClassOpDef[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[0].Sym
+         ]
+      >
+      coord: line 284, col 17
+   ]
+   coord: line 284, col 3
+]
+Computation in RULE rule_32 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[0].Sym
+   ]
+   right: 
+   Call [
+      name: GenerateName
+      params: <
+         StrValue: _AnonOp
+      >
+      coord: line 145, col 24
+   ]
+   coord: line 145, col 9
+]
+>
+Computations for Rule rule_33 <
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0]._FirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsFirstOcc
+   ]
+   coord: line 74, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0]._OperFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsOperFirstOcc
+   ]
+   coord: line 122, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0].KnownKeys
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].IsOperFirstOcc
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  OpDef[0].KnownKeys
+               ]
+               Call [
+                  name: IF
+                  params: <
+                     Call [
+                        name: OneOperator
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              OpDef[0].Key
+                           ]
+                        >
+                        coord: line 702, col 12
+                     ]
+                     Call [
+                        name: PTGOperatorProperty
+                        params: <
+                           Call [
+                              name: PTGNumb
+                              params: <
+                                 Call [
+                                    name: ID
+                                    params: <
+                                       Call [
+                                          name: Operator
+                                          params: <
+                                             AttrAccRule [ 
+                                                IsAttr
+                                                OpDef[0].Key
+                                             ]
+                                          >
+                                          coord: line 703, col 42
+                                       ]
+                                    >
+                                    coord: line 703, col 39
+                                 ]
+                              >
+                              coord: line 703, col 31
+                           ]
+                           AttrAccRule [ 
+                              IsAttr
+                              OpDef[0].Ptg
+                           ]
+                        >
+                        coord: line 703, col 11
+                     ]
+                     Call [
+                        name: PTGMultOperator
+                        params: <
+                           AttrAccRule [ 
+                              IsAttr
+                              OpDef[0].Ptg
+                           ]
+                        >
+                        coord: line 704, col 11
+                     ]
+                  >
+                  coord: line 702, col 9
+               ]
+            >
+            coord: line 700, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            OpDef[0].KnownKeys
+         ]
+      >
+      coord: line 699, col 5
+   ]
+   coord: line 698, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      OpDef[0].OilExterns
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: AND
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  OpDef[0].IsOperFirstOcc
+               ]
+               Call [
+                  name: OneOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Key
+                     ]
+                  >
+                  coord: line 748, col 32
+               ]
+            >
+            coord: line 748, col 8
+         ]
+         Call [
+            name: PTGSeq
+            params: <
+               AttrAccRule [ 
+                  IsChain
+                  OpDef[0].OilExterns
+               ]
+               Call [
+                  name: PTGOperatorSymbol
+                  params: <
+                     Call [
+                        name: PTGNumb
+                        params: <
+                           Call [
+                              name: ID
+                              params: <
+                                 Call [
+                                    name: Operator
+                                    params: <
+                                       AttrAccRule [ 
+                                          IsAttr
+                                          OpDef[0].Key
+                                       ]
+                                    >
+                                    coord: line 751, col 38
+                                 ]
+                              >
+                              coord: line 751, col 35
+                           ]
+                        >
+                        coord: line 751, col 27
+                     ]
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Ptg
+                     ]
+                  >
+                  coord: line 751, col 9
+               ]
+            >
+            coord: line 749, col 7
+         ]
+         AttrAccRule [ 
+            IsChain
+            OpDef[0].OilExterns
+         ]
+      >
+      coord: line 748, col 5
+   ]
+   coord: line 747, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].Unique
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: GetUnique
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Key
+            ]
+            IntValue: 0
+         >
+         coord: line 24, col 9
+      ]
+      deps: < 
+         INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      >
+      coord: line 24, col 9
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_33 ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Unique
+            ]
+         >
+         coord: line 153, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: ERROR
+            StrValue: Multiply-defined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 154, col 5
+      ]
+   >
+   coord: line 153, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].OpList
+   ]
+   right: 
+   Call [
+      name: ResetOperator
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Key
+         ]
+         Call [
+            name: ConstOilOpList
+            params: <
+               Call [
+                  name: OilNewOp
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Key
+                     ]
+                     INCLUDING (Oper.signature, Coerce.signature) propagate value 
+                     INCLUDING (Oper.cost, Coerce.cost) propagate value 
+                  >
+                  coord: line 448, col 9
+               ]
+               Call [
+                  name: GetOperator
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        OpDef[0].Key
+                     ]
+                     Name: NULLtOilOpList
+                  >
+                  coord: line 452, col 9
+               ]
+            >
+            coord: line 447, col 7
+         ]
+      >
+      coord: line 445, col 5
+   ]
+   coord: line 444, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Sym
+            ]
+         >
+         coord: line 242, col 5
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      >
+      coord: line 242, col 5
+   ]
+   coord: line 241, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0]._GotUnique
+   ]
+   right: 
+   Call [
+      name: SetUnique
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 0
+      >
+      coord: line 21, col 9
+   ]
+   coord: line 20, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 72, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            OpDef[0]._FirstOcc
+         ]
+      >
+      coord: line 72, col 9
+   ]
+   coord: line 71, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].IsOperFirstOcc
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: SetGetOperFirstOcc
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               OpDef[0].Key
+            ]
+            IntValue: 1
+            IntValue: 0
+         >
+         coord: line 120, col 9
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            OpDef[0]._OperFirstOcc
+         ]
+      >
+      coord: line 120, col 9
+   ]
+   coord: line 119, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].bound
+   ]
+   right: 
+   Call [
+      name: DefineIdn
+      params: <
+         INCLUDING (OIL.Env) propagate value 
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Sym
+         ]
+      >
+      coord: line 247, col 14
+   ]
+   coord: line 247, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].GotIndex
+   ]
+   right: 
+   Call [
+      name: ResetIndex
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Key
+         ]
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].Sym
+         ]
+      >
+      coord: line 284, col 17
+   ]
+   coord: line 284, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].dumped
+   ]
+   right: 
+   Call [
+      name: IF
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[0].IsFirstOcc
+         ]
+         Depend [
+            expr: 
+            Call [
+               name: DumpOps
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     OpDef[0].Key
+                  ]
+               >
+               coord: line 667, col 25
+            ]
+            deps: < 
+               INCLUDING (OIL.DumpInit) propagate void
+            >
+            coord: line 667, col 25
+         ]
+      >
+      coord: line 667, col 5
+   ]
+   coord: line 666, col 3
+]
+Computation in RULE rule_33 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[0].Sym
+   ]
+   right: 
+   Call [
+      name: GenerateName
+      params: <
+         StrValue: _AnonOp
+      >
+      coord: line 141, col 19
+   ]
+   coord: line 141, col 9
+]
+>
+Computations for Rule rule_34 <
+Computation in RULE rule_34 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      CostSpecification[0].cost
+   ]
+   right: 
+   RuleTermAcc: Integer[1]
+   coord: line 136, col 3
+]
+>
+Computations for Rule rule_35 <
+Computation in RULE rule_35 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      CostSpecification[0].cost
+   ]
+   right: 
+   IntValue: 1
+   coord: line 131, col 3
+]
+>
+Computations for Rule rule_76 <
+>
+Computations for Rule rule_75 <
+>
+Computations for Rule rule_74 <
+>
+Computations for Rule rule_73 <
+>
+Computations for Rule rule_72 <
+>
+Computations for Rule rule_71 <
+>
+Computations for Rule rule_70 <
+>
+Computations for Rule rule_69 <
+>
+Computations for Rule rule_68 <
+>
+Computations for Rule rule_67 <
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1]._FirstOcc
+   ]
+   right: 
+   StrValue: yes
+   coord: line 66, col 3
+]
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1]._TypeFirstOcc
+   ]
+   right: 
+   StrValue: yes
+   coord: line 90, col 3
+]
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1]._OperFirstOcc
+   ]
+   right: 
+   StrValue: yes
+   coord: line 114, col 3
+]
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1].GotEarlierTypes
+   ]
+   right: 
+   Depend [
+      expr: 
+      StrValue: yes
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].GotAllSets
+         ]
+      >
+      coord: line 299, col 35
+   ]
+   coord: line 299, col 3
+]
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1].GotEarlierSets
+   ]
+   right: 
+   StrValue: yes
+   coord: line 318, col 3
+]
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1].KnownKeys
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: PTGNULL
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].DataBaseBuilt
+         ]
+      >
+      coord: line 682, col 29
+   ]
+   coord: line 682, col 3
+]
+Computation in RULE rule_67 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G1[1].OilExterns
+   ]
+   right: 
+   Depend [
+      expr: 
+      Name: PTGNULL
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].DataBaseBuilt
+         ]
+      >
+      coord: line 731, col 30
+   ]
+   coord: line 731, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].Env
+   ]
+   right: 
+   Call [
+      name: NewEnv
+      params: <
+      >
+      coord: line 230, col 12
+   ]
+   coord: line 230, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].BoundInOuter
+   ]
+   right: 
+   CONSTITUENTS (OpDef.bound, ClassOpDef.bound, TypeIdentifier.bound, ClassName.bound, IndDef.bound, SetIdDef.bound) propagate void
+   coord: line 231, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllDefs
+   ]
+   right: 
+   CONSTITUENTS (OpDef.bound, ClassOpDef.bound, ClassName.bound, ClassParameter.bound, SetIdDef.bound) propagate void
+   coord: line 232, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].DataBaseBuilt
+   ]
+   right: 
+   Depend [
+      expr: 
+      CONSTITUENTS (OpRef.bind) propagate void
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].GotAllOperators
+         ]
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].GotAllClasses
+         ]
+      >
+      coord: line 268, col 5
+   ]
+   coord: line 267, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllOperators
+   ]
+   right: 
+   Depend [
+      expr: 
+      AttrAccRule [ 
+         IsAttr
+         OIL[0].GotOperators
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].GotClassOperators
+         ]
+      >
+      coord: line 481, col 24
+   ]
+   coord: line 481, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllClasses
+   ]
+   right: 
+   CONSTITUENTS (Class.defined) propagate void
+   coord: line 546, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllNames
+   ]
+   right: 
+   CONSTITUENTS (OpDef.GotIndex, ClassOpDef.GotIndex, TypeIdentifier.GotIndex, ClassName.GotIndex, IndDef.GotIndex) propagate void
+   coord: line 288, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllSets
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      G1[1].GotEarlierSets
+   ]
+   coord: line 319, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllTypes
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      G1[1].GotEarlierTypes
+   ]
+   coord: line 300, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotOperators
+   ]
+   right: 
+   CONSTITUENTS (Oper.Done, Coerce.Done) propagate void
+   coord: line 457, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotClassOperators
+   ]
+   right: 
+   CONSTITUENTS (ClassOper.Done, ClassCoerce.Done) propagate void
+   coord: line 619, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotAllIndications
+   ]
+   right: 
+   CONSTITUENTS (IndDef.OpList) propagate void
+   coord: line 501, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].DumpInit
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: OilDumpInit
+         params: <
+            StrValue: OilDecls.c
+         >
+         coord: line 655, col 17
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            OIL[0].DataBaseBuilt
+         ]
+      >
+      coord: line 655, col 17
+   ]
+   coord: line 655, col 3
+]
+Computation in RULE rule_67 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: OilDecls.pdl
+      Call [
+         name: PTGPDL
+         params: <
+            AttrAccRule [ 
+               IsChain
+               G1[1].KnownKeys
+            ]
+         >
+         coord: line 683, col 29
+      ]
+   >
+   coord: line 683, col 3
+]
+Computation in RULE rule_67 ATTR 
+Call [
+   name: PTGOutFile
+   params: <
+      StrValue: OilDecls.h
+      Call [
+         name: PTGHeader
+         params: <
+            AttrAccRule [ 
+               IsChain
+               G1[1].OilExterns
+            ]
+         >
+         coord: line 732, col 27
+      ]
+   >
+   coord: line 732, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0]._GotUnique
+   ]
+   right: 
+   CONSTITUENTS (OpDef._GotUnique, ClassOpDef._GotUnique, ClassName._GotUnique, ClassParameter._GotUnique, SetIdDef._GotUnique) SHIELD (OIL, ClassBody) propagate void
+   coord: line 14, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      G1[1]._FirstOcc
+   ]
+   coord: line 67, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotTypeFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      G1[1]._TypeFirstOcc
+   ]
+   coord: line 91, col 3
+]
+Computation in RULE rule_67 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OIL[0].GotOperFirstOcc
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      G1[1]._OperFirstOcc
+   ]
+   coord: line 115, col 3
+]
+>
+Computations for Rule rule_66 <
+>
+Computations for Rule rule_65 <
+>
+Computations for Rule rule_64 <
+>
+Computations for Rule rule_63 <
+>
+Computations for Rule rule_62 <
+>
+Computations for Rule rule_61 <
+>
+Computations for Rule rule_60 <
+>
+Computations for Rule rule_59 <
+>
+Computations for Rule rule_58 <
+>
+Computations for Rule rule_57 <
+>
+Computations for Rule rule_56 <
+>
+Computations for Rule rule_55 <
+Computation in RULE rule_55 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_54 <
+Computation in RULE rule_54 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      OpDef[2].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            OpDef[2].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_53 <
+>
+Computations for Rule rule_52 <
+>
+Computations for Rule rule_51 <
+>
+Computations for Rule rule_50 <
+>
+Computations for Rule rule_49 <
+>
+Computations for Rule rule_48 <
+>
+Computations for Rule rule_47 <
+>
+Computations for Rule rule_46 <
+Computation in RULE rule_46 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[2].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[2].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_45 <
+Computation in RULE rule_45 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassOpDef[1].Ptg
+   ]
+   right: 
+   Call [
+      name: PTGId
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ClassOpDef[1].Sym
+         ]
+      >
+      coord: line 34, col 13
+   ]
+   coord: line 34, col 3
+]
+>
+Computations for Rule rule_44 <
+>
+Computations for Rule rule_43 <
+>
+Computations for Rule rule_42 <
+>
+Computations for Rule rule_41 <
+Computation in RULE rule_41 CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      G8[1].ParameterIndex
+   ]
+   right: 
+   IntValue: 1
+   coord: line 553, col 3
+]
+Computation in RULE rule_41 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ClassParameters[0].GotEarlierBindings
+   ]
+   right: 
+   AttrAccRule [ 
+      IsChain
+      G8[1].ParameterIndex
+   ]
+   coord: line 554, col 3
+]
+>
+Computations for Rule rule_40 <
+>
+Computations for Rule rule_39 <
+>
+Computations for Rule rule_38 <
+>
+Computations for Rule rule_37 <
+Computation in RULE rule_37 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassBody[0].Env
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: NewScope
+         params: <
+            INCLUDING (OIL.Env) propagate value 
+         >
+         coord: line 236, col 12
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter) propagate void
+      >
+      coord: line 236, col 12
+   ]
+   coord: line 236, col 3
+]
+Computation in RULE rule_37 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassBody[0].BoundInInner
+   ]
+   right: 
+   CONSTITUENTS (ClassParameter.bound) propagate void
+   coord: line 237, col 3
+]
+Computation in RULE rule_37 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassBody[0]._GotUnique
+   ]
+   right: 
+   CONSTITUENTS (OpDef._GotUnique, ClassOpDef._GotUnique, ClassName._GotUnique, ClassParameter._GotUnique, SetIdDef._GotUnique) SHIELD (OIL, ClassBody) propagate void
+   coord: line 14, col 3
+]
+>
+Computations for Rule rule_36 <
+Computation in RULE rule_36 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassBody[0].Env
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: NewScope
+         params: <
+            INCLUDING (OIL.Env) propagate value 
+         >
+         coord: line 236, col 12
+      ]
+      deps: < 
+         INCLUDING (OIL.BoundInOuter) propagate void
+      >
+      coord: line 236, col 12
+   ]
+   coord: line 236, col 3
+]
+Computation in RULE rule_36 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassBody[0].BoundInInner
+   ]
+   right: 
+   CONSTITUENTS (ClassParameter.bound) propagate void
+   coord: line 237, col 3
+]
+Computation in RULE rule_36 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ClassBody[0]._GotUnique
+   ]
+   right: 
+   CONSTITUENTS (OpDef._GotUnique, ClassOpDef._GotUnique, ClassName._GotUnique, ClassParameter._GotUnique, SetIdDef._GotUnique) SHIELD (OIL, ClassBody) propagate void
+   coord: line 14, col 3
+]
+>

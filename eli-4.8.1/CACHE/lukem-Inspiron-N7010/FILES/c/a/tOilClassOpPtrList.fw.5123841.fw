@@ -1,0 +1,173 @@
+@=~
+~p typesetter = texinfo
+~p maximum_input_line_length = infinity
+~! $Id: PtrList.fw,v 1.7 2009/01/02 10:30:14 peter Exp $
+~!
+~! (C) Copyright 1997 University of Paderborn.
+~! 
+~! This file is part of the Eli Module Library.
+~! 
+~! The Eli Module Library is free software; you can redistribute it and/or
+~! modify it under the terms of the GNU Library General Public License as
+~! published by the Free Software Foundation; either version 2 of the
+~! License, or (at your option) any later version.
+~! 
+~! The Eli Module Library is distributed in the hope that it will be
+~! useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+~! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+~! Library General Public License for more details.
+~! 
+~! You should have received a copy of the GNU Library General Public
+~! License along with the Eli Module Library; see the file COPYING.LIB.
+~! If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+~! Suite 330, Boston, MA 02111-1307, USA. 
+~!
+
+This module implements linear lists whose elements are of type tOilClassOp
+which must be a pointer type.
+The list type is tOilClassOpList.
+
+The element type tOilClassOp given by the instance parameter 
+must be defined in a header file oiladt2
+where oiladt2 is the value of the referto parameter.
+
+Instantiation of this module creates a header file that defines
+the same entities as defined by the List module.
+They are mapped to those of an instance of the
+List module with VoidPtr (void*) being its element type.
+
+Hence, several instances of this module reuse only one implementation
+of list operations without loss of type safety.
+
+~O~<tOilClassOpPtrList.specs~>~{
+$/Adt/List.gnrc+instance=VoidPtr+referto=VoidPtr:inst
+~}
+
+~O~<tOilClassOpList.h~>~{
+#ifndef _tOilClassOpLIST_H
+#define _tOilClassOpLIST_H
+
+/* include header file defining tOilClassOp if oiladt2 is set: */
+#define EMPTYoiladt2HDR
+#ifndef EMPTYHDR
+#include "oiladt2.h"
+#endif
+#undef EMPTYoiladt2HDR
+
+#include "VoidPtrList.h"
+
+typedef VoidPtrList	tOilClassOpList;
+typedef VoidPtrList    *tOilClassOpListPtr;
+typedef VoidPtrCmpFctType     tOilClassOpCmpFctType;
+
+#define NULLtOilClassOpList		((tOilClassOpList)0)
+#define NulltOilClassOpList()	((tOilClassOpList)0)
+#define SingletOilClassOpList(e)	(ConstOilClassOpList((e),NULLtOilClassOpList))
+
+#define FinltOilClassOpList		FinlVoidPtrList
+
+#define ConstOilClassOpList(e,l)	ConsVoidPtrList ((VoidPtr)(e),(l))
+
+#define HeadtOilClassOpList(l)	((tOilClassOp)(HeadVoidPtrList (l)))
+
+#define TailtOilClassOpList(l)	TailVoidPtrList (l)
+
+#define LengthtOilClassOpList(l)	LengthVoidPtrList (l)
+
+#define IthElemtOilClassOpList(l,i)	((tOilClassOp)(IthElemVoidPtrList (l, i)))
+
+#define CopytOilClassOpList(l,cp)	CopyVoidPtrList (l, cp)
+
+#define ApptOilClassOpList(l1,l2)	AppVoidPtrList (l1, l2)
+
+#define AppEltOilClassOpList(l,e)	AppElVoidPtrList (l, (VoidPtr)e)
+
+#define InsertAftertOilClassOpList(l,e) \
+	InsertAfterVoidPtrList (l, (VoidPtr)e)
+
+#define OrderedInserttOilClassOpList(l,e,fcmp) \
+	OrderedInsertVoidPtrList (l, (VoidPtr)e, (VoidPtrCmpFctType)fcmp)
+
+#define RefEndConstOilClassOpList(addr,e) \
+	RefEndConsVoidPtrList (addr, (VoidPtr)e)
+
+#define RefEndApptOilClassOpList(addr,l) \
+	RefEndAppVoidPtrList (addr, l)
+
+#define ElemIntOilClassOpList(e,l,cmpfct) \
+	ElemInVoidPtrList ((VoidPtr)e, l, (VoidPtrCmpFctType)cmpfct)
+
+#define AddToSettOilClassOpList(e,l,cmpfct) \
+	AddToSetVoidPtrList ((VoidPtr)e, l, (VoidPtrCmpFctType)cmpfct)
+
+#define AddToOrderedSettOilClassOpList(e,l,cmpfct) \
+	AddToOrderedSetVoidPtrList ((VoidPtr)e, l, (VoidPtrCmpFctType)cmpfct)
+
+#define MaptOilClassOpList(l,f) \
+	MapVoidPtrList (l,(VoidPtrMapFct)f)
+
+#define ComptOilClassOpList(l1,l2,f) \
+	CompVoidPtrList (l1, l2, (VoidPtrCmpFctType)f)
+
+#define SumtOilClassOpList(l,f,a) \
+	SumVoidPtrList (l, (VoidPtrSumFct)f, (VoidPtr)a)
+
+#ifdef MONITOR
+#define DAPTO_RESULTtOilClassOpList(l) DAPTO_RESULT_PTR(l)
+#define DAPTO_ARGtOilClassOpList(l)    DAPTO_ARG_PTR (l, tOilClassOpList)
+#endif
+
+#endif
+~}
+
+~O~<tOilClassOpPtrList.head~>~{
+#include "tOilClassOpList.h"
+~}
+
+~O~<tOilClassOpPtrList.dapto~>~{
+aspect tOilClassOpPtrList;
+
+"tOilClassOpList.h"
+
+operation get_tOilClassOpList_elems
+    "Return the tOilClassOp list elements"
+    (tOilClassOpList lst "The list") : str
+{
+    tOilClassOp elem;
+
+    for ( ; lst != NULLtOilClassOpList; lst = TailtOilClassOpList(lst)) {
+	elem = HeadtOilClassOpList(lst);
+	DAPTO_RESULT_PTR(elem);
+    }
+}
+
+end;
+~}
+
+~O~<tOilClassOpPtrList.tcl~>~{
+set n(tOilClassOpList,desc) "tOilClassOp List"
+
+proc n_tOilClassOpList_open {text lst} {
+    n_say "$text\n"
+    if {$lst == 0} {
+        n_say "  NULLtOilClassOpList\n"
+    } else {
+        set lst [n_hextodec $lst]
+        set r [n_send get_tOilClassOpList_elems $lst]
+        set c 0
+        foreach i $r {
+            n_say "  "
+            n_say_val tOilClassOp $i
+            n_say "\n"
+            incr c
+        }
+        if {$c == 0} {
+            n_say "  Empty\n"
+        }
+    }
+}
+
+proc n_tOilClassOpList_say {lst} {
+    n_say "tOilClassOpList:0x[n_dectohex $lst]"
+}
+~}

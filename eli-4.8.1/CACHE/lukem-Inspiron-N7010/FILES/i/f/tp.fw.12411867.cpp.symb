@@ -1,0 +1,344 @@
+USED TREE SYMBOLS:
+   Source (187, 7)
+      direct INHERITS RootScope, ROOTCLASS
+         all INHERITS AnyScope, RootScope, RangeFirstOcc, RangeUnique, RangeKind, ROOTCLASS
+      ATTRIBUTES
+      GotKeys (187, 7): SYNT, VOID
+      GotLocKeys (187, 7): SYNT, VOID
+      GotFirstOcc (187, 7): SYNT, VOID
+      _GotUnique (187, 7): SYNT, VOID
+      GotKind (187, 7): SYNT, VOID
+      GotAllCases (707, 58): SYNT, VOID (by default)
+      plain$5 (531, 3): SYNT, VOID
+      plain$4 (522, 3): SYNT, VOID
+      Env (357, 43): SYNT, Environment
+      GotAllUses (224, 8): SYNT, VOID (by default)
+      GotAllSymbols (249, 8): SYNT, VOID (by default)
+      GotAllTypes (772, 55): SYNT, VOID (by default)
+      GotAllArities (216, 8): SYNT, VOID (by default)
+   
+   Include (187, 26)
+      direct INHERITS FirstOcc, IdDefScope, IdOcc
+         all INHERITS IdOcc, IdDefScope, FirstOcc
+      ATTRIBUTES
+      Bind (187, 26): SYNT, Binding
+      Key (187, 26): SYNT, DefTableKey
+      Sym (542, 50): SYNT, int
+      IsFirstOcc (541, 13): SYNT, int
+   
+   Declaration (187, 36)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      type (235, 35): SYNT, DefTableKey
+   
+   Pattern (187, 50)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotCase (724, 11): SYNT, VOID (by default)
+      Ptg (585, 11): SYNT, PTGNode
+      IsCommutative (583, 11): SYNT, int
+   
+   String (188, 26)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Nonterms (189, 26)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Type (189, 39)
+      direct INHERITS FirstOcc, IdDefScope, IdOcc
+         all INHERITS IdOcc, IdDefScope, FirstOcc
+      ATTRIBUTES
+      Bind (189, 39): SYNT, Binding
+      IsFirstOcc (701, 13): SYNT, int
+      Sym (708, 16): SYNT, int
+      GotSymbol (253, 8): SYNT, VOID (by default)
+      Key (707, 25): SYNT, DefTableKey
+   
+   SymbolDef (190, 26)
+      direct INHERITS IdDefScope, IdOcc, SetKind
+         all INHERITS IdOcc, IdDefScope, SetKind
+      ATTRIBUTES
+      Bind (190, 26): SYNT, Binding
+      GotKind (190, 26): SYNT, VOID
+      Sym (771, 20): SYNT, int
+      type (772, 27): SYNT, DefTableKey
+      Key (234, 31): SYNT, DefTableKey
+      Kind (233, 8): SYNT, int
+      GotType (234, 8): SYNT, VOID (by default)
+   
+   Signature (191, 26)
+      direct INHERITS Unique
+         all INHERITS Unique
+      ATTRIBUTES
+      _GotUnique (191, 26): SYNT, VOID
+      plain$3 (505, 3): SYNT, VOID
+      Unique (505, 15): SYNT, int
+      Key (504, 8): SYNT, DefTableKey
+      Bind (504, 23): SYNT, Binding
+      struct (753, 37): SYNT, int
+      Sym (586, 32): SYNT, int
+      type (726, 17): SYNT, DefTableKey
+      ComSym (587, 32): SYNT, int
+   
+   Identifier (191, 41)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   Cost (191, 52)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      value (587, 66): SYNT, int
+   
+   SymbolUse (193, 26)
+      direct INHERITS IdUseEnv, IdOcc, GetKind
+         all INHERITS IdOcc, _InhPrecondDefault, IdUseEnv, GetKind
+      ATTRIBUTES
+      _InhPrecond (193, 26): SYNT, VOID
+      Bind (193, 26): SYNT, Binding
+      typeSym (668, 30): SYNT, PTGNode
+      HasKind (593, 21): SYNT, int
+      Sym (653, 27): SYNT, int
+      Key (734, 27): SYNT, DefTableKey
+   
+   Child (193, 42)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Ptg (599, 8): SYNT, PTGNode
+      Sym (463, 28): SYNT, int
+      ntcount (438, 48): SYNT, int
+      IsNt (748, 16): SYNT, int
+      GotUse (244, 8): SYNT, VOID (by default)
+   
+   Function (193, 48)
+      direct INHERITS FirstOcc
+         all INHERITS FirstOcc
+      ATTRIBUTES
+      IsFirstOcc (642, 13): SYNT, int
+      Key (357, 12): SYNT, DefTableKey
+      ntcount (647, 20): INH, int
+      Sym (647, 53): INH, int
+   
+   Terminal (195, 26)
+      direct INHERITS FirstOcc, IdDefScope, IdOcc, SetKind
+         all INHERITS IdOcc, IdDefScope, FirstOcc, SetKind
+      ATTRIBUTES
+      Bind (195, 26): SYNT, Binding
+      GotKind (195, 26): SYNT, VOID
+      IsFirstOcc (558, 13): SYNT, int
+      Sym (561, 29): SYNT, int
+      GotArity (438, 12): INH, VOID (by default)
+      plain$1 (210, 3): SYNT, VOID
+      Key (561, 53): SYNT, DefTableKey
+      Kind (209, 8): SYNT, int
+   
+   Children (196, 39)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      RightSym (469, 37): INH, int
+      LeftSym (463, 12): SYNT, int
+   
+   Integer (201, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   LST_Nonterms (190, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   LST_Source (187, 1)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS RootScope, RangeFirstOcc, RangeUnique, RangeKind
+         all INHERITS AnyScope, RootScope, RangeFirstOcc, RangeUnique, RangeKind
+      ATTRIBUTES
+   
+   RangeKind (3, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotKind (33, 40): SYNT, VOID
+   
+   SetKind (11, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotKind (26, 8): SYNT, VOID
+      Kind (27, 37): No Class, int
+      Key (27, 27): No Class, DefTableKey
+   
+   GetKind (16, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      HasKind (31, 8): SYNT, int
+      Key (32, 23): No Class, DefTableKey
+   
+   RangeUnique (37, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      _GotUnique (59, 42): SYNT, VOID
+   
+   Unique (42, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Unique (57, 8): SYNT, int
+      Key (58, 25): No Class, DefTableKey
+      _GotUnique (54, 8): SYNT, VOID
+   
+   RangeFirstOcc (63, 33)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotFirstOcc (76, 8): SYNT, VOID
+   
+   FirstOcc (68, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      IsFirstOcc (83, 25): SYNT, int
+      Key (81, 30): No Class, DefTableKey
+   
+   RootScope (88, 33)
+      direct INHERITS AnyScope
+         all INHERITS AnyScope
+      ATTRIBUTES
+      GotKeys (100, 8): SYNT, VOID
+      GotLocKeys (100, 23): SYNT, VOID
+      Env (96, 8): SYNT, Environment
+   
+   IdDefScope (98, 22)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (132, 47): No Class, int
+      Bind (133, 26): SYNT, Binding
+      Key (133, 8): SYNT, DefTableKey
+   
+   AnyScope (111, 29)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      GotLocKeys (165, 32): No Class, No Type
+      GotKeys (145, 32): No Class, No Type
+      Env (503, 40): No Class, No Type
+   
+   IdUseEnv (137, 14)
+      direct INHERITS _InhPrecondDefault
+         all INHERITS _InhPrecondDefault
+      ATTRIBUTES
+      _InhPrecond (146, 18): SYNT, VOID
+      Sym (144, 52): No Class, int
+      Key (147, 8): SYNT, DefTableKey
+      Bind (147, 26): SYNT, Binding
+   
+   _InhPrecondDefault (142, 32)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      _InhPrecond (153, 8): SYNT, VOID
+   
+   IdOcc (494, 27)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      Sym (500, 27): SYNT, int
+   
+RULES:
+   LST_Patternrule_19 (187, 1)
+      ATTRIBUTES
+   
+   LST_Declarationrule_19 (187, 1)
+      ATTRIBUTES
+   
+   LST_Includerule_19 (187, 1)
+      ATTRIBUTES
+   
+   LST_0rule_19 (187, 1)
+      ATTRIBUTES
+   
+   LST_SymbolDefrule_16 (190, 1)
+      ATTRIBUTES
+   
+   LST_0rule_16 (190, 1)
+      ATTRIBUTES
+   
+   rule_1 (205, 1)
+      ATTRIBUTES
+   
+   rule_2 (204, 1)
+      ATTRIBUTES
+   
+   rule_3 (203, 1)
+      ATTRIBUTES
+   
+   rule_4 (202, 1)
+      ATTRIBUTES
+   
+   rule_5 (201, 1)
+      ATTRIBUTES
+   
+   rule_6 (200, 1)
+      ATTRIBUTES
+   
+   rule_7 (199, 1)
+      ATTRIBUTES
+   
+   rule_8 (198, 1)
+      ATTRIBUTES
+   
+   rule_9 (197, 1)
+      ATTRIBUTES
+   
+   rule_10 (196, 1)
+      ATTRIBUTES
+      HasNt (436, 9): SYNT, int
+   
+   rule_11 (195, 1)
+      ATTRIBUTES
+   
+   rule_12 (194, 1)
+      ATTRIBUTES
+      type (750, 44): SYNT, DefTableKey
+   
+   rule_13 (193, 1)
+      ATTRIBUTES
+      plain$2 (311, 3): SYNT, VOID
+   
+   rule_14 (192, 1)
+      ATTRIBUTES
+      id (729, 39): SYNT, PTGNode
+   
+   rule_15 (191, 1)
+      ATTRIBUTES
+      id (717, 55): SYNT, PTGNode
+   
+   rule_16 (190, 1)
+      ATTRIBUTES
+   
+   rule_17 (189, 1)
+      ATTRIBUTES
+   
+   rule_18 (188, 1)
+      ATTRIBUTES
+   
+   rule_19 (187, 1)
+      ATTRIBUTES
+   

@@ -1,0 +1,15 @@
+%tg-main.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-main.c.176097.o
+%tg-anal.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-anal.c.177265.o
+%tg-att.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-att.c.178433.o
+%tg-dummy.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-dummy.c.179601.o
+%tg-gen_grm.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-gen_grm.c.180769.o
+%tg-gen_lex.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-gen_lex.c.181937.o
+%tg-gen_nod.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-gen_nod.c.183105.o
+%tg-nod_grm.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-nod_grm.c.184273.o
+%tg-yylex.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tg-yylex.c.185441.o
+%tregrm-yacc.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/tregrm-yacc.c.186609.o
+%if-err.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/if-err.c.66160.o
+%if-file.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/if-file.c.67920.o
+%if-io.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/if-io.c.69088.o
+%if-nod.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/a/if-nod.c.187921.o
+%if-symbol.o == /home/lukem/Dropbox/CAS/eli-4.8.1/Odin/ODINBOOT/lukem-Inspiron-N7010/FILES/if-symbol.c.70256.o

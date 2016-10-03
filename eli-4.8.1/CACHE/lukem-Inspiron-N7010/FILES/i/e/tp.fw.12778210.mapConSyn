@@ -1,0 +1,45 @@
+G1: G1 ',' SymbolDef .
+
+G1: SymbolDef .
+
+Nonterms: G1 .
+
+Source: LST_Source .
+LST_Source: LST_Source Include .
+LST_Source: LST_Source Declaration .
+LST_Source: LST_Source Pattern .
+LST_Source: .
+Include: String .
+
+Declaration: Nonterms ':' Type ';' .
+
+Pattern: Signature ':' Identifier Cost ';' .
+
+Pattern: Signature '::' Identifier Cost ';' .
+
+Signature: SymbolUse '::=' Child Function .
+
+Child: SymbolUse .
+
+Child: Terminal '(' ')' .
+
+Child: Terminal '(' Children ')' .
+
+Children: Children ',' Child .
+
+Children: Child .
+
+Function:  .
+
+Cost:  .
+
+Cost: 'COST' Integer .
+
+Type: Identifier .
+
+Terminal: Identifier .
+
+SymbolDef: Identifier .
+
+SymbolUse: Identifier .
+

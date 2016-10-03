@@ -1,0 +1,5 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/m/g/abstree.lido.18164555.lidoEta"
+RULE axiom:
+prog ::= 'dummy'
+END;
+

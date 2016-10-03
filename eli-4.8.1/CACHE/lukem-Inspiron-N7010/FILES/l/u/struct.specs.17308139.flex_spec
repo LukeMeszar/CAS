@@ -1,0 +1,30 @@
+%%
+
+"<"	1; /* ext=36 sourceLine=17 */
+"<="	2; /* ext=34 sourceLine=18 */
+"<>"	3; /* ext=35 sourceLine=19 */
+"="	4; /* ext=13 sourceLine=20 */
+">"	5; /* ext=38 sourceLine=21 */
+">="	6; /* ext=37 sourceLine=22 */
+"-"	7; /* ext=2 sourceLine=23 */
+","	8; /* ext=7 sourceLine=24 */
+";"	9; /* ext=6 sourceLine=25 */
+":"	10; /* ext=5 sourceLine=26 */
+":="	11; /* ext=49 sourceLine=27 */
+"\^"	12; /* ext=46 sourceLine=28 */
+"\/"	13; /* ext=24 sourceLine=29 */
+"\."	14; /* ext=30 sourceLine=30 */
+"\.\."	15; /* ext=40 sourceLine=31 */
+"\("	16; /* ext=8 sourceLine=32 */
+"\)"	17; /* ext=9 sourceLine=33 */
+"\["	18; /* ext=10 sourceLine=34 */
+"\]"	19; /* ext=16 sourceLine=35 */
+"\*"	20; /* ext=25 sourceLine=36 */
+"\+"	21; /* ext=3 sourceLine=37 */
+
+
+[0-9]+	22; /* ext=18 sourceLine=5 */
+(([0-9]+\.[0-9]+)((e|E)(\+|\-)?[0-9]+)?)|([0-9]+(e|E)(\+|\-)?[0-9]+)	23; /* ext=20 sourceLine=6 */
+'	24; /* ext=14 sourceLine=7 */
+"{"|"(*"	25; /* ext=15001 sourceLine=8 */
+[a-zA-Z][a-zA-Z0-9]*	26; /* ext=21 sourceLine=13 */

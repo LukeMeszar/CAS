@@ -1,0 +1,58 @@
+This is Info file lex, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/lex.tnf.
+
+Indirect:
+lex-1: 124
+lex-2: 46284
+lex-3: 93977
+
+Tag Table:
+(Indirect)
+Node: Top126
+Node: Specifications5394
+Node: Regular Expressions7292
+Node: Quoting9669
+Node: Classes11621
+Node: Composition14684
+Node: Several15782
+Node: Bar16474
+Node: Query17571
+Node: Plus18399
+Node: Star19274
+Node: Count20452
+Node: Ambiguity21707
+Node: Auxiliary Scanners23034
+Node: Available scanners24663
+Node: Building scanners34201
+Node: Token Processors35789
+Node: Available Processors37355
+Node: Building Processors41744
+Node: Canned Descriptions44095
+Node: Available Descriptions46286
+Node: Definitions of Descriptions50374
+Node: White Space52579
+Node: Coordinates54696
+Node: Updating with code55724
+Node: Updating with scanners57735
+Node: Skipping58841
+Node: Illegal60121
+Node: Literal Symbols60797
+Node: Overriding62344
+Node: Override example63594
+Node: The delit file64586
+Node: Specifying behavior65590
+Node: Surrogates67178
+Node: Case Insensitivity69346
+Node: Folding71062
+Node: Keywords72478
+Node: Generated Module75619
+Node: Text77756
+Node: Reset80624
+Node: Classify82627
+Node: Position83735
+Node: Continue85661
+Node: Return87724
+Node: Occam88296
+Node: Index93979
+
+End Tag Table

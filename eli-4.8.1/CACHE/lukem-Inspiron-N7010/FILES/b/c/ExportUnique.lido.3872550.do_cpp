@@ -1,0 +1,26 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/c/ExportUnique.lido.3835014.lidoEta"
+
+CLASS SYMBOL ROOTCLASS INHERITS ExportRangeUnique END;
+
+CLASS SYMBOL ExportRangeUnique:
+                _GotExportUnique:       VOID;
+
+CLASS SYMBOL ExportUnique:
+                _GotExportUnique:       VOID,
+                Key:            DefTableKey,
+                ExportUnique:           int     SYNT;
+
+CLASS SYMBOL ExportRangeUnique  COMPUTE
+  SYNT._GotExportUnique =
+        CONSTITUENTS ExportUnique._GotExportUnique
+                SHIELD ExportRangeUnique;
+END;
+
+CLASS SYMBOL ExportUnique       COMPUTE
+  SYNT._GotExportUnique = 
+        SetExportUnique (THIS.Key, 1, 0);
+
+  SYNT.ExportUnique =
+        GetExportUnique (THIS.Key, 0)
+        DEPENDS_ON INCLUDING ExportRangeUnique._GotExportUnique;
+END;

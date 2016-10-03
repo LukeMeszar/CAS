@@ -1,0 +1,2 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/dapto/dapto.fw :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/dapto/dapto.fw :phi*etaIncl) :clp*clp_gen
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.specs

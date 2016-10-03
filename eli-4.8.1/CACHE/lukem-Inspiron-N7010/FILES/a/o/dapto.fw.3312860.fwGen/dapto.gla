@@ -1,0 +1,7 @@
+
+ident:  C_IDENTIFIER_ISO
+str:    C_STRING_LIT
+bstr:   $\<[^>]+\>              [mkstr]
+text:   $\{             (Ctext) [mkstr]
+        C_COMMENT
+        AWK_COMMENT

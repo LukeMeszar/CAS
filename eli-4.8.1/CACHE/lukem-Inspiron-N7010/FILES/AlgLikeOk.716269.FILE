@@ -1,0 +1,5 @@
+%AlgLike.TEST == . +cmd=cat (%trenn) \
+	(AlgLike.demo/TEST:label) \
+	(AlgLike.demo/TEST) \
+	(AlgLike.demo/TEST +cmd=(AlgLike.fw.exe) :stdout :warn) \
+	(AlgLike.demo/TEST +cmd=(AlgLike.fw.exe) :stdout) :stdout

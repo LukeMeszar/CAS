@@ -1,0 +1,18 @@
+
+aspect DefTableKeyPtrList;
+
+"DefTableKeyList.h"
+
+operation get_DefTableKeyList_elems
+    "Return the DefTableKey list elements"
+    (DefTableKeyList lst "The list") : str
+{
+    DefTableKey elem;
+
+    for ( ; lst != NULLDefTableKeyList; lst = TailDefTableKeyList(lst)) {
+        elem = HeadDefTableKeyList(lst);
+        DAPTO_RESULT_PTR(elem);
+    }
+}
+
+end;

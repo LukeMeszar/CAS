@@ -1,0 +1,4 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/separator"
+%EOFTOKEN 1
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/m/f/code.lex_code.18160507.lex_code"
+$dummy		2

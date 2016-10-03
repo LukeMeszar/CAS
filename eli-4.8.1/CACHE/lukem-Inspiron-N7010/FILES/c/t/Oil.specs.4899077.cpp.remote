@@ -1,0 +1,76 @@
+INCLUDING Constructs:
+   
+   INCLUDING (OIL.DumpInit) propagate void
+      occurs in  (672, 3),  (666, 3),  (660, 3)
+   INCLUDING (Class.class) propagate value 
+      occurs in  (605, 3)
+   INCLUDING (ClassOper.cost, ClassCoerce.cost) propagate value 
+      occurs in  (605, 3)
+   INCLUDING (ClassOper.classSignature, ClassCoerce.classSignature) propagate value 
+      occurs in  (605, 3)
+   INCLUDING (OIL.GotAllOperators) propagate void
+      occurs in  (505, 3),  (494, 3)
+   INCLUDING (Indication.indication) propagate value 
+      occurs in  (494, 3)
+   INCLUDING (OIL.GotAllIndications) propagate void
+      occurs in  (488, 3)
+   INCLUDING (Oper.cost, Coerce.cost) propagate value 
+      occurs in  (444, 3)
+   INCLUDING (Oper.signature, Coerce.signature) propagate value 
+      occurs in  (444, 3)
+   INCLUDING (Oper.SetBinding, Coerce.SetBinding, ClassOper.SetBinding, ClassCoerce.SetBinding) propagate void
+      occurs in  (432, 3)
+   INCLUDING (OIL.GotAllNames) propagate void
+      occurs in  (406, 14)
+   INCLUDING (OIL.GotAllTypes) propagate void
+      occurs in  (406, 14)
+   INCLUDING (OIL.GotAllDefs) propagate void
+      occurs in  (406, 14)
+   INCLUDING (ClassBody.Env) propagate value 
+      occurs in  (251, 3)
+   INCLUDING (OIL.BoundInOuter, ClassBody.BoundInInner) propagate void
+      occurs in  (241, 3)
+   INCLUDING (OIL.Env, ClassBody.Env) propagate value 
+      occurs in  (241, 3)
+   INCLUDING (OIL.BoundInOuter) propagate void
+      occurs in  (236, 3)
+   INCLUDING (OIL.Env) propagate value 
+      occurs in  (247, 3),  (236, 3)
+   INCLUDING (OIL._GotUnique, ClassBody._GotUnique) propagate void
+      occurs in  (411, 3),  (23, 3)
+   
+
+CONSTITUENT Constructs:
+   
+   
+
+CONSTITUENTS Constructs:
+   
+   CONSTITUENTS (ClassOpDef.classOpList) propagate void
+      occurs in  (627, 3)
+   CONSTITUENTS (ClassOper.Done, ClassCoerce.Done) propagate void
+      occurs in  (619, 3)
+   CONSTITUENTS (Class.defined) propagate void
+      occurs in  (546, 3)
+   CONSTITUENTS (ClassParameter.Key) WITH (int, ADD, ARGTOONE, ZERO) propagate value 
+      occurs in  (526, 3)
+   CONSTITUENTS (IndDef.OpList) propagate void
+      occurs in  (501, 3)
+   CONSTITUENTS (OpDef.OpList) propagate void
+      occurs in  (465, 3)
+   CONSTITUENTS (Oper.Done, Coerce.Done) propagate void
+      occurs in  (457, 3)
+   CONSTITUENTS (OpDef.GotIndex, ClassOpDef.GotIndex, TypeIdentifier.GotIndex, ClassName.GotIndex, IndDef.GotIndex) propagate void
+      occurs in  (288, 3)
+   CONSTITUENTS (OpRef.bind) propagate void
+      occurs in  (267, 3)
+   CONSTITUENTS (ClassParameter.bound) propagate void
+      occurs in  (237, 3)
+   CONSTITUENTS (OpDef.bound, ClassOpDef.bound, ClassName.bound, ClassParameter.bound, SetIdDef.bound) propagate void
+      occurs in  (232, 3)
+   CONSTITUENTS (OpDef.bound, ClassOpDef.bound, TypeIdentifier.bound, ClassName.bound, IndDef.bound, SetIdDef.bound) propagate void
+      occurs in  (231, 3)
+   CONSTITUENTS (OpDef._GotUnique, ClassOpDef._GotUnique, ClassName._GotUnique, ClassParameter._GotUnique, SetIdDef._GotUnique) SHIELD (OIL, ClassBody) propagate void
+      occurs in  (14, 3)
+   
+

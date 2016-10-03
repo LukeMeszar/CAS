@@ -1,0 +1,884 @@
+This is Info file novice, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/info/tnf/novice.tnf.
+
+
+File: novice,  Node: Instantiation,  Next: symbex,  Up: Entities
+
+Using generic library modules to test uniqueness
+................................................
+
+   In order to use a generic module we must instantiate that module and
+connect the concepts it provides to the specification of our problem. 
+Instantiation is handled in the `sets.specs' file:
+
+     $/Name/AlgScope.gnrc :inst
+     $/Prop/Unique.gnrc :inst
+
+   The `AlgScope' module provides the concept of nested regions
+containing entities distinguished by integer values (*note Algol-like
+Basic Scope Rules: (name)AlgScope.).  The `Unique' module provides the
+concept of an error for entities that appear more than once in a region
+(*note Check for Unique Object Occurrences: (prop)Unique.).
+
+   An attribute grammar fragment is used to connect the concepts
+provided by these two modules to the specification of the phrase
+structure:
+
+     ATTR Sym: int;
+     
+     SYMBOL Entity INHERITS IdDefScope, Unique COMPUTE
+       SYNT.Sym=TERM;
+       IF(NOT(THIS.Unique),
+          message(ERROR,"Multiply-defined word", 0, COORDREF));
+     END;
+     
+     SYMBOL text INHERITS RootScope, RangeUnique END;
+     SYMBOL set_body INHERITS RangeScope END;
+     SYMBOL set_name INHERITS Entity END;
+     SYMBOL set_element INHERITS Entity END;
+
+   The symbol `Entity', which does not occur in the context-free
+grammar, is used to represent the concept of a word that must be
+unique within some region: a `set_name' must be unique over the region
+lying outside of all sets, while a `set_element' must be unique over
+the set in which it appears.  `Entity' allows us to gather all of the
+characteristics of that concept in one place -- a "symbol attribution"
+-- and then use inheritance to associate those characteristics with
+the symbols that embody the concept.
+
+   An `Entity' appears in the input text as a word, which is
+represented internally by the value representing the terminal symbol
+`word'.  That value was established by `mkidn' when the word was
+recognized (*note GLA specification::.).
+
+   The two symbols inheriting `Entity', `set_name' and `set_element',
+are defined by rules that have terminal symbols on their right-hand
+sides.  `TERM' can be used in a symbol computation to represent the
+value of a terminal symbol appearing on the right-hand side of any
+rule defining the given symbol (*note Terminal Access:
+(lidoref)Terminal Access.).  Thus `SYNT.Sym=TERM' sets the `Sym'
+attribute of the `Entity' to the value representing the terminal
+symbol defining that `Entity'.  (`SYNT' means that the computation
+takes place in the "lower context" of the symbol, i.e. in the rules
+corresponding to the phrases `set_name: word' and `set_element: word'. 
+*Note Types and Classes of Attributes: (lidoref)Types and Classes of
+Attributes.)
+
+   The concept of a definition within a region is embodied in the
+symbol `IdDefScope' exported by the `AlgScope' module, while the
+concept that such a definition must be unique is embodied in the
+symbol `Unique', exported by the `Unique' module.  Thus `Entity'
+inherits from these two symbols.
+
+   If the `Unique' attribute of the `Entity' is false, then the
+`message' operation is invoked to output an error report.  The report
+has severity `ERROR', which indicates that a definite error has been
+detected and therefore no object code should be produced (*note Source
+Text Coordinates and Error Reporting: (lib)error.).  It is placed at
+the source text coordinates (line and column) represented by
+`COORDREF', and consists of the string `Multiply-defined word'. 
+`COORDREF' always refers to the location of the leftmost character of
+the phrase corresponding to the rule in which it appears.  Since this
+computation is inherited by `set_name' and `set_element', it appears
+in rules corresponding to the phrases `set_name: word' and
+`set_element: word'.  Any error report will therefore refer to the
+leftmost character of the multiply-defined word.
+
+   The `text' is the outermost region (`RootScope'), within which the
+set names are defined.  Each set body is an inner region
+(`RangeScope'), within which the set elements are defined.  Therefore
+`text' inherits the `RootScope' computations and `set_body' inherits
+the `RangeScope' computations.
+
+   A `set_name' must be unique within the `text' and a `set_element'
+must be unique within its `set_body', so both `text' inherits the
+`RangeUnique' computations.
+
+
+File: novice,  Node: symbex,  Prev: Instantiation,  Up: Entities
+
+Exercises
+---------
+
+  1. Create a subdirectory `src' and then request source code for the
+     set processor (*note Running Unix commands from Eli: (ui)Unix.):
+
+          -> !mkdir src
+          -> sets.specs :source >src
+
+        Does `src' *really* contain a version of the translator that
+     is independent of Eli?  How can you be certain?
+
+  2. Try deriving source code without first creating a directory:
+
+          -> sets.specs :source >foo
+
+        What was the result?  Can you explain what happened?
+
+  3. Request an executable version of the translator:
+
+          -> sets.specs :exe >sets.exe
+
+        Is this executable independent of Eli?  How can you be certain?
+
+
+File: novice,  Node: Generation,  Prev: Entities,  Up: Example
+
+Creating structured output text
+===============================
+
+   At least two specifications, and sometimes more, are needed to
+create structured output text.  The form of the text must be
+described, along with the source of its components.  Eli generates a
+set of procedures from the description of the form of the text, one
+for each kind of component.  The information about the components is
+then provided by a computation that invokes these procedures with
+appropriate arguments.
+
+   We have already seen how Eli allows us to break the specification
+into files that encapsulate individual tasks.  So far, each of the
+tasks has required only one kind of specification.  Here, however, we
+have a single task that requires at least two specifications.  There
+is strong coupling between these specifications, however, so that a
+change to one will often involve a change to the other.  The solution
+is to combine such related specifications into a single file of type
+`fw'.  A type-`fw' file describes a set of specification files that
+Eli will separate as necessary, but which the user can manipulate as a
+single entity.
+
+* Menu:
+
+* Output::		Creating the C declarations
+* Exercises: debugex.	How to debug Eli-generated C code
+
+
+File: novice,  Node: Output,  Next: debugex,  Up: Generation
+
+Creating the C declarations
+...........................
+
+   The variable atoms of the generated C code are integers (like the
+number of elements in a set) and strings (like the elements of a set). 
+`LeafPtg' (*note PTG Output of Leaf Nodes: (output)LeafPtg.) is a
+generic module that provides operations useful in writing such atoms,
+so it is instantiated in file `sets.specs':
+
+     $/Output/LeafPtg.gnrc :inst
+
+   Three related specifications are used to describe the creation of
+the C declarations.  First the general form of the declarations is
+given in a special language called "PTG", then there is an attribute
+grammar fragment that computes the individual components, and finally
+two C macros are needed to implement operations used in the
+computations.  All three specifications are combined in a single
+type-`fw' file called `code.fw':
+
+     @O@<code.ptg@>@{
+     Table:
+       "int number_of_sets = " $/*integer*/ ";\n\n"
+       "char *name_of_set[] = {\n"
+       $/*list of set names*/ "};\n\n"
+       "int size_of_set[] = {\n"
+       $/*list of set sizes*/ "};\n\n"
+       $/*list of sets*/
+       "char **values_of_set[] = {\n"
+       $/*list of set representations*/ "};"
+     
+     Set:
+       "char *set_of_" $/*set name*/ "[] = {\n"
+       $/*list of set elements*/ "};\n\n"
+     
+     Seq:
+       $ $
+     
+     List:
+       $ ",\n" $
+     
+     Quoted:
+       "\"" $ "\""
+     
+     Name:
+       "set_of_" $
+     @}
+     
+     @O@<code.lido@>@{
+     ATTR Ptg: PTGNode;
+     SYMBOL Entity INHERITS IdPtg END;
+     
+     SYMBOL text COMPUTE
+       IF(NoErrors,
+         PTGOut(
+           PTGTable(
+             PTGNumb(CONSTITUENTS set_name.Sym WITH (int, ADD, ARGTOONE, ZERO)),
+             CONSTITUENTS set_name.Ptg WITH (PTGNode, PTGList, PTGQuoted, PTGNull),
+             CONSTITUENTS set_body.Size WITH (PTGNode, PTGList, PTGNumb, PTGNull),
+             CONSTITUENTS set_def.Ptg WITH (PTGNode, PTGSeq, IDENTICAL, PTGNull),
+             CONSTITUENTS set_name.Ptg WITH (PTGNode, PTGList, PTGName, PTGNull))));
+     END;
+     
+     ATTR Size: int;
+     SYMBOL set_body COMPUTE
+       SYNT.Size=CONSTITUENTS set_element.Sym WITH (int, ADD, ARGTOONE, ZERO);
+     END;
+     
+     SYMBOL set_def COMPUTE
+       SYNT.Ptg=
+         PTGSet(
+           CONSTITUENT set_name.Ptg,
+           CONSTITUENTS set_element.Ptg WITH (PTGNode, PTGList, PTGQuoted, PTGNull));
+     END;
+     @}
+     
+     @O@<code.HEAD.phi@>@{
+     #include "err.h"
+     #define NoErrors (ErrorCount[ERROR]==0)
+     @}
+
+   The PTG specification, which is introduced by `@O@<code.ptg@>@{' and
+terminated by `@}', is simply a collection of parameterized templates
+for output.  Each template is given a name, and consists of a sequence
+of items that will be output in the given order.  Quoted C strings are
+output as they stand, and each `$' stands for one parameter.  A text
+fragment is constructed according to a particular template by invoking
+a function whose name is `PTG' followed by the template name.  This
+function returns a value of type `PTGNode', and must be provided with
+one argument of type `PTGNode' for each parameter.
+
+   To construct a text fragment according to the template named
+`Quoted', for example, invoke `PTGQuoted' with one argument of type
+`PTGNode'.  The result will be a value of type `PTGNode' that
+describes the text fragment `"', followed by the text fragment
+described by the argument, followed by `"'.
+
+   The attribute grammar fragment, which is introduced by
+`@O@<code.lido@>@{' and terminated by `@}', invokes the PTG functions
+with appropriate arguments.  `PTGNumb' and `PTGName' are defined by
+the `LeafPtg' module (*note PTG Output of Leaf Nodes:
+(output)LeafPtg.).  They construct values of type `PTGNode' that
+describe the text fragment consisting of a single integer value or
+word respectively.  These text fragments are then used in building
+larger text fragments, and so on.
+
+   The translated output should be produced only if no errors were
+detected by the translator.  `NoErrors' is a user-defined macro that
+tests whether any reports of severity `ERROR' were issued.  `NoErrors'
+must be defined as a C macro, in a file of type `.HEAD.phi'.  This can
+be done by a segment of the FunnelWeb file introduced by
+`@O@<code.HEAD.phi@>@{' and terminated by `@}'.
+
+   The error module maintains an array `ErrorCount', indexed by
+severity, each of whose elements specifies the number of reports
+issued at the corresponding severity (*note Source Text Coordinates
+and Error Reporting: (lib)error.).  If the `ERROR' element of this
+array is `0', then no reports of severity `ERROR' have been issued.
+
+   In addition to building the C declarations, the attribute grammar
+fragment computes the total number of sets and the total number of
+elements in each set:
+
+     ATTR Size: int;
+     SYMBOL set_body COMPUTE
+       SYNT.Size=CONSTITUENTS set_element.Sym WITH (int, ADD, ARGTOONE, ZERO);
+     END;
+
+`ADD', `ARGTOONE' and `ZERO' are built-in functions of Eli (*note
+Predefined Entities: (lidoref)Predefined Entities.).
+
+   This computation visits nodes of the subtree rooted in the
+`set_body' node.  If the node is a `set_element' node, function
+`ARGTOONE' is applied to the value of the `Sym' attribute to yield the
+integer value 1.  If the node has no `set_element' descendants, then
+its descendants are not visited and the function `ZERO' is invoked
+with no arguments to yield the integer value 0.  Otherwise the
+integers computed for the children of the node are combined pairwise
+in left-to-right order via the function `ADD'.  *Note CONSTITUENT(S):
+(lidoref)CONSTITUENT(S).
+
+
+File: novice,  Node: debugex,  Prev: Output,  Up: Generation
+
+Exercises
+---------
+
+  1. Request the code generated by the processor from the
+     specification:
+
+          -> sets.specs :gencode :viewlist
+
+        Find the files generated from `code.fw' and verify the content
+     of `code.HEAD.phi'.  (Hint: Re-read the discussion of `code.fw'.)
+
+  2. Which file contains the definition of the function `PTGQuoted'? 
+     (Hint: Use grep, or create a `tags' file and then give the command
+     `vi -t PTGQuoted'.)
+
+  3. Briefly explain the operation of `PTGQuoted'.  How is the text
+     fragment created by this function printed?
+
+  4. Use `lint' to search for anomalies in the collection of C
+     routines.  Are any of those found significant?  Explain briefly.
+
+  5. Request an interactive debugging session:
+
+          -> sets.specs +debug :dbx
+
+     (If you prefer to use the GNU debugger gdb, simply replace `dbx'
+     with `gdb').
+
+        Set breakpoints to stop the program in `PTGQuoted',
+     `_PrPTGQuoted' and `PTGOut'.  Run the program with the name of
+     file `input' as its command line argument.  What is the order of
+     the calls to these three routines?  Explain briefly.
+
+  6. Redefine the output text so that each array value is indented,
+     and the closing brace is at the beginning of a line.  For
+     example, the array of set names should look like this:
+
+          char *name_of_set[] = {
+                  "colors",
+                  "bugs",
+                  "verbs"
+          };
+
+        Generate a translator and verify its correctness.
+
+
+File: novice,  Node: Strategies,  Next: Documentation,  Prev: Example,  Up: Top
+
+Customizing Eli's Behavior
+**************************
+
+   All derived objects are stored in a directory called the "derived
+object cache", or simply the "cache".  The cache also contains a
+database that stores the "depends" relationship between the output and
+input files of a tool run, and the "contains" relationship between a
+list and its elements.  Many of the ways of customizing Eli involve
+various aspects of the derived object cache.
+
+   Eli can also be used non-interactively, and can be customized by
+defining shortcuts for frequently-used derivations.
+
+* Menu:
+
+* Cache::	Hints on Cache Management
+* Session::	Hints on Session Management
+
+
+File: novice,  Node: Cache,  Next: Session,  Up: Strategies
+
+Hints on Cache Management
+=========================
+
+   The default location for the cache is a directory named `.ODIN' in
+the user's home directory.  A non-default cache location can be
+specified by the `$ODIN' environment variable, or with an option on
+the command line.  The main reasons for specifying a non-default
+location for the cache are to share a common cache with other users,
+or to locate the cache on a local disk for more efficient access to
+derived files.
+
+   An Eli session is begun by giving the following command:
+
+     eli [ -c CACHE ] [ -r | -R ]
+
+All of the command line arguments are optional, and all affect the
+cache:
+
+`-c CACHE'
+     Use the directory CACHE as the cache.
+
+`-r'
+     Reset the cache.  This deletes all derived objects currently
+     stored in the cache.
+
+`-R'
+     Reset the cache and upgrade all tools.  This deletes all derived
+     objects currently stored in the cache, and also installs the most
+     recent versions of all tools.
+
+Cache directories may also be deleted using normal Unix commands
+whenever they are not being used by active Eli sessions.  If the
+specified cache does not exist when the `eli' command is given, then
+it will be created and the most recent versions of all tools installed.
+
+   There is no limit to the number of cache directories that may exist
+at one time.  You might choose to have a separate cache for each
+project you are working on, or you might choose to have a single cache
+to hold information for all of your projects.  If you choose multiple
+caches, each can be smaller than the cache you would use for all
+projects.  When a project is complete, you can delete all the
+intermediate objects relating to it by deleting the cache directory
+for that project.
+
+   Cache contents are architecture dependent, so it is not possible to
+create a cache on one architecture and then use that same cache on a
+different architecture.  In order to avoid this error, Eli creates a
+separate subdirectory of the cache directory for each *host* (not
+architecture) on which it is invoked.  This behavior is unpleasant in
+a setting where there is a pool of hosts, all of which have the same
+architecture, running with a common file server.  If the environment
+variable `ODINVIEW' is set, Eli uses the subdirectory name specified
+by that variable.  (The subdirectory names can be anything; using the
+host name is simply convenient.)
+
+   The default inter-process communication mechanism for the odin
+cache manager process is TCP/IP.  If TCP/IP is not available, set the
+environment variable `$ODIN_LOCALIPC' and Unix domain sockets will be
+used instead.
+
+
+File: novice,  Node: Session,  Prev: Cache,  Up: Top
+
+Hints on Session Management
+===========================
+
+   There are two kinds of Eli sessions -- interactive and
+non-interactive.  Interactive sessions are used when the requests
+being made are ones that Eli can satisfy quickly, and actions by the
+user are necessary between requests.  During initial development of a
+specification, when specification errors prevent Eli from completely
+satisfying the request, interactive sessions are very fruitful: The
+user makes a request, errors are reported, the user corrects the
+errors and makes the request again.
+
+   One important decision that must be made for either kind of session
+is the amount of information that should be provided to the user
+during that session.  (Of course if the session is interactive, this
+decision can be changed during the session itself by making
+appropriate requests.) Eli is capable of describing at great length
+what it is doing at any given moment.  Since the purpose of Eli is to
+suppress the details of the process needed to satisfy your request,
+you will probably not want Eli to report those details to you.  The
+Eli variable `LogLevel' controls the level at which Eli describes the
+actions that it is taking.  The default is `LogLevel=2'.  For more
+information about the effect of different `LogLevel' values, give the
+Eli request `LogLevel=?'.  (This is an example of an Eli help request,
+described in *Note The Help Facility: (ui)Help.)
+
+   The value of the environment variable `EDITOR' at the time the Eli
+session starts is the command that is invoked when the character `<'
+ends an input line.  (If `EDITOR' is not defined when the Eli session
+starts then `vi' is assumed.) That value can be changed at any time
+during the session by assigning to the environment variable `EDITOR':
+
+     -> EDITOR=!emacsclient
+
+(Note the use of `!' to indicate that the assignment is to an
+environment variable rather than to an Eli variable.)
+
+   You may wish to make your selection of an editor dependent on some
+property of the environment.  A typical situation is to use one editor
+when seated at a workstation and another when logged in remotely.  In
+this case, create a script `my_editor' that tests the appropriate
+environment variables, decides what editor to use, and invokes it. 
+Then set the value of the environment variable `EDITOR' to `my_editor'.
+
+   Users of Gnu Emacs who invoke Emacs only once per login session
+(i.e. in a window that is always present) can use the server
+capability of Emacs.  To do this, execute the command `M-x
+server-start' in your Emacs session and use `emacsclient' as the value
+of the environment variable `EDITOR'.  (You will also need to make
+sure that the `etc' directory in your Emacs distribution is on your
+`PATH'.) Once this is done, Eli editor invocations will use buffers in
+your Emacs session.  A common way of utilizing this capability is to
+invoke Eli from a sub-shell of your Emacs (created using `M-x shell').
+
+   Eli consults file `Odinfile' in the current directory for
+information about the task at hand.  `Odinfile' is used to define one
+or more "targets".  Each target defines some product that can be
+requested, using the notation TARGET `==' ODIN-EXPRESSION.  Here are
+examples of the three common kinds of target:
+
+`mkhdr == sets.specs :exe'
+     `mkhdr' is a "file target".  This line specifies that `mkhdr'
+     should always be equal to the derived file object `sets.specs
+     :exe'.  If the command `eli mkhdr' is given in a directory with a
+     file `Odinfile' containing this line, it will result in a
+     non-interactive Eli session guaranteeing that file `mkhdr' in
+     this directory is up to date.  (The same effect can be obtained
+     in an interactive session by responding to the `->' prompt with
+     `mkhdr'.)
+
+`%results == input +cmd=(mkhdr) :stdout'
+     `%results' is a "virtual target".  A virtual target is simply a
+     name for an odin-expression, and can be used wherever and
+     odin-expression is required.  If the command `eli' `'%results>''
+     is given in a directory with a file `Odinfile' containing this
+     line, it will result in a non-interactive Eli session
+     guaranteeing that the derived object `input +cmd=(mkhdr) :stdout'
+     is up to date, and writing the content to the standard output. 
+     (The same effect can be obtained in an interactive session by
+     responding to the `->' prompt with `%results>'.)
+
+`%test ! == . +cmd=diff (%results) (result) :run'
+     `%test' is an "executable target".  An executable target is a
+     target that is executable.  If the command `eli %test' is given
+     in a directory with a file `Odinfile' containing this line, it
+     will result in a non-interactive Eli session guaranteeing that
+     the derived object `input +cmd=(mkhdr) :stdout' (named
+     `%results') is up to date, and executing the `diff' command with
+     this object and the file `result' from the current directory as
+     arguments.  Execution will take place in the current directory. 
+     (The same effect can be obtained in an interactive session by
+     responding to the `->' prompt with `%test'.)
+
+
+File: novice,  Node: Documentation,  Next: Index,  Prev: Strategies,  Up: Top
+
+System Documentation
+********************
+
+   The Eli system documentation is divided into three basic groups:
+
+Tutorial
+     Strategies and examples for using Eli.  The purpose of this
+     material is to present simple techniques that work.  Only points
+     that we have found important for most users are covered.
+
+Reference
+     Detailed definitions of notation and behavior.  The purpose of
+     this material is to answer any question that might arise.  There
+     is a reference manual for each of the notations understood by Eli,
+     including the language in which requests for processor
+     construction are made.  All of the products that can be
+     requested, and all of the parameters that can be used to modify
+     those requests, are the subject of a separate reference manual. 
+     Finally, there is a reference manual for the on-line
+     documentation browser.
+
+Administration
+     Strategies for installing, configuring and maintaining Eli.  The
+     purpose of this material is to guide the person responsible for
+     Eli at a particular installation.
+
+   All of the documentation is available both on-line and in printed
+form.  Documents are stored on line as hypertext, and can be used to
+support the debugging phase of a project.
+
+* Menu:
+
+* Root: (dir)top.	All Eli system documentation
+* Help::		How on-line documentation supports debugging
+
+
+File: novice,  Node: Help,  Up: Documentation
+
+How On-line Documentation Supports Debugging
+============================================
+
+   Two levels of debugging are necessary when using Eli:
+
+  1. The specifications you present to Eli may be inconsistent or
+     ill-formed.  In that case, Eli will provide error reports in the
+     same way as any compiler.  You must correct the specifications so
+     that they are well-formed and consistent.
+
+  2. You have presented a correct specification to Eli, but this
+     specification describes the wrong problem instance.  Now you must
+     determine how the problem instance you have described differs
+     from the one you are really interested in, and change the
+     specification accordingly.
+
+On-line documentation for Eli can only provide support for level (1),
+because level (2) does not involve symptoms that can be diagnosed by
+Eli.
+
+   Eli presents error reports to a user only on request.  The
+available requests are described in *Note Diagnosing Specification
+Inconsistencies: (pp)Diagnostics.  One of these requests is `:help'. 
+This request builds a new hypertext subtree containing the error
+reports, embedded in the text to which they refer.  The files
+containing the errors are made accessible to the nodes describing
+those errors, so that the user can correct them directly.
+
+   To correct a file, move the browser to the node describing the
+errors in that file.  Execute the browser's edit command and make
+whatever changes are necessary.  Then exit the editor.
+
+   Error reports are also linked to the nodes of the on-line
+documentation describing the constructs in which the errors were
+detected.  Thus the user is placed in an environment in which all of
+the information needed to diagnose the errors, and the tools needed to
+correct them, are immediately at hand.
+
+
+File: novice,  Node: Index,  Prev: Documentation,  Up: top
+
+Index
+*****
+
+* Menu:
+
+* !:                                    Session.
+* %:                                    Session.
+* -R command line parameter:            Cache.
+* -c command line argument:             Cache.
+* -r command line parameter:            Cache.
+* ==:                                   Session.
+* AlgScope module:                      Instantiation.
+* CONSTITUENTS:                         Output.
+* C_COMMENT:                            GLA specification.
+* EDITOR:                               Session.
+* ERROR:                                Output.
+* ERROR:                                Instantiation.
+* Entity:                               Instantiation.
+* ErrorCount:                           Output.
+* INHERITS:                             Instantiation.
+* IdDefScope:                           Instantiation.
+* LeafPtg:                              Output.
+* LeafPtg:                              Output.
+* LogLevel:                             Session.
+* LogLevel:                             procex.
+* NoKey:                                Property storage.
+* PTGNULL:                              Text generation.
+* PTGName:                              Output.
+* PTGNode:                              Output.
+* PTGNumb:                              Output.
+* RangeScope:                           Instantiation.
+* RangeUnique:                          Instantiation.
+* RootScope:                            Instantiation.
+* SYMBOL:                               Instantiation.
+* TERM:                                 Instantiation.
+* Unique module:                        Instantiation.
+* dbx:                                  debugex.
+* debug:                                debugex.
+* eli command:                          Cache.
+* exe:                                  Products.
+* gdb:                                  debugex.
+* gencode:                              debugex.
+* gencode:                              Products.
+* help:                                 Help.
+* help:                                 parex.
+* help:                                 Products.
+* lint:                                 debugex.
+* message:                              Instantiation.
+* mkidn:                                GLA specification.
+* parsable:                             parex.
+* source:                               symbex.
+* source:                               Products.
+* viewlist:                             Products.
+* FINL.phi:                             Specifications.
+* HEAD.phi:                             Specifications.
+* INIT.phi:                             Specifications.
+* Odinfile:                             Session.
+* clp:                                  Specifications.
+* con:                                  Specifications.
+* ctl:                                  Specifications.
+* delit:                                Specifications.
+* eta:                                  Specifications.
+* fw:                                   Generation.
+* fw:                                   Specifications.
+* gla:                                  Specifications.
+* gnrc:                                 Specifications.
+* head:                                 Output.
+* lido:                                 Specifications.
+* map:                                  Specifications.
+* oil:                                  Specifications.
+* pdl:                                  Specifications.
+* phi:                                  Specifications.
+* ptg:                                  Specifications.
+* specs:                                Specifications.
+* str:                                  Specifications.
+* sym:                                  Specifications.
+* <:                                    Products.
+* >:                                    Products.
+* C constant:                           Attribution.
+* C macro:                              Output.
+* C-style comment:                      GLA specification.
+* C-style comment:                      Specifications.
+* Eli session:                          Session.
+* Eli session:                          Cache.
+* Eli, typical use:                     Example.
+* Emacs:                                Session.
+* LALR(1) condition:                    parex.
+* PTG specification:                    Output.
+* Unique:                               Instantiation.
+* attribute:                            Attribution.
+* attribute grammar:                    Output.
+* attribute grammar:                    Output.
+* attribute grammar:                    Instantiation.
+* axiom:                                Syntactic analysis.
+* browser session:                      parex.
+* cache:                                Strategies.
+* canned description:                   GLA specification.
+* character sequences:                  Specifications.
+* character sequences:                  Lexical analysis.
+* child:                                Attribution.
+* combining related specifications:     Generation.
+* command line argument:                Specifications.
+* command line arguments:               Cache.
+* comment:                              Atoms.
+* computation:                          Specifications.
+* computation:                          Attribution.
+* conditional compilation:              Specifications.
+* conflict, shift-reduce:               parex.
+* context, lower:                       Instantiation.
+* context-free grammar:                 Structure.
+* context-free grammar:                 Syntactic analysis.
+* context-free grammar:                 Syntactic analysis.
+* coupling between specifications:      Generation.
+* debugging:                            Help.
+* debugging:                            debugex.
+* debugging:                            Products.
+* decomposition:                        Subproblems.
+* definition table:                     Specifications.
+* definition table:                     Property storage.
+* derived file object, output:          Interactive.
+* derived list object, output:          Interactive.
+* derived object:                       Products.
+* derived object cache:                 Strategies.
+* descriptions of subproblems:          Specifications.
+* development process:                  Example.
+* editing:                              parex.
+* editing a file object:                Interactive.
+* entity:                               Entities.
+* entity:                               Property storage.
+* err:                                  Products.
+* error severity:                       Output.
+* error severity:                       Instantiation.
+* example of debugging:                 debugex.
+* example of editing:                   parex.
+* example of obtaining help:            parex.
+* example of requesting source code:    symbex.
+* executable target:                    Session.
+* feedback to the user:                 Session.
+* file object, editing:                 Interactive.
+* file object, output:                  Interactive.
+* file target:                          Session.
+* finalization:                         Specifications.
+* function application:                 Attribution.
+* functions, printing:                  Text generation.
+* functions, text generation:           Text generation.
+* generated program, characteristics:   Overview.
+* generation of program text:           Text generation.
+* generic module:                       Output.
+* generic module:                       Instantiation.
+* generic module:                       Entities.
+* generic module:                       Specifications.
+* grammar development:                  Structure.
+* grammar rule:                         Syntactic analysis.
+* help request to Eli:                  Session.
+* history:                              parex.
+* identifier:                           Property storage.
+* identifier table:                     Specifications.
+* identifier, in odin-expressions:      Products.
+* include directive:                    Specifications.
+* include directive:                    Specifications.
+* include directive:                    Specifications.
+* inheritance:                          Instantiation.
+* initialization:                       Specifications.
+* instantiation:                        Instantiation.
+* interactive Eli session:              Session.
+* key:                                  Property storage.
+* lexical analysis:                     Lexical analysis.
+* list object, output:                  Interactive.
+* literal:                              Atoms.
+* literal:                              Specifications.
+* literal:                              Syntactic analysis.
+* lower context:                        Instantiation.
+* macro definition:                     Specifications.
+* mkstr:                                Attribution.
+* module, generic:                      Entities.
+* monitoring:                           Products.
+* multiple caches:                      Cache.
+* name of a derived object:             Products.
+* nested regions:                       Instantiation.
+* newline character:                    Atoms.
+* node:                                 Attribution.
+* non-interactive Eli session:          Session.
+* nonliteral symbol:                    Atoms.
+* nonterminal symbol:                   Syntactic analysis.
+* object, derived:                      Products.
+* object, source:                       Products.
+* odin-expression:                      Products.
+* operator, in odin-expressions:        Products.
+* output:                               Text generation.
+* output text structure:                Specifications.
+* output text structure:                Text generation.
+* output to a file:                     Interactive.
+* overload resolution:                  Specifications.
+* overload resolution:                  Subproblems.
+* parser:                               Structure.
+* phrase:                               Syntactic analysis.
+* phrase structure:                     Structure.
+* phrase structure:                     Specifications.
+* phrase structure:                     Specifications.
+* phrase structure:                     Syntactic analysis.
+* printing functions:                   Text generation.
+* processor, token:                     Attribution.
+* program text generation:              Specifications.
+* program text generation:              Text generation.
+* property definition:                  Specifications.
+* query:                                Property storage.
+* region:                               Entities.
+* regions, nested:                      Instantiation.
+* relationship:                         Property storage.
+* requesting source code, example:      symbex.
+* root:                                 Attribution.
+* rule, grammar:                        Syntactic analysis.
+* rule, scope:                          Property storage.
+* run:                                  Products.
+* scope rules:                          Property storage.
+* sentence:                             Syntactic analysis.
+* separate caches:                      Cache.
+* severity of errors:                   Output.
+* severity of errors:                   Instantiation.
+* shift-reduce conflict:                parex.
+* significant character sequence:       Atoms.
+* significant character sequence:       Lexical analysis.
+* single cache:                         Cache.
+* source object:                        Products.
+* specification types:                  Specifications.
+* standard output:                      Interactive.
+* structured output text:               Specifications.
+* structured output text:               Text generation.
+* subproblem:                           Subproblems.
+* subproblem descriptions:              Specifications.
+* symbol:                               Syntactic analysis.
+* symbol attribution:                   Instantiation.
+* symbol, nonterminal:                  Syntactic analysis.
+* symbol, terminal:                     Syntactic analysis.
+* syntactic analysis:                   Syntactic analysis.
+* system documentation:                 Documentation.
+* tab character:                        Atoms.
+* target:                               Session.
+* template:                             Output.
+* template:                             Text generation.
+* terminal symbol:                      Atoms.
+* terminal symbol:                      Syntactic analysis.
+* text fragment:                        Text generation.
+* text generation function:             Output.
+* text generation function:             Text generation.
+* token processor:                      Attribution.
+* tree structure:                       Specifications.
+* tree structure, meaning of:           Structure.
+* type-FINL.phi file:                   Specifications.
+* type-HEAD.phi file:                   Output.
+* type-HEAD.phi file:                   Specifications.
+* type-INIT.phi file:                   Specifications.
+* type-clp file:                        Specifications.
+* type-con file:                        Specifications.
+* type-ctl file:                        Specifications.
+* type-delit file:                      Specifications.
+* type-eta file:                        Specifications.
+* type-fw file:                         Generation.
+* type-fw file:                         Specifications.
+* type-gla file:                        Specifications.
+* type-gnrc file:                       Specifications.
+* type-lido file:                       Specifications.
+* type-oil file:                        Specifications.
+* type-pdl file:                        Specifications.
+* type-phi file:                        Specifications.
+* type-ptg file:                        Specifications.
+* type-specs file:                      Specifications.
+* type-str file:                        Specifications.
+* type-sym file:                        Specifications.
+* types, of input specification:        Specifications.
+* typical use of Eli:                   Example.
+* update:                               Property storage.
+* virtual target:                       Session.
+* warn:                                 Products.
+* white space:                          Atoms.
+* white space, in odin-expressions:     Products.
+
+

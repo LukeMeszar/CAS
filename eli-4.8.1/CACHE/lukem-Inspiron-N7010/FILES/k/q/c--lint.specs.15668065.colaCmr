@@ -1,0 +1,1956 @@
+--.abs1
+-- structure COMAR
+p_comar[definitions	<p_term[did	1;
+sid	3;
+prop	<p_prop[did	1;
+sid	71]
+ p_prop_val[did	1;
+sid	70;
+val	p_nval[val	1]
+]
+>]
+ p_term[did	2;
+sid	4;
+prop	<p_prop_val[did	2;
+sid	70;
+val	p_nval[val	2]
+]
+>]
+ p_term[did	3;
+sid	5;
+prop	<p_prop_val[did	3;
+sid	70;
+val	p_nval[val	3]
+]
+>]
+ p_term[did	4;
+sid	6;
+prop	<p_prop_val[did	4;
+sid	70;
+val	p_nval[val	4]
+]
+>]
+ p_term[did	5;
+sid	7;
+prop	<p_prop_val[did	5;
+sid	70;
+val	p_nval[val	5]
+]
+>]
+ p_term[did	6;
+sid	8;
+prop	<p_prop_val[did	6;
+sid	70;
+val	p_nval[val	6]
+]
+>]
+ p_term[did	7;
+sid	9;
+prop	<p_prop_val[did	7;
+sid	70;
+val	p_nval[val	7]
+]
+>]
+ p_term[did	8;
+sid	10;
+prop	<p_prop_val[did	8;
+sid	70;
+val	p_nval[val	8]
+]
+>]
+ p_term[did	9;
+sid	11;
+prop	<p_prop_val[did	9;
+sid	70;
+val	p_nval[val	9]
+]
+>]
+ p_term[did	10;
+sid	12;
+prop	<p_prop_val[did	10;
+sid	70;
+val	p_nval[val	10]
+]
+>]
+ p_term[did	11;
+sid	13;
+prop	<p_prop_val[did	11;
+sid	70;
+val	p_nval[val	11]
+]
+>]
+ p_term[did	12;
+sid	14;
+prop	<p_prop_val[did	12;
+sid	70;
+val	p_nval[val	12]
+]
+>]
+ p_term[did	13;
+sid	15;
+prop	<p_prop_val[did	13;
+sid	70;
+val	p_nval[val	13]
+]
+>]
+ p_term[did	14;
+sid	16;
+prop	<p_prop_val[did	14;
+sid	70;
+val	p_nval[val	14]
+]
+>]
+ p_term[did	15;
+sid	17;
+prop	<p_prop_val[did	15;
+sid	70;
+val	p_nval[val	15]
+]
+>]
+ p_term[did	16;
+sid	18;
+prop	<p_prop_val[did	16;
+sid	70;
+val	p_nval[val	16]
+]
+>]
+ p_term[did	17;
+sid	19;
+prop	<p_prop_val[did	17;
+sid	70;
+val	p_nval[val	17]
+]
+>]
+ p_term[did	18;
+sid	20;
+prop	<p_prop_val[did	18;
+sid	70;
+val	p_nval[val	18]
+]
+>]
+ p_term[did	19;
+sid	21;
+prop	<p_prop_val[did	19;
+sid	70;
+val	p_nval[val	19]
+]
+>]
+ p_term[did	20;
+sid	22;
+prop	<p_prop_val[did	20;
+sid	70;
+val	p_nval[val	20]
+]
+>]
+ p_term[did	21;
+sid	23;
+prop	<p_prop_val[did	21;
+sid	70;
+val	p_nval[val	21]
+]
+>]
+ p_term[did	22;
+sid	24;
+prop	<p_prop_val[did	22;
+sid	70;
+val	p_nval[val	22]
+]
+>]
+ p_term[did	23;
+sid	25;
+prop	<p_prop_val[did	23;
+sid	70;
+val	p_nval[val	23]
+]
+>]
+ p_term[did	24;
+sid	26;
+prop	<p_prop_val[did	24;
+sid	70;
+val	p_nval[val	24]
+]
+>]
+ p_term[did	25;
+sid	27;
+prop	<p_prop_val[did	25;
+sid	70;
+val	p_nval[val	25]
+]
+>]
+ p_term[did	26;
+sid	28;
+prop	<p_prop_val[did	26;
+sid	70;
+val	p_nval[val	26]
+]
+>]
+ p_term[did	27;
+sid	29;
+prop	<p_prop_val[did	27;
+sid	70;
+val	p_nval[val	27]
+]
+>]
+ p_term[did	28;
+sid	30;
+prop	<p_prop_val[did	28;
+sid	70;
+val	p_nval[val	28]
+]
+>]
+ p_term[did	29;
+sid	31;
+prop	<p_prop_val[did	29;
+sid	70;
+val	p_nval[val	29]
+]
+>]
+ p_term[did	30;
+sid	32;
+prop	<p_prop_val[did	30;
+sid	70;
+val	p_nval[val	30]
+]
+>]
+ p_term[did	31;
+sid	33;
+prop	<p_prop_val[did	31;
+sid	70;
+val	p_nval[val	31]
+]
+>]
+ p_term[did	32;
+sid	34;
+prop	<p_prop_val[did	32;
+sid	70;
+val	p_nval[val	32]
+]
+>]
+ p_nterm[did	33;
+sid	69;
+prop	<p_prop_val[did	33;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_nterm[did	34;
+sid	62;
+prop	<p_prop_val[did	34;
+sid	131;
+val	p_lval[list	<p_dval[did	3]
+ p_dval[did	2]
+>]
+]
+>]
+ p_other[did	35;
+sid	72;
+prop	<p_prop[did	35;
+sid	73]
+>]
+ p_prod[did	36;
+sid	1;
+prop	<p_prop_val[did	36;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	2]
+ p_elunit[did	35]
+>;
+lhsdid	34]
+ p_other[did	37;
+sid	74;
+prop	<p_prop[did	37;
+sid	73]
+>]
+ p_prod[did	38;
+sid	1;
+prop	<p_prop_val[did	38;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	3]
+ p_elunit[did	37]
+>;
+lhsdid	34]
+ p_nterm[did	39;
+sid	46;
+prop	<p_prop_val[did	39;
+sid	131;
+val	p_lval[list	<p_dval[did	4]
+>]
+]
+>]
+ p_other[did	40;
+sid	75;
+prop	<p_prop[did	40;
+sid	73]
+>]
+ p_prod[did	41;
+sid	1;
+prop	<p_prop_val[did	41;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	4]
+ p_elunit[did	40]
+>;
+lhsdid	39]
+ p_nterm[did	42;
+sid	36;
+prop	<p_prop_val[did	42;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_other[did	43;
+sid	76;
+prop	<p_prop[did	43;
+sid	73]
+>]
+ p_prod[did	44;
+sid	1;
+prop	<p_prop_val[did	44;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	42]
+ p_elunit[did	43]
+>;
+lhsdid	33]
+ p_nterm[did	45;
+sid	47;
+prop	<p_prop_val[did	45;
+sid	131;
+val	p_lval[list	<p_dval[did	5]
+>]
+]
+>]
+ p_other[did	46;
+sid	77;
+prop	<p_prop[did	46;
+sid	73]
+>]
+ p_prod[did	47;
+sid	1;
+prop	<p_prop_val[did	47;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	5]
+ p_elunit[did	46]
+>;
+lhsdid	45]
+ p_nterm[did	48;
+sid	44;
+prop	<p_prop_val[did	48;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_nterm[did	49;
+sid	37;
+prop	<p_prop_val[did	49;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_prod[did	50;
+sid	1;
+prop	<p_prop_val[did	50;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	49]
+>;
+lhsdid	48]
+ p_nterm[did	51;
+sid	38;
+prop	<p_prop_val[did	51;
+sid	131;
+val	p_lval[list	<p_dval[did	10]
+>]
+]
+>]
+ p_other[did	52;
+sid	78;
+prop	<p_prop[did	52;
+sid	73]
+>]
+ p_prod[did	53;
+sid	1;
+prop	<p_prop_val[did	53;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	49]
+ p_elunit[did	51]
+ p_elunit[did	49]
+ p_elunit[did	52]
+>;
+lhsdid	48]
+ p_nterm[did	54;
+sid	57;
+prop	<p_prop_val[did	54;
+sid	131;
+val	p_lval[list	<p_dval[did	6]
+>]
+]
+>]
+ p_nterm[did	55;
+sid	39;
+prop	<p_prop_val[did	55;
+sid	131;
+val	p_lval[list	<p_dval[did	32]
+ p_dval[did	31]
+ p_dval[did	29]
+ p_dval[did	28]
+ p_dval[did	27]
+ p_dval[did	26]
+ p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	6]
+ p_dval[did	2]
+>]
+]
+>]
+ p_other[did	56;
+sid	79;
+prop	<p_prop[did	56;
+sid	73]
+>]
+ p_prod[did	57;
+sid	1;
+prop	<p_prop_val[did	57;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	6]
+ p_elunit[did	55]
+ p_elunit[did	7]
+ p_elunit[did	56]
+>;
+lhsdid	54]
+ p_nterm[did	58;
+sid	40;
+prop	<p_prop_val[did	58;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_other[did	59;
+sid	80;
+prop	<p_prop[did	59;
+sid	73]
+>]
+ p_prod[did	60;
+sid	1;
+prop	<p_prop_val[did	60;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	6]
+ p_elunit[did	58]
+ p_elunit[did	55]
+ p_elunit[did	7]
+ p_elunit[did	59]
+>;
+lhsdid	54]
+ p_nterm[did	61;
+sid	43;
+prop	<p_prop_val[did	61;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_nterm[did	62;
+sid	41;
+prop	<p_prop_val[did	62;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_prod[did	63;
+sid	1;
+prop	<p_prop_val[did	63;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	62]
+>;
+lhsdid	61]
+ p_nterm[did	64;
+sid	42;
+prop	<p_prop_val[did	64;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_other[did	65;
+sid	81;
+prop	<p_prop[did	65;
+sid	73]
+>]
+ p_prod[did	66;
+sid	1;
+prop	<p_prop_val[did	66;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	62]
+ p_elunit[did	8]
+ p_elunit[did	64]
+ p_elunit[did	9]
+ p_elunit[did	61]
+ p_elunit[did	65]
+>;
+lhsdid	61]
+ p_nterm[did	67;
+sid	45;
+prop	<p_prop_val[did	67;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_prod[did	68;
+sid	1;
+prop	<p_prop_val[did	68;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	48]
+>;
+lhsdid	67]
+ p_other[did	69;
+sid	82;
+prop	<p_prop[did	69;
+sid	73]
+>]
+ p_prod[did	70;
+sid	1;
+prop	<p_prop_val[did	70;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	67]
+ p_elunit[did	39]
+ p_elunit[did	48]
+ p_elunit[did	69]
+>;
+lhsdid	67]
+ p_prod[did	71;
+sid	1;
+prop	<p_prop_val[did	71;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	67]
+>;
+lhsdid	62]
+ p_prod[did	72;
+sid	1;
+prop	<p_prop_val[did	72;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	62]
+ p_elunit[did	45]
+ p_elunit[did	67]
+ p_elunit[did	69]
+>;
+lhsdid	62]
+ p_other[did	73;
+sid	83;
+prop	<p_prop[did	73;
+sid	73]
+>]
+ p_prod[did	74;
+sid	1;
+prop	<p_prop_val[did	74;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	10]
+ p_elunit[did	73]
+>;
+lhsdid	51]
+ p_prod[did	75;
+sid	1;
+prop	<p_prop_val[did	75;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	61]
+>;
+lhsdid	64]
+ p_nterm[did	76;
+sid	48;
+prop	<p_prop_val[did	76;
+sid	131;
+val	p_lval[list	<p_dval[did	12]
+>]
+]
+>]
+ p_other[did	77;
+sid	84;
+prop	<p_prop[did	77;
+sid	73]
+>]
+ p_prod[did	78;
+sid	1;
+prop	<p_prop_val[did	78;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	76]
+ p_elunit[did	11]
+ p_elunit[did	64]
+ p_elunit[did	77]
+>;
+lhsdid	64]
+ p_nterm[did	79;
+sid	50;
+prop	<p_prop_val[did	79;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_nterm[did	80;
+sid	49;
+prop	<p_prop_val[did	80;
+sid	131;
+val	p_lval[list	<p_dval[did	16]
+>]
+]
+>]
+ p_other[did	81;
+sid	85;
+prop	<p_prop[did	81;
+sid	73]
+>]
+ p_prod[did	82;
+sid	1;
+prop	<p_prop_val[did	82;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	80]
+ p_elunit[did	79]
+ p_elunit[did	81]
+>;
+lhsdid	79]
+ p_nterm[did	83;
+sid	51;
+prop	<p_prop_val[did	83;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	12]
+>]
+]
+>]
+ p_prod[did	84;
+sid	1;
+prop	<p_prop_val[did	84;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	83]
+>;
+lhsdid	79]
+ p_nterm[did	85;
+sid	52;
+prop	<p_prop_val[did	85;
+sid	131;
+val	p_lval[list	<p_dval[did	2]
+>]
+]
+>]
+ p_other[did	86;
+sid	86;
+prop	<p_prop[did	86;
+sid	73]
+>]
+ p_prod[did	87;
+sid	1;
+prop	<p_prop_val[did	87;
+sid	129;
+val	p_nval[val	3]
+]
+>;
+rhs	<p_elunit[did	85]
+ p_elunit[did	79]
+ p_elunit[did	86]
+>;
+lhsdid	79]
+ p_nterm[did	88;
+sid	53;
+prop	<p_prop_val[did	88;
+sid	131;
+val	p_lval[list	<p_dval[did	12]
+>]
+]
+>]
+ p_other[did	89;
+sid	87;
+prop	<p_prop[did	89;
+sid	73]
+>]
+ p_prod[did	90;
+sid	1;
+prop	<p_prop_val[did	90;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	12]
+ p_elunit[did	89]
+>;
+lhsdid	88]
+ p_other[did	91;
+sid	88;
+prop	<p_prop[did	91;
+sid	73]
+>]
+ p_prod[did	92;
+sid	1;
+prop	<p_prop_val[did	92;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	12]
+ p_elunit[did	91]
+>;
+lhsdid	76]
+ p_nterm[did	93;
+sid	64;
+prop	<p_prop_val[did	93;
+sid	131;
+val	p_lval[list	<p_dval[did	15]
+ p_dval[did	14]
+ p_dval[did	13]
+>]
+]
+>]
+ p_other[did	94;
+sid	89;
+prop	<p_prop[did	94;
+sid	73]
+>]
+ p_prod[did	95;
+sid	1;
+prop	<p_prop_val[did	95;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	13]
+ p_elunit[did	94]
+>;
+lhsdid	93]
+ p_other[did	96;
+sid	90;
+prop	<p_prop[did	96;
+sid	73]
+>]
+ p_prod[did	97;
+sid	1;
+prop	<p_prop_val[did	97;
+sid	129;
+val	p_nval[val	3]
+]
+>;
+rhs	<p_elunit[did	14]
+ p_elunit[did	96]
+>;
+lhsdid	93]
+ p_other[did	98;
+sid	91;
+prop	<p_prop[did	98;
+sid	73]
+>]
+ p_prod[did	99;
+sid	1;
+prop	<p_prop_val[did	99;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	15]
+ p_elunit[did	98]
+>;
+lhsdid	93]
+ p_other[did	100;
+sid	92;
+prop	<p_prop[did	100;
+sid	73]
+>]
+ p_prod[did	101;
+sid	1;
+prop	<p_prop_val[did	101;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	16]
+ p_elunit[did	100]
+>;
+lhsdid	80]
+ p_nterm[did	102;
+sid	65;
+prop	<p_prop_val[did	102;
+sid	131;
+val	p_lval[list	<p_dval[did	192]
+ p_dval[did	11]
+>]
+]
+>]
+ p_other[did	103;
+sid	93;
+prop	<p_prop[did	103;
+sid	73]
+>]
+ p_prod[did	104;
+sid	1;
+prop	<p_prop_val[did	104;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	103]
+>;
+lhsdid	102]
+ p_other[did	105;
+sid	94;
+prop	<p_prop[did	105;
+sid	73]
+>]
+ p_prod[did	106;
+sid	1;
+prop	<p_prop_val[did	106;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	11]
+ p_elunit[did	64]
+ p_elunit[did	105]
+>;
+lhsdid	102]
+ p_nterm[did	107;
+sid	54;
+prop	<p_prop_val[did	107;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_other[did	108;
+sid	95;
+prop	<p_prop[did	108;
+sid	73]
+>]
+ p_prod[did	109;
+sid	1;
+prop	<p_prop_val[did	109;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	17]
+ p_elunit[did	88]
+ p_elunit[did	108]
+>;
+lhsdid	107]
+ p_other[did	110;
+sid	96;
+prop	<p_prop[did	110;
+sid	73]
+>]
+ p_prod[did	111;
+sid	1;
+prop	<p_prop_val[did	111;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	18]
+ p_elunit[did	88]
+ p_elunit[did	110]
+>;
+lhsdid	107]
+ p_nterm[did	112;
+sid	55;
+prop	<p_prop_val[did	112;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_other[did	113;
+sid	97;
+prop	<p_prop[did	113;
+sid	73]
+>]
+ p_prod[did	114;
+sid	1;
+prop	<p_prop_val[did	114;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	107]
+ p_elunit[did	113]
+>;
+lhsdid	112]
+ p_other[did	115;
+sid	98;
+prop	<p_prop[did	115;
+sid	73]
+>]
+ p_prod[did	116;
+sid	1;
+prop	<p_prop_val[did	116;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	112]
+ p_elunit[did	19]
+ p_elunit[did	107]
+ p_elunit[did	115]
+>;
+lhsdid	112]
+ p_prod[did	117;
+sid	1;
+prop	<p_prop_val[did	117;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	20]
+ p_elunit[did	64]
+ p_elunit[did	21]
+>;
+lhsdid	83]
+ p_other[did	118;
+sid	99;
+prop	<p_prop[did	118;
+sid	73]
+>]
+ p_prod[did	119;
+sid	1;
+prop	<p_prop_val[did	119;
+sid	129;
+val	p_nval[val	3]
+]
+>;
+rhs	<p_elunit[did	22]
+ p_elunit[did	118]
+>;
+lhsdid	83]
+ p_other[did	120;
+sid	100;
+prop	<p_prop[did	120;
+sid	73]
+>]
+ p_prod[did	121;
+sid	1;
+prop	<p_prop_val[did	121;
+sid	129;
+val	p_nval[val	4]
+]
+>;
+rhs	<p_elunit[did	76]
+ p_elunit[did	120]
+>;
+lhsdid	83]
+ p_other[did	122;
+sid	101;
+prop	<p_prop[did	122;
+sid	73]
+>]
+ p_prod[did	123;
+sid	1;
+prop	<p_prop_val[did	123;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	23]
+ p_elunit[did	122]
+>;
+lhsdid	83]
+ p_nterm[did	124;
+sid	56;
+prop	<p_prop_val[did	124;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_other[did	125;
+sid	102;
+prop	<p_prop[did	125;
+sid	73]
+>]
+ p_prod[did	126;
+sid	1;
+prop	<p_prop_val[did	126;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	124]
+ p_elunit[did	12]
+ p_elunit[did	20]
+ p_elunit[did	112]
+ p_elunit[did	21]
+ p_elunit[did	54]
+ p_elunit[did	125]
+>;
+lhsdid	42]
+ p_nterm[did	127;
+sid	58;
+prop	<p_prop_val[did	127;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_prod[did	128;
+sid	1;
+prop	<p_prop_val[did	128;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	127]
+>;
+lhsdid	49]
+ p_nterm[did	129;
+sid	59;
+prop	<p_prop_val[did	129;
+sid	131;
+val	p_lval[list	<p_dval[did	25]
+ p_dval[did	24]
+>]
+]
+>]
+ p_prod[did	130;
+sid	1;
+prop	<p_prop_val[did	130;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	127]
+ p_elunit[did	129]
+ p_elunit[did	127]
+ p_elunit[did	52]
+>;
+lhsdid	49]
+ p_other[did	131;
+sid	103;
+prop	<p_prop[did	131;
+sid	73]
+>]
+ p_prod[did	132;
+sid	1;
+prop	<p_prop_val[did	132;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	24]
+ p_elunit[did	131]
+>;
+lhsdid	129]
+ p_other[did	133;
+sid	104;
+prop	<p_prop[did	133;
+sid	73]
+>]
+ p_prod[did	134;
+sid	1;
+prop	<p_prop_val[did	134;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	25]
+ p_elunit[did	133]
+>;
+lhsdid	129]
+ p_other[did	135;
+sid	105;
+prop	<p_prop[did	135;
+sid	73]
+>]
+ p_prod[did	136;
+sid	1;
+prop	<p_prop_val[did	136;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	17]
+ p_elunit[did	135]
+>;
+lhsdid	124]
+ p_other[did	137;
+sid	106;
+prop	<p_prop[did	137;
+sid	73]
+>]
+ p_prod[did	138;
+sid	1;
+prop	<p_prop_val[did	138;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	18]
+ p_elunit[did	137]
+>;
+lhsdid	124]
+ p_nterm[did	139;
+sid	60;
+prop	<p_prop_val[did	139;
+sid	131;
+val	p_lval[list	<p_dval[did	32]
+ p_dval[did	31]
+ p_dval[did	29]
+ p_dval[did	28]
+ p_dval[did	27]
+ p_dval[did	26]
+ p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	6]
+ p_dval[did	2]
+>]
+]
+>]
+ p_other[did	140;
+sid	107;
+prop	<p_prop[did	140;
+sid	73]
+>]
+ p_prod[did	141;
+sid	1;
+prop	<p_prop_val[did	141;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	26]
+ p_elunit[did	140]
+>;
+lhsdid	139]
+ p_other[did	142;
+sid	108;
+prop	<p_prop[did	142;
+sid	73]
+>]
+ p_prod[did	143;
+sid	1;
+prop	<p_prop_val[did	143;
+sid	129;
+val	p_nval[val	3]
+]
+>;
+rhs	<p_elunit[did	27]
+ p_elunit[did	26]
+ p_elunit[did	142]
+>;
+lhsdid	139]
+ p_other[did	144;
+sid	109;
+prop	<p_prop[did	144;
+sid	73]
+>]
+ p_prod[did	145;
+sid	1;
+prop	<p_prop_val[did	145;
+sid	129;
+val	p_nval[val	7]
+]
+>;
+rhs	<p_elunit[did	54]
+ p_elunit[did	144]
+>;
+lhsdid	139]
+ p_other[did	146;
+sid	110;
+prop	<p_prop[did	146;
+sid	73]
+>]
+ p_prod[did	147;
+sid	1;
+prop	<p_prop_val[did	147;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	28]
+ p_elunit[did	26]
+ p_elunit[did	146]
+>;
+lhsdid	139]
+ p_other[did	148;
+sid	111;
+prop	<p_prop[did	148;
+sid	73]
+>]
+ p_prod[did	149;
+sid	1;
+prop	<p_prop_val[did	149;
+sid	129;
+val	p_nval[val	8]
+]
+>;
+rhs	<p_elunit[did	64]
+ p_elunit[did	26]
+ p_elunit[did	148]
+>;
+lhsdid	139]
+ p_other[did	150;
+sid	32;
+prop	<p_prop_val[did	150;
+sid	35;
+val	p_dval[did	30]
+]
+>]
+ p_other[did	151;
+sid	112;
+prop	<p_prop[did	151;
+sid	73]
+>]
+ p_prod[did	152;
+sid	1;
+prop	<p_prop_val[did	152;
+sid	129;
+val	p_nval[val	5]
+]
+>;
+rhs	<p_elunit[did	29]
+ p_elunit[did	20]
+ p_elunit[did	64]
+ p_elunit[did	21]
+ p_elunit[did	139]
+ p_elunit[did	150]
+ p_elunit[did	151]
+>;
+lhsdid	139]
+ p_other[did	153;
+sid	113;
+prop	<p_prop[did	153;
+sid	73]
+>]
+ p_prod[did	154;
+sid	1;
+prop	<p_prop_val[did	154;
+sid	129;
+val	p_nval[val	4]
+]
+>;
+rhs	<p_elunit[did	29]
+ p_elunit[did	20]
+ p_elunit[did	64]
+ p_elunit[did	21]
+ p_elunit[did	139]
+ p_elunit[did	30]
+ p_elunit[did	139]
+ p_elunit[did	153]
+>;
+lhsdid	139]
+ p_other[did	155;
+sid	114;
+prop	<p_prop[did	155;
+sid	73]
+>]
+ p_prod[did	156;
+sid	1;
+prop	<p_prop_val[did	156;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	139]
+ p_elunit[did	155]
+>;
+lhsdid	55]
+ p_other[did	157;
+sid	115;
+prop	<p_prop[did	157;
+sid	73]
+>]
+ p_prod[did	158;
+sid	1;
+prop	<p_prop_val[did	158;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	55]
+ p_elunit[did	139]
+ p_elunit[did	157]
+>;
+lhsdid	55]
+ p_other[did	159;
+sid	116;
+prop	<p_prop[did	159;
+sid	73]
+>]
+ p_prod[did	160;
+sid	1;
+prop	<p_prop_val[did	160;
+sid	129;
+val	p_nval[val	6]
+]
+>;
+rhs	<p_elunit[did	31]
+ p_elunit[did	64]
+ p_elunit[did	26]
+ p_elunit[did	159]
+>;
+lhsdid	139]
+ p_nterm[did	161;
+sid	61;
+prop	<p_prop_val[did	161;
+sid	131;
+val	p_lval[list	<p_dval[did	32]
+>]
+]
+>]
+ p_other[did	162;
+sid	117;
+prop	<p_prop[did	162;
+sid	73]
+>]
+ p_prod[did	163;
+sid	1;
+prop	<p_prop_val[did	163;
+sid	129;
+val	p_nval[val	9]
+]
+>;
+rhs	<p_elunit[did	161]
+ p_elunit[did	162]
+>;
+lhsdid	139]
+ p_nterm[did	164;
+sid	63;
+prop	<p_prop_val[did	164;
+sid	131;
+val	p_lval[list	<p_dval[did	23]
+ p_dval[did	22]
+ p_dval[did	20]
+ p_dval[did	16]
+ p_dval[did	12]
+ p_dval[did	2]
+>]
+]
+>]
+ p_prod[did	165;
+sid	1;
+prop	<p_prop_val[did	165;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	127]
+ p_elunit[did	34]
+ p_elunit[did	164]
+ p_elunit[did	52]
+>;
+lhsdid	127]
+ p_prod[did	166;
+sid	1;
+prop	<p_prop_val[did	166;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	164]
+>;
+lhsdid	127]
+ p_prod[did	167;
+sid	1;
+prop	<p_prop_val[did	167;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	79]
+>;
+lhsdid	164]
+ p_prod[did	168;
+sid	1;
+prop	<p_prop_val[did	168;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	164]
+ p_elunit[did	93]
+ p_elunit[did	79]
+ p_elunit[did	52]
+>;
+lhsdid	164]
+ p_other[did	169;
+sid	118;
+prop	<p_prop[did	169;
+sid	73]
+>]
+ p_prod[did	170;
+sid	1;
+prop	<p_prop_val[did	170;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	2]
+ p_elunit[did	169]
+>;
+lhsdid	85]
+ p_nterm[did	171;
+sid	68;
+prop	<p_prop_val[did	171;
+sid	131;
+val	p_lval[list	<p_dval[did	12]
+>]
+]
+>]
+ p_other[did	172;
+sid	119;
+prop	<p_prop[did	172;
+sid	73]
+>]
+ p_prod[did	173;
+sid	1;
+prop	<p_prop_val[did	173;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	88]
+ p_elunit[did	102]
+ p_elunit[did	172]
+>;
+lhsdid	171]
+ p_nterm[did	174;
+sid	66;
+prop	<p_prop_val[did	174;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_other[did	175;
+sid	120;
+prop	<p_prop[did	175;
+sid	73]
+>]
+ p_prod[did	176;
+sid	1;
+prop	<p_prop_val[did	176;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	58]
+ p_elunit[did	174]
+ p_elunit[did	175]
+>;
+lhsdid	58]
+ p_other[did	177;
+sid	121;
+prop	<p_prop[did	177;
+sid	73]
+>]
+ p_prod[did	178;
+sid	1;
+prop	<p_prop_val[did	178;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	174]
+ p_elunit[did	177]
+>;
+lhsdid	58]
+ p_nterm[did	179;
+sid	67;
+prop	<p_prop_val[did	179;
+sid	131;
+val	p_lval[list	<p_dval[did	12]
+>]
+]
+>]
+ p_other[did	180;
+sid	122;
+prop	<p_prop[did	180;
+sid	73]
+>]
+ p_prod[did	181;
+sid	1;
+prop	<p_prop_val[did	181;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	17]
+ p_elunit[did	179]
+ p_elunit[did	26]
+ p_elunit[did	180]
+>;
+lhsdid	174]
+ p_other[did	182;
+sid	123;
+prop	<p_prop[did	182;
+sid	73]
+>]
+ p_prod[did	183;
+sid	1;
+prop	<p_prop_val[did	183;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	18]
+ p_elunit[did	179]
+ p_elunit[did	26]
+ p_elunit[did	182]
+>;
+lhsdid	174]
+ p_other[did	184;
+sid	124;
+prop	<p_prop[did	184;
+sid	73]
+>]
+ p_prod[did	185;
+sid	1;
+prop	<p_prop_val[did	185;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	171]
+ p_elunit[did	184]
+>;
+lhsdid	179]
+ p_other[did	186;
+sid	125;
+prop	<p_prop[did	186;
+sid	73]
+>]
+ p_prod[did	187;
+sid	1;
+prop	<p_prop_val[did	187;
+sid	129;
+val	p_nval[val	2]
+]
+>;
+rhs	<p_elunit[did	179]
+ p_elunit[did	19]
+ p_elunit[did	171]
+ p_elunit[did	186]
+>;
+lhsdid	179]
+ p_other[did	188;
+sid	126;
+prop	<p_prop[did	188;
+sid	73]
+>]
+ p_prod[did	189;
+sid	1;
+prop	<p_prop_val[did	189;
+sid	129;
+val	p_nval[val	1]
+]
+>;
+rhs	<p_elunit[did	32]
+ p_elunit[did	20]
+ p_elunit[did	64]
+ p_elunit[did	21]
+ p_elunit[did	139]
+ p_elunit[did	188]
+>;
+lhsdid	161]
+ p_nterm[did	190;
+sid	128;
+prop	<p_prop_val[did	190;
+sid	131;
+val	p_lval[list	<p_dval[did	18]
+ p_dval[did	17]
+>]
+]
+>]
+ p_prod[did	191;
+sid	1;
+prop	<p_prop_val[did	191;
+sid	129;
+val	p_nval[val	1]
+]
+ p_prop[did	191;
+sid	127]
+>;
+rhs	<p_elunit[did	33]
+ p_elunit[did	1]
+>;
+lhsdid	190]
+ p_term[did	192;
+sid	2;
+prop	<>]
+>;
+symbols	<p_name[sid	1;
+str	"#"]
+ p_string[sid	2;
+str	""]
+ p_name[sid	3;
+str	"EOF"]
+ p_string[sid	4;
+str	"-"]
+ p_string[sid	5;
+str	"+"]
+ p_string[sid	6;
+str	"&&"]
+ p_string[sid	7;
+str	"||"]
+ p_string[sid	8;
+str	"{"]
+ p_string[sid	9;
+str	"}"]
+ p_string[sid	10;
+str	"?"]
+ p_string[sid	11;
+str	":"]
+ p_string[sid	12;
+str	"=="]
+ p_string[sid	13;
+str	"="]
+ p_name[sid	14;
+str	"Identifier"]
+ p_string[sid	15;
+str	"/"]
+ p_string[sid	16;
+str	"*"]
+ p_string[sid	17;
+str	"%"]
+ p_string[sid	18;
+str	"!"]
+ p_string[sid	19;
+str	"float"]
+ p_string[sid	20;
+str	"int"]
+ p_string[sid	21;
+str	","]
+ p_string[sid	22;
+str	"("]
+ p_string[sid	23;
+str	")"]
+ p_name[sid	24;
+str	"FloatDenotation"]
+ p_name[sid	25;
+str	"IntDenotation"]
+ p_string[sid	26;
+str	"<"]
+ p_string[sid	27;
+str	">"]
+ p_string[sid	28;
+str	";"]
+ p_string[sid	29;
+str	"break"]
+ p_string[sid	30;
+str	"continue"]
+ p_string[sid	31;
+str	"if"]
+ p_string[sid	32;
+str	"else"]
+ p_string[sid	33;
+str	"return"]
+ p_string[sid	34;
+str	"while"]
+ p_string[sid	35;
+str	"noreducemod"]
+ p_name[sid	36;
+str	"Program"]
+ p_name[sid	37;
+str	"Relation"]
+ p_name[sid	38;
+str	"EquEqu"]
+ p_name[sid	39;
+str	"StatementList"]
+ p_name[sid	40;
+str	"VariableDeclList"]
+ p_name[sid	41;
+str	"Disjunction"]
+ p_name[sid	42;
+str	"Expression"]
+ p_name[sid	43;
+str	"Condition"]
+ p_name[sid	44;
+str	"Comparison"]
+ p_name[sid	45;
+str	"Conjunction"]
+ p_name[sid	46;
+str	"AmpAmp"]
+ p_name[sid	47;
+str	"BarBar"]
+ p_name[sid	48;
+str	"IdUse"]
+ p_name[sid	49;
+str	"Notop"]
+ p_name[sid	50;
+str	"Factor"]
+ p_name[sid	51;
+str	"Primary"]
+ p_name[sid	52;
+str	"Unop"]
+ p_name[sid	53;
+str	"IdDef"]
+ p_name[sid	54;
+str	"ParameterDecl"]
+ p_name[sid	55;
+str	"ParameterList"]
+ p_name[sid	56;
+str	"ResultType"]
+ p_name[sid	57;
+str	"Compound"]
+ p_name[sid	58;
+str	"Sum"]
+ p_name[sid	59;
+str	"Relop"]
+ p_name[sid	60;
+str	"Statement"]
+ p_name[sid	61;
+str	"WhileStmt"]
+ p_name[sid	62;
+str	"Addop"]
+ p_name[sid	63;
+str	"Term"]
+ p_name[sid	64;
+str	"Mulop"]
+ p_name[sid	65;
+str	"OptInitialize"]
+ p_name[sid	66;
+str	"VariableDeclSeg"]
+ p_name[sid	67;
+str	"VarIdList"]
+ p_name[sid	68;
+str	"VariableDecl"]
+ p_name[sid	69;
+str	"Axiom"]
+ p_string[sid	70;
+str	"_CODE"]
+ p_string[sid	71;
+str	"_STOP"]
+ p_string[sid	72;
+str	"_incrnodestack();_nst[_nsp]=MkMinusOp(&curpos);"]
+ p_string[sid	73;
+str	"connect"]
+ p_string[sid	74;
+str	"_incrnodestack();_nst[_nsp]=MkPlusOp(&curpos);"]
+ p_string[sid	75;
+str	"_incrnodestack();_nst[_nsp]=MkAmpOp(&curpos);"]
+ p_string[sid	76;
+str	"_nst[_nsp]=Mkrule_1(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	77;
+str	"_incrnodestack();_nst[_nsp]=MkBarOp(&curpos);"]
+ p_string[sid	78;
+str	"_nsp -= 2;_nst[_nsp]=MkDyadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);"]
+ p_string[sid	79;
+str	"_nst[_nsp]=Mkrule_2(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	80;
+str	"_nsp -= 1;_nst[_nsp]=Mkrule_3(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	81;
+str	"_nsp -= 2;_nst[_nsp]=MkCondExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);"]
+ p_string[sid	82;
+str	"_nsp -= 2;_nst[_nsp]=MkShortCircuitExp(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);"]
+ p_string[sid	83;
+str	"_incrnodestack();_nst[_nsp]=MkEqualOp(&curpos);"]
+ p_string[sid	84;
+str	"_nsp -= 1;_nst[_nsp]=MkAssignExp(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	85;
+str	"_nsp -= 1;_nst[_nsp]=MkNotExp(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	86;
+str	"_nsp -= 1;_nst[_nsp]=MkMonadicExp(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	87;
+str	"_incrnodestack();_nst[_nsp]=MkDefiningOccurrence(&curpos, MkIdentifier(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));"]
+ p_string[sid	88;
+str	"_incrnodestack();_nst[_nsp]=MkAppliedOccurrence(&curpos, MkIdentifier(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));"]
+ p_string[sid	89;
+str	"_incrnodestack();_nst[_nsp]=MkSlashOp(&curpos);"]
+ p_string[sid	90;
+str	"_incrnodestack();_nst[_nsp]=MkStarOp(&curpos);"]
+ p_string[sid	91;
+str	"_incrnodestack();_nst[_nsp]=MkPercentOp(&curpos);"]
+ p_string[sid	92;
+str	"_incrnodestack();_nst[_nsp]=MkExclOp(&curpos);"]
+ p_string[sid	93;
+str	"_incrnodestack();_nst[_nsp]=Mkrule_4(&curpos);"]
+ p_string[sid	94;
+str	"_nst[_nsp]=MkInitialize(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	95;
+str	"_nst[_nsp]=MkFloatParDecl(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	96;
+str	"_nst[_nsp]=MkIntParDecl(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	97;
+str	"_nst[_nsp]=Mkrule_5(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	98;
+str	"_nsp -= 1;_nst[_nsp]=Mkrule_6(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	99;
+str	"_incrnodestack();_nst[_nsp]=MkFloatVal(&curpos, MkFloatDenotation(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));"]
+ p_string[sid	100;
+str	"_nst[_nsp]=MkIdnVal(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	101;
+str	"_incrnodestack();_nst[_nsp]=MkIntVal(&curpos, MkIntDenotation(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));"]
+ p_string[sid	102;
+str	"_nsp -= 2;_nst[_nsp]=MkSource(&curpos, _nst[_nsp+0], MkIdentifier(&(T_POS(TokenStack(1))), T_ATTR(TokenStack(1))), _nst[_nsp+1], _nst[_nsp+2]);"]
+ p_string[sid	103;
+str	"_incrnodestack();_nst[_nsp]=MkLessOp(&curpos);"]
+ p_string[sid	104;
+str	"_incrnodestack();_nst[_nsp]=MkGreaterOp(&curpos);"]
+ p_string[sid	105;
+str	"_incrnodestack();_nst[_nsp]=MkFloatResult(&curpos);"]
+ p_string[sid	106;
+str	"_incrnodestack();_nst[_nsp]=MkIntResult(&curpos);"]
+ p_string[sid	107;
+str	"_incrnodestack();_nst[_nsp]=Mkrule_7(&curpos);"]
+ p_string[sid	108;
+str	"_incrnodestack();_nst[_nsp]=MkBreakStmt(&curpos);"]
+ p_string[sid	109;
+str	"_nst[_nsp]=Mkrule_8(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	110;
+str	"_incrnodestack();_nst[_nsp]=MkContinueStmt(&curpos);"]
+ p_string[sid	111;
+str	"_nst[_nsp]=MkExprStmt(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	112;
+str	"_nsp -= 1;_nst[_nsp]=MkOneSided(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	113;
+str	"_nsp -= 2;_nst[_nsp]=MkTwoSided(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2]);"]
+ p_string[sid	114;
+str	"_nst[_nsp]=Mkrule_9(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	115;
+str	"_nsp -= 1;_nst[_nsp]=Mkrule_10(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	116;
+str	"_nst[_nsp]=MkReturnStmt(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	117;
+str	"_nst[_nsp]=Mkrule_11(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	118;
+str	"_incrnodestack();_nst[_nsp]=MkUMinusOp(&curpos);"]
+ p_string[sid	119;
+str	"_nsp -= 1;_nst[_nsp]=MkVarDecl(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	120;
+str	"_nsp -= 1;_nst[_nsp]=Mkrule_12(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	121;
+str	"_nst[_nsp]=Mkrule_13(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	122;
+str	"_nst[_nsp]=MkFloatVar(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	123;
+str	"_nst[_nsp]=MkIntVar(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	124;
+str	"_nst[_nsp]=Mkrule_14(&curpos, _nst[_nsp+0]);"]
+ p_string[sid	125;
+str	"_nsp -= 1;_nst[_nsp]=Mkrule_15(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	126;
+str	"_nsp -= 1;_nst[_nsp]=MkLoop(&curpos, _nst[_nsp+0], _nst[_nsp+1]);"]
+ p_string[sid	127;
+str	"_START"]
+ p_name[sid	128;
+str	"COLA_ROOT1"]
+ p_string[sid	129;
+str	"_ORDER"]
+ p_string[sid	130;
+str	"_TERMINALIZE"]
+ p_string[sid	131;
+str	"_FIRST1"]
+ p_string[sid	132;
+str	"_REDUCED"]
+>]
+#

@@ -1,0 +1,55 @@
+<$START_SYMBOL>: spec .
+doc: &'_incrnodestack();_nst[_nsp]=Mkrule_2(&curpos);' .
+
+doc: lit &'_incrnodestack();_nst[_nsp]=Mkrule_1(&curpos, Mklit(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+join: &'_incrnodestack();_nst[_nsp]=Mkrule_12(&curpos);' .
+
+join: 'joinedto' &'_incrnodestack();_nst[_nsp]=Mkrule_11(&curpos);' .
+
+join: 'with' &'_incrnodestack();_nst[_nsp]=Mkrule_10(&curpos);' .
+
+literal: lit &'_incrnodestack();_nst[_nsp]=Mkrule_22(&curpos, Mklit(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+literals: literal &'_nst[_nsp]=Mkrule_23(&curpos, _nst[_nsp+0]);' .
+
+literals: literals literal &'_nsp -= 1;_nst[_nsp]=Mkrule_24(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+name: ident &'_incrnodestack();_nst[_nsp]=Mkrule_3(&curpos, Mkident(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+param: name 'input' doc &'_nsp -= 1;_nst[_nsp]=Mkrule_7(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+param: name 'positional' doc &'_nsp -= 1;_nst[_nsp]=Mkrule_9(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+param: name 'positionals' doc &'_nsp -= 1;_nst[_nsp]=Mkrule_8(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+param: 'open' 'error' 'format' lit &'_incrnodestack();_nst[_nsp]=Mkrule_5(&curpos, Mklit(&(T_POS(TokenStack(3))), T_ATTR(TokenStack(3))));' .
+
+param: 'open' 'error' 'usage' &'_incrnodestack();_nst[_nsp]=Mkrule_4(&curpos);' .
+
+params: &'_incrnodestack();_nst[_nsp]=Mkrule_25(&curpos);' .
+
+params: params param ';' &'_nsp -= 1;_nst[_nsp]=Mkrule_26(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+param: 'terminator' lit &'_incrnodestack();_nst[_nsp]=Mkrule_20(&curpos, Mklit(&(T_POS(TokenStack(1))), T_ATTR(TokenStack(1))));' .
+
+param: tparam &'_nst[_nsp]=Mkrule_27(&curpos, _nst[_nsp+0]);' .
+
+param: 'usage' lit &'_incrnodestack();_nst[_nsp]=Mkrule_6(&curpos, Mklit(&(T_POS(TokenStack(1))), T_ATTR(TokenStack(1))));' .
+
+spec: params &'_nst[_nsp]=Mkrule_21(&curpos, _nst[_nsp+0]);' .
+
+tparam: name literals join type doc &'_nsp -= 4;_nst[_nsp]=Mkrule_19(&curpos, _nst[_nsp+0], _nst[_nsp+1], _nst[_nsp+2], _nst[_nsp+3], _nst[_nsp+4]);' .
+
+type: 'boolean' &'_incrnodestack();_nst[_nsp]=Mkrule_18(&curpos);' .
+
+type: 'booleans' &'_incrnodestack();_nst[_nsp]=Mkrule_17(&curpos);' .
+
+type: 'int' &'_incrnodestack();_nst[_nsp]=Mkrule_16(&curpos);' .
+
+type: 'ints' &'_incrnodestack();_nst[_nsp]=Mkrule_15(&curpos);' .
+
+type: 'string' &'_incrnodestack();_nst[_nsp]=Mkrule_14(&curpos);' .
+
+type: 'strings' &'_incrnodestack();_nst[_nsp]=Mkrule_13(&curpos);' .
+

@@ -1,0 +1,5 @@
+%Type.Function.ok == . +cmd=cat (%trenn) \
+	(Type.demo/Function.ok:label) \
+	(Type.demo/Function.ok) \
+	(Type.demo/Function.ok +cmd=(TypeTutorial.fw.exe) :stdout :warn) \
+	(Type.demo/Function.ok +cmd=(TypeTutorial.fw.exe) :stdout) :stdout

@@ -1,0 +1,2 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :liga*MeBottomUp

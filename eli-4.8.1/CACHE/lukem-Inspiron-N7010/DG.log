@@ -1,0 +1,2796 @@
+Recomputing parameters for recursive derivation : eqn_in
+Recomputing parameters for recursive derivation : roff*gnc.eqn
+Recomputing parameters for recursive derivation : gnc.eqn
+Recomputing parameters for recursive derivation : ,v
+Recomputing parameters for recursive derivation : vc*co
+Recomputing parameters for recursive derivation : sccs
+Recomputing parameters for recursive derivation : vc*sccs.co
+Recomputing parameters for recursive derivation : sccs.co
+Recomputing parameters for recursive derivation : co
+Recomputing parameters for recursive derivation : ,vw
+Recomputing parameters for recursive derivation : vc*view.names
+Recomputing parameters for recursive derivation : view.names
+Recomputing parameters for recursive derivation :    -> code*libraries.view_desc*composite < code*libraries.view_desc code*library_flags >
+
+Recomputing parameters for recursive derivation :    -> tex*texclose
+
+Recomputing parameters for recursive derivation :    -> tex*dvi*composite < tex*dvi tex*texpdf tex*tex.log tex*citations tex*indexntry tex*texauxout >
+
+Recomputing parameters for recursive derivation : all_so_inc
+Recomputing parameters for recursive derivation :    -> odin*all_targets_inc
+
+Recomputing parameters for recursive derivation :    -> cpp*incl.lst
+
+Recomputing parameters for recursive derivation :    -> fw*fwincl.all
+
+Recomputing parameters for recursive derivation :    -> eli*specs_closure
+
+Recomputing parameters for recursive derivation : expandlist
+Recomputing parameters for recursive derivation :    -> oldodin*expanddir
+
+Recomputing parameters for recursive derivation :    -> fw*fwAll
+
+Recomputing parameters for recursive derivation : libmods
+Recomputing parameters for recursive derivation :    -> info*tnfdvi*composite < info*tnfdvi info*tnflog info*tnfaux info*tnfndx info*tnfpdf >
+
+Recomputing parameters for recursive derivation : pdf
+Recomputing parameters for recursive derivation : ps
+Recomputing parameters for recursive derivation :    -> tex*tex.bbl +cc +cc_flags +texsearch +date +rev +state +who +view_sp +texroot +texsppt
+
+Recomputing parameters for recursive derivation :    -> tex*texauxin.vtd +cc +cc_flags +texsearch +date +rev +state +who +view_sp +texroot +index_flags +texsppt
+
+Recomputing parameters for recursive derivation : tex*dvi*composite < tex*dvi tex*texpdf tex*tex.log tex*citations tex*indexntry tex*texauxout >
+Recomputing parameters for recursive derivation : roff*all_so_inc
+Recomputing parameters for recursive derivation :    -> roff*all_so_inc +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : fw*fwincl.all
+Recomputing parameters for recursive derivation : fwincl.all
+Recomputing parameters for recursive derivation : fw*fwincl.all
+Recomputing parameters for recursive derivation : eli*level_0_specs_out
+Recomputing parameters for recursive derivation :    -> eli*level_0_specs_out +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : eli*expfwspecs
+Recomputing parameters for recursive derivation :    -> eli*expfwspecs +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : eli*allspecs_in
+Recomputing parameters for recursive derivation :    -> eli*allspecs_in +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : eli*allspecs
+Recomputing parameters for recursive derivation :    -> eli*allspecs +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : oldodin*expanddir
+Recomputing parameters for recursive derivation : expanddir
+Recomputing parameters for recursive derivation : eli*libmods
+Recomputing parameters for recursive derivation :    -> eli*libmods +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : info*tnfsndx
+Recomputing parameters for recursive derivation :    -> info*tnfsndx
+
+Recomputing parameters for recursive derivation : info*tnfauxin.vtd
+Recomputing parameters for recursive derivation :    -> info*tnfauxin.vtd +texroot
+
+Recomputing parameters for recursive derivation : fw*fw_pdf
+Recomputing parameters for recursive derivation :    -> fw*fw_pdf +apply +incl +ignore +chapter +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : fw*fw_pdf
+Recomputing parameters for recursive derivation : fw_pdf
+Recomputing parameters for recursive derivation : tex*texps
+Recomputing parameters for recursive derivation :    -> tex*texps +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt
+
+Recomputing parameters for recursive derivation : tex*texps
+Recomputing parameters for recursive derivation : texps
+Recomputing parameters for recursive derivation : info*info.ps
+Recomputing parameters for recursive derivation :    -> info*info.ps +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt
+
+Recomputing parameters for recursive derivation : info*info.ps
+Recomputing parameters for recursive derivation : info.ps
+Recomputing parameters for recursive derivation : fw*fw_ps
+Recomputing parameters for recursive derivation :    -> fw*fw_ps +apply +incl +ignore +chapter +date +rev +state +who +view_sp
+
+Recomputing parameters for recursive derivation : fw*fw_ps
+Recomputing parameters for recursive derivation : fw_ps
+Possible Derivations :
+:noinput Map( +date +rev +state +who +view_sp )
+   -> idem*treeProc +lang
+   -> info*odin_help
+   -> odin*odin_help
+   -> code*libraries.view_desc*composite < code*libraries.view_desc code*library_flags > +lib +lib_sp
+OBJECT Map( +date +rev +state +who +view_sp )
+   -> odin*targets_ptr
+   -> odin*copy +copy_dest
+   -> odin*apply +apply
+   -> extract=:str
+   -> extract=:burg
+   -> lookup=:c_srcs
+   -> extract=:clp
+   -> extract=:cola
+   -> map=:incl.lst
+   -> map=:do_cpp
+   -> lookup=:cxx_srcs
+   -> extract=:dapto
+   -> map=:dapGen
+   -> extract=:delit
+   -> map=:expandlist
+   -> extract=:specs
+   -> map=:specs_closure
+   -> delete=:lex_code
+   -> delete=:eta_h
+   -> extract=:c
+   -> extract=:cxx
+   -> extract=:h
+   -> delete=:a
+   -> delete=:o
+   -> extract=:sp
+   -> map=:libmods
+   -> extract=:reqmod
+   -> map=:lookup_c_srcs
+   -> map=:o
+   -> extract=:reqsym
+   -> map=:incl.all
+   -> extract=:a
+   -> extract=:libs
+   -> map=:dep
+   -> extract=:fw
+   -> map=:fwincl.all
+   -> map=:fwNop
+   -> delete=:specs
+   -> map=:fwSpecList
+   -> map=:fwGenList
+   -> map=:expandtabs
+   -> extract=:gla
+   -> extract=:lex_code
+   -> map=:allspecs
+   -> extract=:tnf
+   -> map=:info_data_list
+   -> map=:ps
+   -> map=:pdf
+   -> extract=:tex
+   -> extract=:sty
+   -> extract=:kwd
+   -> map=:level_0_specs
+   -> extract=:lido
+   -> map=:lidoEta
+   -> extract=:ctl
+   -> extract=:sym
+   -> extract=:MeBottomUp
+   -> extract=:mapSrc
+   -> extract=:tcl
+   -> extract=:oil
+   -> extract=:con
+   -> extract=:mapPgram
+   -> extract=:perr
+   -> extract=:coding
+   -> extract=:mapBuPgram
+   -> extract=:pdl
+   -> extract=:head
+   -> extract=:init
+   -> extract=:finl
+   -> extract=:phi
+   -> extract=:eta
+   -> extract=:ptg
+   -> extract=:symbols
+   -> extract=:tp
+   -> map=:all_targets_inc
+   -> odin*copy_cmd +copy_dest_desc
+   -> odin*err
+   -> odin*warn
+   -> odin*dir
+   -> odin*name
+   -> odin*label
+   -> odin*id
+   -> odin*depend
+   -> odin*prefix_help
+   -> odin*suffix_help
+   -> odin*drv_help
+   -> odin*prm_help +prm_help
+   -> map=:try.co
+   -> recurse=:sm.list
+   -> map=:o_src
+   -> misc*redo
+   -> map=:all_so_inc
+   -> lookup=:all_so_inc
+   -> map=:texclose
+   -> extract=:cls
+   -> extract=:bib
+   -> extract=:bst
+   -> extract=:ps
+FILE Map( +date +rev +state +who +view_sp )
+   -> fw*fwincl.all +incl +ignore +date +rev +state +who +view_sp
+   -> pgs*pgsGenErr +hookvalue
+   -> odin*targets +date +rev +state +who +view_sp
+   -> odin*expand_hooks
+   -> odin*prm_values
+   -> odin*view_spec
+   -> cpp*incl.dir +incl +ignore
+   -> cpp*do_cpp +incl +ignore +date +rev +state +who +view_sp
+   -> fw*fwincl.dir +incl +ignore
+   -> fw*expandtabs
+   -> idem*PtgSpec +patterns
+   -> info*std_err +hookvalue +docref
+   -> oldodin*expandfile
+   -> pgs*pgsConflict
+   -> skeleton*filtered*composite < skeleton*filtered skeleton*errfiles >
+   -> odin*targets_inc
+   -> odin*nested_hooks*composite < odin*nested_hooks odin*hook_values.of >
+   -> odin*filename
+   -> odin*source_names
+   -> odin*operation_names
+   -> misc*list
+   -> misc*boot_name +default
+   -> misc*diff +other
+   -> misc*rcp +f_dest +d_dest
+   -> misc*installpkg +d_dest
+   -> roff*so_inc_spec +home
+   -> roff*eqn
+   -> run*run +cmd +need
+   -> run*stdout*composite < run*stdout run*output > +cmd +need
+LIST Map( +date +rev +state +who +view_sp )
+   -> liga*ligaOut +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*ligaErr +hookvalue +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> maptool*mapOut +incl +parser +ignore +date +rev +state +who +view_sp
+   -> maptool*mapBuOut +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> delit*lit_out +incl +ignore +date +rev +state +who +view_sp
+   -> kwd*kwd_out +incl +ignore +date +rev +state +who +view_sp
+   -> liga*ligaBe +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> maptool*mapConSyn*composite < maptool*mapConSyn maptool*mapAbsSyn maptool*mapAbsTree maptool*mapFe maptool*mapBe maptool*mapPgram > +incl +parser +ignore +date +rev +state +who +view_sp
+   -> maptool*mapBuPgram +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> adtinit*csmidnOut +fold +date +rev +state +who +view_sp
+   -> delit*lit_gen +incl +ignore +date +rev +state +who +view_sp
+   -> gla*scan_spec +incl +ignore +date +rev +state +who +view_sp
+   -> kwd*kwd_gen +incl +ignore +date +rev +state +who +view_sp
+   -> liga*MeIdl*composite < liga*MeIdl liga*MeInfo liga*MeBottomUp > +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*showMeDir +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp
+   -> maptool*mapIn +incl +ignore +date +rev +state +who +view_sp
+   -> adtinit*csmidnProd +fold +date +rev +state +who +view_sp
+   -> burg*ext.burg.cmpd +date +rev +state +who +view_sp
+   -> clp*ext.clp.cmpd +date +rev +state +who +view_sp
+   -> cola*ext.cola.cmpd +date +rev +state +who +view_sp
+   -> cpp*cpp +incl +ignore +date +rev +state +who +view_sp
+   -> dapto*ext.dapto.cmpd +date +rev +state +who +view_sp
+   -> delit*ext.delit.cmpd +date +rev +state +who +view_sp
+   -> fw*fw.cmpd +date +rev +state +who +view_sp
+   -> fw*tabsexpanded
+   -> gla*gla.cmpd +date +rev +state +who +view_sp
+   -> gla*ext.lex_code.cmpd +date +rev +state +who +view_sp
+   -> kwd*kwd.gla +incl +ignore +date +rev +state +who +view_sp
+   -> liga*lido.cmpd +incl +date +rev +state +who +view_sp
+   -> liga*ctl.cmpd +date +rev +state +who +view_sp
+   -> maptool*ext.sym.cmpd +date +rev +state +who +view_sp
+   -> maptool*ext.map.cmpd +date +rev +state +who +view_sp
+   -> oil*ext.oil.cmpd +date +rev +state +who +view_sp
+   -> oldodin*dir_of
+   -> parser*con.cmpd +date +rev +state +who +view_sp
+   -> parser*ext.perr.cmpd +date +rev +state +who +view_sp
+   -> parser*ext.coding.cmpd +date +rev +state +who +view_sp
+   -> pdl*ext.pdl.cmpd +date +rev +state +who +view_sp
+   -> phi*phiOut*composite < phi*phiOut phi*phiMap > +date +rev +state +who +view_sp
+   -> phi*etaOut*composite < phi*etaOut phi*etaMap > +date +rev +state +who +view_sp
+   -> ptg*ext.ptg.cmpd +date +rev +state +who +view_sp
+   -> skeleton*viewlist
+   -> skeleton*pasted
+   -> skeleton*vtd
+   -> symcode*ext.symbols.cmpd +date +rev +state +who +view_sp
+   -> tp*ext.tp.cmpd +date +rev +state +who +view_sp
+   -> odin*first
+   -> odin*names
+   -> odin*ls
+   -> odin*cat
+   -> odin*union
+   -> odin*labels
+VOID Map( +date +rev +state +who +view_sp )
+REFERENCE Map( +date +rev +state +who +view_sp )
+EXECUTABLE Map( +date +rev +state +who +view_sp )
+GENERIC Map( +date +rev +state +who +view_sp )
+PIPE Map( +date +rev +state +who +view_sp +cmd +need )
+DERIVED-DIRECTORY Map( +date +rev +state +who +view_sp )
+   -> oldodin*expanddir +incl +ignore +date +rev +state +who +view_sp
+   -> oldodin*dirnames
+odin*expand_hooks Map( +date +rev +state +who +view_sp )
+odin*targets_ptr Map( +date +rev +state +who +view_sp )
+odin*targets Map( +date +rev +state +who +view_sp )
+odin*act_tgt.list Map( +date +rev +state +who +view_sp )
+odin*vir_tgt.list Map( +date +rev +state +who +view_sp )
+odin*vir_dir Map( +date +rev +state +who +view_sp )
+odin*copy Map( +copy_dest +date +rev +state +who +view_sp )
+odin*prm_values Map( +date +rev +state +who +view_sp )
+odin*view_spec Map( +date +rev +state +who +view_sp )
+first Map( +date +rev +state +who +view_sp )
+odin*apply Map( +apply +date +rev +state +who +view_sp )
+odin*abstract Map( +date +rev +state +who +view_sp )
+str Map( +date +rev +state +who +view_sp )
+csmidnOut Map( +fold +date +rev +state +who +view_sp )
+adtinit*csmidnOut Map( +fold +date +rev +state +who +view_sp )
+extract=:str Map( +date +rev +state +who +view_sp )
+names Map( +date +rev +state +who +view_sp )
+csmidnProd Map( +fold +date +rev +state +who +view_sp )
+name Map( +date +rev +state +who +view_sp )
+adtinit*csmidnProd Map( +fold +date +rev +state +who +view_sp )
+cat Map( +date +rev +state +who +view_sp )
+level_8_specs_in Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*level_8_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_8_specs_in Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+level_7_specs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+etaIncl Map( +incl +ignore +date +rev +state +who +view_sp )
+list Map( +date +rev +state +who +view_sp )
+burg Map( +date +rev +state +who +view_sp )
+   -> burg*one.burg.cmpd
+burg.cmpd Map( +date +rev +state +who +view_sp )
+   -> burg*burgOut
+   -> burg*burgGen
+one.burg.cmpd Map( +date +rev +state +who +view_sp )
+burg*one.burg.cmpd Map( +date +rev +state +who +view_sp )
+ext.burg.cmpd Map( +date +rev +state +who +view_sp )
+burg*ext.burg.cmpd Map( +date +rev +state +who +view_sp )
+extract=:burg Map( +date +rev +state +who +view_sp )
+burgGen Map( +date +rev +state +who +view_sp )
+   -> burg*burgErr +hookvalue
+burg*burgGen Map( +date +rev +state +who +view_sp )
+burgErr Map( +hookvalue +date +rev +state +who +view_sp )
+burg*burgErr Map( +hookvalue +date +rev +state +who +view_sp )
+line_err Map( +hookvalue +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+burgOut Map( +date +rev +state +who +view_sp )
+burg*burgOut Map( +date +rev +state +who +view_sp )
+level_2_specs_in Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+   -> eli*level_2_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_2_specs_in Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+level_1_specs Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+c Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> cc*lookup_c_srcs +incl +incls +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> cc*c_srcs +incls
+   -> cc*exe +cc +cc_flags
+   -> eli*c_dep +incl +ignore +date +rev +state +who +view_sp
+ls Map( +date +rev +state +who +view_sp )
+c.o Map( +cc +cc_flags +incls +debug +define +monitor +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+cc*c.o Map( +cc +cc_flags +incls +debug +define +monitor +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+c_srcs Map( +incls +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> cc*c.o +cc +cc_flags +debug +define +monitor
+   -> skeleton*err_map +hookvalue
+dir_of Map( +date +rev +state +who +view_sp )
+vir_dir Map( +date +rev +state +who +view_sp )
+o Map( +cc +cc_flags +incls +debug +define +monitor +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+lookup_c_srcs Map( +incl +incls +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+cc*lookup_c_srcs Map( +incl +incls +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+incl.all Map( +incl +ignore +date +rev +state +who +view_sp )
+lookup=:c_srcs Map( +date +rev +state +who +view_sp )
+cc*c_srcs Map( +incls +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+exe Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> prof*profile +prof_data +prof_flags
+cc*exe Map( +cc +cc_flags +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+clp Map( +date +rev +state +who +view_sp )
+   -> clp*one.clp.cmpd
+clp.cmpd Map( +date +rev +state +who +view_sp )
+   -> clp*clp_out +incl +monitor +nomain +ignore +date +rev +state +who +view_sp
+   -> clp*clp_gen +incl +ignore +date +rev +state +who +view_sp
+one.clp.cmpd Map( +date +rev +state +who +view_sp )
+clp*one.clp.cmpd Map( +date +rev +state +who +view_sp )
+ext.clp.cmpd Map( +date +rev +state +who +view_sp )
+clp*ext.clp.cmpd Map( +date +rev +state +who +view_sp )
+extract=:clp Map( +date +rev +state +who +view_sp )
+clp_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+clp*clp_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+cpp Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> cpp*cppErr +hookvalue
+   -> cpp*cpp_tab
+clp_out Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+   -> clp*clpErr +hookvalue
+clp*clp_out Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+level_1_specs_in Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+   -> eli*level_1_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_1_specs_in Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+allspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> noosa*mon +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +arg +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> noosa*mongdb +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +arg +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*level_9_specs_in +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+   -> eli*level_8_specs_in +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+   -> eli*level_7_specs_in +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+   -> parser*pgram +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> eli*level_6_specs_in +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*ligaResults +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*gorto +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*showFe +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> liga*feInfo +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> liga*showMe +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp
+   -> liga*ExpInfo +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*OrdInfo +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*OptimInfo +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> eli*level_5_specs_in +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> eli*level_4_specs_in +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> maptool*absyntax +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> maptool*consyntax +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> maptool*abstree +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> eli*level_3_specs_in +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp
+   -> parser*bnf +incl +monitor +nomain +ignore +date +rev +state +who +view_sp
+   -> eli*level_2_specs_in +incl +monitor +nomain +ignore +date +rev +state +who +view_sp
+   -> eli*level_1_specs_in +incl +monitor +nomain +ignore +date +rev +state +who +view_sp
+   -> info*gindex_tnf*composite < info*gindex_tnf info*index_info > +date +rev +state +who +view_sp
+   -> info*doc_info +date +rev +state +who +view_sp
+   -> info*doc_ps +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt
+   -> info*doc_pdf +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt
+   -> info*doc_html +date +rev +state +who +view_sp
+   -> info*tnfhtml +date +rev +state +who +view_sp
+   -> phi*etaIncl +date +rev +state +who +view_sp
+clpErr Map( +hookvalue +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+clp*clpErr Map( +hookvalue +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+cola*colaCmrIn*composite < cola*colaCmrIn cola*colaCmrBuIn > Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> cola*colaCmrIn
+   -> cola*colaCmrBuIn
+colaCmrIn Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaCmrIn Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaCmrBuIn Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaCmrBuIn Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+Pgram Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+BuPgram Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaCmr*composite < cola*colaCmr cola*colaAbs cola*colaErrTerms cola*colaInfo > Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> cola*colaCmr
+   -> cola*colaAbs
+   -> cola*colaErrTerms
+   -> cola*colaInfo
+colaCmr Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaCmr Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaAbs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaAbs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaErrTerms Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaErrTerms Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaLalrOpt Map( +incl +ignore +date +rev +state +who +view_sp )
+colaBe Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaBe Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaBackOpt Map( +incl +ignore +date +rev +state +who +view_sp )
+colaErrOff Map( +incl +ignore +date +rev +state +who +view_sp )
+cola*colaLalrOpt*composite < cola*colaLalrOpt cola*colaBackOpt cola*colaErrOff > Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> cola*colaLalrOpt
+   -> cola*colaBackOpt
+   -> cola*colaErrOff
+cola*colaLalrOpt Map( +incl +ignore +date +rev +state +who +view_sp )
+cola*colaBackOpt Map( +incl +ignore +date +rev +state +who +view_sp )
+cola*colaErrOff Map( +incl +ignore +date +rev +state +who +view_sp )
+cola.cmpd Map( +date +rev +state +who +view_sp )
+   -> cola*colaLalrOpt*composite < cola*colaLalrOpt cola*colaBackOpt cola*colaErrOff > +incl +ignore +date +rev +state +who +view_sp
+cola Map( +date +rev +state +who +view_sp )
+   -> cola*one.cola.cmpd
+one.cola.cmpd Map( +date +rev +state +who +view_sp )
+cola*one.cola.cmpd Map( +date +rev +state +who +view_sp )
+ext.cola.cmpd Map( +date +rev +state +who +view_sp )
+cola*ext.cola.cmpd Map( +date +rev +state +who +view_sp )
+extract=:cola Map( +date +rev +state +who +view_sp )
+cola*colaOut*composite < cola*colaOut cola*colaData > Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> cola*colaOut
+   -> cola*colaData
+colaOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+colaData Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+cola*colaData Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+parserGen Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parser*parserGen Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parserInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parser*parserInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+cpp*incl.all Map( +incl +ignore +date +rev +state +who +view_sp )
+incl.lst Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> cpp*incl.all
+cpp*incl.lst Map( +incl +ignore +date +rev +state +who +view_sp )
+incl.dir Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> cpp*incl.lst +incl +ignore +date +rev +state +who +view_sp
+map=:incl.lst Map( +date +rev +state +who +view_sp )
+cpp*incl.dir Map( +incl +ignore +date +rev +state +who +view_sp )
+dir Map( +date +rev +state +who +view_sp )
+h Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+cpp_tab Map( +incl +ignore +date +rev +state +who +view_sp )
+cpp*cpp_tab Map( +incl +ignore +date +rev +state +who +view_sp )
+do_cpp Map( +incl +ignore +date +rev +state +who +view_sp )
+cpp*do_cpp Map( +incl +ignore +date +rev +state +who +view_sp )
+cpp*cpp Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:do_cpp Map( +date +rev +state +who +view_sp )
+cppErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+cpp*cppErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+cxx Map( +date +rev +state +who +view_sp )
+   -> cxx*lookup_cxx_srcs +incl +incls +ignore +date +rev +state +who +view_sp
+   -> cxx*cxx_srcs +incls
+   -> eli*cxx_dep +incl +ignore +date +rev +state +who +view_sp
+o_src Map( +date +rev +state +who +view_sp )
+lookup_cxx_srcs Map( +incl +incls +ignore +date +rev +state +who +view_sp )
+cxx_srcs Map( +incls +date +rev +state +who +view_sp )
+   -> cxx*cxx.o +debug +define +monitor +cxx +cxx_flags
+cxx.o Map( +incls +debug +define +monitor +cxx +cxx_flags +date +rev +state +who +view_sp )
+cxx*cxx.o Map( +incls +debug +define +monitor +cxx +cxx_flags +date +rev +state +who +view_sp )
+cxx*lookup_cxx_srcs Map( +incl +incls +ignore +date +rev +state +who +view_sp )
+lookup=:cxx_srcs Map( +date +rev +state +who +view_sp )
+cxx*cxx_srcs Map( +incls +date +rev +state +who +view_sp )
+dapto Map( +date +rev +state +who +view_sp )
+   -> dapto*one.dapto.cmpd
+dapto.cmpd Map( +date +rev +state +who +view_sp )
+   -> dapto*dapGen +incl +ignore +date +rev +state +who +view_sp
+   -> dapto*dapOut +incl +monitor +ignore +date +rev +state +who +view_sp
+one.dapto.cmpd Map( +date +rev +state +who +view_sp )
+dapto*one.dapto.cmpd Map( +date +rev +state +who +view_sp )
+ext.dapto.cmpd Map( +date +rev +state +who +view_sp )
+dapto*ext.dapto.cmpd Map( +date +rev +state +who +view_sp )
+extract=:dapto Map( +date +rev +state +who +view_sp )
+dapGen Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> dapto*dapGenErr +hookvalue
+dapto*dapGen Map( +incl +ignore +date +rev +state +who +view_sp )
+labels Map( +date +rev +state +who +view_sp )
+dapOut Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+dapto*dapOut Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+map=:dapGen Map( +date +rev +state +who +view_sp )
+dapto*init_sources*composite < dapto*init_sources dapto*init_objects dapto*libDb > Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> dapto*init_sources
+   -> dapto*init_objects
+   -> dapto*libDb
+init_sources Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+dapto*init_sources Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+init_objects Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+dapto*init_objects Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+libDb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> noosa*monDb
+dapto*libDb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+used_sources Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> eli*srclist +debug +monitor +prof
+   -> dapto*init_sources*composite < dapto*init_sources dapto*init_objects dapto*libDb > +debug +monitor +prof
+dapGenErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+dapto*dapGenErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+level_9_specs_in Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*level_9_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_9_specs_in Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+level_8_specs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+dbx Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+dbx*dbx Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+sources Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+includes Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+gdb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+dbx*gdb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+delit Map( +date +rev +state +who +view_sp )
+   -> delit*one.delit.cmpd
+delit.cmpd Map( +date +rev +state +who +view_sp )
+one.delit.cmpd Map( +date +rev +state +who +view_sp )
+delit*one.delit.cmpd Map( +date +rev +state +who +view_sp )
+ext.delit.cmpd Map( +date +rev +state +who +view_sp )
+delit*ext.delit.cmpd Map( +date +rev +state +who +view_sp )
+extract=:delit Map( +date +rev +state +who +view_sp )
+empty.delit.gla.cmpd Map( +date +rev +state +who +view_sp )
+delit*empty.delit.gla.cmpd Map( +date +rev +state +who +view_sp )
+one.gla.cmpd Map( +date +rev +state +who +view_sp )
+   -> delit*lit_out +incl +ignore +date +rev +state +who +view_sp
+   -> delit*lit_gen +incl +ignore +date +rev +state +who +view_sp
+   -> gla*scan_spec +incl +ignore +date +rev +state +who +view_sp
+   -> delit*empty.delit.gla.cmpd +date +rev +state +who +view_sp
+   -> gla*empty.lex_code.gla.cmpd +date +rev +state +who +view_sp
+lit_out Map( +incl +ignore +date +rev +state +who +view_sp )
+delit*lit_out Map( +incl +ignore +date +rev +state +who +view_sp )
+lex_code.cmpd Map( +date +rev +state +who +view_sp )
+lit_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+delit*lit_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+level_7_specs_in Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*level_7_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_7_specs_in Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+level_6_specs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> parser*parserGen +incl +monitor +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+   -> parser*parserInfo +incl +monitor +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+   -> cola*colaOut*composite < cola*colaOut cola*colaData > +incl +monitor +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> cola*colaBe +incl +monitor +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> cola*colaCmr*composite < cola*colaCmr cola*colaAbs cola*colaErrTerms cola*colaInfo > +incl +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> parser*Pgram*composite < parser*Pgram parser*BuPgram > +incl +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> parser*parserOut +incl +monitor +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+   -> parser*infoOut +incl +monitor +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp
+specs Map( +date +rev +state +who +view_sp )
+   -> eli*spfils +incl +ignore +date +rev +state +who +view_sp
+   -> oldodin*expandspecs +incl +ignore +date +rev +state +who +view_sp
+   -> skeleton*no_map +hookvalue
+sp Map( +date +rev +state +who +view_sp )
+   -> eli*reqfils +incl +ignore +date +rev +state +who +view_sp
+spfils Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> idem*idem.cmpd +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp
+   -> eli*level_0_specs_out +incl +ignore +date +rev +state +who +view_sp
+   -> eli*definition
+eli*spfils Map( +incl +ignore +date +rev +state +who +view_sp )
+SpecList Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+level_0_specs_out Map( +incl +ignore +date +rev +state +who +view_sp )
+eli*level_0_specs_out Map( +incl +ignore +date +rev +state +who +view_sp )
+expandlist Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:expandlist Map( +date +rev +state +who +view_sp )
+level_0_specs Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*fwspecs +incl +ignore +date +rev +state +who +view_sp
+fwspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*specs_closure +incl +ignore +date +rev +state +who +view_sp
+eli*fwspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+fwOut Map( +incl +ignore +date +rev +state +who +view_sp )
+specs_closure Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*expfwspecs +incl +ignore +date +rev +state +who +view_sp
+eli*specs_closure Map( +incl +ignore +date +rev +state +who +view_sp )
+extract=:specs Map( +date +rev +state +who +view_sp )
+map=:specs_closure Map( +date +rev +state +who +view_sp )
+expfwspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*allspecs_in +incl +ignore +date +rev +state +who +view_sp
+eli*expfwspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+allspecs_in Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*allspecs +incl +ignore +date +rev +state +who +view_sp
+eli*allspecs_in Map( +incl +ignore +date +rev +state +who +view_sp )
+eli*allspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+eli*level_1_specs Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+level_2_specs Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+eli*level_2_specs Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+level_3_specs_in Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+   -> eli*level_3_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_3_specs_in Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+level_3_specs Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+eli*level_3_specs Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+level_4_specs_in Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+   -> eli*level_4_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_4_specs_in Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+level_4_specs Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+eli*level_4_specs Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+level_5_specs_in Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> eli*level_5_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_5_specs_in Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+level_5_specs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+eli*level_5_specs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+level_6_specs_in Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> eli*level_6_specs +incl +ignore +date +rev +state +who +view_sp
+eli*level_6_specs_in Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+eli*level_6_specs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+lex_code Map( +date +rev +state +who +view_sp )
+   -> gla*one.lex_code.cmpd
+delete=:lex_code Map( +date +rev +state +who +view_sp )
+eli*level_7_specs Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eli*level_8_specs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eta_h Map( +date +rev +state +who +view_sp )
+delete=:eta_h Map( +date +rev +state +who +view_sp )
+level_9_specs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> dbx*dbx +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +core +gnu +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> dbx*gdb +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +core +gnu +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*exe +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*source +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*includes +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*objlist +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*mkfile +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*used_sources*composite < eli*used_sources eli*used_objects > +incl +cc +cc_flags +incls +debug +define +monitor +nomain +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*dothlist +incl +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags
+   -> eli*gencode_in +incl +cc +cc_flags +incls +debug +define +monitor +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*phiCollection +incl +ignore +date +rev +state +who +view_sp
+   -> eli*dotafiles +incl +cc +cc_flags +incls +debug +define +monitor +ignore +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*libsfiles +incl +ignore +date +rev +state +who +view_sp
+   -> noosa*all_tcl +incl +ignore +date +rev +state +who +view_sp
+   -> eli*framespecs +incl +ignore +date +rev +state +who +view_sp
+   -> eli*all_c +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+   -> eli*reqmods +date +rev +state +who +view_sp
+eli*level_9_specs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+phiCollection Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*phiInSpecs +incl +ignore +date +rev +state +who +view_sp
+eli*phiCollection Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+genlib Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+phiInSpecs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*phiGenHeaders +date +rev +state +who +view_sp
+eli*phiInSpecs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+phiGenHeaders Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eli*phiGenHeaders Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+phiOut Map( +date +rev +state +who +view_sp )
+etaOut Map( +date +rev +state +who +view_sp )
+definition Map( +incl +ignore +date +rev +state +who +view_sp )
+eli*definition Map( +incl +ignore +date +rev +state +who +view_sp )
+depend Map( +date +rev +state +who +view_sp )
+all_c Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*all_c Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+extract=:c Map( +date +rev +state +who +view_sp )
+extract=:cxx Map( +date +rev +state +who +view_sp )
+dothlist Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+eli*dothlist Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+extract=:h Map( +date +rev +state +who +view_sp )
+pasted Map( +date +rev +state +who +view_sp )
+gencode_in Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> eli*gencode +incl +ignore +date +rev +state +who +view_sp
+eli*gencode_in Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+a Map( +cc +cc_flags +incls +debug +define +monitor +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+delete=:a Map( +date +rev +state +who +view_sp )
+delete=:o Map( +date +rev +state +who +view_sp )
+gencode Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*gencode Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+reqmod Map( +date +rev +state +who +view_sp )
+reqfils Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*reqlist
+eli*reqfils Map( +incl +ignore +date +rev +state +who +view_sp )
+reqlist Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*libmods_fw +incl +ignore +date +rev +state +who +view_sp
+eli*reqlist Map( +incl +ignore +date +rev +state +who +view_sp )
+libmods_fw Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> eli*libmods +incl +ignore +date +rev +state +who +view_sp
+eli*libmods_fw Map( +incl +ignore +date +rev +state +who +view_sp )
+libmods Map( +incl +ignore +date +rev +state +who +view_sp )
+eli*libmods Map( +incl +ignore +date +rev +state +who +view_sp )
+extract=:sp Map( +date +rev +state +who +view_sp )
+map=:libmods Map( +date +rev +state +who +view_sp )
+reqmods Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*genlist +incl +ignore +date +rev +state +who +view_sp
+eli*reqmods Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+extract=:reqmod Map( +date +rev +state +who +view_sp )
+genlist Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eli*genlist Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+union Map( +date +rev +state +who +view_sp )
+   -> skeleton*index
+framespecs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*genlib
+eli*framespecs Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eli*genlib Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+reqsym Map( +date +rev +state +who +view_sp )
+eli*used_sources*composite < eli*used_sources eli*used_objects > Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> eli*used_sources
+   -> eli*used_objects
+eli*used_sources Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+used_objects Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*used_objects Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+map=:lookup_c_srcs Map( +date +rev +state +who +view_sp )
+map=:o Map( +date +rev +state +who +view_sp )
+extract=:reqsym Map( +date +rev +state +who +view_sp )
+srclist Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> eli*sources
+eli*srclist Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*sources Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*includes Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+map=:incl.all Map( +date +rev +state +who +view_sp )
+objlist Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> eli*objects
+eli*objlist Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+objects Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> eli*so +cc +cc_flags +debug
+eli*objects Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+dotafiles Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*dotafiles Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+extract=:a Map( +date +rev +state +who +view_sp )
+libs Map( +date +rev +state +who +view_sp )
+libsfiles Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> eli*libsflags +incl +ignore +date +rev +state +who +view_sp
+eli*libsfiles Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+extract=:libs Map( +date +rev +state +who +view_sp )
+libsflags Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eli*libsflags Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+eli*exe Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+library_flags Map( +date +rev +state +who +view_sp +lib +lib_sp )
+so Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*so Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+source Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*source Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+mkfile Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*mkfile Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+label Map( +date +rev +state +who +view_sp )
+dep Map( +incl +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+map=:dep Map( +date +rev +state +who +view_sp )
+c_dep Map( +incl +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+eli*c_dep Map( +incl +ignore +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+cxx_dep Map( +incl +ignore +date +rev +state +who +view_sp )
+eli*cxx_dep Map( +incl +ignore +date +rev +state +who +view_sp )
+fw Map( +date +rev +state +who +view_sp )
+   -> idem*idem.cmpd +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp
+   -> fw*fw_pdf +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt
+   -> fw*fw_ps +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt
+   -> fw*fwGen*composite < fw*fwGen fw*fwMap fw*fwNop > +incl +ignore +date +rev +state +who +view_sp
+   -> fw*fwTex*composite < fw*fwTex fw*fwTexinfo fw*fwHtml fw*fwRep > +incl +ignore +chapter +date +rev +state +who +view_sp
+   -> fw*one.fw.cmpd
+   -> fw*fw_srcs +incl +ignore +date +rev +state +who +view_sp
+fw.cmpd Map( +date +rev +state +who +view_sp )
+   -> fw*fwSel +incl +ignore +date +rev +state +who +view_sp
+   -> fw*fwOut +incl +ignore +date +rev +state +who +view_sp
+   -> fw*fwAll +incl +ignore +date +rev +state +who +view_sp
+one.fw.cmpd Map( +date +rev +state +who +view_sp )
+fw_srcs Map( +incl +ignore +date +rev +state +who +view_sp )
+fwGen Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> fw*fwGenList +date +rev +state +who +view_sp
+   -> fw*fwSpec +date +rev +state +who +view_sp
+fwGenList Map( +incl +ignore +date +rev +state +who +view_sp )
+fwSpec Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> fw*fwSpecList +incl +ignore +date +rev +state +who +view_sp
+fwSpecList Map( +incl +ignore +date +rev +state +who +view_sp )
+fwMap Map( +incl +ignore +date +rev +state +who +view_sp )
+fwNop Map( +incl +ignore +date +rev +state +who +view_sp )
+fwAll Map( +incl +ignore +date +rev +state +who +view_sp )
+fwSel Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> fw*fwProd
+fwProd Map( +incl +ignore +date +rev +state +who +view_sp )
+fwErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+fwTex Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+tex Map( +date +rev +state +who +view_sp )
+   -> tex*one_tex_vtd
+   -> tex*texnames +cc +cc_flags
+fwTexinfo Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+tnf Map( +date +rev +state +who +view_sp )
+   -> info*info.ps +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt
+   -> info*info.pdf +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt
+   -> info*tnf_dir*composite < info*tnf_dir info*tnf_node >
+   -> info*info_data
+   -> info*tex_input +single
+fwHtml Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+fwRep Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+fwincl.dir Map( +incl +ignore +date +rev +state +who +view_sp )
+fwincl.all Map( +incl +ignore +date +rev +state +who +view_sp )
+expandtabs Map( +date +rev +state +who +view_sp )
+tabsexpanded Map( +date +rev +state +who +view_sp )
+fw_pdf Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+pdf Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+fw_ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+fw*one.fw.cmpd Map( +date +rev +state +who +view_sp )
+fw*fw.cmpd Map( +date +rev +state +who +view_sp )
+extract=:fw Map( +date +rev +state +who +view_sp )
+fw*fwOut Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fw_srcs Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwincl.all Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:fwincl.all Map( +date +rev +state +who +view_sp )
+fw*fwincl.dir Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwSel Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:fwNop Map( +date +rev +state +who +view_sp )
+fw*fwProd Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwSpecList Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwGenList Map( +incl +ignore +date +rev +state +who +view_sp )
+direlms Map( +date +rev +state +who +view_sp )
+   -> oldodin*names
+   -> oldodin*labels
+delete=:specs Map( +date +rev +state +who +view_sp )
+fw*fwAll Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:fwSpecList Map( +date +rev +state +who +view_sp )
+map=:fwGenList Map( +date +rev +state +who +view_sp )
+fw*fwGen*composite < fw*fwGen fw*fwMap fw*fwNop > Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> fw*fwErr +hookvalue
+   -> fw*fwGen
+   -> fw*fwMap
+   -> fw*fwNop
+fw*fwGen Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwMap Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwNop Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:expandtabs Map( +date +rev +state +who +view_sp )
+fw*fwSpec Map( +incl +ignore +date +rev +state +who +view_sp )
+fw*fwTex*composite < fw*fwTex fw*fwTexinfo fw*fwHtml fw*fwRep > Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+   -> fw*fwTex
+   -> fw*fwTexinfo
+   -> fw*fwHtml
+   -> fw*fwRep
+fw*fwTex Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+fw*fwTexinfo Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+fw*fwHtml Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+fw*fwRep Map( +incl +ignore +chapter +date +rev +state +who +view_sp )
+fw*fwErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+fw*expandtabs Map( +date +rev +state +who +view_sp )
+fw*tabsexpanded Map( +date +rev +state +who +view_sp )
+fw*fw_pdf Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+apply Map( +apply +date +rev +state +who +view_sp )
+fw*fw_ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+gla Map( +date +rev +state +who +view_sp )
+   -> idem*idem.cmpd +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp
+   -> gla*one.gla.cmpd
+gla.cmpd Map( +date +rev +state +who +view_sp )
+   -> gla*dflt_codes +incl +ignore +date +rev +state +who +view_sp
+   -> kwd*kwd +incl +ignore +date +rev +state +who +view_sp
+gla*one.gla.cmpd Map( +date +rev +state +who +view_sp )
+gla*gla.cmpd Map( +date +rev +state +who +view_sp )
+extract=:gla Map( +date +rev +state +who +view_sp )
+gla_out Map( +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp )
+gla*gla_out Map( +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp )
+scan_spec Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> gla*gla_out +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp
+   -> gla*glaFeErr +hookvalue +incl +ignore +date +rev +state +who +view_sp
+   -> gla*flex_spec*composite < gla*flex_spec gla*backend_data > +incl +ignore +date +rev +state +who +view_sp
+gla_be Map( +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp )
+   -> gla*glaBeErr +hookvalue
+gla*gla_be Map( +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp )
+backend_data Map( +incl +ignore +date +rev +state +who +view_sp )
+flex_binary Map( +incl +ignore +date +rev +state +who +view_sp )
+accept_binary Map( +incl +ignore +date +rev +state +who +view_sp )
+lastdfa_binary Map( +incl +ignore +date +rev +state +who +view_sp )
+glaBeErr Map( +hookvalue +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp )
+gla*glaBeErr Map( +hookvalue +incl +monitor +ignore +printtokens +date +rev +state +who +view_sp )
+gla*flex_binary*composite < gla*flex_binary gla*accept_binary gla*lastdfa_binary > Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> gla*flex_binary
+   -> gla*accept_binary
+   -> gla*lastdfa_binary
+gla*flex_binary Map( +incl +ignore +date +rev +state +who +view_sp )
+gla*accept_binary Map( +incl +ignore +date +rev +state +who +view_sp )
+gla*lastdfa_binary Map( +incl +ignore +date +rev +state +who +view_sp )
+flex_spec Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> gla*flex_binary*composite < gla*flex_binary gla*accept_binary gla*lastdfa_binary >
+gla*flex_spec*composite < gla*flex_spec gla*backend_data > Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> gla*gla_be +monitor +printtokens
+   -> kwd*kw.exe
+   -> gla*flex_spec
+   -> gla*backend_data
+gla*flex_spec Map( +incl +ignore +date +rev +state +who +view_sp )
+gla*backend_data Map( +incl +ignore +date +rev +state +who +view_sp )
+glaFeErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+gla*glaFeErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+gla*scan_spec Map( +incl +ignore +date +rev +state +who +view_sp )
+dflt_codes Map( +incl +ignore +date +rev +state +who +view_sp )
+one.lex_code.cmpd Map( +date +rev +state +who +view_sp )
+gla*one.lex_code.cmpd Map( +date +rev +state +who +view_sp )
+ext.lex_code.cmpd Map( +date +rev +state +who +view_sp )
+gla*ext.lex_code.cmpd Map( +date +rev +state +who +view_sp )
+extract=:lex_code Map( +date +rev +state +who +view_sp )
+empty.lex_code.gla.cmpd Map( +date +rev +state +who +view_sp )
+gla*empty.lex_code.gla.cmpd Map( +date +rev +state +who +view_sp )
+gla*dflt_codes Map( +incl +ignore +date +rev +state +who +view_sp )
+idem Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +date +rev +state +who +view_sp )
+tree Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+treeStruc Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+PtgSpec Map( +patterns +date +rev +state +who +view_sp )
+idem*PtgSpec Map( +patterns +date +rev +state +who +view_sp )
+idem.cmpd Map( +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp )
+   -> idem*tree*composite < idem*tree idem*treeDef > +incl +ignore +prefix +lang +date +rev +state +who +view_sp
+   -> idem*idem +incl +ignore +prefix +date +rev +state +who +view_sp
+idem*idem.cmpd Map( +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp )
+mapAbsTree Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+ptg.cmpd Map( +date +rev +state +who +view_sp )
+   -> ptg*ptg_out +incl +monitor +ignore +date +rev +state +who +view_sp
+   -> ptg*ptg_gen +incl +ignore +date +rev +state +who +view_sp
+map=:allspecs Map( +date +rev +state +who +view_sp )
+idem*idem Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +date +rev +state +who +view_sp )
+treeProc Map( +lang +date +rev +state +who +view_sp )
+idem*treeProc Map( +lang +date +rev +state +who +view_sp )
+idem*tree*composite < idem*tree idem*treeDef > Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+   -> idem*tree
+   -> idem*treeDef
+idem*tree Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+treeDef Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+   -> idem*treeStruc
+idem*treeDef Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+view Map( +date +rev +state +who +view_sp )
+idem*treeStruc Map( +incl +monitor +nomain +parser +ignore +prefix +patterns +lang +date +rev +state +who +view_sp )
+info*tnf_dir*composite < info*tnf_dir info*tnf_node > Map( +date +rev +state +who +view_sp )
+   -> info*display
+   -> info*tnf_dir
+   -> info*tnf_node
+tnf_dir Map( +date +rev +state +who +view_sp )
+info*tnf_dir Map( +date +rev +state +who +view_sp )
+tnf_node Map( +date +rev +state +who +view_sp )
+info*tnf_node Map( +date +rev +state +who +view_sp )
+display Map( +date +rev +state +who +view_sp )
+info*display Map( +date +rev +state +who +view_sp )
+help_tnf Map( +date +rev +state +who +view_sp )
+info*help_tnf Map( +date +rev +state +who +view_sp )
+filtered Map( +date +rev +state +who +view_sp )
+errfiles Map( +date +rev +state +who +view_sp )
+info*help_dir*composite < info*help_dir info*help_node > Map( +date +rev +state +who +view_sp )
+   -> info*help
+   -> info*help_dir
+   -> info*help_node
+help_dir Map( +date +rev +state +who +view_sp )
+info*help_dir Map( +date +rev +state +who +view_sp )
+help_node Map( +date +rev +state +who +view_sp )
+info*help_node Map( +date +rev +state +who +view_sp )
+warn Map( +date +rev +state +who +view_sp )
+   -> info*help_dir*composite < info*help_dir info*help_node >
+   -> skeleton*warning
+expand_hooks Map( +date +rev +state +who +view_sp )
+help Map( +date +rev +state +who +view_sp )
+info*help Map( +date +rev +state +who +view_sp )
+std_err Map( +hookvalue +docref +date +rev +state +who +view_sp )
+info*std_err Map( +hookvalue +docref +date +rev +state +who +view_sp )
+info*gindex_tnf*composite < info*gindex_tnf info*index_info > Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> info*gindex_tnf
+   -> info*index_info
+gindex_tnf Map( +incl +ignore +date +rev +state +who +view_sp )
+info*gindex_tnf Map( +incl +ignore +date +rev +state +who +view_sp )
+index_info Map( +incl +ignore +date +rev +state +who +view_sp )
+info*index_info Map( +incl +ignore +date +rev +state +who +view_sp )
+extract=:tnf Map( +date +rev +state +who +view_sp )
+info_data Map( +date +rev +state +who +view_sp )
+   -> info*info_data_list
+info*info_data Map( +date +rev +state +who +view_sp )
+info_data_list Map( +date +rev +state +who +view_sp )
+info*info_data_list Map( +date +rev +state +who +view_sp )
+doc_info Map( +incl +ignore +date +rev +state +who +view_sp )
+info*doc_info Map( +incl +ignore +date +rev +state +who +view_sp )
+map=:info_data_list Map( +date +rev +state +who +view_sp )
+doc_ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+info*doc_ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+map=:ps Map( +date +rev +state +who +view_sp )
+doc_pdf Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+info*doc_pdf Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+map=:pdf Map( +date +rev +state +who +view_sp )
+html Map( +date +rev +state +who +view_sp )
+doc_html Map( +incl +ignore +date +rev +state +who +view_sp )
+info*doc_html Map( +incl +ignore +date +rev +state +who +view_sp )
+tnfhtml Map( +incl +ignore +date +rev +state +who +view_sp )
+tex_input Map( +single +date +rev +state +who +view_sp )
+   -> info*tnfdvi*composite < info*tnfdvi info*tnflog info*tnfaux info*tnfndx info*tnfpdf > +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt
+   -> info*tnfsndx +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt
+   -> info*tnfauxin.vtd +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt
+info*tex_input Map( +single +date +rev +state +who +view_sp )
+info*tnfdvi*composite < info*tnfdvi info*tnflog info*tnfaux info*tnfndx info*tnfpdf > Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+   -> info*tnfdvi
+   -> info*tnflog
+   -> info*tnfaux
+   -> info*tnfndx
+   -> info*tnfpdf
+tnfdvi Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnfdvi Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+tnflog Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnflog Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+tnfaux Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnfaux Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+tnfndx Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnfndx Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+tnfpdf Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnfpdf Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+rootName Map( +date +rev +state +who +view_sp +texroot )
+texsp Map( +texsearch +date +rev +state +who +view_sp )
+tnfauxin.vtd Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+texbasis Map( +cc +cc_flags +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+extract=:tex Map( +date +rev +state +who +view_sp )
+sty Map( +date +rev +state +who +view_sp )
+extract=:sty Map( +date +rev +state +who +view_sp )
+vir_tgt.list Map( +date +rev +state +who +view_sp )
+   -> odin*vir_dir
+dvi Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex.log Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+info*tnfhtml Map( +incl +ignore +date +rev +state +who +view_sp )
+tnfsndx Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnfsndx Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*tnfauxin.vtd Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+vtd Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+info.ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+info*info.ps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+texps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+info.pdf Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+info*info.pdf Map( +cc +cc_flags +single +usepdf +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+odin_help Map( +date +rev +state +who +view_sp )
+info*odin_help Map( +date +rev +state +who +view_sp )
+kwd Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd*kwd Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd.gla Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> kwd*kwd_specs
+kwd*kwd.gla Map( +incl +ignore +date +rev +state +who +view_sp )
+extract=:kwd Map( +date +rev +state +who +view_sp )
+kwd_specs Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd*kwd_specs Map( +incl +ignore +date +rev +state +who +view_sp )
+kw.exe Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd*kw.exe Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd*kwd_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd_out Map( +incl +ignore +date +rev +state +who +view_sp )
+kwd*kwd_out Map( +incl +ignore +date +rev +state +who +view_sp )
+gnrc Map( +date +rev +state +who +view_sp )
+   -> lib*inst174 +incl +ignore +instance +referto +date +rev +state +who +view_sp
+   -> lib*instGen +instance +referto
+   -> lib*instFiles
+   -> lib*instSpec
+instFiles Map( +date +rev +state +who +view_sp )
+   -> lib*instNeeds
+lib*instFiles Map( +date +rev +state +who +view_sp )
+instNeeds Map( +date +rev +state +who +view_sp )
+lib*instNeeds Map( +date +rev +state +who +view_sp )
+instGen Map( +instance +referto +date +rev +state +who +view_sp )
+lib*instGen Map( +instance +referto +date +rev +state +who +view_sp )
+instSpec Map( +date +rev +state +who +view_sp )
+lib*instSpec Map( +date +rev +state +who +view_sp )
+inst174 Map( +incl +ignore +instance +referto +date +rev +state +who +view_sp )
+   -> lib*inst
+lib*inst174 Map( +incl +ignore +instance +referto +date +rev +state +who +view_sp )
+map=:level_0_specs Map( +date +rev +state +who +view_sp )
+inst Map( +incl +ignore +instance +referto +date +rev +state +who +view_sp )
+lib*inst Map( +incl +ignore +instance +referto +date +rev +state +who +view_sp )
+lido Map( +date +rev +state +who +view_sp )
+   -> idem*idem.cmpd +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp
+   -> liga*lidoEta*composite < liga*lidoEta liga*lidoEta_tab > +incl
+   -> liga*one.lido.cmpd +incl
+ctl Map( +date +rev +state +who +view_sp )
+   -> liga*one.ctl.cmpd
+liga*lidoEta*composite < liga*lidoEta liga*lidoEta_tab > Map( +incl +date +rev +state +who +view_sp )
+   -> liga*lidoEtaErr +hookvalue
+   -> liga*lidoEta
+   -> liga*lidoEta_tab
+lidoEta Map( +incl +date +rev +state +who +view_sp )
+liga*lidoEta Map( +incl +date +rev +state +who +view_sp )
+lidoEta_tab Map( +incl +date +rev +state +who +view_sp )
+liga*lidoEta_tab Map( +incl +date +rev +state +who +view_sp )
+lidoEtaErr Map( +hookvalue +incl +date +rev +state +who +view_sp )
+liga*lidoEtaErr Map( +hookvalue +incl +date +rev +state +who +view_sp )
+lido.cmpd Map( +incl +date +rev +state +who +view_sp )
+   -> liga*ligaFe +incl +ignore +date +rev +state +who +view_sp
+   -> liga*ligaProd +incl +ignore +date +rev +state +who +view_sp
+   -> liga*showFeDir +incl +ignore +date +rev +state +who +view_sp
+   -> liga*feInfoDir +incl +ignore +date +rev +state +who +view_sp
+one.lido.cmpd Map( +incl +date +rev +state +who +view_sp )
+   -> liga*ligaOut +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*ligaErr +hookvalue +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*ligaBe +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*MeIdl*composite < liga*MeIdl liga*MeInfo liga*MeBottomUp > +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp
+   -> liga*showMeDir +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp
+   -> liga*empty.ctl.lido.cmpd +date +rev +state +who +view_sp
+liga*one.lido.cmpd Map( +incl +date +rev +state +who +view_sp )
+liga*lido.cmpd Map( +incl +date +rev +state +who +view_sp )
+extract=:lido Map( +date +rev +state +who +view_sp )
+map=:lidoEta Map( +date +rev +state +who +view_sp )
+ctl.cmpd Map( +incl +date +rev +state +who +view_sp )
+   -> liga*exp_option*composite < liga*exp_option liga*ord_option liga*optUoption liga*back_option > +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp
+one.ctl.cmpd Map( +date +rev +state +who +view_sp )
+liga*one.ctl.cmpd Map( +date +rev +state +who +view_sp )
+liga*ctl.cmpd Map( +date +rev +state +who +view_sp )
+extract=:ctl Map( +date +rev +state +who +view_sp )
+empty.ctl.lido.cmpd Map( +incl +date +rev +state +who +view_sp )
+liga*empty.ctl.lido.cmpd Map( +incl +date +rev +state +who +view_sp )
+ligaOut Map( +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*ligaOut Map( +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+ligaBe Map( +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+MeBottomUp Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+ligaFe Map( +incl +ignore +date +rev +state +who +view_sp )
+liga*ligaFe Map( +incl +ignore +date +rev +state +who +view_sp )
+liga*exp_option*composite < liga*exp_option liga*ord_option liga*optUoption liga*back_option > Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+   -> liga*exp_option
+   -> liga*ord_option
+   -> liga*optUoption
+   -> liga*back_option
+exp_option Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*exp_option Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+ord_option Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*ord_option Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+optUoption Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*optUoption Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+back_option Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*back_option Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*MeIdl*composite < liga*MeIdl liga*MeInfo liga*MeBottomUp > Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> liga*MeIdl
+   -> liga*MeInfo
+   -> liga*MeBottomUp
+MeIdl Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*MeIdl Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+MeInfo Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*MeInfo Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*MeBottomUp Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*ligaBe Map( +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+ligaResults Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*ligaResults Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+gorto Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*gorto Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+ligaProd Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> liga*ligaProdErr +hookvalue
+liga*ligaProd Map( +incl +ignore +date +rev +state +who +view_sp )
+ligaProdErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+liga*ligaProdErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+showFeDir Map( +incl +ignore +date +rev +state +who +view_sp )
+liga*showFeDir Map( +incl +ignore +date +rev +state +who +view_sp )
+showFe Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+liga*showFe Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+feInfoDir Map( +incl +ignore +date +rev +state +who +view_sp )
+liga*feInfoDir Map( +incl +ignore +date +rev +state +who +view_sp )
+feInfo Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+liga*feInfo Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+showMeDir Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*showMeDir Map( +incl +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+showMe Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+liga*showMe Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +date +rev +state +who +view_sp )
+ExpInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*ExpInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+OrdInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*OrdInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+OptimInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*OptimInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+ligaErr Map( +hookvalue +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+liga*ligaErr Map( +hookvalue +incl +monitor +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+sym Map( +date +rev +state +who +view_sp )
+   -> maptool*one.sym.cmpd
+sym.cmpd Map( +date +rev +state +who +view_sp )
+   -> maptool*SymToMap +incl +ignore +date +rev +state +who +view_sp
+one.sym.cmpd Map( +date +rev +state +who +view_sp )
+maptool*one.sym.cmpd Map( +date +rev +state +who +view_sp )
+ext.sym.cmpd Map( +date +rev +state +who +view_sp )
+maptool*ext.sym.cmpd Map( +date +rev +state +who +view_sp )
+extract=:sym Map( +date +rev +state +who +view_sp )
+SymToMap Map( +incl +ignore +date +rev +state +who +view_sp )
+maptool*SymToMap Map( +incl +ignore +date +rev +state +who +view_sp )
+mapOut Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapOut Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+con.cmpd Map( +date +rev +state +who +view_sp )
+   -> maptool*mapBnf +incl +ignore +date +rev +state +who +view_sp
+mapFe Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+mapBe Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+   -> maptool*mapBeErr +hookvalue
+mapPgram Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+mapBuOut Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+maptool*mapBuOut Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+extract=:MeBottomUp Map( +date +rev +state +who +view_sp )
+mapBuPgram Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+mapSrc Map( +date +rev +state +who +view_sp )
+   -> maptool*one.map.cmpd
+map.cmpd Map( +date +rev +state +who +view_sp )
+one.map.cmpd Map( +date +rev +state +who +view_sp )
+maptool*one.map.cmpd Map( +date +rev +state +who +view_sp )
+ext.map.cmpd Map( +date +rev +state +who +view_sp )
+maptool*ext.map.cmpd Map( +date +rev +state +who +view_sp )
+extract=:mapSrc Map( +date +rev +state +who +view_sp )
+mapBnf Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> maptool*mapBnfErr +hookvalue
+maptool*mapBnf Map( +incl +ignore +date +rev +state +who +view_sp )
+mapIn Map( +incl +ignore +date +rev +state +who +view_sp )
+maptool*mapIn Map( +incl +ignore +date +rev +state +who +view_sp )
+mapBnfErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+maptool*mapBnfErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+maptool*mapConSyn*composite < maptool*mapConSyn maptool*mapAbsSyn maptool*mapAbsTree maptool*mapFe maptool*mapBe maptool*mapPgram > Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+   -> maptool*mapConSyn
+   -> maptool*mapAbsSyn
+   -> maptool*mapAbsTree
+   -> maptool*mapFe
+   -> maptool*mapBe
+   -> maptool*mapPgram
+mapConSyn Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapConSyn Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+mapAbsSyn Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapAbsSyn Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapAbsTree Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapFe Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapBe Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapPgram Map( +incl +parser +ignore +date +rev +state +who +view_sp )
+mapBeErr Map( +hookvalue +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapBeErr Map( +hookvalue +incl +parser +ignore +date +rev +state +who +view_sp )
+maptool*mapBuPgram Map( +incl +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+absyntax Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+maptool*absyntax Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+consyntax Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+maptool*consyntax Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+con Map( +date +rev +state +who +view_sp )
+   -> idem*idem.cmpd +incl +monitor +nomain +parser +ignore +patterns +date +rev +state +who +view_sp
+   -> parser*one.con.cmpd
+abstree Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+maptool*abstree Map( +incl +monitor +nomain +parser +ignore +date +rev +state +who +view_sp )
+db Map( +date +rev +state +who +view_sp )
+monDb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+noosa*monDb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+tcl Map( +date +rev +state +who +view_sp )
+all_tcl Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+noosa*all_tcl Map( +fold +incl +monitor +nomain +parser +ignore +printtokens +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+extract=:tcl Map( +date +rev +state +who +view_sp )
+mon Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +arg +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+noosa*mon Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +arg +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+mongdb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +arg +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+noosa*mongdb Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +core +printtokens +ExpI +OptimI +OrdI +RunGorto +arg +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+oil Map( +date +rev +state +who +view_sp )
+   -> oil*one.oil.cmpd
+oil.cmpd Map( +date +rev +state +who +view_sp )
+   -> oil*oil_out +incl +ignore +date +rev +state +who +view_sp
+   -> oil*oil_gen +incl +ignore +date +rev +state +who +view_sp
+one.oil.cmpd Map( +date +rev +state +who +view_sp )
+oil*one.oil.cmpd Map( +date +rev +state +who +view_sp )
+ext.oil.cmpd Map( +date +rev +state +who +view_sp )
+oil*ext.oil.cmpd Map( +date +rev +state +who +view_sp )
+extract=:oil Map( +date +rev +state +who +view_sp )
+oil_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> oil*oil_genErr +hookvalue
+oil*oil_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+oil_out Map( +incl +ignore +date +rev +state +who +view_sp )
+oil*oil_out Map( +incl +ignore +date +rev +state +who +view_sp )
+oil_genErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+oil*oil_genErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+dirnames Map( +date +rev +state +who +view_sp )
+   -> oldodin*direlms
+expanddir Map( +incl +ignore +date +rev +state +who +view_sp )
+expandspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+expandfile Map( +date +rev +state +who +view_sp )
+oldodin*expanddir Map( +incl +ignore +date +rev +state +who +view_sp )
+oldodin*expandspecs Map( +incl +ignore +date +rev +state +who +view_sp )
+oldodin*expandfile Map( +date +rev +state +who +view_sp )
+oldodin*dirnames Map( +date +rev +state +who +view_sp )
+oldodin*direlms Map( +date +rev +state +who +view_sp )
+oldodin*names Map( +date +rev +state +who +view_sp )
+oldodin*labels Map( +date +rev +state +who +view_sp )
+oldodin*dir_of Map( +date +rev +state +who +view_sp )
+one.con.cmpd Map( +date +rev +state +who +view_sp )
+parser*one.con.cmpd Map( +date +rev +state +who +view_sp )
+parser*con.cmpd Map( +date +rev +state +who +view_sp )
+extract=:con Map( +date +rev +state +who +view_sp )
+pgsOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parserOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parser*parserOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+extract=:mapPgram Map( +date +rev +state +who +view_sp )
+pgsData Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+infoOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> parser*parsable
+parser*infoOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parsable Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+parser*parsable Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+bnf Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+parser*bnf Map( +incl +monitor +nomain +ignore +date +rev +state +who +view_sp )
+perr Map( +date +rev +state +who +view_sp )
+   -> parser*one.perr.cmpd
+perr.cmpd Map( +date +rev +state +who +view_sp )
+   -> parser*perrOut +incl +ignore +date +rev +state +who +view_sp
+   -> parser*perrGen +incl +ignore +date +rev +state +who +view_sp
+one.perr.cmpd Map( +date +rev +state +who +view_sp )
+parser*one.perr.cmpd Map( +date +rev +state +who +view_sp )
+ext.perr.cmpd Map( +date +rev +state +who +view_sp )
+parser*ext.perr.cmpd Map( +date +rev +state +who +view_sp )
+extract=:perr Map( +date +rev +state +who +view_sp )
+perrGen Map( +incl +ignore +date +rev +state +who +view_sp )
+parser*perrGen Map( +incl +ignore +date +rev +state +who +view_sp )
+perrOut Map( +incl +ignore +date +rev +state +who +view_sp )
+parser*perrOut Map( +incl +ignore +date +rev +state +who +view_sp )
+coding Map( +date +rev +state +who +view_sp )
+   -> parser*one.coding.cmpd
+coding.cmpd Map( +date +rev +state +who +view_sp )
+one.coding.cmpd Map( +date +rev +state +who +view_sp )
+parser*one.coding.cmpd Map( +date +rev +state +who +view_sp )
+ext.coding.cmpd Map( +date +rev +state +who +view_sp )
+parser*ext.coding.cmpd Map( +date +rev +state +who +view_sp )
+extract=:coding Map( +date +rev +state +who +view_sp )
+parser*Pgram*composite < parser*Pgram parser*BuPgram > Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+   -> pgs*pgsOut*composite < pgs*pgsOut pgs*pgsData > +monitor +parser +pgsOpt
+   -> cola*colaCmrIn*composite < cola*colaCmrIn cola*colaCmrBuIn >
+   -> pgs*pgsGen +monitor +pgsOpt
+   -> pgs*pgsInfo +pgsOpt
+   -> parser*Pgram
+   -> parser*BuPgram
+parser*Pgram Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+parser*BuPgram Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+extract=:mapBuPgram Map( +date +rev +state +who +view_sp )
+pgram Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+parser*pgram Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +date +rev +state +who +view_sp )
+pdl Map( +date +rev +state +who +view_sp )
+   -> pdl*one.pdl.cmpd
+pdl.cmpd Map( +date +rev +state +who +view_sp )
+   -> pdl*pdlOut +incl +ignore +date +rev +state +who +view_sp
+   -> pdl*pdlGen +incl +ignore +date +rev +state +who +view_sp
+one.pdl.cmpd Map( +date +rev +state +who +view_sp )
+pdl*one.pdl.cmpd Map( +date +rev +state +who +view_sp )
+ext.pdl.cmpd Map( +date +rev +state +who +view_sp )
+pdl*ext.pdl.cmpd Map( +date +rev +state +who +view_sp )
+extract=:pdl Map( +date +rev +state +who +view_sp )
+pdlGen Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> pdl*pdlGenErr +hookvalue
+pdl*pdlGen Map( +incl +ignore +date +rev +state +who +view_sp )
+pdlOut Map( +incl +ignore +date +rev +state +who +view_sp )
+pdl*pdlOut Map( +incl +ignore +date +rev +state +who +view_sp )
+pdlGenErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+pdl*pdlGenErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+pgsGen Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> pgs*pgsMiscErr +hookvalue
+pgs*pgsGen Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+pgsInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+pgs*pgsInfo Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+pgsConflict Map( +date +rev +state +who +view_sp )
+pgs*pgsConflict Map( +date +rev +state +who +view_sp )
+pgsGenErr Map( +hookvalue +date +rev +state +who +view_sp )
+pgs*pgsGenErr Map( +hookvalue +date +rev +state +who +view_sp )
+pgsMiscErr Map( +hookvalue +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+pgs*pgsMiscErr Map( +hookvalue +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+pgs*pgsOut*composite < pgs*pgsOut pgs*pgsData > Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+   -> pgs*pgsOut
+   -> pgs*pgsData
+pgs*pgsOut Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+pgs*pgsData Map( +incl +monitor +nomain +parser +ignore +ExpI +OptimI +OrdI +RunGorto +pgsOpt +date +rev +state +who +view_sp )
+head Map( +date +rev +state +who +view_sp )
+init Map( +date +rev +state +who +view_sp )
+finl Map( +date +rev +state +who +view_sp )
+phi Map( +date +rev +state +who +view_sp )
+eta Map( +date +rev +state +who +view_sp )
+phi*phiOut*composite < phi*phiOut phi*phiMap > Map( +date +rev +state +who +view_sp )
+   -> phi*phiErr +hookvalue
+   -> phi*phiOut
+   -> phi*phiMap
+phi*phiOut Map( +date +rev +state +who +view_sp )
+phiMap Map( +date +rev +state +who +view_sp )
+phi*phiMap Map( +date +rev +state +who +view_sp )
+extract=:head Map( +date +rev +state +who +view_sp )
+extract=:init Map( +date +rev +state +who +view_sp )
+extract=:finl Map( +date +rev +state +who +view_sp )
+extract=:phi Map( +date +rev +state +who +view_sp )
+phiErr Map( +hookvalue +date +rev +state +who +view_sp )
+phi*phiErr Map( +hookvalue +date +rev +state +who +view_sp )
+phi*etaOut*composite < phi*etaOut phi*etaMap > Map( +date +rev +state +who +view_sp )
+   -> phi*etaErr +hookvalue
+   -> phi*etaOut
+   -> phi*etaMap
+phi*etaOut Map( +date +rev +state +who +view_sp )
+etaMap Map( +date +rev +state +who +view_sp )
+phi*etaMap Map( +date +rev +state +who +view_sp )
+extract=:eta Map( +date +rev +state +who +view_sp )
+phi*etaIncl Map( +incl +ignore +date +rev +state +who +view_sp )
+etaErr Map( +hookvalue +date +rev +state +who +view_sp )
+phi*etaErr Map( +hookvalue +date +rev +state +who +view_sp )
+ptg Map( +date +rev +state +who +view_sp )
+   -> ptg*one.ptg.cmpd
+one.ptg.cmpd Map( +date +rev +state +who +view_sp )
+ptg*one.ptg.cmpd Map( +date +rev +state +who +view_sp )
+ext.ptg.cmpd Map( +date +rev +state +who +view_sp )
+ptg*ext.ptg.cmpd Map( +date +rev +state +who +view_sp )
+extract=:ptg Map( +date +rev +state +who +view_sp )
+ptg_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> ptg*ptg_genErr +hookvalue
+ptg*ptg_gen Map( +incl +ignore +date +rev +state +who +view_sp )
+ptg_out Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+ptg*ptg_out Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+ptg_genErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+ptg*ptg_genErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+index Map( +date +rev +state +who +view_sp )
+skeleton*index Map( +date +rev +state +who +view_sp )
+err_map Map( +hookvalue +incls +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+skeleton*err_map Map( +hookvalue +incls +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+no_map Map( +hookvalue +date +rev +state +who +view_sp )
+skeleton*no_map Map( +hookvalue +date +rev +state +who +view_sp )
+skeleton*filtered*composite < skeleton*filtered skeleton*errfiles > Map( +date +rev +state +who +view_sp )
+   -> info*help_tnf
+   -> skeleton*msgtext
+   -> skeleton*filtered
+   -> skeleton*errfiles
+skeleton*filtered Map( +date +rev +state +who +view_sp )
+skeleton*errfiles Map( +date +rev +state +who +view_sp )
+msgtext Map( +date +rev +state +who +view_sp )
+skeleton*msgtext Map( +date +rev +state +who +view_sp )
+warning Map( +date +rev +state +who +view_sp )
+skeleton*warning Map( +date +rev +state +who +view_sp )
+error Map( +date +rev +state +who +view_sp )
+skeleton*error Map( +date +rev +state +who +view_sp )
+err Map( +date +rev +state +who +view_sp )
+   -> skeleton*error
+   -> misc*redo_errs
+viewlist Map( +date +rev +state +who +view_sp )
+skeleton*viewlist Map( +date +rev +state +who +view_sp )
+skeleton*pasted Map( +date +rev +state +who +view_sp )
+skeleton*vtd Map( +date +rev +state +who +view_sp )
+symbols Map( +date +rev +state +who +view_sp )
+   -> symcode*one.symbols.cmpd
+symbols.cmpd Map( +date +rev +state +who +view_sp )
+   -> symcode*codeOut +incl +ignore +date +rev +state +who +view_sp
+   -> symcode*codeGen +incl +ignore +date +rev +state +who +view_sp
+one.symbols.cmpd Map( +date +rev +state +who +view_sp )
+symcode*one.symbols.cmpd Map( +date +rev +state +who +view_sp )
+ext.symbols.cmpd Map( +date +rev +state +who +view_sp )
+symcode*ext.symbols.cmpd Map( +date +rev +state +who +view_sp )
+extract=:symbols Map( +date +rev +state +who +view_sp )
+codeOut Map( +incl +ignore +date +rev +state +who +view_sp )
+symcode*codeOut Map( +incl +ignore +date +rev +state +who +view_sp )
+codeGen Map( +incl +ignore +date +rev +state +who +view_sp )
+   -> symcode*symErr +hookvalue
+symcode*codeGen Map( +incl +ignore +date +rev +state +who +view_sp )
+symErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+symcode*symErr Map( +hookvalue +incl +ignore +date +rev +state +who +view_sp )
+tp Map( +date +rev +state +who +view_sp )
+   -> tp*one.tp.cmpd
+tp.cmpd Map( +date +rev +state +who +view_sp )
+   -> tp*tpOut +incl +monitor +ignore +date +rev +state +who +view_sp
+   -> tp*tpGen +incl +monitor +ignore +date +rev +state +who +view_sp
+one.tp.cmpd Map( +date +rev +state +who +view_sp )
+tp*one.tp.cmpd Map( +date +rev +state +who +view_sp )
+ext.tp.cmpd Map( +date +rev +state +who +view_sp )
+tp*ext.tp.cmpd Map( +date +rev +state +who +view_sp )
+extract=:tp Map( +date +rev +state +who +view_sp )
+tpGen Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+   -> tp*tpGenErr +hookvalue
+tp*tpGen Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+tpOut Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+tp*tpOut Map( +incl +monitor +ignore +date +rev +state +who +view_sp )
+tpGenErr Map( +hookvalue +incl +monitor +ignore +date +rev +state +who +view_sp )
+tp*tpGenErr Map( +hookvalue +incl +monitor +ignore +date +rev +state +who +view_sp )
+targets_ptr Map( +date +rev +state +who +view_sp )
+   -> odin*act_tgt.list
+   -> odin*vir_tgt.list
+targets_inc Map( +date +rev +state +who +view_sp )
+   -> odin*all_targets_inc +date +rev +state +who +view_sp
+all_targets_inc Map( +date +rev +state +who +view_sp )
+targets Map( +date +rev +state +who +view_sp )
+act_tgt.list Map( +date +rev +state +who +view_sp )
+atmc_prm_data Map( +date +rev +state +who +view_sp )
+cmpd_prm_data Map( +date +rev +state +who +view_sp )
+copy Map( +copy_dest +date +rev +state +who +view_sp )
+copy_cmd Map( +copy_dest_desc +date +rev +state +who +view_sp )
+prm_values Map( +date +rev +state +who +view_sp )
+nested_hooks Map( +date +rev +state +who +view_sp )
+hook_values.of Map( +date +rev +state +who +view_sp )
+filename Map( +date +rev +state +who +view_sp )
+id Map( +date +rev +state +who +view_sp )
+source_names Map( +date +rev +state +who +view_sp )
+operation_names Map( +date +rev +state +who +view_sp )
+view_spec Map( +date +rev +state +who +view_sp )
+   -> odin*view
+prefix_help Map( +date +rev +state +who +view_sp )
+suffix_help Map( +date +rev +state +who +view_sp )
+drv_help Map( +date +rev +state +who +view_sp )
+prm_help Map( +prm_help +date +rev +state +who +view_sp )
+odin*targets_inc Map( +date +rev +state +who +view_sp )
+odin*all_targets_inc Map( +date +rev +state +who +view_sp )
+map=:all_targets_inc Map( +date +rev +state +who +view_sp )
+odin*copy_cmd Map( +copy_dest_desc +date +rev +state +who +view_sp )
+odin*nested_hooks*composite < odin*nested_hooks odin*hook_values.of > Map( +date +rev +state +who +view_sp )
+   -> odin*nested_hooks
+   -> odin*hook_values.of
+odin*nested_hooks Map( +date +rev +state +who +view_sp )
+odin*hook_values.of Map( +date +rev +state +who +view_sp )
+odin*first Map( +date +rev +state +who +view_sp )
+odin*err Map( +date +rev +state +who +view_sp )
+odin*warn Map( +date +rev +state +who +view_sp )
+odin*dir Map( +date +rev +state +who +view_sp )
+odin*name Map( +date +rev +state +who +view_sp )
+odin*names Map( +date +rev +state +who +view_sp )
+odin*filename Map( +date +rev +state +who +view_sp )
+odin*ls Map( +date +rev +state +who +view_sp )
+odin*cat Map( +date +rev +state +who +view_sp )
+odin*union Map( +date +rev +state +who +view_sp )
+odin*label Map( +date +rev +state +who +view_sp )
+odin*labels Map( +date +rev +state +who +view_sp )
+odin*id Map( +date +rev +state +who +view_sp )
+odin*depend Map( +date +rev +state +who +view_sp )
+odin*source_names Map( +date +rev +state +who +view_sp )
+odin*operation_names Map( +date +rev +state +who +view_sp )
+odin*view Map( +date +rev +state +who +view_sp )
+odin*odin_help Map( +date +rev +state +who +view_sp )
+odin*prefix_help Map( +date +rev +state +who +view_sp )
+odin*suffix_help Map( +date +rev +state +who +view_sp )
+odin*drv_help Map( +date +rev +state +who +view_sp )
+odin*prm_help Map( +prm_help +date +rev +state +who +view_sp )
+,v Map( +date +rev +state +who +view_sp )
+   -> vc*log +date +rev +state +who
+   -> vc*co +date +rev +state +who
+sccs Map( +date +rev +state +who +view_sp )
+   -> vc*sccs.co +date +rev
+   -> vc*sccs.log +date +rev
+,vw Map( +date +rev +state +who +view_sp )
+   -> vc*vw.of +date +rev +state +who +view_sp
+   -> vc*view.names +view_sp
+   -> vc*view.source.spec +view_sp
+view.source.spec Map( +date +rev +state +who +view_sp )
+view.names Map( +date +rev +state +who +view_sp )
+vw.of Map( +date +rev +state +who +view_sp )
+   -> vc*vw.dir
+sccs.co Map( +date +rev +state +who +view_sp )
+co Map( +date +rev +state +who +view_sp )
+try.co Map( +date +rev +state +who +view_sp )
+vw.dir Map( +date +rev +state +who +view_sp )
+sccs.log Map( +date +rev +state +who +view_sp )
+log Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+vc*log Map( +date +rev +state +who +view_sp )
+vc*co Map( +date +rev +state +who +view_sp )
+vc*sccs.co Map( +date +rev +state +who +view_sp )
+vc*sccs.log Map( +date +rev +state +who +view_sp )
+vc*view.source.spec Map( +date +rev +state +who +view_sp )
+vc*view.names Map( +date +rev +state +who +view_sp )
+vc*vw.of Map( +date +rev +state +who +view_sp )
+map=:try.co Map( +date +rev +state +who +view_sp )
+vc*vw.dir Map( +date +rev +state +who +view_sp )
+sm Map( +date +rev +state +who +view_sp )
+   -> code*sm.list
+sm.list Map( +date +rev +state +who +view_sp )
+   -> code*code.list +date +rev +state +who +view_sp
+code.list Map( +date +rev +state +who +view_sp )
+   -> code*o_of +cc +cc_flags +incls +debug +define +monitor +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg
+libraries.view_desc Map( +date +rev +state +who +view_sp +lib +lib_sp )
+   -> code*libraries
+o_of Map( +cc +cc_flags +incls +debug +define +monitor +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+   -> code*a
+libraries Map( +date +rev +state +who +view_sp +lib +lib_sp )
+code*sm.list Map( +date +rev +state +who +view_sp )
+code*code.list Map( +date +rev +state +who +view_sp )
+recurse=:sm.list Map( +date +rev +state +who +view_sp )
+code*o_of Map( +cc +cc_flags +incls +debug +define +monitor +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+map=:o_src Map( +date +rev +state +who +view_sp )
+code*a Map( +cc +cc_flags +incls +debug +define +monitor +cxx +cxx_flags +prof +gnu +date +rev +state +who +view_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg )
+code*libraries.view_desc*composite < code*libraries.view_desc code*library_flags > Map( +date +rev +state +who +view_sp +lib +lib_sp )
+   -> code*libraries.view_desc
+   -> code*library_flags
+code*libraries.view_desc Map( +date +rev +state +who +view_sp +lib +lib_sp )
+code*library_flags Map( +date +rev +state +who +view_sp +lib +lib_sp )
+code*libraries Map( +date +rev +state +who +view_sp +lib +lib_sp )
+f Map( +date +rev +state +who +view_sp )
+   -> f77*o +debug +prof +f77_home +f77 +f77_flags
+f77*o Map( +debug +prof +date +rev +state +who +view_sp +f77_home +f77 +f77_flags )
+l Map( +date +rev +state +who +view_sp )
+   -> lex*c +yaccid
+lex*c Map( +date +rev +state +who +view_sp +yaccid )
+y Map( +date +rev +state +who +view_sp +yaccid )
+   -> yacc*c*composite < yacc*c yacc*h yacc*yacc.log > +gnu +yaccid +sys5 +conflict_ok +yacc +yacc_flags
+yacc.log Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+yacc*c*composite < yacc*c yacc*h yacc*yacc.log > Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+   -> yacc*c
+   -> yacc*h
+   -> yacc*yacc.log
+yacc*c Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+yacc*h Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+yacc*yacc.log Map( +gnu +date +rev +state +who +view_sp +yaccid +sys5 +conflict_ok +yacc +yacc_flags )
+ygi Map( +date +rev +state +who +view_sp )
+   -> tregrm*y*composite < tregrm*y tregrm*nod.h tregrm*tok.h tregrm*ygi.log > +yaccid
+nod.h Map( +date +rev +state +who +view_sp +yaccid )
+tok.h Map( +date +rev +state +who +view_sp +yaccid )
+ygi.log Map( +date +rev +state +who +view_sp +yaccid )
+tregrm*y*composite < tregrm*y tregrm*nod.h tregrm*tok.h tregrm*ygi.log > Map( +date +rev +state +who +view_sp +yaccid )
+   -> tregrm*y
+   -> tregrm*nod.h
+   -> tregrm*tok.h
+   -> tregrm*ygi.log
+tregrm*y Map( +date +rev +state +who +view_sp +yaccid )
+tregrm*nod.h Map( +date +rev +state +who +view_sp +yaccid )
+tregrm*tok.h Map( +date +rev +state +who +view_sp +yaccid )
+tregrm*ygi.log Map( +date +rev +state +who +view_sp +yaccid )
+dg Map( +date +rev +state +who +view_sp )
+   -> dg*dg.log*composite < dg*dg.log dg*c dg*dg.tab dg*dg.env > +pkg
+dg.log Map( +date +rev +state +who +view_sp +pkg )
+dg.tab Map( +date +rev +state +who +view_sp +pkg )
+dg.env Map( +date +rev +state +who +view_sp +pkg )
+dg*dg.log*composite < dg*dg.log dg*c dg*dg.tab dg*dg.env > Map( +date +rev +state +who +view_sp +pkg )
+   -> dg*dg.log
+   -> dg*c
+   -> dg*dg.tab
+   -> dg*dg.env
+dg*dg.log Map( +date +rev +state +who +view_sp +pkg )
+dg*c Map( +date +rev +state +who +view_sp +pkg )
+dg*dg.tab Map( +date +rev +state +who +view_sp +pkg )
+dg*dg.env Map( +date +rev +state +who +view_sp +pkg )
+profile Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg +prof_data +prof_flags )
+prof*profile Map( +fold +incl +cc +cc_flags +incls +debug +define +monitor +nomain +parser +ignore +cxx +cxx_flags +prof +printtokens +ExpI +OptimI +OrdI +RunGorto +gnu +pgsOpt +date +rev +state +who +view_sp +lib +lib_sp +f77_home +f77 +f77_flags +yaccid +sys5 +conflict_ok +yacc +yacc_flags +pkg +prof_data +prof_flags )
+redo Map( +date +rev +state +who +view_sp )
+redo_errs Map( +date +rev +state +who +view_sp )
+boot_name Map( +date +rev +state +who +view_sp +default )
+   -> misc*boot
+boot Map( +date +rev +state +who +view_sp +default )
+diff Map( +date +rev +state +who +view_sp +other )
+rcp Map( +date +rev +state +who +view_sp +f_dest +d_dest )
+installpkg Map( +date +rev +state +who +view_sp +d_dest )
+misc*list Map( +date +rev +state +who +view_sp )
+misc*redo Map( +date +rev +state +who +view_sp )
+misc*redo_errs Map( +date +rev +state +who +view_sp )
+misc*boot_name Map( +date +rev +state +who +view_sp +default )
+misc*boot Map( +date +rev +state +who +view_sp +default )
+misc*diff Map( +date +rev +state +who +view_sp +other )
+misc*rcp Map( +date +rev +state +who +view_sp +f_dest +d_dest )
+misc*installpkg Map( +date +rev +state +who +view_sp +d_dest )
+eqn_in Map( +date +rev +state +who +view_sp )
+   -> roff*gnc.eqn
+tbl_in Map( +date +rev +state +who +view_sp )
+   -> roff*tbl
+roff Map( +date +rev +state +who +view_sp )
+   -> roff*nroff +date +rev +state +who +view_sp +home +mp
+so_inc_spec Map( +date +rev +state +who +view_sp +home )
+   -> roff*so_inc
+so_inc Map( +date +rev +state +who +view_sp +home )
+   -> roff*all_so_inc +date +rev +state +who +view_sp +home
+all_so_inc Map( +date +rev +state +who +view_sp +home )
+eqn Map( +date +rev +state +who +view_sp )
+gnc.eqn Map( +date +rev +state +who +view_sp )
+tbl Map( +date +rev +state +who +view_sp )
+nroff Map( +date +rev +state +who +view_sp +home +mp )
+roff*so_inc_spec Map( +date +rev +state +who +view_sp +home )
+roff*so_inc Map( +date +rev +state +who +view_sp +home )
+roff*all_so_inc Map( +date +rev +state +who +view_sp +home )
+map=:all_so_inc Map( +date +rev +state +who +view_sp )
+roff*eqn Map( +date +rev +state +who +view_sp )
+roff*gnc.eqn Map( +date +rev +state +who +view_sp )
+roff*tbl Map( +date +rev +state +who +view_sp )
+roff*nroff Map( +date +rev +state +who +view_sp +home +mp )
+lookup=:all_so_inc Map( +date +rev +state +who +view_sp )
+bib Map( +date +rev +state +who +view_sp )
+cls Map( +date +rev +state +who +view_sp )
+bst Map( +date +rev +state +who +view_sp )
+tex.vtd Map( +date +rev +state +who +view_sp )
+   -> tex*texauxin.vtd +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt
+   -> tex*tex.bbl +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt
+   -> tex*texps +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt
+   -> tex*dvi*composite < tex*dvi tex*texpdf tex*tex.log tex*citations tex*indexntry tex*texauxout > +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt
+   -> tex*texbasis +cc +cc_flags +texsearch +date +rev +state +who +view_sp +texroot +texsppt
+   -> tex*fmtcmd +usepdf +texsearch +tex +latex +texroot +texsppt
+   -> tex*texsp +texsearch
+   -> tex*rootName*composite < tex*rootName tex*rootFileName > +texroot
+   -> tex*refpdf +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt
+rootFileName Map( +date +rev +state +who +view_sp +texroot )
+texnames Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot )
+   -> tex*tex.view_desc +texsppt
+texpdf Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+citations Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+indexntry Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+   -> tex*tex.ind*composite < tex*tex.ind tex*tex.ilg > +index_flags
+texauxout Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+texauxin.vtd Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+one_tex_vtd Map( +date +rev +state +who +view_sp )
+tex*one_tex_vtd Map( +date +rev +state +who +view_sp )
+tex*rootName*composite < tex*rootName tex*rootFileName > Map( +date +rev +state +who +view_sp +texroot )
+   -> tex*rootName
+   -> tex*rootFileName
+tex*rootName Map( +date +rev +state +who +view_sp +texroot )
+tex*rootFileName Map( +date +rev +state +who +view_sp +texroot )
+tex*texsp Map( +texsearch +date +rev +state +who +view_sp )
+texclose Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt )
+tex*texclose Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt )
+texfiles Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt )
+   -> tex*texclose +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt
+map=:texclose Map( +date +rev +state +who +view_sp )
+tex*texbasis Map( +cc +cc_flags +texsearch +date +rev +state +who +view_sp +texroot +texsppt )
+tex.view_desc Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt )
+   -> tex*texfiles
+tex*tex.view_desc Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt )
+tex*texnames Map( +cc +cc_flags +date +rev +state +who +view_sp )
+tex*texfiles Map( +cc +cc_flags +date +rev +state +who +view_sp +texroot +texsppt )
+fmtcmd Map( +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +texsppt )
+tex*fmtcmd Map( +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +texsppt )
+tex*dvi*composite < tex*dvi tex*texpdf tex*tex.log tex*citations tex*indexntry tex*texauxout > Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+   -> tex*dvi
+   -> tex*texpdf
+   -> tex*tex.log
+   -> tex*citations
+   -> tex*indexntry
+   -> tex*texauxout
+tex*dvi Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*texpdf Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*tex.log Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*citations Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*indexntry Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*texauxout Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+extract=:cls Map( +date +rev +state +who +view_sp )
+tex.bbl Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*tex.bbl Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+extract=:bib Map( +date +rev +state +who +view_sp )
+extract=:bst Map( +date +rev +state +who +view_sp )
+tex*tex.ind*composite < tex*tex.ind tex*tex.ilg > Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+   -> tex*tex.ind
+   -> tex*tex.ilg
+tex.ind Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*tex.ind Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex.ilg Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*tex.ilg Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*texauxin.vtd Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*texps Map( +apply +incl +cc +cc_flags +ignore +chapter +single +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +dvips_flags +index_flags +texsppt )
+extract=:ps Map( +date +rev +state +who +view_sp )
+refpdf Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+tex*refpdf Map( +cc +cc_flags +usepdf +texsearch +date +rev +state +who +view_sp +tex +latex +texroot +index_flags +texsppt )
+run Map( +date +rev +state +who +view_sp +cmd +need )
+stdout Map( +date +rev +state +who +view_sp +cmd +need )
+output Map( +date +rev +state +who +view_sp +cmd +need )
+run*run Map( +date +rev +state +who +view_sp +cmd +need )
+run*stdout*composite < run*stdout run*output > Map( +date +rev +state +who +view_sp +cmd +need )
+   -> run*stdout
+   -> run*output
+run*stdout Map( +date +rev +state +who +view_sp +cmd +need )
+run*output Map( +date +rev +state +who +view_sp +cmd +need )
+Equivalence Edges :
+OBJECT == :noinput
+odin*expand_hooks == expand_hooks
+odin*targets_ptr == targets_ptr
+odin*targets == targets
+odin*act_tgt.list == act_tgt.list
+odin*vir_tgt.list == vir_tgt.list
+odin*vir_dir == vir_dir
+odin*copy == copy
+odin*prm_values == prm_values
+odin*view_spec == view_spec
+odin*apply == apply
+adtinit*csmidnOut == csmidnOut
+adtinit*csmidnProd == csmidnProd
+eli*level_8_specs_in == level_8_specs_in
+level_7_specs == SpecList
+one.burg.cmpd == burg.cmpd
+burg*one.burg.cmpd == one.burg.cmpd
+ext.burg.cmpd == burg.cmpd
+burg*ext.burg.cmpd == ext.burg.cmpd
+burg*burgGen == burgGen
+burgErr == line_err
+burg*burgErr == burgErr
+burg*burgOut == burgOut
+eli*level_2_specs_in == level_2_specs_in
+level_1_specs == SpecList
+c.o == o
+cc*c.o == c.o
+cc*lookup_c_srcs == lookup_c_srcs
+cc*c_srcs == c_srcs
+cc*exe == exe
+one.clp.cmpd == clp.cmpd
+clp*one.clp.cmpd == one.clp.cmpd
+ext.clp.cmpd == clp.cmpd
+clp*ext.clp.cmpd == ext.clp.cmpd
+clp*clp_gen == clp_gen
+clp*clp_out == clp_out
+eli*level_1_specs_in == level_1_specs_in
+allspecs == SpecList
+clpErr == line_err
+clp*clpErr == clpErr
+cola*colaCmrIn == colaCmrIn
+cola*colaCmrBuIn == colaCmrBuIn
+cola*colaCmr == colaCmr
+cola*colaAbs == colaAbs
+cola*colaErrTerms == colaErrTerms
+cola*colaInfo == colaInfo
+cola*colaBe == colaBe
+cola*colaLalrOpt == colaLalrOpt
+cola*colaBackOpt == colaBackOpt
+cola*colaErrOff == colaErrOff
+one.cola.cmpd == cola.cmpd
+cola*one.cola.cmpd == one.cola.cmpd
+ext.cola.cmpd == cola.cmpd
+cola*ext.cola.cmpd == ext.cola.cmpd
+cola*colaOut == colaOut
+cola*colaData == colaData
+parser*parserGen == parserGen
+parser*parserInfo == parserInfo
+cpp*incl.all == incl.all
+cpp*incl.lst == incl.lst
+cpp*incl.dir == incl.dir
+cpp*cpp_tab == cpp_tab
+cpp*do_cpp == do_cpp
+cpp*cpp == cpp
+cppErr == line_err
+cpp*cppErr == cppErr
+cxx == o_src
+lookup_cxx_srcs == lookup_c_srcs
+cxx_srcs == c_srcs
+cxx.o == o
+cxx*cxx.o == cxx.o
+cxx*lookup_cxx_srcs == lookup_cxx_srcs
+cxx*cxx_srcs == cxx_srcs
+one.dapto.cmpd == dapto.cmpd
+dapto*one.dapto.cmpd == one.dapto.cmpd
+ext.dapto.cmpd == dapto.cmpd
+dapto*ext.dapto.cmpd == ext.dapto.cmpd
+dapto*dapGen == dapGen
+dapto*dapOut == dapOut
+dapto*init_sources == init_sources
+dapto*init_objects == init_objects
+dapto*libDb == libDb
+dapGenErr == line_err
+dapto*dapGenErr == dapGenErr
+eli*level_9_specs_in == level_9_specs_in
+level_8_specs == SpecList
+dbx*dbx == dbx
+dbx*gdb == gdb
+one.delit.cmpd == delit.cmpd
+delit*one.delit.cmpd == one.delit.cmpd
+ext.delit.cmpd == delit.cmpd
+delit*ext.delit.cmpd == ext.delit.cmpd
+empty.delit.gla.cmpd == delit.cmpd
+delit*empty.delit.gla.cmpd == empty.delit.gla.cmpd
+one.gla.cmpd == allspecs == gla.cmpd
+delit*lit_out == lit_out
+delit*lit_gen == lit_gen
+eli*level_7_specs_in == level_7_specs_in
+level_6_specs == SpecList
+eli*spfils == spfils
+level_0_specs_out == level_0_specs
+eli*level_0_specs_out == level_0_specs_out
+level_0_specs == SpecList
+eli*fwspecs == fwspecs
+eli*specs_closure == specs_closure
+eli*expfwspecs == expfwspecs
+eli*allspecs_in == allspecs_in
+eli*allspecs == allspecs
+eli*level_1_specs == level_1_specs
+level_2_specs == SpecList
+eli*level_2_specs == level_2_specs
+eli*level_3_specs_in == level_3_specs_in
+level_3_specs == SpecList
+eli*level_3_specs == level_3_specs
+eli*level_4_specs_in == level_4_specs_in
+level_4_specs == SpecList
+eli*level_4_specs == level_4_specs
+eli*level_5_specs_in == level_5_specs_in
+level_5_specs == SpecList
+eli*level_5_specs == level_5_specs
+eli*level_6_specs_in == level_6_specs_in
+eli*level_6_specs == level_6_specs
+eli*level_7_specs == level_7_specs
+eli*level_8_specs == level_8_specs
+eta_h == h
+level_9_specs == SpecList
+eli*level_9_specs == level_9_specs
+eli*phiCollection == phiCollection
+eli*phiInSpecs == phiInSpecs
+eli*phiGenHeaders == phiGenHeaders
+eli*definition == definition
+eli*all_c == all_c
+eli*dothlist == dothlist
+eli*gencode_in == gencode_in
+eli*gencode == gencode
+eli*reqfils == reqfils
+eli*reqlist == reqlist
+eli*libmods_fw == libmods_fw
+eli*libmods == libmods
+eli*reqmods == reqmods
+eli*genlist == genlist
+eli*framespecs == framespecs
+eli*genlib == genlib
+eli*used_sources == used_sources
+eli*used_objects == used_objects
+eli*srclist == srclist
+eli*sources == sources
+eli*includes == includes
+eli*objlist == objlist
+eli*objects == objects
+eli*dotafiles == dotafiles
+eli*libsfiles == libsfiles
+eli*libsflags == libsflags
+eli*exe == exe
+eli*so == so
+eli*source == source
+eli*mkfile == mkfile
+c_dep == dep
+eli*c_dep == c_dep
+cxx_dep == dep
+eli*cxx_dep == cxx_dep
+one.fw.cmpd == fw.cmpd == level_0_specs
+fwErr == line_err
+fw_pdf == pdf
+fw_ps == ps
+fw*one.fw.cmpd == one.fw.cmpd
+fw*fw.cmpd == fw.cmpd
+fw*fwOut == fwOut
+fw*fw_srcs == fw_srcs
+fw*fwincl.all == fwincl.all
+fw*fwincl.dir == fwincl.dir
+fw*fwSel == fwSel
+fw*fwProd == fwProd
+fw*fwSpecList == fwSpecList
+fw*fwGenList == fwGenList
+fw*fwAll == fwAll
+fw*fwGen == fwGen
+fw*fwMap == fwMap
+fw*fwNop == fwNop
+fw*fwSpec == fwSpec
+fw*fwTex == fwTex
+fw*fwTexinfo == fwTexinfo
+fw*fwHtml == fwHtml
+fw*fwRep == fwRep
+fw*fwErr == fwErr
+fw*expandtabs == expandtabs
+fw*tabsexpanded == tabsexpanded
+fw*fw_pdf == fw_pdf
+fw*fw_ps == fw_ps
+gla*one.gla.cmpd == one.gla.cmpd
+gla*gla.cmpd == gla.cmpd
+gla*gla_out == gla_out
+gla*gla_be == gla_be
+glaBeErr == line_err
+gla*glaBeErr == glaBeErr
+gla*flex_binary == flex_binary
+gla*accept_binary == accept_binary
+gla*lastdfa_binary == lastdfa_binary
+gla*flex_spec == flex_spec
+gla*backend_data == backend_data
+glaFeErr == line_err
+gla*glaFeErr == glaFeErr
+gla*scan_spec == scan_spec
+one.lex_code.cmpd == lex_code.cmpd
+gla*one.lex_code.cmpd == one.lex_code.cmpd
+ext.lex_code.cmpd == lex_code.cmpd
+gla*ext.lex_code.cmpd == ext.lex_code.cmpd
+empty.lex_code.gla.cmpd == lex_code.cmpd
+gla*empty.lex_code.gla.cmpd == empty.lex_code.gla.cmpd
+gla*dflt_codes == dflt_codes
+idem*PtgSpec == PtgSpec
+idem*idem.cmpd == idem.cmpd
+idem*idem == idem
+idem*treeProc == treeProc
+idem*tree == tree
+idem*treeDef == treeDef
+idem*treeStruc == treeStruc
+info*tnf_dir == tnf_dir
+info*tnf_node == tnf_node
+info*display == display
+info*help_tnf == help_tnf
+info*help_dir == help_dir
+info*help_node == help_node
+info*help == help
+info*std_err == std_err
+info*gindex_tnf == gindex_tnf
+info*index_info == index_info
+info*info_data == info_data
+info*info_data_list == info_data_list
+info*doc_info == doc_info
+info*doc_ps == doc_ps
+info*doc_pdf == doc_pdf
+info*doc_html == doc_html
+info*tex_input == tex_input
+tnfdvi == dvi
+info*tnfdvi == tnfdvi
+tnflog == tex.log
+info*tnflog == tnflog
+info*tnfaux == tnfaux
+info*tnfndx == tnfndx
+info*tnfpdf == tnfpdf
+tnfauxin.vtd == vtd
+info*tnfhtml == tnfhtml
+info*tnfsndx == tnfsndx
+info*tnfauxin.vtd == tnfauxin.vtd
+info.ps == ps
+info*info.ps == info.ps
+texps == ps
+info.pdf == pdf
+info*info.pdf == info.pdf
+info*odin_help == odin_help
+kwd*kwd == kwd
+kwd*kwd.gla == kwd.gla
+kwd*kwd_specs == kwd_specs
+kwd*kw.exe == kw.exe
+kwd*kwd_gen == kwd_gen
+kwd*kwd_out == kwd_out
+lib*instFiles == instFiles
+lib*instNeeds == instNeeds
+lib*instGen == instGen
+lib*instSpec == instSpec
+lib*inst174 == inst174
+lib*inst == inst
+liga*lidoEta == lidoEta
+lidoEta_tab == cpp_tab
+liga*lidoEta_tab == lidoEta_tab
+lidoEtaErr == line_err
+liga*lidoEtaErr == lidoEtaErr
+one.lido.cmpd == allspecs == lido.cmpd
+liga*one.lido.cmpd == one.lido.cmpd
+liga*lido.cmpd == lido.cmpd
+one.ctl.cmpd == ctl.cmpd
+liga*one.ctl.cmpd == one.ctl.cmpd
+liga*ctl.cmpd == ctl.cmpd
+empty.ctl.lido.cmpd == ctl.cmpd
+liga*empty.ctl.lido.cmpd == empty.ctl.lido.cmpd
+liga*ligaOut == ligaOut
+liga*ligaFe == ligaFe
+liga*exp_option == exp_option
+liga*ord_option == ord_option
+liga*optUoption == optUoption
+liga*back_option == back_option
+liga*MeIdl == MeIdl
+liga*MeInfo == MeInfo
+liga*MeBottomUp == MeBottomUp
+liga*ligaBe == ligaBe
+liga*ligaResults == ligaResults
+liga*gorto == gorto
+liga*ligaProd == ligaProd
+ligaProdErr == line_err
+liga*ligaProdErr == ligaProdErr
+liga*showFeDir == showFeDir
+liga*showFe == showFe
+liga*feInfoDir == feInfoDir
+liga*feInfo == feInfo
+liga*showMeDir == showMeDir
+liga*showMe == showMe
+liga*ExpInfo == ExpInfo
+liga*OrdInfo == OrdInfo
+liga*OptimInfo == OptimInfo
+ligaErr == line_err
+liga*ligaErr == ligaErr
+one.sym.cmpd == sym.cmpd
+maptool*one.sym.cmpd == one.sym.cmpd
+ext.sym.cmpd == sym.cmpd
+maptool*ext.sym.cmpd == ext.sym.cmpd
+maptool*SymToMap == SymToMap
+maptool*mapOut == mapOut
+maptool*mapBuOut == mapBuOut
+one.map.cmpd == map.cmpd
+maptool*one.map.cmpd == one.map.cmpd
+ext.map.cmpd == map.cmpd
+maptool*ext.map.cmpd == ext.map.cmpd
+maptool*mapBnf == mapBnf
+maptool*mapIn == mapIn
+mapBnfErr == line_err
+maptool*mapBnfErr == mapBnfErr
+maptool*mapConSyn == mapConSyn
+maptool*mapAbsSyn == mapAbsSyn
+maptool*mapAbsTree == mapAbsTree
+maptool*mapFe == mapFe
+maptool*mapBe == mapBe
+maptool*mapPgram == mapPgram
+mapBeErr == line_err
+maptool*mapBeErr == mapBeErr
+maptool*mapBuPgram == mapBuPgram
+maptool*absyntax == absyntax
+maptool*consyntax == consyntax
+maptool*abstree == abstree
+noosa*monDb == monDb
+noosa*all_tcl == all_tcl
+noosa*mon == mon
+noosa*mongdb == mongdb
+one.oil.cmpd == oil.cmpd
+oil*one.oil.cmpd == one.oil.cmpd
+ext.oil.cmpd == oil.cmpd
+oil*ext.oil.cmpd == ext.oil.cmpd
+oil*oil_gen == oil_gen
+oil*oil_out == oil_out
+oil_genErr == line_err
+oil*oil_genErr == oil_genErr
+expanddir == expandlist
+expandspecs == expandlist
+expandfile == expandlist
+oldodin*expanddir == expanddir
+oldodin*expandspecs == expandspecs
+oldodin*expandfile == expandfile
+oldodin*dirnames == dirnames
+oldodin*direlms == direlms
+oldodin*names == names
+oldodin*labels == labels
+oldodin*dir_of == dir_of
+one.con.cmpd == allspecs == con.cmpd
+parser*one.con.cmpd == one.con.cmpd
+parser*con.cmpd == con.cmpd
+parser*parserOut == parserOut
+parser*infoOut == infoOut
+parser*parsable == parsable
+parser*bnf == bnf
+one.perr.cmpd == perr.cmpd
+parser*one.perr.cmpd == one.perr.cmpd
+ext.perr.cmpd == perr.cmpd
+parser*ext.perr.cmpd == ext.perr.cmpd
+parser*perrGen == perrGen
+parser*perrOut == perrOut
+one.coding.cmpd == coding.cmpd
+parser*one.coding.cmpd == one.coding.cmpd
+ext.coding.cmpd == coding.cmpd
+parser*ext.coding.cmpd == ext.coding.cmpd
+parser*Pgram == Pgram
+parser*BuPgram == BuPgram
+parser*pgram == pgram
+one.pdl.cmpd == pdl.cmpd
+pdl*one.pdl.cmpd == one.pdl.cmpd
+ext.pdl.cmpd == pdl.cmpd
+pdl*ext.pdl.cmpd == ext.pdl.cmpd
+pdl*pdlGen == pdlGen
+pdl*pdlOut == pdlOut
+pdlGenErr == line_err
+pdl*pdlGenErr == pdlGenErr
+pgs*pgsGen == pgsGen
+pgs*pgsInfo == pgsInfo
+pgs*pgsConflict == pgsConflict
+pgs*pgsGenErr == pgsGenErr
+pgsMiscErr == line_err
+pgs*pgsMiscErr == pgsMiscErr
+pgs*pgsOut == pgsOut
+pgs*pgsData == pgsData
+phi*phiOut == phiOut
+phi*phiMap == phiMap
+phiErr == line_err
+phi*phiErr == phiErr
+phi*etaOut == etaOut
+phi*etaMap == etaMap
+phi*etaIncl == etaIncl
+etaErr == line_err
+phi*etaErr == etaErr
+one.ptg.cmpd == ptg.cmpd
+ptg*one.ptg.cmpd == one.ptg.cmpd
+ext.ptg.cmpd == ptg.cmpd
+ptg*ext.ptg.cmpd == ext.ptg.cmpd
+ptg*ptg_gen == ptg_gen
+ptg*ptg_out == ptg_out
+ptg_genErr == line_err
+ptg*ptg_genErr == ptg_genErr
+skeleton*index == index
+skeleton*err_map == err_map
+no_map == line_err
+skeleton*no_map == no_map
+skeleton*filtered == filtered
+skeleton*errfiles == errfiles
+skeleton*msgtext == msgtext
+skeleton*warning == warning
+skeleton*error == error
+skeleton*viewlist == viewlist
+skeleton*pasted == pasted
+skeleton*vtd == vtd
+one.symbols.cmpd == symbols.cmpd
+symcode*one.symbols.cmpd == one.symbols.cmpd
+ext.symbols.cmpd == symbols.cmpd
+symcode*ext.symbols.cmpd == ext.symbols.cmpd
+symcode*codeOut == codeOut
+symcode*codeGen == codeGen
+symErr == line_err
+symcode*symErr == symErr
+one.tp.cmpd == tp.cmpd
+tp*one.tp.cmpd == one.tp.cmpd
+ext.tp.cmpd == tp.cmpd
+tp*ext.tp.cmpd == ext.tp.cmpd
+tp*tpGen == tpGen
+tp*tpOut == tpOut
+tpGenErr == line_err
+tp*tpGenErr == tpGenErr
+odin*targets_inc == targets_inc
+odin*all_targets_inc == all_targets_inc
+odin*copy_cmd == copy_cmd
+odin*nested_hooks == nested_hooks
+odin*hook_values.of == hook_values.of
+odin*first == first
+odin*err == err
+odin*warn == warn
+odin*dir == dir
+odin*name == name
+odin*names == names
+odin*filename == filename
+odin*ls == ls
+odin*cat == cat
+odin*union == union
+odin*label == label
+odin*labels == labels
+odin*id == id
+odin*depend == depend
+odin*source_names == source_names
+odin*operation_names == operation_names
+odin*view == view
+odin*odin_help == odin_help
+odin*prefix_help == prefix_help
+odin*suffix_help == suffix_help
+odin*drv_help == drv_help
+odin*prm_help == prm_help
+view.names == GENERIC
+sccs.co == co
+co == GENERIC == try.co
+sccs.log == log
+vc*log == log
+vc*co == co
+vc*sccs.co == sccs.co
+vc*sccs.log == sccs.log
+vc*view.source.spec == view.source.spec
+vc*view.names == view.names
+vc*vw.of == vw.of
+vc*vw.dir == vw.dir
+code*sm.list == sm.list
+code*code.list == code.list
+code*o_of == o_of
+code*a == a
+code*libraries.view_desc == libraries.view_desc
+code*library_flags == library_flags
+code*libraries == libraries
+f == o_src
+f77*o == o
+lex*c == c
+yacc.log == log
+yacc*c == c
+yacc*h == h
+yacc*yacc.log == yacc.log
+nod.h == h
+tok.h == h
+ygi.log == log
+tregrm*y == y
+tregrm*nod.h == nod.h
+tregrm*tok.h == tok.h
+tregrm*ygi.log == ygi.log
+dg.log == log
+dg*dg.log == dg.log
+dg*c == c
+dg*dg.tab == dg.tab
+dg*dg.env == dg.env
+prof*profile == profile
+misc*list == list
+misc*redo == redo
+misc*redo_errs == redo_errs
+misc*boot_name == boot_name
+misc*boot == boot
+misc*diff == diff
+misc*rcp == rcp
+misc*installpkg == installpkg
+eqn == tbl_in
+gnc.eqn == GENERIC
+tbl == roff
+roff*so_inc_spec == so_inc_spec
+roff*so_inc == so_inc
+roff*all_so_inc == all_so_inc
+roff*eqn == eqn
+roff*gnc.eqn == gnc.eqn
+roff*tbl == tbl
+roff*nroff == nroff
+tex.vtd == vtd
+rootFileName == texnames
+texauxin.vtd == vtd
+one_tex_vtd == tex.vtd
+tex*one_tex_vtd == one_tex_vtd
+tex*rootName == rootName
+tex*rootFileName == rootFileName
+tex*texsp == texsp
+tex*texclose == texclose
+tex*texbasis == texbasis
+tex*tex.view_desc == tex.view_desc
+tex*texnames == texnames
+tex*texfiles == texfiles
+tex*fmtcmd == fmtcmd
+tex*dvi == dvi
+tex*texpdf == texpdf
+tex*tex.log == tex.log
+tex*citations == citations
+tex*indexntry == indexntry
+tex*texauxout == texauxout
+tex*tex.bbl == tex.bbl
+tex*tex.ind == tex.ind
+tex*tex.ilg == tex.ilg
+tex*texauxin.vtd == texauxin.vtd
+tex*texps == texps
+refpdf == pdf
+tex*refpdf == refpdf
+stdout == PIPE
+run*run == run
+run*stdout == stdout
+run*output == output
+Possible Casts :
+   FILE -> OBJECT
+   FILE -> try.co
+   LIST -> OBJECT
+   VOID -> OBJECT
+   REFERENCE -> OBJECT
+   EXECUTABLE -> FILE
+   GENERIC -> FILE
+   PIPE -> FILE
+   DERIVED-DIRECTORY -> FILE
+   first -> REFERENCE
+   odin*abstract -> FILE
+   str -> FILE
+   csmidnOut -> FILE
+   extract=:str -> LIST
+   names -> FILE
+   csmidnProd -> DERIVED-DIRECTORY
+   name -> FILE
+   cat -> FILE
+   level_8_specs_in -> LIST
+   etaIncl -> FILE
+   list -> LIST
+   burg -> FILE
+   burg.cmpd -> LIST
+   extract=:burg -> LIST
+   burgGen -> DERIVED-DIRECTORY
+   line_err -> FILE
+   burgOut -> FILE
+   level_2_specs_in -> LIST
+   c -> FILE
+   ls -> FILE
+   c_srcs -> FILE
+   dir_of -> FILE
+   vir_dir -> DERIVED-DIRECTORY
+   o -> FILE
+   o -> o_src
+   lookup_c_srcs -> REFERENCE
+   incl.all -> LIST
+   lookup=:c_srcs -> REFERENCE
+   exe -> FILE
+   clp -> FILE
+   clp.cmpd -> LIST
+   extract=:clp -> LIST
+   clp_gen -> DERIVED-DIRECTORY
+   cpp -> FILE
+   clp_out -> FILE
+   level_1_specs_in -> LIST
+   colaCmrIn -> FILE
+   colaCmrBuIn -> FILE
+   Pgram -> FILE
+   BuPgram -> FILE
+   colaCmr -> FILE
+   colaAbs -> FILE
+   colaErrTerms -> FILE
+   colaInfo -> FILE
+   colaLalrOpt -> FILE
+   colaBe -> DERIVED-DIRECTORY
+   colaBackOpt -> FILE
+   colaErrOff -> FILE
+   cola.cmpd -> LIST
+   cola -> FILE
+   extract=:cola -> LIST
+   colaOut -> FILE
+   colaData -> FILE
+   parserGen -> LIST
+   parserInfo -> LIST
+   incl.lst -> LIST
+   incl.dir -> FILE
+   map=:incl.lst -> LIST
+   dir -> REFERENCE
+   h -> FILE
+   cpp_tab -> FILE
+   do_cpp -> FILE
+   map=:do_cpp -> LIST
+   o_src -> FILE
+   lookup=:cxx_srcs -> REFERENCE
+   dapto -> FILE
+   dapto.cmpd -> LIST
+   extract=:dapto -> LIST
+   dapGen -> DERIVED-DIRECTORY
+   labels -> FILE
+   dapOut -> FILE
+   map=:dapGen -> LIST
+   init_sources -> DERIVED-DIRECTORY
+   init_objects -> DERIVED-DIRECTORY
+   libDb -> FILE
+   used_sources -> FILE
+   level_9_specs_in -> LIST
+   dbx -> EXECUTABLE
+   sources -> LIST
+   includes -> LIST
+   gdb -> EXECUTABLE
+   delit -> FILE
+   delit.cmpd -> LIST
+   extract=:delit -> LIST
+   lit_out -> FILE
+   lex_code.cmpd -> LIST
+   lit_gen -> DERIVED-DIRECTORY
+   level_7_specs_in -> LIST
+   specs -> sp
+   sp -> FILE
+   spfils -> FILE
+   SpecList -> LIST
+   expandlist -> LIST
+   map=:expandlist -> LIST
+   fwspecs -> LIST
+   fwOut -> FILE
+   specs_closure -> LIST
+   extract=:specs -> LIST
+   map=:specs_closure -> LIST
+   expfwspecs -> LIST
+   allspecs_in -> LIST
+   level_3_specs_in -> LIST
+   level_4_specs_in -> LIST
+   level_5_specs_in -> LIST
+   level_6_specs_in -> LIST
+   lex_code -> FILE
+   delete=:lex_code -> LIST
+   delete=:eta_h -> LIST
+   phiCollection -> LIST
+   genlib -> allspecs
+   phiInSpecs -> LIST
+   phiGenHeaders -> LIST
+   phiOut -> DERIVED-DIRECTORY
+   etaOut -> DERIVED-DIRECTORY
+   definition -> FILE
+   depend -> LIST
+   all_c -> LIST
+   extract=:c -> LIST
+   extract=:cxx -> LIST
+   dothlist -> FILE
+   extract=:h -> LIST
+   pasted -> FILE
+   gencode_in -> LIST
+   a -> FILE
+   delete=:a -> LIST
+   delete=:o -> LIST
+   gencode -> LIST
+   reqmod -> sp
+   reqfils -> FILE
+   reqlist -> LIST
+   libmods_fw -> LIST
+   libmods -> LIST
+   extract=:sp -> LIST
+   map=:libmods -> LIST
+   reqmods -> LIST
+   extract=:reqmod -> LIST
+   genlist -> LIST
+   union -> LIST
+   framespecs -> FILE
+   reqsym -> FILE
+   used_objects -> FILE
+   map=:lookup_c_srcs -> LIST
+   map=:o -> LIST
+   extract=:reqsym -> LIST
+   srclist -> LIST
+   map=:incl.all -> LIST
+   objlist -> LIST
+   objects -> LIST
+   dotafiles -> LIST
+   extract=:a -> LIST
+   libs -> FILE
+   libsfiles -> LIST
+   extract=:libs -> LIST
+   libsflags -> FILE
+   library_flags -> FILE
+   so -> FILE
+   source -> LIST
+   mkfile -> DERIVED-DIRECTORY
+   label -> FILE
+   dep -> FILE
+   map=:dep -> LIST
+   fw -> FILE
+   fw.cmpd -> LIST
+   fw_srcs -> LIST
+   fwGen -> DERIVED-DIRECTORY
+   fwGenList -> LIST
+   fwSpec -> DERIVED-DIRECTORY
+   fwSpecList -> LIST
+   fwMap -> FILE
+   fwNop -> FILE
+   fwAll -> LIST
+   fwSel -> FILE
+   fwProd -> LIST
+   fwTex -> tex
+   tex -> FILE
+   fwTexinfo -> tnf
+   tnf -> FILE
+   fwHtml -> FILE
+   fwRep -> FILE
+   fwincl.dir -> FILE
+   fwincl.all -> LIST
+   expandtabs -> FILE
+   tabsexpanded -> FILE
+   fw_pdf -> REFERENCE
+   pdf -> FILE
+   fw_ps -> REFERENCE
+   ps -> FILE
+   extract=:fw -> LIST
+   map=:fwincl.all -> LIST
+   map=:fwNop -> LIST
+   direlms -> LIST
+   delete=:specs -> LIST
+   map=:fwSpecList -> LIST
+   map=:fwGenList -> LIST
+   map=:expandtabs -> LIST
+   apply -> REFERENCE
+   gla -> FILE
+   gla.cmpd -> LIST
+   extract=:gla -> LIST
+   gla_out -> FILE
+   scan_spec -> FILE
+   gla_be -> DERIVED-DIRECTORY
+   backend_data -> FILE
+   flex_binary -> FILE
+   accept_binary -> FILE
+   lastdfa_binary -> FILE
+   flex_spec -> FILE
+   dflt_codes -> FILE
+   extract=:lex_code -> LIST
+   idem -> fw
+   tree -> fw
+   treeStruc -> LIST
+   PtgSpec -> FILE
+   idem.cmpd -> LIST
+   mapAbsTree -> FILE
+   ptg.cmpd -> LIST
+   map=:allspecs -> LIST
+   treeProc -> FILE
+   treeDef -> DERIVED-DIRECTORY
+   view -> LIST
+   tnf_dir -> DERIVED-DIRECTORY
+   tnf_node -> FILE
+   display -> EXECUTABLE
+   help_tnf -> FILE
+   filtered -> FILE
+   errfiles -> FILE
+   help_dir -> DERIVED-DIRECTORY
+   help_node -> FILE
+   warn -> FILE
+   expand_hooks -> FILE
+   help -> EXECUTABLE
+   std_err -> FILE
+   gindex_tnf -> tnf
+   index_info -> FILE
+   extract=:tnf -> LIST
+   info_data -> DERIVED-DIRECTORY
+   info_data_list -> LIST
+   doc_info -> LIST
+   map=:info_data_list -> LIST
+   doc_ps -> LIST
+   map=:ps -> LIST
+   doc_pdf -> LIST
+   map=:pdf -> LIST
+   html -> FILE
+   doc_html -> LIST
+   tnfhtml -> DERIVED-DIRECTORY
+   tex_input -> tex
+   tnfaux -> DERIVED-DIRECTORY
+   tnfndx -> DERIVED-DIRECTORY
+   tnfpdf -> FILE
+   rootName -> FILE
+   texsp -> FILE
+   texbasis -> LIST
+   extract=:tex -> LIST
+   sty -> FILE
+   extract=:sty -> LIST
+   vir_tgt.list -> LIST
+   dvi -> FILE
+   tex.log -> FILE
+   tnfsndx -> DERIVED-DIRECTORY
+   vtd -> FILE
+   info.ps -> REFERENCE
+   info.pdf -> REFERENCE
+   odin_help -> EXECUTABLE
+   kwd -> FILE
+   kwd.gla -> gla
+   extract=:kwd -> LIST
+   kwd_specs -> LIST
+   kw.exe -> FILE
+   kwd_gen -> DERIVED-DIRECTORY
+   kwd_out -> FILE
+   gnrc -> FILE
+   instFiles -> FILE
+   instNeeds -> LIST
+   instGen -> DERIVED-DIRECTORY
+   instSpec -> FILE
+   inst174 -> LIST
+   map=:level_0_specs -> LIST
+   inst -> LIST
+   lido -> FILE
+   ctl -> FILE
+   lidoEta -> FILE
+   lido.cmpd -> LIST
+   extract=:lido -> LIST
+   map=:lidoEta -> LIST
+   ctl.cmpd -> LIST
+   extract=:ctl -> LIST
+   ligaOut -> FILE
+   ligaBe -> DERIVED-DIRECTORY
+   MeBottomUp -> FILE
+   ligaFe -> FILE
+   exp_option -> FILE
+   ord_option -> FILE
+   optUoption -> FILE
+   back_option -> FILE
+   MeIdl -> FILE
+   MeInfo -> FILE
+   ligaResults -> LIST
+   gorto -> EXECUTABLE
+   ligaProd -> FILE
+   showFeDir -> DERIVED-DIRECTORY
+   showFe -> LIST
+   feInfoDir -> DERIVED-DIRECTORY
+   feInfo -> LIST
+   showMeDir -> DERIVED-DIRECTORY
+   showMe -> LIST
+   ExpInfo -> FILE
+   OrdInfo -> FILE
+   OptimInfo -> FILE
+   sym -> FILE
+   sym.cmpd -> LIST
+   extract=:sym -> LIST
+   SymToMap -> FILE
+   mapOut -> FILE
+   con.cmpd -> LIST
+   mapFe -> DERIVED-DIRECTORY
+   mapBe -> DERIVED-DIRECTORY
+   mapPgram -> FILE
+   mapBuOut -> FILE
+   extract=:MeBottomUp -> LIST
+   mapBuPgram -> FILE
+   mapSrc -> FILE
+   map.cmpd -> LIST
+   extract=:mapSrc -> LIST
+   mapBnf -> FILE
+   mapIn -> LIST
+   mapConSyn -> FILE
+   mapAbsSyn -> FILE
+   absyntax -> lido
+   consyntax -> con
+   con -> FILE
+   abstree -> lido
+   db -> FILE
+   monDb -> FILE
+   tcl -> FILE
+   all_tcl -> LIST
+   extract=:tcl -> LIST
+   mon -> EXECUTABLE
+   mongdb -> EXECUTABLE
+   oil -> FILE
+   oil.cmpd -> LIST
+   extract=:oil -> LIST
+   oil_gen -> DERIVED-DIRECTORY
+   oil_out -> FILE
+   dirnames -> FILE
+   extract=:con -> LIST
+   pgsOut -> FILE
+   parserOut -> FILE
+   extract=:mapPgram -> LIST
+   pgsData -> FILE
+   infoOut -> FILE
+   parsable -> REFERENCE
+   parsable -> FILE
+   bnf -> FILE
+   perr -> FILE
+   perr.cmpd -> LIST
+   extract=:perr -> LIST
+   perrGen -> FILE
+   perrOut -> FILE
+   coding -> FILE
+   coding.cmpd -> LIST
+   extract=:coding -> LIST
+   extract=:mapBuPgram -> LIST
+   pgram -> FILE
+   pdl -> FILE
+   pdl.cmpd -> LIST
+   extract=:pdl -> LIST
+   pdlGen -> DERIVED-DIRECTORY
+   pdlOut -> FILE
+   pgsGen -> DERIVED-DIRECTORY
+   pgsInfo -> FILE
+   pgsConflict -> FILE
+   pgsGenErr -> FILE
+   head -> FILE
+   init -> FILE
+   finl -> FILE
+   phi -> FILE
+   eta -> FILE
+   phiMap -> FILE
+   extract=:head -> LIST
+   extract=:init -> LIST
+   extract=:finl -> LIST
+   extract=:phi -> LIST
+   etaMap -> FILE
+   extract=:eta -> LIST
+   ptg -> FILE
+   extract=:ptg -> LIST
+   ptg_gen -> DERIVED-DIRECTORY
+   ptg_out -> FILE
+   index -> FILE
+   err_map -> FILE
+   msgtext -> FILE
+   warning -> FILE
+   error -> FILE
+   err -> FILE
+   viewlist -> EXECUTABLE
+   symbols -> FILE
+   symbols.cmpd -> LIST
+   extract=:symbols -> LIST
+   codeOut -> FILE
+   codeGen -> DERIVED-DIRECTORY
+   tp -> FILE
+   tp.cmpd -> LIST
+   extract=:tp -> LIST
+   tpGen -> DERIVED-DIRECTORY
+   tpOut -> FILE
+   targets_ptr -> FILE
+   targets_ptr -> REFERENCE
+   targets_inc -> LIST
+   all_targets_inc -> LIST
+   targets -> FILE
+   act_tgt.list -> LIST
+   atmc_prm_data -> FILE
+   cmpd_prm_data -> LIST
+   copy -> VOID
+   copy_cmd -> LIST
+   prm_values -> LIST
+   nested_hooks -> LIST
+   hook_values.of -> FILE
+   filename -> FILE
+   id -> FILE
+   source_names -> FILE
+   operation_names -> FILE
+   view_spec -> LIST
+   prefix_help -> FILE
+   suffix_help -> FILE
+   drv_help -> FILE
+   prm_help -> FILE
+   map=:all_targets_inc -> LIST
+   ,v -> FILE
+   sccs -> FILE
+   ,vw -> FILE
+   view.source.spec -> FILE
+   vw.of -> FILE
+   try.co -> FILE
+   vw.dir -> REFERENCE
+   log -> FILE
+   map=:try.co -> LIST
+   sm -> FILE
+   sm.list -> LIST
+   code.list -> LIST
+   libraries.view_desc -> FILE
+   o_of -> FILE
+   libraries -> LIST
+   recurse=:sm.list -> LIST
+   map=:o_src -> LIST
+   l -> FILE
+   y -> FILE
+   ygi -> FILE
+   dg -> FILE
+   dg.tab -> FILE
+   dg.env -> FILE
+   profile -> FILE
+   redo -> EXECUTABLE
+   redo_errs -> EXECUTABLE
+   boot_name -> FILE
+   boot -> REFERENCE
+   diff -> FILE
+   rcp -> VOID
+   installpkg -> EXECUTABLE
+   eqn_in -> FILE
+   tbl_in -> FILE
+   roff -> FILE
+   so_inc_spec -> FILE
+   so_inc -> LIST
+   all_so_inc -> LIST
+   nroff -> FILE
+   map=:all_so_inc -> LIST
+   lookup=:all_so_inc -> REFERENCE
+   bib -> FILE
+   cls -> FILE
+   bst -> FILE
+   texnames -> FILE
+   texpdf -> FILE
+   citations -> FILE
+   indexntry -> FILE
+   texauxout -> DERIVED-DIRECTORY
+   texclose -> LIST
+   texfiles -> LIST
+   map=:texclose -> LIST
+   tex.view_desc -> FILE
+   fmtcmd -> FILE
+   extract=:cls -> LIST
+   tex.bbl -> FILE
+   extract=:bib -> LIST
+   extract=:bst -> LIST
+   tex.ind -> FILE
+   tex.ilg -> FILE
+   extract=:ps -> LIST
+   refpdf -> REFERENCE
+   run -> EXECUTABLE
+   output -> DERIVED-DIRECTORY
+64 SrcTyp's
+1075 FilTyp's
+73 PrmTyp's
+811 PrmTypLst's
+28 EnvVar's
+2 EnvVarLst's
+560 Tool's
+1389 InpEdg's
+93 MemEdg's
+553 EqvEdg's
+502 CastEdg's
+564 DrvEdg's
+2198 InpSpc's

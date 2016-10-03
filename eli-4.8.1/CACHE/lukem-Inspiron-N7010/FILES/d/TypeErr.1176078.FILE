@@ -1,0 +1,4 @@
+%Type.VoidArr.err == . +cmd=cat (%trenn) \
+	(Type.demo/VoidArr.err:label) \
+	(Type.demo/VoidArr.err) \
+	((Type.demo/VoidArr.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

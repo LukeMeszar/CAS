@@ -1,0 +1,70 @@
+G1: G1 '|' xSymbol .
+
+G1: xSymbol .
+
+G2:  .
+
+G2: G2 PatternSpec .
+
+G3:  .
+
+G3: G3 Item .
+
+G4: G4 Item .
+
+G4: Item .
+
+Insert: G4 .
+
+Item: '$' .
+
+Item: '{' Insert '}' .
+
+Item: '$' Number .
+
+Item: '$' Number PtgType .
+
+Item: '$' PtgType .
+
+Items: G3 .
+
+Item: '[' xIdentifier Items ']' .
+
+PatternSpec: PatternName ':' Items .
+
+PTGSpec: G2 .
+
+Syms:  .
+
+Syms: G1 .
+
+xRoot: xGrammar PTGSpec .
+
+xRule: PtgType .
+
+xRule: xIdentifier .
+
+xSymbol: PtgType .
+
+xSymbol: xIdentifier .
+
+xGrammar: LST_xGrammar .
+LST_xGrammar: LST_xGrammar xProduction .
+LST_xGrammar: .
+xProduction: 'RULE' xRule ':' xSymbol '::=' xRHS 'END' ';' .
+
+xProduction: 'RULE' xRule ':' xSymbol 'LISTOF' Syms 'END' ';' .
+
+xRHS: LST_xRHS .
+LST_xRHS: LST_xRHS Element .
+LST_xRHS: .
+Element: xSymbol .
+
+Element: '$' xSymbol .
+
+Element: xLiteral .
+
+PatternName: xIdentifier .
+
+Item: CString .
+

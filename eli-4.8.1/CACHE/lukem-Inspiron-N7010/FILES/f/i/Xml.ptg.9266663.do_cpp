@@ -1,0 +1,79 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/f/h/Xml.ptg.9221622.ptg"
+
+
+
+Frame:
+  "@p maximum_input_line_length = infinity\n\n"
+  "The following symbol computation can be used to display the entire input:"
+  "\n\nSYMBOL ROOTCLASS COMPUTE\n"
+  "  BP_Out(THIS." $1 string "Ptg);\n"
+  "END;\n\n"
+  "Applying this output function to the " $1 string
+    "Ptg attribute of any nonterminal\n"
+  "symbol in the tree will cause the subtree rooted in that node to be"
+    " displayed.\n\n"
+  "@O@<" $1 string "copy.lido@>@{\n"
+  "ATTR " $1 string "Ptg, " $1 string "OrigPtg: PTGNode;\n\n"
+  $2 "\n"       
+  $3            
+  $4            
+  "@}\n\n"
+  "@O@<" $1 string "copy.ptg@>@{\n"
+  $5            
+  "@}\n\n"
+  "@O@<" $1 string "copy.ptg.phi@>@{\n"
+  "#define IGNORE(f,n)\n"
+  "@}\n\n"
+  "@O@<" $1 string "copy.specs@>@{\n"
+  "$/Output/PtgCommon.fw\n"
+  "$/Output/BlockPrint.fw\n"
+  "@}\n"
+
+
+
+Term: $ string "_" $ ":\n  [PtgOutId $ int]\n"
+
+
+PlainProd:
+  $1 string "_" $2 string ":\n"
+  "  \"<" $2 string ">\" [BP_BeginBlockI] [BP_BreakLine] "
+    $3 " [BP_BreakLine] [BP_EndBlockI] \"</" $2 string ">\"\n"
+
+SepSeq:
+  $ { " [BP_BreakLine] " } $
+
+Empty:
+  $1 string "_" $2 string ":\n \"<" $2 string "/>\"\n"
+
+ListProd:
+  $1 string "_"  $2 string ":\n  \"<" $2 string
+    ">\" [BP_BeginBlockI] [BP_BreakLine] "
+    "$ [BP_BreakLine] [BP_EndBlockI] \"</" $2 string ">\"\n"
+
+ListProd2: $1 string "_2" $2 string ":\n  $ { [BP_BreakLine] } $\n" 
+ListProd1: $1 string "_1" $2 string ":\n  $\n"
+
+Triple: $ $ $
+
+
+dtd:
+  $     
+  $     
+
+
+EntityDef: "<!ENTITY % " $ string " \"(" $ ")\">\n"
+
+
+Element: "<!ELEMENT " $ string " " $ ">\n"
+
+Content:
+"(" $ ")"
+
+ListContent:
+"(" $ ")*"
+
+EntityUse:
+  "%" $ string ";"
+
+
+AltSeq: $ { " | " } $

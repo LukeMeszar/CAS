@@ -1,0 +1,34 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/i/c/Kind.lido.12715122.lidoEta"
+
+CLASS SYMBOL ROOTCLASS INHERITS RangeKind END;
+
+
+CLASS SYMBOL RootKind INHERITS RangeKind END;
+
+CLASS SYMBOL RangeKind:
+                GotKind:        VOID    SYNT;
+
+CLASS SYMBOL SetKind:
+                Key:    DefTableKey,
+                Kind:   int,
+                GotKind:        VOID    SYNT;
+
+CLASS SYMBOL GetKind:
+                Key:    DefTableKey,
+                HasKind:        int;
+
+CLASS SYMBOL RangeKind COMPUTE
+  SYNT.GotKind = CONSTITUENTS SetKind.GotKind
+                        SHIELD RangeKind;
+END;
+
+CLASS SYMBOL SetKind COMPUTE
+  SYNT.GotKind =
+        SetDiffKind (THIS.Key, THIS.Kind, IntMultiple);
+END;
+
+CLASS SYMBOL GetKind COMPUTE
+  SYNT.HasKind =
+        GetKind (THIS.Key, IntNone)
+        DEPENDS_ON INCLUDING RangeKind.GotKind;
+END;

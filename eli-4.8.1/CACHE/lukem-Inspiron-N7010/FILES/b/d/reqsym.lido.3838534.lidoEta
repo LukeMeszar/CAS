@@ -1,0 +1,25 @@
+
+
+CHAIN reqsyms : PTGNode;
+
+RULE:
+    spec ::= aspects
+COMPUTE
+    CHAINSTART HEAD.reqsyms = PTGNULL;
+    PTGOutFile (reqsymfilename, PTGreqsyms (aspects.reqsyms));
+END;
+
+RULE operation_sig1:
+    operation_sig ::= 'operation' iddef str operation_block body
+COMPUTE
+    operation_sig.reqsyms = PTGSeq (operation_sig.reqsyms,
+                                    PTGreqsym (iddef.idcode));
+END;
+
+RULE operation_sig2:
+    operation_sig ::= 'operation' iddef str operation_block ':' typeid body
+COMPUTE
+    operation_sig.reqsyms = PTGSeq (operation_sig.reqsyms,
+                                    PTGreqsym (iddef.idcode));
+END;
+

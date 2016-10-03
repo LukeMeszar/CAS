@@ -1,0 +1,21 @@
+"Strings.h"
+amp, send, type: CharPtr;
+
+standard: int;
+
+"ptg_gen.h"
+cast: PTGNode;
+
+intKey ->
+  send = {"_INT"},
+  standard = {1},
+  cast = {PTGNULL},
+  type = {"int"};
+
+strKey -> 
+  send = {"_STR"},
+  standard = {1},
+  cast = {PTGNULL},
+  type = {"const char *"},
+  amp = {""};
+

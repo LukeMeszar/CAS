@@ -1,0 +1,144 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/b/c/ExportCScope.lido.3834310.lidoEta"
+
+
+CLASS SYMBOL ROOTCLASS INHERITS ExportRootScope END;
+
+CHAIN _C_ExportGotKeys: VOID;
+
+CLASS SYMBOL ExportRootScope:
+        ExportEnv:      Environment     SYNT,   
+        ExportGotKeys:          VOID    SYNT;   
+
+CLASS SYMBOL ExportRootScope COMPUTE
+  SYNT.ExportEnv = ExportRootEnv;
+  CHAINSTART HEAD._C_ExportGotKeys = SYNT.ExportEnv;
+  SYNT.ExportGotKeys = TAIL._C_ExportGotKeys;
+END;
+
+
+CLASS SYMBOL ExportRangeScope:
+        ExportEnv:      Environment     INH,    
+        ExportGotKeys:          VOID    SYNT;   
+
+CLASS SYMBOL ExportRangeScope COMPUTE
+  INH.ExportEnv = 
+        NewScope (INCLUDING ExportAnyScope.ExportEnv);
+  SYNT.ExportGotKeys = TAIL._C_ExportGotKeys;
+END;
+
+
+CLASS SYMBOL ExportAnyScope END;
+CLASS SYMBOL ExportRootScope    INHERITS ExportAnyScope END;
+CLASS SYMBOL ExportRangeScope   INHERITS ExportAnyScope END;
+
+
+CLASS SYMBOL ExportIdDefScope:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL ExportIdDefScope COMPUTE
+  SYNT.Bind =
+        BindIdn (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym)
+        <- THIS._C_ExportGotKeys;
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_ExportGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL ExportIdUseEnv:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL ExportIdUseEnv INHERITS _ExportInhPrecondDefault COMPUTE
+  SYNT.Bind =
+        BindingInEnv (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym)
+        <- (THIS._C_ExportGotKeys, SYNT._ExportInhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_ExportGotKeys = SYNT.Key;
+END;
+
+CLASS SYMBOL _ExportInhPrecondDefault:
+        _ExportInhPrecond:      VOID    SYNT;   
+CLASS SYMBOL _ExportInhPrecondDefault COMPUTE
+  SYNT._ExportInhPrecond = "yes";
+END;
+
+
+CLASS SYMBOL ExportIdUseScope:
+        Sym:            int,                    
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT;   
+
+CLASS SYMBOL ExportIdUseScope INHERITS _ExportInhPrecondDefault COMPUTE
+  SYNT.Bind =
+        BindingInScope (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym)
+        <- (THIS._C_ExportGotKeys, SYNT._ExportInhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_ExportGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL ExportIdDefUse:
+        Sym:            int,                    
+        ExportDefCond:  int             INH,    
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        _ExportauxGotKeys: VOID         SYNT;   
+
+CLASS SYMBOL ExportIdDefUse INHERITS _ExportInhPrecondDefault COMPUTE
+  SYNT._ExportauxGotKeys = THIS._C_ExportGotKeys;
+  INH.ExportDefCond =
+        EQ (NoBinding, 
+            BindingInEnv (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym))
+        <- (THIS._ExportauxGotKeys, SYNT._ExportInhPrecond);
+  SYNT.Bind =
+        IF (THIS.ExportDefCond,
+        BindIdn (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym),
+        BindingInEnv (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym))
+        <- (THIS._C_ExportGotKeys, SYNT._ExportInhPrecond);
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_ExportGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL ExportChkIdUse:
+        Key:       DefTableKey     SYNT,   
+        Sym:            int,                    
+        SymErr:         int             SYNT,   
+        SymMsg:         VOID            SYNT;   
+
+CLASS SYMBOL ExportChkIdUse COMPUTE
+  SYNT.SymErr = EQ (THIS.Key, NoKey);
+  SYNT.SymMsg = IF (THIS.SymErr,
+    message (ERROR, CatStrInd ("Identifier is not defined: ", THIS.Sym),
+           0, COORDREF));
+END;
+
+
+CLASS SYMBOL ExportDeclaratorWithId:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int             SYNT;   
+
+CLASS SYMBOL ExportDeclaratorWithId COMPUTE
+  SYNT.Sym = CONSTITUENT ExportIdInDeclarator.Sym SHIELD ExportDeclaratorWithId;
+  SYNT.Bind =
+        BindIdn (INCLUDING ExportAnyScope.ExportEnv, THIS.Sym)
+        <- TAIL._C_ExportGotKeys;
+  SYNT.Key = KeyOf (SYNT.Bind);
+  THIS._C_ExportGotKeys = SYNT.Key;
+END;
+
+
+CLASS SYMBOL ExportIdInDeclarator:
+        Bind:   Binding         SYNT,   
+        Key:    DefTableKey     SYNT,   
+        Sym:            int;                    
+
+CLASS SYMBOL ExportIdInDeclarator COMPUTE
+  SYNT.Bind = INCLUDING ExportDeclaratorWithId.Bind;
+  SYNT.Key = KeyOf (SYNT.Bind);
+END;
+

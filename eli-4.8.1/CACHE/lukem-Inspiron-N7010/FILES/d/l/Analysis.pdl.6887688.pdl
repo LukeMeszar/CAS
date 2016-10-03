@@ -1,0 +1,11 @@
+
+
+Defined:        int;    /* The symbol has been defined */
+IsListofLhs:    int;    /* The symbol is defined by a LISTOF rule */
+ComputedRoot:   int;    /* The symbol is the root of a computed tree */
+
+
+NoPtgGiven:     int;    /* The rule was not given an explicit template */
+NoPtg2Given:    int;    /* The rule was not given a CombFct template */
+NoPtg1Given:    int;    /* The rule was not given a SingleFct template */
+

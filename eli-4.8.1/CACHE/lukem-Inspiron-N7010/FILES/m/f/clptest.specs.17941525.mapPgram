@@ -1,0 +1,3 @@
+<$START_SYMBOL>: prog .
+prog: 'dummy' &'_incrnodestack();_nst[_nsp]=Mkaxiom(&curpos);' .
+

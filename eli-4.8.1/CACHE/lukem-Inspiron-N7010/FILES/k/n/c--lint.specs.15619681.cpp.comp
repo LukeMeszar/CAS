@@ -1,0 +1,1878 @@
+
+Computations for Rule rule_15 <
+>
+Computations for Rule rule_14 <
+>
+Computations for Rule rule_13 <
+>
+Computations for Rule rule_12 <
+>
+Computations for Rule rule_11 <
+>
+Computations for Rule rule_10 <
+>
+Computations for Rule rule_9 <
+>
+Computations for Rule rule_8 <
+Computation in RULE rule_8 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Compound[1].Env
+   ]
+   right: 
+   Call [
+      name: NewScope
+      params: <
+         INCLUDING (Program.Env, Compound.Env) propagate value 
+      >
+      coord: line 28, col 13
+   ]
+   coord: line 28, col 3
+]
+>
+Computations for Rule rule_7 <
+>
+Computations for Rule rule_6 <
+>
+Computations for Rule rule_5 <
+>
+Computations for Rule rule_4 <
+>
+Computations for Rule rule_3 <
+>
+Computations for Rule rule_2 <
+>
+Computations for Rule rule_1 <
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Program[1].Env
+   ]
+   right: 
+   Call [
+      name: NewEnv
+      params: <
+      >
+      coord: line 23, col 13
+   ]
+   coord: line 23, col 3
+]
+Computation in RULE rule_1 ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Program[1].GotAllDefs
+   ]
+   right: 
+   CONSTITUENTS (IdDef.Def) propagate void
+   coord: line 45, col 3
+]
+>
+Computations for Rule MonadicExp <
+Computation in RULE MonadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilIdResultTS1
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Unop[1].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[2].possible
+         ]
+      >
+      coord: line 322, col 13
+   ]
+   coord: line 321, col 11
+]
+Computation in RULE MonadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Unop[1].operator
+   ]
+   right: 
+   Call [
+      name: OilIdOpTS1
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Expression[0].yields
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Unop[1].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[2].possible
+         ]
+      >
+      coord: line 326, col 13
+   ]
+   coord: line 325, col 11
+]
+Computation in RULE MonadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[2].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Unop[1].operator
+         ]
+         IntValue: 1
+      >
+      coord: line 330, col 32
+   ]
+   coord: line 330, col 11
+]
+>
+Computations for Rule DyadicExp <
+Computation in RULE DyadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilIdResultTS2
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Binop[2].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[1].possible
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[3].possible
+         ]
+      >
+      coord: line 302, col 13
+   ]
+   coord: line 301, col 11
+]
+Computation in RULE DyadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Binop[2].operator
+         ]
+         IntValue: 1
+      >
+      coord: line 312, col 32
+   ]
+   coord: line 312, col 11
+]
+Computation in RULE DyadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[2].operator
+   ]
+   right: 
+   Call [
+      name: OilIdOpTS2
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Expression[0].yields
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Binop[2].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[1].possible
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[3].possible
+         ]
+      >
+      coord: line 307, col 13
+   ]
+   coord: line 306, col 11
+]
+Computation in RULE DyadicExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[3].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Binop[2].operator
+         ]
+         IntValue: 2
+      >
+      coord: line 313, col 32
+   ]
+   coord: line 313, col 11
+]
+>
+Computations for Rule IdnVal <
+Computation in RULE IdnVal ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: OilTypeToSet
+         params: <
+            Call [
+               name: GetType
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     IdUse[1].Key
+                  ]
+                  Name: OilTypeunknown_t
+               >
+               coord: line 291, col 18
+            ]
+         >
+         coord: line 291, col 5
+      ]
+      deps: < 
+         INCLUDING (Program.GotAllTypes) propagate void
+      >
+      coord: line 291, col 5
+   ]
+   coord: line 290, col 3
+]
+>
+Computations for Rule FloatVal <
+Computation in RULE FloatVal ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilTypeToSet
+      params: <
+         Name: OilTypefloat_t
+      >
+      coord: line 285, col 29
+   ]
+   coord: line 285, col 9
+]
+>
+Computations for Rule IntVal <
+Computation in RULE IntVal ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilTypeToSet
+      params: <
+         Name: OilTypeint_t
+      >
+      coord: line 281, col 29
+   ]
+   coord: line 281, col 9
+]
+>
+Computations for Rule FloatParDecl <
+Computation in RULE FloatParDecl ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ParameterDecl[0].GotType
+   ]
+   right: 
+   Call [
+      name: SetType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IdDef[1].Key
+         ]
+         Name: OilTypefloat_t
+         IntValue: 0
+      >
+      coord: line 274, col 25
+   ]
+   coord: line 274, col 3
+]
+>
+Computations for Rule IntParDecl <
+Computation in RULE IntParDecl ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ParameterDecl[0].GotType
+   ]
+   right: 
+   Call [
+      name: SetType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IdDef[1].Key
+         ]
+         Name: OilTypeint_t
+         IntValue: 0
+      >
+      coord: line 269, col 25
+   ]
+   coord: line 269, col 3
+]
+>
+Computations for Rule Initialize <
+Computation in RULE Initialize ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   INCLUDING (VariableDeclSeg.type) propagate value 
+   coord: line 264, col 9
+]
+>
+Computations for Rule VarDecl <
+Computation in RULE VarDecl ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      VariableDecl[0].GotType
+   ]
+   right: 
+   Call [
+      name: SetType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IdDef[1].Key
+         ]
+         INCLUDING (VariableDeclSeg.type) propagate value 
+         IntValue: 0
+      >
+      coord: line 260, col 5
+   ]
+   coord: line 259, col 3
+]
+>
+Computations for Rule FloatVar <
+Computation in RULE FloatVar ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      VariableDeclSeg[0].type
+   ]
+   right: 
+   Name: OilTypefloat_t
+   coord: line 254, col 9
+]
+>
+Computations for Rule IntVar <
+Computation in RULE IntVar ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      VariableDeclSeg[0].type
+   ]
+   right: 
+   Name: OilTypeint_t
+   coord: line 250, col 9
+]
+>
+Computations for Rule UMinusOp <
+Computation in RULE UMinusOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Unop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE UMinusOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Unop[0].indication
+   ]
+   right: 
+   Name: OilOpUMinus
+   coord: line 238, col 9
+]
+>
+Computations for Rule PercentOp <
+Computation in RULE PercentOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE PercentOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpPercent
+   coord: line 234, col 9
+]
+>
+Computations for Rule SlashOp <
+Computation in RULE SlashOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE SlashOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpSlash
+   coord: line 230, col 9
+]
+>
+Computations for Rule StarOp <
+Computation in RULE StarOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE StarOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpStar
+   coord: line 226, col 9
+]
+>
+Computations for Rule MinusOp <
+Computation in RULE MinusOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE MinusOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpMinus
+   coord: line 222, col 9
+]
+>
+Computations for Rule PlusOp <
+Computation in RULE PlusOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE PlusOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpPlus
+   coord: line 218, col 9
+]
+>
+Computations for Rule GreaterOp <
+Computation in RULE GreaterOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE GreaterOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpGreater
+   coord: line 213, col 9
+]
+>
+Computations for Rule LessOp <
+Computation in RULE LessOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE LessOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpLess
+   coord: line 209, col 9
+]
+>
+Computations for Rule EqualOp <
+Computation in RULE EqualOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Binop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE EqualOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Binop[0].indication
+   ]
+   right: 
+   Name: OilOpEquEqu
+   coord: line 205, col 9
+]
+>
+Computations for Rule ExclOp <
+Computation in RULE ExclOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     Notop[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE ExclOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Notop[0].indication
+   ]
+   right: 
+   Name: OilOpExclam
+   coord: line 200, col 9
+]
+>
+Computations for Rule NotExp <
+Computation in RULE NotExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilIdResultTS1
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Notop[1].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[2].possible
+         ]
+      >
+      coord: line 187, col 13
+   ]
+   coord: line 186, col 11
+]
+Computation in RULE NotExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Notop[1].operator
+   ]
+   right: 
+   Call [
+      name: OilIdOpTS1
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Expression[0].yields
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Notop[1].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[2].possible
+         ]
+      >
+      coord: line 191, col 13
+   ]
+   coord: line 190, col 11
+]
+Computation in RULE NotExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[2].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Notop[1].operator
+         ]
+         IntValue: 1
+      >
+      coord: line 195, col 32
+   ]
+   coord: line 195, col 11
+]
+>
+Computations for Rule AmpOp <
+Computation in RULE AmpOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     ShortCircuitOp[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE AmpOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ShortCircuitOp[0].indication
+   ]
+   right: 
+   Name: OilOpAmpAmp
+   coord: line 179, col 9
+]
+>
+Computations for Rule BarOp <
+Computation in RULE BarOp ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     ShortCircuitOp[0].operator
+                  ]
+               >
+               coord: line 335, col 10
+            ]
+         >
+         coord: line 335, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Invalid operator in this context
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 336, col 5
+      ]
+   >
+   coord: line 335, col 3
+]
+Computation in RULE BarOp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ShortCircuitOp[0].indication
+   ]
+   right: 
+   Name: OilOpBarBar
+   coord: line 175, col 9
+]
+>
+Computations for Rule ShortCircuitExp <
+Computation in RULE ShortCircuitExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilIdResultTS2
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ShortCircuitOp[2].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[1].possible
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[3].possible
+         ]
+      >
+      coord: line 159, col 13
+   ]
+   coord: line 158, col 11
+]
+Computation in RULE ShortCircuitExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ShortCircuitOp[2].operator
+         ]
+         IntValue: 1
+      >
+      coord: line 169, col 32
+   ]
+   coord: line 169, col 11
+]
+Computation in RULE ShortCircuitExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ShortCircuitOp[2].operator
+   ]
+   right: 
+   Call [
+      name: OilIdOpTS2
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Expression[0].yields
+         ]
+         AttrAccRule [ 
+            IsAttr
+            ShortCircuitOp[2].indication
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[1].possible
+         ]
+         AttrAccRule [ 
+            IsAttr
+            Expression[3].possible
+         ]
+      >
+      coord: line 164, col 13
+   ]
+   coord: line 163, col 11
+]
+Computation in RULE ShortCircuitExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[3].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            ShortCircuitOp[2].operator
+         ]
+         IntValue: 2
+      >
+      coord: line 170, col 32
+   ]
+   coord: line 170, col 11
+]
+>
+Computations for Rule CondExp <
+Computation in RULE CondExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilTypeToSet
+      params: <
+         Call [
+            name: OilBalance
+            params: <
+               AttrAccRule [ 
+                  IsAttr
+                  Expression[2].possible
+               ]
+               AttrAccRule [ 
+                  IsAttr
+                  Expression[3].possible
+               ]
+            >
+            coord: line 147, col 18
+         ]
+      >
+      coord: line 147, col 5
+   ]
+   coord: line 146, col 3
+]
+Computation in RULE CondExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Name: OilTypeint_t
+   coord: line 148, col 3
+]
+Computation in RULE CondExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[2].yields
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].yields
+   ]
+   coord: line 149, col 3
+]
+Computation in RULE CondExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[3].yields
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].yields
+   ]
+   coord: line 150, col 3
+]
+>
+Computations for Rule AssignExp <
+Computation in RULE AssignExp ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: operator
+   right: 
+   Call [
+      name: OilIdOpTS2
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Expression[0].yields
+         ]
+         Name: OilOpEqual
+         RuleAttrAcc: possible
+         AttrAccRule [ 
+            IsAttr
+            Expression[2].possible
+         ]
+      >
+      coord: line 130, col 5
+   ]
+   coord: line 129, col 3
+]
+Computation in RULE AssignExp ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: possible
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: OilTypeToSet
+         params: <
+            Call [
+               name: GetType
+               params: <
+                  AttrAccRule [ 
+                     IsAttr
+                     IdUse[1].Key
+                  ]
+                  Name: OilTypeunknown_t
+               >
+               coord: line 127, col 18
+            ]
+         >
+         coord: line 127, col 5
+      ]
+      deps: < 
+         INCLUDING (Program.GotAllTypes) propagate void
+      >
+      coord: line 127, col 5
+   ]
+   coord: line 126, col 3
+]
+Computation in RULE AssignExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[0].possible
+   ]
+   right: 
+   Call [
+      name: OilIdResultTS2
+      params: <
+         Name: OilOpEqual
+         RuleAttrAcc: possible
+         AttrAccRule [ 
+            IsAttr
+            Expression[2].possible
+         ]
+      >
+      coord: line 136, col 5
+   ]
+   coord: line 135, col 3
+]
+Computation in RULE AssignExp ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[2].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         RuleAttrAcc: operator
+         IntValue: 2
+      >
+      coord: line 140, col 24
+   ]
+   coord: line 140, col 3
+]
+>
+Computations for Rule ExprStmt <
+Computation in RULE ExprStmt ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Name: OilTypevoid_t
+   coord: line 119, col 9
+]
+>
+Computations for Rule FloatResult <
+Computation in RULE FloatResult ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ResultType[0].type
+   ]
+   right: 
+   Name: OilTypefloat_t
+   coord: line 115, col 9
+]
+>
+Computations for Rule IntResult <
+Computation in RULE IntResult ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      ResultType[0].type
+   ]
+   right: 
+   Name: OilTypeint_t
+   coord: line 111, col 9
+]
+>
+Computations for Rule Source <
+Computation in RULE Source CHAINSTART  ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      ResultType[1].AllEarlierRenamed
+   ]
+   right: 
+   StrValue: yes
+   coord: line 24, col 3
+]
+Computation in RULE Source ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Program[0].BreakLbl
+   ]
+   right: 
+   Name: NoKey
+   coord: line 77, col 24
+]
+Computation in RULE Source ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Program[0].ContinueLbl
+   ]
+   right: 
+   Name: NoKey
+   coord: line 88, col 24
+]
+Computation in RULE Source ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Program[0].GotAllTypes
+   ]
+   right: 
+   CONSTITUENTS (VariableDecl.GotType, ParameterDecl.GotType) propagate void
+   coord: line 244, col 3
+]
+Computation in RULE Source ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Program[0].type
+   ]
+   right: 
+   AttrAccRule [ 
+      IsAttr
+      ResultType[1].type
+   ]
+   coord: line 107, col 9
+]
+Computation in RULE Source ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Compound[3].Env
+   ]
+   right: 
+   Call [
+      name: NewScope
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            Program[0].Env
+         ]
+      >
+      coord: line 28, col 13
+   ]
+   coord: line 28, col 3
+]
+>
+Computations for Rule ReturnStmt <
+Computation in RULE ReturnStmt ATTR 
+Assign [
+   left: 
+   RuleAttrAcc: operator
+   right: 
+   Call [
+      name: OilIdOpTS1
+      params: <
+         INCLUDING (Program.type) propagate value 
+         Name: OilOpReturn
+         AttrAccRule [ 
+            IsAttr
+            Expression[1].possible
+         ]
+      >
+      coord: line 99, col 5
+   ]
+   coord: line 98, col 3
+]
+Computation in RULE ReturnStmt ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: NOT
+         params: <
+            Call [
+               name: OilIsValidOp
+               params: <
+                  RuleAttrAcc: operator
+               >
+               coord: line 100, col 10
+            ]
+         >
+         coord: line 100, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Returned value incompatible with program type
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 101, col 5
+      ]
+   >
+   coord: line 100, col 3
+]
+Computation in RULE ReturnStmt ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Call [
+      name: OilGetArgType
+      params: <
+         RuleAttrAcc: operator
+         IntValue: 1
+      >
+      coord: line 103, col 21
+   ]
+   coord: line 103, col 3
+]
+>
+Computations for Rule ContinueStmt <
+Computation in RULE ContinueStmt ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: EQ
+         params: <
+            INCLUDING (Program.ContinueLbl, WhileStmt.ContinueLbl) propagate value 
+            Name: NoKey
+         >
+         coord: line 92, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: continue must be inside an iteration
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 93, col 5
+      ]
+   >
+   coord: line 92, col 3
+]
+>
+Computations for Rule BreakStmt <
+Computation in RULE BreakStmt ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: EQ
+         params: <
+            INCLUDING (Program.BreakLbl, WhileStmt.BreakLbl) propagate value 
+            Name: NoKey
+         >
+         coord: line 81, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: break must be inside an iteration
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 82, col 5
+      ]
+   >
+   coord: line 81, col 3
+]
+>
+Computations for Rule Loop <
+Computation in RULE Loop ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      WhileStmt[0].BreakLbl
+   ]
+   right: 
+   Call [
+      name: NewKey
+      params: <
+      >
+      coord: line 76, col 40
+   ]
+   coord: line 76, col 26
+]
+Computation in RULE Loop ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      WhileStmt[0].ContinueLbl
+   ]
+   right: 
+   Call [
+      name: NewKey
+      params: <
+      >
+      coord: line 87, col 43
+   ]
+   coord: line 87, col 26
+]
+Computation in RULE Loop ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Name: OilTypeint_t
+   coord: line 71, col 9
+]
+>
+Computations for Rule TwoSided <
+Computation in RULE TwoSided ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Name: OilTypeint_t
+   coord: line 67, col 9
+]
+>
+Computations for Rule OneSided <
+Computation in RULE OneSided ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      Expression[1].yields
+   ]
+   right: 
+   Name: OilTypeint_t
+   coord: line 63, col 9
+]
+>
+Computations for Rule AppliedOccurrence <
+Computation in RULE AppliedOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      IdUse[0].AllEarlierRenamed
+   ]
+   right: 
+   Depend [
+      expr: 
+      AttrAccRule [ 
+         IsChain
+         IdUse[0].AllEarlierRenamed
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            IdUse[0].Key
+         ]
+      >
+      coord: line 40, col 26
+   ]
+   coord: line 40, col 3
+]
+Computation in RULE AppliedOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IdUse[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: KeyInEnv
+         params: <
+            INCLUDING (Program.Env, Compound.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               IdUse[0].Sym
+            ]
+         >
+         coord: line 39, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            IdUse[0].AllEarlierRenamed
+         ]
+      >
+      coord: line 39, col 5
+   ]
+   coord: line 38, col 3
+]
+Computation in RULE AppliedOccurrence ATTR 
+Call [
+   name: IF
+   params: <
+      Call [
+         name: EQ
+         params: <
+            AttrAccRule [ 
+               IsAttr
+               IdUse[0].Key
+            ]
+            Name: NoKey
+         >
+         coord: line 57, col 6
+      ]
+      Call [
+         name: message
+         params: <
+            Name: FATAL
+            StrValue: Undefined identifier
+            IntValue: 0
+            Name: COORDREF
+         >
+         coord: line 57, col 27
+      ]
+   >
+   coord: line 57, col 3
+]
+Computation in RULE AppliedOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IdUse[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 9, col 9
+]
+>
+Computations for Rule DefiningOccurrence <
+Computation in RULE DefiningOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsChain
+      IdDef[0].AllEarlierRenamed
+   ]
+   right: 
+   Depend [
+      expr: 
+      AttrAccRule [ 
+         IsChain
+         IdDef[0].AllEarlierRenamed
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsAttr
+            IdDef[0].Key
+         ]
+      >
+      coord: line 34, col 26
+   ]
+   coord: line 34, col 3
+]
+Computation in RULE DefiningOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IdDef[0].Key
+   ]
+   right: 
+   Depend [
+      expr: 
+      Call [
+         name: DefineIdn
+         params: <
+            INCLUDING (Program.Env, Compound.Env) propagate value 
+            AttrAccRule [ 
+               IsAttr
+               IdDef[0].Sym
+            ]
+         >
+         coord: line 33, col 5
+      ]
+      deps: < 
+         AttrAccRule [ 
+            IsChain
+            IdDef[0].AllEarlierRenamed
+         ]
+      >
+      coord: line 33, col 5
+   ]
+   coord: line 32, col 3
+]
+Computation in RULE DefiningOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IdDef[0].Def
+   ]
+   right: 
+   Call [
+      name: SetDef
+      params: <
+         AttrAccRule [ 
+            IsAttr
+            IdDef[0].Key
+         ]
+         IntValue: 1
+         IntValue: 2
+      >
+      coord: line 49, col 14
+   ]
+   coord: line 49, col 3
+]
+Computation in RULE DefiningOccurrence ATTR 
+Depend [
+   expr: 
+   Call [
+      name: IF
+      params: <
+         Call [
+            name: EQ
+            params: <
+               Call [
+                  name: GetDef
+                  params: <
+                     AttrAccRule [ 
+                        IsAttr
+                        IdDef[0].Key
+                     ]
+                     IntValue: 0
+                  >
+                  coord: line 50, col 9
+               ]
+               IntValue: 2
+            >
+            coord: line 50, col 6
+         ]
+         Call [
+            name: message
+            params: <
+               Name: FATAL
+               StrValue: Multiply-defined identifier
+               IntValue: 0
+               Name: COORDREF
+            >
+            coord: line 51, col 5
+         ]
+      >
+      coord: line 50, col 3
+   ]
+   deps: < 
+      INCLUDING (Program.GotAllDefs) propagate void
+   >
+   coord: line 50, col 3
+]
+Computation in RULE DefiningOccurrence ATTR 
+Assign [
+   left: 
+   AttrAccRule [ 
+      IsAttr
+      IdDef[0].Sym
+   ]
+   right: 
+   RuleTermAcc: Identifier[1]
+   coord: line 5, col 9
+]
+>

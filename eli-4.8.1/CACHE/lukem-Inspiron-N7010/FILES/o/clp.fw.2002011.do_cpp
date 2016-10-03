@@ -1,0 +1,28 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/FILES/p/clp.fw.1705560.mapBnf"
+doc: .
+doc: lit.
+join: .
+join: 'joinedto'.
+join: 'with'.
+literal: lit.
+literals: literal.
+literals: literals literal.
+name: ident.
+param: name 'input' doc.
+param: name 'positional' doc.
+param: name 'positionals' doc.
+param: 'open' 'error' 'format' lit.
+param: 'open' 'error' 'usage'.
+params: .
+params: params param ';'.
+param: 'terminator' lit.
+param: tparam.
+param: 'usage' lit.
+spec: params.
+tparam: name literals join type doc.
+type: 'boolean'.
+type: 'booleans'.
+type: 'int'.
+type: 'ints'.
+type: 'string'.
+type: 'strings'.

@@ -1,0 +1,12 @@
+glahead.c
+err.h
+csm.h
+source.h
+obstack.h
+scanops.h
+tabsize.h
+ScanProc.h
+gla.h
+xtables.h
+xcode.h
+eliproto.h

@@ -1,0 +1,7 @@
+RULE: Program LISTOF Assignment END;
+RULE: Assignment ::= Var '=' Exp END;
+RULE: Exp ::= Exp Opr Exp END;
+RULE: Exp ::= Var END;
+RULE: Exp ::= Num END;
+RULE: Opr ::= '+' END;
+RULE: Opr ::= '*' END;

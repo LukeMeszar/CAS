@@ -1,0 +1,23 @@
+
+CLASS SYMBOL ROOTCLASS INHERITS OperRangeFirstOcc END;
+
+CLASS SYMBOL OperRangeFirstOcc:
+                GotOperFirstOcc:        VOID;
+
+CLASS SYMBOL OperFirstOcc:
+                Key:                    DefTableKey,
+                IsOperFirstOcc: int;
+
+CHAIN _OperFirstOcc:    VOID;
+
+CLASS SYMBOL OperRangeFirstOcc COMPUTE
+  CHAINSTART HEAD._OperFirstOcc = "yes";
+  SYNT.GotOperFirstOcc = TAIL._OperFirstOcc;
+END;
+
+CLASS SYMBOL OperFirstOcc       COMPUTE
+  SYNT.IsOperFirstOcc =
+        SetGetOperFirstOcc (THIS.Key, 1, 0)
+        DEPENDS_ON THIS._OperFirstOcc;
+  THIS._OperFirstOcc = SYNT.IsOperFirstOcc;
+END;

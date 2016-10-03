@@ -1,0 +1,218 @@
+@=~
+@! $Id: Stack.fw,v 3.6 2002/02/20 15:17:49 uwe Exp $
+~!
+~! (C) Copyright 1997 University of Paderborn.
+~! 
+~! This file is part of the Eli Module Library.
+~! 
+~! The Eli Module Library is free software; you can redistribute it and/or
+~! modify it under the terms of the GNU Library General Public License as
+~! published by the Free Software Foundation; either version 2 of the
+~! License, or (at your option) any later version.
+~! 
+~! The Eli Module Library is distributed in the hope that it will be
+~! useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+~! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+~! Library General Public License for more details.
+~! 
+~! You should have received a copy of the GNU Library General Public
+~! License along with the Eli Module Library; see the file COPYING.LIB.
+~! If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+~! Suite 330, Boston, MA 02111-1307, USA. 
+~!
+
+~p typesetter = texinfo
+~p maximum_input_line_length = infinity
+
+This module implements a stack named MONTblStack,
+whose elements are of type NODEPTR.
+Values of this type can be pushed onto the stack and popped off of it in
+the usual way, and in addition each element of the stack can be indexed
+directly and its value obtained.
+All of the operations exported by this module are implemented as macros,
+using the facilities of the obstack module
+(@pxref{obstack, , Memory Object Management, lib, Library Reference
+Manual}).
+
+~A~<Synopsis~>
+
+@example
+#include "MONTblStack.h"
+
+int MONTblStackEmpty
+size_t MONTblStackSize
+void MONTblStackPush(NODEPTR v)
+NODEPTR MONTblStackPop
+NODEPTR MONTblStackTop
+
+NODEPTR MONTblStackArray(int i)
+NODEPTR MONTblStackElement(int i)
+
+void ForEachMONTblStackElementUp(NODEPTR *i)
+void ForEachMONTblStackElementDown(NODEPTR *i)
+@end example
+
+~B~<MONTblStackEmpty~>
+
+Yields the value 1 if the stack has no elements, 0 otherwise.
+
+This operation must appear in an expression context.
+
+~B~<MONTblStackSize~>
+
+Yields the number of elements in the stack.
+
+This operation must appear in an expression context.
+
+~B~<MONTblStackPush(v)~>
+
+The parameter @code{v} must be an expression that yields a value of type
+NODEPTR.
+That value becomes the new top element of the stack.
+The previous top element becomes the new second element, and so on.
+
+This operation must appear in a statement context.
+
+~B~<MONTblStackPop~>
+
+Remove the top element of the stack.
+The previous second element becomes the new top element, and so on.
+
+This operation must appear in an expression context, and yields the value
+(of type
+NODEPTR)
+removed.
+
+~B~<MONTblStackTop~>
+
+Obtain the contents (of type
+NODEPTR)
+of the top element of the stack without changing the state of the stack.
+
+This operation must appear in an expression context.
+
+~B~<MONTblStackElement(i)~>
+
+Obtain the contents (of type
+NODEPTR)
+of a specific element of the stack without changing the state of the stack.
+
+The argument gives the distance of the desired
+element from the top of the stack (0 for the newest element, 1 for the
+next newest, and so on).
+There is no check on the validity of the value of @code{i}.
+
+This operation must appear in an expression context.
+
+~B~<MONTblStackArray(i)~>
+
+Obtain the contents (of type
+NODEPTR)
+of a specific element of the stack without changing the state of the stack.
+For the purpose of this operation, the stack is considered to be an array.
+Element 0 is the oldest value on the stack, element 1 is the next oldest,
+and so on.
+There is no check on the validity of the value of @code{i}.
+
+This operation must appear in an expression context.
+
+~B~<ForEachMONTblStackElementUp(i)~>
+
+Cycle through the elements of the stack, from the oldest to the most
+recent.
+The parameter @code{i} must be declared as an lvalue of type
+NODEPTR* and will point, in turn, to each element of the stack.
+
+This operation must appear in a context where @code{for (i=...; i<...;i++)}
+is allowed.
+
+~B~<ForEachMONTblStackElementDown(i)~>
+
+Cycle through the elements of the stack, from the most recent to the
+oldest.
+The parameter @code{i} must be declared as an lvalue of type
+NODEPTR* and will point, in turn, to each element of the stack.
+
+This operation must appear in a context where @code{for (i=...; i>=...;i--)}
+is allowed.
+
+~A~<Module Implementation~>
+
+When this generic module is instantiated, it creates four files.
+
+~B
+
+This header file defines all of the exported operations of the module.
+It must be included in any C file that refers to those operations.
+
+~O~<MONTblStack.h~>~{
+#ifndef MONTblSTACK_H
+#define MONTblSTACK_H
+#include "obstack.h"
+
+extern Obstack MONTblStack;
+
+#define MONTblStackEmpty \
+  (obstack_next_free(&MONTblStack) == obstack_base(&MONTblStack))
+
+#define MONTblStackSize \
+  ((NODEPTR *)obstack_next_free(&MONTblStack)-(NODEPTR *)obstack_base(&MONTblStack))
+
+#define MONTblStackTop \
+  (((NODEPTR *)obstack_next_free(&MONTblStack))[-1])
+
+#define MONTblStackPush(v) {\
+  NODEPTR MONTblStackTemp; MONTblStackTemp = v; \
+  obstack_grow(&MONTblStack, &MONTblStackTemp, sizeof(NODEPTR)); \
+}
+
+#define MONTblStackPop \
+  (*((NODEPTR *)(obstack_next_free(&MONTblStack) -= sizeof(NODEPTR))))
+
+#define ForEachMONTblStackElementUp(i) \
+  for ((i) = (NODEPTR *)obstack_base(&MONTblStack); \
+       (i) < (NODEPTR *)obstack_next_free(&MONTblStack); \
+       (i)++)
+
+#define ForEachMONTblStackElementDown(i) \
+  for ((i) = ((NODEPTR *)obstack_next_free(&MONTblStack)) - 1; \
+       (i) >= (NODEPTR *)obstack_base(&MONTblStack); \
+       (i)--)
+
+#define MONTblStackArray(i) \
+  (((NODEPTR *)obstack_base(&MONTblStack))[i])
+
+#define MONTblStackElement(i) \
+  (((NODEPTR *)obstack_next_free(&MONTblStack))[-1-(i)])
+#endif
+~}
+
+~B
+
+This file allocates the space for the stack.
+It will be added to the set of components of the generated program
+automatically.
+
+~O~<MONTblStack.c~>~{
+#include "obstack.h"
+
+Obstack MONTblStack;
+~}
+
+~B
+
+This file initializes the stack module.
+It will be added to the set of module initializations automatically.
+
+~O~<MONTblStack.init~>~{
+  obstack_init(&MONTblStack);
+~}
+
+~B
+
+This file makes the interface of the stack module available to LIDO
+computations and to the main program.
+
+~O~<MONTblStack.head~>~{
+#include "MONTblStack.h"
+~}

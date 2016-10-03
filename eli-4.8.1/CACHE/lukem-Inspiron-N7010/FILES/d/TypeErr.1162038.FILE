@@ -1,0 +1,4 @@
+%Type.Record.err == . +cmd=cat (%trenn) \
+	(Type.demo/Record.err:label) \
+	(Type.demo/Record.err) \
+	((Type.demo/Record.err +cmd=(TypeTutorial.fw.exe) :stdout :warn) +cmd=sed -f (%filter_errors):stdout) :stdout

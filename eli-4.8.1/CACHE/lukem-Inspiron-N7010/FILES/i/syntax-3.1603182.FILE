@@ -1,0 +1,371 @@
+This is Info file syntax, produced by Makeinfo-1.43 from the input
+file /home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/parser/syntax.tnf.
+
+
+File: syntax,  Node: Linked,  Next: Shared,  Up: Integration
+
+The parser is a collection of routines
+--------------------------------------
+
+   When the parser is a collection of routines, whether in source or
+object form, the files containing those routines can be listed in a
+`.specs' file (*note Descriptive Mechanisms Known to Eli:
+(novice)Specifications.).  The name of that file then appears in the
+overall specification.  For example, suppose that all of the
+components of the foreign parser are listed in file `parser.specs' and
+the tree computations are defined by the file `treecomp.lido'.  Then
+the overall specification of the program might be `prog.specs' with
+the content:
+
+     parser.specs
+     treecomp.lido
+
+(Normally the tree computation would involve a number of different
+specifications rather than a single `.lido' file, so a more realistic
+example would use `treecomp.specs' or `treecomp.fw' to specify it.)
+
+   Eli normally generates a parser from every specification.  When a
+parser is supplied, this behavior must be suppressed by adding the
+parameter `+parser=none' to the derivation (*note How to Request
+Product Manufacture: (novice)Interactive.):
+
+     prog.specs +parser=none :exe
+
+   Eli also normally provides the following main program:
+
+     int main(int argc , char *argv[])
+     {
+     #ifdef MONITOR
+       _dap_init (argv[0]);
+       _dapto_enter ("driver");
+     #endif
+     
+       ParseCommandLine(argc, argv);
+     
+     #include "INIT.h"
+     
+       TREEBUILD();
+     
+     #ifdef STOPAFTERBADPARSE
+       if (ErrorCount[ERROR] == 0)
+     #endif
+       ATTREVAL();
+     
+     #include "FINL.h"
+     
+     #ifdef MONITOR
+       _dapto_leave ("driver");
+     #endif
+       return (ErrorCount[ERROR] > 0);
+     }
+
+One possible strategy is to write a wrapper procedure named `TREEBUILD'
+that carries out all of the setup operations needed for the foreign
+parser and then invokes it.  This can often be done by renaming a main
+program provided with the foreign parser and making a few changes to
+it.
+
+   If it is not feasible to modify the main program of the foreign
+parser, then production of Eli's main program must be suppressed by
+adding the parameter `+nomain' to the derivation:
+
+     prog.specs +nomain +parser=none :exe
+
+In this case, however, the interface module must:
+
+  1. include the initialization code file `INIT.h',
+
+  2. invoke `ATTREVAL' after the tree has been built,
+
+  3. and include the finalization code file `FINL.h'.
+
+   If the parser executes a function call `begin_parse();' before
+invoking any other functions of the interface, and a function call
+`end_parse();' when it has completed recognition of the input text,
+then the implementation of these two functions might be:
+
+     void begin_parse(void)
+     {
+     #ifdef MONITOR
+       _dap_init ("");  /* Argument is generally the program name */
+     #endif
+     
+     #include "INIT.h"
+     }
+     
+     void end_parse(void)
+     {  _nst[_nsp]=MkRoot(&_pst[_nsp],_nst[_nsp]);
+       ATTREVAL();
+     
+     #include "FINL.h"
+     }
+
+Replace "Root" by the name of the rule that creates the root node of
+the tree.  If the root node is created by another function, omit the
+`Mk'-function call.  `ATTREVAL' assumes that the root node is at the
+top of the stack; if this pre-condition is not satisfied then the
+computation will silently do nothing.
+
+
+File: syntax,  Node: Shared,  Prev: Linked,  Up: Integration
+
+The parser is an executable file
+--------------------------------
+
+   When the parser is an executable file that expects to load a shared
+library, that library must be built from the specifications of the tree
+construction and computation (*note so: (pp)so.).  The library must
+not contain a parser or a main program:
+
+     treecomp.specs +nomain +parser=none :so
+
+Here we assume that all of the components of the LIDO specification,
+tree construction interface, and supporting modules are listed in
+`treecomp.specs'.
+
+   The simplest approach to integrating the foreign parser with the
+shared library is to copy it to a file with the name that the foreign
+parser expects.  For example, if the parser program expects to load a
+shared library named `ParserActions.so', then use the following
+derivation to make the library available under that name:
+
+     treecomp.specs +nomain +parser=none :so > libParserActions.so
+
+(See your system documentation for the placement and naming of shared
+library files.)
+
+
+File: syntax,  Node: Grammars,  Next: Index,  Prev: Foreign,  Up: Top
+
+Grammars for the Specification Files
+************************************
+
+     TYPECONFILE ::= PRODUCTION*.
+     
+     PRODUCTION ::= IDENTIFIER DELIM ALTERNATIVES `.'.
+     
+     DELIM ::= `:' / `::='.
+     
+     ALTERNATIVES ::=
+        ALTERNATIVES `/' ALTERNATIVE /
+        ALTERNATIVES `//' SEPARATOR /
+        ALTERNATIVE .
+     
+     ALTERNATIVE ::= ELEMENT*.
+     SEPARATOR ::= SYMBOL.
+     
+     ELEMENT ::=
+        SYMBOL /
+        CONNECTION /
+        MODIFICATION /
+        `(' ALTERNATIVES `)' /
+        `[' ALTERNATIVES `]' /
+        ELEMENT `*' /
+        ELEMENT `+' .
+     
+     CONNECTION ::= `&' SYMBOL.
+     MODIFICATION ::= `@' SYMBOL / `$' SYMBOL.
+     
+     SYMBOL ::= IDENTIFIER / LITERAL.
+     
+     
+     
+     
+     TYPEMAPFILE ::=
+       (`MAPSYM' SYMBOLMAPPING+ / `MAPRULE' RULEMAPPING+ / `MAPCHAINS')+ .
+     
+     SYMBOLMAPPING: IDENTIFIER `::=' MEMBERS `.' .
+     MEMBERS: IDENTIFIER+ .
+     
+     RULEMAPPING: RULE REWRITE RULENAME `.' .
+     RULE: IDENTIFIER DELIMITER RHS .
+     DELIMITER: `:' / `::=' .
+     RHS: ELEMENT* .
+     ELEMENT: IDENTIFIER / TEXT .
+     REWRITE: `<' REWRITERHS `>' .
+     REWRITERHS: (POSITION / TEXT)+ .
+     POSITION: `$' INTEGER .
+     RULENAME: / `:' IDENTIFIER .
+     
+     
+     
+     
+     TYPEPERRFILE ::= ERRORSPECS.
+     
+     ERRORSPECS ::= ERRORSPECS SEPARATORSPECS /
+                          ERRORSPECS BRACKETSPECS /
+                          ERRORSPECS SKIPSPECS / .
+     
+     SEPARATORSPECS ::= `$SEPA' SYMBOLS .
+     
+     BRACKETSPECS ::= `$BRACKET' SYMBOLS .
+     
+     SKIPSPECS ::= `$SKIP' SYMBOLS .
+     
+     SYMBOLS ::= SYMBOLS SYMBOL .
+     
+     SYMBOL ::= IDENTIFIER / LITERAL .
+
+
+File: syntax,  Node: Index,  Prev: Grammars,  Up: Top
+
+Index
+*****
+
+* Menu:
+
+* $ modification:                       Modifiers.
+* & marker for actions:                 Actions.
+* @ modification:                       Modifiers.
+* COL:                                  Start.
+* COORDREF:                             Start.
+* EOF:                                  At.
+* LINE:                                 Start.
+* .con file format:                     Grammars.
+* .con file, example:                   Con.
+* .con file, purpose:                   Notation.
+* .map file, example:                   Sym.
+* .map file, format:                    Grammars.
+* .perr file, format:                   Grammars.
+* con file format:                      Grammars.
+* con file, example:                    Con.
+* con file, purpose:                    Notation.
+* map file, example:                    Sym.
+* map file, format:                     Grammars.
+* perr file, format:                    Grammars.
+* BNF:                                  Notation.
+* Backus Naur Form:                     Notation.
+* C code:                               Actions.
+* Idem and literal chain rules:         Completion.
+* MAPCHAINS keyword:                    Mapping Chain Rules.
+* MAPCHAINS keyword:                    Completion.
+* MAPRULE keyword:                      Rule Mapping.
+* MAPSYM keyword:                       Symbol Mapping.
+* Maptool:                              Top.
+* Reparatur:                            Error Recovery.
+* Rule Mapping:                         Rule Mapping.
+* STOPAFTERBADPARSE:                    Error Recovery.
+* Symbol Mapping:                       Symbol Mapping.
+* abstract data type:                   Actions.
+* abstracting from literals:            Abstraction.
+* accepting a basic symbol:             Parsing.
+* actions during parsing:               Actions.
+* alternation:                          Slash.
+* ambiguity:                            Conflicts.
+* ambiguity resolved by grammar changes: Changes.
+* ambiguity resolved by modifications:  Modifiers.
+* arbitrary actions during parsing:     Actions.
+* association rules:                    Association.
+* axiom:                                Phrases.
+* axiom, recognition of:                Parsing.
+* basic symbol:                         Top.
+* basic symbol, how parser accepts:     Parsing.
+* chain rules:                          Chain Rules.
+* coercions:                            Chain Rules.
+* conflict:                             Conflicts.
+* conflict due to user-defined actions: Actions.
+* conflict solved by $ modification:    Dollar.
+* conflict solved by @ modification:    At.
+* context-free grammar:                 Phrases.
+* dangling else problem:                Shift-reduce.
+* dangling else solved by $ modification: Dollar.
+* dangling else solved by grammar change: Changes.
+* declarations, scope issues:           Scope.
+* derivation:                           Phrases.
+* dfltrepar.c:                          Error Recovery.
+* empty input text, representation of:  At.
+* error reported in a modification:     Modifiers.
+* error reports during parsing:         Phrases.
+* exact right context:                  Modifiers.
+* example of a reduce-reduce conflict:  Reduce-reduce.
+* example of a shift-reduce conflict:   Shift-reduce.
+* example of a type-con file:           Con.
+* example of a type-map file:           Sym.
+* example of user-defined actions:      Actions.
+* file formats:                         Grammars.
+* finite-state machine:                 Parsing.
+* grammar:                              Phrases.
+* grammar changes to resolve ambiguity: Changes.
+* halt of the parser:                   Parsing.
+* identifier declarations, scope issues: Scope.
+* identifier, form of:                  Nonterminals.
+* left-associative:                     Association.
+* lexical analyzer:                     Terminals.
+* list separators:                      Separators.
+* literal chain rules:                  Chain Rules.
+* literal chain rules and Idem:         Completion.
+* literal chain rules, preserving:      Mapping Chain Rules.
+* literal chain rules, preserving:      Completion.
+* literal, form of:                     Terminals.
+* literals, abstraction from:           Abstraction.
+* meaning of a construct:               Meaning.
+* modification specification:           Modifiers.
+* modifications to resolve ambiguity:   Modifiers.
+* move by the parser:                   Parsing.
+* move determined by input symbol:      Parsing.
+* node:                                 Top.
+* non-associative:                      Association.
+* nonterminal symbols in a grammar:     Nonterminals.
+* operator:                             Expression.
+* operator association:                 Association.
+* operator precedence:                  Precedence.
+* overload resolution:                  Expression.
+* parser actions:                       Actions.
+* parser construction:                  Modifiers.
+* parser error reports:                 Phrases.
+* parser move determined by input symbol: Parsing.
+* parser operation:                     Parsing.
+* parsing routine:                      Phrases.
+* phrase:                               Top.
+* phrase structure:                     Phrases.
+* precedence rules:                     Precedence.
+* preserving literal chain rules:       Mapping Chain Rules.
+* preserving literal chain rules:       Completion.
+* procedure declaration, scope issues:  Scope.
+* production:                           Phrases.
+* progress in recognizing a phrase:     Parsing.
+* reduce move by the parser:            Parsing.
+* reduce-reduce conflict:               Parsing.
+* reduce-reduce solved by @ modification: At.
+* repairing syntactic errors:           Phrases.
+* reported error in a modification:     Modifiers.
+* reports of syntactic errors:          Phrases.
+* resolving ambiguity by grammar changes: Changes.
+* resolving ambiguity by modifications: Modifiers.
+* resolving ambiguity, general methods: Conflicts.
+* resolving overloading:                Expression.
+* restart point:                        Error Recovery.
+* reuse of computations:                Abstraction.
+* right-associative:                    Association.
+* root:                                 Top.
+* rules, association:                   Association.
+* rules, precedence:                    Precedence.
+* scope:                                Scope.
+* semantic brackets:                    Brackets.
+* semantic delimiters:                  Brackets.
+* semantic disambiguation:              Rule Matching.
+* sentence:                             Top.
+* sentence symbol:                      Phrases.
+* sequence:                             Phrases.
+* shift move by the parser:             Parsing.
+* shift-reduce conflict:                Parsing.
+* shift-reduce solved by $ modification: Dollar.
+* stack of parser states:               Parsing.
+* state of the parser:                  Parsing.
+* stop after detecting syntax errors:   Error Recovery.
+* syntactic error reports during parsing: Phrases.
+* syntax errors, stop after detecting:  Error Recovery.
+* terminal EOF to terminate text:       At.
+* terminal symbols in a grammar:        Terminals.
+* terminal, use in a modification:      Modifiers.
+* tree computations:                    Mapping.
+* trivial chain rules:                  Chain Rules.
+* type-con file format:                 Grammars.
+* type-con file, example:               Con.
+* type-con file, purpose:               Notation.
+* type-map file, example:               Sym.
+* type-map file, format:                Grammars.
+* type-perr file, format:               Grammars.
+* user-defined actions during parsing:  Actions.
+
+

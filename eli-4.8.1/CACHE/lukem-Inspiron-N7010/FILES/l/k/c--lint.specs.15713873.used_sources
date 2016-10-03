@@ -1,0 +1,49 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/eli/driver.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/dapto/dapto.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/dapto/dapto.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/dapto_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clpintf.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/csm.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/csm.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/csm_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/obsave.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/deftbl.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Input/err.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Input/source.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Input/err.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/err_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :pdl*pdlGen/pdl_gen.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :eli*allspecs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :oil*oil_gen/OilDecls.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/List.gnrc +instance=VoidPtr +referto=VoidPtr :lib*instGen/VoidPtrList.fw :fw*fwGen/VoidPtrList.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clplib.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/treecon.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/nodecode.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/Stack.gnrc +instance=MONTbl +referto=NODEPTR :lib*instGen/MONTblStack.fw :fw*fwGen/MONTblStack.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/attr_mon.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/attr_mon_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/eli/treebuild.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/clp_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :cola*colaBe/parser.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor :eli*level_2_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +parser=cola :maptool*mapBe/treestack.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/glahead.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/auxNUL.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/auxEOF.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/dflteot.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/tabsize.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/idn.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/Cint.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/Ccomment.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/str.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/gla.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/gla_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/parser/mon_cprods.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :cola*colaBe/cola.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/cola_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/parser/dfltrepar.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/liga/Frames/attrmain.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/liga.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/liga_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/mon_aprods.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/visitprocs.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs +monitor +parser=cola :eli*level_4_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) +monitor :liga*ligaBe/visitmap.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/envmod.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Name/envmod.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/envmod_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/BitSet.fw :fw*fwGen/BitSet.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oiladt2c.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oiladt2a.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/pdl.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/pdl_dapto.c +monitor +parser=cola
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oil.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/cminus/c--lint.specs :phi*etaIncl) :dapto*dapGen/oil_dapto.c +monitor +parser=cola

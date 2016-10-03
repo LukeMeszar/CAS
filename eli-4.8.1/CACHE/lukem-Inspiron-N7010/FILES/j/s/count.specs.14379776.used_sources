@@ -1,0 +1,27 @@
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/eli/driver.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/dapto/dapto.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/dapto/dapto.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :dapto*dapGen/dapto_dapto.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clpintf.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/csm.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/csm.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :dapto*dapGen/csm_dapto.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/obsave.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/deftbl.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Input/err.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Input/source.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Input/err.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :dapto*dapGen/err_dapto.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs +monitor :eli*level_1_specs +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :pdl*pdlGen/pdl_gen.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Adt/List.gnrc +instance=VoidPtr +referto=VoidPtr :lib*instGen/VoidPtrList.fw :fw*fwGen/VoidPtrList.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/lib/clplib.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/eli/treebuild.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/clp/clp.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :dapto*dapGen/clp_dapto.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/parser/dfltparse.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/glahead.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/auxNUL.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/auxEOF.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/Scan/dflteot.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/tabsize.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/gla/gla.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :dapto*dapGen/gla_dapto.c +monitor
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/liga/Frames/dfltattr.c
+/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/pdl/pdl.dapto +incl=(/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/tests/wordcount/count.specs :phi*etaIncl) :dapto*dapGen/pdl_dapto.c +monitor

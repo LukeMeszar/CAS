@@ -1,0 +1,175 @@
+USED TREE SYMBOLS:
+   spec (12, 5)
+      direct INHERITS ROOTCLASS
+         all INHERITS ROOTCLASS
+      ATTRIBUTES
+      maxstrlen (234, 54): SYNT, int
+   
+   params (12, 14)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   literal (18, 35)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      usage (237, 47): SYNT, PTGNode
+      len (238, 10): SYNT, int
+   
+   doc (19, 30)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      id (243, 34): SYNT, int
+   
+   param (37, 8)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      maxstrlen (207, 58): SYNT, int
+   
+   lit (43, 28)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   tparam (52, 5)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      usage (235, 56): SYNT, PTGNode
+      desc (238, 68): SYNT, cstr
+      spaced (227, 47): SYNT, int
+      joinedstr (68, 39): SYNT, cstr
+      joined (232, 47): SYNT, int
+      opt (226, 65): SYNT, PTGNode
+      nameid (66, 36): SYNT, int
+      docid (67, 35): SYNT, int
+   
+   name (52, 16)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      id (241, 35): SYNT, int
+   
+   literals (52, 21)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+   join (52, 30)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      spaced (157, 10): SYNT, int
+      joinedstr (158, 10): SYNT, cstr
+      joined (156, 10): SYNT, int
+   
+   type (52, 35)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+      joinedstr (132, 48): SYNT, cstr
+      docid (67, 10): SYNT, int
+      nameid (133, 49): SYNT, int
+      rep (134, 10): SYNT, int
+      desc (129, 10): SYNT, cstr
+      opt (132, 10): SYNT, PTGNode
+   
+   ident (241, 16)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+USED CLASS SYMBOLS:
+   ROOTCLASS (0, 0)
+      direct INHERITS 
+         all INHERITS 
+      ATTRIBUTES
+   
+RULES:
+   rule_1 (243, 1)
+      ATTRIBUTES
+   
+   rule_2 (242, 1)
+      ATTRIBUTES
+   
+   rule_3 (241, 1)
+      ATTRIBUTES
+   
+   rule_4 (216, 1)
+      ATTRIBUTES
+   
+   rule_5 (210, 1)
+      ATTRIBUTES
+   
+   rule_6 (198, 1)
+      ATTRIBUTES
+   
+   rule_7 (183, 1)
+      ATTRIBUTES
+      plain$3 (193, 5): SYNT, VOID
+   
+   rule_8 (172, 1)
+      ATTRIBUTES
+   
+   rule_9 (161, 1)
+      ATTRIBUTES
+   
+   rule_10 (153, 1)
+      ATTRIBUTES
+   
+   rule_11 (145, 1)
+      ATTRIBUTES
+   
+   rule_12 (137, 1)
+      ATTRIBUTES
+   
+   rule_13 (126, 1)
+      ATTRIBUTES
+   
+   rule_14 (115, 1)
+      ATTRIBUTES
+   
+   rule_15 (104, 1)
+      ATTRIBUTES
+   
+   rule_16 (93, 1)
+      ATTRIBUTES
+   
+   rule_17 (82, 1)
+      ATTRIBUTES
+   
+   rule_18 (72, 1)
+      ATTRIBUTES
+   
+   rule_19 (51, 1)
+      ATTRIBUTES
+   
+   rule_20 (42, 1)
+      ATTRIBUTES
+   
+   rule_21 (11, 1)
+      ATTRIBUTES
+      plain$2 (34, 5): SYNT, VOID
+      plain$1 (30, 5): SYNT, VOID
+   
+   rule_27 (265, 6)
+      ATTRIBUTES
+   
+   rule_26 (261, 6)
+      ATTRIBUTES
+   
+   rule_25 (257, 6)
+      ATTRIBUTES
+   
+   rule_24 (253, 6)
+      ATTRIBUTES
+   
+   rule_23 (249, 6)
+      ATTRIBUTES
+   
+   rule_22 (245, 6)
+      ATTRIBUTES
+   

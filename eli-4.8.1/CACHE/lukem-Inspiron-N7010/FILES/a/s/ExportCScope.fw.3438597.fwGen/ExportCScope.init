@@ -1,0 +1,2 @@
+
+if (ExportRootEnv == NoEnv) ExportRootEnv = NewEnv ();

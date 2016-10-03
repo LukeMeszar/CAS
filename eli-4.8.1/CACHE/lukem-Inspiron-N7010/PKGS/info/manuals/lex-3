@@ -1,0 +1,185 @@
+This is Info file lex, produced by Makeinfo-1.43 from the input file
+/home/lukem/Dropbox/CAS/eli-4.8.1/Eli/pkg/gla/lex.tnf.
+
+
+File: lex,  Node: Index,  Prev: Generated Module,  Up: Top
+
+Index
+*****
+
+* Menu:
+
+* *:                                    Star.
+* +:                                    Plus.
+* -:                                    Classes.
+* .:                                    Classes.
+* ?:                                    Query.
+* { }:                                  Count.
+* ADA_COMMENT:                          Definitions of Descriptions.
+* ADA_COMMENT:                          Available Descriptions.
+* ADA_COMMENT:                          Canned Descriptions.
+* ADA_IDENTIFIER:                       Definitions of Descriptions.
+* ADA_IDENTIFIER:                       Available Descriptions.
+* AWK_COMMENT:                          Definitions of Descriptions.
+* AWK_COMMENT:                          Available Descriptions.
+* C_CHAR_CONSTANT:                      Definitions of Descriptions.
+* C_CHAR_CONSTANT:                      Available Descriptions.
+* C_COMMENT:                            Definitions of Descriptions.
+* C_COMMENT:                            Available Descriptions.
+* C_FLOAT:                              Definitions of Descriptions.
+* C_FLOAT:                              Available Descriptions.
+* C_IDENTIFIER:                         Definitions of Descriptions.
+* C_IDENTIFIER:                         Available Descriptions.
+* C_IDENTIFIER:                         Canned Descriptions.
+* C_INTEGER:                            Definitions of Descriptions.
+* C_INTEGER:                            Available Descriptions.
+* C_INT_DENOTATION:                     Definitions of Descriptions.
+* C_INT_DENOTATION:                     Available Descriptions.
+* C_STRING_LIT:                         Definitions of Descriptions.
+* C_STRING_LIT:                         Available Descriptions.
+* C_STRING_LIT:                         Canned Descriptions.
+* Ctext:                                Available scanners.
+* Errors, lexical:                      Illegal.
+* Lexical errors:                       Illegal.
+* LineNum:                              Coordinates.
+* MODULA2_CHARINT:                      Definitions of Descriptions.
+* MODULA2_CHARINT:                      Available Descriptions.
+* MODULA2_COMMENT:                      Definitions of Descriptions.
+* MODULA2_COMMENT:                      Available Descriptions.
+* MODULA2_INTEGER:                      Definitions of Descriptions.
+* MODULA2_INTEGER:                      Available Descriptions.
+* MODULA2_LITERALDQ:                    Definitions of Descriptions.
+* MODULA2_LITERALDQ:                    Available Descriptions.
+* MODULA2_LITERALSQ:                    Definitions of Descriptions.
+* MODULA2_LITERALSQ:                    Available Descriptions.
+* MODULA3_COMMENT:                      Definitions of Descriptions.
+* MODULA3_COMMENT:                      Available Descriptions.
+* MODULA_INTEGER:                       Definitions of Descriptions.
+* MONITOR:                              Return.
+* NEW_LINE:                             Definitions of Descriptions.
+* NEW_LINE:                             Available Descriptions.
+* NORETURN:                             Generated Module.
+* NORETURN:                             Building Processors.
+* PASCAL_COMMENT:                       Definitions of Descriptions.
+* PASCAL_COMMENT:                       Available Descriptions.
+* PASCAL_IDENTIFIER:                    Definitions of Descriptions.
+* PASCAL_IDENTIFIER:                    Available Descriptions.
+* PASCAL_INTEGER:                       Definitions of Descriptions.
+* PASCAL_INTEGER:                       Available Descriptions.
+* PASCAL_INTEGER:                       Canned Descriptions.
+* PASCAL_REAL:                          Definitions of Descriptions.
+* PASCAL_REAL:                          Available Descriptions.
+* PASCAL_STRING:                        Definitions of Descriptions.
+* PASCAL_STRING:                        Available Descriptions.
+* PASCAL_STRING:                        Canned Descriptions.
+* RETURN:                               Return.
+* Reporting a lexical error:            Illegal.
+* ResetScan:                            Generated Module.
+* SCANPTR:                              Reset.
+* SETCOORD:                             Position.
+* SETENDCOORD:                          Position.
+* SPACES:                               Skipping.
+* SPACES:                               Available Descriptions.
+* StartLine:                            Generated Module.
+* StartLine:                            Coordinates.
+* TAB:                                  Available Descriptions.
+* TokenEnd:                             Generated Module.
+* TokenStart:                           Generated Module.
+* WRAPUPMONITOR:                        Continue.
+* WRAPUP:                               Continue.
+* [ ]:                                  Classes.
+* \040:                                 Skipping.
+* \040:                                 Quoting.
+* \b:                                   Quoting.
+* \t:                                   Quoting.
+* ^:                                    Classes.
+* auxCChar:                             Definitions of Descriptions.
+* auxCChar:                             Available scanners.
+* auxCComment:                          Definitions of Descriptions.
+* auxCComment:                          Available scanners.
+* auxCString:                           Definitions of Descriptions.
+* auxCString:                           Available scanners.
+* auxEOF:                               Available scanners.
+* auxEOL:                               Definitions of Descriptions.
+* auxEOL:                               Available scanners.
+* auxEOL:                               Auxiliary Scanners.
+* auxM2String:                          Available scanners.
+* auxM3Comment:                         Definitions of Descriptions.
+* auxM3Comment:                         Available scanners.
+* auxNUL:                               Available scanners.
+* auxNewLine:                           Available scanners.
+* auxNoEOL:                             Available scanners.
+* auxPascalComment:                     Definitions of Descriptions.
+* auxPascalComment:                     Available scanners.
+* auxPascalString:                      Definitions of Descriptions.
+* auxPascalString:                      Available scanners.
+* auxTab:                               Definitions of Descriptions.
+* auxTab:                               Available scanners.
+* c_mkchar:                             Definitions of Descriptions.
+* c_mkchar:                             Available Processors.
+* c_mkint:                              Definitions of Descriptions.
+* c_mkint:                              Available Processors.
+* c_mkstr:                              Available Processors.
+* coordAdjust:                          Available scanners.
+* glalex:                               Generated Module.
+* mkidn:                                Folding.
+* mkidn:                                Definitions of Descriptions.
+* mkidn:                                Canned Descriptions.
+* mkidn:                                Available Processors.
+* mkint:                                Available Processors.
+* mkint:                                Token Processors.
+* mkstr:                                Definitions of Descriptions.
+* mkstr:                                Definitions of Descriptions.
+* mkstr:                                Definitions of Descriptions.
+* mkstr:                                Definitions of Descriptions.
+* mkstr:                                Available Processors.
+* modula_mkint:                         Definitions of Descriptions.
+* modula_mkint:                         Available Processors.
+* |:                                    Bar.
+* C_IDENTIFIER_ISO:                     Available Descriptions.
+* EndOfText:                            Available Processors.
+* Specifications:                       Specifications.
+* \040+:                                Definitions of Descriptions.
+* alternation:                          Bar.
+* auxM2StringDQ:                        Definitions of Descriptions.
+* auxM2StringSQ:                        Definitions of Descriptions.
+* auxiliary scanner:                    Auxiliary Scanners.
+* backslash:                            Quoting.
+* built-in symbols:                     Canned Descriptions.
+* canned symbols:                       Canned Descriptions.
+* classes:                              Classes.
+* complement:                           Classes.
+* concatenation:                        Several.
+* cumulative column:                    Position.
+* dash:                                 Classes.
+* default behavior for white space:     White Space.
+* dot:                                  Classes.
+* double quote:                         Quoting.
+* encodings of non-literals:            Building Processors.
+* grammar:                              Specifications.
+* lexerr:                               Available Processors.
+* longest match:                        Ambiguity.
+* minus:                                Classes.
+* newline defaults:                     White Space.
+* one or more:                          Plus.
+* operator character:                   Quoting.
+* operator character:                   Quoting.
+* optional:                             Query.
+* ordering of specifications:           Ambiguity.
+* period:                               Classes.
+* predefined symbols:                   Canned Descriptions.
+* quote:                                Quoting.
+* range:                                Classes.
+* regular expression:                   Regular Expressions.
+* repetition:                           Plus.
+* scanner:                              Auxiliary Scanners.
+* space defaults:                       White Space.
+* specification ordering:               Ambiguity.
+* tab defaults:                         White Space.
+* termcode.h:                           Building Processors.
+* text character:                       Quoting.
+* white space defaults:                 White Space.
+* zero or more:                         Star.
+* zero or one:                          Query.
+
+

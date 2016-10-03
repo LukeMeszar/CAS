@@ -1,0 +1,9 @@
+# 1 "/home/lukem/Dropbox/CAS/eli-4.8.1/CACHE/lukem-Inspiron-N7010/PKGS/oil/oil.pdl"
+
+
+
+"oiladt2.h"
+
+OilType: tOilType;
+OilOp: tOilOp;
+OilClass: tOilClass;

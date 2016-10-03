@@ -1,0 +1,187 @@
+=============================
+Protocol of liga phase expand
+=============================
+
+Options for expand:
+-------------------
+	<none>
+
+INCLUDING Expansion Summary
+============================
+   Number of different INCLUDINGs:   9
+   Number of new attributes:         18
+   Number of transport computations: 31
+
+CHAIN Expansion Summary
+========================
+   Number of expanded CHAINs:  10
+   Number of new attributes:   66
+   Number of new computations: 129
+
+CONSTITUENT(S) Expansion Summary
+=================================
+   Number of expanded CONSTITUENT(S)s:  1
+   Number of new attributes:            4
+   Number of new computations:          13
+
+
+============================
+Protocol of liga phase order
+============================
+
+
+
+
+Root symbol is spec
+
+OPTIONS OF THE AG:
+==================
+
+PARTITION-STRATEGY:   AS LATE AS POSSIBLE
+
+TREE_BOTTOM_UP:       FALSE
+
+TREE_COMPLETE:        FALSE
+
+AUTOMATICALLY:         TRUE
+
+
+
+CHARACTERISTICS OF THE AG:
+==========================
+
+THE AG IS  *** ARRANGED ORDERED ***
+
+MAX. NUMBER OF SYMBOL VISIT:           2
+
+MAX. NUMBER OF SYMBOLS IN RULE:        6
+
+MAX. NUMBER OF ATTRIBUTES IN RULE:    67
+
+MAX. NUMBER OF ATTRIBUTES IN SYMBOL:  23
+
+NUMBER OF DEFINED SYMBOLS:            10
+
+NUMBER OF CONTEXT-FREE RULES:         27
+
+NUMBER OF ALL ATTRIBUTES:            111
+
+============================
+Protocol of liga phase optim
+============================
+
+
+
+	Options for OPTIM:
+	--> The following Attributes should be in one Variable-Group
+		--> params.decls_pre
+		--> params.decls_post
+		--> type.decls_pre
+		--> type.decls_post
+		--> tparam.decls_pre
+		--> tparam.decls_post
+		--> param.decls_pre
+		--> param.decls_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.opts_pre
+		--> params.opts_post
+		--> literal.opts_pre
+		--> literal.opts_post
+		--> literals.opts_pre
+		--> literals.opts_post
+		--> tparam.opts_pre
+		--> tparam.opts_post
+		--> param.opts_pre
+		--> param.opts_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.params_pre
+		--> params.params_post
+		--> param.params_pre
+		--> param.params_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.externs_pre
+		--> params.externs_post
+		--> type.externs_pre
+		--> type.externs_post
+		--> tparam.externs_pre
+		--> tparam.externs_post
+		--> param.externs_pre
+		--> param.externs_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.ousages_pre
+		--> params.ousages_post
+		--> literal.ousages_pre
+		--> literal.ousages_post
+		--> literals.ousages_pre
+		--> literals.ousages_post
+		--> tparam.ousages_pre
+		--> tparam.ousages_post
+		--> param.ousages_pre
+		--> param.ousages_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.pusages_pre
+		--> params.pusages_post
+		--> param.pusages_pre
+		--> param.pusages_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.errmsg_pre
+		--> params.errmsg_post
+		--> param.errmsg_pre
+		--> param.errmsg_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.numopts_pre
+		--> params.numopts_post
+		--> literal.numopts_pre
+		--> literal.numopts_post
+		--> literals.numopts_pre
+		--> literals.numopts_post
+		--> tparam.numopts_pre
+		--> tparam.numopts_post
+		--> param.numopts_pre
+		--> param.numopts_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.usageerrmsg_pre
+		--> params.usageerrmsg_post
+		--> param.usageerrmsg_pre
+		--> param.usageerrmsg_post
+	--> The following Attributes should be in one Variable-Group
+		--> params.inputs_pre
+		--> params.inputs_post
+		--> param.inputs_pre
+		--> param.inputs_post
+
+
+
+*** INFO: ATTRIBUTE params.decls_post  is not a global VARIABLE !
+
+
+
+
+*****          LIGA OPTIMIZER RESULTS          *****
+
+
+NUMBER OF GLOBAL VARIABLES      :    77
+
+      -> 1 OF THESE ATTRIBUTES ARE NEVER USED
+
+
+NUMBER OF GLOBAL STACKS         :     0
+
+
+NUMBER OF TREE NODE COMPONENTS :    16
+
+   because: ->   0 ATTRIBUTES ARE VOID ATTRIBUTES
+            ->   7 ATTRIBUTES HAVE TOO LONG LIFETIMES
+            ->   0 ATTRIBUTES ARE TERMINAL-ATTRIBUTES
+            ->   9 ATTRIBUTES ARE ACCESSED BY NOT EXPANDED INCLUDING
+
+
+*****          RESULTS OF GROUPING          *****
+
+NUMBER OF GENERATED VARIABLE-GROUPS :    10
+NUMBER OF GENERATED STACK-GROUPS    :     0
+
+NUMBER OF DELETED IDENTICAL ASSIGNS :   126
+    -> NEW NUMBER OF SEMANTIC RULES :   129
+
+

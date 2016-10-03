@@ -1,0 +1,7 @@
+
+SSeq:           $ " " $
+SSeq3:          $ " " $ string " " $
+DeclSeq:        $1 "    " $2 ";\n"   
+Protect:        "_" $
+NSeq:           $1 ", " $2 string $3 string
+Decl:           "   " $1 string " " $2 string ";\n"

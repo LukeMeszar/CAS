@@ -1,0 +1,13 @@
+
+
+
+Identifier:     C_IDENTIFIER_ISO
+
+
+Integer:        C_INTEGER
+
+
+        C_COMMENT
+        $[%#]   (auxEOL)
+
+

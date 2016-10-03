@@ -1,0 +1,62 @@
+static	char *state2terms[] = {
+	"\"int\" or \"float\"",	/* state 1 */
+	"\"Identifier\"",	/* state 2 */
+	"\"EOF\"",	/* state 3 */
+	"\"(\"",	/* state 4 */
+	"\"float\" or \"int\"",	/* state 5 */
+	"\"Identifier\"",	/* state 6 */
+	"\"Identifier\"",	/* state 7 */
+	"\")\" or \",\"",	/* state 8 */
+	"\"float\" or \"int\"",	/* state 9 */
+	"\"{\"",	/* state 10 */
+	(char *)NULL,	/* state 11 */
+	"\"Identifier\"",	/* state 12 */
+	"\"Identifier\"",	/* state 13 */
+	(char *)NULL,	/* state 14 */
+	"\"(\"",	/* state 15 */
+	(char *)NULL,	/* state 16 */
+	(char *)NULL,	/* state 17 */
+	(char *)NULL,	/* state 18 */
+	(char *)NULL,	/* state 19 */
+	(char *)NULL,	/* state 20 */
+	(char *)NULL,	/* state 21 */
+	(char *)NULL,	/* state 22 */
+	(char *)NULL,	/* state 23 */
+	(char *)NULL,	/* state 24 */
+	"\";\"",	/* state 25 */
+	(char *)NULL,	/* state 26 */
+	"\"(\"",	/* state 27 */
+	"\";\"",	/* state 28 */
+	"\";\"",	/* state 29 */
+	(char *)NULL,	/* state 30 */
+	(char *)NULL,	/* state 31 */
+	"\")\"",	/* state 32 */
+	(char *)NULL,	/* state 33 */
+	(char *)NULL,	/* state 34 */
+	(char *)NULL,	/* state 35 */
+	"\";\"",	/* state 36 */
+	(char *)NULL,	/* state 37 */
+	(char *)NULL,	/* state 38 */
+	(char *)NULL,	/* state 39 */
+	(char *)NULL,	/* state 40 */
+	"\":\"",	/* state 41 */
+	(char *)NULL,	/* state 42 */
+	(char *)NULL,	/* state 43 */
+	(char *)NULL,	/* state 44 */
+	(char *)NULL,	/* state 45 */
+	(char *)NULL,	/* state 46 */
+	(char *)NULL,	/* state 47 */
+	(char *)NULL,	/* state 48 */
+	"\")\"",	/* state 49 */
+	(char *)NULL,	/* state 50 */
+	(char *)NULL,	/* state 51 */
+	"\")\"",	/* state 52 */
+	(char *)NULL,	/* state 53 */
+	(char *)NULL,	/* state 54 */
+	"\"=\", \",\" or \";\"",	/* state 55 */
+	"\";\" or \",\"",	/* state 56 */
+	"\"Identifier\"",	/* state 57 */
+	(char *)NULL,	/* state 58 */
+	"\";\" or \",\"",	/* state 59 */
+	(char *)NULL
+}; /* of array state2terms[] */

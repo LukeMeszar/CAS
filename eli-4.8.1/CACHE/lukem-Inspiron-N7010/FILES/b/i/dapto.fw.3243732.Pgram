@@ -1,0 +1,83 @@
+$CODE
+EOF=1.
+'aspect'=2.
+';'=3.
+'end'=4.
+','=5.
+str=6.
+'('=7.
+')'=8.
+'event'=9.
+'*'=10.
+ident=11.
+'operation'=12.
+text=13.
+':'=14.
+bstr=15.
+'translation'=16.
+$GRAMMAR
+<$START_SYMBOL>: spec .
+aspects: aspects aspect_stmt &'_nsp -= 1;_nst[_nsp]=Mkrule_12(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+aspects: aspect_stmt &'_nst[_nsp]=Mkrule_13(&curpos, _nst[_nsp+0]);' .
+
+aspect_stmt: 'aspect' iddef ';' sigs 'end' ';' &'_nsp -= 1;_nst[_nsp]=Mkrule_10(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+attrs: attr &'_nst[_nsp]=Mkrule_14(&curpos, _nst[_nsp+0]);' .
+
+attrs: attrs ',' attr &'_nsp -= 1;_nst[_nsp]=Mkrule_15(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+attr: typeid iddef str &'_nsp -= 1;_nst[_nsp]=Mkrule_6(&curpos, _nst[_nsp+0], _nst[_nsp+1], Mkstr(&(T_POS(TokenStack(2))), T_ATTR(TokenStack(2))));' .
+
+event_block: '(' optattrs ')' &'_nst[_nsp]=Mkrule_16(&curpos, _nst[_nsp+0]);' .
+
+event_sig: 'event' iddef export str event_block ';' &'_nsp -= 2;_nst[_nsp]=Mkrule_9(&curpos, _nst[_nsp+0], _nst[_nsp+1], Mkstr(&(T_POS(TokenStack(3))), T_ATTR(TokenStack(3))), _nst[_nsp+2]);' .
+
+export: &'_incrnodestack();_nst[_nsp]=Mkrule_7(&curpos);' .
+
+export: '*' &'_incrnodestack();_nst[_nsp]=Mkrule_8(&curpos);' .
+
+iddef: ident &'_incrnodestack();_nst[_nsp]=Mkrule_17(&curpos, Mkident(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+iduse: ident &'_incrnodestack();_nst[_nsp]=Mkrule_18(&curpos, Mkident(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+operation_block: '(' optparams ')' &'_nst[_nsp]=Mkrule_19(&curpos, _nst[_nsp+0]);' .
+
+operation_sig: 'operation' iddef str operation_block text &'_nsp -= 1;_nst[_nsp]=Mkoperation_sig1(&curpos, _nst[_nsp+0], Mkstr(&(T_POS(TokenStack(2))), T_ATTR(TokenStack(2))), _nst[_nsp+1], Mkrule_3(&(T_POS(TokenStack(4))), Mktext(&(T_POS(TokenStack(4))), T_ATTR(TokenStack(4)))));' .
+
+operation_sig: 'operation' iddef str operation_block ':' typeid text &'_nsp -= 2;_nst[_nsp]=Mkoperation_sig2(&curpos, _nst[_nsp+0], Mkstr(&(T_POS(TokenStack(2))), T_ATTR(TokenStack(2))), _nst[_nsp+1], _nst[_nsp+2], Mkrule_3(&(T_POS(TokenStack(6))), Mktext(&(T_POS(TokenStack(6))), T_ATTR(TokenStack(6)))));' .
+
+optattrs: &'_incrnodestack();_nst[_nsp]=Mkrule_20(&curpos);' .
+
+optattrs: attrs &'_nst[_nsp]=Mkrule_21(&curpos, _nst[_nsp+0]);' .
+
+optparams: &'_incrnodestack();_nst[_nsp]=Mkrule_22(&curpos);' .
+
+optparams: params &'_nst[_nsp]=Mkrule_23(&curpos, _nst[_nsp+0]);' .
+
+params: param &'_nst[_nsp]=Mkrule_24(&curpos, _nst[_nsp+0]);' .
+
+params: params ',' param &'_nsp -= 1;_nst[_nsp]=Mkrule_25(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+param: typeid iddef str &'_nsp -= 1;_nst[_nsp]=Mkrule_2(&curpos, _nst[_nsp+0], _nst[_nsp+1], Mkstr(&(T_POS(TokenStack(2))), T_ATTR(TokenStack(2))));' .
+
+sig: bstr &'_incrnodestack();_nst[_nsp]=Mkrule_5(&curpos, Mkbstr(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+sig: event_sig &'_nst[_nsp]=Mkrule_26(&curpos, _nst[_nsp+0]);' .
+
+sig: operation_sig &'_nst[_nsp]=Mkrule_27(&curpos, _nst[_nsp+0]);' .
+
+sigs: sig &'_nst[_nsp]=Mkrule_28(&curpos, _nst[_nsp+0]);' .
+
+sigs: sigs sig &'_nsp -= 1;_nst[_nsp]=Mkrule_29(&curpos, _nst[_nsp+0], _nst[_nsp+1]);' .
+
+sig: str &'_incrnodestack();_nst[_nsp]=Mkrule_4(&curpos, Mkstr(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
+sig: translation_sig &'_nst[_nsp]=Mkrule_30(&curpos, _nst[_nsp+0]);' .
+
+spec: aspects &'_nst[_nsp]=Mkrule_11(&curpos, _nst[_nsp+0]);' .
+
+translation_sig: 'translation' iddef iduse str text &'_nsp -= 1;_nst[_nsp]=Mkrule_1(&curpos, _nst[_nsp+0], _nst[_nsp+1], Mkstr(&(T_POS(TokenStack(3))), T_ATTR(TokenStack(3))), Mkrule_3(&(T_POS(TokenStack(4))), Mktext(&(T_POS(TokenStack(4))), T_ATTR(TokenStack(4)))));' .
+
+typeid: ident &'_incrnodestack();_nst[_nsp]=Mkrule_31(&curpos, Mkident(&(T_POS(TokenStack(0))), T_ATTR(TokenStack(0))));' .
+
